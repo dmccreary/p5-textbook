@@ -146,6 +146,7 @@ markdown_extensions:
 # Custom CSS — file is created by init-textbook
 extra_css:
   - css/extra.css
+  - css/mascot.css
 
 # Custom JavaScript — uncomment once a corresponding file exists
 # extra_javascript:
@@ -157,6 +158,7 @@ exclude_docs: |
   **/image-prompts*.md
   **/cover-prompt.md
   **/TODO.md
+  docs/learning-graph/mascot-test.md
 
 # Rebuild on changes during `mkdocs serve`
 watch:
