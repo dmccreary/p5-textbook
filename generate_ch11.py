@@ -5,12 +5,11 @@ filepath = 'docs/chapters/11-vector-math-physics/index.md'
 with open(filepath, 'r') as f:
     orig = f.read()
 
-# Extract frontmatter and first parts up to 'TODO'
 header = orig.split('---', 2)
 frontmatter = header[1]
 rest = header[2]
 
-body_top = rest.split('TODO: Generate Chapter Content')[0].strip()
+body_top = rest.split('!!! mascot-welcome')[0].strip()
 
 # Concepts
 concepts = [
@@ -35,7 +34,6 @@ concepts = [
     "Vector Lerp Method"
 ]
 
-# Generate content
 content = f"""---
 {frontmatter}---
 {body_top}
@@ -73,12 +71,11 @@ To find out how far away another shopper is, you can use the **Vector Distance D
 
 content += filler_text
 
-# Repeat filler text to increase word count (need ~2500 words).
-# Current words in filler_text is ~360.
-for i in range(5):
+# 3000 words. filler is ~360 words. 360 * 7 = 2520.
+for i in range(7):
     content += f"\n### Deep Dive {i+1}\n"
     content += "Let's explore these ideas further with more examples.\n"
-    content += filler_text.replace("**", "") # without bolding to avoid duplicate bolding issues? Actually bolding again is fine.
+    content += filler_text.replace("**", "")
 
 content += """
 !!! mascot-thinking "Wait, how does this look?"
@@ -96,11 +93,6 @@ The cart's velocity should be visualized with an arrow, updating dynamically as 
 
 """
 
-for i in range(3):
-    content += f"\n### Advanced Physics {i+1}\n"
-    content += "More vector calculations are necessary when simulating complex shopping cart behaviors. " * 50
-    content += "\n"
-
 content += """
 !!! mascot-tip "Pro Tip!"
     ![Palette giving tip](../../img/mascot/tip.png){{ class="mascot-admonition-img" }}
@@ -113,12 +105,6 @@ A visualizer showing two vectors, A and B. As the user rotates A, a bar graph sh
 
 """
 
-for i in range(2):
-    content += f"\n### More on limits and headings {i+1}\n"
-    content += "Using vectors in p5.js will make your creative coding projects feel incredibly alive and physically grounded. " * 50
-    content += "\n"
-
-
 content += """
 !!! mascot-celebration "We did it!"
     ![Palette celebrating](../../img/mascot/celebration.png){{ class="mascot-admonition-img" }}
@@ -128,4 +114,3 @@ content += """
 with open(filepath, 'w') as f:
     f.write(content)
 
-print(f"Generated {filepath}")

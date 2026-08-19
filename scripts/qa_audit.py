@@ -23,6 +23,19 @@ def get_readability_score(text):
     score = 206.835 - 1.015 * (total_words / sentences) - 84.6 * (total_syllables / total_words)
     return round(max(0, min(100, score)))
 
+
+def check_repetition(text):
+    # Remove markdown and clean
+    text_clean = re.sub(r'[#*_>!\[\]\(\)-]', ' ', text)
+    sentences = [s.strip() for s in re.split(r'[.!?]+', text_clean) if len(s.split()) > 5]
+    
+    counts = {}
+    for s in sentences:
+        counts[s] = counts.get(s, 0) + 1
+        if counts[s] > 3:
+            return True # Failed repetition check
+    return False
+
 def audit_chapter(filepath):
     with open(filepath, 'r') as f:
         content = f.read()
@@ -71,6 +84,13 @@ def audit_chapter(filepath):
     # Calculate Quality Score
     quality_score = int(sum(score_components.values()))
     
+
+    # 5. Repetition Penalty
+    if check_repetition(content):
+        print(f"WARNING: Severe repetition detected in {filepath}!")
+        quality_score -= 50
+        quality_score = max(0, quality_score)
+
     # Calculate Readability
     readability_score = get_readability_score(content)
     

@@ -88,3 +88,12 @@ All AI-generated markdown must undergo strict programmatic quality assurance. Hu
   2. Admonitions follow the strict custom CSS formatting rules.
   3. No chapter is overwhelmed with too many mascot appearances (no more than 5-6).
 - If the quality checks fail, the agent is responsible for running an automated repair script (or manually fixing the file) until it passes validation before reporting completion to the user.
+
+## Anti-Padding & Writing Style Rules
+
+Large Language Models often attempt to artificially inflate text to meet word count targets, resulting in repetitive or hallucinated content. All generating agents MUST abide by these anti-padding rules:
+
+1. **Quality Over Quantity (Soft Constraints)**: Word count targets (e.g., 3,000 words) are guidelines, not strict requirements. A dense, high-quality, 1,500-word chapter is infinitely better than a repetitive 3,500-word chapter. Do not artificially inflate the text length under any circumstances.
+2. **Expand via "Show, Don't Tell"**: If a chapter feels too short, expand it by adding concrete code examples, introducing another interactive MicroSim, or detailing the technical mechanics. NEVER expand a chapter by repeating previous paragraphs, summarizing what was just said, or using generic filler text.
+3. **Ban Formulaic Templates**: Do not use repetitive boilerplate sentence structures to introduce a list of concepts (e.g., "Let's talk about [Concept]. The concept of [Concept] is fundamental..."). Concepts must be organically woven into natural, flowing narrative paragraphs.
+4. **Code Over Prose**: When explaining abstract logic or geometry, default to providing a commented `p5.js` code snippet rather than a long wall of descriptive text. Code provides better educational value than padded prose.

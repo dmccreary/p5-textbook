@@ -1,6 +1,8 @@
----
-quality_score: 100
-readability_score: 61
+import re
+
+frontmatter = """---
+quality_score: 40
+readability_score: 54
 ---
 # Audio Synthesis, Oscillators & Envelopes
 
@@ -52,7 +54,9 @@ This chapter builds on concepts from:
 
 - [Chapter 20: 3D Cameras, Lighting Models, Materials & Shaders](../20-3d-cameras-shaders/index.md)
 
+"""
 
+content = """
 !!! mascot-welcome "Welcome to the Studio, Artists!"
     ![Palette waving welcome](../../img/mascot/welcome.png){ class="mascot-admonition-img" }
     Time to color outside the loops! We're stepping into the magical world of sound. Let's blend some code and compose an interactive symphony!
@@ -197,3 +201,9 @@ We have successfully wired our studio patchbay! We loaded records, synthesized r
 !!! mascot-celebration "Symphony Complete!"
     ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     What a masterpiece, artists! You've successfully built an electronic orchestra with code. Keep experimenting, keep patching those cables, and let your sketches sing!
+"""
+
+with open("docs/chapters/21-audio-synthesis-sound/index.md", "w") as f:
+    f.write(frontmatter + content)
+
+print("Chapter 21 generated successfully.")
