@@ -122,6 +122,7 @@ All AI-generated markdown must undergo strict programmatic quality assurance. Hu
   1. The chapter begins with a `mascot-welcome` and ends with a `mascot-celebration`.
   2. Admonitions follow the strict custom CSS formatting rules.
   3. No chapter is overwhelmed with too many mascot appearances (no more than 5-6).
+  4. The `mascot-welcome` is strictly a 2-4 sentence sales pitch (with the exception of Chapter 1, which includes Palette's full introduction).
 - If the quality checks fail, the agent is responsible for running an automated repair script (or manually fixing the file) until it passes validation before reporting completion to the user.
 
 ## Anti-Padding & Writing Style Rules
