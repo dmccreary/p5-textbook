@@ -52,14 +52,14 @@ This chapter builds on concepts from:
 
 - [Chapter 20: 3D Cameras, Lighting Models, Materials & Shaders](../20-3d-cameras-shaders/index.md)
 
-
 !!! mascot-welcome "Welcome to the Studio, Artists!"
     ![Palette waving welcome](../../img/mascot/welcome.png){ class="mascot-admonition-img" }
-    Time to color outside the loops! We're stepping into the magical world of sound. Let's blend some code and compose an interactive symphony!
 
-## 1. Entering the Sound Studio
+    Hello artists! Who says we can only paint with light? In this chapter, we are going to learn how to generate, sculpt, and control sound itself using pure math. Grab your headphones, because it's time to compose some interactive audio masterpieces!
 
 Imagine walking into a vintage recording studio. In the corner, there's a dusty turntable ready to spin some classic vinyl records. Along the walls, towering modular synthesizers blink with colorful LEDs, their faces covered in a chaotic web of cables connecting different modules together. This is the **synthesizer patchbay**, the central nervous system of sound generation. In this chapter, we are going to learn how to operate this virtual studio using code. 
+
+## 1. Entering the Sound Studio
 
 Before we can even press play on our record player or plug a single cable into our synthesizer, we need to bring our audio equipment into the room. In the world of p5.js, this means we need the **p5 Sound Library Include**. This library is an add-on to the core p5.js library, built on top of the Web Audio API, which gives our browser the superpower to generate, manipulate, and analyze sound. By including the `p5.sound.js` file in our HTML `index.html` document alongside `p5.js`, we unlock all the audio features we'll explore today. 
 
@@ -140,7 +140,7 @@ ADSR stands for Attack, Decay, Sustain, and Release—the four stages of a sound
     ![Palette tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
     Artists, remember: Attack, Decay, and Release are amounts of TIME (seconds), but Sustain is a LEVEL (volume from 0.0 to 1.0). An envelope shapes the journey of the volume over time!
 
-Once we have defined our ADSR values (`env.setADSR(attack, decay, sustain, release)`), we need to trigger it. We connect the envelope to our oscillator, and then issue a **Play Envelope Trigger** (`env.play()`). This tells the envelope to execute its volume automation, bringing our flat drone to life with percussive plucks or sweeping cinematic swells.
+    Once we have defined our ADSR values (`env.setADSR(attack, decay, sustain, release)`), we need to trigger it. We connect the envelope to our oscillator, and then issue a **Play Envelope Trigger** (`env.play()`). This tells the envelope to execute its volume automation, bringing our flat drone to life with percussive plucks or sweeping cinematic swells.
 
 ## 5. Noise and Filters: Carving the Sonic Marble
 

@@ -1,3 +1,4 @@
+
 ---
 quality_score: 100
 readability_score: 41
@@ -85,7 +86,8 @@ This chapter builds on concepts from:
 
 !!! mascot-welcome "Graduating to the Workbench"
     ![Palette waving welcome](../../img/mascot/welcome.png){ class="mascot-admonition-img" }
-    "Time to color outside the loops!" You've built amazing projects in our sandbox. Let's gear up and head to the professional workbench!
+
+    Welcome to the final chapter, creators! You've outgrown the sandbox and it's time to set up your professional studio workbench. This chapter will equip you with the advanced tools and workflows you need to build serious, large-scale projects. Let's color outside the loops one last time!
 
 Welcome to the transition from the sandbox to the professional workbench. Up until now, the **p5 Web Editor Interface** has been our safe haven. It automatically manages your **Web Editor Sketch File** and gives you a visual **Web Editor Asset Sidebar** for dropping in images and sounds. However, as your projects grow, you need more powerful tools to manage complexity.
 
@@ -99,7 +101,7 @@ When things go wrong, the **Browser Developer Console** is your best friend for 
     ![Palette warning](../../img/mascot/warning.png){ class="mascot-admonition-img" }
     If your local sounds aren't loading, you might be hitting a CORS issue! Let's check our local server.
 
-When working with local audio files, you might encounter a **p5 Sound Local Host CORS** error. Browsers enforce a strict **CORS Security Policy** to prevent malicious scripts from reading local files. To solve this, you need a **Local Web Server Python** (like `python -m http.server`) to serve your files properly. Once your environment is configured, you can work anywhere using the **Offline p5 Reference Guide** and manage projects with the **p5 CLI Command Tool**.
+    When working with local audio files, you might encounter a **p5 Sound Local Host CORS** error. Browsers enforce a strict **CORS Security Policy** to prevent malicious scripts from reading local files. To solve this, you need a **Local Web Server Python** (like `python -m http.server`) to serve your files properly. Once your environment is configured, you can work anywhere using the **Offline p5 Reference Guide** and manage projects with the **p5 CLI Command Tool**.
 
 <details markdown="1">
 <summary>MicroSim: CORS Blockage Visualization</summary>
@@ -195,7 +197,7 @@ Generative art is built on a deep **Creative Coding Art History**. We stand on t
     ![Palette thinking](../../img/mascot/thinking.png){ class="mascot-admonition-img" }
     Notice how these pioneers broke down complex ideas? That's computational thinking!
 
-To replicate their success, we must apply every **Computational Thinking Concept**: breaking large tasks down via **Algorithmic Decomposition**, identifying repetitive sequences with **Pattern Recognition Visual**, simplifying details through **Abstraction Problem Solving**, and formulating logical instructions via **Algorithm Design Step**. This synergy leads to a beautiful **Artistic Computational Synthesis**.
+    To replicate their success, we must apply every **Computational Thinking Concept**: breaking large tasks down via **Algorithmic Decomposition**, identifying repetitive sequences with **Pattern Recognition Visual**, simplifying details through **Abstraction Problem Solving**, and formulating logical instructions via **Algorithm Design Step**. This synergy leads to a beautiful **Artistic Computational Synthesis**.
 
 Let's look at a concrete implementation of algorithmic decomposition applied to a Molnar-inspired grid system:
 
@@ -287,4 +289,3 @@ Moreover, the use of a package manager like npm or Yarn simplifies the process o
 As students progress in their journey, they will inevitably encounter the need for debugging. While `console.log()` is a useful starting point, mastering the browser's developer tools is essential for diagnosing complex issues. The Elements panel allows developers to inspect and manipulate the DOM in real-time, which is invaluable for troubleshooting layout and styling problems. The Network panel provides insights into resource loading, helping to identify bottlenecks and optimize performance. And the Sources panel, with its powerful JavaScript debugger, enables developers to step through code execution, inspect variable states, and pinpoint the exact source of errors.
 
 By embracing these professional tools and methodologies, students transition from merely writing code to engineering robust, scalable software solutions. The workbench is not just a collection of software; it is a mindset, a commitment to quality, collaboration, and continuous improvement.
-

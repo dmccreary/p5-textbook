@@ -41,7 +41,8 @@ This chapter builds on concepts from:
 
 !!! mascot-welcome "Welcome, Creators!"
     ![Palette waving welcome](../../img/mascot/welcome.png){ class="mascot-admonition-img" }
-    Time to color outside the loops! Welcome to the world of interactivity, where you are the controller!
+
+    Hey artists, it's time to break the fourth wall! This chapter will teach you how to make your digital canvases actually listen and respond to the people looking at them. We're turning your static code into fully interactive playgrounds, so let's blend some code!
 
 Welcome, students! Have you ever played a video game and wondered how the console knows exactly when you press the jump button or swing the analog stick? In this chapter, we are going to dive deep into **Mouse & Keyboard User Event Sensing**, treating our computer peripherals just like a video game controller.
 
@@ -205,7 +206,6 @@ Remember the controller metaphor: your sketch is the console, and it's waiting f
     ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     You've mastered the controller! Now go out there and build something truly interactive. The canvas is your playground!
 
-
 ## Extended Deep Dive: Understanding the Nuances of Event Sensing
 
 To truly master the art of interactive programming, we need to explore the subtle nuances of each event and how they interact with one another. The video game controller metaphor is powerful, but a computer's input system is even more complex and versatile.
@@ -267,5 +267,3 @@ If all four of these conditions are true simultaneously, the cursor is hovering 
 While this chapter focuses on the mouse and keyboard, the principles you are learning apply directly to modern touch interfaces. A tap on a smartphone screen is conceptually identical to a **Mouse Clicked Event**. A swipe is a translation of the **Mouse Dragged Event**. Pinch-to-zoom is an evolution of the **Mouse Wheel Event**.
 
 By building a strong foundation in handling discrete events and continuous states, you are preparing yourself to develop software for any platform, from traditional desktop computers to the latest mobile devices and tablets. The controller might change shape, but the logic of interaction remains remarkably consistent.
-
-

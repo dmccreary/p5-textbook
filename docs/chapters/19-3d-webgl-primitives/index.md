@@ -37,7 +37,8 @@ This chapter builds on concepts from:
 
 !!! mascot-welcome "Welcome to the Third Dimension!"
     ![Palette waving welcome](../../img/mascot/welcome.png){ class="mascot-admonition-img" }
-    Time to color outside the loops! We're leaving the flat canvas behind and stepping into the wonderful world of 3D. Grab your digital clay, creators!
+
+    Palette here! We've spent a lot of time on the flat canvas, but it's finally time to step into the third dimension. This chapter will hand you the digital clay you need to start sculpting in depth and space. Let's add a whole new dimension to your art!
 
 Welcome, creators, to one of the most exciting transitions you will ever make in your programming journey. Until now, every single sketch, every single piece of art, and every single interactive project you have built has been confined to a flat, two-dimensional screen. It is as if you have been painting on a flat canvas. You had an X-axis that went left and right, and a Y-axis that went up and down. You could draw shapes, mix colors, and create beautiful patterns, but everything was perfectly flat. 
 
@@ -57,7 +58,7 @@ Furthermore, we now have a third axis. We have our familiar X-axis (left and rig
     ![Palette thinking](../../img/mascot/thinking.png){ class="mascot-admonition-img" }
     The Z-axis can be tricky! Remember: positive Z comes OUT of the screen towards you, and negative Z goes INTO the screen away from you.
 
-The Z Axis Depth Position is what gives our world volume. If you increase your Z value (make it a positive number), your object will move closer to you, appearing larger. If you decrease your Z value (make it a negative number), your object will move further away, deeper into the screen, appearing smaller. 
+    The Z Axis Depth Position is what gives our world volume. If you increase your Z value (make it a positive number), your object will move closer to you, appearing larger. If you decrease your Z value (make it a negative number), your object will move further away, deeper into the screen, appearing smaller. 
 
 Let's explore this with an interactive tool.
 
@@ -92,7 +93,7 @@ Next, we have the **Sphere 3D Primitive**. This is a perfectly round ball, like 
     ![Palette giving a tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
     Want your sphere to look extra smooth? You can add detail parameters to increase the number of polygons! Let's blend some code!
 
-Then there is the **Cylinder 3D Primitive**. Imagine a soup can or a column. A cylinder has a circular top and bottom, connected by a curved surface. You can control its radius and height. Cylinders are great for creating tree trunks, pipes, or arms and legs.
+    Then there is the **Cylinder 3D Primitive**. Imagine a soup can or a column. A cylinder has a circular top and bottom, connected by a curved surface. You can control its radius and height. Cylinders are great for creating tree trunks, pipes, or arms and legs.
 
 We also have the **Cone 3D Primitive**. A cone has a circular base that tapers to a single point at the top, like an ice cream cone or a party hat. It is defined by a radius and a height. Cones can be used for roofs, spikes, or arrows pointing the way.
 
@@ -132,7 +133,7 @@ While orbit control is great for quick inspection, sometimes you need precise co
     ![Palette warning](../../img/mascot/warning.png){ class="mascot-admonition-img" }
     When setting your camera position, make sure you keep track of your coordinates. It's easy to accidentally point the camera into empty space and think your code is broken!
 
-Finally, we need to talk about how the camera actually sees the world. There are two main ways a camera can interpret 3D space, known as camera modes.
+    Finally, we need to talk about how the camera actually sees the world. There are two main ways a camera can interpret 3D space, known as camera modes.
 
 The default mode is the **Perspective Camera Mode**. This mode mimics how human eyes (and real-world cameras) work. Things that are further away appear smaller, and parallel lines seem to converge at a vanishing point on the horizon. This is what you want 95% of the time, as it creates a realistic sense of depth and scale.
 
@@ -142,8 +143,7 @@ However, there is another mode called the **Ortho Camera Mode**, short for ortho
     ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     You've successfully moved into the third dimension! You have your clay, your turntable, and your camera. I can't wait to see what you sculpt!
 
-
-To fully grasp the magnitude of what you've learned, let's dive deeper into the history and mechanics of these concepts. For decades, computer scientists struggled with the challenge of representing three-dimensional space on a two-dimensional screen. The mathematics required to calculate perspective, lighting, and hidden surfaces was incredibly demanding for early processors. However, as hardware evolved, so did the software interfaces. The advent of hardware-accelerated graphics pipelines revolutionized the industry, allowing for real-time rendering of complex scenes. WebGL, the technology underlying our new 3D capabilities in p5.js, is a direct descendant of these early innovations. It provides a JavaScript API for rendering interactive 2D and 3D graphics within any compatible web browser without the use of plug-ins. WebGL is fully integrated with other web standards, allowing GPU-accelerated usage of physics and image processing and effects as part of the web page canvas. By leveraging the WEBGL Renderer Mode, you are tapping into a profound lineage of computer graphics research.
+    To fully grasp the magnitude of what you've learned, let's dive deeper into the history and mechanics of these concepts. For decades, computer scientists struggled with the challenge of representing three-dimensional space on a two-dimensional screen. The mathematics required to calculate perspective, lighting, and hidden surfaces was incredibly demanding for early processors. However, as hardware evolved, so did the software interfaces. The advent of hardware-accelerated graphics pipelines revolutionized the industry, allowing for real-time rendering of complex scenes. WebGL, the technology underlying our new 3D capabilities in p5.js, is a direct descendant of these early innovations. It provides a JavaScript API for rendering interactive 2D and 3D graphics within any compatible web browser without the use of plug-ins. WebGL is fully integrated with other web standards, allowing GPU-accelerated usage of physics and image processing and effects as part of the web page canvas. By leveraging the WEBGL Renderer Mode, you are tapping into a profound lineage of computer graphics research.
 
 When you instantiate a canvas with the WEBGL parameter, you are not merely changing a setting; you are fundamentally altering the rendering context. A 2D context operates on a relatively simple coordinate system, mapping pixels directly to the screen. A 3D context, however, involves a complex pipeline. Vertices are passed to a vertex shader, which transforms their coordinates based on the camera position and projection matrix. The resulting polygons are then rasterized, converting them into fragments. These fragments are processed by a fragment shader, which determines their final color based on lighting, materials, and textures. All of this happens under the hood when you draw a simple Box 3D Primitive.
 

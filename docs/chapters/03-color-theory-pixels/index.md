@@ -1,3 +1,4 @@
+
 ---
 quality_score: 100
 readability_score: 54
@@ -55,11 +56,10 @@ This chapter builds on concepts from:
 
 ---
 
-
 !!! mascot-welcome "Welcome to Chapter 3!"
     ![Palette waving welcome](../../img/mascot/welcome.png){ class="mascot-admonition-img" }
-    Palette here! Are you ready to dive into chapter 3? Time to color outside the loops!
 
+    Palette here! Wireframes are fine, but let's be honest—color is where the real magic happens. This chapter will teach you how to paint with pure math and light, giving you the power to dynamically generate thousands of hues on the fly. Time to color outside the loops!
 
 Welcome to Chapter 3! We are about to dive into one of the most vibrant, expressive, and fundamental aspects of digital art and creative coding: color and pixels. In our previous chapters, you learned the mechanics of drawing shapes—how to command the computer to plot points, draw lines, and render polygons on the digital canvas. But a world of only wireframes and black-and-white outlines can be a bit stark. Now, it's time to bring those geometries to life using the spectacular power of light and mathematics.
 
@@ -341,7 +341,6 @@ Color in the world of creative coding is so much more than just picking a pretty
 From painting with pure, additive light in the RGB space, to navigating the intuitive angles of the HSB color wheel compass, to diving deep into the microscopic memory architecture of the 1D pixels array, you now have complete, granular control over every photon of light emitting from the screen. By mastering these 34 concepts, you have unlocked the ability to write algorithms that generate dynamic, mathematically harmonious, and ethically accessible visual experiences. 
 
 You have learned to draw the shapes, and you have learned to light them up. In the next chapter, we will take these glowing, colored shapes and breathe the final element of life into them: movement over time!
-
 
 !!! mascot-celebration "Chapter Complete!"
     ![Palette celebrating](../../img/mascot/celebration.png){{ class="mascot-admonition-img" }}

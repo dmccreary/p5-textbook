@@ -39,11 +39,12 @@ This chapter builds on concepts from:
 
 !!! mascot-welcome "Welcome to the Kitchen!"
     ![Palette waving welcome](../../img/mascot/welcome.png){ class="mascot-admonition-img" }
-    Time to color outside the loops! We're going to learn how to organize our code like a professional kitchen using recipes and delegating tasks. Grab your chef's hat!
 
-## The Art of Recipes: Functions
+    Hello creators! As your artistic ambitions grow, your code is going to get messy if you don't organize your studio. This chapter is all about writing clean, modular recipes so you can focus on creativity instead of hunting down bugs. Let's blend some code and tidy up!
 
 Welcome to our virtual kitchen! When you're making a grand, complex meal for a huge banquet, you certainly don't invent every single dish from scratch in one giant, disorganized sequence of steps. Imagine trying to read a single list of ten thousand steps that jumped wildly between chopping carrots, boiling water, setting the table, and frosting a cake. It would be an absolute nightmare. Instead, you use clearly defined, reusable recipes. 
+
+## The Art of Recipes: Functions
 
 In the world of coding, a recipe is what we call a function. You write down the steps for a specific task once, and then you can recreate that exact outcome perfectly, every single time, just by calling the function's name. This allows you to break massive problems into small, manageable, bite-sized pieces. 
 
@@ -392,4 +393,3 @@ By mastering these concepts, you are no longer just writing disorganized lists o
 !!! mascot-celebration "Chef's Kiss! Masterpiece Completed!"
     ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     You did it! You've successfully mastered functions, callbacks, and the complex art of object-oriented programming. Your code is now incredibly organized, highly modular, and ready for massive software projects. Time to color outside the loops and build something amazing!
-

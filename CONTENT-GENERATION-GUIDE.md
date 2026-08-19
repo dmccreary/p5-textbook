@@ -54,6 +54,14 @@ Always place mascot images in the admonition body, never in the title bar:
 | Difficult content | mascot-encourage | Where students may struggle |
 | Section completion | mascot-celebration | End of major sections |
 
+### Welcome Admonition Guidelines
+
+The `mascot-welcome` admonition has a very specific purpose: **to get the student to read the chapter.** 
+- **Goal**: It acts as a sales pitch. It must be a fun, funny, yet sincerely warm welcome that encourages the reader to dive into the chapter.
+- **Voice**: Must be written in the voice of the mascot (Palette).
+- **Length**: Strictly 2-4 sentences.
+- **Content**: Provide a short summary of *WHY* they should read the chapter. **NEVER** start explaining the actual concepts or mechanics in the welcome text.
+
 ### Do's and Don'ts
 
 **Do:**

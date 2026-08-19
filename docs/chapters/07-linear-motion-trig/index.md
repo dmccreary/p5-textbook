@@ -38,15 +38,14 @@ This chapter builds on concepts from:
 
 ---
 
-
 !!! mascot-welcome "Welcome to Chapter 7!"
     ![Palette waving welcome](../../img/mascot/welcome.png){ class="mascot-admonition-img" }
-    Palette here! Are you ready to dive into chapter 7? Time to color outside the loops!
 
-
-## The Beauty of Mathematics in Motion
+    Hello creators! Static art is beautiful, but things get really exciting when they start to move. We'll be using some surprisingly fun math to make your sketches slide, swing, and breathe with natural rhythm. Get ready to bring your canvases to life!
 
 Have you ever watched a pendulum swing back and forth, or seen the rhythmic rise and fall of ocean waves, or marveled at the smooth rotation of a Ferris wheel? These mesmerizing patterns are everywhere in nature and mechanics, and they all share a common, elegant mathematical foundation. When we learn to harness this math, we unlock the ability to breathe life into our digital creations. In this chapter, we are going to dive deep into how we can recreate these natural, fluid movements using code. We will start simple, by moving objects in straight lines, and then we will unlock the powerful secrets of circles, waves, and oscillation using trigonometry.
+
+## The Beauty of Mathematics in Motion
 
 Trigonometry often gets a bad rap in high school classrooms as a collection of dry formulas and abstract triangles. But in the world of creative coding, trigonometry is your paintbrush. It is the language of continuous, organic movement. By the end of this chapter, you won’t just be drawing static shapes on a screen; you will be choreographing dynamic, breathing animations that feel alive!
 
@@ -346,7 +345,6 @@ Trigonometry might have seemed like an abstract, intimidating subject in a textb
 By mastering the rigid predictability of **Linear Motion Logic**, understanding the smooth, eternal oscillations provided by **Sine Function Math** and **Cosine Function Math**, and wielding the rotational targeting power of the **Arc Tangent Atan2 Function**, you have vastly expanded your programming toolkit. 
 
 When you learn to seamlessly link these mathematical properties together using the **Map Range Function**, your code transcends simple drawing. You are no longer just rendering shapes; you are choreographing intricate, dynamic systems that breathe, pulse, and interact with the fluidity of the natural world. Keep experimenting, keep tweaking those wave parameters, and watch your sketches come alive!
-
 
 !!! mascot-celebration "Chapter Complete!"
     ![Palette celebrating](../../img/mascot/celebration.png){{ class="mascot-admonition-img" }}

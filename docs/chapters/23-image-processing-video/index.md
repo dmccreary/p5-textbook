@@ -53,14 +53,14 @@ This chapter builds on concepts from:
 
 ---
 
-
 !!! mascot-welcome "Welcome to the Digital Darkroom!"
     ![Palette waving welcome](../../img/mascot/welcome.png){ class="mascot-admonition-img" }
-    Time to color outside the loops! In this chapter, we step into the digital darkroom. We'll be developing photos using code, adjusting every single pixel by hand, and capturing live video feeds!
 
-## The Digital Darkroom: An Introduction to Pixels
+    Palette here! Welcome to the digital darkroom. If you've ever wanted to manipulate live webcam feeds or build your own custom photo filters from scratch, this is the chapter for you. Let's blend some code and start bending reality!
 
 Before the era of digital cameras, photographers developed pictures in physical darkrooms. They used chemicals to reveal images on paper, carefully controlling light exposure, contrast, and tone. Today, the process of image processing serves the exact same purpose, but our chemicals are mathematical algorithms, and our photographic paper is the HTML5 canvas. Every digital image you see on a computer screen is essentially a grid of tiny colored squares known as pixels. By manipulating these pixels with code, we gain unparalleled control over visual aesthetics. 
+
+## The Digital Darkroom: An Introduction to Pixels
 
 When you learn how to process images dynamically, you open up new avenues for creative coding. Interactive art installations, augmented reality filters, and real-time video synthesizers all rely on the foundational techniques we will explore. We will start by simply displaying static images, move on to adjusting their colors and applying artistic filters, and finally integrate live video streams from a webcam.
 
@@ -387,7 +387,6 @@ Finally, we can combine images using masking. The **Mask Image Alpha Shape** tec
 !!! mascot-celebration "Master of the Digital Darkroom!"
     ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     Incredible work! You've learned how to harness the raw mathematical power of image processing and live video. The digital darkroom is officially open for business.
-
 
 ## Deep Dive: The Mathematics of the Darkroom
 

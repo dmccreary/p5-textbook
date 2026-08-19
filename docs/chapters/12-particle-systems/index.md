@@ -1,3 +1,4 @@
+
 ---
 quality_score: 100
 readability_score: 54
@@ -38,7 +39,8 @@ This chapter builds on concepts from:
 
 !!! mascot-welcome "Welcome to Chapter 12!"
     ![Palette waving welcome](../../img/mascot/welcome.png){ class="mascot-admonition-img" }
-    "Time to color outside the loops! Let's build some digital fireworks, artists!"
+
+    Welcome to Chapter 12, creators! We are taking everything you've learned about motion and scaling it up to create massive, swarming, beautiful chaos. From fireworks to flocks of birds, this chapter gives you the tools to simulate complex natural phenomena. Time to color outside the loops!
 
 Hey everyone! Welcome to Chapter 12. If you've ever watched a spectacular fireworks display lighting up the night sky, or played with a garden water hose on a hot summer day, you've already seen particle systems in action. Today, we're going to learn how to recreate that exact magic using code.
 

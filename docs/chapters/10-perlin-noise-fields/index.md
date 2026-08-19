@@ -39,11 +39,10 @@ This chapter builds on concepts from:
 
 ---
 
-
 !!! mascot-welcome "Welcome to Chapter 10!"
     ![Palette waving welcome](../../img/mascot/welcome.png){ class="mascot-admonition-img" }
-    Palette here! Are you ready to dive into chapter 10? Time to color outside the loops!
 
+    Welcome, creators! If standard randomness looks too chaotic and noisy, wait until you discover the smooth, rolling hills of Perlin noise. This chapter will teach you how to generate stunning, natural textures and mesmerizing flow fields. Let's blend some code and build worlds!
 
 Welcome to the magic of organic randomness! In the previous chapter, we looked at pure randomness—like flipping a coin, rolling a die, or wandering aimlessly in a random walk. But if you look around at the real world, things are rarely completely chaotic or disconnected. Mountains don't look like television static; they have sweeping curves, ridgelines, and valleys that connect logically from one point to the next. Clouds have soft, puffy shapes that gently transition into the clear blue sky. Wood has flowing grain patterns that swirl smoothly around knots. Nature is undoubtedly random, but it is a *smooth*, connected kind of random. It has structure, flow, and memory.
 
@@ -77,7 +76,6 @@ Think of Perlin noise (accessed via the `noise()` function in p5.js) as an ant w
 
 When you pass a value (like time or a coordinate) into the `noise(t)` function, it returns a value between 0 and 1. If you pass in `noise(1.0)` and it returns 0.6, and then you pass in `noise(1.01)`, the return value is mathematically guaranteed to be very close to 0.6, perhaps 0.61 or 0.59. 
 
-> [!NOTE] Palette the Chameleon Says:
 > "If you ever get confused, just remember this: `random()` has no memory of the past. `noise()` remembers its neighbors! `noise()` builds a continuous world, while `random()` throws darts at a board."
 
 ## One-Dimensional Noise: The **Smooth Noise Landscape**
@@ -209,7 +207,7 @@ This allows us to inject extreme rarity and controlled scarcity into our generat
 !!! mascot-tip "Palette's Tip"
     ![Palette tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
     Palette
- the Chameleon Says:
+
 > "Weighted randomness is how nature balances ecosystems! If you are procedurally generating a forest, you don't want an equal number of oak trees and rare blue mushrooms. Give the oak trees a weight of 1000 and the mushrooms a weight of 2. Your world will instantly feel more realistic and balanced."
 
 ### Shaping Probability: **Monte Carlo Selection**
@@ -281,7 +279,6 @@ Pure randomness is chaotic and disconnected, like a TV tuned to a dead channel. 
 By mastering tools like Perlin noise, Monte Carlo selection, and weighted probabilities, you elevate your code. You transition from simply drawing pixels to simulating the fundamental forces of nature. You learn to tame the chaos, giving it memory, structure, and flow. 
 
 In the next chapters, we will take these organic shapes and generated worlds and begin wrapping them into reusable classes and complex objects!
-
 
 !!! mascot-celebration "Chapter Complete!"
     ![Palette celebrating](../../img/mascot/celebration.png){{ class="mascot-admonition-img" }}

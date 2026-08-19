@@ -161,8 +161,6 @@ To physically create this drawing space in memory, we invoke the **Create Canvas
 
 Immediately after creating the canvas, we typically want to prime it with a base layer of paint. We do this using the **Background Color Function** (`background()`). Calling `background(200)` will fill the entire pixel grid with a light gray color, effectively erasing anything that was previously there.
 
-
-
 ## The Lifecycle: Preload, Setup, and Draw
 
 Think of a p5.js program as a theatrical production. A successful play requires preparation before the audience arrives, an opening sequence, and finally, the live performance. In p5.js, this lifecycle is managed by three core functions: `preload()`, `setup()`, and `draw()`.
@@ -262,13 +260,11 @@ You can halt the loop entirely by calling the **No Loop Function** (`noLoop()`).
     ![Palette tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
     If your sketch doesn't animate or respond dynamically to the mouse, always put `noLoop();` at the end of your `setup()` function. You'll save power and keep your users' computer fans quiet!
 
-But what if you want to generate a new static mandala every time the user clicks the mouse? You don't want continuous animation, but you do need to update the screen occasionally. 
+    But what if you want to generate a new static mandala every time the user clicks the mouse? You don't want continuous animation, but you do need to update the screen occasionally. 
 
 In this scenario, you can trigger a single, isolated execution of the `draw()` loop by calling the **Redraw Function** (`redraw()`). Calling `redraw()` inside a mouse click event will paint exactly one new frame and then immediately stop again.
 
 Finally, if you have halted the loop with `noLoop()`, but an event occurs that requires continuous animation to resume (perhaps the user clicks a "Play" button), you can restart the infinite cycle by calling the **Loop Control Function** (`loop()`).
-
-
 
 ## Adapting to the Environment: Responsiveness
 

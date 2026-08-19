@@ -34,15 +34,14 @@ This chapter builds on concepts from:
 
 ---
 
-
 !!! mascot-welcome "Welcome to Chapter 4!"
     ![Palette waving welcome](../../img/mascot/welcome.png){ class="mascot-admonition-img" }
-    Palette here! Are you ready to dive into chapter 4? Time to color outside the loops!
 
-
-## Introduction: The Magic of Memory
+    Welcome back, creators! Do you want your artwork to change, react, and remember things over time? You'll need to understand how our code stores information. This chapter is your secret to unlocking dynamic memory, so let's blend some code and level up your skills!
 
 Imagine for a moment that you are a highly organized warehouse manager. Your warehouse is a gigantic, cavernous building filled with rows upon rows of empty cardboard boxes. Whenever a shipment arrives, you have a choice: you can just throw the items randomly into any open box, or you can carefully label the box with a black marker so you know exactly what is inside. If you choose the random approach, finding a specific item later—like a single red sock or a vintage video game—will be a nightmare. You would have to open every single box and dig through it. But if you slap a label on the box that says "Red Socks," you can walk straight to it the moment you need it. 
+
+## Introduction: The Magic of Memory
 
 In the world of computer programming, the computer's memory (its RAM) is exactly like that massive warehouse. It consists of millions and millions of empty storage slots. When we write programs in p5.js, we often need to remember things: the player's score, the X and Y coordinates of a character on the screen, the color of the background, or the number of lives remaining. To store these pieces of information, we use something called a **variable**. 
 
@@ -79,8 +78,7 @@ Now, the `playerHealth` box holds the number 80. Notice that we didn't use the `
 
 !!! mascot-tip "Palette's Tip"
     ![Palette tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
-    !!! mascot Palette
- the Chameleon says..."
+
     "Think of `let` like a dry-erase marker on a plastic storage bin. You can write 'Winter Clothes' on it today, but next season you can wipe it off and write 'Summer Gear'. The label stays the same, but you can swap out the contents whenever you want! That's why it's a *variable*—it varies!"
 
 ### Choosing Good Names for Your Boxes
@@ -109,7 +107,6 @@ maxPlayers = 5; // ERROR! The computer will stop and complain!
 ```
 
 The computer will throw an error and refuse to run the program. It protects you from your own mistakes. As a general rule of thumb: if you know a value should never change while your program is running, use `const`. If you know the value will need to be updated (like a score, a timer, or a position), use `let`.
-
 
 ## The One-Way Mirror: Understanding Scope
 
@@ -262,7 +259,6 @@ In the example above, `score` is 85.
 
 This top-to-bottom evaluation is crucial. If you put `score >= 70` at the very top, an 85 would trigger the "Grade: C" block first, and the computer would never even check if it was a B or an A! Always order your chained logic carefully.
 
-
 ## The Questioning Mind: Operators
 
 To use `if` statements effectively, you need to be able to ask complex, highly specific questions. We do this using operators. Operators are symbols that tell the computer to perform specific mathematical, relational, or logical operations and produce a final result.
@@ -332,8 +328,7 @@ if (!isGameOver) {
 
 !!! mascot-tip "Palette's Tip"
     ![Palette tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
-    !!! mascot Palette
- the Chameleon says..."
+
     "The Logical Operators are exactly like bouncers at an exclusive club! AND (`&&`) is the strict bouncer who says 'You need an ID AND a VIP ticket.' OR (`||`) is the chill bouncer who says 'You need a ticket OR a VIP pass, either is fine.' NOT (`!`) is the weird bouncer who says 'If you are NOT wearing sneakers, you can come in!'"
 
 ## Advanced Decision Making
@@ -416,7 +411,6 @@ Take your time experimenting with scope. It can be incredibly frustrating at fir
 Practice combining your relational and logical operators to build complex rules for your p5.js sketches. Try creating a drawing program that changes colors based on where the mouse is and which keys are currently being pressed.
 
 In the next chapter, we will look at loops: how to repeat actions hundreds of times a second without having to write hundreds of lines of code!
-
 
 !!! mascot-celebration "Chapter Complete!"
     ![Palette celebrating](../../img/mascot/celebration.png){{ class="mascot-admonition-img" }}

@@ -1,5 +1,5 @@
----
 
+---
 
 quality_score: 50
 readability_score: 65
@@ -44,16 +44,16 @@ This chapter builds on concepts from:
 
 !!! mascot-welcome "Welcome to Vector Math!"
     ![Palette waving welcome](../../img/mascot/welcome.png){ class="mascot-admonition-img" }
-    Welcome back, artists! Time to color outside the loops! Today we are learning about the incredible world of physics.
 
-## The Shopping Cart Physics Metaphor
+    Hello artists! Have you ever wanted your shapes to move with real-world momentum and gravity? This chapter introduces the essential math that will turn your flat sketches into dynamic physical simulations. Time to step into the world of physics and give your art some weight!
 
 Imagine you are pushing a shopping cart through a large supermarket. The cart represents an object in our sketch. To make it move, you have to apply a force. When you apply a force, you change its acceleration. Acceleration changes velocity, and velocity changes position! This is the essence of building a physics engine from scratch.
+
+## The Shopping Cart Physics Metaphor
 
 To do this, we need the **p5 Vector Class Concept**. A vector is an entity that has both a magnitude (length) and a direction. In p5.js, vectors are objects that store x, y, and sometimes z components. 
 
 You can create one using the **Create Vector Function**. For instance, `let pos = createVector(x, y);`. 
-
 
 When you are moving the shopping cart down the aisle, you might push it forward, and your friend might push it sideways. The resulting movement is the sum of these forces. This is called vector addition.
 To calculate the total force on our shopping cart, we use the **Vector Addition Add** method. This allows us to combine multiple forces acting on an object. Similarly, if there is friction working against you, you might use the **Vector Subtraction Sub** method to subtract the friction vector from your velocity vector.
@@ -209,7 +209,6 @@ Users can click and drag to apply a force vector to the cart.
 The cart's velocity should be visualized with an arrow, updating dynamically as acceleration is added.
 </details>
 
-
 !!! mascot-tip "Pro Tip!"
     ![Palette giving tip](../../img/mascot/tip.png){{ class="mascot-admonition-img" }}
     Always limit your velocity vector using `vel.limit(maxSpeed)` so your objects don't accelerate to infinity!
@@ -218,7 +217,6 @@ The cart's velocity should be visualized with an arrow, updating dynamically as 
 <summary>MicroSim: Vector Dot Product Visualizer</summary>
 A visualizer showing two vectors, A and B. As the user rotates A, a bar graph shows the dot product. It peaks when they align and hits zero when perpendicular.
 </details>
-
 
 !!! mascot-celebration "We did it!"
     ![Palette celebrating](../../img/mascot/celebration.png){{ class="mascot-admonition-img" }}

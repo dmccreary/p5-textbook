@@ -57,11 +57,12 @@ This chapter builds on concepts from:
 
 !!! mascot-welcome "Sound Becomes Color!"
     ![Palette waving welcome](../../img/mascot/welcome.png){ class="mascot-admonition-img" }
-    Time to color outside the loops! Let's blend some code and see our sounds!
 
-## Introduction: The Oscilloscope and the Prism
+    Welcome back, creators! Have you ever wanted to see what music actually looks like? This chapter will teach you how to analyze real-time sound and transform it into jaw-dropping visual equalizers and responsive art. Time to color outside the loops and see the music!
 
 When you look at a rainbow, you are seeing a prism split white light into its component colors. The prism reveals the hidden spectrum of light. What if we could do the same for sound? In this chapter, we will build digital prisms and oscilloscopes to visualize the hidden world of sound waves. 
+
+## Introduction: The Oscilloscope and the Prism
 
 The oscilloscope represents the time domain: it shows how the volume of a sound changes over time, graphing pressure variations as a continuous wave. The prism represents the frequency domain: it splits a complex sound into its individual pitches, showing us how much bass, mid, and treble energy is present.
 
@@ -321,4 +322,3 @@ If we apply a Fast Fourier Transform and find a high concentration of energy in 
 !!! mascot-celebration "Awesome Work!"
     ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     You've mastered the oscilloscope and the prism! Your code is now dancing to the rhythm of the world! Keep experimenting and painting with sound!
-

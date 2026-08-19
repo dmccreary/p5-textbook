@@ -38,15 +38,14 @@ This chapter builds on concepts from:
 
 ---
 
-
 !!! mascot-welcome "Welcome to Chapter 8!"
     ![Palette waving welcome](../../img/mascot/welcome.png){ class="mascot-admonition-img" }
-    Palette here! Are you ready to dive into chapter 8? Time to color outside the loops!
 
-
-## 8.1 Introduction: Beyond the Grid
+    Welcome back, artists! Are your animations feeling a little stiff and robotic? This chapter will teach you the elegant secrets of circular motion and smooth, natural transitions. Let's add some graceful, organic flow to your digital masterpieces!
 
 Imagine trying to describe the exact position of an airplane high in the sky to an air traffic controller. If you are standing at the control tower, you could theoretically use a massive invisible grid over the earth and say, "The plane is precisely 10 miles east and 5 miles north of the airport." This is exactly how the Cartesian coordinate system works, which we've been using all along in p5.js with our familiar X and Y axes. It is a system built on squares and straight lines. 
+
+## 8.1 Introduction: Beyond the Grid
 
 But there's another, often far more intuitive way to describe where things are in space. Instead of picturing a grid of city blocks, think of **the compass and the radar screen**. A radar sweep doesn't care about a grid; it cares about two completely different pieces of information: how far away something is from the center (the radius or distance), and what direction it's in relative to North (the angle). 
 
@@ -112,8 +111,7 @@ If we wanted to make the orbit squashed into an oval, we would need to create an
 
 !!! mascot-tip "Palette's Tip"
     ![Palette tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
-    !!! tip Palette
- the Chameleon Says..."
+
     "When I want my skin colors to change smoothly as an object orbits, I use polar coordinates! Since angles perfectly loop around from 0 to TWO_PI, you can map the `theta` angle directly to the hue of your color wheel using HSB color mode. It’s the absolute easiest way to make a flawless rainbow radar sweep without any awkward color jumps at the end of the loop!"
 
 <details>
@@ -273,8 +271,7 @@ These easing functions are driven by different mathematical curves—from simple
 
 !!! mascot-tip "Palette's Tip"
     ![Palette tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
-    !!! tip Palette
- the Chameleon Says..."
+
     "Easing isn't just for physical movement! I heavily use easing functions to smoothly transition between UI states and even colors! Instead of a harsh, blinding jump from a red alert state to a calming blue background, applying an **Ease-In-Out** transition to the RGB values makes the purple blend in the middle feel incredibly cinematic, polished, and organic!"
 
 <details>
@@ -305,7 +302,6 @@ Instead of arbitrarily moving an object by a set number of pixels *per frame*, t
 If your frame rate suddenly drops, the delta time mathematically increases. The physics equation automatically compensates by taking a physically larger step forward in that specific frame. This ensures that your spaceship travels the exact same total distance over three real-world seconds, regardless of whether the computer drew 180 frames or only 45 frames during that time span.
 
 To implement this reliably, developers often build a **Step Motion Accumulator**. This is a specific programming pattern that gathers up the fluctuating delta time every frame. If the accumulated time exceeds a fixed, predictable physics time-step (for example, 1/60th of a second), the physics engine completely updates the object's position, subtracts that time step from the accumulator, and repeats. This rigorous decoupling of the visual rendering loop from the mathematical physics loop guarantees that your simulations run flawlessly, predictably, and deterministically on every single device, no matter how much the computer hardware struggles!
-
 
 !!! mascot-celebration "Chapter Complete!"
     ![Palette celebrating](../../img/mascot/celebration.png){{ class="mascot-admonition-img" }}

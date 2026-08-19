@@ -1,3 +1,4 @@
+
 ---
 quality_score: 100
 readability_score: 62
@@ -55,11 +56,10 @@ This chapter builds on concepts from:
 
 ---
 
-
 !!! mascot-welcome "Welcome to Chapter 6!"
     ![Palette waving welcome](../../img/mascot/welcome.png){ class="mascot-admonition-img" }
-    Palette here! Are you ready to dive into chapter 6? Time to color outside the loops!
 
+    Welcome to Chapter 6! If you've ever felt constrained by plotting every single point by hand, this is the chapter that sets you free. We are going to learn how to bend, twist, and spin the entire digital canvas itself. Time to color outside the loops!
 
 Welcome to the mind-bending world of matrix transformations! Up until now, we've been drawing shapes by explicitly telling our code exactly where to put them using X and Y coordinates. If you wanted a rectangle at `(100, 100)`, you typed `rect(100, 100, 50, 50)`. 
 
@@ -100,8 +100,7 @@ function draw() {
 
 !!! mascot-tip "Palette's Tip"
     ![Palette tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
-    !!! tip Palette
- the Chameleon Says"
+
     Hey coders! When I change colors, I change my whole skin. When you use translate, you change the whole grid! Remember, always draw your shapes at `(0, 0)` when you use transformations, and let the translation do the moving for you!
 
 ### Spinning the Grid
@@ -154,8 +153,7 @@ These functions create **Isolated Canvas Layers**, ensuring that the transformat
 
 !!! mascot-tip "Palette's Tip"
     ![Palette tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
-    !!! tip Palette
- the Chameleon Says"
+
     Push and Pop are best friends! If you use `push()`, you MUST use `pop()`. If you push too many times without popping, your code will crash because the stack gets too high! Always keep them in pairs!
 
 ### Transformation Order Logic
@@ -327,7 +325,6 @@ Create a sketch with three gears that interlock.
 Use variables like `angle`, **Push Function**, and **Pop Function** to ensure each gear has its own **Isolated Canvas Layers**. 
 
 You've got this! Matrices are powerful, but with a little practice, you'll be bending the coordinate grid to your will.
-
 
 !!! mascot-celebration "Chapter Complete!"
     ![Palette celebrating](../../img/mascot/celebration.png){{ class="mascot-admonition-img" }}

@@ -6,11 +6,12 @@ readability_score: 52
 
 !!! mascot-welcome "Welcome Artists!"
     ![Palette waving welcome](../../img/mascot/welcome.png){ class="mascot-admonition-img" }
-    Time to color outside the loops! Welcome to Chapter 15, where we'll turn your sketches into interactive dashboards. Let's blend some code!
 
-## The Mixing Desk Metaphor
+    Palette here! Want to give your users a dashboard to play with your generative art? This chapter shows you how to build sliders, buttons, and text inputs right on top of your canvas. Let's turn your sketches into professional, interactive tools!
 
 Imagine stepping into a professional recording studio or a live concert venue. What is the first thing that catches your eye? It is almost certainly the massive mixing desk—a glowing dashboard covered in hundreds of sliders, buttons, knobs, and dials. The audio engineer uses this interface to shape the music, tweaking the bass, raising the vocals, and adjusting the tempo in real-time. 
+
+## The Mixing Desk Metaphor
 
 Up until now, your p5.js sketches have been a bit like a pre-recorded track or an instrument that only responds to simple mouse clicks and keyboard presses. While mouse positions and keyboard events are fantastic for direct interaction, they can sometimes feel limiting. What if you want your users to choose a specific color from a palette, type in their name, select a mode from a list, or smoothly transition between different sizes using a sliding scale? 
 

@@ -67,11 +67,12 @@ In this chapter, we transition from setting up our digital canvas to actually le
 
 !!! mascot-welcome "Time to Draw!"
     ![Palette waving welcome](../../img/mascot/welcome.png){ class="mascot-admonition-img" }
-    Welcome to Chapter 2! Now that we have our canvas stretched and ready, it's time to start making marks. We're going to learn the vocabulary of shapes. Just like learning to mix primary colors, mastering these basic primitives is the secret to drawing anything you can imagine!
 
-## The Simplest Mark: Points and Lines
+    Welcome to Chapter 2, artists! Sure, a blank canvas is exciting, but it's time to actually start making marks. In this chapter, we'll give you the fundamental geometric building blocks you need to sketch absolutely anything your imagination can dream up. Grab your digital stylus and let's get drawing!
 
 The absolute simplest mark you can make on a digital canvas is a **Point Primitive**. A point occupies exactly one unit of space on your pixel grid. It is defined by two numbers: its horizontal `x` position and its vertical `y` position. 
+
+## The Simplest Mark: Points and Lines
 
 Drawing a point in p5.js is as simple as calling `point(x, y)`. While a single point might not seem incredibly useful, remember that a digital photograph is nothing more than millions of colored points arranged in a grid. In generative art, we often use thousands of points to create "particle systems"—simulations of rain, smoke, or swarming bees.
 
@@ -124,8 +125,6 @@ Instead, you can change the drawing behavior using **Rect Mode Center** (`rectMo
 !!! mascot-thinking "The Pinning Metaphor"
     ![Palette thinking](../../img/mascot/thinking.png){ class="mascot-admonition-img" }
     Think of `rectMode` like pinning a photograph to a corkboard. `rectMode(CORNER)` means you push the thumbtack through the top-left corner of the photo. `rectMode(CENTER)` means you push the thumbtack through the exact middle.
-
-
 
 ## Curves and Arcs: The Compass and Protractor
 
@@ -189,8 +188,6 @@ Sometimes, you only want an outline, making the shape completely transparent on 
     ![Palette warning](../../img/mascot/warning.png){ class="mascot-admonition-img" }
     Styling commands like `fill()`, `strokeWeight()`, and `noStroke()` are persistent! If you say `noStroke()` to draw a borderless circle, *every* shape you draw after that will also have no border, until you explicitly turn the stroke back on. The computer remembers your last command indefinitely.
 
-
-
 ## Custom Polygons: Connecting the Dots
 
 What happens when you want to draw a 5-sided pentagon? Or a 12-sided star? The standard primitives (`rect`, `triangle`) are insufficient. You need to define a custom geometry point by point.
@@ -216,8 +213,6 @@ Sometimes you need to draw a shape with a hole punched out of the middle, like a
 
 To achieve this, you start a normal `beginShape()`, draw the outer boundary, and then call the **Begin Contour Function** (`beginContour()`). Inside the contour block, you define the vertices of the *hole*. Crucially, the vertices of the hole must be defined in the *opposite direction* of the outer boundary (e.g., if you drew the outside clockwise, you must draw the inside hole counter-clockwise). 
 
-
-
 Let's imagine you are trying to draw a slice of Swiss cheese. A yellow rectangle is easy. But how do you draw the holes? You could draw background-colored circles on top of the yellow rectangle, but what if there's a complex, moving image *behind* the cheese? If you just draw gray circles, they will block the image behind the cheese. You need *actual holes* where the geometry does not exist, allowing the background to show through.
 
 To achieve this, you start a normal `beginShape()`, draw the outer boundary of the Swiss cheese slice, and then call the **Begin Contour Function** (`beginContour()`). Inside the contour block, you define the vertices of the *hole*. Crucially, the vertices of the hole must be defined in the *opposite direction* of the outer boundary (e.g., if you drew the outside clockwise, you must draw the inside hole counter-clockwise). This directional shift is what tells the graphics engine "this is negative space, subtract it from the fill."
@@ -242,7 +237,6 @@ beginShape();
   endContour();
 endShape(CLOSE);
 ```
-
 
 ## The Art of Splines: Bézier Curves
 
@@ -285,8 +279,6 @@ Type: MicroSim
 
 Implementation: Store the 4 coordinate pairs in variables. Use `dist()` to check for mouse drag collisions on the handles. Render the curve with `bezier()` and the tangent lines with standard `line()` calls.
 </details>
-
-
 
 ## Mathematical Geometry: The Invisible Fences
 

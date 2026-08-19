@@ -51,10 +51,10 @@ This chapter builds on concepts from:
 
 ---
 
-
 !!! mascot-welcome "Welcome to Generative Typography!"
     ![Palette waving welcome](../../img/mascot/welcome.png){ class="mascot-admonition-img" }
-    Time to color outside the loops! Let's blend some code and see what happens when letters break free from their rigid lines.
+
+    Hey artists! Letters don't have to be boring, static blocks of ink on a page. This chapter gives you the tools to explode fonts, manipulate outlines, and treat words as living, kinetic geometry. Get ready to completely reinvent how you look at text!
 
 For centuries, the printing press locked letters into rigid metal blocks. Each character was static, unchanging, and confined to a strict grid. Today, the digital brush liberates these letterforms. In p5.js, typography isn't just about stamping ink onto a page; it's about treating text as living, breathing data. We can stretch, explode, and reconstruct words dynamically. 
 
@@ -127,7 +127,7 @@ When you load a custom font, it becomes a **p5 Font Class Object**. This object 
     ![Palette thinking](../../img/mascot/thinking.png){ class="mascot-admonition-img" }
     Measuring text bounds is crucial when you want to draw a tight rectangle around a word or detect if the mouse is hovering over it!
 
-Let's see how we can load a font and measure its bounds:
+    Let's see how we can load a font and measure its bounds:
 
 ```javascript
 let myFont;
@@ -380,7 +380,6 @@ function draw() {
 
 By dissecting the traditional approach to text rendering, we can build dynamic, interactive, and visually striking applications. Whether you are using a **System Web Font Stack** or loading custom **OTF TTF Font Support**, the possibilities are boundless when you treat text as data.
 
-
 ### Understanding ASCII Art Text Canvas in Depth
 
 ASCII art is a fascinating intersection of typography and image processing. By mapping the brightness of an image to specific characters, we can recreate photographs using only text. The characters act as "pixels" with varying density. Darker pixels might be represented by characters like '@' or '#', which cover a large area of their bounding box. Lighter pixels are represented by characters like '.' or ' ', which have less visual weight.
@@ -537,4 +536,3 @@ Furthermore, the integration of physics engines into creative coding environment
 As we look to the future, the intersection of typography and artificial intelligence holds immense potential. Machine learning models can analyze vast datasets of letterforms, generating novel typefaces that blend historical styles with futuristic aesthetics. Additionally, natural language processing algorithms can analyze the semantic meaning of text, automatically adjusting its visual representation to enhance communication and emotional impact.
 
 In conclusion, the journey of typography in creative coding is a testament to the continuous interplay between technology and artistic expression. By embracing the digital brush, we unlock unprecedented possibilities for typographic innovation. As you continue to explore the capabilities of p5.js, remember that text is not merely a vehicle for information; it is a versatile and expressive medium waiting to be shaped by your imagination. The canvas is your playground, and the alphabet is your palette.
-

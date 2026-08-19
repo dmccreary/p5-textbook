@@ -40,11 +40,12 @@ This chapter builds on concepts from:
 
 !!! mascot-welcome "Welcome to Chapter 16!"
     ![Palette waving welcome](../../img/mascot/welcome.png){ class="mascot-admonition-img" }
-    Time to color outside the loops! In this chapter, we're going to transform our web pages from plain white boxes into stunning, interactive spaces!
 
-## The Architecture of the Web: Interior Design Metaphor
+    Welcome to Chapter 16, artists! Your sketch is a masterpiece, but it deserves a beautiful frame to hang in. We'll be learning how to seamlessly blend your canvas into stunning, fully-styled web pages. Get ready to make your art look incredibly professional!
 
 Welcome back, artists! So far, our p5.js sketches have lived in isolation, floating aimlessly on a blank white webpage. But in the real world of web development, a canvas is just one piece of furniture in a much larger room. Think of building a webpage like designing the interior of a house. When you just throw furniture into a room without a plan, it is a mess.
+
+## The Architecture of the Web: Interior Design Metaphor
 
 To become a master web developer, you must learn to integrate your interactive canvas with standard HTML elements—buttons, sliders, text inputs, and other media—and organize them using modern CSS techniques. With **CSS Flexbox Layout** and **CSS Grid Styling**, you have the power of a professional interior designer. You can align, distribute, and structure your elements exactly where you want them.
 
@@ -95,8 +96,6 @@ If you need real-time, instantaneous feedback—for example, expanding a shape d
 !!! mascot-thinking "Wait, what's the difference?"
     ![Palette thinking](../../img/mascot/thinking.png){ class="mascot-admonition-img" }
     The `changed` event waits for the user to finish completely (like hitting Enter). The `input` event fires constantly on every tiny adjustment (like dragging a volume slider)!
-
-
 
 ## Mastering the Layout: Flexbox and Grid
 
@@ -164,4 +163,3 @@ By mastering the integration of HTML DOM elements, CSS styling, and responsive e
 !!! mascot-celebration "Chapter Complete!"
     ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     Fantastic work! You've mastered the art of layout and styling, turning your code into beautiful, functional spaces!
-

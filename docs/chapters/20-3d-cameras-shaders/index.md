@@ -41,14 +41,14 @@ This chapter builds on concepts from:
 
 ---
 
-
 !!! mascot-welcome "Welcome to the 3D Stage!"
     ![Palette waving welcome](../../img/mascot/welcome.png){ class="mascot-admonition-img" }
-    Time to color outside the loops! Today we are entering the magical realm of 3D rendering.
 
-## The Movie Director and Stage Lights
+    Welcome to the 3D stage, creators! Having 3D shapes is neat, but it's the cinematic lighting and materials that make them look truly spectacular. Dive into this chapter to learn how to direct your virtual cameras and light up your scenes like a pro!
 
 Imagine you are a movie director. You have an empty stage. It is completely pitch black. To make a movie, you need characters, you need materials for their costumes, you need cameras to capture the action, and most importantly, you need lights. Without lights, everything remains hidden in the void. In p5.js, working in WebGL mode is exactly like being a movie director on a digital stage. You are responsible for placing the objects, moving the camera, and setting up the stage lights. 
+
+## The Movie Director and Stage Lights
 
 When you create a 3D scene, you are basically writing the script for how the computer should draw shapes and illuminate them. This process involves a lot of math, but don't worry, p5.js handles the heavy lifting. All you have to do is make the creative choices. 
 
@@ -82,7 +82,7 @@ For shiny objects like plastic, metal, or wet surfaces, you need **Specular Mate
     ![Palette tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
     Combining different materials is key to creating realistic objects! Try mixing specular highlights with a subtle ambient base.
 
-Sometimes, a solid color isn't enough. What if you want your object to look like it's made of wood, brick, or even have a picture painted on it? That's where the **Texture Mapping Function** comes in. Texture mapping takes a 2D image and wraps it around a 3D object, much like wrapping paper on a present. You can use any image as a texture, and p5.js will calculate how to stretch and pin it to the surface of your geometry.
+    Sometimes, a solid color isn't enough. What if you want your object to look like it's made of wood, brick, or even have a picture painted on it? That's where the **Texture Mapping Function** comes in. Texture mapping takes a 2D image and wraps it around a 3D object, much like wrapping paper on a present. You can use any image as a texture, and p5.js will calculate how to stretch and pin it to the surface of your geometry.
 
 ## Shaders: The Ultimate Control
 
@@ -157,7 +157,6 @@ As the director, you also have to manage the staging. When you draw multiple obj
 - Adjusting the uniform sliders alters the visual output of the shader in real-time, demonstrating how the p5.js sketch communicates with the GPU.
 
 </details>
-
 
 ## Deep Dive: The Physics of Light
 

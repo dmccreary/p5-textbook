@@ -39,7 +39,8 @@ This chapter builds on concepts from:
 
 !!! mascot-welcome "Welcome, Creators!"
     ![Palette waving welcome](../../img/mascot/welcome.png){ class="mascot-admonition-img" }
-    Welcome back, artists! Time to color outside the loops! Today we are moving beyond the mouse and keyboard and stepping into the physical world of touch and motion! Let's blend some code!
+
+    Welcome back, creators! The world isn't just keyboards and mice anymore; it's screens you can touch and devices you can shake. Dive into this chapter to learn how to make your art respond to swipes, pinches, and physical movement. Time to color outside the loops!
 
 Have you ever wondered how your smartphone knows when you turn it sideways to watch a video, or how a mobile game lets you steer a car just by tilting the device? The answer lies in the incredible array of tiny sensors packed inside modern mobile devices. In this chapter, we are going to learn how to access those sensors and use them to make our interactive art and games come alive in a completely new way. 
 
@@ -161,7 +162,7 @@ function isTouchingCircle(px, py, cx, cy, radius) {
     ![Palette giving a tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
     The `dist()` function is your best friend when working with circles! It uses the Pythagorean theorem under the hood to measure the exact distance between two points!
 
-The concept of hit testing scales up to more complex shapes using techniques like polygon hit testing, but rectangles and circles cover 90% of use cases in 2D interactive design. By combining Hit Test Point Rect and Hit Test Point Circle, you can create intricate, responsive interfaces.
+    The concept of hit testing scales up to more complex shapes using techniques like polygon hit testing, but rectangles and circles cover 90% of use cases in 2D interactive design. By combining Hit Test Point Rect and Hit Test Point Circle, you can create intricate, responsive interfaces.
 
 Imagine a game where you have to tap falling stars. The stars are circles, so you use Hit Test Point Circle to check if the user's tap coordinates intersect with any of the stars on screen. If `true`, you remove the star and add a point to the score!
 
