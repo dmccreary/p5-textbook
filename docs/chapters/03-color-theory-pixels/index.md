@@ -108,10 +108,9 @@ function draw() {
 }
 ```
 
-> [!TIP]
-!!! mascot-tip "Palette's Tip"
-    ![Palette tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
-    When you use `fill(255, 0, 0)`, you are telling the computer's microscopic lighting crew to turn the red spotlight all the way up to maximum, and turn the green and blue spotlights completely off! If you want yellow, just turn on Red and Green at the same time: `fill(255, 255, 0)`!
+!!! mascot-thinking "The Spotlight Metaphor"
+    ![Palette thinking](../../img/mascot/thinking.png){ class="mascot-admonition-img" }
+    Think of `fill(255, 0, 0)` not as mixing paint, but as directing a microscopic lighting crew. You are commanding them to turn the red spotlight up to maximum brightness, while turning the green and blue spotlights completely off! This additive light model is the foundational architecture of every digital screen you've ever looked at.
 
 What if you just want to draw something simple, like a black and white checkerboard or a stormy gray cloud? Sometimes you only want a shade of gray, varying purely from black to white with no color hue at all. For this, p5.js provides a convenient shortcut called the **Grayscale Value Syntax**. Instead of typing out three identical numbers like `fill(128, 128, 128)` to get a medium gray, you can just provide a single number: `fill(128)`. 
 - `fill(0)` gives you pure black (all lights off).
@@ -239,10 +238,9 @@ In p5.js, the visual canvas is ultimately just a grid of pixels. To gain access 
 
 Once the data is loaded into the `pixels` array, we can use a `for` loop to write code that mathematically alters those numbers. However, altering the numbers in the array does not automatically change the screen! The array is just a staging area in the computer's memory. After we have finished making our mathematical changes to the array, we must call the **Update Pixels Function**, written as `updatePixels()`, to blast our modified data back onto the actual screen.
 
-> [!NOTE]
-!!! mascot-tip "Palette's Tip"
-    ![Palette tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
-    Always remember the magical pixel sandwich! `loadPixels()` is the bottom slice of bread, `updatePixels()` is the top slice, and your crazy pixel math is the delicious filling in the middle. You can't eat the sandwich without both slices of bread! If you forget `updatePixels()`, nothing on your screen will change!
+!!! mascot-warning "The Missing Bread Pitfall"
+    ![Palette warning](../../img/mascot/warning.png){ class="mascot-admonition-img" }
+    A common trap when editing the pixel array is writing brilliant math but seeing absolutely nothing change on the canvas! This happens because the array is just temporary memory. To fix this, you must always "close the sandwich" by explicitly calling `updatePixels()` at the very end of your code block to push your changes to the screen.
 
 #### Unraveling the Grid: **Pixels Array Indexing**
 
@@ -258,6 +256,10 @@ To find the exact starting index location for a specific pixel's red value at an
 `let index = (x + y * width) * 4;`
 
 Let's break that down. `y * width` skips over all the full rows of pixels above the one we want. `+ x` moves us across the current row to the specific column we want. And `* 4` multiplies the whole position by 4 because every single pixel requires four individual slots of memory.
+
+!!! mascot-encourage "The Pixel Math Wall"
+    ![Palette encouraging](../../img/mascot/encouraging.png){ class="mascot-admonition-img" }
+    If the formula `(x + y * width) * 4` feels incredibly overwhelming right now, take a deep breath. That's completely normal! Converting 2D space into 1D memory is one of the hardest concepts in creative coding. Don't worry about memorizing the formula—just copy and paste it until it clicks. You've got this!
 
 Once you calculate the starting index, you can set the color values directly in the array memory:
 
@@ -342,6 +344,6 @@ From painting with pure, additive light in the RGB space, to navigating the intu
 
 You have learned to draw the shapes, and you have learned to light them up. In the next chapter, we will take these glowing, colored shapes and breathe the final element of life into them: movement over time!
 
-!!! mascot-celebration "Chapter Complete!"
-    ![Palette celebrating](../../img/mascot/celebration.png){{ class="mascot-admonition-img" }}
-    Amazing work! You've mastered another set of core concepts. Take a moment to celebrate!
+!!! mascot-celebration "Illuminated!"
+    ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
+    Incredible work! You just mastered additive RGB mixing, the HSB color wheel compass, array interpolation, and the complex 1D math of direct pixel manipulation! You are officially painting with pure math and light.

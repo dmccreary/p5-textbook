@@ -64,7 +64,7 @@ For even more dramatic lighting, like a flashlight or a theatrical spotlight, yo
 
 !!! mascot-thinking "Lighting Strategy"
     ![Palette thinking](../../img/mascot/thinking.png){ class="mascot-admonition-img" }
-    Think about how different light sources evoke different moods. A directional light might feel like a sunny day, while a spotlight feels like an interrogation room!
+    Notice how lighting in 3D isn't actually "light" at all—it's just a math equation! We are calculating the angle between a light ray and the surface of our geometry to determine what color the pixel should be. You're painting with geometry!
 
 ## Dressing the Set: Materials
 
@@ -80,7 +80,7 @@ For shiny objects like plastic, metal, or wet surfaces, you need **Specular Mate
 
 !!! mascot-tip "Material Matters"
     ![Palette tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
-    Combining different materials is key to creating realistic objects! Try mixing specular highlights with a subtle ambient base.
+    Want your shapes to look like shiny, wet plastic? Call `specularMaterial(255)` followed by a high `shininess(100)` right before you draw your geometry!
 
     Sometimes, a solid color isn't enough. What if you want your object to look like it's made of wood, brick, or even have a picture painted on it? That's where the **Texture Mapping Function** comes in. Texture mapping takes a 2D image and wraps it around a 3D object, much like wrapping paper on a present. You can use any image as a texture, and p5.js will calculate how to stretch and pin it to the surface of your geometry.
 
@@ -98,7 +98,7 @@ For example, you could write a **Fragment Shader Filter** that takes an image an
 
 !!! mascot-encourage "Shader Magic"
     ![Palette encouraging](../../img/mascot/encouraging.png){ class="mascot-admonition-img" }
-    Shaders can look intimidating with all that math, but they are the secret behind the most stunning visual effects. Take it step by step!
+    If GLSL and vertex math feel completely overwhelming right now, take a deep breath—that's completely normal! Shaders are notoriously tricky, but just like when you learned `for` loops, start by tweaking one number at a time and watch what happens. You've got this!
 
 ## Importing the Cast: 3D Models
 
@@ -118,7 +118,7 @@ As the director, you also have to manage the staging. When you draw multiple obj
 
 !!! mascot-celebration "Bravo! Cut! Print!"
     ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
-    You've mastered the digital stage! Your movies are going to look amazing.
+    Incredible work! You just mastered ambient and specular lighting, texture mapping, and even wrote your own GLSL shaders. You are a true director of the digital stage!
 
 ## MicroSim: Interactive Lighting
 

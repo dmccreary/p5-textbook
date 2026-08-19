@@ -99,7 +99,7 @@ When things go wrong, the **Browser Developer Console** is your best friend for 
 
 !!! mascot-warning "Security Blockers!"
     ![Palette warning](../../img/mascot/warning.png){ class="mascot-admonition-img" }
-    If your local sounds aren't loading, you might be hitting a CORS issue! Let's check our local server.
+    Watch out for the CORS blocker! If you just double-click your `index.html` file, your browser's security policy will block your local audio and image files from loading, resulting in a blank screen. To fix this, you must run a **Local Web Server Python** (like `python -m http.server`) and open `localhost` in your browser!
 
     When working with local audio files, you might encounter a **p5 Sound Local Host CORS** error. Browsers enforce a strict **CORS Security Policy** to prevent malicious scripts from reading local files. To solve this, you need a **Local Web Server Python** (like `python -m http.server`) to serve your files properly. Once your environment is configured, you can work anywhere using the **Offline p5 Reference Guide** and manage projects with the **p5 CLI Command Tool**.
 
@@ -133,7 +133,11 @@ Here is an example of setting up your HTML file to load p5.js locally. Notice ho
 
 ## Version Control and Modern Tooling
 
-At the workbench, professionals track changes. Using **Git Version Control**, you can save snapshots of your code. You'll push these snapshots to **GitHub Repository Hosting** for backup and collaboration. When you're ready to show the world, **GitHub Pages Deployment** hosts your interactive sketches for free. Documentation for your projects can be generated beautifully using a **MkDocs Material Textbook** layout.
+At the workbench, professionals track changes. Using **Git Version Control**, you can save snapshots of your code. You'll push these snapshots to **GitHub Repository Hosting** for backup and collaboration.
+
+!!! mascot-tip "Time Travel with Git"
+    ![Palette giving a tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
+    Here's a pro-tip for fearless coding: commit your changes to **Git Version Control** frequently! If you accidentally break your sketch while experimenting, you don't have to panic. You can simply time-travel back to your last working commit with a single click. When you're ready to show the world, **GitHub Pages Deployment** hosts your interactive sketches for free. Documentation for your projects can be generated beautifully using a **MkDocs Material Textbook** layout.
 
 Modern web development relies on the **npm Package Manager** to install external libraries. To optimize your code for speed, a **Bundler Vite Webpack** will combine your files, outputting a **Minified Library Production** build. Even when the code is squished, **Source Maps Debugging** lets you read your original lines in the browser. To keep your code clean, the **ESLint Code Formatter** spots errors, while **Prettier Code Formatting** ensures your indentation is flawless.
 
@@ -195,7 +199,7 @@ Generative art is built on a deep **Creative Coding Art History**. We stand on t
 
 !!! mascot-thinking "Connecting the Logic"
     ![Palette thinking](../../img/mascot/thinking.png){ class="mascot-admonition-img" }
-    Notice how these pioneers broke down complex ideas? That's computational thinking!
+    Think about it like this: computational thinking isn't just about writing code; it's a mental model for translating artistic vision into logic. By breaking a masterpiece down through **Algorithmic Decomposition**, you turn an overwhelmingly complex painting into a series of simple, repeatable brush strokes.
 
     To replicate their success, we must apply every **Computational Thinking Concept**: breaking large tasks down via **Algorithmic Decomposition**, identifying repetitive sequences with **Pattern Recognition Visual**, simplifying details through **Abstraction Problem Solving**, and formulating logical instructions via **Algorithm Design Step**. This synergy leads to a beautiful **Artistic Computational Synthesis**.
 
@@ -244,6 +248,10 @@ If you are guiding others, start with a **Live Coding Demonstration** to show ho
 
 Provide **Scaffolding Starter Code** to reduce initial friction. Challenge their logic using **Parsons Problems Syntax** (reordering mixed lines of code) and **Predict Output Exercises** to strengthen their **Debugging Mental Model**. 
 
+!!! mascot-encourage "Embrace the Bugs"
+    ![Palette encouraging](../../img/mascot/encouraging.png){ class="mascot-admonition-img" }
+    If your screen is suddenly filled with red error text, take a deep breath! Every programmer, from beginners to experts, makes typos and scope errors. Bugs aren't failures; they are just puzzles waiting for your new **Debugging Mental Model** to solve them.
+
 Be prepared for standard pitfalls:
 - **Common Misconception Background**: Putting `background()` in `setup()` instead of `draw()`.
 - **Common Misconception PushPop**: Forgetting to isolate transformations.
@@ -278,7 +286,7 @@ Ultimately, the goal of transitioning from the sandbox to the workbench is to em
 
 !!! mascot-celebration "Master of the Workbench!"
     ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
-    Incredible work! You are fully equipped to build, debug, and share your interactive masterpieces with the world. Keep blending code!
+    Incredible work! You just mastered configuring a local `VS Code Code Editor`, squashing bugs with `JavaScript Breakpoints`, and sharing your sketches via `GitHub Pages Deployment`!
 
 ### Additional Context on Tooling
 

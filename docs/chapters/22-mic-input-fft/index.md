@@ -106,13 +106,17 @@ While the microphone captures the raw audio, we often just want to know how loud
 
 !!! mascot-tip "Smoothing is Key!"
     ![Palette giving a tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
-    If your shapes are twitching too much, try using `lerp()` to create a **Smooth Amplitude Level**!
+    Here's a secret for buttery visuals: raw microphone data flickers way too fast. Wrap your volume variable in `lerp(currentVol, targetVol, 0.1)` to smoothly glide between values and create a **Smooth Amplitude Level**. Your users' eyes will thank you!
 
 ## The Prism: Fast Fourier Transform (FFT)
 
 Now we move from the oscilloscope to the prism. The **p5 FFT Class Concept** introduces the Fast Fourier Transform, a powerful algorithm that analyzes a sound wave and separates it into its individual frequencies. By calling **FFT Analyze Spectrum**, the algorithm returns a **FFT Frequency Bins Array**, typically containing 1024 values representing the volume at different frequency bands.
 
-With this array, we can ask for the energy in specific frequency ranges. 
+With this array, we can ask for the energy in specific frequency ranges.
+
+!!! mascot-thinking "Unbaking the Cake"
+    ![Palette thinking](../../img/mascot/thinking.png){ class="mascot-admonition-img" }
+    Think about it like this: an oscilloscope shows you *when* a sound is loud, but the Fast Fourier Transform shows you *what* the sound is made of. It's like a magical algorithm that unbakes a cake to tell you exactly how many cups of bass, mid, and treble went into it! 
 - **FFT Get Energy Bass** (low frequencies, like a kick drum)
 - **FFT Get Energy LowMid** (cellos and deep voices)
 - **FFT Get Energy Mid** (standard vocals and guitars)
@@ -218,6 +222,10 @@ We can also visualize sound over a longer period using an **Audio Spectrogram Pl
 ### Handling Feedback
 When working with live microphones and speakers simultaneously, you might experience a loud squealing noise. This is acoustic feedback, where the microphone picks up the speaker output, amplifies it, and plays it back in a loop. To prevent this, professional systems use a **Microphone Feedback Gate** (or noise gate) to mute the mic when the volume drops below a certain level.
 
+!!! mascot-warning "Beware the Squeal!"
+    ![Palette warning](../../img/mascot/warning.png){ class="mascot-admonition-img" }
+    Watch out for the infinite feedback loop! If your microphone hears your speakers, it will amplify the sound until it creates a deafening screech. To avoid blasting your ears, always wear headphones while coding audio-reactive sketches!
+
 ### Entering the Third Dimension
 Finally, we can map our FFT data to 3D space using WEBGL. A **3D Audio Reactive Visual** might use the bass energy to deform a 3D sphere, or map the spectrum across a flowing 3D terrain grid, creating a mesmerizing synthetic landscape that dances to the music.
 
@@ -226,6 +234,10 @@ Finally, we can map our FFT data to 3D space using WEBGL. A **3D Audio Reactive 
 To truly understand how our digital prism works, we must briefly explore the underlying mathematics. The Fast Fourier Transform (FFT) is an incredibly efficient algorithm for computing the Discrete Fourier Transform (DFT). The DFT takes a discrete signal in the time domain (our audio samples) and transforms it into the frequency domain. 
 
 The core idea, formulated by Jean-Baptiste Joseph Fourier in the 19th century, is that any complex periodic wave can be constructed by adding together a series of simple sine and cosine waves of varying frequencies and amplitudes. When we call the analyze method on our FFT object, the algorithm is essentially working backwards: it takes the complex, chaotic wave recorded by the microphone and calculates the exact recipe of simple sine waves needed to recreate it.
+
+!!! mascot-encourage "Breathe and Trust the Math"
+    ![Palette encouraging](../../img/mascot/encouraging.png){ class="mascot-admonition-img" }
+    If the calculus behind the Fast Fourier Transform feels overwhelming, that's completely normal! You don't need to manually calculate sine wave interference to be an artist. Just trust `p5.FFT` to hand you the frequencies, and focus on the beautiful visuals you can paint with them.
 
 ### The Anatomy of an Audio Buffer
 
@@ -321,4 +333,4 @@ If we apply a Fast Fourier Transform and find a high concentration of energy in 
 
 !!! mascot-celebration "Awesome Work!"
     ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
-    You've mastered the oscilloscope and the prism! Your code is now dancing to the rhythm of the world! Keep experimenting and painting with sound!
+    Incredible work! You just mastered capturing real-time `p5.AudioIn` data, extracting frequency bins with the Fast Fourier Transform, and building dynamic beat detection algorithms!

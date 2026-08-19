@@ -56,7 +56,7 @@ Furthermore, we now have a third axis. We have our familiar X-axis (left and rig
 
 !!! mascot-thinking "Thinking about Depth"
     ![Palette thinking](../../img/mascot/thinking.png){ class="mascot-admonition-img" }
-    The Z-axis can be tricky! Remember: positive Z comes OUT of the screen towards you, and negative Z goes INTO the screen away from you.
+    Notice how this changes our whole relationship with the canvas! We aren't just drawing shapes anymore; we are placing objects in a room. The Z-axis is the distance between your eyes and the monitor—reach your hand out, that's positive Z!
 
     The Z Axis Depth Position is what gives our world volume. If you increase your Z value (make it a positive number), your object will move closer to you, appearing larger. If you decrease your Z value (make it a negative number), your object will move further away, deeper into the screen, appearing smaller. 
 
@@ -91,7 +91,7 @@ Next, we have the **Sphere 3D Primitive**. This is a perfectly round ball, like 
 
 !!! mascot-tip "Smooth Sculpting"
     ![Palette giving a tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
-    Want your sphere to look extra smooth? You can add detail parameters to increase the number of polygons! Let's blend some code!
+    Want your sphere to look extra smooth instead of blocky? You can pass two extra numbers for detail: `sphere(radius, detailX, detailY)`. Try `sphere(50, 24, 24)` for a perfectly round orb!
 
     Then there is the **Cylinder 3D Primitive**. Imagine a soup can or a column. A cylinder has a circular top and bottom, connected by a curved surface. You can control its radius and height. Cylinders are great for creating tree trunks, pipes, or arms and legs.
 
@@ -131,7 +131,7 @@ While orbit control is great for quick inspection, sometimes you need precise co
 
 !!! mascot-warning "Don't Get Lost!"
     ![Palette warning](../../img/mascot/warning.png){ class="mascot-admonition-img" }
-    When setting your camera position, make sure you keep track of your coordinates. It's easy to accidentally point the camera into empty space and think your code is broken!
+    A common trap when playing with the camera is accidentally pointing it into empty space, making you think your code is broken! If your shapes disappear, you can always reset the camera to the default by calling `camera()` with no arguments.
 
     Finally, we need to talk about how the camera actually sees the world. There are two main ways a camera can interpret 3D space, known as camera modes.
 
@@ -141,7 +141,7 @@ However, there is another mode called the **Ortho Camera Mode**, short for ortho
 
 !!! mascot-celebration "You Did It!"
     ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
-    You've successfully moved into the third dimension! You have your clay, your turntable, and your camera. I can't wait to see what you sculpt!
+    Incredible work! You just mastered the WebGL renderer, the 3D coordinate system, and primitive geometries like boxes and spheres. You are officially a digital sculptor!
 
     To fully grasp the magnitude of what you've learned, let's dive deeper into the history and mechanics of these concepts. For decades, computer scientists struggled with the challenge of representing three-dimensional space on a two-dimensional screen. The mathematics required to calculate perspective, lighting, and hidden surfaces was incredibly demanding for early processors. However, as hardware evolved, so did the software interfaces. The advent of hardware-accelerated graphics pipelines revolutionized the industry, allowing for real-time rendering of complex scenes. WebGL, the technology underlying our new 3D capabilities in p5.js, is a direct descendant of these early innovations. It provides a JavaScript API for rendering interactive 2D and 3D graphics within any compatible web browser without the use of plug-ins. WebGL is fully integrated with other web standards, allowing GPU-accelerated usage of physics and image processing and effects as part of the web page canvas. By leveraging the WEBGL Renderer Mode, you are tapping into a profound lineage of computer graphics research.
 

@@ -89,7 +89,7 @@ Finally, when the finger is lifted off the glass, a **Touch Ended Event** occurs
 
 !!! mascot-thinking "Tracking Multiple Touches"
     ![Palette thinking](../../img/mascot/thinking.png){ class="mascot-admonition-img" }
-    Remember, artists! Because touches is an array, you have to iterate through it using a loop if you want to draw something at every finger's location! Each touch object in the array has an `x`, `y`, and `id` property.
+    Think about it like this: your sketch is no longer tracking a single pointer, but conducting an orchestra of simultaneous interactions. Notice how shifting from a single `mouseX` coordinate to an entire array of touches fundamentally changes how we must architect our logic to handle multiple independent actors at once?
 
 <details markdown="1">
 <summary>MicroSim: Multi-Touch Canvas</summary>
@@ -160,7 +160,7 @@ function isTouchingCircle(px, py, cx, cy, radius) {
 
 !!! mascot-tip "Math Magic!"
     ![Palette giving a tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
-    The `dist()` function is your best friend when working with circles! It uses the Pythagorean theorem under the hood to measure the exact distance between two points!
+    Want to save some time? Instead of writing out the complex Pythagorean theorem for every circular hit test, just use p5.js's built-in `dist()` function! It calculates the exact distance between two points behind the scenes.
 
     The concept of hit testing scales up to more complex shapes using techniques like polygon hit testing, but rectangles and circles cover 90% of use cases in 2D interactive design. By combining Hit Test Point Rect and Hit Test Point Circle, you can create intricate, responsive interfaces.
 
@@ -229,7 +229,7 @@ If you are building a 3D first-person game, you might want the mouse movements t
 
 !!! mascot-warning "Pointer Lock Constraints"
     ![Palette warning](../../img/mascot/warning.png){ class="mascot-admonition-img" }
-    Be careful with Pointer Lock! Browsers require a user to explicitly click the canvas before you can request a pointer lock, for security reasons. You can't just trap their mouse automatically!
+    Watch out for security blocks! Browsers will prevent your code from trapping the user's mouse unless they initiate the action. To avoid a broken interface, always tie your `requestPointerLock()` call to a `mouseClicked()` event rather than firing it automatically in `setup()`.
 
 <details markdown="1">
 <summary>MicroSim: Device Orientation Maze</summary>
@@ -325,4 +325,4 @@ As we continue our journey, remember that interaction is a dialogue between the 
 
 !!! mascot-celebration "You Did It!"
     ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
-    Masterful work, artists! You've learned how to read the physical world through code! From multi-touch to mobile sensors, your interactive palette is richer than ever. Keep exploring and painting with data!
+    Incredible work, artists! You just mastered the Touch Touches Array, multi-touch pinch gestures, and mapping Device Motion Acceleration to digital interactions. Your interactive palette is richer than ever!

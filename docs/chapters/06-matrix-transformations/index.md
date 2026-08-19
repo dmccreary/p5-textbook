@@ -101,7 +101,7 @@ function draw() {
 !!! mascot-tip "Palette's Tip"
     ![Palette tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
 
-    Hey coders! When I change colors, I change my whole skin. When you use translate, you change the whole grid! Remember, always draw your shapes at `(0, 0)` when you use transformations, and let the translation do the moving for you!
+    Want to save yourself a massive headache? Here is a shortcut: always draw your shapes exactly at `(0, 0)` when using transformations! Let `translate()` do the heavy lifting of moving the grid, and your shape will follow perfectly without you recalculating its center.
 
 ### Spinning the Grid
 
@@ -151,10 +151,10 @@ Think of the **Push Function** (`push()`) as saving your game before a boss figh
 
 These functions create **Isolated Canvas Layers**, ensuring that the transformations applied to one object don't accidentally leak over and affect the next object. The mathematical engine behind this relies on **Matrix Stack Operations**. When you `push()`, you add the current transformation state to a stack (like a stack of plates). When you `pop()`, you take the top plate off, returning to the previous state.
 
-!!! mascot-tip "Palette's Tip"
-    ![Palette tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
+!!! mascot-warning "Palette's Warning"
+    ![Palette warning](../../img/mascot/warning.png){ class="mascot-admonition-img" }
 
-    Push and Pop are best friends! If you use `push()`, you MUST use `pop()`. If you push too many times without popping, your code will crash because the stack gets too high! Always keep them in pairs!
+    Watch out for stack overflow crashes! If you call `push()` inside the `draw()` loop without a matching `pop()`, the browser memory will quickly fill up. A common fix is to immediately write `pop()` on the next line after `push()`, then insert your transformations between them.
 
 ### Transformation Order Logic
 
@@ -167,6 +167,11 @@ Let's say you want to draw a spinning square 100 pixels to the right.
 As a general rule, you should translate first, then rotate, then scale!
 
 ### Nested Transformation Trees: The Solar System
+
+!!! mascot-thinking "Palette's Insight"
+    ![Palette thinking](../../img/mascot/thinking.png){ class="mascot-admonition-img" }
+
+    Think about it like this... when your shoulder moves, your hand moves with it. The matrix stack isn't just saving coordinates; it is passing the coordinate system down a chain of dependents to create articulated movement.
 
 Our third metaphor is **The Solar System**, representing a **Hierarchical Transformation**. 
 
@@ -327,5 +332,6 @@ Use variables like `angle`, **Push Function**, and **Pop Function** to ensure ea
 You've got this! Matrices are powerful, but with a little practice, you'll be bending the coordinate grid to your will.
 
 !!! mascot-celebration "Chapter Complete!"
-    ![Palette celebrating](../../img/mascot/celebration.png){{ class="mascot-admonition-img" }}
-    Amazing work! You've mastered another set of core concepts. Take a moment to celebrate!
+    ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
+
+    Incredible work! You just mastered translating, rotating, scaling, and the matrix stack. You can now build complex, hierarchical digital worlds!

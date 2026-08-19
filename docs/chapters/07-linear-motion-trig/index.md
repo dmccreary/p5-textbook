@@ -82,10 +82,10 @@ function draw() {
 
 This simple addition (`xPosition += speed;`) is the beating heart of **Linear Motion Logic**. But what happens when the ball reaches the right edge of the canvas? Because we never told it to stop, it will continue moving to the right, into the vast, unseen digital void beyond the screen's boundaries.
 
-> [!TIP]
 !!! mascot-tip "Palette's Tip"
     ![Palette tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
-    Linear motion is great, but what happens when the ball reaches the edge of the screen? It's gone forever! You can use an `if` statement to check if the ball has gone too far and reset its position back to zero. This creates a wrapping effect! Or, you can multiply the speed by -1 to make the ball bounce back like it hit a wall!
+
+    Want a quick trick to keep objects from flying off the screen? Multiply their velocity by `-1` the moment they hit the edge! It instantly reverses their direction and creates a perfect bouncing effect with almost zero extra code.
 
 To handle edges, we use conditional statements (`if` statements) to reverse the velocity when the position exceeds the canvas boundaries. This turns simple displacement into a bouncing simulation, setting the stage for more complex behaviors.
 
@@ -99,7 +99,12 @@ To truly understand how trigonometric functions translate into motion, imagine a
 
 Now, take this mental image a step further. Imagine attaching a pen to the bottom of that bouncing Slinky. As the Slinky bounces up and down, you slowly drag a long piece of paper past it horizontally. What does the pen draw? It draws a perfect, smooth, continuous wave on the paper. 
 
-This wave shape is exactly what we get when we graph the sine and cosine functions! The up-and-down motion of the Slinky represents the value of the function, and the horizontal dragging of the paper represents the progression of time.
+This wave shape is exactly what we get when we graph the sine and cosine functions!
+
+!!! mascot-thinking "Palette's Insight"
+    ![Palette thinking](../../img/mascot/thinking.png){ class="mascot-admonition-img" }
+
+    Notice how the physical bouncing up and down perfectly maps to the Y-axis, while time progressing maps to the X-axis? You are translating a physical dimension into a temporal one! The up-and-down motion of the Slinky represents the value of the function, and the horizontal dragging of the paper represents the progression of time.
 
 #### Sine and Cosine: The Heartbeat of Animation
 
@@ -266,10 +271,10 @@ function draw() {
 
 This specific technique—calculating the delta, feeding it into `atan2`, and applying the resulting angle to a rotation—is the absolute foundation of **Rotational Tracking Motion**. Whether it's a turret aiming at an enemy, a character's eyes following the cursor, or a plant tilting toward the sun, `atan2` is the function that makes it happen.
 
-> [!TIP]
-!!! mascot-tip "Palette's Tip"
-    ![Palette tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
-    Heads up, coders! A very common mistake is flipping the arguments in `atan2`. Remember that it takes the Y difference first, then the X difference! It’s always `atan2(dy, dx)`, not `atan2(dx, dy)`. This quirk dates back to early computer math libraries, and it trips up even experienced programmers all the time!
+!!! mascot-warning "Palette's Warning"
+    ![Palette warning](../../img/mascot/warning.png){ class="mascot-admonition-img" }
+
+    Watch out for the great `atan2` trap! A common mistake is flipping the arguments by passing X before Y. Because of old math library standards, it always expects `atan2(dy, dx)`. If your objects are rotating strangely, check your argument order first!
 
 ### Mapping Values: The Universal Translator
 
@@ -347,5 +352,6 @@ By mastering the rigid predictability of **Linear Motion Logic**, understanding 
 When you learn to seamlessly link these mathematical properties together using the **Map Range Function**, your code transcends simple drawing. You are no longer just rendering shapes; you are choreographing intricate, dynamic systems that breathe, pulse, and interact with the fluidity of the natural world. Keep experimenting, keep tweaking those wave parameters, and watch your sketches come alive!
 
 !!! mascot-celebration "Chapter Complete!"
-    ![Palette celebrating](../../img/mascot/celebration.png){{ class="mascot-admonition-img" }}
-    Amazing work! You've mastered another set of core concepts. Take a moment to celebrate!
+    ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
+
+    Incredible work! You just mastered linear displacement, harmonic sine waves, and rotational tracking using atan2. You have everything you need to choreograph organic movement!

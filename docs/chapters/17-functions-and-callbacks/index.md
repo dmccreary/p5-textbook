@@ -94,7 +94,7 @@ The `return` statement is incredibly important. Without it, the function might d
 
 !!! mascot-thinking "Parameters vs Arguments"
     ![Palette thinking](../../img/mascot/thinking.png){ class="mascot-admonition-img" }
-    Remember, parameters are the empty boxes defined in the recipe itself, and arguments are what you actually put into those boxes when it's time to get cooking! It's a subtle but important distinction.
+    Think about it like this: parameters represent the mathematical blueprint of *possibility*, while arguments represent the *concrete reality* at a specific moment in time. Notice how treating a variable as a temporary, empty slot fundamentally changes how we architect our logic compared to hard-coding a static value?
 
 ## Speeding Things Up: Arrow Functions
 
@@ -171,7 +171,7 @@ chopOnions(() => {
 
 !!! mascot-tip "Anonymous Shortcuts"
     ![Palette giving a tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
-    Anonymous functions and arrow functions are best friends. You'll see them used together all the time as callbacks! It keeps your code nice and compact.
+    Want to save lines of code and keep your logic centralized? When setting up a one-time callback (like a button click listener), don't bother defining a named function elsewhere in your file. Drop a sleek arrow function `() => { ... }` directly into the argument slot instead!
 
 <details markdown="1">
 <summary>MicroSim: The Callback Kitchen</summary>
@@ -270,7 +270,7 @@ crispyWaffles.printSummary();  // The waffle object performs the action!
 
 !!! mascot-warning "Don't Forget 'this'!"
     ![Palette warning](../../img/mascot/warning.png){ class="mascot-admonition-img" }
-    When calling a method or accessing a property from *inside* a class definition, you absolutely must use the `this` keyword. If you just write `title` instead of `this.title`, JavaScript will panic because it won't know you mean the object's specific property!
+    Watch out for ReferenceErrors when designing classes! If you try to read a property inside a method by just typing `title`, JavaScript will search for a global variable and crash. To fix this, always prepend `this.` (e.g., `this.title`) to explicitly tell JavaScript you mean the property belonging to this specific instance.
 
 ## Inheriting Traits: Expanding the Blueprint
 
@@ -350,7 +350,7 @@ console.log(RecipeBlueprint.compareYield(basicPancakes, giantCake));
 
 !!! mascot-encourage "Keep Practicing!"
     ![Palette encouraging](../../img/mascot/encouraging.png){ class="mascot-admonition-img" }
-    Classes, inheritance, and object-oriented programming can feel very abstract and confusing at first glance. Please don't worry if it takes time to click! Keep visualizing them as blueprints (classes) and the actual, physical houses built from those blueprints (objects).
+    If object-oriented programming and inheritance feel incredibly abstract right now, that is completely normal! Just like mastering the complex coordinate system earlier in the book took a bit of practice, mastering structural blueprints takes time. Take a deep breath and keep experimenting—you've got this!
 
 <details markdown="1">
 <summary>MicroSim: The Object Factory</summary>
@@ -392,4 +392,4 @@ By mastering these concepts, you are no longer just writing disorganized lists o
 
 !!! mascot-celebration "Chef's Kiss! Masterpiece Completed!"
     ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
-    You did it! You've successfully mastered functions, callbacks, and the complex art of object-oriented programming. Your code is now incredibly organized, highly modular, and ready for massive software projects. Time to color outside the loops and build something amazing!
+    Incredible work! You just mastered ES6 Class Declarations, arrow function expressions, and managing asynchronous logic with callbacks. Your code is now incredibly organized, highly modular, and ready for massive software projects!

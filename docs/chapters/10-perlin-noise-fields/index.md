@@ -76,7 +76,9 @@ Think of Perlin noise (accessed via the `noise()` function in p5.js) as an ant w
 
 When you pass a value (like time or a coordinate) into the `noise(t)` function, it returns a value between 0 and 1. If you pass in `noise(1.0)` and it returns 0.6, and then you pass in `noise(1.01)`, the return value is mathematically guaranteed to be very close to 0.6, perhaps 0.61 or 0.59. 
 
-> "If you ever get confused, just remember this: `random()` has no memory of the past. `noise()` remembers its neighbors! `noise()` builds a continuous world, while `random()` throws darts at a board."
+!!! mascot-thinking "Continuity is Key"
+    ![Palette thinking](../../img/mascot/thinking.png){ class="mascot-admonition-img" }
+    Think about it like this: `random()` has no memory of the past, like throwing darts blindly. But `noise()` remembers its neighbors! It builds a continuous world because it's mapping a connected landscape.
 
 ## One-Dimensional Noise: The **Smooth Noise Landscape**
 
@@ -89,6 +91,10 @@ The secret to controlling this landscape is the "step size"—how much we increa
 - If we increase `t` by a very small amount (e.g., `t += 0.01`), we are taking tiny, cautious steps, and the landscape will be incredibly smooth and rolling.
 
 By using this 1D noise, you can procedurally generate the ground for a 2D side-scrolling video game, ensuring the player always has a smoothly varying path to run across, without ever having to draw the level yourself by hand.
+
+!!! mascot-warning "Frozen in Time?"
+    ![Palette warning](../../img/mascot/warning.png){ class="mascot-admonition-img" }
+    Watch out for stagnant noise! If you pass the exact same `t` value into `noise()` every single frame, your landscape will be completely frozen. Always remember to add a tiny amount (like `t += 0.01`) inside your `draw()` loop to make the landscape scroll!
 
 ## Two-Dimensional Noise: Textures and Maps
 
@@ -206,9 +212,7 @@ This allows us to inject extreme rarity and controlled scarcity into our generat
 
 !!! mascot-tip "Palette's Tip"
     ![Palette tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
-    Palette
-
-> "Weighted randomness is how nature balances ecosystems! If you are procedurally generating a forest, you don't want an equal number of oak trees and rare blue mushrooms. Give the oak trees a weight of 1000 and the mushrooms a weight of 2. Your world will instantly feel more realistic and balanced."
+    Here's a secret for easy balancing: don't use percentages for everything! Just give common items huge whole-number weights (like 1000 for oak trees) and rare items tiny weights (like 2 for magic mushrooms). Sum them up, and your procedural world will instantly feel realistic.
 
 ### Shaping Probability: **Monte Carlo Selection**
 
@@ -281,5 +285,5 @@ By mastering tools like Perlin noise, Monte Carlo selection, and weighted probab
 In the next chapters, we will take these organic shapes and generated worlds and begin wrapping them into reusable classes and complex objects!
 
 !!! mascot-celebration "Chapter Complete!"
-    ![Palette celebrating](../../img/mascot/celebration.png){{ class="mascot-admonition-img" }}
-    Amazing work! You've mastered another set of core concepts. Take a moment to celebrate!
+    ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
+    Incredible work! You just mastered generating Perlin noise landscapes, directing vector flow fields, and shaping probability with Monte Carlo selection! Your generative worlds are about to look stunning.

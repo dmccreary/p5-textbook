@@ -76,10 +76,9 @@ playerHealth = playerHealth - 20;
 
 Now, the `playerHealth` box holds the number 80. Notice that we didn't use the `let` keyword the second time. You only need to use `let` when you are creating the box for the very first time. After the box exists, you can just refer to it by its name to change what's inside. 
 
-!!! mascot-tip "Palette's Tip"
-    ![Palette tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
-
-    "Think of `let` like a dry-erase marker on a plastic storage bin. You can write 'Winter Clothes' on it today, but next season you can wipe it off and write 'Summer Gear'. The label stays the same, but you can swap out the contents whenever you want! That's why it's a *variable*—it varies!"
+!!! mascot-thinking "The Dry-Erase Metaphor"
+    ![Palette thinking](../../img/mascot/thinking.png){ class="mascot-admonition-img" }
+    Think of `let` like a dry-erase marker on a plastic storage bin. You can write 'Winter Clothes' on it today, but next season you can wipe it off and write 'Summer Gear'. The label stays the same, but you can swap out the contents whenever you want!
 
 ### Choosing Good Names for Your Boxes
 
@@ -165,6 +164,10 @@ function draw() {
 ```
 
 This local isolation is fantastic because it means you can reuse variable names like `i`, `x`, or `tempColor` in different functions without them stepping on each other's toes. If you declare `let x = 10` inside `function one()`, and `let x = 50` inside `function two()`, the computer treats them as two completely separate boxes. They just happen to have the same label, but they are stored in different locked rooms.
+
+!!! mascot-warning "The Undefined Trap"
+    ![Palette warning](../../img/mascot/warning.png){ class="mascot-admonition-img" }
+    Watch out for the "is not defined" error! A common trap is declaring a variable with `let` inside `setup()`, and then trying to use it inside `draw()`. Because it's locked in local block scope, `draw()` has no idea it exists. To fix this, declare `let myVar;` globally at the very top of your file, and only assign the actual value inside `setup()`.
 
 <details class="microsim">
 <summary>MicroSim: Scope Visualizer</summary>
@@ -326,10 +329,9 @@ if (!isGameOver) {
 }
 ```
 
-!!! mascot-tip "Palette's Tip"
-    ![Palette tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
-
-    "The Logical Operators are exactly like bouncers at an exclusive club! AND (`&&`) is the strict bouncer who says 'You need an ID AND a VIP ticket.' OR (`||`) is the chill bouncer who says 'You need a ticket OR a VIP pass, either is fine.' NOT (`!`) is the weird bouncer who says 'If you are NOT wearing sneakers, you can come in!'"
+!!! mascot-thinking "The Logic Gate Bouncers"
+    ![Palette thinking](../../img/mascot/thinking.png){ class="mascot-admonition-img" }
+    Think of Logical Operators like bouncers at an exclusive club. AND (`&&`) is the strict bouncer who says "You need an ID AND a VIP ticket." OR (`||`) is the chill bouncer who says "You need a ticket OR a VIP pass, either is fine." NOT (`!`) is the weird bouncer who says "If you are NOT wearing sneakers, you can come in!"
 
 ## Advanced Decision Making
 
@@ -412,6 +414,6 @@ Practice combining your relational and logical operators to build complex rules 
 
 In the next chapter, we will look at loops: how to repeat actions hundreds of times a second without having to write hundreds of lines of code!
 
-!!! mascot-celebration "Chapter Complete!"
-    ![Palette celebrating](../../img/mascot/celebration.png){{ class="mascot-admonition-img" }}
-    Amazing work! You've mastered another set of core concepts. Take a moment to celebrate!
+!!! mascot-celebration "Memory Unlocked!"
+    ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
+    Incredible work! You just mastered variable declarations, global and local scope, and the complex logic of conditional switchboards! You've given your code both memory and the power to make decisions.

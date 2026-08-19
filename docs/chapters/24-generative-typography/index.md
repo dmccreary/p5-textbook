@@ -125,7 +125,7 @@ When you load a custom font, it becomes a **p5 Font Class Object**. This object 
 
 !!! mascot-thinking "Measuring Up"
     ![Palette thinking](../../img/mascot/thinking.png){ class="mascot-admonition-img" }
-    Measuring text bounds is crucial when you want to draw a tight rectangle around a word or detect if the mouse is hovering over it!
+    Think about it like this: a word isn't just a stamp of ink, it's an invisible rectangular container occupying physical space on your canvas. By extracting the **Text Bounds Bounding Box**, you can finally 'see' that invisible container, allowing your code to perfectly align shapes or detect when a mouse touches a specific letter!
 
     Let's see how we can load a font and measure its bounds:
 
@@ -167,6 +167,10 @@ Advanced typographers also care about **Kerning Letter Spacing**—the specific 
 ## Beyond the Pixel: Vector Outlines
 
 Here is where the digital brush truly shines. A font is actually a set of mathematical instructions. We can extract **Font Glyph Outlines** directly. The most powerful tool for this is the **Text To Points Vector** conversion via `myFont.textToPoints()`. Instead of rendering the text, this function returns an array of coordinates mapping the outline of the letters.
+
+!!! mascot-tip "Too Many Points?"
+    ![Palette giving a tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
+    Here's a secret: if your kinetic text sketch is running slow, check your `sampleFactor`! Lowering it from `0.25` to `0.1` will drastically reduce the number of vector points generated, speeding up your physics calculations without ruining the shape of the letters.
 
 ```javascript
 let pts;
@@ -251,6 +255,10 @@ We can also bridge typography with user behavior. An **Interactive Text Input Ty
 To ensure you fully grasp the potential of these techniques, let's explore a few more complex code snippets.
 
 ### Advanced: Generative Type Grid
+
+!!! mascot-warning "Beware the Infinite Loop"
+    ![Palette warning](../../img/mascot/warning.png){ class="mascot-admonition-img" }
+    Watch out when building text grids! If you use `textWidth()` inside a `for` loop that runs thousands of times, it will drastically slow down your sketch. Always calculate your font metrics once in `setup()` and store them in variables before drawing!
 
 A generative type grid involves arranging characters in a systematic yet randomized layout. We can use loops to create a grid and populate it with letters from a string or random characters.
 
@@ -519,7 +527,7 @@ This deconstruction can yield abstract, avant-garde designs that challenge legib
 
 !!! mascot-celebration "Masterpiece Complete!"
     ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
-    You did it, artists! We've turned static text into living, kinetic art. Keep exploring and creating!
+    Incredible work! You just mastered loading custom `.ttf` files, extracting vector coordinates using `textToPoints()`, and building interactive, kinetic typography systems!
 
 ### The Evolution of Typography in Creative Coding
 

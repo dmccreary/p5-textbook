@@ -64,11 +64,19 @@ If you want to know exactly how fast your shopping cart is moving, you need its 
 
 When you only care about the direction you are pushing the cart, and not the strength, you need a unit vector. A unit vector has a length of exactly 1. You can turn any vector into a unit vector using the **Vector Normalize Method**. Once you have a normalized vector, you might want to give it a specific length. For example, setting the maximum speed of the shopping cart. You can do this with the **Vector Set Mag Method**. Alternatively, if you want to cap the speed so the cart doesn't go flying out of control, you can use the **Vector Limit Magnitude** method.
 
+!!! mascot-tip "Speed Limits"
+    ![Palette tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
+    Here's a lifesaver: if you constantly apply a force (like gravity) without any friction, your objects will eventually accelerate to infinity and fly off the screen! Always slap a `velocity.limit(maxSpeed)` at the end of your update loop to keep things under control.
+
 Which way is the cart pointing? You can find out using the **Vector Heading Angle** method, which returns the angle of rotation for the vector. If you know the angle you want to go, and you want to create a vector pointing that way, you use the **Vector From Angle** method. Sometimes you want the cart to start moving in a completely random direction. For this, the **Vector Random 2D** method is perfect, giving you a random unit vector.
 
 What if we want to know how much two shopping carts are moving in the same direction? We can use the **Vector Dot Product**. If we want to find a perpendicular force, maybe in 3D space, we use the **Vector Cross Product**. 
 
 To find out how far away another shopper is, you can use the **Vector Distance Dist** method. If you want to know the angle between your path and their path, use the **Vector Angle Between** method. Finally, if you want your cart to smoothly transition from its current velocity to a target velocity over time, you can interpolate between the vectors using the **Vector Lerp Method**.
+
+!!! mascot-encourage "Take it Step by Step"
+    ![Palette encouraging](../../img/mascot/encouraging.png){ class="mascot-admonition-img" }
+    If all this vector math feels overwhelming right now, that's completely normal! We are building an entire physics engine from scratch. Take a deep breath, and let's break it down into smaller pieces together.
 
 ### Deep Dive 1
 Let's explore these ideas further with more examples.
@@ -196,9 +204,9 @@ What if we want to know how much two shopping carts are moving in the same direc
 
 To find out how far away another shopper is, you can use the Vector Distance Dist method. If you want to know the angle between your path and their path, use the Vector Angle Between method. Finally, if you want your cart to smoothly transition from its current velocity to a target velocity over time, you can interpolate between the vectors using the Vector Lerp Method.
 
-!!! mascot-thinking "Wait, how does this look?"
-    ![Palette thinking](../../img/mascot/thinking.png){{ class="mascot-admonition-img" }}
-    Let's visualize this with a MicroSim! If we apply forces, how does the cart move?
+!!! mascot-thinking "The Engine of Motion"
+    ![Palette thinking](../../img/mascot/thinking.png){ class="mascot-admonition-img" }
+    Think about it like this: an object's position doesn't just change magically. Force changes acceleration, acceleration changes velocity, and velocity changes position. This chain reaction is the core mental model behind every physics engine in the world!
 
 ### Interactive Physics
 
@@ -209,15 +217,11 @@ Users can click and drag to apply a force vector to the cart.
 The cart's velocity should be visualized with an arrow, updating dynamically as acceleration is added.
 </details>
 
-!!! mascot-tip "Pro Tip!"
-    ![Palette giving tip](../../img/mascot/tip.png){{ class="mascot-admonition-img" }}
-    Always limit your velocity vector using `vel.limit(maxSpeed)` so your objects don't accelerate to infinity!
-
 <details markdown="1">
 <summary>MicroSim: Vector Dot Product Visualizer</summary>
 A visualizer showing two vectors, A and B. As the user rotates A, a bar graph shows the dot product. It peaks when they align and hits zero when perpendicular.
 </details>
 
-!!! mascot-celebration "We did it!"
-    ![Palette celebrating](../../img/mascot/celebration.png){{ class="mascot-admonition-img" }}
-    Amazing job, artists! You've mastered vector math. Now go build some beautiful physics!
+!!! mascot-celebration "Chapter Complete!"
+    ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
+    Incredible work! You just mastered vector addition, magnitude calculations, and the force accumulation chain that powers real-world physics engines!

@@ -112,7 +112,7 @@ If we wanted to make the orbit squashed into an oval, we would need to create an
 !!! mascot-tip "Palette's Tip"
     ![Palette tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
 
-    "When I want my skin colors to change smoothly as an object orbits, I use polar coordinates! Since angles perfectly loop around from 0 to TWO_PI, you can map the `theta` angle directly to the hue of your color wheel using HSB color mode. It’s the absolute easiest way to make a flawless rainbow radar sweep without any awkward color jumps at the end of the loop!"
+    Here is a secret to perfect rainbow gradients: map your `theta` angle directly to the hue in HSB color mode! Because polar angles loop seamlessly, your colors will transition without any harsh jumps when the circle completes.
 
 <details>
 <summary>MicroSim: Polar Radar Sweeper</summary>
@@ -269,10 +269,10 @@ There are three primary categories of easing:
 
 These easing functions are driven by different mathematical curves—from simple quadratic equations ($x^2$) to complex exponential and trigonometric curves. By passing a normalized time variable (ranging from 0 to 1) into these mathematical functions, they warp and bend the output, returning a new smoothed value that drives your animation.
 
-!!! mascot-tip "Palette's Tip"
-    ![Palette tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
+!!! mascot-thinking "Palette's Insight"
+    ![Palette thinking](../../img/mascot/thinking.png){ class="mascot-admonition-img" }
 
-    "Easing isn't just for physical movement! I heavily use easing functions to smoothly transition between UI states and even colors! Instead of a harsh, blinding jump from a red alert state to a calming blue background, applying an **Ease-In-Out** transition to the RGB values makes the purple blend in the middle feel incredibly cinematic, polished, and organic!"
+    Notice how easing isn't just for physical physics? Think about how blending a harsh color change with an Ease-In-Out transition alters the mental perception of the interface. You are injecting simulated physical weight into abstract concepts!
 
 <details>
 <summary>MicroSim: The Great Easing Race</summary>
@@ -291,7 +291,12 @@ These easing functions are driven by different mathematical curves—from simple
 
 Up until this very moment, all of our animations and physics simulations have relied on a massive underlying assumption: that the p5.js `draw()` loop runs exactly 60 times a second, with flawless regularity. We have been moving objects by adding a fixed number of pixels *per frame*.
 
-But what happens if the computer lags? If you suddenly open a heavy web page in another tab, or if your sketch spawns ten thousand particles, your browser's frame rate might plummet to 30 or even 15 frames per second. 
+But what happens if the computer lags?
+
+!!! mascot-encourage "Palette's Encouragement"
+    ![Palette encouraging](../../img/mascot/encouraging.png){ class="mascot-admonition-img" }
+
+    If the concept of 'delta time' feels overwhelming, that's completely normal! Decoupling logic from the frame rate is one of the biggest hurdles in computer graphics. Take a deep breath and just remember: you are multiplying by time instead of frames. If you suddenly open a heavy web page in another tab, or if your sketch spawns ten thousand particles, your browser's frame rate might plummet to 30 or even 15 frames per second. 
 
 If your sketch drops to 30 frames per second, a spaceship moving 5 pixels per frame will suddenly move horizontally half as fast in the real world! If it was jumping with gravity, the entire arc of the jump will change. The physics simulation completely breaks down because it is tied directly to the hardware's rendering speed.
 
@@ -304,5 +309,6 @@ If your frame rate suddenly drops, the delta time mathematically increases. The 
 To implement this reliably, developers often build a **Step Motion Accumulator**. This is a specific programming pattern that gathers up the fluctuating delta time every frame. If the accumulated time exceeds a fixed, predictable physics time-step (for example, 1/60th of a second), the physics engine completely updates the object's position, subtracts that time step from the accumulator, and repeats. This rigorous decoupling of the visual rendering loop from the mathematical physics loop guarantees that your simulations run flawlessly, predictably, and deterministically on every single device, no matter how much the computer hardware struggles!
 
 !!! mascot-celebration "Chapter Complete!"
-    ![Palette celebrating](../../img/mascot/celebration.png){{ class="mascot-admonition-img" }}
-    Amazing work! You've mastered another set of core concepts. Take a moment to celebrate!
+    ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
+
+    Incredible work! You just mastered polar-to-Cartesian conversion, interpolation, and delta time for frame independent motion. You are now a master of dynamic, fluid choreography!

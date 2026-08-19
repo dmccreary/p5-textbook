@@ -71,9 +71,9 @@ The most fundamental pieces of information we can get from the mouse are its cur
 
 These variables are automatically updated by Processing every time the mouse moves. They are incredibly useful for drawing objects that follow the cursor, creating interactive menus, or even just tracking where the user is looking.
 
-!!! mascot-thinking "Tracking Coordinates"
+!!! mascot-thinking "The Inverted Y-Axis"
     ![Palette thinking](../../img/mascot/thinking.png){ class="mascot-admonition-img" }
-    Remember that the top-left corner is (0, 0). As you move right, **Mouse X Position** increases. As you move down, **Mouse Y Position** increases.
+    Notice how moving the mouse down *increases* the Y position? In traditional math class, Y goes up, but in computer graphics, the origin (0, 0) is always the top-left! It requires a subtle shift in your mental model to map screen coordinates to real-world interactions.
 
 ### Previous Position
 
@@ -114,8 +114,8 @@ Events, on the other hand, are discrete triggers. They happen once per action. T
 - **Mouse Clicked Event**: The `mouseClicked()` function is called after a mouse button has been both pressed and released. It's typically used for UI interactions, like clicking a button on a menu.
 
 !!! mascot-tip "State vs. Event"
-    ![Palette offering a tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
-    Use `mouseIsPressed` for continuous effects (like drawing a line). Use `mousePressed()` for one-time triggers (like spawning an explosion). Don't mix them up!
+    ![Palette tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
+    Here's a shortcut to prevent rapid-fire bugs: use `mouseIsPressed` (the variable) for continuous actions like a machine gun or drawing a line. Use `mousePressed()` (the function) for single-shot actions like jumping. Mixing them up is the #1 cause of broken interactive controls!
 
 ### Complex Mouse Movements
 
@@ -152,9 +152,9 @@ When a key is pressed, we need to know *which* key it is. Processing provides tw
 - **Key Variable Character**: The `key` variable stores the actual character of the most recently pressed key (e.g., 'a', 'A', '1', ' '). This is useful for detecting standard letter and number presses. Note that 'a' and 'A' are considered different characters!
 - **Key Code Number**: Not all keys have characters (like the arrow keys, Shift, Enter, etc.). For these, we use the `keyCode` variable, which stores a numeric code representing the physical key on the keyboard. Processing provides handy constants like `UP`, `DOWN`, `LEFT`, `RIGHT`, `ENTER`, `SHIFT`, etc., to make checking these codes easier.
 
-!!! mascot-warning "Key vs. KeyCode"
+!!! mascot-warning "The Invisible Key Trap"
     ![Palette warning](../../img/mascot/warning.png){ class="mascot-admonition-img" }
-    Always use `key` for printable characters (like 'a' or '1') and `keyCode` for special control keys (like `UP_ARROW` or `SHIFT`). Mixing them up can lead to confusing bugs!
+    Watch out for invisible keys! If you try to use the `key` variable to detect the Shift or Arrow keys, your code will fail silently. You must use `keyCode` for any control key. Always separate your character typing logic from your game control logic to avoid this trap.
 
 ### Keyboard Events
 
@@ -202,9 +202,9 @@ Sensing user input is what separates a passive animation from an interactive exp
 
 Remember the controller metaphor: your sketch is the console, and it's waiting for those signals. Now it's up to you to decide what those signals do!
 
-!!! mascot-celebration "Level Complete!"
+!!! mascot-celebration "Chapter Complete!"
     ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
-    You've mastered the controller! Now go out there and build something truly interactive. The canvas is your playground!
+    Incredible work! You just mastered mouse coordinates, discrete keyboard events, and bounding box hit testing to make your sketches fully interactive. The canvas is your playground!
 
 ## Extended Deep Dive: Understanding the Nuances of Event Sensing
 

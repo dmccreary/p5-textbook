@@ -70,9 +70,10 @@ let x = random(50);
 let y = random(100, 200); 
 ```
 
-!!! note "Mascot Admonition: Palette the Chameleon"
-    ![Palette the Chameleon](../../assets/mascots/palette.png)
-    *Hey there! It's me, Palette. When I change my colors, I don't want to just snap instantly to one exact shade every time—I like to mix things up! If I use `fill(random(255), random(255), random(255))`, I can be a completely unpredictable new color every single frame. Try putting that in a `draw()` loop and watch the screen go crazy! But be careful—sometimes too much randomness just looks like a messy fruit salad.*
+!!! mascot-tip "Palette's Tip"
+    ![Palette tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
+
+    Want a fast way to generate unpredictable visuals? Pass `random(255)` directly into your `fill()` color channels! It will flash a completely different RGB color every single frame, perfect for chaotic glitch effects.
 
 While `random()` is incredibly useful, it has a quirk. Computers aren't actually capable of true randomness. They use complex mathematical formulas to generate sequences of numbers that *appear* random. These are called pseudo-random number generators (PRNGs). 
 
@@ -100,6 +101,11 @@ Let's go back to our coin flip metaphor. If you flip a coin 100 times, you expec
 
 But think about throwing darts at a dartboard. If you are aiming for the bullseye, where will the darts land? 
 You probably won't hit the exact dead-center bullseye every time. But most of your darts will clump somewhere near the middle. You'll have fewer darts landing halfway to the edge, and very few darts hitting the outer edge (or the wall behind the board!). 
+
+!!! mascot-thinking "Palette's Insight"
+    ![Palette thinking](../../img/mascot/thinking.png){ class="mascot-admonition-img" }
+
+    Notice how a uniform distribution treats every pixel equally, but a Gaussian distribution creates a focal point? By shifting away from pure randomness, you introduce a 'center of gravity' to your generated shapes.
 
 This "clumping" around a central value is called a *Normal Distribution* or a *Gaussian Distribution* (named after the mathematician Carl Friedrich Gauss). Nature loves normal distributions! If you measure the heights of adults in a city, most people are close to average height, while very short and very tall people are rare. 
 
@@ -316,9 +322,10 @@ When layering these octaves, the smaller detail layers don't have as much influe
 
 Finally, just like the `random()` function, Perlin noise sequences are generated mathematically. Every time you restart your sketch, you get a new landscape. If you want to explore the exact same landscape again, you need to use a **Noise Seed Function**. By calling `noiseSeed(seedValue)`, you lock the Perlin noise generator to a specific mathematical starting point, guaranteeing the exact same rolling hills every time.
 
-!!! note "Mascot Admonition: Palette the Chameleon"
-    ![Palette the Chameleon](../../assets/mascots/palette.png)
-    *Perlin noise is my absolute favorite trick! Instead of using `random()` to make an object jump around the screen randomly, try mapping its X and Y positions to `noise(t)` and `noise(t + 1000)`. It will look like a firefly smoothly wandering around the screen! Just make sure you use different time offsets for X and Y, or your object will just slide perfectly diagonally.*
+!!! mascot-warning "Palette's Warning"
+    ![Palette warning](../../img/mascot/warning.png){ class="mascot-admonition-img" }
+
+    Watch out for 2D movement sliding diagonally! If you pass the exact same time variable `t` into `noise()` for both the X and Y coordinates, they will output the identical sequence. Always offset the second axis (like `noise(t + 1000)`) to get independent, natural wandering.
 
 ## Conclusion
 
@@ -329,5 +336,6 @@ These aren't just parlor tricks; these are the exact same algorithms used by pro
 In the next chapter, we will start using these organic movements and shapes to build even more complex systems of interacting objects!
 
 !!! mascot-celebration "Chapter Complete!"
-    ![Palette celebrating](../../img/mascot/celebration.png){{ class="mascot-admonition-img" }}
-    Amazing work! You've mastered another set of core concepts. Take a moment to celebrate!
+    ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
+
+    Incredible work! You just mastered uniform randomness, Gaussian distributions, and organic Perlin noise. You can now inject lifelike, natural chaos into your digital simulations!

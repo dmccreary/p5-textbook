@@ -50,7 +50,7 @@ Buttons are excellent for actions that should happen instantaneously, like clear
 
 !!! mascot-thinking "Hooking up the wires"
     ![Palette thinking](../../img/mascot/thinking.png){ class="mascot-admonition-img" }
-    Remember, artists: a button does nothing until you tell it what to do! Always use `.mousePressed()` to connect your button to a function. It's like wiring a pedal to a synthesizer.
+    Think about it like this: the DOM interface and your p5.js canvas exist in two fundamentally different systems. A button doesn't intrinsically know about your sketch. Notice how we are establishing an architectural bridge—using event listeners to allow actions in the HTML world to safely mutate the state of the canvas world?
 
 ### **Create Slider Control**
 
@@ -166,7 +166,7 @@ Checkboxes are great for toggling features like grid overlays, debug information
 
 !!! mascot-warning "Checked vs Value"
     ![Palette warning](../../img/mascot/warning.png){ class="mascot-admonition-img" }
-    Careful here! Unlike sliders and text inputs that use `.value()`, checkboxes use `.checked()` to see if they are ticked. It's a small detail, but a common stumbling block!
+    Watch out for undefined errors when reading checkboxes! Because a checkbox represents a boolean state rather than a continuous number or string, querying it with `.value()` will fail. To fix this and avoid broken logic, always use `.checked()` to verify if the box is ticked.
 
 ### **Create Radio Buttons**
 
@@ -323,7 +323,7 @@ function setup() {
 
 !!! mascot-tip "Absolute vs Relative"
     ![Palette tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
-    Using `.position()` places elements relative to the whole web page, not the canvas! If you want a button to sit inside your sketch, you have to add the canvas's X and Y coordinates to the button's position.
+    Want to place a DOM control perfectly over your sketch without guessing pixels? Store your canvas in a variable (`let cnv = createCanvas(...)`), then retrieve its top-left corner with `cnv.position()`. Add those `x` and `y` values to your button's position for perfect, dynamic alignment every time!
 
 ### **DOM Element Size**
 
@@ -435,7 +435,7 @@ By dynamically setting values, you can create readouts, synchronized dashboards,
 
 !!! mascot-celebration "Master of the Dashboard!"
     ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
-    Incredible work, artists! You've successfully built your very own mixing desk. By combining canvases with DOM elements, your creations are no longer just pictures; they are robust, interactive applications. Keep experimenting!
+    Incredible work, artists! You just mastered instantiating DOM elements, styling them with CSS classes, and wiring their values directly into your canvas loops. You have successfully built a robust, interactive dashboard!
 
 ## Summary and Next Steps
 

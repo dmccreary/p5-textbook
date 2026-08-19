@@ -122,9 +122,9 @@ This is perfect for aligning shapes to the edge of a screen. But what if you wan
 
 Instead, you can change the drawing behavior using **Rect Mode Center** (`rectMode(CENTER)`). Once activated, the `(x, y)` coordinates define the exact *middle* of the rectangle, and it grows outward in all directions equally. 
 
-!!! mascot-thinking "The Pinning Metaphor"
-    ![Palette thinking](../../img/mascot/thinking.png){ class="mascot-admonition-img" }
-    Think of `rectMode` like pinning a photograph to a corkboard. `rectMode(CORNER)` means you push the thumbtack through the top-left corner of the photo. `rectMode(CENTER)` means you push the thumbtack through the exact middle.
+!!! mascot-tip "The Alignment Shortcut"
+    ![Palette tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
+    Want to save some time doing math? Instead of calculating complex offsets to center a box on your screen, just use `rectMode(CENTER)` and place it at `width/2, height/2`. It's a massive time-saver for UI design!
 
 ## Curves and Arcs: The Compass and Protractor
 
@@ -184,9 +184,9 @@ Similarly, when two thick lines meet at a sharp corner (like the top of a triang
 
 Sometimes, you only want an outline, making the shape completely transparent on the inside. You achieve this using the **No Fill Function** (`noFill()`). Conversely, if you want a solid block of color without any outline border, you use the **No Stroke Function** (`noStroke()`).
 
-!!! mascot-warning "The State Machine"
+!!! mascot-warning "The State Machine Trap"
     ![Palette warning](../../img/mascot/warning.png){ class="mascot-admonition-img" }
-    Styling commands like `fill()`, `strokeWeight()`, and `noStroke()` are persistent! If you say `noStroke()` to draw a borderless circle, *every* shape you draw after that will also have no border, until you explicitly turn the stroke back on. The computer remembers your last command indefinitely.
+    Watch out for ghost shapes! Styling commands like `noStroke()` are persistent state changes. If you remove borders for one circle, every subsequent shape will also lack a border. To fix this, always explicitly reset your styles by calling `stroke(0)` (or your desired color) right before drawing your next shape.
 
 ## Custom Polygons: Connecting the Dots
 
@@ -248,9 +248,9 @@ A Bézier curve is defined by four points. The first and fourth points are the p
 
 The curve never actually touches the control points. Instead, the control points exert a magnetic "pull" on the line, bending it toward them. 
 
-!!! mascot-tip "The Rubber Band Metaphor"
-    ![Palette tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
-    Imagine stretching a rubber band between two thumbtacks. Now imagine grabbing two invisible strings tied to the middle of the rubber band and pulling them outward. The rubber band bends toward your hands smoothly. Your hands are the control points!
+!!! mascot-thinking "The Magnetic Pull"
+    ![Palette thinking](../../img/mascot/thinking.png){ class="mascot-admonition-img" }
+    Notice how the curve never actually touches the control points? Think about it like a rubber band stretched between two thumbtacks. The control points act as invisible magnets pulling on the middle of the band. This separation of anchor and control is a core architectural pattern behind all modern vector graphics!
 
 If you need a continuous, flowing ribbon of multiple curves attached end-to-end, you can use `beginShape()` combined with the **Bézier Vertex Function** (`bezierVertex()`). This allows you to construct complex vector art illustrations, identical to how the Pen Tool works in Adobe Illustrator.
 
@@ -300,4 +300,4 @@ Crucially, we explored the styling state machine, learning how to dip our brush 
 
 !!! mascot-celebration "Shapes Mastered!"
     ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
-    Amazing job! You now possess the tools to draw literally anything in two dimensions. You are no longer just making a canvas; you are painting it. Next, we will dive deep into the science of color!
+    Incredible work! You just mastered 2D primitives, custom polygons, Bézier curves, and the styling state machine! You have all the mathematical building blocks needed to sketch any geometry. Next, we will dive deep into the science of color!

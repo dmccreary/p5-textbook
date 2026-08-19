@@ -99,7 +99,7 @@ function setup() {
 
 !!! mascot-thinking "Thinking about Performance"
     ![Palette thinking](../../img/mascot/thinking.png){ class="mascot-admonition-img" }
-    Calling the resize command inside the draw loop is a recipe for disaster! Always resize your artwork once during setup so you don't stall the browser.
+    Think about it like this: `resize()` doesn't just zoom out, it fundamentally shreds and rebuilds the image pixel-by-pixel. If you put that inside the `draw` loop, your browser is rebuilding the universe 60 times a second! Always resize your artwork once in `setup()`.
 
 ### Tinting and Cropping
 
@@ -206,7 +206,7 @@ Morphological operations adjust the structure of shapes within the frame. The **
 
 !!! mascot-tip "Filter Stacking"
     ![Palette sharing a tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
-    You can stack multiple filters together! Try applying a blur before a threshold to create smooth, organic blobs instead of sharp, noisy edges.
+    Here's a secret recipe for cool effects: stack your filters! If you run `filter(BLUR)` right before `filter(THRESHOLD)`, you'll melt away all the noisy jagged edges and get perfectly smooth, organic blobs.
 
 <details markdown="1">
 <summary>MicroSim: Interactive Filter Studio</summary>
@@ -294,7 +294,7 @@ A simpler spatial effect is the **Pixelate Image Mosaic**. Rather than rendering
 
 !!! mascot-warning "Performance Pitfalls"
     ![Palette warning](../../img/mascot/warning.png){ class="mascot-admonition-img" }
-    When looping through pixels for ASCIIfy or Halftone effects, don't check every single coordinate! Skip by a defined step size (like 10 or 20 pixels) to keep your frame rate high. Processing two million pixels every frame will freeze the browser.
+    Watch out for the freeze! If you try to loop through every single pixel of an HD webcam feed every frame, your browser will crash from the sheer mathematical load. To avoid this, change your `for` loops to skip by a step size (`i += 10`) instead of checking every pixel.
 
 <details markdown="1">
 <summary>MicroSim: Real-Time ASCIIfy Camera</summary>
@@ -386,7 +386,7 @@ Finally, we can combine images using masking. The **Mask Image Alpha Shape** tec
 
 !!! mascot-celebration "Master of the Digital Darkroom!"
     ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
-    Incredible work! You've learned how to harness the raw mathematical power of image processing and live video. The digital darkroom is officially open for business.
+    Incredible work! You just mastered manipulating the 1D pixel array, processing live `createCapture` video feeds, and applying convolution matrices to build your own custom filters!
 
 ## Deep Dive: The Mathematics of the Darkroom
 
@@ -436,6 +436,10 @@ const sharpenKernel = [
   [-1,  5, -1],
   [ 0, -1,  0]
 ];
+
+!!! mascot-encourage "Matrix Math Can Be Tricky"
+    ![Palette encouraging](../../img/mascot/encouraging.png){ class="mascot-admonition-img" }
+    If wrapping your head around 3x3 convolution kernels feels like solving a Rubik's cube blindfolded, don't worry! You don't have to invent the math yourself. Start by copying standard blur or sharpen kernels, and slowly tweak the numbers to see how the image reacts.
 
 // A heavy blur convolution kernel (Gaussian approximation)
 const gaussianBlurKernel = [

@@ -86,7 +86,7 @@ If your user is clicking buttons to play and pause the music, your code needs to
 
 !!! mascot-thinking "Is it playing?"
     ![Palette thinking](../../img/mascot/thinking.png){ class="mascot-admonition-img" }
-    Always check the isPlaying status before telling a sound to play again! If you call play() on a sound that's already playing, you might accidentally start a second overlapping copy of it.
+    Think about the `play()` command like physically dropping a needle on a record. If you put that inside your `draw()` loop, you are dropping a new needle 60 times a second! That's why we use `isPlaying()` to make sure the record is already spinning before trying to play it again.
 
 ### Mixing and Manipulating the Record
 
@@ -138,7 +138,7 @@ ADSR stands for Attack, Decay, Sustain, and Release—the four stages of a sound
 
 !!! mascot-tip "The Shape of Sound"
     ![Palette tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
-    Artists, remember: Attack, Decay, and Release are amounts of TIME (seconds), but Sustain is a LEVEL (volume from 0.0 to 1.0). An envelope shapes the journey of the volume over time!
+    Here's a shortcut to remember ADSR: Attack, Decay, and Release are amounts of TIME (in seconds), but Sustain is a LEVEL (from 0.0 to 1.0). Try `env.setADSR(0.01, 0.1, 0.5, 1.0)` to instantly get a classic plucky synthesizer sound!
 
     Once we have defined our ADSR values (`env.setADSR(attack, decay, sustain, release)`), we need to trigger it. We connect the envelope to our oscillator, and then issue a **Play Envelope Trigger** (`env.play()`). This tells the envelope to execute its volume automation, bringing our flat drone to life with percussive plucks or sweeping cinematic swells.
 
@@ -180,7 +180,7 @@ Finally, if our sound is too clean, we can apply an **Audio Distortion Effect**.
 
 !!! mascot-warning "Watch your ears!"
     ![Palette warning](../../img/mascot/warning.png){ class="mascot-admonition-img" }
-    Artists, be careful with the Distortion effect! It drastically increases the overall volume of your signal and adds harsh frequencies. Turn your headphones down before experimenting with extreme distortion values!
+    Watch out when adding distortion! It drastically increases your audio's raw signal amplitude and can hurt your ears or blow out speakers. To fix this, always chain an `.amp(0.1)` directly after your distortion node to protect your hearing!
 
 ## 7. Connecting the Cables: The Polyphonic Synth
 
@@ -196,4 +196,4 @@ We have successfully wired our studio patchbay! We loaded records, synthesized r
 
 !!! mascot-celebration "Symphony Complete!"
     ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
-    What a masterpiece, artists! You've successfully built an electronic orchestra with code. Keep experimenting, keep patching those cables, and let your sketches sing!
+    What a masterpiece, artists! You've successfully mastered the p5.sound library, synthesized custom oscillators, shaped time with ADSR envelopes, and routed audio effects! Let your sketches sing!

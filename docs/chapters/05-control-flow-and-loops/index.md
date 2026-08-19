@@ -79,10 +79,9 @@ What happens if you forget to update your loop counter variable? You fall into *
 
 **Infinite Loop Prevention** is crucial. You must always ensure that the condition evaluated in your `while` loop will eventually become false. If you are checking `count < 5`, you absolutely must ensure that `count` increases during the loop execution.
 
-> [!TIP]
-!!! mascot-tip "Palette's Tip"
-    ![Palette tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
-    Chameleons love a good loop—it's like our curly tails! But be careful not to tie yourself in a knot. Before you hit 'Run' on a `while` loop, always double-check that your counter is actually changing. I once got stuck looking at the same fly forever because my tongue's loop counter was broken. Don't be like me! Always practice **Infinite Loop Prevention**!
+!!! mascot-warning "The Infinite Loop Trap"
+    ![Palette warning](../../img/mascot/warning.png){ class="mascot-admonition-img" }
+    Watch out for browser crashes! If you write a `while` loop but forget to update the counter variable inside the curly braces, the condition will never become false. The computer will run the loop forever, locking up your entire browser. To prevent this, always make sure your update statement (like `count = count + 1`) is the very last line inside your loop body before you hit the run button!
 
 ### The **For Loop Construct**
 
@@ -136,6 +135,10 @@ for (let y = 0; y < height; y += 40) {
 ```
 
 For every single step of the outer `y` loop, the inner `x` loop runs to completion. So, if `y = 0`, the `x` loop draws a full row of squares across the top of the screen. Then `y` becomes 40, and the `x` loop draws another full row.
+
+!!! mascot-encourage "The Nested Loop Brain-Bender"
+    ![Palette encouraging](../../img/mascot/encouraging.png){ class="mascot-admonition-img" }
+    If your brain feels completely twisted trying to visualize a loop running inside another loop, take a deep breath. That is totally normal! It is one of the first major cognitive hurdles in all of programming. Don't rush it. Grab a piece of paper and manually write down the values of `x` and `y` for the first few steps. It will click soon!
 
 ### **2D Grid Iteration**
 
@@ -210,10 +213,9 @@ The **Array Pop Method** removes the last item from the end of the array. It unh
 let lastPos = ballXPositions.pop(); // Returns 300. Array is back to [10, 50, 100, 200]
 ```
 
-> [!NOTE]
-!!! mascot-tip "Palette's Tip"
+!!! mascot-tip "The Last Element Shortcut"
     ![Palette tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
-    Arrays are amazing! They're like my color palette. I can `push` a new color into my camouflage options, or `pop` one off if it's out of season. Just remember, **Array Element Indexing** starts at zero. If I want my first color, I ask for index 0. If I ask for index 1, I get the *second* color. It took me a few days to get used to it, but now zero-indexing feels as natural as catching a moth!
+    Here's a secret for dealing with dynamic arrays that are constantly growing or shrinking: if you ever need to grab the very last item in the train, but you don't know exactly how many cars there are, you don't need to count them! Just ask for `yourArray[yourArray.length - 1]`. It works perfectly every single time!
 
 ## Advanced Array Maneuvers
 
@@ -358,6 +360,6 @@ Finally, we used a **Boolean Flag Variable** and **State Machine Logic** to cont
 
 You now have the tools to manage massive amounts of data and create complex visual patterns with just a few lines of code. Onward to the next challenge!
 
-!!! mascot-celebration "Chapter Complete!"
-    ![Palette celebrating](../../img/mascot/celebration.png){{ class="mascot-admonition-img" }}
-    Amazing work! You've mastered another set of core concepts. Take a moment to celebrate!
+!!! mascot-celebration "Automation Mastered!"
+    ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
+    Incredible work! You just mastered while loops, for loops, 2D nested grid iteration, and dynamic array data structures! You now have the power to command armies of shapes and manage complex data with just a few lines of code.

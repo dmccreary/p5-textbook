@@ -62,7 +62,7 @@ But wait, there's a catch! Not all particles react to forces the same way. A hea
 
 !!! mascot-thinking "Forces and Mass"
     ![Palette thinking](../../img/mascot/thinking.png){ class="mascot-admonition-img" }
-    "Remember artists, forces are vectors, but mass is just a scalar! Divide the vector by the scalar to find your acceleration."
+    Notice how this changes everything? Because of Newton's Second Law, a heavy cannonball and a lightweight feather react differently to the exact same wind force. By simply dividing a force vector by a mass scalar, we've injected realistic physical weight into our digital world!
 
 ## Part 2: Environmental Forces
 
@@ -125,9 +125,9 @@ To manage all these particles, we need a **Particle System Manager**. This is us
 
 The manager is also responsible for the **Particle Emitter Location**. The emitter is the source of the particles—the nozzle of the water hose, or the center of the firework explosion. The emitter decides where new particles are born and what their initial velocity should be. A firework emitter bursts all its particles at once in a 360-degree circle, while a water hose emitter spits out a steady stream of particles in a specific cone of direction.
 
-!!! mascot-tip "Managing Memory"
+!!! mascot-tip "The Backwards Loop Trick"
     ![Palette tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
-    "Make sure to loop backward through your array when removing dead particles! Otherwise, you might skip an index and leave a 'ghost' particle behind."
+    Want to save yourself hours of debugging? Always loop backward (`for (let i = particles.length - 1; i >= 0; i--)`) when deleting dead particles! If you loop forward and delete an item, the array shifts down, causing you to accidentally skip the next particle and leave un-deletable 'ghost' particles behind.
 
 ## Part 4: Advanced Behaviors
 
@@ -173,7 +173,7 @@ You can also animate the emitter itself! What if the emitter is attached to the 
 
 !!! mascot-encourage "Keep Experimenting!"
     ![Palette encouraging](../../img/mascot/encouraging.png){ class="mascot-admonition-img" }
-    "If the math feels overwhelming, don't worry! Start by tweaking the numbers in your code. Change gravity to a negative number and watch your water hose spray upwards! The best way to learn physics is to break it."
+    If managing multiple force vectors and lifespan decays feels overwhelming right now, that's completely normal! You've already conquered basic vector math; this is just combining those pieces. Take a deep breath, try tweaking just one number at a time (like making gravity negative), and see what happens. The best way to learn physics is to break it!
 
 ### Advanced Drag and Resistance
 
@@ -213,6 +213,10 @@ Implementing **Elastic Collision Bouncing** can be tricky. When a particle hits 
 Why? Because the particle might have moved *past* the floor in that frame. If you just reverse its velocity, it might still be stuck inside the floor on the next frame, causing it to get trapped and vibrate wildly. 
 
 To fix this, you must also correct its position. If the floor is at Y=500, and the particle is at Y=505, you need to push it back up to Y=500, and *then* reverse its velocity. Furthermore, real bounces aren't perfectly elastic. They lose energy. So you multiply the reversed velocity by a dampening factor, like 0.8. 
+
+!!! mascot-warning "Beware the Jitters"
+    ![Palette warning](../../img/mascot/warning.png){ class="mascot-admonition-img" }
+    Watch out for objects getting glued to the floor! If you reverse a particle's velocity but forget to push its position back above the floor line, it will constantly trigger the collision check on the next frame, causing it to rapidly jitter and sink into the ground.
 
 ```javascript
 checkEdges() {
@@ -265,4 +269,4 @@ So what are you waiting for? Open up your editor, initialize an array of particl
 
 !!! mascot-celebration "Chapter Complete!"
     ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
-    "Incredible work, artists! You've mastered the elements and brought your canvases to life with dynamic motion. The sky is literally the limit now!"
+    Incredible work, artists! You just mastered force accumulation, lifespan decay, and memory management for complex particle systems. You're ready to build entire digital ecosystems!

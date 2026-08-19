@@ -95,7 +95,7 @@ If you need real-time, instantaneous feedback—for example, expanding a shape d
 
 !!! mascot-thinking "Wait, what's the difference?"
     ![Palette thinking](../../img/mascot/thinking.png){ class="mascot-admonition-img" }
-    The `changed` event waits for the user to finish completely (like hitting Enter). The `input` event fires constantly on every tiny adjustment (like dragging a volume slider)!
+    Think about it like this: your sketch must decide whether to listen to a finished sentence or react to every single syllable as it is spoken. Notice how choosing between a delayed `.changed()` event versus a continuous `.input()` event fundamentally alters the architectural rhythm and performance profile of your interaction loop?
 
 ## Mastering the Layout: Flexbox and Grid
 
@@ -130,7 +130,7 @@ If a DOM element is permanently unnecessary—perhaps a "Loading..." spinner tha
 
 !!! mascot-tip "Cleaning Up!"
     ![Palette tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
-    If you hide an element, it is still sitting in the room, just wearing an invisibility cloak. If you remove it, you've actually thrown the furniture out the window! Save your RAM!
+    Want to save memory and boost performance? If a DOM element will never be used again (like a one-time 'Loading' spinner), always use `.remove()` instead of `.hide()`. Hiding elements leaves them secretly consuming resources in the background; removing them deletes them from the DOM entirely!
 
 ## Uploading and Embedding Media
 
@@ -144,7 +144,7 @@ Finally, what if you want to include content from an entirely different website�
 
 !!! mascot-warning "Beware the iFrame Trap!"
     ![Palette warning](../../img/mascot/warning.png){ class="mascot-admonition-img" }
-    When using iframes, remember that you cannot easily pass variables between your sketch and the iframe! Browsers heavily restrict this for security reasons (Cross-Origin Resource Sharing). Treat iframes like a museum exhibit: you can look through the glass, but you can't touch the art inside!
+    Watch out for CORS errors! Browsers heavily restrict Cross-Origin Resource Sharing, meaning you cannot easily read variables from an external iframe. If you absolutely must send data between an iframe and your main sketch, you will need to research and implement the `window.postMessage()` API rather than relying on direct variable access.
 
 <details markdown="1">
 <summary>MicroSim: Responsive Dashboard Builder</summary>
@@ -162,4 +162,4 @@ By mastering the integration of HTML DOM elements, CSS styling, and responsive e
 
 !!! mascot-celebration "Chapter Complete!"
     ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
-    Fantastic work! You've mastered the art of layout and styling, turning your code into beautiful, functional spaces!
+    Fantastic work! You just mastered integrating p5.js with HTML5 structures, controlling DOM Element visibility, and engineering responsive CSS Flexbox and Grid Layouts. You are officially building fully-fledged web applications!
