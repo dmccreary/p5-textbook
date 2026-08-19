@@ -1,4 +1,6 @@
-# Color Theory, Color Modes & Pixel Manipulation
+import re
+
+content = """# Color Theory, Color Modes & Pixel Manipulation
 
 ## Summary
 
@@ -327,3 +329,7 @@ Color in the world of creative coding is so much more than just picking a pretty
 From painting with pure, additive light in the RGB space, to navigating the intuitive angles of the HSB color wheel compass, to diving deep into the microscopic memory architecture of the 1D pixels array, you now have complete, granular control over every photon of light emitting from the screen. By mastering these 34 concepts, you have unlocked the ability to write algorithms that generate dynamic, mathematically harmonious, and ethically accessible visual experiences. 
 
 You have learned to draw the shapes, and you have learned to light them up. In the next chapter, we will take these glowing, colored shapes and breathe the final element of life into them: movement over time!
+"""
+
+with open("/Users/dan/Documents/ws/p5-textbook/docs/chapters/03-color-theory-pixels/index.md", "w") as f:
+    f.write(content)
