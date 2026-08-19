@@ -1,0 +1,601 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Coordinate System,,FND
+2,Canvas Element,1,FND
+3,Setup Function,2,FND
+4,Draw Function,3,FND
+5,Frame Rate,4,FND
+6,Frame Count,4,FND
+7,Pixel Grid,1,FND
+8,Canvas Width,2,FND
+9,Canvas Height,2,FND
+10,Create Canvas Function,2,FND
+11,Background Color Function,2,FND
+12,Preload Function,3,FND
+13,No Loop Function,4,FND
+14,Redraw Function,13,FND
+15,Loop Control Function,13,FND
+16,Window Resized Event,2,FND
+17,Resize Canvas Function,16,FND
+18,Full Screen Mode,17,FND
+19,Display Density,7,FND
+20,Pixel Density Control,19,FND
+21,Console Log Debugging,3,FND
+22,Statement Semicolon Syntax,3,FND
+23,Code Comments Syntax,22,FND
+24,Script Inclusion Tag,2,FND
+25,p5.js Library Import,24,FND
+26,CDN Script Loading,25,FND
+27,Global Mode Execution,3,FND
+28,Instance Mode Execution,27,FND
+29,p5 Constructor Function,28,FND
+30,Render Cycle Loop,4,FND
+31,Delta Time Tracking,5,FND
+32,Target Frame Rate Setting,5,FND
+33,Canvas Aspect Ratio,8|9,FND
+34,Point Primitive,1,PRIM
+35,Line Primitive,1,PRIM
+36,Rectangle Primitive,1,PRIM
+37,Ellipse Primitive,1,PRIM
+38,Circle Shortcut Function,37,PRIM
+39,Square Shortcut Function,36,PRIM
+40,Triangle Primitive,1,PRIM
+41,Quad Primitive,1,PRIM
+42,Arc Shape Primitive,37,PRIM
+43,Ellipse Mode Center,37,PRIM
+44,Ellipse Mode Corner,37,PRIM
+45,Rect Mode Center,36,PRIM
+46,Rect Mode Corner,36,PRIM
+47,Begin Shape Function,1,PRIM
+48,End Shape Function,47,PRIM
+49,Vertex Coordinates,47,PRIM
+50,Close Shape Parameter,48,PRIM
+51,Begin Contour Function,47,PRIM
+52,End Contour Function,51,PRIM
+53,Bézier Curve Function,47,PRIM
+54,Bézier Control Points,53,PRIM
+55,Bézier Vertex Function,53,PRIM
+56,Curve Shape Function,47,PRIM
+57,Curve Tightness Setting,56,PRIM
+58,Curve Vertex Function,56,PRIM
+59,Corner Radius Rectangle,36,PRIM
+60,Shape Stroke Weight,34,PRIM
+61,Stroke Cap Style,35,PRIM
+62,Stroke Join Style,36,PRIM
+63,No Stroke Function,60,PRIM
+64,No Fill Function,36,PRIM
+65,Smooth Rendering,2,PRIM
+66,No Smooth Rendering,65,PRIM
+67,Bounding Box Calculation,36,PRIM
+68,Shape Area Computation,36|37,PRIM
+69,RGB Color Space,2,CLR
+70,RGBA Alpha Channel,69,CLR
+71,HSB Color Space,69,CLR
+72,HSL Color Space,71,CLR
+73,Color Mode Setting,69,CLR
+74,Fill Color Function,69,CLR
+75,Stroke Color Function,69,CLR
+76,Grayscale Value Syntax,69,CLR
+77,Hex Color Code Strings,69,CLR
+78,Web Named Color Strings,69,CLR
+79,p5 Color Object,69,CLR
+80,Red Channel Extraction,79,CLR
+81,Green Channel Extraction,79,CLR
+82,Blue Channel Extraction,79,CLR
+83,Alpha Value Extraction,79,CLR
+84,Hue Component Extraction,71|79,CLR
+85,Saturation Extraction,71|79,CLR
+86,Brightness Extraction,71|79,CLR
+87,Color Interpolation Lerp,79,CLR
+88,Palette Color Array,79,CLR
+89,Complimentary Color Logic,71,CLR
+90,Triadic Palette Generator,71,CLR
+91,Load Pixels Function,7,CLR
+92,Update Pixels Function,91,CLR
+93,Pixels Array Indexing,91,CLR
+94,Get Pixel Color,7,CLR
+95,Set Pixel Color,92,CLR
+96,Color Blend Modes,70,CLR
+97,Multiply Blend Mode,96,CLR
+98,Screen Blend Mode,96,CLR
+99,Additive Color Mixing,69,CLR
+100,Subtractive Color Mixing,69,CLR
+101,Color Contrast Ratio,86,CLR
+102,Color Accessibility Palette,88,CLR
+103,Let Variable Declaration,3,FLOW
+104,Const Constant Variable,103,FLOW
+105,Global Variable Scope,103,FLOW
+106,Local Block Scope,103,FLOW
+107,If Conditional Branch,103,FLOW
+108,Else Conditional Branch,107,FLOW
+109,Else If Chained Logic,108,FLOW
+110,Relational Operators,107,FLOW
+111,Logical AND Operator,110,FLOW
+112,Logical OR Operator,110,FLOW
+113,Logical NOT Operator,110,FLOW
+114,Ternary Operator Syntax,107,FLOW
+115,Switch Statement Syntax,107,FLOW
+116,While Loop Construct,107,FLOW
+117,For Loop Construct,116,FLOW
+118,Loop Counter Variable,117,FLOW
+119,Infinite Loop Prevention,116,FLOW
+120,Nested For Loops,117,FLOW
+121,2D Grid Iteration,120,FLOW
+122,Array Data Structure,103,FLOW
+123,Array Element Indexing,122,FLOW
+124,Array Push Method,122,FLOW
+125,Array Pop Method,122,FLOW
+126,Array Length Property,122,FLOW
+127,For Of Loop Iteration,122,FLOW
+128,For Each Array Method,122,FLOW
+129,Array Splice Removal,122,FLOW
+130,Array Concat Joining,122,FLOW
+131,2D Matrix Array,122,FLOW
+132,Array Reverse Ordering,122,FLOW
+133,Array Sort Ordering,122,FLOW
+134,Boolean Flag Variable,107,FLOW
+135,State Machine Logic,115|134,FLOW
+136,Break and Continue Keywords,117,FLOW
+137,Translate Function,1,XFORM
+138,Rotate Function,1,XFORM
+139,Scale Function,1,XFORM
+140,Push Function,137,XFORM
+141,Pop Function,140,XFORM
+142,Matrix Stack Operations,140|141,XFORM
+143,Transformation Order Logic,137|138,XFORM
+144,Origin Point Relocation,137,XFORM
+145,Radians Angle System,138,XFORM
+146,Degrees Angle System,145,XFORM
+147,Angle Mode Setting,145|146,XFORM
+148,Shear X Transformation,137,XFORM
+149,Shear Y Transformation,137,XFORM
+150,Uniform Scaling,139,XFORM
+151,Non Uniform Scaling,139,XFORM
+152,Negative Scale Reflection,139,XFORM
+153,Hierarchical Transformation,142,XFORM
+154,Solar System Transformation,153,XFORM
+155,Robot Joint Transformation,153,XFORM
+156,Reset Matrix Function,142,XFORM
+157,Apply Matrix Function,156,XFORM
+158,Get Current Matrix,157,XFORM
+159,Screen to Local Coordinates,144,XFORM
+160,Local to Screen Coordinates,144,XFORM
+161,Pivot Point Selection,138|144,XFORM
+162,Center Rotation Pattern,161,XFORM
+163,Corner Rotation Pattern,161,XFORM
+164,Isolated Canvas Layers,141,XFORM
+165,Nested Transformation Trees,153,XFORM
+166,Rotation Speed Variable,138,XFORM
+167,Oscillating Rotation Angle,138,XFORM
+168,Scale Factor Animation,139,XFORM
+169,Transform Matrix Inversion,157,XFORM
+170,Affine Transformation Model,157,XFORM
+171,Linear Motion Logic,5,TRIG
+172,Position Displacement,171,TRIG
+173,Constant Velocity,172,TRIG
+174,Sine Function Math,145,TRIG
+175,Cosine Function Math,145,TRIG
+176,Tangent Function Math,145,TRIG
+177,Wave Amplitude Parameter,174,TRIG
+178,Wave Frequency Parameter,174,TRIG
+179,Wave Phase Offset,174,TRIG
+180,Harmonic Motion Wave,174|177,TRIG
+181,Circle Polar Coordinates,174|175,TRIG
+182,Polar to Cartesian Formula,181,TRIG
+183,Cartesian to Polar Formula,181,TRIG
+184,Arc Tangent Atan2 Function,176,TRIG
+185,Angle Between Coordinates,184,TRIG
+186,Rotational Tracking Motion,185,TRIG
+187,Map Range Function,171,TRIG
+188,Constrain Value Function,187,TRIG
+189,Linear Interpolation Lerp,187,TRIG
+190,Distance Formula Dist,171,TRIG
+191,Square Distance Metric,190,TRIG
+192,Lissajous Curve Generator,174|175,TRIG
+193,Spiral Pattern Generation,181,TRIG
+194,Damped Harmonic Oscillation,180,TRIG
+195,Pendulum Swing Simulation,180|185,TRIG
+196,Wave Interference Pattern,180,TRIG
+197,Circular Orbit Simulation,181,TRIG
+198,Elliptical Path Trajectory,181,TRIG
+199,Easing Function In,189,TRIG
+200,Easing Function Out,199,TRIG
+201,Easing Function In Out,199,TRIG
+202,Frame Independent Motion,31,TRIG
+203,Step Motion Accumulator,171,TRIG
+204,Trigonometric Lookup Table,174,TRIG
+205,Random Function Float,3,NOISE
+206,Random Range Function,205,NOISE
+207,Random Seed Setting,205,NOISE
+208,Random Gaussian Normal,205,NOISE
+209,Standard Deviation Spread,208,NOISE
+210,Mean Center Value,208,NOISE
+211,Random Walk Algorithm,205,NOISE
+212,Levy Flight Algorithm,211,NOISE
+213,Perlin Noise Concept,205,NOISE
+214,Noise Function 1D,213,NOISE
+215,Noise Function 2D,213,NOISE
+216,Noise Function 3D,213,NOISE
+217,Noise Scale Increment,214,NOISE
+218,Noise Detail Octaves,213,NOISE
+219,Noise Falloff Ratio,218,NOISE
+220,Noise Seed Function,213,NOISE
+221,Smooth Noise Landscape,215,NOISE
+222,Noise Animated Terrain,215|217,NOISE
+223,Noise Flow Field Concept,215,NOISE
+224,Vector Field Direction,223,NOISE
+225,Organic Curve Generation,214,NOISE
+226,Noise Texture Map,215|92,NOISE
+227,Wobbly Circle Generator,181|214,NOISE
+228,Perlin Noise vs Random,205|213,NOISE
+229,Simplex Noise Derivative,213,NOISE
+230,Worley Cell Noise,213|190,NOISE
+231,Monte Carlo Selection,205,NOISE
+232,Weighted Random Choice,205,NOISE
+233,Shuffle Array Order,122|205,NOISE
+234,Stochastic Tree Growth,211,NOISE
+235,Brownian Motion Model,211,NOISE
+236,Cloud Texture Generator,226,NOISE
+237,Marble Texture Generator,226|174,NOISE
+238,Noise Displacement Map,226,NOISE
+239,p5 Vector Class Concept,1,VEC
+240,Create Vector Function,239,VEC
+241,Vector Addition Add,239,VEC
+242,Vector Subtraction Sub,239,VEC
+243,Vector Scalar Multiply,239,VEC
+244,Vector Scalar Divide,239,VEC
+245,Vector Magnitude Mag,239,VEC
+246,Vector Magnitude Sq,245,VEC
+247,Vector Normalize Method,245,VEC
+248,Vector Set Mag Method,247,VEC
+249,Vector Limit Magnitude,245,VEC
+250,Vector Heading Angle,239|184,VEC
+251,Vector From Angle,250,VEC
+252,Vector Random 2D,251|205,VEC
+253,Vector Dot Product,239,VEC
+254,Vector Cross Product,239,VEC
+255,Vector Distance Dist,239,VEC
+256,Vector Angle Between,253,VEC
+257,Vector Lerp Method,239|189,VEC
+258,Velocity Motion Vector,241,VEC
+259,Acceleration Force Vector,258,VEC
+260,Accumulate Forces Newton,259,VEC
+261,Mass Attribute Scalar,260,VEC
+262,Gravity Force Simulation,260|261,VEC
+263,Friction Drag Simulation,247|260,VEC
+264,Fluid Resistance Model,263,VEC
+265,Gravitational Attraction,262,VEC
+266,Elastic Collision Bouncing,242|258,VEC
+267,Particle Class Object,239|258|259,VEC
+268,Particle System Manager,267|124,VEC
+269,Particle Lifespan Decay,267,VEC
+270,Particle Emitter Location,268,VEC
+271,Flocking Boids Steering,268,VEC
+272,Spring Force Hooke Law,242|260,VEC
+273,Mouse X Position,1,INP
+274,Mouse Y Position,1,INP
+275,Previous Mouse X PmouseX,273,INP
+276,Previous Mouse Y PmouseY,274,INP
+277,Mouse Is Pressed Flag,273,INP
+278,Mouse Button Value,277,INP
+279,Mouse Pressed Event,277,INP
+280,Mouse Released Event,277,INP
+281,Mouse Moved Event,273,INP
+282,Mouse Dragged Event,277,INP
+283,Mouse Clicked Event,279,INP
+284,Mouse Wheel Event,273,INP
+285,Key Is Pressed Flag,107,INP
+286,Key Variable Character,285,INP
+287,Key Code Number,285,INP
+288,Key Pressed Event,285,INP
+289,Key Released Event,285,INP
+290,Key Typed Event,285,INP
+291,Touch Touches Array,122,INP
+292,Touch Started Event,291,INP
+293,Touch Moved Event,291,INP
+294,Touch Ended Event,291,INP
+295,Device Orientation Tilt,273,INP
+296,Device Motion Acceleration,295,INP
+297,Shake Gesture Event,296,INP
+298,Hit Test Point Rect,273|274|36,INP
+299,Hit Test Point Circle,273|274|190,INP
+300,Hover Focus State,298,INP
+301,Drag and Drop Element,282|298,INP
+302,Cursor Appearance Pointer,273,INP
+303,No Cursor Function,302,INP
+304,Request Pointer Lock,302,INP
+305,Virtual Gamepad Input,285,INP
+306,Multi Touch Gesture Pinch,291,INP
+307,Create Button Element,2,DOM
+308,Create Slider Control,2,DOM
+309,Create Input Textbox,2,DOM
+310,Create Select Dropdown,2,DOM
+311,Create Checkbox Control,2,DOM
+312,Create Radio Buttons,2,DOM
+313,Create Color Picker,69,DOM
+314,Create Paragraph Tag,2,DOM
+315,Create Div Container,2,DOM
+316,Create Span Text Inline,2,DOM
+317,Create Img Element,2,DOM
+318,DOM Element Position,307,DOM
+319,DOM Element Size,307,DOM
+320,DOM Element Style CSS,307,DOM
+321,DOM Element Class Add,320,DOM
+322,DOM Element Value Get,308,DOM
+323,DOM Element Value Set,308,DOM
+324,DOM Mouse Pressed Event,307,DOM
+325,DOM Changed Event,308|310,DOM
+326,DOM Input Event,309,DOM
+327,Parent Container Attachment,315,DOM
+328,Child Element Removal,327,DOM
+329,Canvas Parent Wrapper,2|315,DOM
+330,Hide DOM Element,307,DOM
+331,Show DOM Element,330,DOM
+332,Select HTML Element,307,DOM
+333,Select All HTML Elements,332,DOM
+334,HTML5 Canvas Integration,2,DOM
+335,CSS Flexbox Layout,320,DOM
+336,CSS Grid Styling,320,DOM
+337,Responsive Layout Handler,318|319,DOM
+338,DOM Drag File Event,301|315,DOM
+339,File Input Button,309,DOM
+340,Embedded iFrame Canvas,2,DOM
+341,Function Declaration Syntax,103,JS
+342,Function Parameters Arguments,341,JS
+343,Function Return Statement,341,JS
+344,Arrow Function Expression,341,JS
+345,Callback Function Logic,341,JS
+346,Anonymous Function Usage,341,JS
+347,ES6 Class Declaration,341,JS
+348,Class Constructor Method,347,JS
+349,Class Method Definition,347,JS
+350,Class Instance Instantiation,348,JS
+351,This Keyword Binding,347,JS
+352,Class Inheritance Extends,347,JS
+353,Super Constructor Call,352,JS
+354,Static Method Definition,347,JS
+355,Object Literal Syntax,103,JS
+356,Object Property Access,355,JS
+357,Object Destructuring,355,JS
+358,Array Destructuring,122,JS
+359,Spread Operator Array,122,JS
+360,Rest Parameters Function,342,JS
+361,Array Map Higher Order,122|345,JS
+362,Array Filter Method,122|345,JS
+363,Array Reduce Method,122|345,JS
+364,Promise Object Async,345,JS
+365,Async Keyword Function,364,JS
+366,Await Keyword Expression,365,JS
+367,Fetch API Web Request,364,JS
+368,JSON Parse String,367,JS
+369,JSON Stringify Object,368,JS
+370,Load JSON p5 Function,368,JS
+371,ES6 Module Import Export,347,JS
+372,Try Catch Error Handling,341,JS
+373,Local Storage Persistence,369,JS
+374,Set Data Structure,122,JS
+375,WEBGL Renderer Mode,2,WEBGL
+376,3D Coordinate System,1|375,WEBGL
+377,Z Axis Depth Position,376,WEBGL
+378,Box 3D Primitive,376,WEBGL
+379,Sphere 3D Primitive,376,WEBGL
+380,Cylinder 3D Primitive,376,WEBGL
+381,Cone 3D Primitive,376,WEBGL
+382,Torus 3D Primitive,376,WEBGL
+383,Plane 3D Geometry,376,WEBGL
+384,Ellipsoid 3D Geometry,376,WEBGL
+385,Orbit Control Camera,375|273,WEBGL
+386,Camera Position Setting,375,WEBGL
+387,Perspective Camera Mode,386,WEBGL
+388,Ortho Camera Mode,386,WEBGL
+389,Ambient Light Source,375|69,WEBGL
+390,Directional Light Source,389,WEBGL
+391,Point Light Source,389,WEBGL
+392,Spot Light Source,389,WEBGL
+393,Normal Material Shading,375,WEBGL
+394,Basic Material Shading,375,WEBGL
+395,Ambient Material Shading,389,WEBGL
+396,Specular Material Shading,391,WEBGL
+397,Shininess Parameter,396,WEBGL
+398,Texture Mapping Function,375|317,WEBGL
+399,Create Shader Function,375,WEBGL
+400,Load Shader p5 Files,399,WEBGL
+401,Shader Uniform Variables,399,WEBGL
+402,Fragment Shader Filter,399,WEBGL
+403,Vertex Shader Displacement,399,WEBGL
+404,3D Model OBJ Import,375,WEBGL
+405,Load Model Function,404,WEBGL
+406,3D Mesh Vertex Array,404,WEBGL
+407,3D Lighting Model Combined,390|391,WEBGL
+408,Z Buffer Depth Test,377,WEBGL
+409,p5 Sound Library Include,25,SND
+410,User Start Audio Context,409,SND
+411,Load Sound File,409|12,SND
+412,Sound File Play,411,SND
+413,Sound File Stop,411,SND
+414,Sound File Pause,411,SND
+415,Sound File Loop,411,SND
+416,Sound Is Playing Status,412,SND
+417,Set Volume Level,409,SND
+418,Sound Pan Spatial,409,SND
+419,Playback Rate Speed,411,SND
+420,p5 Oscillator Class,409,SND
+421,Oscillator Wave Sine,420,SND
+422,Oscillator Wave Square,420,SND
+423,Oscillator Wave Triangle,420,SND
+424,Oscillator Wave Sawtooth,420,SND
+425,Oscillator Start Stop,420,SND
+426,Oscillator Frequency Set,420,SND
+427,ADSR Envelope Class,420,SND
+428,Envelope Attack Time,427,SND
+429,Envelope Decay Time,427,SND
+430,Envelope Sustain Level,427,SND
+431,Envelope Release Time,427,SND
+432,Play Envelope Trigger,427|420,SND
+433,p5 Noise White Pink,409,SND
+434,Audio Filter Lowpass,409,SND
+435,Audio Filter Highpass,409,SND
+436,Audio Filter Bandpass,409,SND
+437,Reverb Sound Effect,409,SND
+438,Delay Sound Effect,409,SND
+439,Audio Distortion Effect,409,SND
+440,Polyphonic Synthesizer,420|427,SND
+441,Midi Note to Frequency,426,SND
+442,Audio Node Signal Route,409,SND
+443,p5 AudioIn Microphone,409|410,FFT
+444,Microphone Start Input,443,FFT
+445,Microphone Stop Input,443,FFT
+446,Microphone Get Level,443,FFT
+447,p5 Amplitude Class,409,FFT
+448,Amplitude Get Level,447,FFT
+449,Smooth Amplitude Level,448|189,FFT
+450,p5 FFT Class Concept,409,FFT
+451,FFT Analyze Spectrum,450,FFT
+452,FFT Frequency Bins Array,451,FFT
+453,FFT Get Energy Bass,451,FFT
+454,FFT Get Energy LowMid,451,FFT
+455,FFT Get Energy Mid,451,FFT
+456,FFT Get Energy HighMid,451,FFT
+457,FFT Get Energy Treble,451,FFT
+458,FFT Waveform Time Domain,450,FFT
+459,Spectrum Frequency Chart,452|117,FFT
+460,Circular Audio Visualizer,452|181,FFT
+461,Beat Detection Threshold,448,FFT
+462,Beat Detection Energy Peak,453|461,FFT
+463,Audio Reactive Pulse Scale,448|139,FFT
+464,Audio Reactive Color Shift,453|71,FFT
+465,Particle Burst on Beat,462|268,FFT
+466,Fast Fourier Transform Math,450,FFT
+467,Audio Spectrogram Plot,452|92,FFT
+468,Audio Pitch Detection,451,FFT
+469,Frequency Centroid Math,451,FFT
+470,Logarithmic Frequency Scale,452,FFT
+471,Octave Band Splitting,452,FFT
+472,Audio Input Peak Hold,448,FFT
+473,Audio Visual EQ Bars,452|36,FFT
+474,3D Audio Reactive Visual,452|375,FFT
+475,Microphone Feedback Gate,443,FFT
+476,Acoustic Signal Processing,450,FFT
+477,Load Image Function,12|317,IMG
+478,Image Drawing Function,477,IMG
+479,Image Resize Function,477,IMG
+480,Image Tint Function,477|69,IMG
+481,No Tint Function,480,IMG
+482,Image Crop Subrectangle,478,IMG
+483,Create Image Blank,477,IMG
+484,p5 Image Class Object,477,IMG
+485,Image Pixel Array Load,484|91,IMG
+486,Image Filter Grayscale,477,IMG
+487,Image Filter Invert,477,IMG
+488,Image Filter Threshold,477,IMG
+489,Image Filter Blur,477,IMG
+490,Image Filter Posterize,477,IMG
+491,Image Filter Erode,477,IMG
+492,Image Filter Dilate,477,IMG
+493,Create Capture Webcam,2|477,IMG
+494,Video Capture Hide DOM,493|330,IMG
+495,Webcam Pixel Mirroring,493|152,IMG
+496,Webcam Motion Difference,493|91|190,IMG
+497,Slit Scan Video Effect,493|482,IMG
+498,ASCIIfy Image Converter,485|86,IMG
+499,Halftone Dot Image Screen,485|37,IMG
+500,Pixelate Image Mosaic,485|36,IMG
+501,Convolution Matrix Filter,485|121,IMG
+502,Sobel Edge Detection Filter,501,IMG
+503,Save Canvas Image File,2,IMG
+504,Save Frames Animation GIF,503,IMG
+505,Graphics Offscreen Buffer,2,IMG
+506,Create Graphics Function,505,IMG
+507,Offscreen Texture Render,506|398,IMG
+508,Mask Image Alpha Shape,477,IMG
+509,Text Drawing Function,1,TYPO
+510,Text Size Setting,509,TYPO
+511,Text Align Alignment,509,TYPO
+512,Load Font File,12|509,TYPO
+513,Text Font Setting,512,TYPO
+514,p5 Font Class Object,512,TYPO
+515,Text Bounds Bounding Box,514,TYPO
+516,Text To Points Vector,514,TYPO
+517,Font Glyph Outlines,516,TYPO
+518,Particle Typography Effect,516|268,TYPO
+519,Wobbly Text Particle Point,516|214,TYPO
+520,Kinetic Typography Motion,509|138,TYPO
+521,Text Leading Spacing,509,TYPO
+522,Text Style Bold Italic,509,TYPO
+523,Text Ascent Descent Metric,515,TYPO
+524,Text Wrap Word Container,509,TYPO
+525,System Web Font Stack,513,TYPO
+526,OTF TTF Font Support,512,TYPO
+527,Variable Font Parameters,514,TYPO
+528,3D Text Extrusion WebGL,514|375,TYPO
+529,Text Path Following Arc,516|181,TYPO
+530,Interactive Text Input Typo,309|509,TYPO
+531,Generative Type Grid,516|121,TYPO
+532,Deconstructed Letterforms,516,TYPO
+533,ASCII Art Text Canvas,509|121,TYPO
+534,Text Stroke Fill Combo,509|74|75,TYPO
+535,Per Character Rotation,509|138,TYPO
+536,Dynamic Font Scaling,510|187,TYPO
+537,Kerning Letter Spacing,509,TYPO
+538,SVG Font Path Parsing,516,TYPO
+539,p5 Web Editor Interface,2,TOOL
+540,Web Editor Sketch File,539,TOOL
+541,Web Editor Asset Sidebar,539,TOOL
+542,VS Code Code Editor,2,TOOL
+543,Live Server VS Extension,542,TOOL
+544,Browser Developer Console,21,TOOL
+545,Browser Element Inspector,544,TOOL
+546,Browser Network Tab,367|544,TOOL
+547,JavaScript Breakpoints,544,TOOL
+548,Debugger Keyword Syntax,547,TOOL
+549,p5 Sound Local Host CORS,409|543,TOOL
+550,CORS Security Policy,549,TOOL
+551,Local Web Server Python,543|550,TOOL
+552,Git Version Control,542,TOOL
+553,GitHub Repository Hosting,552,TOOL
+554,GitHub Pages Deployment,553,TOOL
+555,MkDocs Material Textbook,554,TOOL
+556,p5 Accessibility Library,2,TOOL
+557,Screen Reader Description,556,TOOL
+558,Text Output Accessible,556,TOOL
+559,Grid Output Accessible,556,TOOL
+560,p5 Sound Recording Tool,409|503,TOOL
+561,Minified Library Production,25,TOOL
+562,Source Maps Debugging,561|544,TOOL
+563,npm Package Manager,542,TOOL
+564,Bundler Vite Webpack,563,TOOL
+565,ESLint Code Formatter,542,TOOL
+566,Prettier Code Formatting,542,TOOL
+567,p5 CLI Command Tool,563,TOOL
+568,Offline p5 Reference Guide,539,TOOL
+569,Computational Thinking Concept,3,PED
+570,Algorithmic Decomposition,569,PED
+571,Pattern Recognition Visual,569,PED
+572,Abstraction Problem Solving,569,PED
+573,Algorithm Design Step,570|572,PED
+574,Live Coding Demonstration,3,PED
+575,Pair Programming Practice,574,PED
+576,Code Review Peer Rubric,575,PED
+577,Scaffolding Starter Code,3,PED
+578,Parsons Problems Syntax,577,PED
+579,Predict Output Exercises,577,PED
+580,Debugging Mental Model,21|570,PED
+581,Common Misconception Background,11|4,PED
+582,Common Misconception PushPop,140|141,PED
+583,Common Misconception Scope,105|106,PED
+584,Common Misconception Audio,410,PED
+585,Creative Coding Art History,569,PED
+586,Vera Molnár Generative Art,585|205,PED
+587,John Whitney Computer Motion,585|181,PED
+588,Manfred Mohr Algorithmic Art,585|376,PED
+589,Casey Reas Ben Fry Processing,585,PED
+590,Interactive MicroSim Design,572|307,PED
+591,Differentiated Challenge Level,577,PED
+592,Inclusive Mentoring Workshop,575,PED
+593,Formative Code Assessment,576,PED
+594,Summative Capstone Project,573|590,PED
+595,Rubric Creativity Code Quality,594,PED
+596,Student Portfolio Showcase,554|594,PED
+597,Universal Design Learning UDL,556|592,PED
+598,Visual Math Pedagogy,174|572,PED
+599,Acoustic Signal Pedagogy,450|572,PED
+600,Artistic Computational Synthesis,569|585|594,PED

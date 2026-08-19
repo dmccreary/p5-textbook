@@ -1,0 +1,20 @@
+{
+  "FND": "Foundation Concepts",
+  "PRIM": "2D Shape & Geometry",
+  "CLR": "Color Theory & Pixels",
+  "FLOW": "Control Flow & Arrays",
+  "XFORM": "Matrix Transformations",
+  "TRIG": "Animation & Trigonometry",
+  "NOISE": "Randomness & Perlin Noise",
+  "VEC": "Vector Math & Physics",
+  "INP": "User Input & Sensing",
+  "DOM": "DOM Controls & HTML",
+  "JS": "Modern ES6+ JavaScript",
+  "WEBGL": "3D WebGL Graphics",
+  "SND": "Audio Synthesis & Sound",
+  "FFT": "Signal Processing & FFT",
+  "IMG": "Image & Video Processing",
+  "TYPO": "Generative Typography",
+  "TOOL": "Development Tools",
+  "PED": "Pedagogy & Computation"
+}

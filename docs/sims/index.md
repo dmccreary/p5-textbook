@@ -9,3 +9,8 @@ to the appropriate library (p5.js, Chart.js, vis-network, Mermaid, Leaflet,
 Plotly, Venn.js).
 
 <!-- The MicroSim catalog is built up as new sims are added. -->
+
+## Available MicroSims & Visualizers
+
+* [Learning Graph Viewer](graph-viewer/index.md) — Interactive 600-concept vis-network graph viewer with search, filtering, and legend statistics.
+
