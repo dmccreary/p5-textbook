@@ -1,0 +1,1817 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An interactive intelligent textbook about the p5.js processing library and how to use it to teach computational thinking.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/p5-textbook/chapters/20-3d-cameras-shaders/">
+      
+      
+        <link rel="prev" href="../19-3d-webgl-primitives/">
+      
+      
+        <link rel="next" href="../21-audio-synthesis-sound/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>20. 3D Cameras, Lighting Models, Materials & Shaders - The Art of Processing</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3d-cameras-lighting-models-materials-shaders" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="The Art of Processing" class="md-header__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            The Art of Processing
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              20. 3D Cameras, Lighting Models, Materials & Shaders
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="The Art of Processing" class="md-nav__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    The Art of Processing
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-intro-creative-coding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introduction to Creative Coding & Canvas Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-2d-primitive-shapes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. 2D Primitive Shapes & Custom Geometries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-color-theory-pixels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Color Theory, Color Modes & Pixel Manipulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-variables-and-scope/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Variables, Data Types & Scope Fundamentals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-control-flow-and-loops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Control Flow, Loops & Array Data Structures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-matrix-transformations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Matrix Transformations & Coordinate Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-linear-motion-trig/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Linear Motion, Trigonometry & Wave Math
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-polar-coordinates-easing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Polar Coordinates, Oscillation & Easing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-randomness-and-walks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Randomness, Gaussian Distributions & Random Walk
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-perlin-noise-fields/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Perlin Noise Landscapes & Vector Flow Fields
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-vector-math-physics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Vector Math Fundamentals & Physics Acceleration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-particle-systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Particle Systems, Forces & Steering Behaviors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-mouse-keyboard-events/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Mouse & Keyboard User Event Sensing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-touch-mobile-sensors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Touch Gestures, Mobile Sensors & Interaction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-dom-controls-ui/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. DOM Controls, Input Fields & UI Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-css-styling-layouts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16. CSS Styling, Layouts & Web Page Integration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-functions-and-callbacks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17. Functions, Arrow Expressions & Callbacks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-es6-classes-async/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18. ES6 Classes, Object-Oriented Programming & Async Data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-3d-webgl-primitives/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    19. 3D WebGL Coordinates & Primitive Geometries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    20. 3D Cameras, Lighting Models, Materials & Shaders
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    20. 3D Cameras, Lighting Models, Materials & Shaders
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-movie-director-and-stage-lights" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Movie Director and Stage Lights
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dressing-the-set-materials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dressing the Set: Materials
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shaders-the-ultimate-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shaders: The Ultimate Control
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importing-the-cast-3d-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Importing the Cast: 3D Models
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-all-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      Putting it all Together
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#microsim-interactive-lighting" class="md-nav__link">
+    <span class="md-ellipsis">
+      MicroSim: Interactive Lighting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#microsim-custom-shader-effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      MicroSim: Custom Shader Effects
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deep-dive-the-physics-of-light" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deep Dive: The Physics of Light
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-shader-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Shader Techniques
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimizing-your-3d-scenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimizing Your 3D Scenes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deep-dive-the-physics-of-light_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deep Dive: The Physics of Light
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-shader-techniques_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Shader Techniques
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimizing-your-3d-scenes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimizing Your 3D Scenes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deep-dive-the-physics-of-light_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deep Dive: The Physics of Light
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-shader-techniques_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Shader Techniques
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimizing-your-3d-scenes_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimizing Your 3D Scenes
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-audio-synthesis-sound/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    21. Audio Synthesis, Oscillators & Envelopes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-mic-input-fft/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    22. Microphone Input & FFT Spectral Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-image-processing-video/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    23. Image Processing, Filters & Video Capture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-generative-typography/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    24. Generative Typography & Vector Font Outlines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-dev-environment-pedagogy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    25. Development Environment, Tools & Pedagogy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-movie-director-and-stage-lights" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Movie Director and Stage Lights
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dressing-the-set-materials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dressing the Set: Materials
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shaders-the-ultimate-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shaders: The Ultimate Control
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importing-the-cast-3d-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Importing the Cast: 3D Models
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-all-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      Putting it all Together
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#microsim-interactive-lighting" class="md-nav__link">
+    <span class="md-ellipsis">
+      MicroSim: Interactive Lighting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#microsim-custom-shader-effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      MicroSim: Custom Shader Effects
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deep-dive-the-physics-of-light" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deep Dive: The Physics of Light
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-shader-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Shader Techniques
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimizing-your-3d-scenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimizing Your 3D Scenes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deep-dive-the-physics-of-light_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deep Dive: The Physics of Light
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-shader-techniques_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Shader Techniques
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimizing-your-3d-scenes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimizing Your 3D Scenes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deep-dive-the-physics-of-light_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deep Dive: The Physics of Light
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-shader-techniques_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Shader Techniques
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimizing-your-3d-scenes_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimizing Your 3D Scenes
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/p5-textbook/blob/main/docs/chapters/20-3d-cameras-shaders/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="3d-cameras-lighting-models-materials-shaders">3D Cameras, Lighting Models, Materials &amp; Shaders<a class="headerlink" href="#3d-cameras-lighting-models-materials-shaders" title="Permanent link">&para;</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>Controls 3D cameras, ambient/directional/point lights, specular materials, texture maps, OBJ models, and GLSL shaders. Students will gain practical hands-on experience by building interactive sketches and visual experiments that demonstrate these concepts.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<p>This chapter covers the following 20 concepts from the learning graph:</p>
+<ol>
+<li>Ambient Light Source</li>
+<li>Directional Light Source</li>
+<li>Point Light Source</li>
+<li>Spot Light Source</li>
+<li>Normal Material Shading</li>
+<li>Basic Material Shading</li>
+<li>Ambient Material Shading</li>
+<li>Specular Material Shading</li>
+<li>Shininess Parameter</li>
+<li>Texture Mapping Function</li>
+<li>Create Shader Function</li>
+<li>Load Shader p5 Files</li>
+<li>Shader Uniform Variables</li>
+<li>Fragment Shader Filter</li>
+<li>Vertex Shader Displacement</li>
+<li>3D Model OBJ Import</li>
+<li>Load Model Function</li>
+<li>3D Mesh Vertex Array</li>
+<li>3D Lighting Model Combined</li>
+<li>Z Buffer Depth Test</li>
+</ol>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../19-3d-webgl-primitives/">Chapter 19: 3D WebGL Coordinates &amp; Primitive Geometries</a></li>
+</ul>
+<hr />
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Welcome to the 3D Stage!</p>
+<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+Time to color outside the loops! Today we are entering the magical realm of 3D rendering.</p>
+</div>
+<h2 id="the-movie-director-and-stage-lights">The Movie Director and Stage Lights<a class="headerlink" href="#the-movie-director-and-stage-lights" title="Permanent link">&para;</a></h2>
+<p>Imagine you are a movie director. You have an empty stage. It is completely pitch black. To make a movie, you need characters, you need materials for their costumes, you need cameras to capture the action, and most importantly, you need lights. Without lights, everything remains hidden in the void. In p5.js, working in WebGL mode is exactly like being a movie director on a digital stage. You are responsible for placing the objects, moving the camera, and setting up the stage lights. </p>
+<p>When you create a 3D scene, you are basically writing the script for how the computer should draw shapes and illuminate them. This process involves a lot of math, but don't worry, p5.js handles the heavy lifting. All you have to do is make the creative choices. </p>
+<p>Let's start with lighting. In the real world, light bounces off surfaces and enters our eyes. In a computer simulation, we have to calculate how light interacts with every single pixel on the screen. To make things manageable, we break lighting down into different types of light sources. </p>
+<p>The first and most basic type is the <strong>Ambient Light Source</strong>. Think of ambient light as the baseline level of brightness in a room. It doesn't come from any specific direction, and it doesn't create any shadows. It just makes everything uniformly visible. If you only use an <strong>Ambient Light Source</strong>, your 3D objects will look flat, like 2D cutouts, because there are no highlights or shadows to give them a sense of volume.</p>
+<p>To add depth, we need lights that have direction. A <strong>Directional Light Source</strong> is like the sun. It's so far away that its light rays are essentially parallel by the time they reach your scene. It hits all objects from the same angle. When you add a <strong>Directional Light Source</strong>, suddenly your spheres look round and your boxes have distinct sides.</p>
+<p>If you want a light that acts like a lightbulb in the middle of a room, you need a <strong>Point Light Source</strong>. This type of light emanates from a specific point in 3D space and spreads out in all directions. Objects that are closer to the <strong>Point Light Source</strong> will appear brighter, and objects further away will appear dimmer. </p>
+<p>For even more dramatic lighting, like a flashlight or a theatrical spotlight, you use a <strong>Spot Light Source</strong>. A <strong>Spot Light Source</strong> is like a point light, but its light is restricted to a cone shape. You can control the angle of the cone and the direction it's pointing. This is perfect for highlighting specific objects on your stage.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Lighting Strategy</p>
+<p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+Think about how different light sources evoke different moods. A directional light might feel like a sunny day, while a spotlight feels like an interrogation room!</p>
+</div>
+<h2 id="dressing-the-set-materials">Dressing the Set: Materials<a class="headerlink" href="#dressing-the-set-materials" title="Permanent link">&para;</a></h2>
+<p>Once you have lights, you need to decide how your objects react to those lights. In 3D graphics, this is called the material. A material defines the color, texture, and shininess of an object's surface. </p>
+<p>If you want an object to be completely unaffected by lights, you can use <strong>Normal Material Shading</strong>. This is a special type of material that colors the object based on the direction its surface is facing. It's often used for debugging, so you can easily see the geometry of your shapes regardless of the lighting setup.</p>
+<p>For simple, unlit objects, you can use <strong>Basic Material Shading</strong>. This just gives the object a solid color, ignoring any lights in the scene. </p>
+<p>But if you want your objects to interact with the lights you've so carefully placed, you need to use more advanced materials. <strong>Ambient Material Shading</strong> determines how much of the <strong>Ambient Light Source</strong> the object reflects. </p>
+<p>For shiny objects like plastic, metal, or wet surfaces, you need <strong>Specular Material Shading</strong>. This calculates the bright highlights that appear when light reflects directly into the camera. The size and sharpness of these highlights are controlled by the <strong>Shininess Parameter</strong>. A high <strong>Shininess Parameter</strong> will create a small, sharp highlight, like on a billiard ball. A low <strong>Shininess Parameter</strong> will create a large, soft highlight, like on a piece of chalk.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Material Matters</p>
+<p><img alt="Palette tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+Combining different materials is key to creating realistic objects! Try mixing specular highlights with a subtle ambient base.</p>
+</div>
+<p>Sometimes, a solid color isn't enough. What if you want your object to look like it's made of wood, brick, or even have a picture painted on it? That's where the <strong>Texture Mapping Function</strong> comes in. Texture mapping takes a 2D image and wraps it around a 3D object, much like wrapping paper on a present. You can use any image as a texture, and p5.js will calculate how to stretch and pin it to the surface of your geometry.</p>
+<h2 id="shaders-the-ultimate-control">Shaders: The Ultimate Control<a class="headerlink" href="#shaders-the-ultimate-control" title="Permanent link">&para;</a></h2>
+<p>Lighting and materials are great, but sometimes you need absolute control over how every single pixel is drawn. For that, you need to write your own shaders. Shaders are small programs that run directly on the graphics processing unit (GPU). They are written in a language called GLSL (OpenGL Shading Language).</p>
+<p>There are two main types of shaders: vertex shaders and fragment shaders. The vertex shader processes every single point (vertex) in your 3D geometry. The fragment shader processes every single pixel (fragment) that makes up the surface of the geometry.</p>
+<p>To use custom shaders in p5.js, you first need to write them in separate files (usually ending in .vert and .frag). Then, you use the <strong>Load Shader p5 Files</strong> function to bring them into your sketch. Once loaded, you activate them using the <strong>Create Shader Function</strong>.</p>
+<p>Shaders are incredibly powerful but can be tricky to learn. The p5.js sketch acts as the director, sending instructions and data to the shaders. These pieces of data are called <strong>Shader Uniform Variables</strong>. You can pass numbers, vectors, colors, and even images to your shaders using <strong>Shader Uniform Variables</strong>. The shader then uses this data to perform its calculations.</p>
+<p>For example, you could write a <strong>Fragment Shader Filter</strong> that takes an image and applies a blur, color tint, or edge detection effect. Or, you could write a <strong>Vertex Shader Displacement</strong> that moves the vertices of a 3D model up and down based on the bright and dark areas of a texture map, creating realistic bumps and wrinkles.</p>
+<div class="admonition mascot-encourage">
+<p class="admonition-title">Shader Magic</p>
+<p><img alt="Palette encouraging" class="mascot-admonition-img" src="../../img/mascot/encouraging.png" />
+Shaders can look intimidating with all that math, but they are the secret behind the most stunning visual effects. Take it step by step!</p>
+</div>
+<h2 id="importing-the-cast-3d-models">Importing the Cast: 3D Models<a class="headerlink" href="#importing-the-cast-3d-models" title="Permanent link">&para;</a></h2>
+<p>While p5.js has built-in functions for drawing spheres, boxes, and cylinders, sometimes you want to bring in more complex shapes, like a character or a vehicle. You can do this by creating your models in a 3D modeling program like Blender and exporting them as an OBJ file.</p>
+<p>An OBJ file is a standard text format that lists all the vertices, texture coordinates, and faces that make up a 3D model. This is called <strong>3D Model OBJ Import</strong>. </p>
+<p>To use an OBJ file in your sketch, you use the <strong>Load Model Function</strong>. This reads the file and creates a p5.Geometry object. Inside this object is a <strong>3D Mesh Vertex Array</strong>, which is simply a long list of all the points that define the shape.</p>
+<p>Once the model is loaded, you can treat it just like any of the built-in shapes. You can apply materials, add lights, and even pass it to your custom shaders. </p>
+<h2 id="putting-it-all-together">Putting it all Together<a class="headerlink" href="#putting-it-all-together" title="Permanent link">&para;</a></h2>
+<p>When you combine all these elements—cameras, lights, materials, textures, shaders, and imported models—you get the <strong>3D Lighting Model Combined</strong>. This is the complete system that calculates the final color of every pixel on your screen.</p>
+<p>As the director, you also have to manage the staging. When you draw multiple objects in 3D space, the computer needs to know which objects are in front of others. This is handled automatically by the <strong>Z Buffer Depth Test</strong>. The Z buffer keeps track of the depth (Z-coordinate) of every pixel drawn. Before drawing a new pixel, the graphics card checks the Z buffer to see if there is already something closer to the camera at that position. If there is, the new pixel is ignored. If not, the new pixel is drawn, and its depth is recorded in the Z buffer.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">Bravo! Cut! Print!</p>
+<p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+You've mastered the digital stage! Your movies are going to look amazing.</p>
+</div>
+<h2 id="microsim-interactive-lighting">MicroSim: Interactive Lighting<a class="headerlink" href="#microsim-interactive-lighting" title="Permanent link">&para;</a></h2>
+<details>
+<summary>MicroSim: Stage Lighting Setup</summary>
+<p><strong>Goal</strong>: Allow students to interactively place lights on a 3D stage and observe how different materials react.</p>
+<p><strong>UI Elements</strong>:
+- Sliders for Ambient, Directional, Point, and Spot Light Source intensities.
+- Dropdown to select the material (Normal, Basic, Ambient, Specular) for the central object.
+- Slider for Shininess Parameter.</p>
+<p><strong>Behavior</strong>:
+- The scene contains a rotating sphere in the center.
+- As the user adjusts the light sliders, the illumination on the sphere changes dynamically.
+- When a new material is selected, the sphere's appearance updates to reflect the chosen shading model.</p>
+</details>
+<h2 id="microsim-custom-shader-effects">MicroSim: Custom Shader Effects<a class="headerlink" href="#microsim-custom-shader-effects" title="Permanent link">&para;</a></h2>
+<details>
+<summary>MicroSim: Exploring Shaders</summary>
+<p><strong>Goal</strong>: Demonstrate the power of GLSL shaders for real-time visual effects.</p>
+<p><strong>UI Elements</strong>:
+- A file upload button for Load Shader p5 Files.
+- Sliders mapped to Shader Uniform Variables (e.g., time, mouse position, color tint).
+- A toggle switch to switch between a Fragment Shader Filter and a Vertex Shader Displacement.</p>
+<p><strong>Behavior</strong>:
+- The canvas displays a 3D plane or sphere.
+- When the user uploads a valid shader, it's applied to the geometry.
+- Adjusting the uniform sliders alters the visual output of the shader in real-time, demonstrating how the p5.js sketch communicates with the GPU.</p>
+</details>
+<h2 id="deep-dive-the-physics-of-light">Deep Dive: The Physics of Light<a class="headerlink" href="#deep-dive-the-physics-of-light" title="Permanent link">&para;</a></h2>
+<p>To truly master our digital stage, we must understand the physical properties of light that we are simulating. Real-world light is a form of electromagnetic radiation. When light from a source like the sun or a lightbulb hits an object, several things can happen. It can be absorbed, transmitted, or reflected. </p>
+<p>In our 3D computer graphics models, we primarily care about reflection. There are two main types of reflection: diffuse and specular. Diffuse reflection happens when light hits a rough surface and scatters in all directions. This is what gives an object its base color and makes it visible regardless of the camera's position. In p5.js, this is simulated using ambient and directional lights combined with ambient and basic materials.</p>
+<p>Specular reflection, on the other hand, happens when light hits a smooth, shiny surface and bounces off in a concentrated beam, much like a mirror. This creates the bright highlights we see on polished metal or wet objects. The Shininess Parameter in our specular materials controls the microscopic roughness of the surface, determining whether the specular highlight is sharp and small (smooth surface) or wide and soft (rougher surface).</p>
+<p>Understanding these physical principles allows you, the director, to make informed decisions about how to light your scene to achieve the desired mood and realism. By carefully balancing the different types of light sources and materials, you can create scenes that range from cartoonish and flat to highly realistic and atmospheric.</p>
+<h2 id="advanced-shader-techniques">Advanced Shader Techniques<a class="headerlink" href="#advanced-shader-techniques" title="Permanent link">&para;</a></h2>
+<p>While basic shaders are incredibly useful, the true power of GLSL lies in its ability to perform complex mathematical calculations on the GPU. Because the GPU is designed to perform the same operation on many pixels simultaneously, shaders can execute these calculations incredibly fast, enabling real-time visual effects that would be impossible to achieve with the CPU alone.</p>
+<p>One common advanced technique is procedural texturing. Instead of loading an image file, you can write a shader that generates a texture algorithmically. For example, you could use Perlin noise or sine waves to create procedural wood, marble, or fire textures. These textures have the advantage of being resolution-independent and can be animated over time simply by passing a time variable as a uniform to the shader.</p>
+<p>Another powerful application of shaders is post-processing. A post-processing shader takes the final rendered image of your scene and applies effects to it, much like applying filters in a photo editing app. You can use post-processing shaders to add bloom, depth of field, color grading, or even simulate the look of an old CRT monitor or film camera.</p>
+<p>When working with shaders, it's crucial to understand the graphics pipeline. The vertex shader always runs first, calculating the final position of each vertex on the screen. The output of the vertex shader is then interpolated and passed to the fragment shader, which runs for every pixel covered by the geometry. By manipulating the data as it flows through this pipeline, you have absolute control over the final image.</p>
+<h2 id="optimizing-your-3d-scenes">Optimizing Your 3D Scenes<a class="headerlink" href="#optimizing-your-3d-scenes" title="Permanent link">&para;</a></h2>
+<p>As you add more lights, complex models, and high-resolution textures to your scenes, you may notice that the frame rate starts to drop. This is because every additional element requires more calculations from the computer. To ensure that your interactive sketches run smoothly, it's essential to practice good optimization techniques.</p>
+<p>One of the most effective ways to optimize a 3D scene is to reduce the polygon count of your models. The 3D Mesh Vertex Array can contain thousands or even millions of points, and processing all of them can be computationally expensive. By simplifying your models in a program like Blender before exporting them, you can significantly improve performance without sacrificing too much visual quality.</p>
+<p>Another important optimization strategy is to use lights sparingly. Calculating the interactions between multiple light sources and complex materials can quickly overwhelm the GPU. Try to achieve the desired lighting effect with as few lights as possible. For example, you might be able to replace several point lights with a single directional light or use a texture map to simulate complex lighting details.</p>
+<p>Finally, be mindful of the shaders you use. While shaders are fast, a poorly written shader can still cause performance issues. Avoid using complex mathematical functions or long loops in your fragment shaders, as these will be executed for every single pixel on the screen. By profiling your sketches and identifying performance bottlenecks, you can ensure that your digital stage always runs at a smooth 60 frames per second.</p>
+<h2 id="deep-dive-the-physics-of-light_1">Deep Dive: The Physics of Light<a class="headerlink" href="#deep-dive-the-physics-of-light_1" title="Permanent link">&para;</a></h2>
+<p>To truly master our digital stage, we must understand the physical properties of light that we are simulating. Real-world light is a form of electromagnetic radiation. When light from a source like the sun or a lightbulb hits an object, several things can happen. It can be absorbed, transmitted, or reflected. </p>
+<p>In our 3D computer graphics models, we primarily care about reflection. There are two main types of reflection: diffuse and specular. Diffuse reflection happens when light hits a rough surface and scatters in all directions. This is what gives an object its base color and makes it visible regardless of the camera's position. In p5.js, this is simulated using ambient and directional lights combined with ambient and basic materials.</p>
+<p>Specular reflection, on the other hand, happens when light hits a smooth, shiny surface and bounces off in a concentrated beam, much like a mirror. This creates the bright highlights we see on polished metal or wet objects. The Shininess Parameter in our specular materials controls the microscopic roughness of the surface, determining whether the specular highlight is sharp and small (smooth surface) or wide and soft (rougher surface).</p>
+<p>Understanding these physical principles allows you, the director, to make informed decisions about how to light your scene to achieve the desired mood and realism. By carefully balancing the different types of light sources and materials, you can create scenes that range from cartoonish and flat to highly realistic and atmospheric.</p>
+<h2 id="advanced-shader-techniques_1">Advanced Shader Techniques<a class="headerlink" href="#advanced-shader-techniques_1" title="Permanent link">&para;</a></h2>
+<p>While basic shaders are incredibly useful, the true power of GLSL lies in its ability to perform complex mathematical calculations on the GPU. Because the GPU is designed to perform the same operation on many pixels simultaneously, shaders can execute these calculations incredibly fast, enabling real-time visual effects that would be impossible to achieve with the CPU alone.</p>
+<p>One common advanced technique is procedural texturing. Instead of loading an image file, you can write a shader that generates a texture algorithmically. For example, you could use Perlin noise or sine waves to create procedural wood, marble, or fire textures. These textures have the advantage of being resolution-independent and can be animated over time simply by passing a time variable as a uniform to the shader.</p>
+<p>Another powerful application of shaders is post-processing. A post-processing shader takes the final rendered image of your scene and applies effects to it, much like applying filters in a photo editing app. You can use post-processing shaders to add bloom, depth of field, color grading, or even simulate the look of an old CRT monitor or film camera.</p>
+<p>When working with shaders, it's crucial to understand the graphics pipeline. The vertex shader always runs first, calculating the final position of each vertex on the screen. The output of the vertex shader is then interpolated and passed to the fragment shader, which runs for every pixel covered by the geometry. By manipulating the data as it flows through this pipeline, you have absolute control over the final image.</p>
+<h2 id="optimizing-your-3d-scenes_1">Optimizing Your 3D Scenes<a class="headerlink" href="#optimizing-your-3d-scenes_1" title="Permanent link">&para;</a></h2>
+<p>As you add more lights, complex models, and high-resolution textures to your scenes, you may notice that the frame rate starts to drop. This is because every additional element requires more calculations from the computer. To ensure that your interactive sketches run smoothly, it's essential to practice good optimization techniques.</p>
+<p>One of the most effective ways to optimize a 3D scene is to reduce the polygon count of your models. The 3D Mesh Vertex Array can contain thousands or even millions of points, and processing all of them can be computationally expensive. By simplifying your models in a program like Blender before exporting them, you can significantly improve performance without sacrificing too much visual quality.</p>
+<p>Another important optimization strategy is to use lights sparingly. Calculating the interactions between multiple light sources and complex materials can quickly overwhelm the GPU. Try to achieve the desired lighting effect with as few lights as possible. For example, you might be able to replace several point lights with a single directional light or use a texture map to simulate complex lighting details.</p>
+<p>Finally, be mindful of the shaders you use. While shaders are fast, a poorly written shader can still cause performance issues. Avoid using complex mathematical functions or long loops in your fragment shaders, as these will be executed for every single pixel on the screen. By profiling your sketches and identifying performance bottlenecks, you can ensure that your digital stage always runs at a smooth 60 frames per second.</p>
+<h2 id="deep-dive-the-physics-of-light_2">Deep Dive: The Physics of Light<a class="headerlink" href="#deep-dive-the-physics-of-light_2" title="Permanent link">&para;</a></h2>
+<p>To truly master our digital stage, we must understand the physical properties of light that we are simulating. Real-world light is a form of electromagnetic radiation. When light from a source like the sun or a lightbulb hits an object, several things can happen. It can be absorbed, transmitted, or reflected. </p>
+<p>In our 3D computer graphics models, we primarily care about reflection. There are two main types of reflection: diffuse and specular. Diffuse reflection happens when light hits a rough surface and scatters in all directions. This is what gives an object its base color and makes it visible regardless of the camera's position. In p5.js, this is simulated using ambient and directional lights combined with ambient and basic materials.</p>
+<p>Specular reflection, on the other hand, happens when light hits a smooth, shiny surface and bounces off in a concentrated beam, much like a mirror. This creates the bright highlights we see on polished metal or wet objects. The Shininess Parameter in our specular materials controls the microscopic roughness of the surface, determining whether the specular highlight is sharp and small (smooth surface) or wide and soft (rougher surface).</p>
+<p>Understanding these physical principles allows you, the director, to make informed decisions about how to light your scene to achieve the desired mood and realism. By carefully balancing the different types of light sources and materials, you can create scenes that range from cartoonish and flat to highly realistic and atmospheric.</p>
+<h2 id="advanced-shader-techniques_2">Advanced Shader Techniques<a class="headerlink" href="#advanced-shader-techniques_2" title="Permanent link">&para;</a></h2>
+<p>While basic shaders are incredibly useful, the true power of GLSL lies in its ability to perform complex mathematical calculations on the GPU. Because the GPU is designed to perform the same operation on many pixels simultaneously, shaders can execute these calculations incredibly fast, enabling real-time visual effects that would be impossible to achieve with the CPU alone.</p>
+<p>One common advanced technique is procedural texturing. Instead of loading an image file, you can write a shader that generates a texture algorithmically. For example, you could use Perlin noise or sine waves to create procedural wood, marble, or fire textures. These textures have the advantage of being resolution-independent and can be animated over time simply by passing a time variable as a uniform to the shader.</p>
+<p>Another powerful application of shaders is post-processing. A post-processing shader takes the final rendered image of your scene and applies effects to it, much like applying filters in a photo editing app. You can use post-processing shaders to add bloom, depth of field, color grading, or even simulate the look of an old CRT monitor or film camera.</p>
+<p>When working with shaders, it's crucial to understand the graphics pipeline. The vertex shader always runs first, calculating the final position of each vertex on the screen. The output of the vertex shader is then interpolated and passed to the fragment shader, which runs for every pixel covered by the geometry. By manipulating the data as it flows through this pipeline, you have absolute control over the final image.</p>
+<h2 id="optimizing-your-3d-scenes_2">Optimizing Your 3D Scenes<a class="headerlink" href="#optimizing-your-3d-scenes_2" title="Permanent link">&para;</a></h2>
+<p>As you add more lights, complex models, and high-resolution textures to your scenes, you may notice that the frame rate starts to drop. This is because every additional element requires more calculations from the computer. To ensure that your interactive sketches run smoothly, it's essential to practice good optimization techniques.</p>
+<p>One of the most effective ways to optimize a 3D scene is to reduce the polygon count of your models. The 3D Mesh Vertex Array can contain thousands or even millions of points, and processing all of them can be computationally expensive. By simplifying your models in a program like Blender before exporting them, you can significantly improve performance without sacrificing too much visual quality.</p>
+<p>Another important optimization strategy is to use lights sparingly. Calculating the interactions between multiple light sources and complex materials can quickly overwhelm the GPU. Try to achieve the desired lighting effect with as few lights as possible. For example, you might be able to replace several point lights with a single directional light or use a texture map to simulate complex lighting details.</p>
+<p>Finally, be mindful of the shaders you use. While shaders are fast, a poorly written shader can still cause performance issues. Avoid using complex mathematical functions or long loops in your fragment shaders, as these will be executed for every single pixel on the screen. By profiling your sketches and identifying performance bottlenecks, you can ensure that your digital stage always runs at a smooth 60 frames per second.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../19-3d-webgl-primitives/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 19. 3D WebGL Coordinates &amp; Primitive Geometries">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                19. 3D WebGL Coordinates & Primitive Geometries
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../21-audio-synthesis-sound/" class="md-footer__link md-footer__link--next" aria-label="Next: 21. Audio Synthesis, Oscillators &amp; Envelopes">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                21. Audio Synthesis, Oscillators & Envelopes
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

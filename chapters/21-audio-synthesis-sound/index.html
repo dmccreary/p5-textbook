@@ -1,0 +1,1695 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An interactive intelligent textbook about the p5.js processing library and how to use it to teach computational thinking.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/p5-textbook/chapters/21-audio-synthesis-sound/">
+      
+      
+        <link rel="prev" href="../20-3d-cameras-shaders/">
+      
+      
+        <link rel="next" href="../22-mic-input-fft/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>21. Audio Synthesis, Oscillators & Envelopes - The Art of Processing</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#audio-synthesis-oscillators-envelopes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="The Art of Processing" class="md-header__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            The Art of Processing
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              21. Audio Synthesis, Oscillators & Envelopes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="The Art of Processing" class="md-nav__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    The Art of Processing
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-intro-creative-coding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introduction to Creative Coding & Canvas Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-2d-primitive-shapes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. 2D Primitive Shapes & Custom Geometries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-color-theory-pixels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Color Theory, Color Modes & Pixel Manipulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-variables-and-scope/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Variables, Data Types & Scope Fundamentals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-control-flow-and-loops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Control Flow, Loops & Array Data Structures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-matrix-transformations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Matrix Transformations & Coordinate Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-linear-motion-trig/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Linear Motion, Trigonometry & Wave Math
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-polar-coordinates-easing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Polar Coordinates, Oscillation & Easing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-randomness-and-walks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Randomness, Gaussian Distributions & Random Walk
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-perlin-noise-fields/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Perlin Noise Landscapes & Vector Flow Fields
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-vector-math-physics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Vector Math Fundamentals & Physics Acceleration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-particle-systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Particle Systems, Forces & Steering Behaviors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-mouse-keyboard-events/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Mouse & Keyboard User Event Sensing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-touch-mobile-sensors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Touch Gestures, Mobile Sensors & Interaction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-dom-controls-ui/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. DOM Controls, Input Fields & UI Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-css-styling-layouts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16. CSS Styling, Layouts & Web Page Integration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-functions-and-callbacks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17. Functions, Arrow Expressions & Callbacks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-es6-classes-async/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18. ES6 Classes, Object-Oriented Programming & Async Data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-3d-webgl-primitives/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    19. 3D WebGL Coordinates & Primitive Geometries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-3d-cameras-shaders/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20. 3D Cameras, Lighting Models, Materials & Shaders
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    21. Audio Synthesis, Oscillators & Envelopes
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    21. Audio Synthesis, Oscillators & Envelopes
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-entering-the-sound-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Entering the Sound Studio
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-turntable-working-with-sound-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. The Turntable: Working with Sound Files
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. The Turntable: Working with Sound Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mixing-and-manipulating-the-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mixing and Manipulating the Record
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-the-modular-synthesizer-oscillators-and-waveforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. The Modular Synthesizer: Oscillators and Waveforms
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-sculpting-time-adsr-envelopes" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Sculpting Time: ADSR Envelopes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-noise-and-filters-carving-the-sonic-marble" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Noise and Filters: Carving the Sonic Marble
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-the-effects-rack-space-and-destruction" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. The Effects Rack: Space and Destruction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-connecting-the-cables-the-polyphonic-synth" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Connecting the Cables: The Polyphonic Synth
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-mic-input-fft/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    22. Microphone Input & FFT Spectral Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-image-processing-video/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    23. Image Processing, Filters & Video Capture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-generative-typography/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    24. Generative Typography & Vector Font Outlines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-dev-environment-pedagogy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    25. Development Environment, Tools & Pedagogy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-entering-the-sound-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Entering the Sound Studio
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-turntable-working-with-sound-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. The Turntable: Working with Sound Files
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. The Turntable: Working with Sound Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mixing-and-manipulating-the-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mixing and Manipulating the Record
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-the-modular-synthesizer-oscillators-and-waveforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. The Modular Synthesizer: Oscillators and Waveforms
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-sculpting-time-adsr-envelopes" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Sculpting Time: ADSR Envelopes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-noise-and-filters-carving-the-sonic-marble" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Noise and Filters: Carving the Sonic Marble
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-the-effects-rack-space-and-destruction" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. The Effects Rack: Space and Destruction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-connecting-the-cables-the-polyphonic-synth" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Connecting the Cables: The Polyphonic Synth
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/p5-textbook/blob/main/docs/chapters/21-audio-synthesis-sound/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="audio-synthesis-oscillators-envelopes">Audio Synthesis, Oscillators &amp; Envelopes<a class="headerlink" href="#audio-synthesis-oscillators-envelopes" title="Permanent link">&para;</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>Utilizes the p5.sound library for sound playback, volume/pan control, sound oscillators, ADSR envelopes, and audio effects. Students will gain practical hands-on experience by building interactive sketches and visual experiments that demonstrate these concepts.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<p>This chapter covers the following 34 concepts from the learning graph:
+1. p5 Sound Library Include
+2. User Start Audio Context
+3. Load Sound File
+4. Sound File Play
+5. Sound File Stop
+6. Sound File Pause
+7. Sound File Loop
+8. Sound Is Playing Status
+9. Set Volume Level
+10. Sound Pan Spatial
+11. Playback Rate Speed
+12. p5 Oscillator Class
+13. Oscillator Wave Sine
+14. Oscillator Wave Square
+15. Oscillator Wave Triangle
+16. Oscillator Wave Sawtooth
+17. Oscillator Start Stop
+18. Oscillator Frequency Set
+19. ADSR Envelope Class
+20. Envelope Attack Time
+21. Envelope Decay Time
+22. Envelope Sustain Level
+23. Envelope Release Time
+24. Play Envelope Trigger
+25. p5 Noise White Pink
+26. Audio Filter Lowpass
+27. Audio Filter Highpass
+28. Audio Filter Bandpass
+29. Reverb Sound Effect
+30. Delay Sound Effect
+31. Audio Distortion Effect
+32. Polyphonic Synthesizer
+33. Midi Note to Frequency
+34. Audio Node Signal Route</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../20-3d-cameras-shaders/">Chapter 20: 3D Cameras, Lighting Models, Materials &amp; Shaders</a></li>
+</ul>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Welcome to the Studio, Artists!</p>
+<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+Time to color outside the loops! We're stepping into the magical world of sound. Let's blend some code and compose an interactive symphony!</p>
+</div>
+<h2 id="1-entering-the-sound-studio">1. Entering the Sound Studio<a class="headerlink" href="#1-entering-the-sound-studio" title="Permanent link">&para;</a></h2>
+<p>Imagine walking into a vintage recording studio. In the corner, there's a dusty turntable ready to spin some classic vinyl records. Along the walls, towering modular synthesizers blink with colorful LEDs, their faces covered in a chaotic web of cables connecting different modules together. This is the <strong>synthesizer patchbay</strong>, the central nervous system of sound generation. In this chapter, we are going to learn how to operate this virtual studio using code. </p>
+<p>Before we can even press play on our record player or plug a single cable into our synthesizer, we need to bring our audio equipment into the room. In the world of p5.js, this means we need the <strong>p5 Sound Library Include</strong>. This library is an add-on to the core p5.js library, built on top of the Web Audio API, which gives our browser the superpower to generate, manipulate, and analyze sound. By including the <code>p5.sound.js</code> file in our HTML <code>index.html</code> document alongside <code>p5.js</code>, we unlock all the audio features we'll explore today. </p>
+<p>Once our equipment is in the room, there's an important security protocol we must follow. Modern web browsers have strict rules against websites playing sound automatically without the user's permission—nobody likes a sudden blast of music when opening a tab! To unlock the audio engine, we must trigger a <strong>User Start Audio Context</strong>. This means the browser's audio processing (the audio context) will only begin <em>after</em> the user interacts with the page, such as clicking a button or pressing a key. You can explicitly call <code>userStartAudio()</code> in an interactive event like <code>mousePressed()</code> to ensure the context is active and ready to make noise.</p>
+<h2 id="2-the-turntable-working-with-sound-files">2. The Turntable: Working with Sound Files<a class="headerlink" href="#2-the-turntable-working-with-sound-files" title="Permanent link">&para;</a></h2>
+<p>Our first piece of studio gear is the record player. In p5.js, working with pre-recorded audio files is just like placing a vinyl record on a turntable and dropping the needle. First, we need to retrieve the record from the shelf. We use the <strong>Load Sound File</strong> function (<code>loadSound()</code>) inside our <code>preload()</code> block. This ensures that the entire audio file is downloaded and ready in memory before our sketch even begins to run. </p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">mySong</span><span class="p">;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kd">function</span><span class="w"> </span><span class="nx">preload</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="c1">// Load Sound File into a variable</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nx">mySong</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">loadSound</span><span class="p">(</span><span class="s1">&#39;assets/groove.mp3&#39;</span><span class="p">);</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>With the record loaded onto the platter, we have a set of controls to manipulate playback. To hear the music, we issue a <strong>Sound File Play</strong> command (<code>mySong.play()</code>). If we want the music to stop completely and reset the needle back to the beginning of the track, we use a <strong>Sound File Stop</strong> (<code>mySong.stop()</code>). However, if you just want to pause the music to take a quick break, leaving the needle exactly where it is so you can resume later, you use <strong>Sound File Pause</strong> (<code>mySong.pause()</code>). </p>
+<p>Sometimes, you want a background track to play infinitely, providing an ongoing ambiance for your sketch. Instead of calling <code>play()</code>, you can command the audio to perform a <strong>Sound File Loop</strong> (<code>mySong.loop()</code>). This seamlessly restarts the audio file the moment it reaches the end. </p>
+<p>If your user is clicking buttons to play and pause the music, your code needs to know the current state of the turntable. You can check the <strong>Sound Is Playing Status</strong> by calling <code>mySong.isPlaying()</code>. This returns a boolean (<code>true</code> or <code>false</code>), allowing you to create a play/pause toggle button!</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Is it playing?</p>
+<p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+Always check the isPlaying status before telling a sound to play again! If you call play() on a sound that's already playing, you might accidentally start a second overlapping copy of it.</p>
+</div>
+<h3 id="mixing-and-manipulating-the-record">Mixing and Manipulating the Record<a class="headerlink" href="#mixing-and-manipulating-the-record" title="Permanent link">&para;</a></h3>
+<p>Now that the music is playing, let's look at the mixing desk. The most fundamental control is the volume fader. You can <strong>Set Volume Level</strong> using <code>mySong.setVolume()</code>, passing in a value between <code>0.0</code> (complete silence) and <code>1.0</code> (maximum original volume). You can even gently fade the music in or out by providing a second argument for time (e.g., <code>mySong.setVolume(0, 3.0)</code> fades to zero over 3 seconds).</p>
+<p>Next, we have the pan knob, which controls the stereo image. By adjusting the <strong>Sound Pan Spatial</strong>, we move the audio left or right in the listener's headphones. Using <code>mySong.pan()</code>, a value of <code>-1.0</code> sends the audio entirely to the left speaker, <code>1.0</code> sends it to the right, and <code>0.0</code> keeps it perfectly centered. Imagine coding a race car game where the engine sound pans from left to right as the car drives across the screen!</p>
+<p>Finally, we can mess with the turntable's motor speed. By altering the <strong>Playback Rate Speed</strong> (<code>mySong.rate()</code>), we can speed up or slow down the audio. A rate of <code>1.0</code> is normal speed. A rate of <code>2.0</code> plays twice as fast (and pitches the audio up like a chipmunk). A rate of <code>0.5</code> plays at half speed (creating a deep, sluggish drone). You can even use negative numbers to play the record backwards!</p>
+<h2 id="3-the-modular-synthesizer-oscillators-and-waveforms">3. The Modular Synthesizer: Oscillators and Waveforms<a class="headerlink" href="#3-the-modular-synthesizer-oscillators-and-waveforms" title="Permanent link">&para;</a></h2>
+<p>While playing records is fun, true audio synthesis is about building sounds entirely from scratch. It's time to approach the massive modular synthesizer and its tangled patchbay. The heart of any synthesizer is the oscillator. The <strong>p5 Oscillator Class</strong> generates a continuous, repeating electronic signal—a sound wave. </p>
+<p>Think of an oscillator like a glowing, vibrating string of energy. The shape of this vibration determines the "timbre" or tone color of the sound. There are four primary waveforms we can choose from, each acting as a different raw material for our sonic sculptures:</p>
+<ol>
+<li><strong>Oscillator Wave Sine</strong>: The purest sound. It vibrates smoothly back and forth, resembling a gentle, rolling ocean wave. It has no harsh overtones, producing a soft, flute-like, or whistling tone.</li>
+<li><strong>Oscillator Wave Square</strong>: A rigid, blocky wave that snaps instantly between high and low values. It sounds hollow and buzzy, exactly like classic 8-bit video game music (think retro arcade blips).</li>
+<li><strong>Oscillator Wave Triangle</strong>: A wave that ramps up and down in straight, diagonal lines. It sounds slightly brighter than a sine wave but remains relatively mellow and flute-like.</li>
+<li><strong>Oscillator Wave Sawtooth</strong>: A wave that ramps up gradually and then drops instantly, looking like the teeth of a saw. It is rich, bright, and buzzing, perfect for creating huge synthesizer brass sections or aggressive lead sounds.</li>
+</ol>
+<details>
+<summary>MicroSim: Waveform Visualizer &amp; Hearer</summary>
+<p><strong>Goal:</strong> Allow students to see and hear the four basic oscillator waveforms to understand the relationship between wave shape and timbre.</p>
+<p><strong>Features:</strong>
+- A central canvas displaying an oscilloscope that draws the current waveform in real-time.
+- Four distinct buttons: "Sine", "Square", "Triangle", "Sawtooth".
+- A master "Start Audio / Play" toggle button to initiate the audio context.
+- When a wave button is clicked, the oscillator updates its type, and the visualizer smoothly transitions to drawing the new mathematical shape.
+- A slider controlling the frequency (pitch) to demonstrate how faster waves sound higher.</p>
+</details>
+<p>To actually hear the oscillator, we must plug it in and turn it on using the <strong>Oscillator Start Stop</strong> methods (<code>osc.start()</code> and <code>osc.stop()</code>). Just like our record player, an oscillator can be running silently in the background if its volume is zero, or it can be stopped entirely to save CPU power.</p>
+<p>The pitch of the oscillator is controlled by how fast it vibrates. We change this by using the <strong>Oscillator Frequency Set</strong> command (<code>osc.freq()</code>). Frequency is measured in Hertz (Hz), which represents the number of vibrations per second. A frequency of 440 Hz is the standard tuning note "A". A low number like 60 Hz gives a deep bass rumble, while 2000 Hz gives a piercing high screech.</p>
+<h2 id="4-sculpting-time-adsr-envelopes">4. Sculpting Time: ADSR Envelopes<a class="headerlink" href="#4-sculpting-time-adsr-envelopes" title="Permanent link">&para;</a></h2>
+<p>If we just start an oscillator, it plays a continuous, unending drone. That's not very musical! When you pluck a guitar string, the sound starts abruptly, then slowly fades away. When you press a piano key, the sound has a distinct beginning, middle, and end. To give our synthesized sound a specific "shape" over time, we use an envelope. In p5.js, we create this using the <strong>ADSR Envelope Class</strong> (<code>new p5.Envelope()</code>).</p>
+<p>ADSR stands for Attack, Decay, Sustain, and Release—the four stages of a sound's life cycle. Think of an envelope as an invisible robot hand that automatically turns the volume knob up and down for you every time you play a note.</p>
+<ol>
+<li><strong>Envelope Attack Time</strong>: This is how long it takes for the sound to fade in from zero to its maximum volume. A short attack (0.01 seconds) makes a sharp, percussive sound like a drum. A long attack (2.0 seconds) makes a swelling, atmospheric sound like a slow violin bow.</li>
+<li><strong>Envelope Decay Time</strong>: After reaching maximum volume, the sound might briefly drop down to a resting level. The decay time measures how long this initial drop takes.</li>
+<li><strong>Envelope Sustain Level</strong>: Unlike the others, this is not a time, but a volume level. Once the attack and decay phases are over, the sound holds steady at this sustain volume for as long as the note is held down.</li>
+<li><strong>Envelope Release Time</strong>: When you finally let go of the key, how long does it take for the sound to fade back to silence? A short release stops immediately; a long release rings out like a bell echoing in a canyon.</li>
+</ol>
+<div class="admonition mascot-tip">
+<p class="admonition-title">The Shape of Sound</p>
+<p><img alt="Palette tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+Artists, remember: Attack, Decay, and Release are amounts of TIME (seconds), but Sustain is a LEVEL (volume from 0.0 to 1.0). An envelope shapes the journey of the volume over time!</p>
+</div>
+<p>Once we have defined our ADSR values (<code>env.setADSR(attack, decay, sustain, release)</code>), we need to trigger it. We connect the envelope to our oscillator, and then issue a <strong>Play Envelope Trigger</strong> (<code>env.play()</code>). This tells the envelope to execute its volume automation, bringing our flat drone to life with percussive plucks or sweeping cinematic swells.</p>
+<h2 id="5-noise-and-filters-carving-the-sonic-marble">5. Noise and Filters: Carving the Sonic Marble<a class="headerlink" href="#5-noise-and-filters-carving-the-sonic-marble" title="Permanent link">&para;</a></h2>
+<p>Synthesizers don't just make pure tones; they can also create chaos. In audio, "noise" is an electrical signal that contains all possible frequencies playing at random simultaneously. We can generate this using <strong>p5 Noise White Pink</strong>. </p>
+<p>White noise sounds like static on an old television or the harsh hiss of a crashing wave; it has equal energy across all frequencies. Pink noise is mathematically adjusted to have more energy in the lower frequencies, making it sound warmer and more natural, like heavy rain or a rushing waterfall. Noise is the perfect raw material for synthesizing drums, wind, or sci-fi sweep effects.</p>
+<p>But pure noise is too raw. To make it musical, we must carve away the frequencies we don't want, much like a sculptor chiseling away marble. We do this using audio filters.</p>
+<ol>
+<li><strong>Audio Filter Lowpass</strong>: This filter acts like a bouncer at a club, only letting low frequencies pass through while blocking the high, screechy frequencies. It makes sounds darker, muffled, and underwater.</li>
+<li><strong>Audio Filter Highpass</strong>: The exact opposite. It lets high frequencies pass while slicing away the heavy bass. It makes sounds thin, airy, and tinny, like music playing from a cheap phone speaker.</li>
+<li><strong>Audio Filter Bandpass</strong>: This filter only lets a narrow "band" or chunk of frequencies pass through, rejecting both the extreme highs and the extreme lows. It sounds like someone talking through a walkie-talkie or an old telephone.</li>
+</ol>
+<details>
+<summary>MicroSim: Interactive Filter Sweep on Noise</summary>
+<p><strong>Goal:</strong> Demonstrate how a Lowpass filter shapes the frequency content of White Noise.</p>
+<p><strong>Features:</strong>
+- A continuous stream of White Noise plays in the background.
+- An interactive X/Y grid on the canvas.
+- Mouse X controls the filter's cutoff frequency (from 10Hz to 10,000Hz). Moving right lets more high frequencies through.
+- Mouse Y controls the filter's resonance (how much the frequencies at the cutoff point are boosted).
+- A graphical representation of the frequency spectrum updates in real-time, showing the higher frequencies being chopped off as the mouse moves left.</p>
+</details>
+<h2 id="6-the-effects-rack-space-and-destruction">6. The Effects Rack: Space and Destruction<a class="headerlink" href="#6-the-effects-rack-space-and-destruction" title="Permanent link">&para;</a></h2>
+<p>At the bottom of our studio rack are the effects processors. These take our synthesized sounds and place them into physical spaces or mangle them for artistic effect.</p>
+<p>First, we can add a <strong>Reverb Sound Effect</strong>. Reverb simulates the complex, dense echoes of a physical room. By running an oscillator through a p5.Reverb, we can make a tiny beep sound like it was played inside a massive cathedral or a long concrete tunnel. It adds depth, space, and emotion.</p>
+<p>Next is the <strong>Delay Sound Effect</strong>. Unlike the smeared echoes of reverb, delay creates distinct, repeating copies of the sound—like yelling into a canyon and hearing your voice bounce back: "Hello... hello... hello...". You can control the delay time (how long between echoes) and feedback (how many echoes occur before they fade away).</p>
+<p>Finally, if our sound is too clean, we can apply an <strong>Audio Distortion Effect</strong>. Distortion intentionally overloads the audio signal, clipping the tops of the waveforms. This introduces harmonic grit, crunch, and aggression. It's the exact same concept as plugging an electric guitar into an overdrive pedal and cranking the amp to 11. </p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Watch your ears!</p>
+<p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+Artists, be careful with the Distortion effect! It drastically increases the overall volume of your signal and adds harsh frequencies. Turn your headphones down before experimenting with extreme distortion values!</p>
+</div>
+<h2 id="7-connecting-the-cables-the-polyphonic-synth">7. Connecting the Cables: The Polyphonic Synth<a class="headerlink" href="#7-connecting-the-cables-the-polyphonic-synth" title="Permanent link">&para;</a></h2>
+<p>To build a complete instrument, we must understand the <strong>Audio Node Signal Route</strong>. In the Web Audio API, audio flows through a chain of interconnected nodes. An oscillator (source node) connects to a filter (processing node), which connects to a reverb (effect node), which finally connects to the master output (destination node). Understanding this signal path is like tracing the cables on our synthesizer patchbay. We use methods like <code>.disconnect()</code> and <code>.connect()</code> in p5.js to route our audio precisely where we want it to go.</p>
+<p>So far, we've only played one note at a time (a monophonic synthesizer). To play beautiful chords, we need a <strong>Polyphonic Synthesizer</strong>. "Polyphonic" means multiple voices. To achieve this in code, we create an array of multiple oscillators and envelopes. When the user presses three keys simultaneously, our code assigns three different oscillators to play the three different notes, allowing them to overlap and form a chord.</p>
+<p>But how do we know what frequencies to assign? Musicians think in musical notes (C, D, E, F, G, A, B), not raw Hz values. To bridge this gap, we use a <strong>Midi Note to Frequency</strong> conversion (<code>midiToFreq()</code>). MIDI notes are simple numbers where 60 is Middle C, 61 is C-sharp, 62 is D, and so on. By feeding a MIDI note number into <code>midiToFreq()</code>, p5.js automatically calculates the exact Hertz value required to tune the oscillator perfectly. This makes it incredibly easy to program melodies and sequences using arrays of simple whole numbers!</p>
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<p>We have successfully wired our studio patchbay! We loaded records, synthesized raw waveforms, carved them with envelopes and filters, and bathed them in lush effects. We've traced the signal route from a mathematical sine wave all the way to a complex polyphonic chord. The world of generative sound design is now at your fingertips.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">Symphony Complete!</p>
+<p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+What a masterpiece, artists! You've successfully built an electronic orchestra with code. Keep experimenting, keep patching those cables, and let your sketches sing!</p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../20-3d-cameras-shaders/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 20. 3D Cameras, Lighting Models, Materials &amp; Shaders">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                20. 3D Cameras, Lighting Models, Materials & Shaders
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../22-mic-input-fft/" class="md-footer__link md-footer__link--next" aria-label="Next: 22. Microphone Input &amp; FFT Spectral Analysis">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                22. Microphone Input & FFT Spectral Analysis
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1460 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An interactive intelligent textbook about the p5.js processing library and how to use it to teach computational thinking.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/p5-textbook/learning-graph/concept-list/">
+      
+      
+        <link rel="prev" href="../course-description-assessment/">
+      
+      
+        <link rel="next" href="../concept-taxonomy/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Concept Enumeration - The Art of Processing</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#concept-list-for-the-art-of-processing" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="The Art of Processing" class="md-header__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            The Art of Processing
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Concept Enumeration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="The Art of Processing" class="md-nav__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    The Art of Processing
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Learning Graph
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../course-description-assessment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description Assessment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Concept Enumeration
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concept-taxonomy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Concept Taxonomy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quality-metrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Graph Quality Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../taxonomy-distribution/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Taxonomy Distribution
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/p5-textbook/blob/main/docs/learning-graph/concept-list.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="concept-list-for-the-art-of-processing">Concept List for The Art of Processing<a class="headerlink" href="#concept-list-for-the-art-of-processing" title="Permanent link">&para;</a></h1>
+<p>A complete list of 600 concepts derived from the course description.</p>
+<ol>
+<li>Coordinate System</li>
+<li>Canvas Element</li>
+<li>Setup Function</li>
+<li>Draw Function</li>
+<li>Frame Rate</li>
+<li>Frame Count</li>
+<li>Pixel Grid</li>
+<li>Canvas Width</li>
+<li>Canvas Height</li>
+<li>Create Canvas Function</li>
+<li>Background Color Function</li>
+<li>Preload Function</li>
+<li>No Loop Function</li>
+<li>Redraw Function</li>
+<li>Loop Control Function</li>
+<li>Window Resized Event</li>
+<li>Resize Canvas Function</li>
+<li>Full Screen Mode</li>
+<li>Display Density</li>
+<li>Pixel Density Control</li>
+<li>Console Log Debugging</li>
+<li>Statement Semicolon Syntax</li>
+<li>Code Comments Syntax</li>
+<li>Script Inclusion Tag</li>
+<li>p5.js Library Import</li>
+<li>CDN Script Loading</li>
+<li>Global Mode Execution</li>
+<li>Instance Mode Execution</li>
+<li>p5 Constructor Function</li>
+<li>Render Cycle Loop</li>
+<li>Delta Time Tracking</li>
+<li>Target Frame Rate Setting</li>
+<li>Canvas Aspect Ratio</li>
+<li>Point Primitive</li>
+<li>Line Primitive</li>
+<li>Rectangle Primitive</li>
+<li>Ellipse Primitive</li>
+<li>Circle Shortcut Function</li>
+<li>Square Shortcut Function</li>
+<li>Triangle Primitive</li>
+<li>Quad Primitive</li>
+<li>Arc Shape Primitive</li>
+<li>Ellipse Mode Center</li>
+<li>Ellipse Mode Corner</li>
+<li>Rect Mode Center</li>
+<li>Rect Mode Corner</li>
+<li>Begin Shape Function</li>
+<li>End Shape Function</li>
+<li>Vertex Coordinates</li>
+<li>Close Shape Parameter</li>
+<li>Begin Contour Function</li>
+<li>End Contour Function</li>
+<li>Bézier Curve Function</li>
+<li>Bézier Control Points</li>
+<li>Bézier Vertex Function</li>
+<li>Curve Shape Function</li>
+<li>Curve Tightness Setting</li>
+<li>Curve Vertex Function</li>
+<li>Corner Radius Rectangle</li>
+<li>Shape Stroke Weight</li>
+<li>Stroke Cap Style</li>
+<li>Stroke Join Style</li>
+<li>No Stroke Function</li>
+<li>No Fill Function</li>
+<li>Smooth Rendering</li>
+<li>No Smooth Rendering</li>
+<li>Bounding Box Calculation</li>
+<li>Shape Area Computation</li>
+<li>RGB Color Space</li>
+<li>RGBA Alpha Channel</li>
+<li>HSB Color Space</li>
+<li>HSL Color Space</li>
+<li>Color Mode Setting</li>
+<li>Fill Color Function</li>
+<li>Stroke Color Function</li>
+<li>Grayscale Value Syntax</li>
+<li>Hex Color Code Strings</li>
+<li>Web Named Color Strings</li>
+<li>p5 Color Object</li>
+<li>Red Channel Extraction</li>
+<li>Green Channel Extraction</li>
+<li>Blue Channel Extraction</li>
+<li>Alpha Value Extraction</li>
+<li>Hue Component Extraction</li>
+<li>Saturation Extraction</li>
+<li>Brightness Extraction</li>
+<li>Color Interpolation Lerp</li>
+<li>Palette Color Array</li>
+<li>Complimentary Color Logic</li>
+<li>Triadic Palette Generator</li>
+<li>Load Pixels Function</li>
+<li>Update Pixels Function</li>
+<li>Pixels Array Indexing</li>
+<li>Get Pixel Color</li>
+<li>Set Pixel Color</li>
+<li>Color Blend Modes</li>
+<li>Multiply Blend Mode</li>
+<li>Screen Blend Mode</li>
+<li>Additive Color Mixing</li>
+<li>Subtractive Color Mixing</li>
+<li>Color Contrast Ratio</li>
+<li>Color Accessibility Palette</li>
+<li>Let Variable Declaration</li>
+<li>Const Constant Variable</li>
+<li>Global Variable Scope</li>
+<li>Local Block Scope</li>
+<li>If Conditional Branch</li>
+<li>Else Conditional Branch</li>
+<li>Else If Chained Logic</li>
+<li>Relational Operators</li>
+<li>Logical AND Operator</li>
+<li>Logical OR Operator</li>
+<li>Logical NOT Operator</li>
+<li>Ternary Operator Syntax</li>
+<li>Switch Statement Syntax</li>
+<li>While Loop Construct</li>
+<li>For Loop Construct</li>
+<li>Loop Counter Variable</li>
+<li>Infinite Loop Prevention</li>
+<li>Nested For Loops</li>
+<li>2D Grid Iteration</li>
+<li>Array Data Structure</li>
+<li>Array Element Indexing</li>
+<li>Array Push Method</li>
+<li>Array Pop Method</li>
+<li>Array Length Property</li>
+<li>For Of Loop Iteration</li>
+<li>For Each Array Method</li>
+<li>Array Splice Removal</li>
+<li>Array Concat Joining</li>
+<li>2D Matrix Array</li>
+<li>Array Reverse Ordering</li>
+<li>Array Sort Ordering</li>
+<li>Boolean Flag Variable</li>
+<li>State Machine Logic</li>
+<li>Break and Continue Keywords</li>
+<li>Translate Function</li>
+<li>Rotate Function</li>
+<li>Scale Function</li>
+<li>Push Function</li>
+<li>Pop Function</li>
+<li>Matrix Stack Operations</li>
+<li>Transformation Order Logic</li>
+<li>Origin Point Relocation</li>
+<li>Radians Angle System</li>
+<li>Degrees Angle System</li>
+<li>Angle Mode Setting</li>
+<li>Shear X Transformation</li>
+<li>Shear Y Transformation</li>
+<li>Uniform Scaling</li>
+<li>Non Uniform Scaling</li>
+<li>Negative Scale Reflection</li>
+<li>Hierarchical Transformation</li>
+<li>Solar System Transformation</li>
+<li>Robot Joint Transformation</li>
+<li>Reset Matrix Function</li>
+<li>Apply Matrix Function</li>
+<li>Get Current Matrix</li>
+<li>Screen to Local Coordinates</li>
+<li>Local to Screen Coordinates</li>
+<li>Pivot Point Selection</li>
+<li>Center Rotation Pattern</li>
+<li>Corner Rotation Pattern</li>
+<li>Isolated Canvas Layers</li>
+<li>Nested Transformation Trees</li>
+<li>Rotation Speed Variable</li>
+<li>Oscillating Rotation Angle</li>
+<li>Scale Factor Animation</li>
+<li>Transform Matrix Inversion</li>
+<li>Affine Transformation Model</li>
+<li>Linear Motion Logic</li>
+<li>Position Displacement</li>
+<li>Constant Velocity</li>
+<li>Sine Function Math</li>
+<li>Cosine Function Math</li>
+<li>Tangent Function Math</li>
+<li>Wave Amplitude Parameter</li>
+<li>Wave Frequency Parameter</li>
+<li>Wave Phase Offset</li>
+<li>Harmonic Motion Wave</li>
+<li>Circle Polar Coordinates</li>
+<li>Polar to Cartesian Formula</li>
+<li>Cartesian to Polar Formula</li>
+<li>Arc Tangent Atan2 Function</li>
+<li>Angle Between Coordinates</li>
+<li>Rotational Tracking Motion</li>
+<li>Map Range Function</li>
+<li>Constrain Value Function</li>
+<li>Linear Interpolation Lerp</li>
+<li>Distance Formula Dist</li>
+<li>Square Distance Metric</li>
+<li>Lissajous Curve Generator</li>
+<li>Spiral Pattern Generation</li>
+<li>Damped Harmonic Oscillation</li>
+<li>Pendulum Swing Simulation</li>
+<li>Wave Interference Pattern</li>
+<li>Circular Orbit Simulation</li>
+<li>Elliptical Path Trajectory</li>
+<li>Easing Function In</li>
+<li>Easing Function Out</li>
+<li>Easing Function In Out</li>
+<li>Frame Independent Motion</li>
+<li>Step Motion Accumulator</li>
+<li>Trigonometric Lookup Table</li>
+<li>Random Function Float</li>
+<li>Random Range Function</li>
+<li>Random Seed Setting</li>
+<li>Random Gaussian Normal</li>
+<li>Standard Deviation Spread</li>
+<li>Mean Center Value</li>
+<li>Random Walk Algorithm</li>
+<li>Levy Flight Algorithm</li>
+<li>Perlin Noise Concept</li>
+<li>Noise Function 1D</li>
+<li>Noise Function 2D</li>
+<li>Noise Function 3D</li>
+<li>Noise Scale Increment</li>
+<li>Noise Detail Octaves</li>
+<li>Noise Falloff Ratio</li>
+<li>Noise Seed Function</li>
+<li>Smooth Noise Landscape</li>
+<li>Noise Animated Terrain</li>
+<li>Noise Flow Field Concept</li>
+<li>Vector Field Direction</li>
+<li>Organic Curve Generation</li>
+<li>Noise Texture Map</li>
+<li>Wobbly Circle Generator</li>
+<li>Perlin Noise vs Random</li>
+<li>Simplex Noise Derivative</li>
+<li>Worley Cell Noise</li>
+<li>Monte Carlo Selection</li>
+<li>Weighted Random Choice</li>
+<li>Shuffle Array Order</li>
+<li>Stochastic Tree Growth</li>
+<li>Brownian Motion Model</li>
+<li>Cloud Texture Generator</li>
+<li>Marble Texture Generator</li>
+<li>Noise Displacement Map</li>
+<li>p5 Vector Class Concept</li>
+<li>Create Vector Function</li>
+<li>Vector Addition Add</li>
+<li>Vector Subtraction Sub</li>
+<li>Vector Scalar Multiply</li>
+<li>Vector Scalar Divide</li>
+<li>Vector Magnitude Mag</li>
+<li>Vector Magnitude Sq</li>
+<li>Vector Normalize Method</li>
+<li>Vector Set Mag Method</li>
+<li>Vector Limit Magnitude</li>
+<li>Vector Heading Angle</li>
+<li>Vector From Angle</li>
+<li>Vector Random 2D</li>
+<li>Vector Dot Product</li>
+<li>Vector Cross Product</li>
+<li>Vector Distance Dist</li>
+<li>Vector Angle Between</li>
+<li>Vector Lerp Method</li>
+<li>Velocity Motion Vector</li>
+<li>Acceleration Force Vector</li>
+<li>Accumulate Forces Newton</li>
+<li>Mass Attribute Scalar</li>
+<li>Gravity Force Simulation</li>
+<li>Friction Drag Simulation</li>
+<li>Fluid Resistance Model</li>
+<li>Gravitational Attraction</li>
+<li>Elastic Collision Bouncing</li>
+<li>Particle Class Object</li>
+<li>Particle System Manager</li>
+<li>Particle Lifespan Decay</li>
+<li>Particle Emitter Location</li>
+<li>Flocking Boids Steering</li>
+<li>Spring Force Hooke Law</li>
+<li>Mouse X Position</li>
+<li>Mouse Y Position</li>
+<li>Previous Mouse X PmouseX</li>
+<li>Previous Mouse Y PmouseY</li>
+<li>Mouse Is Pressed Flag</li>
+<li>Mouse Button Value</li>
+<li>Mouse Pressed Event</li>
+<li>Mouse Released Event</li>
+<li>Mouse Moved Event</li>
+<li>Mouse Dragged Event</li>
+<li>Mouse Clicked Event</li>
+<li>Mouse Wheel Event</li>
+<li>Key Is Pressed Flag</li>
+<li>Key Variable Character</li>
+<li>Key Code Number</li>
+<li>Key Pressed Event</li>
+<li>Key Released Event</li>
+<li>Key Typed Event</li>
+<li>Touch Touches Array</li>
+<li>Touch Started Event</li>
+<li>Touch Moved Event</li>
+<li>Touch Ended Event</li>
+<li>Device Orientation Tilt</li>
+<li>Device Motion Acceleration</li>
+<li>Shake Gesture Event</li>
+<li>Hit Test Point Rect</li>
+<li>Hit Test Point Circle</li>
+<li>Hover Focus State</li>
+<li>Drag and Drop Element</li>
+<li>Cursor Appearance Pointer</li>
+<li>No Cursor Function</li>
+<li>Request Pointer Lock</li>
+<li>Virtual Gamepad Input</li>
+<li>Multi Touch Gesture Pinch</li>
+<li>Create Button Element</li>
+<li>Create Slider Control</li>
+<li>Create Input Textbox</li>
+<li>Create Select Dropdown</li>
+<li>Create Checkbox Control</li>
+<li>Create Radio Buttons</li>
+<li>Create Color Picker</li>
+<li>Create Paragraph Tag</li>
+<li>Create Div Container</li>
+<li>Create Span Text Inline</li>
+<li>Create Img Element</li>
+<li>DOM Element Position</li>
+<li>DOM Element Size</li>
+<li>DOM Element Style CSS</li>
+<li>DOM Element Class Add</li>
+<li>DOM Element Value Get</li>
+<li>DOM Element Value Set</li>
+<li>DOM Mouse Pressed Event</li>
+<li>DOM Changed Event</li>
+<li>DOM Input Event</li>
+<li>Parent Container Attachment</li>
+<li>Child Element Removal</li>
+<li>Canvas Parent Wrapper</li>
+<li>Hide DOM Element</li>
+<li>Show DOM Element</li>
+<li>Select HTML Element</li>
+<li>Select All HTML Elements</li>
+<li>HTML5 Canvas Integration</li>
+<li>CSS Flexbox Layout</li>
+<li>CSS Grid Styling</li>
+<li>Responsive Layout Handler</li>
+<li>DOM Drag File Event</li>
+<li>File Input Button</li>
+<li>Embedded iFrame Canvas</li>
+<li>Function Declaration Syntax</li>
+<li>Function Parameters Arguments</li>
+<li>Function Return Statement</li>
+<li>Arrow Function Expression</li>
+<li>Callback Function Logic</li>
+<li>Anonymous Function Usage</li>
+<li>ES6 Class Declaration</li>
+<li>Class Constructor Method</li>
+<li>Class Method Definition</li>
+<li>Class Instance Instantiation</li>
+<li>This Keyword Binding</li>
+<li>Class Inheritance Extends</li>
+<li>Super Constructor Call</li>
+<li>Static Method Definition</li>
+<li>Object Literal Syntax</li>
+<li>Object Property Access</li>
+<li>Object Destructuring</li>
+<li>Array Destructuring</li>
+<li>Spread Operator Array</li>
+<li>Rest Parameters Function</li>
+<li>Array Map Higher Order</li>
+<li>Array Filter Method</li>
+<li>Array Reduce Method</li>
+<li>Promise Object Async</li>
+<li>Async Keyword Function</li>
+<li>Await Keyword Expression</li>
+<li>Fetch API Web Request</li>
+<li>JSON Parse String</li>
+<li>JSON Stringify Object</li>
+<li>Load JSON p5 Function</li>
+<li>ES6 Module Import Export</li>
+<li>Try Catch Error Handling</li>
+<li>Local Storage Persistence</li>
+<li>Set Data Structure</li>
+<li>WEBGL Renderer Mode</li>
+<li>3D Coordinate System</li>
+<li>Z Axis Depth Position</li>
+<li>Box 3D Primitive</li>
+<li>Sphere 3D Primitive</li>
+<li>Cylinder 3D Primitive</li>
+<li>Cone 3D Primitive</li>
+<li>Torus 3D Primitive</li>
+<li>Plane 3D Geometry</li>
+<li>Ellipsoid 3D Geometry</li>
+<li>Orbit Control Camera</li>
+<li>Camera Position Setting</li>
+<li>Perspective Camera Mode</li>
+<li>Ortho Camera Mode</li>
+<li>Ambient Light Source</li>
+<li>Directional Light Source</li>
+<li>Point Light Source</li>
+<li>Spot Light Source</li>
+<li>Normal Material Shading</li>
+<li>Basic Material Shading</li>
+<li>Ambient Material Shading</li>
+<li>Specular Material Shading</li>
+<li>Shininess Parameter</li>
+<li>Texture Mapping Function</li>
+<li>Create Shader Function</li>
+<li>Load Shader p5 Files</li>
+<li>Shader Uniform Variables</li>
+<li>Fragment Shader Filter</li>
+<li>Vertex Shader Displacement</li>
+<li>3D Model OBJ Import</li>
+<li>Load Model Function</li>
+<li>3D Mesh Vertex Array</li>
+<li>3D Lighting Model Combined</li>
+<li>Z Buffer Depth Test</li>
+<li>p5 Sound Library Include</li>
+<li>User Start Audio Context</li>
+<li>Load Sound File</li>
+<li>Sound File Play</li>
+<li>Sound File Stop</li>
+<li>Sound File Pause</li>
+<li>Sound File Loop</li>
+<li>Sound Is Playing Status</li>
+<li>Set Volume Level</li>
+<li>Sound Pan Spatial</li>
+<li>Playback Rate Speed</li>
+<li>p5 Oscillator Class</li>
+<li>Oscillator Wave Sine</li>
+<li>Oscillator Wave Square</li>
+<li>Oscillator Wave Triangle</li>
+<li>Oscillator Wave Sawtooth</li>
+<li>Oscillator Start Stop</li>
+<li>Oscillator Frequency Set</li>
+<li>ADSR Envelope Class</li>
+<li>Envelope Attack Time</li>
+<li>Envelope Decay Time</li>
+<li>Envelope Sustain Level</li>
+<li>Envelope Release Time</li>
+<li>Play Envelope Trigger</li>
+<li>p5 Noise White Pink</li>
+<li>Audio Filter Lowpass</li>
+<li>Audio Filter Highpass</li>
+<li>Audio Filter Bandpass</li>
+<li>Reverb Sound Effect</li>
+<li>Delay Sound Effect</li>
+<li>Audio Distortion Effect</li>
+<li>Polyphonic Synthesizer</li>
+<li>Midi Note to Frequency</li>
+<li>Audio Node Signal Route</li>
+<li>p5 AudioIn Microphone</li>
+<li>Microphone Start Input</li>
+<li>Microphone Stop Input</li>
+<li>Microphone Get Level</li>
+<li>p5 Amplitude Class</li>
+<li>Amplitude Get Level</li>
+<li>Smooth Amplitude Level</li>
+<li>p5 FFT Class Concept</li>
+<li>FFT Analyze Spectrum</li>
+<li>FFT Frequency Bins Array</li>
+<li>FFT Get Energy Bass</li>
+<li>FFT Get Energy LowMid</li>
+<li>FFT Get Energy Mid</li>
+<li>FFT Get Energy HighMid</li>
+<li>FFT Get Energy Treble</li>
+<li>FFT Waveform Time Domain</li>
+<li>Spectrum Frequency Chart</li>
+<li>Circular Audio Visualizer</li>
+<li>Beat Detection Threshold</li>
+<li>Beat Detection Energy Peak</li>
+<li>Audio Reactive Pulse Scale</li>
+<li>Audio Reactive Color Shift</li>
+<li>Particle Burst on Beat</li>
+<li>Fast Fourier Transform Math</li>
+<li>Audio Spectrogram Plot</li>
+<li>Audio Pitch Detection</li>
+<li>Frequency Centroid Math</li>
+<li>Logarithmic Frequency Scale</li>
+<li>Octave Band Splitting</li>
+<li>Audio Input Peak Hold</li>
+<li>Audio Visual EQ Bars</li>
+<li>3D Audio Reactive Visual</li>
+<li>Microphone Feedback Gate</li>
+<li>Acoustic Signal Processing</li>
+<li>Load Image Function</li>
+<li>Image Drawing Function</li>
+<li>Image Resize Function</li>
+<li>Image Tint Function</li>
+<li>No Tint Function</li>
+<li>Image Crop Subrectangle</li>
+<li>Create Image Blank</li>
+<li>p5 Image Class Object</li>
+<li>Image Pixel Array Load</li>
+<li>Image Filter Grayscale</li>
+<li>Image Filter Invert</li>
+<li>Image Filter Threshold</li>
+<li>Image Filter Blur</li>
+<li>Image Filter Posterize</li>
+<li>Image Filter Erode</li>
+<li>Image Filter Dilate</li>
+<li>Create Capture Webcam</li>
+<li>Video Capture Hide DOM</li>
+<li>Webcam Pixel Mirroring</li>
+<li>Webcam Motion Difference</li>
+<li>Slit Scan Video Effect</li>
+<li>ASCIIfy Image Converter</li>
+<li>Halftone Dot Image Screen</li>
+<li>Pixelate Image Mosaic</li>
+<li>Convolution Matrix Filter</li>
+<li>Sobel Edge Detection Filter</li>
+<li>Save Canvas Image File</li>
+<li>Save Frames Animation GIF</li>
+<li>Graphics Offscreen Buffer</li>
+<li>Create Graphics Function</li>
+<li>Offscreen Texture Render</li>
+<li>Mask Image Alpha Shape</li>
+<li>Text Drawing Function</li>
+<li>Text Size Setting</li>
+<li>Text Align Alignment</li>
+<li>Load Font File</li>
+<li>Text Font Setting</li>
+<li>p5 Font Class Object</li>
+<li>Text Bounds Bounding Box</li>
+<li>Text To Points Vector</li>
+<li>Font Glyph Outlines</li>
+<li>Particle Typography Effect</li>
+<li>Wobbly Text Particle Point</li>
+<li>Kinetic Typography Motion</li>
+<li>Text Leading Spacing</li>
+<li>Text Style Bold Italic</li>
+<li>Text Ascent Descent Metric</li>
+<li>Text Wrap Word Container</li>
+<li>System Web Font Stack</li>
+<li>OTF TTF Font Support</li>
+<li>Variable Font Parameters</li>
+<li>3D Text Extrusion WebGL</li>
+<li>Text Path Following Arc</li>
+<li>Interactive Text Input Typo</li>
+<li>Generative Type Grid</li>
+<li>Deconstructed Letterforms</li>
+<li>ASCII Art Text Canvas</li>
+<li>Text Stroke Fill Combo</li>
+<li>Per Character Rotation</li>
+<li>Dynamic Font Scaling</li>
+<li>Kerning Letter Spacing</li>
+<li>SVG Font Path Parsing</li>
+<li>p5 Web Editor Interface</li>
+<li>Web Editor Sketch File</li>
+<li>Web Editor Asset Sidebar</li>
+<li>VS Code Code Editor</li>
+<li>Live Server VS Extension</li>
+<li>Browser Developer Console</li>
+<li>Browser Element Inspector</li>
+<li>Browser Network Tab</li>
+<li>JavaScript Breakpoints</li>
+<li>Debugger Keyword Syntax</li>
+<li>p5 Sound Local Host CORS</li>
+<li>CORS Security Policy</li>
+<li>Local Web Server Python</li>
+<li>Git Version Control</li>
+<li>GitHub Repository Hosting</li>
+<li>GitHub Pages Deployment</li>
+<li>MkDocs Material Textbook</li>
+<li>p5 Accessibility Library</li>
+<li>Screen Reader Description</li>
+<li>Text Output Accessible</li>
+<li>Grid Output Accessible</li>
+<li>p5 Sound Recording Tool</li>
+<li>Minified Library Production</li>
+<li>Source Maps Debugging</li>
+<li>npm Package Manager</li>
+<li>Bundler Vite Webpack</li>
+<li>ESLint Code Formatter</li>
+<li>Prettier Code Formatting</li>
+<li>p5 CLI Command Tool</li>
+<li>Offline p5 Reference Guide</li>
+<li>Computational Thinking Concept</li>
+<li>Algorithmic Decomposition</li>
+<li>Pattern Recognition Visual</li>
+<li>Abstraction Problem Solving</li>
+<li>Algorithm Design Step</li>
+<li>Live Coding Demonstration</li>
+<li>Pair Programming Practice</li>
+<li>Code Review Peer Rubric</li>
+<li>Scaffolding Starter Code</li>
+<li>Parsons Problems Syntax</li>
+<li>Predict Output Exercises</li>
+<li>Debugging Mental Model</li>
+<li>Common Misconception Background</li>
+<li>Common Misconception PushPop</li>
+<li>Common Misconception Scope</li>
+<li>Common Misconception Audio</li>
+<li>Creative Coding Art History</li>
+<li>Vera Molnár Generative Art</li>
+<li>John Whitney Computer Motion</li>
+<li>Manfred Mohr Algorithmic Art</li>
+<li>Casey Reas Ben Fry Processing</li>
+<li>Interactive MicroSim Design</li>
+<li>Differentiated Challenge Level</li>
+<li>Inclusive Mentoring Workshop</li>
+<li>Formative Code Assessment</li>
+<li>Summative Capstone Project</li>
+<li>Rubric Creativity Code Quality</li>
+<li>Student Portfolio Showcase</li>
+<li>Universal Design Learning UDL</li>
+<li>Visual Math Pedagogy</li>
+<li>Acoustic Signal Pedagogy</li>
+<li>Artistic Computational Synthesis</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../course-description-assessment/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Course Description Assessment">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Course Description Assessment
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../concept-taxonomy/" class="md-footer__link md-footer__link--next" aria-label="Next: Concept Taxonomy">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Concept Taxonomy
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

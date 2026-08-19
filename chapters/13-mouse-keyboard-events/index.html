@@ -1,0 +1,2045 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An interactive intelligent textbook about the p5.js processing library and how to use it to teach computational thinking.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/p5-textbook/chapters/13-mouse-keyboard-events/">
+      
+      
+        <link rel="prev" href="../12-particle-systems/">
+      
+      
+        <link rel="next" href="../14-touch-mobile-sensors/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>13. Mouse & Keyboard User Event Sensing - The Art of Processing</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mouse-keyboard-user-event-sensing" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="The Art of Processing" class="md-header__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            The Art of Processing
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              13. Mouse & Keyboard User Event Sensing
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="The Art of Processing" class="md-nav__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    The Art of Processing
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-intro-creative-coding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introduction to Creative Coding & Canvas Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-2d-primitive-shapes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. 2D Primitive Shapes & Custom Geometries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-color-theory-pixels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Color Theory, Color Modes & Pixel Manipulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-variables-and-scope/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Variables, Data Types & Scope Fundamentals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-control-flow-and-loops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Control Flow, Loops & Array Data Structures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-matrix-transformations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Matrix Transformations & Coordinate Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-linear-motion-trig/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Linear Motion, Trigonometry & Wave Math
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-polar-coordinates-easing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Polar Coordinates, Oscillation & Easing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-randomness-and-walks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Randomness, Gaussian Distributions & Random Walk
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-perlin-noise-fields/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Perlin Noise Landscapes & Vector Flow Fields
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-vector-math-physics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Vector Math Fundamentals & Physics Acceleration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-particle-systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Particle Systems, Forces & Steering Behaviors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    13. Mouse & Keyboard User Event Sensing
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    13. Mouse & Keyboard User Event Sensing
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-controller-metaphor" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Controller Metaphor
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-the-analog-stick-mouse-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 1: The Analog Stick (Mouse Position)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: The Analog Stick (Mouse Position)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#current-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      Current Position
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#previous-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      Previous Position
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-the-action-buttons-mouse-states-and-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 2: The Action Buttons (Mouse States and Events)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: The Action Buttons (Mouse States and Events)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mouse-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mouse States
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mouse-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mouse Events
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complex-mouse-movements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complex Mouse Movements
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-the-massive-button-array-keyboard-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 3: The Massive Button Array (Keyboard Events)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: The Massive Button Array (Keyboard Events)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#keyboard-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Keyboard States
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identifying-the-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identifying the Key
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keyboard-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Keyboard Events
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-the-ultimate-controller" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building the Ultimate Controller
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deep-dive-the-logic-of-dragging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deep Dive: The Logic of Dragging
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expanding-your-arsenal-keyboard-combos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expanding Your Arsenal: Keyboard Combos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extended-deep-dive-understanding-the-nuances-of-event-sensing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extended Deep Dive: Understanding the Nuances of Event Sensing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extended Deep Dive: Understanding the Nuances of Event Sensing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-anatomy-of-a-mouse-click" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Anatomy of a Mouse Click
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-intricacies-of-keyboard-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Intricacies of Keyboard Input
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coordinating-multiple-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Coordinating Multiple Inputs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-mouse-movement-delta-vs-absolute" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Mouse Movement: Delta vs. Absolute
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-role-of-bounding-boxes" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Role of Bounding Boxes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beyond-the-basics-touch-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Beyond the Basics: Touch Events
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-touch-mobile-sensors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Touch Gestures, Mobile Sensors & Interaction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-dom-controls-ui/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. DOM Controls, Input Fields & UI Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-css-styling-layouts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16. CSS Styling, Layouts & Web Page Integration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-functions-and-callbacks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17. Functions, Arrow Expressions & Callbacks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-es6-classes-async/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18. ES6 Classes, Object-Oriented Programming & Async Data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-3d-webgl-primitives/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    19. 3D WebGL Coordinates & Primitive Geometries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-3d-cameras-shaders/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20. 3D Cameras, Lighting Models, Materials & Shaders
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-audio-synthesis-sound/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    21. Audio Synthesis, Oscillators & Envelopes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-mic-input-fft/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    22. Microphone Input & FFT Spectral Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-image-processing-video/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    23. Image Processing, Filters & Video Capture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-generative-typography/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    24. Generative Typography & Vector Font Outlines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-dev-environment-pedagogy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    25. Development Environment, Tools & Pedagogy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-controller-metaphor" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Controller Metaphor
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-the-analog-stick-mouse-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 1: The Analog Stick (Mouse Position)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: The Analog Stick (Mouse Position)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#current-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      Current Position
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#previous-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      Previous Position
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-the-action-buttons-mouse-states-and-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 2: The Action Buttons (Mouse States and Events)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: The Action Buttons (Mouse States and Events)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mouse-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mouse States
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mouse-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mouse Events
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complex-mouse-movements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complex Mouse Movements
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-the-massive-button-array-keyboard-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 3: The Massive Button Array (Keyboard Events)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: The Massive Button Array (Keyboard Events)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#keyboard-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Keyboard States
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identifying-the-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identifying the Key
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keyboard-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Keyboard Events
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-the-ultimate-controller" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building the Ultimate Controller
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deep-dive-the-logic-of-dragging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deep Dive: The Logic of Dragging
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expanding-your-arsenal-keyboard-combos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expanding Your Arsenal: Keyboard Combos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extended-deep-dive-understanding-the-nuances-of-event-sensing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extended Deep Dive: Understanding the Nuances of Event Sensing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extended Deep Dive: Understanding the Nuances of Event Sensing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-anatomy-of-a-mouse-click" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Anatomy of a Mouse Click
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-intricacies-of-keyboard-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Intricacies of Keyboard Input
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coordinating-multiple-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Coordinating Multiple Inputs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-mouse-movement-delta-vs-absolute" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Mouse Movement: Delta vs. Absolute
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-role-of-bounding-boxes" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Role of Bounding Boxes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beyond-the-basics-touch-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Beyond the Basics: Touch Events
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/p5-textbook/blob/main/docs/chapters/13-mouse-keyboard-events/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="mouse-keyboard-user-event-sensing">Mouse &amp; Keyboard User Event Sensing<a class="headerlink" href="#mouse-keyboard-user-event-sensing" title="Permanent link">&para;</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>Captures interactive mouse coordinates, drag states, keyboard events, key codes, and bounding box hit testing. Students will gain practical hands-on experience by building interactive sketches and visual experiments that demonstrate these concepts.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<p>This chapter covers the following 18 concepts from the learning graph:</p>
+<ol>
+<li>Mouse X Position</li>
+<li>Mouse Y Position</li>
+<li>Previous Mouse X PmouseX</li>
+<li>Previous Mouse Y PmouseY</li>
+<li>Mouse Is Pressed Flag</li>
+<li>Mouse Button Value</li>
+<li>Mouse Pressed Event</li>
+<li>Mouse Released Event</li>
+<li>Mouse Moved Event</li>
+<li>Mouse Dragged Event</li>
+<li>Mouse Clicked Event</li>
+<li>Mouse Wheel Event</li>
+<li>Key Is Pressed Flag</li>
+<li>Key Variable Character</li>
+<li>Key Code Number</li>
+<li>Key Pressed Event</li>
+<li>Key Released Event</li>
+<li>Key Typed Event</li>
+</ol>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../12-particle-systems/">Chapter 12: Particle Systems, Forces &amp; Steering Behaviors</a></li>
+</ul>
+<hr />
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Welcome, Creators!</p>
+<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+Time to color outside the loops! Welcome to the world of interactivity, where you are the controller!</p>
+</div>
+<p>Welcome, students! Have you ever played a video game and wondered how the console knows exactly when you press the jump button or swing the analog stick? In this chapter, we are going to dive deep into <strong>Mouse &amp; Keyboard User Event Sensing</strong>, treating our computer peripherals just like a video game controller.</p>
+<p>Every time you move your mouse or tap a key, your computer generates an "event." An event is simply a message that says, "Hey, something just happened here!" In Processing, we have built-in variables and functions that are constantly listening for these events. This allows us to create dynamic, interactive applications that respond to user input in real-time. By the end of this chapter, you will be able to harness these events to control your sketches, just like you control a character on screen.</p>
+<h3 id="the-controller-metaphor">The Controller Metaphor<a class="headerlink" href="#the-controller-metaphor" title="Permanent link">&para;</a></h3>
+<p>Think of your sketch as a video game. The canvas is the screen, and the user's mouse and keyboard are the controller. The controller sends signals to the console (your program), which then updates the game state and redraws the screen.</p>
+<p>In video games, controllers have analog sticks (for continuous movement like walking or aiming) and buttons (for discrete actions like jumping or shooting). 
+- The <strong>mouse</strong> acts like your primary analog stick, providing continuous positional data, as well as buttons for discrete clicks.
+- The <strong>keyboard</strong> acts like a massive array of discrete buttons, each with its own specific function.</p>
+<p>Let's break down how we can capture these signals and use them to power our sketches!</p>
+<h2 id="part-1-the-analog-stick-mouse-position">Part 1: The Analog Stick (Mouse Position)<a class="headerlink" href="#part-1-the-analog-stick-mouse-position" title="Permanent link">&para;</a></h2>
+<p>Just like an analog stick gives you an X and Y value for aiming, the mouse gives you its precise location on the screen.</p>
+<h3 id="current-position">Current Position<a class="headerlink" href="#current-position" title="Permanent link">&para;</a></h3>
+<p>The most fundamental pieces of information we can get from the mouse are its current coordinates. In Processing, these are stored in two built-in variables: <strong>Mouse X Position</strong> and <strong>Mouse Y Position</strong>.</p>
+<ul>
+<li><code>mouseX</code>: The current horizontal position of the mouse, measured in pixels from the left edge of the canvas.</li>
+<li><code>mouseY</code>: The current vertical position of the mouse, measured in pixels from the top edge of the canvas.</li>
+</ul>
+<p>These variables are automatically updated by Processing every time the mouse moves. They are incredibly useful for drawing objects that follow the cursor, creating interactive menus, or even just tracking where the user is looking.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Tracking Coordinates</p>
+<p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+Remember that the top-left corner is (0, 0). As you move right, <strong>Mouse X Position</strong> increases. As you move down, <strong>Mouse Y Position</strong> increases.</p>
+</div>
+<h3 id="previous-position">Previous Position<a class="headerlink" href="#previous-position" title="Permanent link">&para;</a></h3>
+<p>Sometimes, knowing <em>where</em> the mouse is isn't enough; we need to know <em>how fast</em> or <em>in what direction</em> it's moving. To do this, we can compare its current position to its previous position. Processing gives us two variables for this: <strong>Previous Mouse X PmouseX</strong> and <strong>Previous Mouse Y PmouseY</strong>.</p>
+<ul>
+<li><code>pmouseX</code>: The horizontal position of the mouse in the previous frame.</li>
+<li><code>pmouseY</code>: The vertical position of the mouse in the previous frame.</li>
+</ul>
+<p>By calculating the difference between <code>mouseX</code> and <code>pmouseX</code> (or <code>mouseY</code> and <code>pmouseY</code>), you can determine the speed and direction of the mouse movement. This is exactly how dragging or throwing mechanics work in physics games!</p>
+<details>
+<summary>MicroSim: Mouse Speed Tracker</summary>
+<p><strong>Objective</strong>: Visualize the speed of the mouse by drawing a line from the previous position to the current position. The thickness of the line should be proportional to the speed.
+<strong>Elements</strong>:
+- A canvas that does not clear its background every frame.
+- A <code>line()</code> drawn from <code>(pmouseX, pmouseY)</code> to <code>(mouseX, mouseY)</code>.
+- A <code>strokeWeight()</code> calculation based on the distance between the current and previous points.
+<strong>Interaction</strong>: The user moves the mouse around the canvas to draw. Faster movements create thicker (or thinner, depending on your mapping) lines.</p>
+</details>
+<h2 id="part-2-the-action-buttons-mouse-states-and-events">Part 2: The Action Buttons (Mouse States and Events)<a class="headerlink" href="#part-2-the-action-buttons-mouse-states-and-events" title="Permanent link">&para;</a></h2>
+<p>Now that we have our analog stick, let's look at the action buttons: the mouse clicks. Processing provides two main ways to handle button presses: checking the <em>state</em> (is it pressed right now?) and handling the <em>event</em> (did it just get pressed?).</p>
+<h3 id="mouse-states">Mouse States<a class="headerlink" href="#mouse-states" title="Permanent link">&para;</a></h3>
+<p>State variables are like asking, "Are you holding down the button at this exact moment?"</p>
+<ul>
+<li><strong>Mouse Is Pressed Flag</strong>: The <code>mouseIsPressed</code> boolean variable is <code>true</code> if any mouse button is currently held down, and <code>false</code> otherwise. This is great for continuous actions, like firing a machine gun as long as the trigger is held.</li>
+<li><strong>Mouse Button Value</strong>: The <code>mouseButton</code> variable tells you <em>which</em> button is being pressed (<code>LEFT</code>, <code>RIGHT</code>, or <code>CENTER</code>). This allows you to map different actions to different buttons, just like a real controller.</li>
+</ul>
+<h3 id="mouse-events">Mouse Events<a class="headerlink" href="#mouse-events" title="Permanent link">&para;</a></h3>
+<p>Events, on the other hand, are discrete triggers. They happen once per action. Think of them as functions that Processing automatically calls when something specific occurs.</p>
+<ul>
+<li><strong>Mouse Pressed Event</strong>: The <code>mousePressed()</code> function is called once the instant a mouse button is pressed down. This is perfect for single-shot actions, like jumping or firing a single laser.</li>
+<li><strong>Mouse Released Event</strong>: The <code>mouseReleased()</code> function is called once the instant a mouse button is let go. You might use this to stop an action, drop a dragged object, or charge up an attack based on how long the button was held.</li>
+<li><strong>Mouse Clicked Event</strong>: The <code>mouseClicked()</code> function is called after a mouse button has been both pressed and released. It's typically used for UI interactions, like clicking a button on a menu.</li>
+</ul>
+<div class="admonition mascot-tip">
+<p class="admonition-title">State vs. Event</p>
+<p><img alt="Palette offering a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+Use <code>mouseIsPressed</code> for continuous effects (like drawing a line). Use <code>mousePressed()</code> for one-time triggers (like spawning an explosion). Don't mix them up!</p>
+</div>
+<h3 id="complex-mouse-movements">Complex Mouse Movements<a class="headerlink" href="#complex-mouse-movements" title="Permanent link">&para;</a></h3>
+<p>Sometimes, the action isn't just a simple click; it's a combination of movement and clicking.</p>
+<ul>
+<li><strong>Mouse Moved Event</strong>: The <code>mouseMoved()</code> function is called every time the mouse moves while <em>no</em> buttons are pressed. You could use this to highlight interactive objects as the cursor hovers over them.</li>
+<li><strong>Mouse Dragged Event</strong>: The <code>mouseDragged()</code> function is called every time the mouse moves while a button <em>is</em> pressed. This is essential for dragging objects around the screen, drawing, or panning a map.</li>
+<li><strong>Mouse Wheel Event</strong>: The <code>mouseWheel()</code> function is called when the scroll wheel is rotated. The event object passed to this function tells you the direction and amount of the scroll. It's perfect for zooming in and out or scrolling through menus!</li>
+</ul>
+<details>
+<summary>MicroSim: Interactive Map Panning and Zooming</summary>
+<p><strong>Objective</strong>: Create a large grid or image that the user can navigate using drag and scroll.
+<strong>Elements</strong>:
+- A large grid drawn on the screen.
+- Use the <strong>Mouse Dragged Event</strong> to update an offset variable, moving the grid around.
+- Use the <strong>Mouse Wheel Event</strong> to update a scale variable, zooming the grid in and out.
+<strong>Interaction</strong>: The user clicks and drags to pan the map, and uses the scroll wheel to zoom.</p>
+</details>
+<h2 id="part-3-the-massive-button-array-keyboard-events">Part 3: The Massive Button Array (Keyboard Events)<a class="headerlink" href="#part-3-the-massive-button-array-keyboard-events" title="Permanent link">&para;</a></h2>
+<p>The keyboard is a powerful input device because it has so many discrete buttons. In a video game context, you might use WASD for movement, Space to jump, and numbers for selecting weapons.</p>
+<h3 id="keyboard-states">Keyboard States<a class="headerlink" href="#keyboard-states" title="Permanent link">&para;</a></h3>
+<p>Just like with the mouse, we can check the current state of the keyboard.</p>
+<ul>
+<li><strong>Key Is Pressed Flag</strong>: The <code>keyIsPressed</code> boolean variable is <code>true</code> if <em>any</em> key on the keyboard is currently held down. This is useful for knowing if the user is actively typing or holding a modifier key.</li>
+</ul>
+<h3 id="identifying-the-key">Identifying the Key<a class="headerlink" href="#identifying-the-key" title="Permanent link">&para;</a></h3>
+<p>When a key is pressed, we need to know <em>which</em> key it is. Processing provides two variables for this:</p>
+<ul>
+<li><strong>Key Variable Character</strong>: The <code>key</code> variable stores the actual character of the most recently pressed key (e.g., 'a', 'A', '1', ' '). This is useful for detecting standard letter and number presses. Note that 'a' and 'A' are considered different characters!</li>
+<li><strong>Key Code Number</strong>: Not all keys have characters (like the arrow keys, Shift, Enter, etc.). For these, we use the <code>keyCode</code> variable, which stores a numeric code representing the physical key on the keyboard. Processing provides handy constants like <code>UP</code>, <code>DOWN</code>, <code>LEFT</code>, <code>RIGHT</code>, <code>ENTER</code>, <code>SHIFT</code>, etc., to make checking these codes easier.</li>
+</ul>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Key vs. KeyCode</p>
+<p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+Always use <code>key</code> for printable characters (like 'a' or '1') and <code>keyCode</code> for special control keys (like <code>UP_ARROW</code> or <code>SHIFT</code>). Mixing them up can lead to confusing bugs!</p>
+</div>
+<h3 id="keyboard-events">Keyboard Events<a class="headerlink" href="#keyboard-events" title="Permanent link">&para;</a></h3>
+<p>Keyboard events work exactly like mouse events, providing discrete triggers for our actions.</p>
+<ul>
+<li><strong>Key Pressed Event</strong>: The <code>keyPressed()</code> function is called once the instant a key is pressed down. This is perfect for initiating movement, triggering an ability, or typing a character into a text box.</li>
+<li><strong>Key Released Event</strong>: The <code>keyReleased()</code> function is called once the instant a key is let go. This is crucial for stopping movement. For example, if you press the 'W' key, your character starts moving forward. When the <strong>Key Released Event</strong> for 'W' fires, your character stops.</li>
+<li><strong>Key Typed Event</strong>: The <code>keyTyped()</code> function is called when a key is pressed, but it ignores special keys like Shift, Ctrl, and Alt. It's specifically designed for text input, ensuring that holding Shift to type a capital letter doesn't trigger multiple events in confusing ways.</li>
+</ul>
+<h2 id="building-the-ultimate-controller">Building the Ultimate Controller<a class="headerlink" href="#building-the-ultimate-controller" title="Permanent link">&para;</a></h2>
+<p>By combining all of these concepts, you can build incredibly complex and responsive interaction systems. </p>
+<p>Imagine a spaceship game:
+1. You use the <strong>Mouse X Position</strong> and <strong>Mouse Y Position</strong> to aim the ship's cannons.
+2. You use the <strong>Mouse Pressed Event</strong> to fire a laser.
+3. You use the <strong>Key Pressed Event</strong> to detect when the 'W' key is pressed to engage the thrusters.
+4. You use the <strong>Key Released Event</strong> to turn the thrusters off.
+5. You use the <strong>Mouse Wheel Event</strong> to cycle through different weapon types.</p>
+<p>Every input from the user is captured, processed, and translated into an action on the screen. This is the essence of interactive programming!</p>
+<h2 id="deep-dive-the-logic-of-dragging">Deep Dive: The Logic of Dragging<a class="headerlink" href="#deep-dive-the-logic-of-dragging" title="Permanent link">&para;</a></h2>
+<p>Let's look at a very common interaction pattern: clicking and dragging an object. This requires coordinating several different events.</p>
+<ol>
+<li><strong>Hover Detection</strong>: First, we use <code>mouseX</code> and <code>mouseY</code> to check if the cursor is hovering over the object. This is often called "hit testing".</li>
+<li><strong>Grabbing</strong>: When the <strong>Mouse Pressed Event</strong> occurs, we check if we were hovering over the object. If so, we set a boolean flag (e.g., <code>isDragging = true</code>) and calculate the offset between the mouse position and the object's origin.</li>
+<li><strong>Dragging</strong>: During the <strong>Mouse Dragged Event</strong>, if <code>isDragging</code> is true, we update the object's position to follow the mouse, applying the offset so it doesn't snap abruptly.</li>
+<li><strong>Dropping</strong>: Finally, when the <strong>Mouse Released Event</strong> occurs, we set <code>isDragging = false</code>, releasing the object.</li>
+</ol>
+<p>This pattern demonstrates how individual events and variables are woven together to create a seamless user experience.</p>
+<h2 id="expanding-your-arsenal-keyboard-combos">Expanding Your Arsenal: Keyboard Combos<a class="headerlink" href="#expanding-your-arsenal-keyboard-combos" title="Permanent link">&para;</a></h2>
+<p>Just like in fighting games, you can create combo moves by tracking the sequence and timing of <strong>Key Pressed Event</strong>s. </p>
+<p>To do this, you might use an array to store the recent history of <strong>Key Variable Character</strong> presses. Every time a new key is pressed, you add it to the array and check if the recent sequence matches a specific combo pattern (e.g., UP, UP, DOWN, DOWN, LEFT, RIGHT). </p>
+<p>You'll also need to consider timing. If the player presses the keys too slowly, the combo shouldn't trigger. You can use the <code>millis()</code> function to record the time of each press and ensure they occur within a specific window.</p>
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<p>Sensing user input is what separates a passive animation from an interactive experience. By mastering mouse coordinates, button states, and keyboard events, you've unlocked the ability to create games, tools, and dynamic art that responds directly to the user's touch.</p>
+<p>Remember the controller metaphor: your sketch is the console, and it's waiting for those signals. Now it's up to you to decide what those signals do!</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">Level Complete!</p>
+<p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+You've mastered the controller! Now go out there and build something truly interactive. The canvas is your playground!</p>
+</div>
+<h2 id="extended-deep-dive-understanding-the-nuances-of-event-sensing">Extended Deep Dive: Understanding the Nuances of Event Sensing<a class="headerlink" href="#extended-deep-dive-understanding-the-nuances-of-event-sensing" title="Permanent link">&para;</a></h2>
+<p>To truly master the art of interactive programming, we need to explore the subtle nuances of each event and how they interact with one another. The video game controller metaphor is powerful, but a computer's input system is even more complex and versatile.</p>
+<h3 id="the-anatomy-of-a-mouse-click">The Anatomy of a Mouse Click<a class="headerlink" href="#the-anatomy-of-a-mouse-click" title="Permanent link">&para;</a></h3>
+<p>Consider the <strong>Mouse Clicked Event</strong>. It seems simple enough: the user clicks the mouse. But under the hood, a click is actually a sequence of distinct phases. First, the physical button is depressed. This triggers the <strong>Mouse Pressed Event</strong>. The computer registers this change in physical state. Then, there is a duration of time where the button remains down. During this time, the <strong>Mouse Is Pressed Flag</strong> is true. Finally, the user releases the button, springing it back to its original position. This triggers the <strong>Mouse Released Event</strong>. </p>
+<p>Only if the mouse has not moved significantly between the press and the release does the system officially register a <strong>Mouse Clicked Event</strong>. If the mouse <em>did</em> move, the system interprets it as a drag instead, firing the <strong>Mouse Dragged Event</strong> repeatedly during the movement. </p>
+<p>Understanding this sequence is crucial for building robust interfaces. For example, if you want a button to activate <em>only</em> when the user intentionally clicks it, you should bind your action to the <strong>Mouse Clicked Event</strong>. If you bind it to the <strong>Mouse Pressed Event</strong>, the action will trigger instantly, even if the user changes their mind, holds the button down, and drags their cursor away.</p>
+<h3 id="the-intricacies-of-keyboard-input">The Intricacies of Keyboard Input<a class="headerlink" href="#the-intricacies-of-keyboard-input" title="Permanent link">&para;</a></h3>
+<p>Keyboard input carries its own set of complexities. When you press and hold a key, you might expect a single <strong>Key Pressed Event</strong>. However, due to standard operating system behaviors, holding a key down often results in a "key repeat" feature. This means the <strong>Key Pressed Event</strong> might fire repeatedly as long as the key is held, rapidly registering the <strong>Key Variable Character</strong> over and over again.</p>
+<p>This behavior is fantastic for typing a document (allowing you to hold the spacebar to insert many spaces), but it can be disastrous for a video game. If you bind a "jump" action to the <strong>Key Pressed Event</strong>, and the key repeats, your character might try to jump multiple times in rapid succession, leading to erratic physics or double-jumping glitches.</p>
+<p>To circumvent this, game developers often rely on a combination of the <strong>Key Pressed Event</strong> and the <strong>Key Released Event</strong> to build their own custom state tracking. They might maintain a boolean array or a dictionary mapping each <strong>Key Code Number</strong> to a simple <code>true</code> or <code>false</code> state. 
+1. When the <strong>Key Pressed Event</strong> fires for the 'W' key, they set <code>keys[W] = true</code>. 
+2. The game loop constantly checks <code>keys[W]</code>. As long as it is true, the character moves forward.
+3. Crucially, they ignore any subsequent <strong>Key Pressed Event</strong>s for 'W' if <code>keys[W]</code> is already true.
+4. Finally, when the <strong>Key Released Event</strong> fires for 'W', they set <code>keys[W] = false</code>, stopping the movement.</p>
+<p>This approach guarantees smooth, continuous movement regardless of the operating system's key repeat settings.</p>
+<h3 id="coordinating-multiple-inputs">Coordinating Multiple Inputs<a class="headerlink" href="#coordinating-multiple-inputs" title="Permanent link">&para;</a></h3>
+<p>The most sophisticated interactive experiences seamlessly blend mouse and keyboard inputs. Think of a first-person shooter or a complex 3D modeling application.</p>
+<p>In these scenarios, the <strong>Mouse X Position</strong> and <strong>Mouse Y Position</strong> might control the camera angle or the direction a character is facing. The keyboard controls movement (forward, backward, strafing left and right). The <strong>Mouse Button Value</strong> determines actions (left click to interact or fire, right click to aim down sights or open a context menu).</p>
+<p>Achieving this harmony requires careful architecture in your code. You must ensure that the logic handling the <strong>Mouse Moved Event</strong> does not interfere with the logic handling the <strong>Key Is Pressed Flag</strong>. Often, this means separating input gathering from game logic execution. In the <code>draw()</code> loop, you simply check the current state of all inputs (gathered by the various event functions) and then calculate the next frame based on that unified snapshot of the input state.</p>
+<h3 id="advanced-mouse-movement-delta-vs-absolute">Advanced Mouse Movement: Delta vs. Absolute<a class="headerlink" href="#advanced-mouse-movement-delta-vs-absolute" title="Permanent link">&para;</a></h3>
+<p>We've discussed absolute positioning using <code>mouseX</code> and <code>mouseY</code>, and relative positioning using <strong>Previous Mouse X PmouseX</strong> and <strong>Previous Mouse Y PmouseY</strong>. This relative movement is often called "delta" movement (representing the change in position).</p>
+<p>In certain applications, particularly 3D environments, delta movement is far more important than absolute position. Imagine a first-person view where dragging the mouse rotates the camera. If you rely on absolute position, you are limited by the edges of the screen. Once the cursor hits the edge of the monitor, you can't rotate the camera any further in that direction!</p>
+<p>To solve this, developers use techniques to "lock" or "capture" the cursor to the center of the screen. When the cursor is locked, the operating system still tracks its movement, but prevents it from actually leaving the center. The application then relies entirely on the delta values (calculated using <strong>Previous Mouse X PmouseX</strong> and <strong>Previous Mouse Y PmouseY</strong> before the cursor is forcibly reset) to rotate the camera infinitely in any direction.</p>
+<h3 id="the-role-of-bounding-boxes">The Role of Bounding Boxes<a class="headerlink" href="#the-role-of-bounding-boxes" title="Permanent link">&para;</a></h3>
+<p>We mentioned "hit testing" earlier. This is the process of determining if a geometric shape (usually representing the mouse cursor) intersects with another geometric shape (representing an interactive object like a button or a game character).</p>
+<p>The simplest and most common form of hit testing uses an Axis-Aligned Bounding Box (AABB). An AABB is a rectangle defined by its top-left corner coordinates and its width and height.</p>
+<p>To check if the <strong>Mouse X Position</strong> and <strong>Mouse Y Position</strong> are inside a button's AABB, you must perform four simultaneous logical checks:
+1. Is <code>mouseX</code> greater than the button's left edge?
+2. Is <code>mouseX</code> less than the button's right edge (left edge + width)?
+3. Is <code>mouseY</code> greater than the button's top edge?
+4. Is <code>mouseY</code> less than the button's bottom edge (top edge + height)?</p>
+<p>If all four of these conditions are true simultaneously, the cursor is hovering over the button. You can combine this logic with the <strong>Mouse Pressed Event</strong> to create fully functional, custom UI elements from scratch!</p>
+<h3 id="beyond-the-basics-touch-events">Beyond the Basics: Touch Events<a class="headerlink" href="#beyond-the-basics-touch-events" title="Permanent link">&para;</a></h3>
+<p>While this chapter focuses on the mouse and keyboard, the principles you are learning apply directly to modern touch interfaces. A tap on a smartphone screen is conceptually identical to a <strong>Mouse Clicked Event</strong>. A swipe is a translation of the <strong>Mouse Dragged Event</strong>. Pinch-to-zoom is an evolution of the <strong>Mouse Wheel Event</strong>.</p>
+<p>By building a strong foundation in handling discrete events and continuous states, you are preparing yourself to develop software for any platform, from traditional desktop computers to the latest mobile devices and tablets. The controller might change shape, but the logic of interaction remains remarkably consistent.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../12-particle-systems/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 12. Particle Systems, Forces &amp; Steering Behaviors">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                12. Particle Systems, Forces & Steering Behaviors
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../14-touch-mobile-sensors/" class="md-footer__link md-footer__link--next" aria-label="Next: 14. Touch Gestures, Mobile Sensors &amp; Interaction">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                14. Touch Gestures, Mobile Sensors & Interaction
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1553 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An interactive intelligent textbook about the p5.js processing library and how to use it to teach computational thinking.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/p5-textbook/chapters/19-3d-webgl-primitives/">
+      
+      
+        <link rel="prev" href="../18-es6-classes-async/">
+      
+      
+        <link rel="next" href="../20-3d-cameras-shaders/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>19. 3D WebGL Coordinates & Primitive Geometries - The Art of Processing</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3d-webgl-coordinates-primitive-geometries" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="The Art of Processing" class="md-header__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            The Art of Processing
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              19. 3D WebGL Coordinates & Primitive Geometries
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="The Art of Processing" class="md-nav__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    The Art of Processing
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-intro-creative-coding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introduction to Creative Coding & Canvas Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-2d-primitive-shapes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. 2D Primitive Shapes & Custom Geometries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-color-theory-pixels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Color Theory, Color Modes & Pixel Manipulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-variables-and-scope/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Variables, Data Types & Scope Fundamentals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-control-flow-and-loops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Control Flow, Loops & Array Data Structures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-matrix-transformations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Matrix Transformations & Coordinate Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-linear-motion-trig/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Linear Motion, Trigonometry & Wave Math
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-polar-coordinates-easing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Polar Coordinates, Oscillation & Easing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-randomness-and-walks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Randomness, Gaussian Distributions & Random Walk
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-perlin-noise-fields/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Perlin Noise Landscapes & Vector Flow Fields
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-vector-math-physics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Vector Math Fundamentals & Physics Acceleration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-particle-systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Particle Systems, Forces & Steering Behaviors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-mouse-keyboard-events/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Mouse & Keyboard User Event Sensing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-touch-mobile-sensors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Touch Gestures, Mobile Sensors & Interaction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-dom-controls-ui/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. DOM Controls, Input Fields & UI Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-css-styling-layouts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16. CSS Styling, Layouts & Web Page Integration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-functions-and-callbacks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17. Functions, Arrow Expressions & Callbacks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-es6-classes-async/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18. ES6 Classes, Object-Oriented Programming & Async Data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    19. 3D WebGL Coordinates & Primitive Geometries
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    19. 3D WebGL Coordinates & Primitive Geometries
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-interactive-3d-coordinate-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Interactive 3D Coordinate System
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-shape-explorer-turntable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Shape Explorer Turntable
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-3d-cameras-shaders/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20. 3D Cameras, Lighting Models, Materials & Shaders
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-audio-synthesis-sound/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    21. Audio Synthesis, Oscillators & Envelopes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-mic-input-fft/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    22. Microphone Input & FFT Spectral Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-image-processing-video/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    23. Image Processing, Filters & Video Capture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-generative-typography/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    24. Generative Typography & Vector Font Outlines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-dev-environment-pedagogy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    25. Development Environment, Tools & Pedagogy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-interactive-3d-coordinate-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Interactive 3D Coordinate System
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-shape-explorer-turntable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Shape Explorer Turntable
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/p5-textbook/blob/main/docs/chapters/19-3d-webgl-primitives/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="3d-webgl-coordinates-primitive-geometries">3D WebGL Coordinates &amp; Primitive Geometries<a class="headerlink" href="#3d-webgl-coordinates-primitive-geometries" title="Permanent link">&para;</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>Transitions to the 3D WebGL renderer mode, 3D coordinate space, Z-depth, and primitive 3D geometries. Students will gain practical hands-on experience by building interactive sketches and visual experiments that demonstrate these concepts.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<p>This chapter covers the following 14 concepts from the learning graph:</p>
+<ol>
+<li>WEBGL Renderer Mode</li>
+<li>3D Coordinate System</li>
+<li>Z Axis Depth Position</li>
+<li>Box 3D Primitive</li>
+<li>Sphere 3D Primitive</li>
+<li>Cylinder 3D Primitive</li>
+<li>Cone 3D Primitive</li>
+<li>Torus 3D Primitive</li>
+<li>Plane 3D Geometry</li>
+<li>Ellipsoid 3D Geometry</li>
+<li>Orbit Control Camera</li>
+<li>Camera Position Setting</li>
+<li>Perspective Camera Mode</li>
+<li>Ortho Camera Mode</li>
+</ol>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../18-es6-classes-async/">Chapter 18: ES6 Classes, Object-Oriented Programming &amp; Async Data</a></li>
+</ul>
+<hr />
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Welcome to the Third Dimension!</p>
+<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+Time to color outside the loops! We're leaving the flat canvas behind and stepping into the wonderful world of 3D. Grab your digital clay, creators!</p>
+</div>
+<p>Welcome, creators, to one of the most exciting transitions you will ever make in your programming journey. Until now, every single sketch, every single piece of art, and every single interactive project you have built has been confined to a flat, two-dimensional screen. It is as if you have been painting on a flat canvas. You had an X-axis that went left and right, and a Y-axis that went up and down. You could draw shapes, mix colors, and create beautiful patterns, but everything was perfectly flat. </p>
+<p>Now, imagine putting down your paintbrush and picking up a block of clay. Imagine being able to reach into the canvas, pull it towards you, and sculpt something you can walk all the way around. This is what we are going to do today. We are moving from painting on a canvas to sculpting with clay in the real world. </p>
+<p>To make this leap, we have to tell our computer to stop thinking like a painter and start thinking like a sculptor. In p5.js, we do this by activating the <strong>WEBGL Renderer Mode</strong>. </p>
+<p>By simply adding one word to our <code>createCanvas()</code> function, we unlock an entirely new universe. When you write <code>createCanvas(windowWidth, windowHeight, WEBGL);</code>, you are essentially swapping out your 2D canvas for a fully functional 3D studio. WebGL is the engine that powers 3D graphics in your web browser. It is incredibly powerful and fast, capable of rendering thousands of polygons in the blink of an eye. </p>
+<p>But with this new power comes a new way of thinking about space. In our old 2D world, the origin point <code>(0, 0)</code> was always tucked away in the top-left corner of the screen. As you increased the X value, you moved to the right. As you increased the Y value, you moved down. In the 3D world, this changes completely. We are now working within a <strong>3D Coordinate System</strong>. </p>
+<p>In the 3D Coordinate System, the origin point <code>(0, 0, 0)</code> is no longer in the top-left corner. Instead, it is dead center in the middle of your screen. This makes perfect sense when you think about it like sculpting. When you place a block of clay on your sculpting wheel, you place it right in the middle, not off to the side. </p>
+<p>Furthermore, we now have a third axis. We have our familiar X-axis (left and right) and Y-axis (up and down), but we also have the <strong>Z Axis Depth Position</strong>. </p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Thinking about Depth</p>
+<p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+The Z-axis can be tricky! Remember: positive Z comes OUT of the screen towards you, and negative Z goes INTO the screen away from you.</p>
+</div>
+<p>The Z Axis Depth Position is what gives our world volume. If you increase your Z value (make it a positive number), your object will move closer to you, appearing larger. If you decrease your Z value (make it a negative number), your object will move further away, deeper into the screen, appearing smaller. </p>
+<p>Let's explore this with an interactive tool.</p>
+<h4 id="diagram-interactive-3d-coordinate-system">Diagram: Interactive 3D Coordinate System<a class="headerlink" href="#diagram-interactive-3d-coordinate-system" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Interactive 3D Coordinate System</summary>
+<p>Type: MicroSim
+<strong>sim-id:</strong> 3d-coordinate-system
+<strong>Library:</strong> p5.js
+<strong>Status:</strong> Specified</p>
+<p><strong>Learning Objective:</strong>
+Students will interactively explore the X, Y, and Z axes in WebGL to understand how the origin is centered and how the Z-axis controls depth.</p>
+<p><strong>Visual Elements:</strong>
+- A 3D space with red (X), green (Y), and blue (Z) lines representing the axes.
+- A glowing sphere representing a point in space.</p>
+<p><strong>Interactivity:</strong>
+- Three sliders controlling the X, Y, and Z coordinates of the sphere.
+- A live readout of the current coordinates <code>(X, Y, Z)</code>.</p>
+</details>
+<p>Now that we understand our new studio space, let's start sculpting! In the real world, a sculptor might start with a block of clay or a wire armature. In WebGL, we start with primitive geometries. These are the basic building blocks of 3D modeling. </p>
+<p>First, we have the <strong>Box 3D Primitive</strong>. It is exactly what it sounds like: a six-sided cube or rectangular prism. You can define its width, height, and depth. It's the perfect starting point for building buildings, crates, or anything with hard, flat edges.</p>
+<p>Next, we have the <strong>Sphere 3D Primitive</strong>. This is a perfectly round ball, like a marble or a planet. You define its size by giving it a radius. Spheres are incredibly versatile and are often used for characters, wheels, or natural objects.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Smooth Sculpting</p>
+<p><img alt="Palette giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+Want your sphere to look extra smooth? You can add detail parameters to increase the number of polygons! Let's blend some code!</p>
+</div>
+<p>Then there is the <strong>Cylinder 3D Primitive</strong>. Imagine a soup can or a column. A cylinder has a circular top and bottom, connected by a curved surface. You can control its radius and height. Cylinders are great for creating tree trunks, pipes, or arms and legs.</p>
+<p>We also have the <strong>Cone 3D Primitive</strong>. A cone has a circular base that tapers to a single point at the top, like an ice cream cone or a party hat. It is defined by a radius and a height. Cones can be used for roofs, spikes, or arrows pointing the way.</p>
+<p>For something a bit more complex, we have the <strong>Torus 3D Primitive</strong>. A torus is essentially a donut shape. It has a main radius (how big the whole donut is) and a tube radius (how thick the dough is). Toruses are fun to use for rings, portals, or sci-fi ship components.</p>
+<p>Sometimes, you don't need a bulky 3D shape; you just need a flat surface in your 3D world. That's where the <strong>Plane 3D Geometry</strong> comes in. A plane is a flat, two-dimensional rectangle that exists in 3D space. You can rotate it and move it around, making it perfect for floors, walls, or even floating screens.</p>
+<p>Finally, we have the <strong>Ellipsoid 3D Geometry</strong>. If a sphere is a perfectly round ball, an ellipsoid is a squished ball, like a watermelon or an egg. You can independently control its width, height, and depth, allowing for organic, elongated shapes.</p>
+<p>Now we have a whole collection of clay shapes. But a sculptor doesn't just stare at their work from one angle. They walk around it, inspect it from above, and get down low to see it from below. We need a way to do this in our digital studio. We need a camera.</p>
+<p>By default, p5.js sets up a basic camera that looks straight down the Z-axis. But we can take control! The easiest way to look around is by using the <strong>Orbit Control Camera</strong>. By adding <code>orbitControl();</code> to your <code>draw()</code> loop, you instantly give the user the ability to click and drag the mouse to rotate the entire 3D scene, use the scroll wheel to zoom in and out, and pan around. It's like putting your sculpture on a turntable.</p>
+<h4 id="diagram-shape-explorer-turntable">Diagram: Shape Explorer Turntable<a class="headerlink" href="#diagram-shape-explorer-turntable" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Shape Explorer Turntable</summary>
+<p>Type: MicroSim
+<strong>sim-id:</strong> shape-explorer-turntable
+<strong>Library:</strong> p5.js
+<strong>Status:</strong> Specified</p>
+<p><strong>Learning Objective:</strong>
+Students will use orbit control to view various 3D primitives from all angles.</p>
+<p><strong>Visual Elements:</strong>
+- A dropdown menu to select between Box, Sphere, Cylinder, Cone, Torus, Plane, and Ellipsoid.
+- The selected shape rendered in the center of the screen with a colorful material.</p>
+<p><strong>Interactivity:</strong>
+- <code>orbitControl()</code> is active, allowing the user to drag to rotate, and scroll to zoom.</p>
+</details>
+<p>While orbit control is great for quick inspection, sometimes you need precise control over exactly what the viewer sees. This is where <strong>Camera Position Setting</strong> comes into play. You can use the <code>camera()</code> function to define exactly where the camera is located in <code>(X, Y, Z)</code> space, what point it is looking at, and which way is "up". This allows for cinematic fly-throughs or dramatic low-angle shots.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Don't Get Lost!</p>
+<p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+When setting your camera position, make sure you keep track of your coordinates. It's easy to accidentally point the camera into empty space and think your code is broken!</p>
+</div>
+<p>Finally, we need to talk about how the camera actually sees the world. There are two main ways a camera can interpret 3D space, known as camera modes.</p>
+<p>The default mode is the <strong>Perspective Camera Mode</strong>. This mode mimics how human eyes (and real-world cameras) work. Things that are further away appear smaller, and parallel lines seem to converge at a vanishing point on the horizon. This is what you want 95% of the time, as it creates a realistic sense of depth and scale.</p>
+<p>However, there is another mode called the <strong>Ortho Camera Mode</strong>, short for orthographic. In an orthographic projection, things do not get smaller as they get further away. An object that is 100 units wide will take up the exact same amount of screen space whether it is right in front of the camera or a mile away. This removes the sense of perspective entirely. Why would you want this? It's incredibly useful for architectural blueprints, engineering diagrams, or creating a specific "isometric" art style popular in many video games.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">You Did It!</p>
+<p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+You've successfully moved into the third dimension! You have your clay, your turntable, and your camera. I can't wait to see what you sculpt!</p>
+</div>
+<p>To fully grasp the magnitude of what you've learned, let's dive deeper into the history and mechanics of these concepts. For decades, computer scientists struggled with the challenge of representing three-dimensional space on a two-dimensional screen. The mathematics required to calculate perspective, lighting, and hidden surfaces was incredibly demanding for early processors. However, as hardware evolved, so did the software interfaces. The advent of hardware-accelerated graphics pipelines revolutionized the industry, allowing for real-time rendering of complex scenes. WebGL, the technology underlying our new 3D capabilities in p5.js, is a direct descendant of these early innovations. It provides a JavaScript API for rendering interactive 2D and 3D graphics within any compatible web browser without the use of plug-ins. WebGL is fully integrated with other web standards, allowing GPU-accelerated usage of physics and image processing and effects as part of the web page canvas. By leveraging the WEBGL Renderer Mode, you are tapping into a profound lineage of computer graphics research.</p>
+<p>When you instantiate a canvas with the WEBGL parameter, you are not merely changing a setting; you are fundamentally altering the rendering context. A 2D context operates on a relatively simple coordinate system, mapping pixels directly to the screen. A 3D context, however, involves a complex pipeline. Vertices are passed to a vertex shader, which transforms their coordinates based on the camera position and projection matrix. The resulting polygons are then rasterized, converting them into fragments. These fragments are processed by a fragment shader, which determines their final color based on lighting, materials, and textures. All of this happens under the hood when you draw a simple Box 3D Primitive.</p>
+<p>The 3D Coordinate System is the spatial framework that makes this all possible. In mathematics, this is known as a Cartesian coordinate system. René Descartes introduced this concept in the 17th century, providing the first systematic link between Euclidean geometry and algebra. By assigning coordinates to points in space, geometric shapes could be described by algebraic equations. In our 3D space, every single vertex of every single primitive you draw is defined by its X, Y, and Z coordinates. </p>
+<p>The addition of the Z Axis Depth Position is what truly separates the painters from the sculptors. It introduces the concept of occlusion—objects closer to the camera obscuring objects further away. The WebGL renderer handles this using a depth buffer, or Z-buffer. When a fragment is rendered, its depth (Z-value) is stored in the buffer. If another fragment is later rendered at the same pixel location, its depth is compared to the value in the buffer. If the new fragment is closer, it overwrites the old color and updates the depth buffer. If it is further away, it is discarded. This ensures that your scene looks physically correct, with the Sphere 3D Primitive correctly passing in front of or behind the Cylinder 3D Primitive.</p>
+<p>Understanding these primitive shapes is crucial. While they may seem basic, they are the atomic components of complex 3D models. A character model in a video game, consisting of tens of thousands of polygons, is often constructed using techniques that begin with these basic primitives. A Cone 3D Primitive can become a character's nose, while a Torus 3D Primitive might form a piece of jewelry. By scaling, rotating, and translating these primitives, and combining them using boolean operations or grouping, you can construct virtually anything. The Plane 3D Geometry is particularly useful for establishing a ground plane, giving your scenes a sense of grounding and allowing for the casting of shadows. Meanwhile, the Ellipsoid 3D Geometry provides a softer, more organic starting point for modeling biological forms.</p>
+<p>Navigating this space requires mastery of the camera. The Orbit Control Camera is an intuitive tool for interaction, but understanding the underlying math of Camera Position Setting is essential for programmatic control. A camera in 3D graphics is typically defined by three vectors: the eye position (where the camera is), the center position (what the camera is looking at), and the up vector (which way is up). Manipulating these vectors allows you to create dynamic, moving shots. </p>
+<p>Finally, the choice between Perspective Camera Mode and Ortho Camera Mode drastically affects the visual style and utility of your scene. The perspective projection matrix divides the X and Y coordinates by the Z coordinate, causing distant objects to shrink towards a vanishing point. This creates the illusion of depth that we are accustomed to in the real world. The orthographic projection matrix, on the other hand, maps the 3D coordinates directly to the 2D screen without this division. This is why parallel lines remain parallel, regardless of distance. Choosing the right camera mode is as important as choosing the right primitive; it dictates how the viewer will interpret the space you have created.</p>
+<p>To fully grasp the magnitude of what you've learned, let's dive deeper into the history and mechanics of these concepts. For decades, computer scientists struggled with the challenge of representing three-dimensional space on a two-dimensional screen. The mathematics required to calculate perspective, lighting, and hidden surfaces was incredibly demanding for early processors. However, as hardware evolved, so did the software interfaces. The advent of hardware-accelerated graphics pipelines revolutionized the industry, allowing for real-time rendering of complex scenes. WebGL, the technology underlying our new 3D capabilities in p5.js, is a direct descendant of these early innovations. It provides a JavaScript API for rendering interactive 2D and 3D graphics within any compatible web browser without the use of plug-ins. WebGL is fully integrated with other web standards, allowing GPU-accelerated usage of physics and image processing and effects as part of the web page canvas. By leveraging the WEBGL Renderer Mode, you are tapping into a profound lineage of computer graphics research.</p>
+<p>When you instantiate a canvas with the WEBGL parameter, you are not merely changing a setting; you are fundamentally altering the rendering context. A 2D context operates on a relatively simple coordinate system, mapping pixels directly to the screen. A 3D context, however, involves a complex pipeline. Vertices are passed to a vertex shader, which transforms their coordinates based on the camera position and projection matrix. The resulting polygons are then rasterized, converting them into fragments. These fragments are processed by a fragment shader, which determines their final color based on lighting, materials, and textures. All of this happens under the hood when you draw a simple Box 3D Primitive.</p>
+<p>The 3D Coordinate System is the spatial framework that makes this all possible. In mathematics, this is known as a Cartesian coordinate system. René Descartes introduced this concept in the 17th century, providing the first systematic link between Euclidean geometry and algebra. By assigning coordinates to points in space, geometric shapes could be described by algebraic equations. In our 3D space, every single vertex of every single primitive you draw is defined by its X, Y, and Z coordinates. </p>
+<p>The addition of the Z Axis Depth Position is what truly separates the painters from the sculptors. It introduces the concept of occlusion—objects closer to the camera obscuring objects further away. The WebGL renderer handles this using a depth buffer, or Z-buffer. When a fragment is rendered, its depth (Z-value) is stored in the buffer. If another fragment is later rendered at the same pixel location, its depth is compared to the value in the buffer. If the new fragment is closer, it overwrites the old color and updates the depth buffer. If it is further away, it is discarded. This ensures that your scene looks physically correct, with the Sphere 3D Primitive correctly passing in front of or behind the Cylinder 3D Primitive.</p>
+<p>Understanding these primitive shapes is crucial. While they may seem basic, they are the atomic components of complex 3D models. A character model in a video game, consisting of tens of thousands of polygons, is often constructed using techniques that begin with these basic primitives. A Cone 3D Primitive can become a character's nose, while a Torus 3D Primitive might form a piece of jewelry. By scaling, rotating, and translating these primitives, and combining them using boolean operations or grouping, you can construct virtually anything. The Plane 3D Geometry is particularly useful for establishing a ground plane, giving your scenes a sense of grounding and allowing for the casting of shadows. Meanwhile, the Ellipsoid 3D Geometry provides a softer, more organic starting point for modeling biological forms.</p>
+<p>Navigating this space requires mastery of the camera. The Orbit Control Camera is an intuitive tool for interaction, but understanding the underlying math of Camera Position Setting is essential for programmatic control. A camera in 3D graphics is typically defined by three vectors: the eye position (where the camera is), the center position (what the camera is looking at), and the up vector (which way is up). Manipulating these vectors allows you to create dynamic, moving shots. </p>
+<p>Finally, the choice between Perspective Camera Mode and Ortho Camera Mode drastically affects the visual style and utility of your scene. The perspective projection matrix divides the X and Y coordinates by the Z coordinate, causing distant objects to shrink towards a vanishing point. This creates the illusion of depth that we are accustomed to in the real world. The orthographic projection matrix, on the other hand, maps the 3D coordinates directly to the 2D screen without this division. This is why parallel lines remain parallel, regardless of distance. Choosing the right camera mode is as important as choosing the right primitive; it dictates how the viewer will interpret the space you have created.</p>
+<p>To fully grasp the magnitude of what you've learned, let's dive deeper into the history and mechanics of these concepts. For decades, computer scientists struggled with the challenge of representing three-dimensional space on a two-dimensional screen. The mathematics required to calculate perspective, lighting, and hidden surfaces was incredibly demanding for early processors. However, as hardware evolved, so did the software interfaces. The advent of hardware-accelerated graphics pipelines revolutionized the industry, allowing for real-time rendering of complex scenes. WebGL, the technology underlying our new 3D capabilities in p5.js, is a direct descendant of these early innovations. It provides a JavaScript API for rendering interactive 2D and 3D graphics within any compatible web browser without the use of plug-ins. WebGL is fully integrated with other web standards, allowing GPU-accelerated usage of physics and image processing and effects as part of the web page canvas. By leveraging the WEBGL Renderer Mode, you are tapping into a profound lineage of computer graphics research.</p>
+<p>When you instantiate a canvas with the WEBGL parameter, you are not merely changing a setting; you are fundamentally altering the rendering context. A 2D context operates on a relatively simple coordinate system, mapping pixels directly to the screen. A 3D context, however, involves a complex pipeline. Vertices are passed to a vertex shader, which transforms their coordinates based on the camera position and projection matrix. The resulting polygons are then rasterized, converting them into fragments. These fragments are processed by a fragment shader, which determines their final color based on lighting, materials, and textures. All of this happens under the hood when you draw a simple Box 3D Primitive.</p>
+<p>The 3D Coordinate System is the spatial framework that makes this all possible. In mathematics, this is known as a Cartesian coordinate system. René Descartes introduced this concept in the 17th century, providing the first systematic link between Euclidean geometry and algebra. By assigning coordinates to points in space, geometric shapes could be described by algebraic equations. In our 3D space, every single vertex of every single primitive you draw is defined by its X, Y, and Z coordinates. </p>
+<p>The addition of the Z Axis Depth Position is what truly separates the painters from the sculptors. It introduces the concept of occlusion—objects closer to the camera obscuring objects further away. The WebGL renderer handles this using a depth buffer, or Z-buffer. When a fragment is rendered, its depth (Z-value) is stored in the buffer. If another fragment is later rendered at the same pixel location, its depth is compared to the value in the buffer. If the new fragment is closer, it overwrites the old color and updates the depth buffer. If it is further away, it is discarded. This ensures that your scene looks physically correct, with the Sphere 3D Primitive correctly passing in front of or behind the Cylinder 3D Primitive.</p>
+<p>Understanding these primitive shapes is crucial. While they may seem basic, they are the atomic components of complex 3D models. A character model in a video game, consisting of tens of thousands of polygons, is often constructed using techniques that begin with these basic primitives. A Cone 3D Primitive can become a character's nose, while a Torus 3D Primitive might form a piece of jewelry. By scaling, rotating, and translating these primitives, and combining them using boolean operations or grouping, you can construct virtually anything. The Plane 3D Geometry is particularly useful for establishing a ground plane, giving your scenes a sense of grounding and allowing for the casting of shadows. Meanwhile, the Ellipsoid 3D Geometry provides a softer, more organic starting point for modeling biological forms.</p>
+<p>Navigating this space requires mastery of the camera. The Orbit Control Camera is an intuitive tool for interaction, but understanding the underlying math of Camera Position Setting is essential for programmatic control. A camera in 3D graphics is typically defined by three vectors: the eye position (where the camera is), the center position (what the camera is looking at), and the up vector (which way is up). Manipulating these vectors allows you to create dynamic, moving shots. </p>
+<p>Finally, the choice between Perspective Camera Mode and Ortho Camera Mode drastically affects the visual style and utility of your scene. The perspective projection matrix divides the X and Y coordinates by the Z coordinate, causing distant objects to shrink towards a vanishing point. This creates the illusion of depth that we are accustomed to in the real world. The orthographic projection matrix, on the other hand, maps the 3D coordinates directly to the 2D screen without this division. This is why parallel lines remain parallel, regardless of distance. Choosing the right camera mode is as important as choosing the right primitive; it dictates how the viewer will interpret the space you have created.</p>
+<p>To fully grasp the magnitude of what you've learned, let's dive deeper into the history and mechanics of these concepts. For decades, computer scientists struggled with the challenge of representing three-dimensional space on a two-dimensional screen. The mathematics required to calculate perspective, lighting, and hidden surfaces was incredibly demanding for early processors. However, as hardware evolved, so did the software interfaces. The advent of hardware-accelerated graphics pipelines revolutionized the industry, allowing for real-time rendering of complex scenes. WebGL, the technology underlying our new 3D capabilities in p5.js, is a direct descendant of these early innovations. It provides a JavaScript API for rendering interactive 2D and 3D graphics within any compatible web browser without the use of plug-ins. WebGL is fully integrated with other web standards, allowing GPU-accelerated usage of physics and image processing and effects as part of the web page canvas. By leveraging the WEBGL Renderer Mode, you are tapping into a profound lineage of computer graphics research.</p>
+<p>When you instantiate a canvas with the WEBGL parameter, you are not merely changing a setting; you are fundamentally altering the rendering context. A 2D context operates on a relatively simple coordinate system, mapping pixels directly to the screen. A 3D context, however, involves a complex pipeline. Vertices are passed to a vertex shader, which transforms their coordinates based on the camera position and projection matrix. The resulting polygons are then rasterized, converting them into fragments. These fragments are processed by a fragment shader, which determines their final color based on lighting, materials, and textures. All of this happens under the hood when you draw a simple Box 3D Primitive.</p>
+<p>The 3D Coordinate System is the spatial framework that makes this all possible. In mathematics, this is known as a Cartesian coordinate system. René Descartes introduced this concept in the 17th century, providing the first systematic link between Euclidean geometry and algebra. By assigning coordinates to points in space, geometric shapes could be described by algebraic equations. In our 3D space, every single vertex of every single primitive you draw is defined by its X, Y, and Z coordinates. </p>
+<p>The addition of the Z Axis Depth Position is what truly separates the painters from the sculptors. It introduces the concept of occlusion—objects closer to the camera obscuring objects further away. The WebGL renderer handles this using a depth buffer, or Z-buffer. When a fragment is rendered, its depth (Z-value) is stored in the buffer. If another fragment is later rendered at the same pixel location, its depth is compared to the value in the buffer. If the new fragment is closer, it overwrites the old color and updates the depth buffer. If it is further away, it is discarded. This ensures that your scene looks physically correct, with the Sphere 3D Primitive correctly passing in front of or behind the Cylinder 3D Primitive.</p>
+<p>Understanding these primitive shapes is crucial. While they may seem basic, they are the atomic components of complex 3D models. A character model in a video game, consisting of tens of thousands of polygons, is often constructed using techniques that begin with these basic primitives. A Cone 3D Primitive can become a character's nose, while a Torus 3D Primitive might form a piece of jewelry. By scaling, rotating, and translating these primitives, and combining them using boolean operations or grouping, you can construct virtually anything. The Plane 3D Geometry is particularly useful for establishing a ground plane, giving your scenes a sense of grounding and allowing for the casting of shadows. Meanwhile, the Ellipsoid 3D Geometry provides a softer, more organic starting point for modeling biological forms.</p>
+<p>Navigating this space requires mastery of the camera. The Orbit Control Camera is an intuitive tool for interaction, but understanding the underlying math of Camera Position Setting is essential for programmatic control. A camera in 3D graphics is typically defined by three vectors: the eye position (where the camera is), the center position (what the camera is looking at), and the up vector (which way is up). Manipulating these vectors allows you to create dynamic, moving shots. </p>
+<p>Finally, the choice between Perspective Camera Mode and Ortho Camera Mode drastically affects the visual style and utility of your scene. The perspective projection matrix divides the X and Y coordinates by the Z coordinate, causing distant objects to shrink towards a vanishing point. This creates the illusion of depth that we are accustomed to in the real world. The orthographic projection matrix, on the other hand, maps the 3D coordinates directly to the 2D screen without this division. This is why parallel lines remain parallel, regardless of distance. Choosing the right camera mode is as important as choosing the right primitive; it dictates how the viewer will interpret the space you have created.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../18-es6-classes-async/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 18. ES6 Classes, Object-Oriented Programming &amp; Async Data">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                18. ES6 Classes, Object-Oriented Programming & Async Data
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../20-3d-cameras-shaders/" class="md-footer__link md-footer__link--next" aria-label="Next: 20. 3D Cameras, Lighting Models, Materials &amp; Shaders">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                20. 3D Cameras, Lighting Models, Materials & Shaders
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

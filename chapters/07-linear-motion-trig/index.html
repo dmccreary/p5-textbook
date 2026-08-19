@@ -1,0 +1,1914 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An interactive intelligent textbook about the p5.js processing library and how to use it to teach computational thinking.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/p5-textbook/chapters/07-linear-motion-trig/">
+      
+      
+        <link rel="prev" href="../06-matrix-transformations/">
+      
+      
+        <link rel="next" href="../08-polar-coordinates-easing/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>7. Linear Motion, Trigonometry & Wave Math - The Art of Processing</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#linear-motion-trigonometry-wave-math" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="The Art of Processing" class="md-header__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            The Art of Processing
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              7. Linear Motion, Trigonometry & Wave Math
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="The Art of Processing" class="md-nav__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    The Art of Processing
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-intro-creative-coding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introduction to Creative Coding & Canvas Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-2d-primitive-shapes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. 2D Primitive Shapes & Custom Geometries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-color-theory-pixels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Color Theory, Color Modes & Pixel Manipulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-variables-and-scope/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Variables, Data Types & Scope Fundamentals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-control-flow-and-loops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Control Flow, Loops & Array Data Structures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-matrix-transformations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Matrix Transformations & Coordinate Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    7. Linear Motion, Trigonometry & Wave Math
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    7. Linear Motion, Trigonometry & Wave Math
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-beauty-of-mathematics-in-motion" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Beauty of Mathematics in Motion
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Beauty of Mathematics in Motion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linear-motion-getting-from-point-a-to-point-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Motion: Getting from Point A to Point B
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-magic-of-trigonometry-circles-and-waves" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Magic of Trigonometry: Circles and Waves
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Magic of Trigonometry: Circles and Waves">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-slinky-metaphor" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Slinky Metaphor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sine-and-cosine-the-heartbeat-of-animation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sine and Cosine: The Heartbeat of Animation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anatomy-of-a-wave" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anatomy of a Wave
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navigating-the-circle-polar-coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navigating the Circle: Polar Coordinates
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Navigating the Circle: Polar Coordinates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#translating-between-systems-the-ultimate-bridge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Translating Between Systems: The Ultimate Bridge
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-power-of-tangent-and-atan2" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Power of Tangent and Atan2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mapping-values-the-universal-translator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mapping Values: The Universal Translator
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mapping Values: The Universal Translator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-thermometer-metaphor" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Thermometer Metaphor
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion-choreographing-with-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion: Choreographing with Code
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-polar-coordinates-easing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Polar Coordinates, Oscillation & Easing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-randomness-and-walks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Randomness, Gaussian Distributions & Random Walk
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-perlin-noise-fields/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Perlin Noise Landscapes & Vector Flow Fields
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-vector-math-physics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Vector Math Fundamentals & Physics Acceleration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-particle-systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Particle Systems, Forces & Steering Behaviors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-mouse-keyboard-events/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Mouse & Keyboard User Event Sensing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-touch-mobile-sensors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Touch Gestures, Mobile Sensors & Interaction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-dom-controls-ui/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. DOM Controls, Input Fields & UI Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-css-styling-layouts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16. CSS Styling, Layouts & Web Page Integration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-functions-and-callbacks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17. Functions, Arrow Expressions & Callbacks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-es6-classes-async/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18. ES6 Classes, Object-Oriented Programming & Async Data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-3d-webgl-primitives/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    19. 3D WebGL Coordinates & Primitive Geometries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-3d-cameras-shaders/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20. 3D Cameras, Lighting Models, Materials & Shaders
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-audio-synthesis-sound/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    21. Audio Synthesis, Oscillators & Envelopes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-mic-input-fft/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    22. Microphone Input & FFT Spectral Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-image-processing-video/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    23. Image Processing, Filters & Video Capture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-generative-typography/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    24. Generative Typography & Vector Font Outlines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-dev-environment-pedagogy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    25. Development Environment, Tools & Pedagogy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-beauty-of-mathematics-in-motion" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Beauty of Mathematics in Motion
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Beauty of Mathematics in Motion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linear-motion-getting-from-point-a-to-point-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Motion: Getting from Point A to Point B
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-magic-of-trigonometry-circles-and-waves" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Magic of Trigonometry: Circles and Waves
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Magic of Trigonometry: Circles and Waves">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-slinky-metaphor" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Slinky Metaphor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sine-and-cosine-the-heartbeat-of-animation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sine and Cosine: The Heartbeat of Animation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anatomy-of-a-wave" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anatomy of a Wave
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navigating-the-circle-polar-coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navigating the Circle: Polar Coordinates
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Navigating the Circle: Polar Coordinates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#translating-between-systems-the-ultimate-bridge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Translating Between Systems: The Ultimate Bridge
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-power-of-tangent-and-atan2" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Power of Tangent and Atan2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mapping-values-the-universal-translator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mapping Values: The Universal Translator
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mapping Values: The Universal Translator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-thermometer-metaphor" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Thermometer Metaphor
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion-choreographing-with-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion: Choreographing with Code
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/p5-textbook/blob/main/docs/chapters/07-linear-motion-trig/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="linear-motion-trigonometry-wave-math">Linear Motion, Trigonometry &amp; Wave Math<a class="headerlink" href="#linear-motion-trigonometry-wave-math" title="Permanent link">&para;</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>Applies linear displacement, velocity, sine/cosine wave functions, and range mapping (map(), lerp()). Students will gain practical hands-on experience by building interactive sketches and visual experiments that demonstrate these concepts.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<p>This chapter covers the following 17 concepts from the learning graph:</p>
+<ol>
+<li>Linear Motion Logic</li>
+<li>Position Displacement</li>
+<li>Constant Velocity</li>
+<li>Sine Function Math</li>
+<li>Cosine Function Math</li>
+<li>Tangent Function Math</li>
+<li>Wave Amplitude Parameter</li>
+<li>Wave Frequency Parameter</li>
+<li>Wave Phase Offset</li>
+<li>Harmonic Motion Wave</li>
+<li>Circle Polar Coordinates</li>
+<li>Polar to Cartesian Formula</li>
+<li>Cartesian to Polar Formula</li>
+<li>Arc Tangent Atan2 Function</li>
+<li>Angle Between Coordinates</li>
+<li>Rotational Tracking Motion</li>
+<li>Map Range Function</li>
+</ol>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../06-matrix-transformations/">Chapter 6: Matrix Transformations &amp; Coordinate Systems</a></li>
+</ul>
+<hr />
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Welcome to Chapter 7!</p>
+<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+Palette here! Are you ready to dive into chapter 7? Time to color outside the loops!</p>
+</div>
+<h2 id="the-beauty-of-mathematics-in-motion">The Beauty of Mathematics in Motion<a class="headerlink" href="#the-beauty-of-mathematics-in-motion" title="Permanent link">&para;</a></h2>
+<p>Have you ever watched a pendulum swing back and forth, or seen the rhythmic rise and fall of ocean waves, or marveled at the smooth rotation of a Ferris wheel? These mesmerizing patterns are everywhere in nature and mechanics, and they all share a common, elegant mathematical foundation. When we learn to harness this math, we unlock the ability to breathe life into our digital creations. In this chapter, we are going to dive deep into how we can recreate these natural, fluid movements using code. We will start simple, by moving objects in straight lines, and then we will unlock the powerful secrets of circles, waves, and oscillation using trigonometry.</p>
+<p>Trigonometry often gets a bad rap in high school classrooms as a collection of dry formulas and abstract triangles. But in the world of creative coding, trigonometry is your paintbrush. It is the language of continuous, organic movement. By the end of this chapter, you won’t just be drawing static shapes on a screen; you will be choreographing dynamic, breathing animations that feel alive!</p>
+<h3 id="linear-motion-getting-from-point-a-to-point-b">Linear Motion: Getting from Point A to Point B<a class="headerlink" href="#linear-motion-getting-from-point-a-to-point-b" title="Permanent link">&para;</a></h3>
+<p>Before we tackle the complexities of waves and circular paths, let's establish a solid foundation with the most basic form of movement: moving in a straight line. In the digital world, <strong>Linear Motion Logic</strong> involves updating an object's position on the screen frame by frame. Since our sketches run in a loop (the <code>draw()</code> function), we can make small changes to our variables every time the loop runs, creating the illusion of smooth motion over time.</p>
+<p>Think about how you move across a room. You start at one spot, and with each step, your position changes. In programming, this change in position over time is called <strong>Position Displacement</strong>. </p>
+<p>If an object moves the exact same amount in the exact same direction every single frame, it is exhibiting <strong>Constant Velocity</strong>. Velocity is simply speed with a direction. In our 2D canvas, we handle velocity by changing the x-coordinate to move horizontally, the y-coordinate to move vertically, or both simultaneously to move diagonally.</p>
+<p>Let's look at a classic example. If we want a ball to move smoothly across our screen from left to right, we might add a small, fixed number to its x-coordinate every time <code>draw()</code> runs. </p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">xPosition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">speed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// This represents our velocity in pixels per frame</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kd">function</span><span class="w"> </span><span class="nx">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nx">createCanvas</span><span class="p">(</span><span class="mf">600</span><span class="p">,</span><span class="w"> </span><span class="mf">400</span><span class="p">);</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">}</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="kd">function</span><span class="w"> </span><span class="nx">draw</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="c1">// Clear the background every frame so we don&#39;t leave a trail</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="nx">background</span><span class="p">(</span><span class="mf">220</span><span class="p">);</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="c1">// Draw the ball at the current xPosition</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="nx">fill</span><span class="p">(</span><span class="mf">50</span><span class="p">,</span><span class="w"> </span><span class="mf">150</span><span class="p">,</span><span class="w"> </span><span class="mf">250</span><span class="p">);</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span><span class="nx">circle</span><span class="p">(</span><span class="nx">xPosition</span><span class="p">,</span><span class="w"> </span><span class="nx">height</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">50</span><span class="p">);</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">  </span><span class="c1">// Apply our Constant Velocity to create Position Displacement</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">  </span><span class="nx">xPosition</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">speed</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>This simple addition (<code>xPosition += speed;</code>) is the beating heart of <strong>Linear Motion Logic</strong>. But what happens when the ball reaches the right edge of the canvas? Because we never told it to stop, it will continue moving to the right, into the vast, unseen digital void beyond the screen's boundaries.</p>
+<blockquote>
+<p>[!TIP]</p>
+</blockquote>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Palette's Tip</p>
+<p><img alt="Palette tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+Linear motion is great, but what happens when the ball reaches the edge of the screen? It's gone forever! You can use an <code>if</code> statement to check if the ball has gone too far and reset its position back to zero. This creates a wrapping effect! Or, you can multiply the speed by -1 to make the ball bounce back like it hit a wall!</p>
+</div>
+<p>To handle edges, we use conditional statements (<code>if</code> statements) to reverse the velocity when the position exceeds the canvas boundaries. This turns simple displacement into a bouncing simulation, setting the stage for more complex behaviors.</p>
+<h3 id="the-magic-of-trigonometry-circles-and-waves">The Magic of Trigonometry: Circles and Waves<a class="headerlink" href="#the-magic-of-trigonometry-circles-and-waves" title="Permanent link">&para;</a></h3>
+<p>Straight lines and bouncing off walls are great for simple arcade games like Pong, but nature loves curves. How do we make things move in smooth circles, or oscillate back and forth like a leaf in the wind? Enter trigonometry, the mathematics of triangles and circles.</p>
+<h4 id="the-slinky-metaphor">The Slinky Metaphor<a class="headerlink" href="#the-slinky-metaphor" title="Permanent link">&para;</a></h4>
+<p>To truly understand how trigonometric functions translate into motion, imagine a Slinky hanging from your hand. If you pull the bottom of the Slinky down and let go, it bounces up and down. As it bounces, its position changes smoothly over time. It moves fastest when it passes through its resting position in the middle, and it momentarily stops at the very top and bottom of its path before reversing direction. This rhythmic, incredibly smooth bouncing is a perfect, physical example of a <strong>Harmonic Motion Wave</strong>.</p>
+<p>Now, take this mental image a step further. Imagine attaching a pen to the bottom of that bouncing Slinky. As the Slinky bounces up and down, you slowly drag a long piece of paper past it horizontally. What does the pen draw? It draws a perfect, smooth, continuous wave on the paper. </p>
+<p>This wave shape is exactly what we get when we graph the sine and cosine functions! The up-and-down motion of the Slinky represents the value of the function, and the horizontal dragging of the paper represents the progression of time.</p>
+<h4 id="sine-and-cosine-the-heartbeat-of-animation">Sine and Cosine: The Heartbeat of Animation<a class="headerlink" href="#sine-and-cosine-the-heartbeat-of-animation" title="Permanent link">&para;</a></h4>
+<p>In our code, <strong>Sine Function Math</strong> (<code>sin()</code>) and <strong>Cosine Function Math</strong> (<code>cos()</code>) are the twin engines of organic motion. Both functions take an angle as their input (which we typically measure in radians, not degrees) and return a value that smoothly and eternally oscillates between -1 and 1. </p>
+<ul>
+<li><code>sin(angle)</code> starts at 0, smoothly goes up to 1, gracefully curves down through 0 to -1, and comes back up to 0.</li>
+<li><code>cos(angle)</code> is identical in shape, but it starts at 1, goes down to -1, and back up to 1. It is perfectly shifted (or out of phase) with the sine function.</li>
+</ul>
+<p>In creative coding, we rarely use these functions to solve for the lengths of triangle sides like you do in geometry class. Instead, we use their oscillating output values (-1 to 1) to continuously modulate the position, size, opacity, or color of our shapes.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kd">function</span><span class="w"> </span><span class="nx">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nx">createCanvas</span><span class="p">(</span><span class="mf">600</span><span class="p">,</span><span class="w"> </span><span class="mf">400</span><span class="p">);</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">}</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="kd">function</span><span class="w"> </span><span class="nx">draw</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="nx">background</span><span class="p">(</span><span class="mf">220</span><span class="p">);</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="c1">// sin() returns a value between -1 and 1. </span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">  </span><span class="c1">// We multiply by 100 to make the movement visible (amplitude).</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">yOffset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sin</span><span class="p">(</span><span class="nx">angle</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">100</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">  </span><span class="c1">// Draw the circle in the middle of the screen, plus the offset</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">  </span><span class="nx">fill</span><span class="p">(</span><span class="mf">250</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">);</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">  </span><span class="nx">circle</span><span class="p">(</span><span class="nx">width</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">height</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">yOffset</span><span class="p">,</span><span class="w"> </span><span class="mf">50</span><span class="p">);</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">  </span><span class="c1">// Increase the angle slightly each frame to progress the wave</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">  </span><span class="nx">angle</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mf">0.05</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>By simply mapping the output of <code>sin()</code> to the y-coordinate of a circle, we have successfully simulated our bouncing Slinky!</p>
+<h4 id="anatomy-of-a-wave">Anatomy of a Wave<a class="headerlink" href="#anatomy-of-a-wave" title="Permanent link">&para;</a></h4>
+<p>When we construct a wave using trigonometric functions, there are three primary parameters we can manipulate to change its behavior. These are the dials and knobs of our harmonic engine:</p>
+<ol>
+<li><strong>Wave Amplitude Parameter</strong>: This dictates the height of the wave. How far up and down does the Slinky bounce? In our code snippet above, <code>100</code> is the amplitude. Because <code>sin()</code> maxes out at 1 and bottoms out at -1, multiplying by 100 stretches the wave so it ranges from -100 to 100 pixels. A larger amplitude means a taller, more dramatic wave.</li>
+<li><strong>Wave Frequency Parameter</strong>: This controls how fast the wave oscillates. How quickly is the Slinky bouncing up and down? In our code, adding <code>0.05</code> to the <code>angle</code> each frame determines the frequency. If we added <code>0.2</code> instead, the angle would increase faster, the <code>sin()</code> function would cycle through its values faster, and our circle would bounce furiously. A higher frequency means more wave cycles squeezed into the same amount of time.</li>
+<li><strong>Wave Phase Offset</strong>: This determines where the wave begins its cycle at time zero. Imagine you have two identical Slinkies bouncing next to each other. If you let them go at the exact same time, they bounce together in perfect sync. But if you let one go a split second after the other, they are out of phase. In code, we create this offset by adding a value directly to the angle before passing it into the <code>sin()</code> function (e.g., <code>sin(angle + PI)</code>).</li>
+</ol>
+<details>
+<summary>MicroSim: Interactive Wave Maker Laboratory</summary>
+
+**Goal:** Create a rich interactive simulation where the user can manipulate sliders to adjust the amplitude, frequency, and phase offset of a sine wave, visualizing how these parameters alter the shape of the wave in real-time.
+
+**Implementation Details:**
+- Use the p5.js generator to scaffold the sketch.
+- Draw a continuous, flowing sine wave across the canvas using the `beginShape()`, `vertex()`, and `endShape()` vertex engine.
+- Create a `for` loop that iterates through the x-coordinates across the width of the canvas. Inside the loop, calculate the corresponding y-coordinate using the master wave formula: `y = baselineY + sin(x * frequency + phase) * amplitude`.
+- Provide HTML range sliders (using p5's `createSlider()` DOM element) for the user to intuitively control the **Wave Amplitude Parameter**, **Wave Frequency Parameter**, and **Wave Phase Offset**.
+- Overlay text on the canvas to display the precise numerical values of the current slider settings, reinforcing the connection between the math and the visual output.
+</details>
+
+<h3 id="navigating-the-circle-polar-coordinates">Navigating the Circle: Polar Coordinates<a class="headerlink" href="#navigating-the-circle-polar-coordinates" title="Permanent link">&para;</a></h3>
+<p>Up until this point in your programming journey, you have likely positioned every single object using its x and y coordinates on a rectangular grid. This standard system is known as the Cartesian coordinate system, named after René Descartes. </p>
+<p>The Cartesian system is perfect for <strong>Linear Motion Logic</strong>, but it becomes incredibly cumbersome when we want to place objects on a circle or make them move in a circular orbit. Calculating the exact x and y coordinates of a point moving smoothly along a circular curve is a headache if you only use addition and subtraction.</p>
+<p>Thankfully, mathematics provides a much better tool for this specific job: <strong>Circle Polar Coordinates</strong>.</p>
+<p>Instead of defining a point by its horizontal distance (x) and vertical distance (y) from the origin, the polar coordinate system defines a point using two entirely different metrics:
+1. <code>r</code> (radius): The straight-line distance from the center origin to the point.
+2. <code>theta</code> (angle): The angle of rotation from a reference line (usually the horizontal x-axis pointing to the right).</p>
+<h4 id="translating-between-systems-the-ultimate-bridge">Translating Between Systems: The Ultimate Bridge<a class="headerlink" href="#translating-between-systems-the-ultimate-bridge" title="Permanent link">&para;</a></h4>
+<p>While polar coordinates are incredibly intuitive for designing circular motion, computer screens and graphics libraries (like p5.js) are strictly Cartesian. They only know how to draw pixels at specific (x, y) locations. </p>
+<p>Therefore, if we want to design our animation in the elegant world of polar coordinates, we need a reliable bridge to translate those instructions back into the Cartesian world the computer understands. </p>
+<p>This bridge is the <strong>Polar to Cartesian Formula</strong>, and it is arguably the most powerful mathematical spell in your trigonometry spellbook. It flawlessly converts a radius and an angle into an x and y coordinate:</p>
+<ul>
+<li><code>x = r * cos(theta)</code></li>
+<li><code>y = r * sin(theta)</code></li>
+</ul>
+<p>Notice how cosine is married to the x-axis, and sine is married to the y-axis. This relationship is fundamental. By holding the radius <code>r</code> constant and constantly increasing the angle <code>theta</code>, the calculated x and y coordinates will trace a perfectly smooth circle on the screen!</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">150</span><span class="p">;</span><span class="w"> </span><span class="c1">// The radius of our orbit</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">theta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// The starting angle</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="kd">function</span><span class="w"> </span><span class="nx">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nx">createCanvas</span><span class="p">(</span><span class="mf">600</span><span class="p">,</span><span class="w"> </span><span class="mf">600</span><span class="p">);</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="nx">angleMode</span><span class="p">(</span><span class="nx">RADIANS</span><span class="p">);</span><span class="w"> </span><span class="c1">// Radians are the standard for trig functions</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">}</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="kd">function</span><span class="w"> </span><span class="nx">draw</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span><span class="c1">// Draw a faint trail to show the path</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">  </span><span class="nx">background</span><span class="p">(</span><span class="mf">22</span><span class="p">,</span><span class="w"> </span><span class="mf">22</span><span class="p">,</span><span class="w"> </span><span class="mf">36</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">  </span><span class="c1">// Center our origin point in the middle of the canvas</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">  </span><span class="nx">translate</span><span class="p">(</span><span class="nx">width</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">height</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">  </span><span class="c1">// Draw the central &quot;sun&quot;</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">  </span><span class="nx">fill</span><span class="p">(</span><span class="mf">255</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">  </span><span class="nx">circle</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">80</span><span class="p">);</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">  </span><span class="c1">// Apply the Polar to Cartesian Formula!</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">orbitingX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">cos</span><span class="p">(</span><span class="nx">theta</span><span class="p">);</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">orbitingY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">sin</span><span class="p">(</span><span class="nx">theta</span><span class="p">);</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">  </span><span class="c1">// Draw the &quot;planet&quot; at the calculated Cartesian coordinates</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">  </span><span class="nx">fill</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">,</span><span class="w"> </span><span class="mf">255</span><span class="p">);</span>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">  </span><span class="nx">circle</span><span class="p">(</span><span class="nx">orbitingX</span><span class="p">,</span><span class="w"> </span><span class="nx">orbitingY</span><span class="p">,</span><span class="w"> </span><span class="mf">30</span><span class="p">);</span>
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">  </span><span class="c1">// Increase the angle to drive the circular motion</span>
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">  </span><span class="nx">theta</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mf">0.03</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>By simply updating one variable (<code>theta</code>), we achieve complex, curved motion. This is the elegance of polar coordinates.</p>
+<p>Conversely, there are many situations where you have an (x, y) point (like the location of the mouse cursor) and you need to know its angle and distance from a central point. This reverse process requires the <strong>Cartesian to Polar Formula</strong>. </p>
+<p>Finding the distance (the radius <code>r</code>) is straightforward using the Pythagorean theorem (<code>r = sqrt(x*x + y*y)</code>) or the built-in <code>dist()</code> function. However, finding the exact angle is much trickier, because a standard tangent calculation loses track of which quadrant the point is in. This brings us to a specialized mathematical tool designed specifically to solve this problem.</p>
+<h3 id="the-power-of-tangent-and-atan2">The Power of Tangent and Atan2<a class="headerlink" href="#the-power-of-tangent-and-atan2" title="Permanent link">&para;</a></h3>
+<p>We've established that sine and cosine are the undisputed stars for generating smooth circles and harmonic waves. But what about the third primary trigonometric function? </p>
+<p><strong>Tangent Function Math</strong> (<code>tan()</code>) mathematically represents the ratio between sine and cosine (<code>sin/cos</code>). Visually, if you graph the tangent function, it looks completely different from its siblings. Instead of smooth, continuous waves, the tangent function produces severe curves that periodically shoot off to positive and negative infinity. Because it's discontinuous, it is rarely used directly for creating smooth animations.</p>
+<p>However, its <em>inverse</em> function is an incredibly vital tool for interactive programming.</p>
+<p>Imagine you are programming a top-down space shooter game. You want your player's spaceship to dynamically rotate and always point its nose directly toward the player's mouse cursor. You know the Cartesian coordinates of the spaceship (x1, y1), and you know the Cartesian coordinates of the mouse (x2, y2). </p>
+<p>To rotate the spaceship correctly using the <code>rotate()</code> function, you need to find the <strong>Angle Between Coordinates</strong>.</p>
+<p>To accomplish this, we rely on the <strong>Arc Tangent Atan2 Function</strong>, written in code as <code>atan2(y, x)</code>. Unlike the standard inverse tangent function which can get confused by signs, <code>atan2</code> looks at both the y-difference and the x-difference independently to accurately calculate the correct angle in radians, covering all 360 degrees (or 2 PI radians) flawlessly.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nx">createCanvas</span><span class="p">(</span><span class="mf">600</span><span class="p">,</span><span class="w"> </span><span class="mf">400</span><span class="p">);</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="p">}</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="kd">function</span><span class="w"> </span><span class="nx">draw</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="nx">background</span><span class="p">(</span><span class="mf">220</span><span class="p">);</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">centerX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">width</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">centerY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">height</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">  </span><span class="c1">// Step 1: Calculate the difference (delta) in x and y</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">  </span><span class="c1">// Always subtract the starting point from the target point</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">dx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">mouseX</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">centerX</span><span class="p">;</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">dy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">mouseY</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">centerY</span><span class="p">;</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">  </span><span class="c1">// Step 2: Use atan2 to find the Angle Between Coordinates</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">atan2</span><span class="p">(</span><span class="nx">dy</span><span class="p">,</span><span class="w"> </span><span class="nx">dx</span><span class="p">);</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">  </span><span class="c1">// Step 3: Apply transformations</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">  </span><span class="nx">translate</span><span class="p">(</span><span class="nx">centerX</span><span class="p">,</span><span class="w"> </span><span class="nx">centerY</span><span class="p">);</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">  </span><span class="nx">rotate</span><span class="p">(</span><span class="nx">angle</span><span class="p">);</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">  </span><span class="c1">// Draw an arrow or spaceship shape. </span>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">  </span><span class="c1">// We design it pointing right, which is 0 degrees.</span>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">  </span><span class="nx">fill</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">  </span><span class="nx">triangle</span><span class="p">(</span><span class="o">-</span><span class="mf">20</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">15</span><span class="p">,</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">20</span><span class="p">,</span><span class="w"> </span><span class="mf">15</span><span class="p">);</span>
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>This specific technique—calculating the delta, feeding it into <code>atan2</code>, and applying the resulting angle to a rotation—is the absolute foundation of <strong>Rotational Tracking Motion</strong>. Whether it's a turret aiming at an enemy, a character's eyes following the cursor, or a plant tilting toward the sun, <code>atan2</code> is the function that makes it happen.</p>
+<blockquote>
+<p>[!TIP]</p>
+</blockquote>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Palette's Tip</p>
+<p><img alt="Palette tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+Heads up, coders! A very common mistake is flipping the arguments in <code>atan2</code>. Remember that it takes the Y difference first, then the X difference! It’s always <code>atan2(dy, dx)</code>, not <code>atan2(dx, dy)</code>. This quirk dates back to early computer math libraries, and it trips up even experienced programmers all the time!</p>
+</div>
+<h3 id="mapping-values-the-universal-translator">Mapping Values: The Universal Translator<a class="headerlink" href="#mapping-values-the-universal-translator" title="Permanent link">&para;</a></h3>
+<p>We have covered movement, oscillation, and rotation. Let's conclude this chapter with one final, incredibly practical utility function that ties everything together: the <strong>Map Range Function</strong>.</p>
+<h4 id="the-thermometer-metaphor">The Thermometer Metaphor<a class="headerlink" href="#the-thermometer-metaphor" title="Permanent link">&para;</a></h4>
+<p>To understand mapping, imagine a digital weather thermometer mounted outside your window. This thermometer measures temperatures ranging from a freezing 0 degrees up to a sweltering 100 degrees Celsius. </p>
+<p>Now, imagine you are building a smart-home dashboard that displays this temperature not as a number, but as an ambient background color. You want the background to smoothly transition from a deep, icy blue when it's 0 degrees, to a blazing, bright red when it hits 100 degrees.</p>
+<p>Your input data (the temperature) exists on a scale of 0 to 100. 
+However, your output system (the red color channel in RGB) expects a value strictly between 0 and 255. </p>
+<p>How do you translate a temperature of, say, 75 degrees into the precise corresponding red value?</p>
+<p>You could certainly perform the cross-multiplication math yourself: first find the percentage by dividing by the input max (75 / 100 = 0.75), and then multiply your output maximum by that percentage (255 * 0.75 = 191.25). </p>
+<p>But what if your input range isn't a friendly number like 100? What if it's -1 to 1? </p>
+<p>The built-in <code>map()</code> function performs this translation math for you instantly and flawlessly. It takes a value from a specific <em>input range</em> and perfectly scales and translates it to a corresponding value in a specific <em>output range</em>.</p>
+<p>The syntax is: <code>map(value, inputMin, inputMax, outputMin, outputMax)</code></p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">// Map 75 from a range of [0, 100] to a range of [0, 255]</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">redValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">map</span><span class="p">(</span><span class="mf">75</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">255</span><span class="p">);</span><span class="w"> </span>
+</span></code></pre></div>
+<p>This function becomes absolutely indispensable when working with trigonometry. </p>
+<p>Remember that <strong>Sine Function Math</strong> always returns values oscillating between -1 and 1. What if you want to use the output of a sine wave to control the diameter of a circle, making it pulse between 20 pixels and 150 pixels? </p>
+<p>You cannot have a circle with a negative diameter of -1 pixel! You must translate the trigonometric output into usable graphic values. The <strong>Map Range Function</strong> is the perfect, elegant solution:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="kd">function</span><span class="w"> </span><span class="nx">draw</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="nx">background</span><span class="p">(</span><span class="mf">220</span><span class="p">);</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="c1">// Get the raw sine value (-1 to 1)</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">osc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sin</span><span class="p">(</span><span class="nx">angle</span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">  </span><span class="c1">// Translate the sine wave to a valid size range (20 to 150)</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">map</span><span class="p">(</span><span class="nx">osc</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">,</span><span class="w"> </span><span class="mf">150</span><span class="p">);</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">  </span><span class="c1">// Draw the pulsing circle</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">  </span><span class="nx">circle</span><span class="p">(</span><span class="nx">width</span><span class="o">/</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">height</span><span class="o">/</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">size</span><span class="p">);</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">  </span><span class="nx">angle</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mf">0.05</span><span class="p">;</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="p">}</span>
+</span></code></pre></div>
+<details>
+<summary>MicroSim: Orbital Mechanics Simulator</summary>
+
+**Goal:** Create an advanced, integrated simulation demonstrating polar coordinates, rotational tracking, and mapping all working simultaneously in a dynamic system.
+
+**Implementation Details:**
+- Use the p5.js generator.
+- Draw a prominent central "sun" in the middle of the canvas.
+- Animate a "planet" orbiting the sun using **Circle Polar Coordinates** and the fundamental **Polar to Cartesian Formula** (`x = r * cos(theta)`, `y = r * sin(theta)`).
+- Create a distinct "satellite" object that explicitly tracks and follows the mouse cursor's position on the canvas.
+- Draw a line connecting the planet and the satellite. Use the **Arc Tangent Atan2 Function** to calculate the precise **Angle Between Coordinates** so that a drawn directional "sensor dish" on the planet continuously rotates and points directly at the moving satellite, demonstrating perfect **Rotational Tracking Motion**.
+- Finally, use the **Map Range Function** to dynamically alter the visual state based on distance. Calculate the distance between the planet and the satellite, and map that distance to the fill color of the planet (e.g., mapping a distance range of 0-400 to a color range of red to blue), creating a visual heat-map effect.
+</details>
+
+<h3 id="conclusion-choreographing-with-code">Conclusion: Choreographing with Code<a class="headerlink" href="#conclusion-choreographing-with-code" title="Permanent link">&para;</a></h3>
+<p>Trigonometry might have seemed like an abstract, intimidating subject in a textbook, but in the realm of creative coding, it is the fundamental engine of life, oscillation, and organic movement. </p>
+<p>By mastering the rigid predictability of <strong>Linear Motion Logic</strong>, understanding the smooth, eternal oscillations provided by <strong>Sine Function Math</strong> and <strong>Cosine Function Math</strong>, and wielding the rotational targeting power of the <strong>Arc Tangent Atan2 Function</strong>, you have vastly expanded your programming toolkit. </p>
+<p>When you learn to seamlessly link these mathematical properties together using the <strong>Map Range Function</strong>, your code transcends simple drawing. You are no longer just rendering shapes; you are choreographing intricate, dynamic systems that breathe, pulse, and interact with the fluidity of the natural world. Keep experimenting, keep tweaking those wave parameters, and watch your sketches come alive!</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">Chapter Complete!</p>
+<p><img _="{" alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+Amazing work! You've mastered another set of core concepts. Take a moment to celebrate!}</p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../06-matrix-transformations/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 6. Matrix Transformations &amp; Coordinate Systems">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                6. Matrix Transformations & Coordinate Systems
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../08-polar-coordinates-easing/" class="md-footer__link md-footer__link--next" aria-label="Next: 8. Polar Coordinates, Oscillation &amp; Easing">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                8. Polar Coordinates, Oscillation & Easing
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

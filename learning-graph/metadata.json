@@ -1,0 +1,10 @@
+{
+  "title": "The Art of Processing: Learning Graph",
+  "description": "A comprehensive 600-concept directed acyclic learning graph for creative coding, computational thinking, WebGL, and signal processing with p5.js.",
+  "creator": "Dan McCreary",
+  "date": "2026-08-19",
+  "version": "1.0",
+  "format": "Learning Graph JSON v1.0",
+  "schema": "https://raw.githubusercontent.com/dmccreary/learning-graphs/refs/heads/main/src/schema/learning-graph-schema.json",
+  "license": "CC BY-NC-SA 4.0 DEED"
+}

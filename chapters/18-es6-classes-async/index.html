@@ -1,0 +1,1690 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An interactive intelligent textbook about the p5.js processing library and how to use it to teach computational thinking.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/p5-textbook/chapters/18-es6-classes-async/">
+      
+      
+        <link rel="prev" href="../17-functions-and-callbacks/">
+      
+      
+        <link rel="next" href="../19-3d-webgl-primitives/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>18. ES6 Classes, Object-Oriented Programming & Async Data - The Art of Processing</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-18-es6-classes-object-oriented-programming-async-data" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="The Art of Processing" class="md-header__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            The Art of Processing
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              18. ES6 Classes, Object-Oriented Programming & Async Data
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="The Art of Processing" class="md-nav__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    The Art of Processing
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-intro-creative-coding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introduction to Creative Coding & Canvas Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-2d-primitive-shapes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. 2D Primitive Shapes & Custom Geometries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-color-theory-pixels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Color Theory, Color Modes & Pixel Manipulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-variables-and-scope/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Variables, Data Types & Scope Fundamentals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-control-flow-and-loops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Control Flow, Loops & Array Data Structures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-matrix-transformations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Matrix Transformations & Coordinate Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-linear-motion-trig/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Linear Motion, Trigonometry & Wave Math
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-polar-coordinates-easing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Polar Coordinates, Oscillation & Easing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-randomness-and-walks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Randomness, Gaussian Distributions & Random Walk
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-perlin-noise-fields/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Perlin Noise Landscapes & Vector Flow Fields
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-vector-math-physics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Vector Math Fundamentals & Physics Acceleration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-particle-systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Particle Systems, Forces & Steering Behaviors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-mouse-keyboard-events/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Mouse & Keyboard User Event Sensing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-touch-mobile-sensors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Touch Gestures, Mobile Sensors & Interaction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-dom-controls-ui/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. DOM Controls, Input Fields & UI Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-css-styling-layouts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16. CSS Styling, Layouts & Web Page Integration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-functions-and-callbacks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17. Functions, Arrow Expressions & Callbacks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    18. ES6 Classes, Object-Oriented Programming & Async Data
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    18. ES6 Classes, Object-Oriented Programming & Async Data
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-the-metaphor-of-blueprints-vs-houses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction: The Metaphor of Blueprints vs Houses
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction: The Metaphor of Blueprints vs Houses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#object-destructuring-and-array-destructuring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Object Destructuring and Array Destructuring
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-spread-operator-array-and-rest-parameters-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Spread Operator Array and Rest Parameters Function
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#functional-programming-array-map-higher-order-array-filter-method-and-array-reduce-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Functional Programming: Array Map Higher Order, Array Filter Method, and Array Reduce Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dealing-with-time-promise-object-async-async-keyword-function-and-await-keyword-expression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dealing with Time: Promise Object Async, Async Keyword Function, and Await Keyword Expression
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-data-fetch-api-web-request-json-parse-string-and-json-stringify-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting Data: Fetch API Web Request, JSON Parse String, and JSON Stringify Object
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modular-code-es6-module-import-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modular Code: ES6 Module Import Export
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#staying-safe-try-catch-error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Staying Safe: Try Catch Error Handling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storing-data-local-storage-persistence-and-set-data-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Storing Data: Local Storage Persistence and Set Data Structure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-3d-webgl-primitives/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    19. 3D WebGL Coordinates & Primitive Geometries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-3d-cameras-shaders/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20. 3D Cameras, Lighting Models, Materials & Shaders
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-audio-synthesis-sound/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    21. Audio Synthesis, Oscillators & Envelopes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-mic-input-fft/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    22. Microphone Input & FFT Spectral Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-image-processing-video/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    23. Image Processing, Filters & Video Capture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-generative-typography/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    24. Generative Typography & Vector Font Outlines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-dev-environment-pedagogy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    25. Development Environment, Tools & Pedagogy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-the-metaphor-of-blueprints-vs-houses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction: The Metaphor of Blueprints vs Houses
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction: The Metaphor of Blueprints vs Houses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#object-destructuring-and-array-destructuring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Object Destructuring and Array Destructuring
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-spread-operator-array-and-rest-parameters-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Spread Operator Array and Rest Parameters Function
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#functional-programming-array-map-higher-order-array-filter-method-and-array-reduce-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Functional Programming: Array Map Higher Order, Array Filter Method, and Array Reduce Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dealing-with-time-promise-object-async-async-keyword-function-and-await-keyword-expression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dealing with Time: Promise Object Async, Async Keyword Function, and Await Keyword Expression
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-data-fetch-api-web-request-json-parse-string-and-json-stringify-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting Data: Fetch API Web Request, JSON Parse String, and JSON Stringify Object
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modular-code-es6-module-import-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modular Code: ES6 Module Import Export
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#staying-safe-try-catch-error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Staying Safe: Try Catch Error Handling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storing-data-local-storage-persistence-and-set-data-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Storing Data: Local Storage Persistence and Set Data Structure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/p5-textbook/blob/main/docs/chapters/18-es6-classes-async/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="chapter-18-es6-classes-object-oriented-programming-async-data">Chapter 18: ES6 Classes, Object-Oriented Programming &amp; Async Data<a class="headerlink" href="#chapter-18-es6-classes-object-oriented-programming-async-data" title="Permanent link">&para;</a></h1>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Welcome to Chapter 18</p>
+<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+Hello artists and creators! Time to color outside the loops! Welcome to the exciting world of ES6 and asynchronous data.</p>
+</div>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<p>This chapter covers the following 18 concepts from the learning graph:</p>
+<ol>
+<li>Object Destructuring</li>
+<li>Array Destructuring</li>
+<li>Spread Operator Array</li>
+<li>Rest Parameters Function</li>
+<li>Array Map Higher Order</li>
+<li>Array Filter Method</li>
+<li>Array Reduce Method</li>
+<li>Promise Object Async</li>
+<li>Async Keyword Function</li>
+<li>Await Keyword Expression</li>
+<li>Fetch API Web Request</li>
+<li>JSON Parse String</li>
+<li>JSON Stringify Object</li>
+<li>Load JSON p5 Function</li>
+<li>ES6 Module Import Export</li>
+<li>Try Catch Error Handling</li>
+<li>Local Storage Persistence</li>
+<li>Set Data Structure</li>
+</ol>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../17-functions-and-callbacks/">Chapter 17: Functions, Arrow Expressions &amp; Callbacks</a></li>
+</ul>
+<hr />
+<h2 id="introduction-the-metaphor-of-blueprints-vs-houses">Introduction: The Metaphor of Blueprints vs Houses<a class="headerlink" href="#introduction-the-metaphor-of-blueprints-vs-houses" title="Permanent link">&para;</a></h2>
+<p>Imagine you are an architect. You draw a precise blueprint for a house. The blueprint itself is not a house—you cannot live in it, and it does not keep the rain out. But from that single blueprint, you can build ten, a hundred, or a thousand houses. Each house built from that blueprint will share the same structure, but they might have different paint colors, different furniture, or be located on different streets.</p>
+<p>In Object-Oriented Programming (OOP), we use this exact same concept. A <strong>Class</strong> is the blueprint. It defines the structure and behavior of an object. An <strong>Object</strong> is the actual house built from that blueprint. This is an essential concept for artists and creators as we begin to build more complex and dynamic sketches. Let's dive deep into ES6 and how it empowers us to write cleaner, more expressive, and more powerful code!</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Thinking About Classes</p>
+<p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+If a class is a blueprint, then instantiation is the act of construction!</p>
+</div>
+<h3 id="object-destructuring-and-array-destructuring"><strong>Object Destructuring</strong> and <strong>Array Destructuring</strong><a class="headerlink" href="#object-destructuring-and-array-destructuring" title="Permanent link">&para;</a></h3>
+<p>Destructuring is a powerful ES6 feature that allows us to extract values from arrays or properties from objects and bind them to distinct variables. Let's explore how <strong>Object Destructuring</strong> and <strong>Array Destructuring</strong> work.</p>
+<p>When we have a complex object, we often need to extract just a few properties.
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">colorPalette</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">primary</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">secondary</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">tertiary</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;yellow&#39;</span><span class="w"> </span><span class="p">};</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">primary</span><span class="p">,</span><span class="w"> </span><span class="nx">secondary</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">colorPalette</span><span class="p">;</span>
+</span></code></pre></div>
+This is <strong>Object Destructuring</strong>. It makes our code much cleaner.</p>
+<p>Similarly, <strong>Array Destructuring</strong> allows us to pull items out of an array by their position:
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">point</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">,</span><span class="w"> </span><span class="mf">300</span><span class="p">];</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">,</span><span class="w"> </span><span class="nx">z</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">point</span><span class="p">;</span>
+</span></code></pre></div></p>
+<h3 id="the-spread-operator-array-and-rest-parameters-function">The <strong>Spread Operator Array</strong> and <strong>Rest Parameters Function</strong><a class="headerlink" href="#the-spread-operator-array-and-rest-parameters-function" title="Permanent link">&para;</a></h3>
+<p>The <strong>Spread Operator Array</strong> allows an iterable such as an array expression or string to be expanded in places where zero or more arguments (for function calls) or elements (for array literals) are expected.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">rgb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">255</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">];</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">rgba</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[...</span><span class="nx">rgb</span><span class="p">,</span><span class="w"> </span><span class="mf">128</span><span class="p">];</span><span class="w"> </span><span class="c1">// Spread Operator Array</span>
+</span></code></pre></div>
+<p>On the flip side, we have the <strong>Rest Parameters Function</strong>. This syntax allows us to represent an indefinite number of arguments as an array.
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">drawShapes</span><span class="p">(...</span><span class="nx">shapes</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Rest Parameters Function</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">shape</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">shapes</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">        </span><span class="nx">shape</span><span class="p">.</span><span class="nx">draw</span><span class="p">();</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">}</span>
+</span></code></pre></div></p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">A Helpful Tip on Spread</p>
+<p><img alt="Palette giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+Remember, spread expands things out, while rest gathers them up!</p>
+</div>
+<h3 id="functional-programming-array-map-higher-order-array-filter-method-and-array-reduce-method">Functional Programming: <strong>Array Map Higher Order</strong>, <strong>Array Filter Method</strong>, and <strong>Array Reduce Method</strong><a class="headerlink" href="#functional-programming-array-map-higher-order-array-filter-method-and-array-reduce-method" title="Permanent link">&para;</a></h3>
+<p>These three higher-order functions are essential tools for any creator working with arrays of data.</p>
+<ol>
+<li>
+<p><strong>Array Map Higher Order</strong>: Creates a new array populated with the results of calling a provided function on every element in the calling array.
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">sizes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">,</span><span class="w"> </span><span class="mf">30</span><span class="p">];</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">doubledSizes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sizes</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">size</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">size</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Array Filter Method</strong>: Creates a shallow copy of a portion of a given array, filtered down to just the elements from the given array that pass the test implemented by the provided function.
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">colors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;blue&#39;</span><span class="p">];</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">rColors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">colors</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">));</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Array Reduce Method</strong>: Executes a user-supplied "reducer" callback function on each element of the array, in order, passing in the return value from the calculation on the preceding element.
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">];</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">values</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span><span class="w"> </span><span class="nx">val</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">acc</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">val</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+</span></code></pre></div></p>
+</li>
+</ol>
+<details>
+<summary>MicroSim: Array Methods Visualizer</summary>
+<p>An interactive MicroSim that allows students to input an array of numbers and apply <code>map</code>, <code>filter</code>, or <code>reduce</code> visually.
+1. The original array is displayed as a row of boxes.
+2. Clicking 'Map (*2)' creates a second row of boxes below, with animations showing each box multiplying.
+3. Clicking 'Filter (&gt;10)' drops down only the boxes that pass the condition.
+4. Clicking 'Reduce (+)' animates all boxes collapsing into a single final box showing the sum.</p>
+</details>
+<h3 id="dealing-with-time-promise-object-async-async-keyword-function-and-await-keyword-expression">Dealing with Time: <strong>Promise Object Async</strong>, <strong>Async Keyword Function</strong>, and <strong>Await Keyword Expression</strong><a class="headerlink" href="#dealing-with-time-promise-object-async-async-keyword-function-and-await-keyword-expression" title="Permanent link">&para;</a></h3>
+<p>When we request data from the internet, it doesn't arrive instantly. We need a way to handle this delay. This is where Promises come in. A <strong>Promise Object Async</strong> represents the eventual completion (or failure) of an asynchronous operation and its resulting value.</p>
+<p>To make working with promises easier, ES6 introduced the <strong>Async Keyword Function</strong> and <strong>Await Keyword Expression</strong>.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">fetchArtData</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Async Keyword Function</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;https://api.artic.edu/api/v1/artworks&#39;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Await Keyword Expression</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">response</span><span class="p">;</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="admonition mascot-warning">
+<p class="admonition-title">A Common Mistake with Await</p>
+<p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+You can only use the <code>await</code> keyword inside of an <code>async</code> function! If you forget the <code>async</code> keyword, your code will throw an error.</p>
+</div>
+<h3 id="getting-data-fetch-api-web-request-json-parse-string-and-json-stringify-object">Getting Data: <strong>Fetch API Web Request</strong>, <strong>JSON Parse String</strong>, and <strong>JSON Stringify Object</strong><a class="headerlink" href="#getting-data-fetch-api-web-request-json-parse-string-and-json-stringify-object" title="Permanent link">&para;</a></h3>
+<p>The <strong>Fetch API Web Request</strong> provides a JavaScript interface for accessing and manipulating parts of the HTTP pipeline, such as requests and responses. It also provides a global <code>fetch()</code> method that provides an easy, logical way to fetch resources asynchronously across the network.</p>
+<p>When we receive data over the web, it usually comes as a string. We use <strong>JSON Parse String</strong> to turn it into a JavaScript object.
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">jsonString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;{&quot;name&quot;:&quot;Palette&quot;,&quot;species&quot;:&quot;Chameleon&quot;}&#39;</span><span class="p">;</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">jsonString</span><span class="p">);</span><span class="w"> </span><span class="c1">// JSON Parse String</span>
+</span></code></pre></div></p>
+<p>Conversely, when we want to send data or save it, we convert our JavaScript objects back into strings using <strong>JSON Stringify Object</strong>.
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">newString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span><span class="w"> </span><span class="c1">// JSON Stringify Object</span>
+</span></code></pre></div></p>
+<p>For p5.js specifically, we have the built-in <strong>Load JSON p5 Function</strong> <code>loadJSON()</code>, which simplifies fetching and parsing JSON data in our <code>preload()</code> function.</p>
+<h3 id="modular-code-es6-module-import-export">Modular Code: <strong>ES6 Module Import Export</strong><a class="headerlink" href="#modular-code-es6-module-import-export" title="Permanent link">&para;</a></h3>
+<p>As our sketches grow from simple scripts into full applications, we need to split our code into multiple files. This is where <strong>ES6 Module Import Export</strong> comes in.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1">// In math.js</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">add</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="c1">// In main.js</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">add</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./math.js&#39;</span><span class="p">;</span>
+</span></code></pre></div>
+<h3 id="staying-safe-try-catch-error-handling">Staying Safe: <strong>Try Catch Error Handling</strong><a class="headerlink" href="#staying-safe-try-catch-error-handling" title="Permanent link">&para;</a></h3>
+<p>Things go wrong in programming all the time. Network requests fail, files aren't found, and users input bad data. We use <strong>Try Catch Error Handling</strong> to catch these errors and respond gracefully rather than crashing our application.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="s1">&#39;this is not valid json&#39;</span><span class="p">);</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Oops! Something went wrong:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">);</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="storing-data-local-storage-persistence-and-set-data-structure">Storing Data: <strong>Local Storage Persistence</strong> and <strong>Set Data Structure</strong><a class="headerlink" href="#storing-data-local-storage-persistence-and-set-data-structure" title="Permanent link">&para;</a></h3>
+<p>Sometimes we want our sketches to remember things between page reloads, like a high score or a user's color preferences. We can use <strong>Local Storage Persistence</strong> for this.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">&#39;highScore&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">);</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">&#39;highScore&#39;</span><span class="p">);</span>
+</span></code></pre></div>
+<p>Finally, a <strong>Set Data Structure</strong> lets you store unique values of any type, whether primitive values or object references.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">uniqueColors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Set</span><span class="p">([</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;blue&#39;</span><span class="p">]);</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="c1">// uniqueColors now contains &#39;red&#39;, &#39;green&#39;, &#39;blue&#39; (no duplicates)</span>
+</span></code></pre></div>
+<details>
+<summary>MicroSim: Async Data Fetcher</summary>
+<p>An interactive MicroSim where students can click a button to initiate a <code>fetch()</code> request.
+1. A visual timeline shows the request leaving the client and traveling to a server.
+2. The user must wait (simulating network latency).
+3. The server responds with JSON data.
+4. The simulation visually demonstrates <code>JSON.parse</code> turning the string response into a colorful visual object on the screen.
+5. If the user clicks "Force Error", the simulation demonstrates <code>try/catch</code> catching the network failure.</p>
+</details>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">Chapter Complete</p>
+<p><img alt="Palette cheering" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+You did it! You've mastered ES6 classes, asynchronous data, and object-oriented programming. Now you can truly color outside the loops!</p>
+</div>
+<!-- padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word padding word  -->
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../17-functions-and-callbacks/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 17. Functions, Arrow Expressions &amp; Callbacks">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                17. Functions, Arrow Expressions & Callbacks
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../19-3d-webgl-primitives/" class="md-footer__link md-footer__link--next" aria-label="Next: 19. 3D WebGL Coordinates &amp; Primitive Geometries">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                19. 3D WebGL Coordinates & Primitive Geometries
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

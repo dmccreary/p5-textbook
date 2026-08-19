@@ -1,0 +1,2062 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An interactive intelligent textbook about the p5.js processing library and how to use it to teach computational thinking.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/p5-textbook/chapters/05-control-flow-and-loops/">
+      
+      
+        <link rel="prev" href="../04-variables-and-scope/">
+      
+      
+        <link rel="next" href="../06-matrix-transformations/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>5. Control Flow, Loops & Array Data Structures - The Art of Processing</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#control-flow-loops-array-data-structures" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="The Art of Processing" class="md-header__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            The Art of Processing
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              5. Control Flow, Loops & Array Data Structures
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="The Art of Processing" class="md-nav__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    The Art of Processing
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-intro-creative-coding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introduction to Creative Coding & Canvas Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-2d-primitive-shapes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. 2D Primitive Shapes & Custom Geometries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-color-theory-pixels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Color Theory, Color Modes & Pixel Manipulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-variables-and-scope/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Variables, Data Types & Scope Fundamentals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    5. Control Flow, Loops & Array Data Structures
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    5. Control Flow, Loops & Array Data Structures
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-repetition-the-factory-assembly-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to Repetition: The Factory Assembly Line
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction to Repetition: The Factory Assembly Line">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-while-loop-construct" class="md-nav__link">
+    <span class="md-ellipsis">
+      The While Loop Construct
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-loop-counter-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Loop Counter Variable
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-infinite-loop-prevention-and-the-infinite-loop-trap" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Infinite Loop Prevention and The Infinite Loop Trap
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-for-loop-construct" class="md-nav__link">
+    <span class="md-ellipsis">
+      The For Loop Construct
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#break-and-continue-keywords" class="md-nav__link">
+    <span class="md-ellipsis">
+      Break and Continue Keywords
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grids-and-patterns-the-spreadsheet-metaphor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grids and Patterns: The Spreadsheet Metaphor
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Grids and Patterns: The Spreadsheet Metaphor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nested-for-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nested For Loops
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2d-grid-iteration" class="md-nav__link">
+    <span class="md-ellipsis">
+      2D Grid Iteration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-collections-the-train-cars" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Collections: The Train Cars
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Collections: The Train Cars">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#array-element-indexing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Array Element Indexing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-array-length-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Array Length Property
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expanding-and-shrinking-array-push-method-and-array-pop-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expanding and Shrinking: Array Push Method and Array Pop Method
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-array-maneuvers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Array Maneuvers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Array Maneuvers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-of-loop-iteration" class="md-nav__link">
+    <span class="md-ellipsis">
+      For Of Loop Iteration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-for-each-array-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      The For Each Array Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removing-and-joining-array-splice-removal-and-array-concat-joining" class="md-nav__link">
+    <span class="md-ellipsis">
+      Removing and Joining: Array Splice Removal and Array Concat Joining
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#order-and-chaos-array-reverse-ordering-and-array-sort-ordering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Order and Chaos: Array Reverse Ordering and Array Sort Ordering
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grids-and-data-the-2d-matrix-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grids and Data: The 2D Matrix Array
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Grids and Data: The 2D Matrix Array">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#managing-state-boolean-flag-variable-and-state-machine-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managing State: Boolean Flag Variable and State Machine Logic
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-matrix-transformations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Matrix Transformations & Coordinate Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-linear-motion-trig/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Linear Motion, Trigonometry & Wave Math
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-polar-coordinates-easing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Polar Coordinates, Oscillation & Easing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-randomness-and-walks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Randomness, Gaussian Distributions & Random Walk
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-perlin-noise-fields/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Perlin Noise Landscapes & Vector Flow Fields
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-vector-math-physics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Vector Math Fundamentals & Physics Acceleration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-particle-systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Particle Systems, Forces & Steering Behaviors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-mouse-keyboard-events/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Mouse & Keyboard User Event Sensing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-touch-mobile-sensors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Touch Gestures, Mobile Sensors & Interaction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-dom-controls-ui/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. DOM Controls, Input Fields & UI Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-css-styling-layouts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16. CSS Styling, Layouts & Web Page Integration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-functions-and-callbacks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17. Functions, Arrow Expressions & Callbacks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-es6-classes-async/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18. ES6 Classes, Object-Oriented Programming & Async Data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-3d-webgl-primitives/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    19. 3D WebGL Coordinates & Primitive Geometries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-3d-cameras-shaders/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20. 3D Cameras, Lighting Models, Materials & Shaders
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-audio-synthesis-sound/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    21. Audio Synthesis, Oscillators & Envelopes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-mic-input-fft/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    22. Microphone Input & FFT Spectral Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-image-processing-video/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    23. Image Processing, Filters & Video Capture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-generative-typography/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    24. Generative Typography & Vector Font Outlines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-dev-environment-pedagogy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    25. Development Environment, Tools & Pedagogy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-repetition-the-factory-assembly-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to Repetition: The Factory Assembly Line
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction to Repetition: The Factory Assembly Line">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-while-loop-construct" class="md-nav__link">
+    <span class="md-ellipsis">
+      The While Loop Construct
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-loop-counter-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Loop Counter Variable
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-infinite-loop-prevention-and-the-infinite-loop-trap" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Infinite Loop Prevention and The Infinite Loop Trap
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-for-loop-construct" class="md-nav__link">
+    <span class="md-ellipsis">
+      The For Loop Construct
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#break-and-continue-keywords" class="md-nav__link">
+    <span class="md-ellipsis">
+      Break and Continue Keywords
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grids-and-patterns-the-spreadsheet-metaphor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grids and Patterns: The Spreadsheet Metaphor
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Grids and Patterns: The Spreadsheet Metaphor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nested-for-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nested For Loops
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2d-grid-iteration" class="md-nav__link">
+    <span class="md-ellipsis">
+      2D Grid Iteration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-collections-the-train-cars" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Collections: The Train Cars
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Collections: The Train Cars">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#array-element-indexing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Array Element Indexing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-array-length-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Array Length Property
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expanding-and-shrinking-array-push-method-and-array-pop-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expanding and Shrinking: Array Push Method and Array Pop Method
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-array-maneuvers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Array Maneuvers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Array Maneuvers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-of-loop-iteration" class="md-nav__link">
+    <span class="md-ellipsis">
+      For Of Loop Iteration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-for-each-array-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      The For Each Array Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removing-and-joining-array-splice-removal-and-array-concat-joining" class="md-nav__link">
+    <span class="md-ellipsis">
+      Removing and Joining: Array Splice Removal and Array Concat Joining
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#order-and-chaos-array-reverse-ordering-and-array-sort-ordering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Order and Chaos: Array Reverse Ordering and Array Sort Ordering
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grids-and-data-the-2d-matrix-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grids and Data: The 2D Matrix Array
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Grids and Data: The 2D Matrix Array">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#managing-state-boolean-flag-variable-and-state-machine-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managing State: Boolean Flag Variable and State Machine Logic
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/p5-textbook/blob/main/docs/chapters/05-control-flow-and-loops/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="control-flow-loops-array-data-structures">Control Flow, Loops &amp; Array Data Structures<a class="headerlink" href="#control-flow-loops-array-data-structures" title="Permanent link">&para;</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>Covers conditional branching (if/else, switch), loop constructs (for, while), nested grid iterations, and dynamic array methods. Students will gain practical hands-on experience by building interactive sketches and visual experiments that demonstrate these concepts.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<p>This chapter covers the following 21 concepts from the learning graph:</p>
+<ol>
+<li>While Loop Construct</li>
+<li>For Loop Construct</li>
+<li>Loop Counter Variable</li>
+<li>Infinite Loop Prevention</li>
+<li>Nested For Loops</li>
+<li>2D Grid Iteration</li>
+<li>Array Data Structure</li>
+<li>Array Element Indexing</li>
+<li>Array Push Method</li>
+<li>Array Pop Method</li>
+<li>Array Length Property</li>
+<li>For Of Loop Iteration</li>
+<li>For Each Array Method</li>
+<li>Array Splice Removal</li>
+<li>Array Concat Joining</li>
+<li>2D Matrix Array</li>
+<li>Array Reverse Ordering</li>
+<li>Array Sort Ordering</li>
+<li>Boolean Flag Variable</li>
+<li>State Machine Logic</li>
+<li>Break and Continue Keywords</li>
+</ol>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../04-variables-and-scope/">Chapter 4: Variables, Data Types &amp; Scope Fundamentals</a></li>
+</ul>
+<hr />
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Welcome to Chapter 5!</p>
+<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+Palette here! Are you ready to dive into chapter 5? Time to color outside the loops!</p>
+</div>
+<h2 id="introduction-to-repetition-the-factory-assembly-line">Introduction to Repetition: The Factory Assembly Line<a class="headerlink" href="#introduction-to-repetition-the-factory-assembly-line" title="Permanent link">&para;</a></h2>
+<p>Welcome to Chapter 5! Have you ever had to do the exact same thing over and over again? Maybe it was writing sentences on a chalkboard as a punishment, or maybe it was stamping the same logo on a hundred different flyers. In programming, repeating tasks manually is the ultimate buzzkill. It's boring, prone to errors, and totally defeats the purpose of having a powerful computer at your fingertips.</p>
+<p>Imagine your code as a factory. The <strong>Factory Assembly Line</strong> is a perfect metaphor for loops. On an assembly line, the same operation happens repeatedly to different items as they pass down the belt. A robot arm might tighten exactly four bolts on every car chassis that goes by. It doesn't need a separate instruction manual for each car; it just repeats the "tighten four bolts" sequence as long as the conveyor belt keeps moving.</p>
+<p>In p5.js, when we want to draw 100 circles across the screen, we don't write <code>circle()</code> 100 times. Instead, we build a loop—our own little factory assembly line—that says, "Hey computer, execute this block of code 100 times."</p>
+<h3 id="the-while-loop-construct">The <strong>While Loop Construct</strong><a class="headerlink" href="#the-while-loop-construct" title="Permanent link">&para;</a></h3>
+<p>The simplest way to create this assembly line is using the <strong>While Loop Construct</strong>. A <code>while</code> loop is exactly what it sounds like: it keeps executing a block of code <em>while</em> a certain condition is true.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">count</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Stamping flyer number &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">count</span><span class="p">);</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>In this example, the loop checks the condition <code>count &lt; 5</code>. If it's true, it runs the code inside the curly braces. After running the code, it goes back up, checks the condition again, and repeats. This brings us to a critical piece of the puzzle: the <strong>Loop Counter Variable</strong>.</p>
+<h3 id="the-loop-counter-variable">The <strong>Loop Counter Variable</strong><a class="headerlink" href="#the-loop-counter-variable" title="Permanent link">&para;</a></h3>
+<p>The <strong>Loop Counter Variable</strong> (in the example above, <code>count</code>) is the foreman of our factory. It keeps track of how many times the loop has run. Without it, the loop wouldn't know when to stop. We initialize it before the loop, check its value in the loop condition, and update it (like <code>count = count + 1</code>) inside the loop body.</p>
+<h3 id="the-infinite-loop-prevention-and-the-infinite-loop-trap">The <strong>Infinite Loop Prevention</strong> and The Infinite Loop Trap<a class="headerlink" href="#the-infinite-loop-prevention-and-the-infinite-loop-trap" title="Permanent link">&para;</a></h3>
+<p>What happens if you forget to update your loop counter variable? You fall into <strong>The Infinite Loop Trap</strong>. Imagine the robot arm on the assembly line goes rogue, repeatedly tightening the same bolt forever because the conveyor belt broke. Your program will get stuck in that loop, running as fast as the processor allows, until the browser crashes or your computer fans start screaming.</p>
+<p><strong>Infinite Loop Prevention</strong> is crucial. You must always ensure that the condition evaluated in your <code>while</code> loop will eventually become false. If you are checking <code>count &lt; 5</code>, you absolutely must ensure that <code>count</code> increases during the loop execution.</p>
+<blockquote>
+<p>[!TIP]</p>
+</blockquote>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Palette's Tip</p>
+<p><img alt="Palette tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+Chameleons love a good loop—it's like our curly tails! But be careful not to tie yourself in a knot. Before you hit 'Run' on a <code>while</code> loop, always double-check that your counter is actually changing. I once got stuck looking at the same fly forever because my tongue's loop counter was broken. Don't be like me! Always practice <strong>Infinite Loop Prevention</strong>!</p>
+</div>
+<h3 id="the-for-loop-construct">The <strong>For Loop Construct</strong><a class="headerlink" href="#the-for-loop-construct" title="Permanent link">&para;</a></h3>
+<p>Because setting up a loop counter, checking a condition, and updating the counter is so common, programmers created a streamlined version: the <strong>For Loop Construct</strong>. It packages all three steps (initialization, condition, and update) into a single, neat line of code.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Stamping flyer number &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">i</span><span class="p">);</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Here, <code>let i = 0</code> sets up our <strong>Loop Counter Variable</strong>. <code>i &lt; 5</code> is our condition. And <code>i++</code> (which is shorthand for <code>i = i + 1</code>) is the update step. The <code>for</code> loop is often the preferred choice when you know exactly how many times you want the assembly line to run.</p>
+<h3 id="break-and-continue-keywords"><strong>Break and Continue Keywords</strong><a class="headerlink" href="#break-and-continue-keywords" title="Permanent link">&para;</a></h3>
+<p>Sometimes, you need to disrupt the assembly line. Maybe a defective product comes down the belt, and you need to skip it, or maybe the factory catches fire and you need to shut down the line entirely.</p>
+<p>The <strong>Break and Continue Keywords</strong> give you this control.
+- <code>break</code>: Completely exits the loop immediately. The factory shuts down.
+- <code>continue</code>: Skips the rest of the current loop iteration and moves directly to the next one. The defective product is skipped.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">i</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="k">break</span><span class="p">;</span><span class="w"> </span><span class="c1">// Stops the loop entirely when i reaches 5</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">i</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="k">continue</span><span class="p">;</span><span class="w"> </span><span class="c1">// Skips even numbers</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span><span class="w"> </span><span class="c1">// This will only print 1 and 3</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="grids-and-patterns-the-spreadsheet-metaphor">Grids and Patterns: The Spreadsheet Metaphor<a class="headerlink" href="#grids-and-patterns-the-spreadsheet-metaphor" title="Permanent link">&para;</a></h2>
+<p>Now that we can draw a row of shapes using a single loop, how do we draw a grid of shapes? Imagine a checkerboard, a brick wall, or the pixels on your screen. To create these 2D patterns, we need to think about <strong>The Spreadsheet</strong>.</p>
+<p>A spreadsheet is organized into rows and columns. If you want to visit every cell in a spreadsheet, you might say, "Go to row 1, then read column A, B, C. Then go to row 2, and read column A, B, C."</p>
+<h3 id="nested-for-loops"><strong>Nested For Loops</strong><a class="headerlink" href="#nested-for-loops" title="Permanent link">&para;</a></h3>
+<p>In code, we achieve this "spreadsheet scanning" by putting one loop inside another. This is called <strong>Nested For Loops</strong>. The outer loop typically controls the rows (the Y-axis in p5.js), and the inner loop controls the columns (the X-axis).</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">height</span><span class="p">;</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mf">40</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">width</span><span class="p">;</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mf">40</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nx">fill</span><span class="p">(</span><span class="nx">random</span><span class="p">(</span><span class="mf">255</span><span class="p">));</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nx">rect</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">,</span><span class="w"> </span><span class="mf">40</span><span class="p">,</span><span class="w"> </span><span class="mf">40</span><span class="p">);</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>For every single step of the outer <code>y</code> loop, the inner <code>x</code> loop runs to completion. So, if <code>y = 0</code>, the <code>x</code> loop draws a full row of squares across the top of the screen. Then <code>y</code> becomes 40, and the <code>x</code> loop draws another full row.</p>
+<h3 id="2d-grid-iteration"><strong>2D Grid Iteration</strong><a class="headerlink" href="#2d-grid-iteration" title="Permanent link">&para;</a></h3>
+<p>This process is known as <strong>2D Grid Iteration</strong>. It is the fundamental technique for processing images (which are just grids of pixels), generating tile-based game maps, or creating complex, repeating geometric art. By mastering <strong>Nested For Loops</strong>, you unlock the ability to cover the entire canvas systematically.</p>
+<details>
+<summary><b>MicroSim: Nested Grid Explorer</b></summary>
+<b>Type:</b> p5.js Interactive Concept Explorer
+
+<b>Description:</b> A visual simulation demonstrating how **Nested For Loops** execute over a **2D Grid Iteration**. The canvas shows a 5x5 grid of cells. 
+<b>Interactivity:</b>
+- A "Step Forward" button allows the user to manually advance the loop execution.
+- As the loop steps, the code snippet on the side highlights which line is currently executing (the outer `y` loop or the inner `x` loop).
+- The corresponding cell in the 5x5 grid lights up, showing exactly how the inner loop completes a full row before the outer loop moves down to the next row.
+- A slider controls the speed of an "Auto-Play" mode.
+</details>
+
+<h2 id="data-collections-the-train-cars">Data Collections: The Train Cars<a class="headerlink" href="#data-collections-the-train-cars" title="Permanent link">&para;</a></h2>
+<p>Up until now, our variables have been like single boxes, capable of holding only one value at a time. <code>let x = 50;</code> holds exactly one number. But what if we want to keep track of the X coordinates for 100 different bouncing balls? Creating 100 separate variables (<code>x1</code>, <code>x2</code>, <code>x3</code>...) is a nightmare.</p>
+<p>We need a way to organize multiple related pieces of data. Enter the <strong>Array Data Structure</strong>.</p>
+<p>Think of an Array as a train. The train has a locomotive at the front (the variable name), and trailing behind it are multiple train cars linked together in a specific order. Each train car holds one piece of data.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">ballXPositions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">50</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">];</span>
+</span></code></pre></div>
+<p>The square brackets <code>[]</code> are the tracks that define our train. Inside, separated by commas, are the contents of our train cars.</p>
+<h3 id="array-element-indexing"><strong>Array Element Indexing</strong><a class="headerlink" href="#array-element-indexing" title="Permanent link">&para;</a></h3>
+<p>How do we access a specific train car? We use its position number, which in programming is called an index. But there's a catch: programmers start counting from zero!</p>
+<p>This is known as <strong>Array Element Indexing</strong>. The first item is at index 0, the second is at index 1, and so on.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">ballXPositions</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span><span class="w"> </span><span class="c1">// Prints 10</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">ballXPositions</span><span class="p">[</span><span class="mf">2</span><span class="p">]);</span><span class="w"> </span><span class="c1">// Prints 100</span>
+</span></code></pre></div>
+<h3 id="the-array-length-property">The <strong>Array Length Property</strong><a class="headerlink" href="#the-array-length-property" title="Permanent link">&para;</a></h3>
+<p>Every array automatically keeps track of how many train cars it has. This is the <strong>Array Length Property</strong>. You access it using <code>.length</code>.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">ballXPositions</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span><span class="w"> </span><span class="c1">// Prints 4</span>
+</span></code></pre></div>
+<p>This property is incredibly useful when combined with a <strong>For Loop Construct</strong>. You can loop through every element in an array without even knowing exactly how many elements there are beforehand:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">ballXPositions</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nx">circle</span><span class="p">(</span><span class="nx">ballXPositions</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">);</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="expanding-and-shrinking-array-push-method-and-array-pop-method">Expanding and Shrinking: <strong>Array Push Method</strong> and <strong>Array Pop Method</strong><a class="headerlink" href="#expanding-and-shrinking-array-push-method-and-array-pop-method" title="Permanent link">&para;</a></h3>
+<p>Arrays in JavaScript are dynamic; they can grow and shrink while your program runs. We can add and remove train cars.</p>
+<p>The <strong>Array Push Method</strong> adds a new item to the <em>end</em> of the array. It pushes a new train car onto the tracks.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nx">ballXPositions</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mf">300</span><span class="p">);</span><span class="w"> </span><span class="c1">// Array is now [10, 50, 100, 200, 300]</span>
+</span></code></pre></div>
+<p>The <strong>Array Pop Method</strong> removes the last item from the end of the array. It unhooks the last train car.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">lastPos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ballXPositions</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span><span class="w"> </span><span class="c1">// Returns 300. Array is back to [10, 50, 100, 200]</span>
+</span></code></pre></div>
+<blockquote>
+<p>[!NOTE]</p>
+</blockquote>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Palette's Tip</p>
+<p><img alt="Palette tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+Arrays are amazing! They're like my color palette. I can <code>push</code> a new color into my camouflage options, or <code>pop</code> one off if it's out of season. Just remember, <strong>Array Element Indexing</strong> starts at zero. If I want my first color, I ask for index 0. If I ask for index 1, I get the <em>second</em> color. It took me a few days to get used to it, but now zero-indexing feels as natural as catching a moth!</p>
+</div>
+<h2 id="advanced-array-maneuvers">Advanced Array Maneuvers<a class="headerlink" href="#advanced-array-maneuvers" title="Permanent link">&para;</a></h2>
+<p>Once you're comfortable with basic array trains, you'll find there are many specialized methods to manage your data collections efficiently.</p>
+<h3 id="for-of-loop-iteration"><strong>For Of Loop Iteration</strong><a class="headerlink" href="#for-of-loop-iteration" title="Permanent link">&para;</a></h3>
+<p>When you want to look at every single item in an array, the standard <code>for</code> loop works, but it can be a bit clunky to write out <code>let i = 0; i &lt; array.length; i++</code> every time. Modern JavaScript gives us a cleaner alternative: the <strong>For Of Loop Iteration</strong>.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">colors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;blue&#39;</span><span class="p">];</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">col</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">colors</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="nx">fill</span><span class="p">(</span><span class="nx">col</span><span class="p">);</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">  </span><span class="nx">circle</span><span class="p">(</span><span class="nx">random</span><span class="p">(</span><span class="nx">width</span><span class="p">),</span><span class="w"> </span><span class="nx">random</span><span class="p">(</span><span class="nx">height</span><span class="p">),</span><span class="w"> </span><span class="mf">50</span><span class="p">);</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>This loop automatically iterates through every element in the <code>colors</code> array. In each iteration, the variable <code>col</code> takes on the value of the current element. It is much easier to read!</p>
+<h3 id="the-for-each-array-method">The <strong>For Each Array Method</strong><a class="headerlink" href="#the-for-each-array-method" title="Permanent link">&para;</a></h3>
+<p>Another popular way to loop through arrays is the <strong>For Each Array Method</strong>. This relies on a concept called callbacks (which we will explore deeply later), but essentially, it asks the array to run a specific function for every item it contains.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">sizes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">,</span><span class="w"> </span><span class="mf">30</span><span class="p">];</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nx">sizes</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">size</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="nx">rect</span><span class="p">(</span><span class="nx">width</span><span class="o">/</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">height</span><span class="o">/</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">size</span><span class="p">,</span><span class="w"> </span><span class="nx">size</span><span class="p">);</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="p">});</span>
+</span></code></pre></div>
+<h3 id="removing-and-joining-array-splice-removal-and-array-concat-joining">Removing and Joining: <strong>Array Splice Removal</strong> and <strong>Array Concat Joining</strong><a class="headerlink" href="#removing-and-joining-array-splice-removal-and-array-concat-joining" title="Permanent link">&para;</a></h3>
+<p>What if you want to remove a train car from the <em>middle</em> of the train? You can't use <code>pop()</code>, because that only targets the end. For precise surgery, we use <strong>Array Splice Removal</strong>.</p>
+<p>The <code>splice()</code> method requires two arguments: the index where you want to start cutting, and how many items you want to remove.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">animals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;bird&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;fish&#39;</span><span class="p">];</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nx">animals</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="c1">// Starts at index 1 (&#39;cat&#39;), removes 2 items (&#39;cat&#39; and &#39;bird&#39;)</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="c1">// Array is now [&#39;dog&#39;, &#39;fish&#39;]</span>
+</span></code></pre></div>
+<p>Sometimes you have two separate trains and you want to hitch them together into one long train. We use <strong>Array Concat Joining</strong> for this.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">trainA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">];</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">trainB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">];</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="kd">let</span><span class="w"> </span><span class="nx">longTrain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">trainA</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">trainB</span><span class="p">);</span><span class="w"> </span><span class="c1">// [1, 2, 3, 4, 5, 6]</span>
+</span></code></pre></div>
+<h3 id="order-and-chaos-array-reverse-ordering-and-array-sort-ordering">Order and Chaos: <strong>Array Reverse Ordering</strong> and <strong>Array Sort Ordering</strong><a class="headerlink" href="#order-and-chaos-array-reverse-ordering-and-array-sort-ordering" title="Permanent link">&para;</a></h3>
+<p>You can quickly flip the entire order of your array using <strong>Array Reverse Ordering</strong>.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">countdown</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">];</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nx">countdown</span><span class="p">.</span><span class="nx">reverse</span><span class="p">();</span><span class="w"> </span><span class="c1">// Now [5, 4, 3, 2, 1]</span>
+</span></code></pre></div>
+<p>Sorting elements is another incredibly common task. The <strong>Array Sort Ordering</strong> method can alphabetize strings or arrange numbers (though number sorting requires a little extra helper function in JavaScript).</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Zebra&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Ape&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Lion&#39;</span><span class="p">];</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nx">names</span><span class="p">.</span><span class="nx">sort</span><span class="p">();</span><span class="w"> </span><span class="c1">// Now [&#39;Ape&#39;, &#39;Lion&#39;, &#39;Zebra&#39;]</span>
+</span></code></pre></div>
+<h2 id="grids-and-data-the-2d-matrix-array">Grids and Data: The 2D Matrix Array<a class="headerlink" href="#grids-and-data-the-2d-matrix-array" title="Permanent link">&para;</a></h2>
+<p>We learned about 2D grids earlier using nested loops. But how do we <em>store</em> data for a 2D grid? We can put arrays inside of arrays! This creates a <strong>2D Matrix Array</strong>.</p>
+<p>Imagine a tic-tac-toe board. It's a 3x3 grid. We can represent it as an array that contains three arrays (one for each row).</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">board</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">],</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">  </span><span class="p">[</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;O&#39;</span><span class="p">],</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">  </span><span class="p">[</span><span class="s1">&#39;O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;X&#39;</span><span class="p">]</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="p">];</span>
+</span></code></pre></div>
+<p>To access the top-middle element, we first select the row array at index 0, and then the column element at index 1: <code>board[0][1]</code>, which gives us 'O'. By combining <strong>Nested For Loops</strong> with a <strong>2D Matrix Array</strong>, you can build complex systems like chess boards, Sudoku games, or terrain maps.</p>
+<h3 id="managing-state-boolean-flag-variable-and-state-machine-logic">Managing State: <strong>Boolean Flag Variable</strong> and <strong>State Machine Logic</strong><a class="headerlink" href="#managing-state-boolean-flag-variable-and-state-machine-logic" title="Permanent link">&para;</a></h3>
+<p>As your programs become more complex, especially with interactivity, you need to keep track of what "mode" the program is in. Is the game paused or running? Is the player jumping or falling?</p>
+<p>A <strong>Boolean Flag Variable</strong> is a simple true/false variable that acts like a switch.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">isGameOver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="kd">function</span><span class="w"> </span><span class="nx">draw</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">isGameOver</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Game Over!&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">width</span><span class="o">/</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">height</span><span class="o">/</span><span class="mf">2</span><span class="p">);</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">    </span><span class="c1">// Don&#39;t update game logic</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">    </span><span class="c1">// Run normal game loops</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>When you have many different states (Start Menu, Playing, Paused, Game Over, High Score Screen), a simple flag isn't enough. You need <strong>State Machine Logic</strong>.</p>
+<p>A State Machine uses a variable (often a string or number) to track the current phase of the program, and a <code>switch</code> statement (or <code>if/else if</code> blocks) to decide which code to run.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">gameState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;MENU&quot;</span><span class="p">;</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="kd">function</span><span class="w"> </span><span class="nx">draw</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">gameState</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;MENU&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">    </span><span class="nx">drawMainMenu</span><span class="p">();</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">gameState</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;PLAYING&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">    </span><span class="nx">playGame</span><span class="p">();</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">gameState</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;GAMEOVER&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">    </span><span class="nx">showGameOverScreen</span><span class="p">();</span>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>By organizing your code with <strong>State Machine Logic</strong>, you can easily transition from one scene of your interactive application to the next.</p>
+<details>
+<summary><b>MicroSim: The Interactive Array Train</b></summary>
+<b>Type:</b> p5.js Interactive Concept Explorer
+
+<b>Description:</b> A drag-and-drop interactive visualization of an **Array Data Structure** represented as train cars on a track.
+<b>Interactivity:</b>
+- UI buttons allow the user to execute the **Array Push Method** (spawns a new train car dropping onto the end of the track) and the **Array Pop Method** (the last train car detaches and rolls off screen).
+- A numerical input field combined with a "Splice" button demonstrates **Array Splice Removal** by showing a specific train car dissolving into dust while the cars behind it slide forward to close the gap.
+- The **Array Length Property** is prominently displayed on a billboard above the tracks that updates in real-time as cars are added or removed.
+- Each train car clearly displays its **Array Element Indexing** number on its side, reinforcing that the first car is always index 0.
+</details>
+
+<h2 id="chapter-summary">Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permanent link">&para;</a></h2>
+<p>In this chapter, we conquered the core concepts of repetition and data organization. We learned how the <strong>While Loop Construct</strong> and <strong>For Loop Construct</strong> let us automate repetitive tasks, relying on a <strong>Loop Counter Variable</strong> while avoiding the dreaded <strong>Infinite Loop Prevention</strong> pitfalls. We used <strong>Nested For Loops</strong> to master <strong>2D Grid Iteration</strong>.</p>
+<p>We then introduced the <strong>Array Data Structure</strong>, leveraging <strong>Array Element Indexing</strong> and the <strong>Array Length Property</strong> to manage lists of data. We manipulated arrays dynamically using the <strong>Array Push Method</strong>, <strong>Array Pop Method</strong>, <strong>Array Splice Removal</strong>, and <strong>Array Concat Joining</strong>, and learned how to iterate cleanly with <strong>For Of Loop Iteration</strong> and the <strong>For Each Array Method</strong>. We even flipped and ordered arrays with <strong>Array Reverse Ordering</strong> and <strong>Array Sort Ordering</strong>, and nested them to create a <strong>2D Matrix Array</strong>.</p>
+<p>Finally, we used a <strong>Boolean Flag Variable</strong> and <strong>State Machine Logic</strong> to control the flow and state of our applications, breaking out of loops when necessary using <strong>Break and Continue Keywords</strong>.</p>
+<p>You now have the tools to manage massive amounts of data and create complex visual patterns with just a few lines of code. Onward to the next challenge!</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">Chapter Complete!</p>
+<p><img _="{" alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+Amazing work! You've mastered another set of core concepts. Take a moment to celebrate!}</p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../04-variables-and-scope/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 4. Variables, Data Types &amp; Scope Fundamentals">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                4. Variables, Data Types & Scope Fundamentals
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../06-matrix-transformations/" class="md-footer__link md-footer__link--next" aria-label="Next: 6. Matrix Transformations &amp; Coordinate Systems">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                6. Matrix Transformations & Coordinate Systems
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

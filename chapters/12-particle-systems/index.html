@@ -1,0 +1,1778 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An interactive intelligent textbook about the p5.js processing library and how to use it to teach computational thinking.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/p5-textbook/chapters/12-particle-systems/">
+      
+      
+        <link rel="prev" href="../11-vector-math-physics/">
+      
+      
+        <link rel="next" href="../13-mouse-keyboard-events/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>12. Particle Systems, Forces & Steering Behaviors - The Art of Processing</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#particle-systems-forces-steering-behaviors" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="The Art of Processing" class="md-header__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            The Art of Processing
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              12. Particle Systems, Forces & Steering Behaviors
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="The Art of Processing" class="md-nav__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    The Art of Processing
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-intro-creative-coding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introduction to Creative Coding & Canvas Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-2d-primitive-shapes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. 2D Primitive Shapes & Custom Geometries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-color-theory-pixels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Color Theory, Color Modes & Pixel Manipulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-variables-and-scope/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Variables, Data Types & Scope Fundamentals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-control-flow-and-loops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Control Flow, Loops & Array Data Structures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-matrix-transformations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Matrix Transformations & Coordinate Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-linear-motion-trig/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Linear Motion, Trigonometry & Wave Math
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-polar-coordinates-easing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Polar Coordinates, Oscillation & Easing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-randomness-and-walks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Randomness, Gaussian Distributions & Random Walk
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-perlin-noise-fields/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Perlin Noise Landscapes & Vector Flow Fields
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-vector-math-physics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Vector Math Fundamentals & Physics Acceleration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    12. Particle Systems, Forces & Steering Behaviors
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    12. Particle Systems, Forces & Steering Behaviors
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-the-physics-of-motion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 1: The Physics of Motion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-environmental-forces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 2: Environmental Forces
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-building-the-particle-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 3: Building the Particle System
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-advanced-behaviors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 4: Advanced Behaviors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expanding-your-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expanding Your Understanding
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Expanding Your Understanding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deconstructing-the-force-accumulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deconstructing the Force Accumulation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-magic-of-the-emitter" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Magic of the Emitter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-drag-and-resistance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Drag and Resistance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bouncing-off-the-walls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bouncing Off the Walls
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-power-of-flocking" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Power of Flocking
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comprehensive-review-vocabulary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comprehensive Review &amp; Vocabulary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-mouse-keyboard-events/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Mouse & Keyboard User Event Sensing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-touch-mobile-sensors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Touch Gestures, Mobile Sensors & Interaction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-dom-controls-ui/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. DOM Controls, Input Fields & UI Elements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-css-styling-layouts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16. CSS Styling, Layouts & Web Page Integration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-functions-and-callbacks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17. Functions, Arrow Expressions & Callbacks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-es6-classes-async/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18. ES6 Classes, Object-Oriented Programming & Async Data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-3d-webgl-primitives/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    19. 3D WebGL Coordinates & Primitive Geometries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-3d-cameras-shaders/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20. 3D Cameras, Lighting Models, Materials & Shaders
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-audio-synthesis-sound/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    21. Audio Synthesis, Oscillators & Envelopes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-mic-input-fft/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    22. Microphone Input & FFT Spectral Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-image-processing-video/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    23. Image Processing, Filters & Video Capture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-generative-typography/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    24. Generative Typography & Vector Font Outlines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-dev-environment-pedagogy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    25. Development Environment, Tools & Pedagogy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-the-physics-of-motion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 1: The Physics of Motion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-environmental-forces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 2: Environmental Forces
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-building-the-particle-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 3: Building the Particle System
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-advanced-behaviors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 4: Advanced Behaviors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expanding-your-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expanding Your Understanding
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Expanding Your Understanding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deconstructing-the-force-accumulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deconstructing the Force Accumulation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-magic-of-the-emitter" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Magic of the Emitter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-drag-and-resistance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Drag and Resistance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bouncing-off-the-walls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bouncing Off the Walls
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-power-of-flocking" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Power of Flocking
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comprehensive-review-vocabulary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comprehensive Review &amp; Vocabulary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/p5-textbook/blob/main/docs/chapters/12-particle-systems/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="particle-systems-forces-steering-behaviors">Particle Systems, Forces &amp; Steering Behaviors<a class="headerlink" href="#particle-systems-forces-steering-behaviors" title="Permanent link">&para;</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>Builds reusable particle classes, particle system managers, lifespan decay, emitters, and flocking behaviors. Students will gain practical hands-on experience by building interactive sketches and visual experiments that demonstrate these concepts.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<p>This chapter covers the following 15 concepts from the learning graph:</p>
+<ol>
+<li>Velocity Motion Vector</li>
+<li>Acceleration Force Vector</li>
+<li>Accumulate Forces Newton</li>
+<li>Mass Attribute Scalar</li>
+<li>Gravity Force Simulation</li>
+<li>Friction Drag Simulation</li>
+<li>Fluid Resistance Model</li>
+<li>Gravitational Attraction</li>
+<li>Elastic Collision Bouncing</li>
+<li>Particle Class Object</li>
+<li>Particle System Manager</li>
+<li>Particle Lifespan Decay</li>
+<li>Particle Emitter Location</li>
+<li>Flocking Boids Steering</li>
+<li>Spring Force Hooke Law</li>
+</ol>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../11-vector-math-physics/">Chapter 11: Vector Math Fundamentals &amp; Physics Acceleration</a></li>
+</ul>
+<hr />
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Welcome to Chapter 12!</p>
+<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+"Time to color outside the loops! Let's build some digital fireworks, artists!"</p>
+</div>
+<p>Hey everyone! Welcome to Chapter 12. If you've ever watched a spectacular fireworks display lighting up the night sky, or played with a garden water hose on a hot summer day, you've already seen particle systems in action. Today, we're going to learn how to recreate that exact magic using code.</p>
+<p>A particle system is a collection of many small, simple objects (particles) that together create complex, beautiful behaviors. Think of a single droplet of water from a hose—on its own, it just follows a simple arc and hits the ground. But when you have millions of those droplets spraying out at once, bouncing off each other, catching the light, and splashing around, you get an incredibly dynamic simulation. The same goes for fireworks: one spark is boring, but a thousand sparks exploding outward, fading out, and being pulled down by gravity is mesmerizing. </p>
+<p>In this chapter, we're going to dive deep into the physics and math that make these simulations possible. We'll start with the basics of motion and forces, then build up our very own particle engine from scratch. By the end, you'll be able to simulate not just fireworks and water hoses, but smoke, fire, magic spells, flocking birds, and much more!</p>
+<h2 id="part-1-the-physics-of-motion">Part 1: The Physics of Motion<a class="headerlink" href="#part-1-the-physics-of-motion" title="Permanent link">&para;</a></h2>
+<p>To build a realistic firework or a convincing water hose, we need our particles to obey the laws of physics. That means we need to understand how things move. </p>
+<p>The first core concept we need to tackle is the <strong>Velocity Motion Vector</strong>. In programming, velocity isn't just a single number; it's a vector that describes both the speed and the direction of an object. If a water droplet is shooting out of a hose, its velocity vector tells us exactly where it's going and how fast. Every single frame of our simulation, we add the velocity to the particle's position. This is the fundamental building block of all motion in our code.</p>
+<p>But velocity alone is boring. Objects in the real world don't just move at a constant speed forever. They speed up, slow down, and change direction. This is where the <strong>Acceleration Force Vector</strong> comes in. Acceleration is any change in velocity over time. When a firework explodes, the sparks are instantly accelerated outward by the blast. </p>
+<p>Sir Isaac Newton gave us the rules for how forces create acceleration. The most important rule for us is that we can <strong>Accumulate Forces Newton</strong>-style. What does this mean? It means that if multiple forces are acting on a particle at the same time—like gravity pulling it down, and wind pushing it to the side—we can simply add those force vectors together to get the net force. Then, we apply that net force to the particle's acceleration. </p>
+<p>But wait, there's a catch! Not all particles react to forces the same way. A heavy cannonball is harder to push than a lightweight feather. This introduces the concept of the <strong>Mass Attribute Scalar</strong>. Mass is a single scalar value that represents how much matter an object has. According to Newton's Second Law (<span class="arithmatex">\(F = M \\times A\)</span>, or <span class="arithmatex">\(A = F / M\)</span>), when you apply a force to an object, its resulting acceleration is divided by its mass. So, heavier particles in our firework will accelerate less from the initial blast than the lighter ones!</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Forces and Mass</p>
+<p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+"Remember artists, forces are vectors, but mass is just a scalar! Divide the vector by the scalar to find your acceleration."</p>
+</div>
+<h2 id="part-2-environmental-forces">Part 2: Environmental Forces<a class="headerlink" href="#part-2-environmental-forces" title="Permanent link">&para;</a></h2>
+<p>Now that our particles can move and accelerate based on their mass, it's time to add the forces that will make them look like real fireworks and water hoses.</p>
+<p>The most common force you'll use is the <strong>Gravity Force Simulation</strong>. Gravity is a constant downward force that affects all particles equally, regardless of their mass (in a vacuum, at least!). When simulating a water hose, gravity is what makes the stream of water curve downwards and eventually hit the ground. For fireworks, gravity is what pulls the fading sparks back to Earth after they've reached their peak. Implementing gravity is as simple as creating a downward vector and applying it to every particle, every frame.</p>
+<p>But what if we aren't in a vacuum? What if our firework is exploding in the thick night air, or our water droplets are falling through a swimming pool? This brings us to the <strong>Friction Drag Simulation</strong>. Friction is a force that always opposes the direction of motion. As a particle moves faster, the drag force against it increases, eventually slowing it down. This is crucial for making explosions look right—the sparks shoot out fast, but quickly slow down as the air resistance pushes back against them.</p>
+<p>A more complex version of drag is the <strong>Fluid Resistance Model</strong>. When a particle moves through a liquid (like water) or a gas (like air), it displaces the fluid around it. The resistance it encounters depends on its velocity squared, its surface area, and the density of the fluid. We can simulate this by calculating the magnitude of the velocity, squaring it, multiplying by a drag coefficient, and applying that force in the opposite direction of the velocity vector.</p>
+<p>We can also play with <strong>Gravitational Attraction</strong>. What if instead of one global downward gravity, we had objects that attracted each other based on their mass and distance, just like planets and stars? You could create a "black hole" particle that sucks all your water hose droplets toward it! The formula for this relies on the distance between the objects and their masses, creating incredibly organic and beautiful swirling patterns.</p>
+<p>Finally, what happens when particles hit something? The <strong>Elastic Collision Bouncing</strong> concept covers this. If our water hose sprays against a wall, the particles shouldn't just pass through it. We need to detect when their position intersects the wall, and then reverse their velocity vector, simulating a bounce. By keeping some of the velocity but losing a little bit to heat and sound (inelasticity), we can make the bounce look incredibly realistic.</p>
+<details>
+<summary>MicroSim: Water Hose Particle Emitter</summary>
+<p>Build a p5.js sketch with a draggable emitter that represents a water hose. Particles should have lifespan, gravity, and random initial velocities. Add a "wall" object in the center of the screen that the particles bounce off of using elastic collisions. Include sliders to adjust the gravity strength, the water pressure (initial velocity magnitude), and the bounciness of the wall!</p>
+</details>
+<h2 id="part-3-building-the-particle-system">Part 3: Building the Particle System<a class="headerlink" href="#part-3-building-the-particle-system" title="Permanent link">&para;</a></h2>
+<p>We understand the physics, so let's start writing the actual code to manage all this chaos!</p>
+<p>The foundation of our system is the <strong>Particle Class Object</strong>. This is a blueprint in our code that defines what a single particle is. Every instance of this class will have its own position vector, velocity vector, acceleration vector, mass, color, and size. By creating a class, we encapsulate all the physics logic inside the object itself. We can just call a <code>update()</code> method on the particle, and it will handle applying forces, updating velocity, and moving its position.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">class</span><span class="w"> </span><span class="nx">Particle</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createVector</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">);</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">velocity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">p5</span><span class="p">.</span><span class="nx">Vector</span><span class="p">.</span><span class="nx">random2D</span><span class="p">().</span><span class="nx">mult</span><span class="p">(</span><span class="nx">random</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">));</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">acceleration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createVector</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">mass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">random</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">);</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">lifespan</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">255</span><span class="p">;</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="nx">applyForce</span><span class="p">(</span><span class="nx">force</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">p5</span><span class="p">.</span><span class="nx">Vector</span><span class="p">.</span><span class="nx">div</span><span class="p">(</span><span class="nx">force</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">mass</span><span class="p">);</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">acceleration</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">f</span><span class="p">);</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">  </span><span class="nx">update</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">velocity</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">acceleration</span><span class="p">);</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">velocity</span><span class="p">);</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">acceleration</span><span class="p">.</span><span class="nx">mult</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// Clear forces every frame</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">lifespan</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// Fade out over time</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">  </span><span class="nx">display</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">    </span><span class="nx">stroke</span><span class="p">(</span><span class="mf">255</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">lifespan</span><span class="p">);</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">    </span><span class="nx">strokeWeight</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">mass</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">    </span><span class="nx">point</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span><span class="p">);</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Notice the <code>lifespan</code> property in our class. This introduces the <strong>Particle Lifespan Decay</strong> concept. If our water hose or firework just kept emitting particles forever, our computer would eventually crash from trying to render millions of objects. We need a way to kill off old particles. By giving each particle a lifespan that decreases every frame, we can remove it from our system once it "dies." This also gives us a great visual effect: we can map the lifespan to the particle's alpha (transparency) so it fades out smoothly before disappearing!</p>
+<p>To manage all these particles, we need a <strong>Particle System Manager</strong>. This is usually an array (or a class containing an array) that holds all the active particles. The manager's job is to loop through the array every frame, call <code>update()</code> and <code>display()</code> on each particle, and crucially, check if a particle's lifespan has run out. If it has, the manager removes it from the array. </p>
+<p>The manager is also responsible for the <strong>Particle Emitter Location</strong>. The emitter is the source of the particles—the nozzle of the water hose, or the center of the firework explosion. The emitter decides where new particles are born and what their initial velocity should be. A firework emitter bursts all its particles at once in a 360-degree circle, while a water hose emitter spits out a steady stream of particles in a specific cone of direction.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Managing Memory</p>
+<p><img alt="Palette tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+"Make sure to loop backward through your array when removing dead particles! Otherwise, you might skip an index and leave a 'ghost' particle behind."</p>
+</div>
+<h2 id="part-4-advanced-behaviors">Part 4: Advanced Behaviors<a class="headerlink" href="#part-4-advanced-behaviors" title="Permanent link">&para;</a></h2>
+<p>Once you have a working particle system with physics and lifespan, you can start getting really creative with how the particles behave.</p>
+<p>Have you ever watched a flock of birds flying in the sky, or a school of fish swimming in the ocean? They move together in a synchronized, fluid way without a leader. We can simulate this using <strong>Flocking Boids Steering</strong> behaviors. By applying three simple rules—Separation (don't crowd your neighbors), Alignment (steer in the same direction as your neighbors), and Cohesion (steer toward the center of your neighbors)—we can turn our simple particles into a lifelike flock. Imagine a firework where the sparks don't just fall, but actively flock together like glowing fireflies!</p>
+<p>Another fantastic behavior to add is the <strong>Spring Force Hooke Law</strong>. A spring force pulls an object toward an anchor point, but the further away the object gets, the stronger the pull becomes. This is described by Hooke's Law (<span class="arithmatex">\(F = -k \times x\)</span>). We can use springs to connect particles together. If you connect a bunch of particles in a grid using spring forces, you can simulate a piece of cloth flapping in the wind, or a jelly-like blob bouncing around the screen!</p>
+<details>
+<summary>MicroSim: Interactive Flocking Fireworks</summary>
+<p>Create a particle system where clicking the mouse triggers a firework explosion. The particles shoot out with a blast force. However, once their initial velocity slows down due to drag, they should activate flocking behaviors (separation, alignment, cohesion). The sparks will burst outward and then smoothly coalesce into a flock of glowing boids that fly around the canvas!</p>
+</details>
+<h2 id="expanding-your-understanding">Expanding Your Understanding<a class="headerlink" href="#expanding-your-understanding" title="Permanent link">&para;</a></h2>
+<p>Let's dive deeper into some of these concepts to really cement your understanding.</p>
+<h3 id="deconstructing-the-force-accumulation">Deconstructing the Force Accumulation<a class="headerlink" href="#deconstructing-the-force-accumulation" title="Permanent link">&para;</a></h3>
+<p>The <strong>Accumulate Forces Newton</strong> concept is arguably the most important design pattern in physics simulations. Let's look at why it's so powerful. </p>
+<p>Imagine you are trying to program a leaf falling from a tree. If you just set its velocity to point downwards, it falls straight down. Boring. But what if there's wind? You could write complex code that tries to combine falling and blowing simultaneously. But Newton's brilliant insight was that you don't have to calculate the final motion all at once. You just calculate each force independently, add them all to the acceleration, and let the acceleration handle the velocity.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// A single frame of a leaf&#39;s life:</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nx">leaf</span><span class="p">.</span><span class="nx">applyForce</span><span class="p">(</span><span class="nx">gravity</span><span class="p">);</span><span class="w"> </span><span class="c1">// Force 1: Pulls down</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nx">leaf</span><span class="p">.</span><span class="nx">applyForce</span><span class="p">(</span><span class="nx">wind</span><span class="p">);</span><span class="w">    </span><span class="c1">// Force 2: Pushes right</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nx">leaf</span><span class="p">.</span><span class="nx">applyForce</span><span class="p">(</span><span class="nx">drag</span><span class="p">);</span><span class="w">    </span><span class="c1">// Force 3: Pushes opposite to velocity</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nx">leaf</span><span class="p">.</span><span class="nx">update</span><span class="p">();</span><span class="w"> </span><span class="c1">// All forces are combined into one smooth motion!</span>
+</span></code></pre></div>
+<p>This modular approach means you can add as many forces as you want without breaking the system. You can add a gust of wind, a magnetic pull, and fluid resistance all at once. The <code>applyForce</code> method handles the <strong>Mass Attribute Scalar</strong> division, the forces accumulate in the acceleration vector, and the result is a beautifully complex and realistic motion. This is exactly how we make our water hose spray look natural when we blow a virtual fan across it!</p>
+<h3 id="the-magic-of-the-emitter">The Magic of the Emitter<a class="headerlink" href="#the-magic-of-the-emitter" title="Permanent link">&para;</a></h3>
+<p>Let's talk more about the <strong>Particle Emitter Location</strong>. In our fireworks metaphor, the emitter is the shell that explodes in the sky. In our water hose metaphor, it's the nozzle you're holding in your hand.</p>
+<p>The emitter doesn't just dictate <em>where</em> particles spawn; it dictates <em>how</em> they spawn. A steady emitter, like a hose, might spawn 5 particles every single frame. A burst emitter, like a firework, might spawn 500 particles in a single frame, and then do nothing until it's triggered again.</p>
+<p>You can also animate the emitter itself! What if the emitter is attached to the user's mouse? Now you have a magic wand that leaves a trail of sparkles wherever you drag it. What if the emitter moves in a sine wave pattern? Your water hose will create beautiful, oscillating streams of water. </p>
+<div class="admonition mascot-encourage">
+<p class="admonition-title">Keep Experimenting!</p>
+<p><img alt="Palette encouraging" class="mascot-admonition-img" src="../../img/mascot/encouraging.png" />
+"If the math feels overwhelming, don't worry! Start by tweaking the numbers in your code. Change gravity to a negative number and watch your water hose spray upwards! The best way to learn physics is to break it."</p>
+</div>
+<h3 id="advanced-drag-and-resistance">Advanced Drag and Resistance<a class="headerlink" href="#advanced-drag-and-resistance" title="Permanent link">&para;</a></h3>
+<p>When implementing the <strong>Fluid Resistance Model</strong>, precision matters. Let's break down the formula for drag: </p>
+<p><span class="arithmatex">\(F_d = - \frac{1}{2} \rho v^2 C_d A \hat{v}\)</span></p>
+<p>In the context of our high school physics engine, we can simplify this. We don't really care about the density of the fluid (<span class="arithmatex">\(\rho\)</span>) or the cross-sectional area of our particle (<span class="arithmatex">\(A\)</span>), because we are just trying to make it look cool, not send a rocket to Mars. We can combine all those constants into a single "drag coefficient" (<span class="arithmatex">\(C\)</span>).</p>
+<p>The simplified formula becomes: <span class="arithmatex">\(F_d = -C \times ||v||^2 \times \hat{v}\)</span></p>
+<p>Here's how you translate that into p5.js code for your particle class:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nx">applyDrag</span><span class="p">(</span><span class="nx">coefficient</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">speed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">velocity</span><span class="p">.</span><span class="nx">mag</span><span class="p">();</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">dragMagnitude</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">coefficient</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">speed</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">speed</span><span class="p">;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="c1">// Get the direction of velocity and reverse it</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">dragForce</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">velocity</span><span class="p">.</span><span class="nx">copy</span><span class="p">();</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="nx">dragForce</span><span class="p">.</span><span class="nx">normalize</span><span class="p">();</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="nx">dragForce</span><span class="p">.</span><span class="nx">mult</span><span class="p">(</span><span class="o">-</span><span class="mf">1</span><span class="p">);</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span><span class="c1">// Apply the magnitude</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">  </span><span class="nx">dragForce</span><span class="p">.</span><span class="nx">mult</span><span class="p">(</span><span class="nx">dragMagnitude</span><span class="p">);</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">  </span><span class="k">this</span><span class="p">.</span><span class="nx">applyForce</span><span class="p">(</span><span class="nx">dragForce</span><span class="p">);</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>This tiny bit of code is what makes a firework explosion look realistic. Without it, the sparks would just fly outward forever at the same speed. With it, they burst out fast, hit the "air wall" of resistance, slow down dramatically, and then gravity takes over to pull them into a beautiful weeping willow shape.</p>
+<h3 id="bouncing-off-the-walls">Bouncing Off the Walls<a class="headerlink" href="#bouncing-off-the-walls" title="Permanent link">&para;</a></h3>
+<p>Implementing <strong>Elastic Collision Bouncing</strong> can be tricky. When a particle hits the floor, you might be tempted to just say <code>velocity.y = -velocity.y</code>. This works, but it's not perfect.</p>
+<p>Why? Because the particle might have moved <em>past</em> the floor in that frame. If you just reverse its velocity, it might still be stuck inside the floor on the next frame, causing it to get trapped and vibrate wildly. </p>
+<p>To fix this, you must also correct its position. If the floor is at Y=500, and the particle is at Y=505, you need to push it back up to Y=500, and <em>then</em> reverse its velocity. Furthermore, real bounces aren't perfectly elastic. They lose energy. So you multiply the reversed velocity by a dampening factor, like 0.8. </p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nx">checkEdges</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">height</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">height</span><span class="p">;</span><span class="w"> </span><span class="c1">// Correct position</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">velocity</span><span class="p">.</span><span class="nx">y</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="o">-</span><span class="mf">0.8</span><span class="p">;</span><span class="w"> </span><span class="c1">// Reverse and dampen</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Now your water hose droplets will splash realistically off the ground, losing a little bit of energy with each bounce!</p>
+<h2 id="the-power-of-flocking">The Power of Flocking<a class="headerlink" href="#the-power-of-flocking" title="Permanent link">&para;</a></h2>
+<p>Let's revisit the <strong>Flocking Boids Steering</strong> concept. Craig Reynolds invented the Boids algorithm in 1986 to simulate the flocking behavior of birds. It is a masterpiece of emergent behavior. "Emergence" means that complex, global patterns arise from simple, local rules.</p>
+<p>In a Boids simulation, there is no "leader" bird. There is no central brain telling the flock where to go. Every single boid (particle) is only looking at the boids immediately surrounding it. </p>
+<ol>
+<li><strong>Separation</strong>: Steer to avoid crowding local flockmates. If a boid gets too close to its neighbor, it pushes away. This prevents them from crashing into each other.</li>
+<li><strong>Alignment</strong>: Steer towards the average heading of local flockmates. If all my neighbors are flying North, I should turn North too.</li>
+<li><strong>Cohesion</strong>: Steer to move towards the average position of local flockmates. Boids want to stay together in a group, so they pull toward the center of mass of their neighbors.</li>
+</ol>
+<p>When you apply these three simple steering forces to hundreds of particles, the result is breathtaking. They swirl, split around obstacles, and reform just like a real school of fish or flock of starlings. By combining flocking with a <strong>Particle System Manager</strong>, you can create incredibly organic digital ecosystems. </p>
+<h2 id="comprehensive-review-vocabulary">Comprehensive Review &amp; Vocabulary<a class="headerlink" href="#comprehensive-review-vocabulary" title="Permanent link">&para;</a></h2>
+<p>To ensure these concepts are deeply ingrained, let's review the critical terminology and how these pieces interlock in our physics engine. Remember the core metaphor: whether we are simulating a burst of fireworks or the steady stream of a water hose, the underlying math remains completely identical.</p>
+<ul>
+<li><strong>Velocity Motion Vector</strong>: The driving force of position. Velocity tells us our current trajectory and speed. Without it, our world is frozen.</li>
+<li><strong>Acceleration Force Vector</strong>: The engine of change. Acceleration alters velocity. It is the immediate result of forces being applied to an object.</li>
+<li><strong>Accumulate Forces Newton</strong>: The principle of superposition. We can add a hundred different forces together (wind, gravity, magnetism) into a single net force, simplifying our calculations immensely.</li>
+<li><strong>Mass Attribute Scalar</strong>: The resistance to change. A high mass means forces have less impact on acceleration. It is the 'weight' of our digital objects.</li>
+<li><strong>Gravity Force Simulation</strong>: A constant directional force. Usually pointing straight down, it is the anchor that grounds our simulations in a recognizable reality.</li>
+<li><strong>Friction Drag Simulation</strong>: The ambient resistance. It ensures objects don't move infinitely, slowly bleeding energy from the system.</li>
+<li><strong>Fluid Resistance Model</strong>: A dynamic resistance that scales with the square of velocity. It creates the beautiful, sudden deceleration seen in fireworks and underwater movement.</li>
+<li><strong>Gravitational Attraction</strong>: Mutual pull between bodies. It allows for orbital mechanics and complex, chaotic swirling systems that go beyond simple downward gravity.</li>
+<li><strong>Elastic Collision Bouncing</strong>: The physics of impact. It defines how energy is conserved or lost when a moving object strikes a solid barrier.</li>
+<li><strong>Particle Class Object</strong>: The encapsulation of physics data. It bundles position, velocity, mass, and drawing logic into a neat, reusable package.</li>
+<li><strong>Particle System Manager</strong>: The overarching controller. It loops through arrays of particles, updating them, displaying them, and managing their memory.</li>
+<li><strong>Particle Lifespan Decay</strong>: The metric of mortality. It gives particles a limited time to exist, allowing for visual fading effects and crucial memory management.</li>
+<li><strong>Particle Emitter Location</strong>: The source point. It defines the origin and initial conditions (like launch speed and angle) of newly spawned particles.</li>
+<li><strong>Flocking Boids Steering</strong>: Emergent group behavior. It relies on separation, alignment, and cohesion to simulate organic, collective motion without a central leader.</li>
+<li><strong>Spring Force Hooke Law</strong>: Elastic connections. It creates tethered relationships between objects, useful for simulating soft bodies, fabrics, and oscillating systems.</li>
+</ul>
+<p>By mastering these 15 concepts, you are no longer just coding; you are engineering mini-universes. The mathematics you've learned here are the exact same formulas used in professional video game engines, Hollywood visual effects software, and scientific simulation models. The water hose you built today is the foundational step toward simulating realistic ocean waves. The firework you coded is the prerequisite for building explosive visual effects in an action game.</p>
+<p>The beauty of code is that you don't just observe these physical phenomena—you control them. You are the digital physicist. You decide how strong gravity is, how thick the air is, and how bouncy the floor is.</p>
+<p>So what are you waiting for? Open up your editor, initialize an array of particles, and let the sparks fly!</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">Chapter Complete!</p>
+<p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+"Incredible work, artists! You've mastered the elements and brought your canvases to life with dynamic motion. The sky is literally the limit now!"</p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../11-vector-math-physics/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 11. Vector Math Fundamentals &amp; Physics Acceleration">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                11. Vector Math Fundamentals & Physics Acceleration
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../13-mouse-keyboard-events/" class="md-footer__link md-footer__link--next" aria-label="Next: 13. Mouse &amp; Keyboard User Event Sensing">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                13. Mouse & Keyboard User Event Sensing
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
