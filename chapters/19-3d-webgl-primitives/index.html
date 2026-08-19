@@ -1344,8 +1344,8 @@
 <hr />
 <div class="admonition mascot-welcome">
 <p class="admonition-title">Welcome to the Third Dimension!</p>
-<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
-Time to color outside the loops! We're leaving the flat canvas behind and stepping into the wonderful world of 3D. Grab your digital clay, creators!</p>
+<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" /></p>
+<p>Palette here! We've spent a lot of time on the flat canvas, but it's finally time to step into the third dimension. This chapter will hand you the digital clay you need to start sculpting in depth and space. Let's add a whole new dimension to your art!</p>
 </div>
 <p>Welcome, creators, to one of the most exciting transitions you will ever make in your programming journey. Until now, every single sketch, every single piece of art, and every single interactive project you have built has been confined to a flat, two-dimensional screen. It is as if you have been painting on a flat canvas. You had an X-axis that went left and right, and a Y-axis that went up and down. You could draw shapes, mix colors, and create beautiful patterns, but everything was perfectly flat. </p>
 <p>Now, imagine putting down your paintbrush and picking up a block of clay. Imagine being able to reach into the canvas, pull it towards you, and sculpt something you can walk all the way around. This is what we are going to do today. We are moving from painting on a canvas to sculpting with clay in the real world. </p>
@@ -1357,9 +1357,9 @@ Time to color outside the loops! We're leaving the flat canvas behind and steppi
 <div class="admonition mascot-thinking">
 <p class="admonition-title">Thinking about Depth</p>
 <p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
-The Z-axis can be tricky! Remember: positive Z comes OUT of the screen towards you, and negative Z goes INTO the screen away from you.</p>
-</div>
+Notice how this changes our whole relationship with the canvas! We aren't just drawing shapes anymore; we are placing objects in a room. The Z-axis is the distance between your eyes and the monitor—reach your hand out, that's positive Z!</p>
 <p>The Z Axis Depth Position is what gives our world volume. If you increase your Z value (make it a positive number), your object will move closer to you, appearing larger. If you decrease your Z value (make it a negative number), your object will move further away, deeper into the screen, appearing smaller. </p>
+</div>
 <p>Let's explore this with an interactive tool.</p>
 <h4 id="diagram-interactive-3d-coordinate-system">Diagram: Interactive 3D Coordinate System<a class="headerlink" href="#diagram-interactive-3d-coordinate-system" title="Permanent link">&para;</a></h4>
 <details>
@@ -1383,9 +1383,9 @@ Students will interactively explore the X, Y, and Z axes in WebGL to understand 
 <div class="admonition mascot-tip">
 <p class="admonition-title">Smooth Sculpting</p>
 <p><img alt="Palette giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
-Want your sphere to look extra smooth? You can add detail parameters to increase the number of polygons! Let's blend some code!</p>
-</div>
+Want your sphere to look extra smooth instead of blocky? You can pass two extra numbers for detail: <code>sphere(radius, detailX, detailY)</code>. Try <code>sphere(50, 24, 24)</code> for a perfectly round orb!</p>
 <p>Then there is the <strong>Cylinder 3D Primitive</strong>. Imagine a soup can or a column. A cylinder has a circular top and bottom, connected by a curved surface. You can control its radius and height. Cylinders are great for creating tree trunks, pipes, or arms and legs.</p>
+</div>
 <p>We also have the <strong>Cone 3D Primitive</strong>. A cone has a circular base that tapers to a single point at the top, like an ice cream cone or a party hat. It is defined by a radius and a height. Cones can be used for roofs, spikes, or arrows pointing the way.</p>
 <p>For something a bit more complex, we have the <strong>Torus 3D Primitive</strong>. A torus is essentially a donut shape. It has a main radius (how big the whole donut is) and a tube radius (how thick the dough is). Toruses are fun to use for rings, portals, or sci-fi ship components.</p>
 <p>Sometimes, you don't need a bulky 3D shape; you just need a flat surface in your 3D world. That's where the <strong>Plane 3D Geometry</strong> comes in. A plane is a flat, two-dimensional rectangle that exists in 3D space. You can rotate it and move it around, making it perfect for floors, walls, or even floating screens.</p>
@@ -1411,17 +1411,17 @@ Students will use orbit control to view various 3D primitives from all angles.</
 <div class="admonition mascot-warning">
 <p class="admonition-title">Don't Get Lost!</p>
 <p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
-When setting your camera position, make sure you keep track of your coordinates. It's easy to accidentally point the camera into empty space and think your code is broken!</p>
-</div>
+A common trap when playing with the camera is accidentally pointing it into empty space, making you think your code is broken! If your shapes disappear, you can always reset the camera to the default by calling <code>camera()</code> with no arguments.</p>
 <p>Finally, we need to talk about how the camera actually sees the world. There are two main ways a camera can interpret 3D space, known as camera modes.</p>
+</div>
 <p>The default mode is the <strong>Perspective Camera Mode</strong>. This mode mimics how human eyes (and real-world cameras) work. Things that are further away appear smaller, and parallel lines seem to converge at a vanishing point on the horizon. This is what you want 95% of the time, as it creates a realistic sense of depth and scale.</p>
 <p>However, there is another mode called the <strong>Ortho Camera Mode</strong>, short for orthographic. In an orthographic projection, things do not get smaller as they get further away. An object that is 100 units wide will take up the exact same amount of screen space whether it is right in front of the camera or a mile away. This removes the sense of perspective entirely. Why would you want this? It's incredibly useful for architectural blueprints, engineering diagrams, or creating a specific "isometric" art style popular in many video games.</p>
 <div class="admonition mascot-celebration">
 <p class="admonition-title">You Did It!</p>
 <p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
-You've successfully moved into the third dimension! You have your clay, your turntable, and your camera. I can't wait to see what you sculpt!</p>
-</div>
+Incredible work! You just mastered the WebGL renderer, the 3D coordinate system, and primitive geometries like boxes and spheres. You are officially a digital sculptor!</p>
 <p>To fully grasp the magnitude of what you've learned, let's dive deeper into the history and mechanics of these concepts. For decades, computer scientists struggled with the challenge of representing three-dimensional space on a two-dimensional screen. The mathematics required to calculate perspective, lighting, and hidden surfaces was incredibly demanding for early processors. However, as hardware evolved, so did the software interfaces. The advent of hardware-accelerated graphics pipelines revolutionized the industry, allowing for real-time rendering of complex scenes. WebGL, the technology underlying our new 3D capabilities in p5.js, is a direct descendant of these early innovations. It provides a JavaScript API for rendering interactive 2D and 3D graphics within any compatible web browser without the use of plug-ins. WebGL is fully integrated with other web standards, allowing GPU-accelerated usage of physics and image processing and effects as part of the web page canvas. By leveraging the WEBGL Renderer Mode, you are tapping into a profound lineage of computer graphics research.</p>
+</div>
 <p>When you instantiate a canvas with the WEBGL parameter, you are not merely changing a setting; you are fundamentally altering the rendering context. A 2D context operates on a relatively simple coordinate system, mapping pixels directly to the screen. A 3D context, however, involves a complex pipeline. Vertices are passed to a vertex shader, which transforms their coordinates based on the camera position and projection matrix. The resulting polygons are then rasterized, converting them into fragments. These fragments are processed by a fragment shader, which determines their final color based on lighting, materials, and textures. All of this happens under the hood when you draw a simple Box 3D Primitive.</p>
 <p>The 3D Coordinate System is the spatial framework that makes this all possible. In mathematics, this is known as a Cartesian coordinate system. René Descartes introduced this concept in the 17th century, providing the first systematic link between Euclidean geometry and algebra. By assigning coordinates to points in space, geometric shapes could be described by algebraic equations. In our 3D space, every single vertex of every single primitive you draw is defined by its X, Y, and Z coordinates. </p>
 <p>The addition of the Z Axis Depth Position is what truly separates the painters from the sculptors. It introduces the concept of occlusion—objects closer to the camera obscuring objects further away. The WebGL renderer handles this using a depth buffer, or Z-buffer. When a fragment is rendered, its depth (Z-value) is stored in the buffer. If another fragment is later rendered at the same pixel location, its depth is compared to the value in the buffer. If the new fragment is closer, it overwrites the old color and updates the depth buffer. If it is further away, it is discarded. This ensures that your scene looks physically correct, with the Sphere 3D Primitive correctly passing in front of or behind the Cylinder 3D Primitive.</p>

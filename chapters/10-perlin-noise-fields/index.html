@@ -1660,8 +1660,8 @@
 <hr />
 <div class="admonition mascot-welcome">
 <p class="admonition-title">Welcome to Chapter 10!</p>
-<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
-Palette here! Are you ready to dive into chapter 10? Time to color outside the loops!</p>
+<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" /></p>
+<p>Welcome, creators! If standard randomness looks too chaotic and noisy, wait until you discover the smooth, rolling hills of Perlin noise. This chapter will teach you how to generate stunning, natural textures and mesmerizing flow fields. Let's blend some code and build worlds!</p>
 </div>
 <p>Welcome to the magic of organic randomness! In the previous chapter, we looked at pure randomness—like flipping a coin, rolling a die, or wandering aimlessly in a random walk. But if you look around at the real world, things are rarely completely chaotic or disconnected. Mountains don't look like television static; they have sweeping curves, ridgelines, and valleys that connect logically from one point to the next. Clouds have soft, puffy shapes that gently transition into the clear blue sky. Wood has flowing grain patterns that swirl smoothly around knots. Nature is undoubtedly random, but it is a <em>smooth</em>, connected kind of random. It has structure, flow, and memory.</p>
 <p>This chapter is all about capturing that organic, natural feel in our code. We will explore how to tame randomness, smooth it out, bend it to our will, and use it to simulate the beautiful complexity of the physical world. By the end of this chapter, you won't just be generating static on a screen; you will be growing forests, shaping mountains, and painting with invisible digital wind.</p>
@@ -1679,10 +1679,11 @@ Palette here! Are you ready to dive into chapter 10? Time to color outside the l
 <p>Think of <code>random()</code> as a grasshopper trapped in a box, instantly teleporting from one random spot to another. You have no idea where it will appear next.</p>
 <p>Think of Perlin noise (accessed via the <code>noise()</code> function in p5.js) as an ant walking across a bumpy terrain. You might not know exactly where the ant will be in ten minutes, but you know for an absolute fact that one second from now, the ant will be very close to where it is right now. It can't teleport. It must walk a continuous path.</p>
 <p>When you pass a value (like time or a coordinate) into the <code>noise(t)</code> function, it returns a value between 0 and 1. If you pass in <code>noise(1.0)</code> and it returns 0.6, and then you pass in <code>noise(1.01)</code>, the return value is mathematically guaranteed to be very close to 0.6, perhaps 0.61 or 0.59. </p>
-<blockquote>
-<p>[!NOTE] Palette the Chameleon Says:
-"If you ever get confused, just remember this: <code>random()</code> has no memory of the past. <code>noise()</code> remembers its neighbors! <code>noise()</code> builds a continuous world, while <code>random()</code> throws darts at a board."</p>
-</blockquote>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Continuity is Key</p>
+<p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+Think about it like this: <code>random()</code> has no memory of the past, like throwing darts blindly. But <code>noise()</code> remembers its neighbors! It builds a continuous world because it's mapping a connected landscape.</p>
+</div>
 <h2 id="one-dimensional-noise-the-smooth-noise-landscape">One-Dimensional Noise: The <strong>Smooth Noise Landscape</strong><a class="headerlink" href="#one-dimensional-noise-the-smooth-noise-landscape" title="Permanent link">&para;</a></h2>
 <p>The simplest way to use Perlin noise is in one dimension (1D). We typically pass in a variable representing time (often called <code>t</code> or <code>xOffset</code>) that slowly increases each frame. </p>
 <p>If we map the output of the <code>noise()</code> function to the y-coordinate of a point, and slowly pan our x-coordinate across the screen, we generate a <strong>Smooth Noise Landscape</strong>. Instead of harsh, jagged spikes, the line swoops gracefully up and down, creating gentle hills and valleys.</p>
@@ -1690,6 +1691,11 @@ Palette here! Are you ready to dive into chapter 10? Time to color outside the l
 - If we increase <code>t</code> by a large amount (e.g., <code>t += 1.0</code>), we are taking massive leaps across the noise space, and the output will look just like chaotic <code>random()</code>.
 - If we increase <code>t</code> by a very small amount (e.g., <code>t += 0.01</code>), we are taking tiny, cautious steps, and the landscape will be incredibly smooth and rolling.</p>
 <p>By using this 1D noise, you can procedurally generate the ground for a 2D side-scrolling video game, ensuring the player always has a smoothly varying path to run across, without ever having to draw the level yourself by hand.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Frozen in Time?</p>
+<p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+Watch out for stagnant noise! If you pass the exact same <code>t</code> value into <code>noise()</code> every single frame, your landscape will be completely frozen. Always remember to add a tiny amount (like <code>t += 0.01</code>) inside your <code>draw()</code> loop to make the landscape scroll!</p>
+</div>
 <h2 id="two-dimensional-noise-textures-and-maps">Two-Dimensional Noise: Textures and Maps<a class="headerlink" href="#two-dimensional-noise-textures-and-maps" title="Permanent link">&para;</a></h2>
 <p>Perlin noise becomes truly magical when we expand it into two dimensions. Instead of just passing in a single value <code>t</code>, we pass in two coordinates: <code>x</code> and <code>y</code>. </p>
 <p>Think of 2D noise as a vast, infinite, invisible landscape of rolling hills and valleys. When we ask for <code>noise(x, y)</code>, we are asking the computer, "What is the altitude of the terrain at this specific GPS coordinate?"</p>
@@ -1761,12 +1767,8 @@ Palette here! Are you ready to dive into chapter 10? Time to color outside the l
 <div class="admonition mascot-tip">
 <p class="admonition-title">Palette's Tip</p>
 <p><img alt="Palette tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
-Palette</p>
+Here's a secret for easy balancing: don't use percentages for everything! Just give common items huge whole-number weights (like 1000 for oak trees) and rare items tiny weights (like 2 for magic mushrooms). Sum them up, and your procedural world will instantly feel realistic.</p>
 </div>
-<p>the Chameleon Says:</p>
-<blockquote>
-<p>"Weighted randomness is how nature balances ecosystems! If you are procedurally generating a forest, you don't want an equal number of oak trees and rare blue mushrooms. Give the oak trees a weight of 1000 and the mushrooms a weight of 2. Your world will instantly feel more realistic and balanced."</p>
-</blockquote>
 <h3 id="shaping-probability-monte-carlo-selection">Shaping Probability: <strong>Monte Carlo Selection</strong><a class="headerlink" href="#shaping-probability-monte-carlo-selection" title="Permanent link">&para;</a></h3>
 <p>Sometimes, we don't have distinct items to choose from; we have a continuous range of numbers, but we want to skew the results. For example, you want to pick a random size for rocks on the ground. You want lots of small pebbles, a few medium rocks, and very rarely, a massive boulder. </p>
 <p>We can achieve this using a broad class of algorithms called <strong>Monte Carlo Selection</strong> (named after the famous casino in Monaco). </p>
@@ -1817,8 +1819,8 @@ The algorithm is elegant and efficient: It loops backward through the array. For
 <p>In the next chapters, we will take these organic shapes and generated worlds and begin wrapping them into reusable classes and complex objects!</p>
 <div class="admonition mascot-celebration">
 <p class="admonition-title">Chapter Complete!</p>
-<p><img _="{" alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
-Amazing work! You've mastered another set of core concepts. Take a moment to celebrate!}</p>
+<p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+Incredible work! You just mastered generating Perlin noise landscapes, directing vector flow fields, and shaping probability with Monte Carlo selection! Your generative worlds are about to look stunning.</p>
 </div>
 
 

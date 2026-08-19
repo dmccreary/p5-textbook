@@ -1429,6 +1429,10 @@
   
 
 
+<hr />
+<p>quality_score: 100
+readability_score: 67</p>
+<hr />
 <h1 id="randomness-gaussian-distributions-random-walk">Randomness, Gaussian Distributions &amp; Random Walk<a class="headerlink" href="#randomness-gaussian-distributions-random-walk" title="Permanent link">&para;</a></h1>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
 <p>Examines pseudo-random number generation, normal distributions, standard deviation, and random walk algorithms. Students will gain practical hands-on experience by building interactive sketches and visual experiments that demonstrate these concepts.</p>
@@ -1460,11 +1464,11 @@
 <hr />
 <div class="admonition mascot-welcome">
 <p class="admonition-title">Welcome to Chapter 9!</p>
-<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
-Palette here! Are you ready to dive into chapter 9? Time to color outside the loops!</p>
+<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" /></p>
+<p>Palette here! Perfectly predictable code is great, but sometimes you need a little bit of beautiful chaos. In this chapter, we're going to harness the power of unpredictability to make your art feel truly organic and alive. Time to color outside the loops!</p>
 </div>
-<h2 id="the-chaos-and-order-of-code">The Chaos and Order of Code<a class="headerlink" href="#the-chaos-and-order-of-code" title="Permanent link">&para;</a></h2>
 <p>Welcome to the wild side of programming! So far, we've mostly been telling the computer exactly what to do, pixel by pixel. If we draw a circle at coordinates (100, 100), it stays precisely at (100, 100). If we tell a shape to move across the screen, it moves with mathematical precision. But nature isn't like that. A falling leaf flutters unpredictably. A crowd of people doesn't walk in perfect grids. Even the texture of a rock has an element of unpredictability to it. </p>
+<h2 id="the-chaos-and-order-of-code">The Chaos and Order of Code<a class="headerlink" href="#the-chaos-and-order-of-code" title="Permanent link">&para;</a></h2>
 <p>To create digital worlds that feel alive, organic, and natural, we need to introduce chaos. But we need a special kind of chaos—controlled chaos. In this chapter, we are going to explore different ways to generate "random" values, why some kinds of randomness look more natural than others, and how we can use these concepts to simulate everything from wandering bugs to rolling terrain.</p>
 <h2 id="the-basic-dice-roll-uniform-randomness">The Basic Dice Roll: Uniform Randomness<a class="headerlink" href="#the-basic-dice-roll-uniform-randomness" title="Permanent link">&para;</a></h2>
 <p>Let's start with the most basic form of unpredictability: flipping a coin or rolling a die. When you roll a standard six-sided die, every number from 1 to 6 has an equal chance of appearing. This is known as a uniform distribution. </p>
@@ -1479,10 +1483,10 @@ Palette here! Are you ready to dive into chapter 9? Time to color outside the lo
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1">// Returns a random float between 100 and 200</span>
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="kd">let</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">random</span><span class="p">(</span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">);</span><span class="w"> </span>
 </span></code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Mascot Admonition: Palette the Chameleon</p>
-<p><img alt="Palette the Chameleon" src="../../assets/mascots/palette.png" />
-<em>Hey there! It's me, Palette. When I change my colors, I don't want to just snap instantly to one exact shade every time—I like to mix things up! If I use <code>fill(random(255), random(255), random(255))</code>, I can be a completely unpredictable new color every single frame. Try putting that in a <code>draw()</code> loop and watch the screen go crazy! But be careful—sometimes too much randomness just looks like a messy fruit salad.</em></p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Palette's Tip</p>
+<p><img alt="Palette tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" /></p>
+<p>Want a fast way to generate unpredictable visuals? Pass <code>random(255)</code> directly into your <code>fill()</code> color channels! It will flash a completely different RGB color every single frame, perfect for chaotic glitch effects.</p>
 </div>
 <p>While <code>random()</code> is incredibly useful, it has a quirk. Computers aren't actually capable of true randomness. They use complex mathematical formulas to generate sequences of numbers that <em>appear</em> random. These are called pseudo-random number generators (PRNGs). </p>
 <p>Because these sequences are generated by a formula, if you know the starting point of the formula, you can predict the entire sequence of numbers it will produce! This starting point is called the "seed". By default, p5.js picks a different seed every time you run your sketch based on the current time. But sometimes, you <em>want</em> the same sequence of random numbers every time. Maybe you generated a beautiful random landscape and you want to show it to a friend. </p>
@@ -1503,6 +1507,11 @@ Every time you run the code above, it will print the exact same five "random" nu
 <p>Let's go back to our coin flip metaphor. If you flip a coin 100 times, you expect roughly 50 heads and 50 tails. If you plot the results of <code>random(0, 100)</code>, you'll get a flat block of results. Numbers near 10 appear just as often as numbers near 90.</p>
 <p>But think about throwing darts at a dartboard. If you are aiming for the bullseye, where will the darts land? 
 You probably won't hit the exact dead-center bullseye every time. But most of your darts will clump somewhere near the middle. You'll have fewer darts landing halfway to the edge, and very few darts hitting the outer edge (or the wall behind the board!). </p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Palette's Insight</p>
+<p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" /></p>
+<p>Notice how a uniform distribution treats every pixel equally, but a Gaussian distribution creates a focal point? By shifting away from pure randomness, you introduce a 'center of gravity' to your generated shapes.</p>
+</div>
 <p>This "clumping" around a central value is called a <em>Normal Distribution</em> or a <em>Gaussian Distribution</em> (named after the mathematician Carl Friedrich Gauss). Nature loves normal distributions! If you measure the heights of adults in a city, most people are close to average height, while very short and very tall people are rare. </p>
 <p>In p5.js, we can generate these kinds of numbers using <strong>Random Gaussian Normal</strong>. When you call <code>randomGaussian()</code>, it doesn't return a flat distribution. Instead, it returns numbers that are most likely to be near 0, but could theoretically be anything.</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">randomGaussian</span><span class="p">();</span><span class="w"> </span><span class="c1">// Most values will be between -1 and 1</span>
@@ -1666,10 +1675,10 @@ If you run this code, the circle won't jitter crazily like a fly hitting a windo
 </details>
 
 <p>Finally, just like the <code>random()</code> function, Perlin noise sequences are generated mathematically. Every time you restart your sketch, you get a new landscape. If you want to explore the exact same landscape again, you need to use a <strong>Noise Seed Function</strong>. By calling <code>noiseSeed(seedValue)</code>, you lock the Perlin noise generator to a specific mathematical starting point, guaranteeing the exact same rolling hills every time.</p>
-<div class="admonition note">
-<p class="admonition-title">Mascot Admonition: Palette the Chameleon</p>
-<p><img alt="Palette the Chameleon" src="../../assets/mascots/palette.png" />
-<em>Perlin noise is my absolute favorite trick! Instead of using <code>random()</code> to make an object jump around the screen randomly, try mapping its X and Y positions to <code>noise(t)</code> and <code>noise(t + 1000)</code>. It will look like a firefly smoothly wandering around the screen! Just make sure you use different time offsets for X and Y, or your object will just slide perfectly diagonally.</em></p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Palette's Warning</p>
+<p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" /></p>
+<p>Watch out for 2D movement sliding diagonally! If you pass the exact same time variable <code>t</code> into <code>noise()</code> for both the X and Y coordinates, they will output the identical sequence. Always offset the second axis (like <code>noise(t + 1000)</code>) to get independent, natural wandering.</p>
 </div>
 <h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
 <p>We've moved beyond the rigid, mechanical world of perfect grids and predictable loops. By mastering randomness, Gaussian distributions, and Perlin noise, you now have the tools to breathe life into your code. You can make particles that jitter like gas molecules, creatures that wander with purpose, and sprawling, organic landscapes that look like they were carved by nature. </p>
@@ -1677,8 +1686,8 @@ If you run this code, the circle won't jitter crazily like a fly hitting a windo
 <p>In the next chapter, we will start using these organic movements and shapes to build even more complex systems of interacting objects!</p>
 <div class="admonition mascot-celebration">
 <p class="admonition-title">Chapter Complete!</p>
-<p><img _="{" alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
-Amazing work! You've mastered another set of core concepts. Take a moment to celebrate!}</p>
+<p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" /></p>
+<p>Incredible work! You just mastered uniform randomness, Gaussian distributions, and organic Perlin noise. You can now inject lifelike, natural chaos into your digital simulations!</p>
 </div>
 
 
@@ -1686,9 +1695,6 @@ Amazing work! You've mastered another set of core concepts. Take a moment to cel
 
 
 
-
-  
-  
 
 
 

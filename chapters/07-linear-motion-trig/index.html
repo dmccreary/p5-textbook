@@ -1563,11 +1563,11 @@
 <hr />
 <div class="admonition mascot-welcome">
 <p class="admonition-title">Welcome to Chapter 7!</p>
-<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
-Palette here! Are you ready to dive into chapter 7? Time to color outside the loops!</p>
+<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" /></p>
+<p>Hello creators! Static art is beautiful, but things get really exciting when they start to move. We'll be using some surprisingly fun math to make your sketches slide, swing, and breathe with natural rhythm. Get ready to bring your canvases to life!</p>
 </div>
-<h2 id="the-beauty-of-mathematics-in-motion">The Beauty of Mathematics in Motion<a class="headerlink" href="#the-beauty-of-mathematics-in-motion" title="Permanent link">&para;</a></h2>
 <p>Have you ever watched a pendulum swing back and forth, or seen the rhythmic rise and fall of ocean waves, or marveled at the smooth rotation of a Ferris wheel? These mesmerizing patterns are everywhere in nature and mechanics, and they all share a common, elegant mathematical foundation. When we learn to harness this math, we unlock the ability to breathe life into our digital creations. In this chapter, we are going to dive deep into how we can recreate these natural, fluid movements using code. We will start simple, by moving objects in straight lines, and then we will unlock the powerful secrets of circles, waves, and oscillation using trigonometry.</p>
+<h2 id="the-beauty-of-mathematics-in-motion">The Beauty of Mathematics in Motion<a class="headerlink" href="#the-beauty-of-mathematics-in-motion" title="Permanent link">&para;</a></h2>
 <p>Trigonometry often gets a bad rap in high school classrooms as a collection of dry formulas and abstract triangles. But in the world of creative coding, trigonometry is your paintbrush. It is the language of continuous, organic movement. By the end of this chapter, you won’t just be drawing static shapes on a screen; you will be choreographing dynamic, breathing animations that feel alive!</p>
 <h3 id="linear-motion-getting-from-point-a-to-point-b">Linear Motion: Getting from Point A to Point B<a class="headerlink" href="#linear-motion-getting-from-point-a-to-point-b" title="Permanent link">&para;</a></h3>
 <p>Before we tackle the complexities of waves and circular paths, let's establish a solid foundation with the most basic form of movement: moving in a straight line. In the digital world, <strong>Linear Motion Logic</strong> involves updating an object's position on the screen frame by frame. Since our sketches run in a loop (the <code>draw()</code> function), we can make small changes to our variables every time the loop runs, creating the illusion of smooth motion over time.</p>
@@ -1594,13 +1594,10 @@ Palette here! Are you ready to dive into chapter 7? Time to color outside the lo
 </span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>This simple addition (<code>xPosition += speed;</code>) is the beating heart of <strong>Linear Motion Logic</strong>. But what happens when the ball reaches the right edge of the canvas? Because we never told it to stop, it will continue moving to the right, into the vast, unseen digital void beyond the screen's boundaries.</p>
-<blockquote>
-<p>[!TIP]</p>
-</blockquote>
 <div class="admonition mascot-tip">
 <p class="admonition-title">Palette's Tip</p>
-<p><img alt="Palette tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
-Linear motion is great, but what happens when the ball reaches the edge of the screen? It's gone forever! You can use an <code>if</code> statement to check if the ball has gone too far and reset its position back to zero. This creates a wrapping effect! Or, you can multiply the speed by -1 to make the ball bounce back like it hit a wall!</p>
+<p><img alt="Palette tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" /></p>
+<p>Want a quick trick to keep objects from flying off the screen? Multiply their velocity by <code>-1</code> the moment they hit the edge! It instantly reverses their direction and creates a perfect bouncing effect with almost zero extra code.</p>
 </div>
 <p>To handle edges, we use conditional statements (<code>if</code> statements) to reverse the velocity when the position exceeds the canvas boundaries. This turns simple displacement into a bouncing simulation, setting the stage for more complex behaviors.</p>
 <h3 id="the-magic-of-trigonometry-circles-and-waves">The Magic of Trigonometry: Circles and Waves<a class="headerlink" href="#the-magic-of-trigonometry-circles-and-waves" title="Permanent link">&para;</a></h3>
@@ -1608,7 +1605,12 @@ Linear motion is great, but what happens when the ball reaches the edge of the s
 <h4 id="the-slinky-metaphor">The Slinky Metaphor<a class="headerlink" href="#the-slinky-metaphor" title="Permanent link">&para;</a></h4>
 <p>To truly understand how trigonometric functions translate into motion, imagine a Slinky hanging from your hand. If you pull the bottom of the Slinky down and let go, it bounces up and down. As it bounces, its position changes smoothly over time. It moves fastest when it passes through its resting position in the middle, and it momentarily stops at the very top and bottom of its path before reversing direction. This rhythmic, incredibly smooth bouncing is a perfect, physical example of a <strong>Harmonic Motion Wave</strong>.</p>
 <p>Now, take this mental image a step further. Imagine attaching a pen to the bottom of that bouncing Slinky. As the Slinky bounces up and down, you slowly drag a long piece of paper past it horizontally. What does the pen draw? It draws a perfect, smooth, continuous wave on the paper. </p>
-<p>This wave shape is exactly what we get when we graph the sine and cosine functions! The up-and-down motion of the Slinky represents the value of the function, and the horizontal dragging of the paper represents the progression of time.</p>
+<p>This wave shape is exactly what we get when we graph the sine and cosine functions!</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Palette's Insight</p>
+<p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" /></p>
+<p>Notice how the physical bouncing up and down perfectly maps to the Y-axis, while time progressing maps to the X-axis? You are translating a physical dimension into a temporal one! The up-and-down motion of the Slinky represents the value of the function, and the horizontal dragging of the paper represents the progression of time.</p>
+</div>
 <h4 id="sine-and-cosine-the-heartbeat-of-animation">Sine and Cosine: The Heartbeat of Animation<a class="headerlink" href="#sine-and-cosine-the-heartbeat-of-animation" title="Permanent link">&para;</a></h4>
 <p>In our code, <strong>Sine Function Math</strong> (<code>sin()</code>) and <strong>Cosine Function Math</strong> (<code>cos()</code>) are the twin engines of organic motion. Both functions take an angle as their input (which we typically measure in radians, not degrees) and return a value that smoothly and eternally oscillates between -1 and 1. </p>
 <ul>
@@ -1744,13 +1746,10 @@ Linear motion is great, but what happens when the ball reaches the edge of the s
 </span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>This specific technique—calculating the delta, feeding it into <code>atan2</code>, and applying the resulting angle to a rotation—is the absolute foundation of <strong>Rotational Tracking Motion</strong>. Whether it's a turret aiming at an enemy, a character's eyes following the cursor, or a plant tilting toward the sun, <code>atan2</code> is the function that makes it happen.</p>
-<blockquote>
-<p>[!TIP]</p>
-</blockquote>
-<div class="admonition mascot-tip">
-<p class="admonition-title">Palette's Tip</p>
-<p><img alt="Palette tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
-Heads up, coders! A very common mistake is flipping the arguments in <code>atan2</code>. Remember that it takes the Y difference first, then the X difference! It’s always <code>atan2(dy, dx)</code>, not <code>atan2(dx, dy)</code>. This quirk dates back to early computer math libraries, and it trips up even experienced programmers all the time!</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Palette's Warning</p>
+<p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" /></p>
+<p>Watch out for the great <code>atan2</code> trap! A common mistake is flipping the arguments by passing X before Y. Because of old math library standards, it always expects <code>atan2(dy, dx)</code>. If your objects are rotating strangely, check your argument order first!</p>
 </div>
 <h3 id="mapping-values-the-universal-translator">Mapping Values: The Universal Translator<a class="headerlink" href="#mapping-values-the-universal-translator" title="Permanent link">&para;</a></h3>
 <p>We have covered movement, oscillation, and rotation. Let's conclude this chapter with one final, incredibly practical utility function that ties everything together: the <strong>Map Range Function</strong>.</p>
@@ -1807,8 +1806,8 @@ However, your output system (the red color channel in RGB) expects a value stric
 <p>When you learn to seamlessly link these mathematical properties together using the <strong>Map Range Function</strong>, your code transcends simple drawing. You are no longer just rendering shapes; you are choreographing intricate, dynamic systems that breathe, pulse, and interact with the fluidity of the natural world. Keep experimenting, keep tweaking those wave parameters, and watch your sketches come alive!</p>
 <div class="admonition mascot-celebration">
 <p class="admonition-title">Chapter Complete!</p>
-<p><img _="{" alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
-Amazing work! You've mastered another set of core concepts. Take a moment to celebrate!}</p>
+<p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" /></p>
+<p>Incredible work! You just mastered linear displacement, harmonic sine waves, and rotational tracking using atan2. You have everything you need to choreograph organic movement!</p>
 </div>
 
 

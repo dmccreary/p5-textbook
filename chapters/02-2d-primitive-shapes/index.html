@@ -1661,11 +1661,11 @@
 <p>In this chapter, we transition from setting up our digital canvas to actually leaving marks upon it. We will start with the simplest possible mark—a single pixel—and progress through lines, basic geometry, custom polygons, and finally the elegant, sweeping curves that revolutionized automotive design in the 1960s.</p>
 <div class="admonition mascot-welcome">
 <p class="admonition-title">Time to Draw!</p>
-<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
-Welcome to Chapter 2! Now that we have our canvas stretched and ready, it's time to start making marks. We're going to learn the vocabulary of shapes. Just like learning to mix primary colors, mastering these basic primitives is the secret to drawing anything you can imagine!</p>
+<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" /></p>
+<p>Welcome to Chapter 2, artists! Sure, a blank canvas is exciting, but it's time to actually start making marks. In this chapter, we'll give you the fundamental geometric building blocks you need to sketch absolutely anything your imagination can dream up. Grab your digital stylus and let's get drawing!</p>
 </div>
-<h2 id="the-simplest-mark-points-and-lines">The Simplest Mark: Points and Lines<a class="headerlink" href="#the-simplest-mark-points-and-lines" title="Permanent link">&para;</a></h2>
 <p>The absolute simplest mark you can make on a digital canvas is a <strong>Point Primitive</strong>. A point occupies exactly one unit of space on your pixel grid. It is defined by two numbers: its horizontal <code>x</code> position and its vertical <code>y</code> position. </p>
+<h2 id="the-simplest-mark-points-and-lines">The Simplest Mark: Points and Lines<a class="headerlink" href="#the-simplest-mark-points-and-lines" title="Permanent link">&para;</a></h2>
 <p>Drawing a point in p5.js is as simple as calling <code>point(x, y)</code>. While a single point might not seem incredibly useful, remember that a digital photograph is nothing more than millions of colored points arranged in a grid. In generative art, we often use thousands of points to create "particle systems"—simulations of rain, smoke, or swarming bees.</p>
 <p>When you connect two points, you create a <strong>Line Primitive</strong>. A line requires two sets of coordinates: a starting point <code>(x1, y1)</code> and an ending point <code>(x2, y2)</code>. The computer calculates the shortest path between these two points and illuminates the pixels along that path. </p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">draw</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -1696,10 +1696,10 @@ Welcome to Chapter 2! Now that we have our canvas stretched and ready, it's time
 <p>When you say <code>rect(50, 50, 100, 100)</code>, where exactly does the rectangle go? By default, p5.js uses <strong>Rect Mode Corner</strong> (<code>rectMode(CORNER)</code>). This means the <code>(x, y)</code> coordinate you provide acts as the top-left anchor point. The rectangle extends 100 pixels to the right, and 100 pixels down from that anchor.</p>
 <p>This is perfect for aligning shapes to the edge of a screen. But what if you want to draw a rectangle exactly in the dead center of the canvas? Doing the math from the top-left corner is tedious. </p>
 <p>Instead, you can change the drawing behavior using <strong>Rect Mode Center</strong> (<code>rectMode(CENTER)</code>). Once activated, the <code>(x, y)</code> coordinates define the exact <em>middle</em> of the rectangle, and it grows outward in all directions equally. </p>
-<div class="admonition mascot-thinking">
-<p class="admonition-title">The Pinning Metaphor</p>
-<p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
-Think of <code>rectMode</code> like pinning a photograph to a corkboard. <code>rectMode(CORNER)</code> means you push the thumbtack through the top-left corner of the photo. <code>rectMode(CENTER)</code> means you push the thumbtack through the exact middle.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">The Alignment Shortcut</p>
+<p><img alt="Palette tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+Want to save some time doing math? Instead of calculating complex offsets to center a box on your screen, just use <code>rectMode(CENTER)</code> and place it at <code>width/2, height/2</code>. It's a massive time-saver for UI design!</p>
 </div>
 <h2 id="curves-and-arcs-the-compass-and-protractor">Curves and Arcs: The Compass and Protractor<a class="headerlink" href="#curves-and-arcs-the-compass-and-protractor" title="Permanent link">&para;</a></h2>
 <p>In contrast to rigid rectangles, organic shapes require curves. The foundational curved primitive is the <strong>Ellipse Primitive</strong> (<code>ellipse(x, y, width, height)</code>). An ellipse is simply a squashed or stretched circle. </p>
@@ -1737,9 +1737,9 @@ Think of <code>rectMode</code> like pinning a photograph to a corkboard. <code>r
 <p>Similarly, when two thick lines meet at a sharp corner (like the top of a triangle), the joint can be styled using the <strong>Stroke Join Style</strong> (<code>strokeJoin(MITER, BEVEL, or ROUND)</code>). A miter join creates a sharp point, a bevel creates a flat chamfered cut, and a round join creates a soft elbow.</p>
 <p>Sometimes, you only want an outline, making the shape completely transparent on the inside. You achieve this using the <strong>No Fill Function</strong> (<code>noFill()</code>). Conversely, if you want a solid block of color without any outline border, you use the <strong>No Stroke Function</strong> (<code>noStroke()</code>).</p>
 <div class="admonition mascot-warning">
-<p class="admonition-title">The State Machine</p>
+<p class="admonition-title">The State Machine Trap</p>
 <p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
-Styling commands like <code>fill()</code>, <code>strokeWeight()</code>, and <code>noStroke()</code> are persistent! If you say <code>noStroke()</code> to draw a borderless circle, <em>every</em> shape you draw after that will also have no border, until you explicitly turn the stroke back on. The computer remembers your last command indefinitely.</p>
+Watch out for ghost shapes! Styling commands like <code>noStroke()</code> are persistent state changes. If you remove borders for one circle, every subsequent shape will also lack a border. To fix this, always explicitly reset your styles by calling <code>stroke(0)</code> (or your desired color) right before drawing your next shape.</p>
 </div>
 <h2 id="custom-polygons-connecting-the-dots">Custom Polygons: Connecting the Dots<a class="headerlink" href="#custom-polygons-connecting-the-dots" title="Permanent link">&para;</a></h2>
 <p>What happens when you want to draw a 5-sided pentagon? Or a 12-sided star? The standard primitives (<code>rect</code>, <code>triangle</code>) are insufficient. You need to define a custom geometry point by point.</p>
@@ -1781,10 +1781,10 @@ Styling commands like <code>fill()</code>, <code>strokeWeight()</code>, and <cod
 <p>In the 1960s, a French engineer named Pierre Bézier was working for the Renault car company. He needed a mathematical way to describe the sweeping, elegant curves of a car's chassis to a computer-controlled milling machine. He popularized a mathematical formula that we now call the <strong>Bézier Curve Function</strong> (<code>bezier()</code>).</p>
 <p>A Bézier curve is defined by four points. The first and fourth points are the physical anchors—where the line starts and ends. The second and third points are the <strong>Bézier Control Points</strong>. </p>
 <p>The curve never actually touches the control points. Instead, the control points exert a magnetic "pull" on the line, bending it toward them. </p>
-<div class="admonition mascot-tip">
-<p class="admonition-title">The Rubber Band Metaphor</p>
-<p><img alt="Palette tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
-Imagine stretching a rubber band between two thumbtacks. Now imagine grabbing two invisible strings tied to the middle of the rubber band and pulling them outward. The rubber band bends toward your hands smoothly. Your hands are the control points!</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">The Magnetic Pull</p>
+<p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+Notice how the curve never actually touches the control points? Think about it like a rubber band stretched between two thumbtacks. The control points act as invisible magnets pulling on the middle of the band. This separation of anchor and control is a core architectural pattern behind all modern vector graphics!</p>
 </div>
 <p>If you need a continuous, flowing ribbon of multiple curves attached end-to-end, you can use <code>beginShape()</code> combined with the <strong>Bézier Vertex Function</strong> (<code>bezierVertex()</code>). This allows you to construct complex vector art illustrations, identical to how the Pen Tool works in Adobe Illustrator.</p>
 <p>If managing complex control points feels too mathematical, p5.js offers a simpler alternative: the <strong>Curve Shape Function</strong> (<code>curve()</code>) and the <strong>Curve Vertex Function</strong> (<code>curveVertex()</code>). Unlike Bézier curves, a Catmull-Rom curve (which p5.js uses here) actually passes directly <em>through</em> all the points you define, making it much more intuitive to draw a smooth path. You can even adjust how sharply the line bends around the points using the <strong>Curve Tightness Setting</strong> (<code>curveTightness()</code>).</p>
@@ -1818,7 +1818,7 @@ Imagine stretching a rubber band between two thumbtacks. Now imagine grabbing tw
 <div class="admonition mascot-celebration">
 <p class="admonition-title">Shapes Mastered!</p>
 <p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
-Amazing job! You now possess the tools to draw literally anything in two dimensions. You are no longer just making a canvas; you are painting it. Next, we will dive deep into the science of color!</p>
+Incredible work! You just mastered 2D primitives, custom polygons, Bézier curves, and the styling state machine! You have all the mathematical building blocks needed to sketch any geometry. Next, we will dive deep into the science of color!</p>
 </div>
 
 

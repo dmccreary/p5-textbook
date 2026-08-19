@@ -1590,11 +1590,11 @@
 <hr />
 <div class="admonition mascot-welcome">
 <p class="admonition-title">Welcome to the 3D Stage!</p>
-<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
-Time to color outside the loops! Today we are entering the magical realm of 3D rendering.</p>
+<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" /></p>
+<p>Welcome to the 3D stage, creators! Having 3D shapes is neat, but it's the cinematic lighting and materials that make them look truly spectacular. Dive into this chapter to learn how to direct your virtual cameras and light up your scenes like a pro!</p>
 </div>
-<h2 id="the-movie-director-and-stage-lights">The Movie Director and Stage Lights<a class="headerlink" href="#the-movie-director-and-stage-lights" title="Permanent link">&para;</a></h2>
 <p>Imagine you are a movie director. You have an empty stage. It is completely pitch black. To make a movie, you need characters, you need materials for their costumes, you need cameras to capture the action, and most importantly, you need lights. Without lights, everything remains hidden in the void. In p5.js, working in WebGL mode is exactly like being a movie director on a digital stage. You are responsible for placing the objects, moving the camera, and setting up the stage lights. </p>
+<h2 id="the-movie-director-and-stage-lights">The Movie Director and Stage Lights<a class="headerlink" href="#the-movie-director-and-stage-lights" title="Permanent link">&para;</a></h2>
 <p>When you create a 3D scene, you are basically writing the script for how the computer should draw shapes and illuminate them. This process involves a lot of math, but don't worry, p5.js handles the heavy lifting. All you have to do is make the creative choices. </p>
 <p>Let's start with lighting. In the real world, light bounces off surfaces and enters our eyes. In a computer simulation, we have to calculate how light interacts with every single pixel on the screen. To make things manageable, we break lighting down into different types of light sources. </p>
 <p>The first and most basic type is the <strong>Ambient Light Source</strong>. Think of ambient light as the baseline level of brightness in a room. It doesn't come from any specific direction, and it doesn't create any shadows. It just makes everything uniformly visible. If you only use an <strong>Ambient Light Source</strong>, your 3D objects will look flat, like 2D cutouts, because there are no highlights or shadows to give them a sense of volume.</p>
@@ -1604,7 +1604,7 @@ Time to color outside the loops! Today we are entering the magical realm of 3D r
 <div class="admonition mascot-thinking">
 <p class="admonition-title">Lighting Strategy</p>
 <p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
-Think about how different light sources evoke different moods. A directional light might feel like a sunny day, while a spotlight feels like an interrogation room!</p>
+Notice how lighting in 3D isn't actually "light" at all—it's just a math equation! We are calculating the angle between a light ray and the surface of our geometry to determine what color the pixel should be. You're painting with geometry!</p>
 </div>
 <h2 id="dressing-the-set-materials">Dressing the Set: Materials<a class="headerlink" href="#dressing-the-set-materials" title="Permanent link">&para;</a></h2>
 <p>Once you have lights, you need to decide how your objects react to those lights. In 3D graphics, this is called the material. A material defines the color, texture, and shininess of an object's surface. </p>
@@ -1615,9 +1615,9 @@ Think about how different light sources evoke different moods. A directional lig
 <div class="admonition mascot-tip">
 <p class="admonition-title">Material Matters</p>
 <p><img alt="Palette tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
-Combining different materials is key to creating realistic objects! Try mixing specular highlights with a subtle ambient base.</p>
-</div>
+Want your shapes to look like shiny, wet plastic? Call <code>specularMaterial(255)</code> followed by a high <code>shininess(100)</code> right before you draw your geometry!</p>
 <p>Sometimes, a solid color isn't enough. What if you want your object to look like it's made of wood, brick, or even have a picture painted on it? That's where the <strong>Texture Mapping Function</strong> comes in. Texture mapping takes a 2D image and wraps it around a 3D object, much like wrapping paper on a present. You can use any image as a texture, and p5.js will calculate how to stretch and pin it to the surface of your geometry.</p>
+</div>
 <h2 id="shaders-the-ultimate-control">Shaders: The Ultimate Control<a class="headerlink" href="#shaders-the-ultimate-control" title="Permanent link">&para;</a></h2>
 <p>Lighting and materials are great, but sometimes you need absolute control over how every single pixel is drawn. For that, you need to write your own shaders. Shaders are small programs that run directly on the graphics processing unit (GPU). They are written in a language called GLSL (OpenGL Shading Language).</p>
 <p>There are two main types of shaders: vertex shaders and fragment shaders. The vertex shader processes every single point (vertex) in your 3D geometry. The fragment shader processes every single pixel (fragment) that makes up the surface of the geometry.</p>
@@ -1627,7 +1627,7 @@ Combining different materials is key to creating realistic objects! Try mixing s
 <div class="admonition mascot-encourage">
 <p class="admonition-title">Shader Magic</p>
 <p><img alt="Palette encouraging" class="mascot-admonition-img" src="../../img/mascot/encouraging.png" />
-Shaders can look intimidating with all that math, but they are the secret behind the most stunning visual effects. Take it step by step!</p>
+If GLSL and vertex math feel completely overwhelming right now, take a deep breath—that's completely normal! Shaders are notoriously tricky, but just like when you learned <code>for</code> loops, start by tweaking one number at a time and watch what happens. You've got this!</p>
 </div>
 <h2 id="importing-the-cast-3d-models">Importing the Cast: 3D Models<a class="headerlink" href="#importing-the-cast-3d-models" title="Permanent link">&para;</a></h2>
 <p>While p5.js has built-in functions for drawing spheres, boxes, and cylinders, sometimes you want to bring in more complex shapes, like a character or a vehicle. You can do this by creating your models in a 3D modeling program like Blender and exporting them as an OBJ file.</p>
@@ -1640,7 +1640,7 @@ Shaders can look intimidating with all that math, but they are the secret behind
 <div class="admonition mascot-celebration">
 <p class="admonition-title">Bravo! Cut! Print!</p>
 <p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
-You've mastered the digital stage! Your movies are going to look amazing.</p>
+Incredible work! You just mastered ambient and specular lighting, texture mapping, and even wrote your own GLSL shaders. You are a true director of the digital stage!</p>
 </div>
 <h2 id="microsim-interactive-lighting">MicroSim: Interactive Lighting<a class="headerlink" href="#microsim-interactive-lighting" title="Permanent link">&para;</a></h2>
 <details>

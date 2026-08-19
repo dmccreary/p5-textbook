@@ -1741,11 +1741,11 @@
 <hr />
 <div class="admonition mascot-welcome">
 <p class="admonition-title">Welcome to Chapter 5!</p>
-<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
-Palette here! Are you ready to dive into chapter 5? Time to color outside the loops!</p>
+<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" /></p>
+<p>Hey artists, why draw one circle when you could draw ten thousand in the blink of an eye? This chapter is all about giving you the incredible superpower of automation and repetition. Learn to command armies of shapes and watch your complex patterns unfold!</p>
 </div>
-<h2 id="introduction-to-repetition-the-factory-assembly-line">Introduction to Repetition: The Factory Assembly Line<a class="headerlink" href="#introduction-to-repetition-the-factory-assembly-line" title="Permanent link">&para;</a></h2>
 <p>Welcome to Chapter 5! Have you ever had to do the exact same thing over and over again? Maybe it was writing sentences on a chalkboard as a punishment, or maybe it was stamping the same logo on a hundred different flyers. In programming, repeating tasks manually is the ultimate buzzkill. It's boring, prone to errors, and totally defeats the purpose of having a powerful computer at your fingertips.</p>
+<h2 id="introduction-to-repetition-the-factory-assembly-line">Introduction to Repetition: The Factory Assembly Line<a class="headerlink" href="#introduction-to-repetition-the-factory-assembly-line" title="Permanent link">&para;</a></h2>
 <p>Imagine your code as a factory. The <strong>Factory Assembly Line</strong> is a perfect metaphor for loops. On an assembly line, the same operation happens repeatedly to different items as they pass down the belt. A robot arm might tighten exactly four bolts on every car chassis that goes by. It doesn't need a separate instruction manual for each car; it just repeats the "tighten four bolts" sequence as long as the conveyor belt keeps moving.</p>
 <p>In p5.js, when we want to draw 100 circles across the screen, we don't write <code>circle()</code> 100 times. Instead, we build a loop—our own little factory assembly line—that says, "Hey computer, execute this block of code 100 times."</p>
 <h3 id="the-while-loop-construct">The <strong>While Loop Construct</strong><a class="headerlink" href="#the-while-loop-construct" title="Permanent link">&para;</a></h3>
@@ -1762,13 +1762,10 @@ Palette here! Are you ready to dive into chapter 5? Time to color outside the lo
 <h3 id="the-infinite-loop-prevention-and-the-infinite-loop-trap">The <strong>Infinite Loop Prevention</strong> and The Infinite Loop Trap<a class="headerlink" href="#the-infinite-loop-prevention-and-the-infinite-loop-trap" title="Permanent link">&para;</a></h3>
 <p>What happens if you forget to update your loop counter variable? You fall into <strong>The Infinite Loop Trap</strong>. Imagine the robot arm on the assembly line goes rogue, repeatedly tightening the same bolt forever because the conveyor belt broke. Your program will get stuck in that loop, running as fast as the processor allows, until the browser crashes or your computer fans start screaming.</p>
 <p><strong>Infinite Loop Prevention</strong> is crucial. You must always ensure that the condition evaluated in your <code>while</code> loop will eventually become false. If you are checking <code>count &lt; 5</code>, you absolutely must ensure that <code>count</code> increases during the loop execution.</p>
-<blockquote>
-<p>[!TIP]</p>
-</blockquote>
-<div class="admonition mascot-tip">
-<p class="admonition-title">Palette's Tip</p>
-<p><img alt="Palette tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
-Chameleons love a good loop—it's like our curly tails! But be careful not to tie yourself in a knot. Before you hit 'Run' on a <code>while</code> loop, always double-check that your counter is actually changing. I once got stuck looking at the same fly forever because my tongue's loop counter was broken. Don't be like me! Always practice <strong>Infinite Loop Prevention</strong>!</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">The Infinite Loop Trap</p>
+<p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+Watch out for browser crashes! If you write a <code>while</code> loop but forget to update the counter variable inside the curly braces, the condition will never become false. The computer will run the loop forever, locking up your entire browser. To prevent this, always make sure your update statement (like <code>count = count + 1</code>) is the very last line inside your loop body before you hit the run button!</p>
 </div>
 <h3 id="the-for-loop-construct">The <strong>For Loop Construct</strong><a class="headerlink" href="#the-for-loop-construct" title="Permanent link">&para;</a></h3>
 <p>Because setting up a loop counter, checking a condition, and updating the counter is so common, programmers created a streamlined version: the <strong>For Loop Construct</strong>. It packages all three steps (initialization, condition, and update) into a single, neat line of code.</p>
@@ -1805,6 +1802,11 @@ Chameleons love a good loop—it's like our curly tails! But be careful not to t
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>For every single step of the outer <code>y</code> loop, the inner <code>x</code> loop runs to completion. So, if <code>y = 0</code>, the <code>x</code> loop draws a full row of squares across the top of the screen. Then <code>y</code> becomes 40, and the <code>x</code> loop draws another full row.</p>
+<div class="admonition mascot-encourage">
+<p class="admonition-title">The Nested Loop Brain-Bender</p>
+<p><img alt="Palette encouraging" class="mascot-admonition-img" src="../../img/mascot/encouraging.png" />
+If your brain feels completely twisted trying to visualize a loop running inside another loop, take a deep breath. That is totally normal! It is one of the first major cognitive hurdles in all of programming. Don't rush it. Grab a piece of paper and manually write down the values of <code>x</code> and <code>y</code> for the first few steps. It will click soon!</p>
+</div>
 <h3 id="2d-grid-iteration"><strong>2D Grid Iteration</strong><a class="headerlink" href="#2d-grid-iteration" title="Permanent link">&para;</a></h3>
 <p>This process is known as <strong>2D Grid Iteration</strong>. It is the fundamental technique for processing images (which are just grids of pixels), generating tile-based game maps, or creating complex, repeating geometric art. By mastering <strong>Nested For Loops</strong>, you unlock the ability to cover the entire canvas systematically.</p>
 <details>
@@ -1849,13 +1851,10 @@ Chameleons love a good loop—it's like our curly tails! But be careful not to t
 <p>The <strong>Array Pop Method</strong> removes the last item from the end of the array. It unhooks the last train car.</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">lastPos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ballXPositions</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span><span class="w"> </span><span class="c1">// Returns 300. Array is back to [10, 50, 100, 200]</span>
 </span></code></pre></div>
-<blockquote>
-<p>[!NOTE]</p>
-</blockquote>
 <div class="admonition mascot-tip">
-<p class="admonition-title">Palette's Tip</p>
+<p class="admonition-title">The Last Element Shortcut</p>
 <p><img alt="Palette tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
-Arrays are amazing! They're like my color palette. I can <code>push</code> a new color into my camouflage options, or <code>pop</code> one off if it's out of season. Just remember, <strong>Array Element Indexing</strong> starts at zero. If I want my first color, I ask for index 0. If I ask for index 1, I get the <em>second</em> color. It took me a few days to get used to it, but now zero-indexing feels as natural as catching a moth!</p>
+Here's a secret for dealing with dynamic arrays that are constantly growing or shrinking: if you ever need to grab the very last item in the train, but you don't know exactly how many cars there are, you don't need to count them! Just ask for <code>yourArray[yourArray.length - 1]</code>. It works perfectly every single time!</p>
 </div>
 <h2 id="advanced-array-maneuvers">Advanced Array Maneuvers<a class="headerlink" href="#advanced-array-maneuvers" title="Permanent link">&para;</a></h2>
 <p>Once you're comfortable with basic array trains, you'll find there are many specialized methods to manage your data collections efficiently.</p>
@@ -1954,9 +1953,9 @@ Arrays are amazing! They're like my color palette. I can <code>push</code> a new
 <p>Finally, we used a <strong>Boolean Flag Variable</strong> and <strong>State Machine Logic</strong> to control the flow and state of our applications, breaking out of loops when necessary using <strong>Break and Continue Keywords</strong>.</p>
 <p>You now have the tools to manage massive amounts of data and create complex visual patterns with just a few lines of code. Onward to the next challenge!</p>
 <div class="admonition mascot-celebration">
-<p class="admonition-title">Chapter Complete!</p>
-<p><img _="{" alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
-Amazing work! You've mastered another set of core concepts. Take a moment to celebrate!}</p>
+<p class="admonition-title">Automation Mastered!</p>
+<p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+Incredible work! You just mastered while loops, for loops, 2D nested grid iteration, and dynamic array data structures! You now have the power to command armies of shapes and manage complex data with just a few lines of code.</p>
 </div>
 
 

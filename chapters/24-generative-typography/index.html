@@ -1558,8 +1558,8 @@
 <hr />
 <div class="admonition mascot-welcome">
 <p class="admonition-title">Welcome to Generative Typography!</p>
-<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
-Time to color outside the loops! Let's blend some code and see what happens when letters break free from their rigid lines.</p>
+<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" /></p>
+<p>Hey artists! Letters don't have to be boring, static blocks of ink on a page. This chapter gives you the tools to explode fonts, manipulate outlines, and treat words as living, kinetic geometry. Get ready to completely reinvent how you look at text!</p>
 </div>
 <p>For centuries, the printing press locked letters into rigid metal blocks. Each character was static, unchanging, and confined to a strict grid. Today, the digital brush liberates these letterforms. In p5.js, typography isn't just about stamping ink onto a page; it's about treating text as living, breathing data. We can stretch, explode, and reconstruct words dynamically. </p>
 <h2 id="the-basics-of-text-on-the-canvas">The Basics of Text on the Canvas<a class="headerlink" href="#the-basics-of-text-on-the-canvas" title="Permanent link">&para;</a></h2>
@@ -1619,9 +1619,9 @@ Time to color outside the loops! Let's blend some code and see what happens when
 <div class="admonition mascot-thinking">
 <p class="admonition-title">Measuring Up</p>
 <p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
-Measuring text bounds is crucial when you want to draw a tight rectangle around a word or detect if the mouse is hovering over it!</p>
-</div>
+Think about it like this: a word isn't just a stamp of ink, it's an invisible rectangular container occupying physical space on your canvas. By extracting the <strong>Text Bounds Bounding Box</strong>, you can finally 'see' that invisible container, allowing your code to perfectly align shapes or detect when a mouse touches a specific letter!</p>
 <p>Let's see how we can load a font and measure its bounds:</p>
+</div>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">myFont</span><span class="p">;</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kd">function</span><span class="w"> </span><span class="nx">preload</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -1656,6 +1656,11 @@ Measuring text bounds is crucial when you want to draw a tight rectangle around 
 <p>Advanced typographers also care about <strong>Kerning Letter Spacing</strong>—the specific spacing between individual characters. While p5.js handles default kerning, custom generative grids often require manual spacing calculations. Additionally, some modern designs utilize <strong>Variable Font Parameters</strong> where weight and width interpolate smoothly, though in standard p5.js, we typically simulate these dynamic shifts using transformations. </p>
 <h2 id="beyond-the-pixel-vector-outlines">Beyond the Pixel: Vector Outlines<a class="headerlink" href="#beyond-the-pixel-vector-outlines" title="Permanent link">&para;</a></h2>
 <p>Here is where the digital brush truly shines. A font is actually a set of mathematical instructions. We can extract <strong>Font Glyph Outlines</strong> directly. The most powerful tool for this is the <strong>Text To Points Vector</strong> conversion via <code>myFont.textToPoints()</code>. Instead of rendering the text, this function returns an array of coordinates mapping the outline of the letters.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Too Many Points?</p>
+<p><img alt="Palette giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+Here's a secret: if your kinetic text sketch is running slow, check your <code>sampleFactor</code>! Lowering it from <code>0.25</code> to <code>0.1</code> will drastically reduce the number of vector points generated, speeding up your physics calculations without ruining the shape of the letters.</p>
+</div>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">pts</span><span class="p">;</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">myFont</span><span class="p">;</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
@@ -1729,6 +1734,11 @@ Measuring text bounds is crucial when you want to draw a tight rectangle around 
 <p>We can also bridge typography with user behavior. An <strong>Interactive Text Input Typo</strong> sketch updates its display seamlessly as the user types on the keyboard. By linking <code>textSize()</code> to mouse position or audio input volume, we achieve <strong>Dynamic Font Scaling</strong>. Finally, for those pushing the boundaries of the canvas, <strong>3D Text Extrusion WebGL</strong> turns flat vectors into volumetric blocks, giving depth to your digital typography.</p>
 <p>To ensure you fully grasp the potential of these techniques, let's explore a few more complex code snippets.</p>
 <h3 id="advanced-generative-type-grid">Advanced: Generative Type Grid<a class="headerlink" href="#advanced-generative-type-grid" title="Permanent link">&para;</a></h3>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Beware the Infinite Loop</p>
+<p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+Watch out when building text grids! If you use <code>textWidth()</code> inside a <code>for</code> loop that runs thousands of times, it will drastically slow down your sketch. Always calculate your font metrics once in <code>setup()</code> and store them in variables before drawing!</p>
+</div>
 <p>A generative type grid involves arranging characters in a systematic yet randomized layout. We can use loops to create a grid and populate it with letters from a string or random characters.</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">rows</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
@@ -1962,7 +1972,7 @@ Measuring text bounds is crucial when you want to draw a tight rectangle around 
 <div class="admonition mascot-celebration">
 <p class="admonition-title">Masterpiece Complete!</p>
 <p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
-You did it, artists! We've turned static text into living, kinetic art. Keep exploring and creating!</p>
+Incredible work! You just mastered loading custom <code>.ttf</code> files, extracting vector coordinates using <code>textToPoints()</code>, and building interactive, kinetic typography systems!</p>
 </div>
 <h3 id="the-evolution-of-typography-in-creative-coding">The Evolution of Typography in Creative Coding<a class="headerlink" href="#the-evolution-of-typography-in-creative-coding" title="Permanent link">&para;</a></h3>
 <p>Typography in computational design has evolved significantly over the past decades. Initially, text was simply a mechanism for logging data or providing rudimentary user interfaces. The resolution of early screens limited the expressiveness of fonts, resulting in blocky, pixelated characters that prioritized legibility over aesthetics. However, as display technologies advanced and processing power increased, the potential for typographic experimentation expanded exponentially.</p>

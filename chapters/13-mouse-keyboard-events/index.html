@@ -1774,8 +1774,8 @@
 <hr />
 <div class="admonition mascot-welcome">
 <p class="admonition-title">Welcome, Creators!</p>
-<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
-Time to color outside the loops! Welcome to the world of interactivity, where you are the controller!</p>
+<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" /></p>
+<p>Hey artists, it's time to break the fourth wall! This chapter will teach you how to make your digital canvases actually listen and respond to the people looking at them. We're turning your static code into fully interactive playgrounds, so let's blend some code!</p>
 </div>
 <p>Welcome, students! Have you ever played a video game and wondered how the console knows exactly when you press the jump button or swing the analog stick? In this chapter, we are going to dive deep into <strong>Mouse &amp; Keyboard User Event Sensing</strong>, treating our computer peripherals just like a video game controller.</p>
 <p>Every time you move your mouse or tap a key, your computer generates an "event." An event is simply a message that says, "Hey, something just happened here!" In Processing, we have built-in variables and functions that are constantly listening for these events. This allows us to create dynamic, interactive applications that respond to user input in real-time. By the end of this chapter, you will be able to harness these events to control your sketches, just like you control a character on screen.</p>
@@ -1795,9 +1795,9 @@ Time to color outside the loops! Welcome to the world of interactivity, where yo
 </ul>
 <p>These variables are automatically updated by Processing every time the mouse moves. They are incredibly useful for drawing objects that follow the cursor, creating interactive menus, or even just tracking where the user is looking.</p>
 <div class="admonition mascot-thinking">
-<p class="admonition-title">Tracking Coordinates</p>
+<p class="admonition-title">The Inverted Y-Axis</p>
 <p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
-Remember that the top-left corner is (0, 0). As you move right, <strong>Mouse X Position</strong> increases. As you move down, <strong>Mouse Y Position</strong> increases.</p>
+Notice how moving the mouse down <em>increases</em> the Y position? In traditional math class, Y goes up, but in computer graphics, the origin (0, 0) is always the top-left! It requires a subtle shift in your mental model to map screen coordinates to real-world interactions.</p>
 </div>
 <h3 id="previous-position">Previous Position<a class="headerlink" href="#previous-position" title="Permanent link">&para;</a></h3>
 <p>Sometimes, knowing <em>where</em> the mouse is isn't enough; we need to know <em>how fast</em> or <em>in what direction</em> it's moving. To do this, we can compare its current position to its previous position. Processing gives us two variables for this: <strong>Previous Mouse X PmouseX</strong> and <strong>Previous Mouse Y PmouseY</strong>.</p>
@@ -1832,8 +1832,8 @@ Remember that the top-left corner is (0, 0). As you move right, <strong>Mouse X 
 </ul>
 <div class="admonition mascot-tip">
 <p class="admonition-title">State vs. Event</p>
-<p><img alt="Palette offering a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
-Use <code>mouseIsPressed</code> for continuous effects (like drawing a line). Use <code>mousePressed()</code> for one-time triggers (like spawning an explosion). Don't mix them up!</p>
+<p><img alt="Palette tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+Here's a shortcut to prevent rapid-fire bugs: use <code>mouseIsPressed</code> (the variable) for continuous actions like a machine gun or drawing a line. Use <code>mousePressed()</code> (the function) for single-shot actions like jumping. Mixing them up is the #1 cause of broken interactive controls!</p>
 </div>
 <h3 id="complex-mouse-movements">Complex Mouse Movements<a class="headerlink" href="#complex-mouse-movements" title="Permanent link">&para;</a></h3>
 <p>Sometimes, the action isn't just a simple click; it's a combination of movement and clicking.</p>
@@ -1865,9 +1865,9 @@ Use <code>mouseIsPressed</code> for continuous effects (like drawing a line). Us
 <li><strong>Key Code Number</strong>: Not all keys have characters (like the arrow keys, Shift, Enter, etc.). For these, we use the <code>keyCode</code> variable, which stores a numeric code representing the physical key on the keyboard. Processing provides handy constants like <code>UP</code>, <code>DOWN</code>, <code>LEFT</code>, <code>RIGHT</code>, <code>ENTER</code>, <code>SHIFT</code>, etc., to make checking these codes easier.</li>
 </ul>
 <div class="admonition mascot-warning">
-<p class="admonition-title">Key vs. KeyCode</p>
+<p class="admonition-title">The Invisible Key Trap</p>
 <p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
-Always use <code>key</code> for printable characters (like 'a' or '1') and <code>keyCode</code> for special control keys (like <code>UP_ARROW</code> or <code>SHIFT</code>). Mixing them up can lead to confusing bugs!</p>
+Watch out for invisible keys! If you try to use the <code>key</code> variable to detect the Shift or Arrow keys, your code will fail silently. You must use <code>keyCode</code> for any control key. Always separate your character typing logic from your game control logic to avoid this trap.</p>
 </div>
 <h3 id="keyboard-events">Keyboard Events<a class="headerlink" href="#keyboard-events" title="Permanent link">&para;</a></h3>
 <p>Keyboard events work exactly like mouse events, providing discrete triggers for our actions.</p>
@@ -1902,9 +1902,9 @@ Always use <code>key</code> for printable characters (like 'a' or '1') and <code
 <p>Sensing user input is what separates a passive animation from an interactive experience. By mastering mouse coordinates, button states, and keyboard events, you've unlocked the ability to create games, tools, and dynamic art that responds directly to the user's touch.</p>
 <p>Remember the controller metaphor: your sketch is the console, and it's waiting for those signals. Now it's up to you to decide what those signals do!</p>
 <div class="admonition mascot-celebration">
-<p class="admonition-title">Level Complete!</p>
+<p class="admonition-title">Chapter Complete!</p>
 <p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
-You've mastered the controller! Now go out there and build something truly interactive. The canvas is your playground!</p>
+Incredible work! You just mastered mouse coordinates, discrete keyboard events, and bounding box hit testing to make your sketches fully interactive. The canvas is your playground!</p>
 </div>
 <h2 id="extended-deep-dive-understanding-the-nuances-of-event-sensing">Extended Deep Dive: Understanding the Nuances of Event Sensing<a class="headerlink" href="#extended-deep-dive-understanding-the-nuances-of-event-sensing" title="Permanent link">&para;</a></h2>
 <p>To truly master the art of interactive programming, we need to explore the subtle nuances of each event and how they interact with one another. The video game controller metaphor is powerful, but a computer's input system is even more complex and versatile.</p>

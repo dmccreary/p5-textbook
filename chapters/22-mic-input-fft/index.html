@@ -1772,11 +1772,11 @@
 <hr />
 <div class="admonition mascot-welcome">
 <p class="admonition-title">Sound Becomes Color!</p>
-<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
-Time to color outside the loops! Let's blend some code and see our sounds!</p>
+<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" /></p>
+<p>Welcome back, creators! Have you ever wanted to see what music actually looks like? This chapter will teach you how to analyze real-time sound and transform it into jaw-dropping visual equalizers and responsive art. Time to color outside the loops and see the music!</p>
 </div>
-<h2 id="introduction-the-oscilloscope-and-the-prism">Introduction: The Oscilloscope and the Prism<a class="headerlink" href="#introduction-the-oscilloscope-and-the-prism" title="Permanent link">&para;</a></h2>
 <p>When you look at a rainbow, you are seeing a prism split white light into its component colors. The prism reveals the hidden spectrum of light. What if we could do the same for sound? In this chapter, we will build digital prisms and oscilloscopes to visualize the hidden world of sound waves. </p>
+<h2 id="introduction-the-oscilloscope-and-the-prism">Introduction: The Oscilloscope and the Prism<a class="headerlink" href="#introduction-the-oscilloscope-and-the-prism" title="Permanent link">&para;</a></h2>
 <p>The oscilloscope represents the time domain: it shows how the volume of a sound changes over time, graphing pressure variations as a continuous wave. The prism represents the frequency domain: it splits a complex sound into its individual pitches, showing us how much bass, mid, and treble energy is present.</p>
 <p>To capture the raw sound, we use a <strong>p5 AudioIn Microphone</strong>. This acts as our ear, capturing the physical vibrations of the air and converting them into electrical signals. But the signal alone is just a stream of numbers. We need algorithms like the <strong>Fast Fourier Transform Math</strong> to make sense of it.</p>
 <h2 id="setting-up-the-microphone">Setting up the Microphone<a class="headerlink" href="#setting-up-the-microphone" title="Permanent link">&para;</a></h2>
@@ -1812,16 +1812,23 @@ Time to color outside the loops! Let's blend some code and see our sounds!</p>
 <div class="admonition mascot-tip">
 <p class="admonition-title">Smoothing is Key!</p>
 <p><img alt="Palette giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
-If your shapes are twitching too much, try using <code>lerp()</code> to create a <strong>Smooth Amplitude Level</strong>!</p>
+Here's a secret for buttery visuals: raw microphone data flickers way too fast. Wrap your volume variable in <code>lerp(currentVol, targetVol, 0.1)</code> to smoothly glide between values and create a <strong>Smooth Amplitude Level</strong>. Your users' eyes will thank you!</p>
 </div>
 <h2 id="the-prism-fast-fourier-transform-fft">The Prism: Fast Fourier Transform (FFT)<a class="headerlink" href="#the-prism-fast-fourier-transform-fft" title="Permanent link">&para;</a></h2>
 <p>Now we move from the oscilloscope to the prism. The <strong>p5 FFT Class Concept</strong> introduces the Fast Fourier Transform, a powerful algorithm that analyzes a sound wave and separates it into its individual frequencies. By calling <strong>FFT Analyze Spectrum</strong>, the algorithm returns a <strong>FFT Frequency Bins Array</strong>, typically containing 1024 values representing the volume at different frequency bands.</p>
-<p>With this array, we can ask for the energy in specific frequency ranges. 
-- <strong>FFT Get Energy Bass</strong> (low frequencies, like a kick drum)
-- <strong>FFT Get Energy LowMid</strong> (cellos and deep voices)
-- <strong>FFT Get Energy Mid</strong> (standard vocals and guitars)
-- <strong>FFT Get Energy HighMid</strong> (snares and synthesizers)
-- <strong>FFT Get Energy Treble</strong> (cymbals and high hats)</p>
+<p>With this array, we can ask for the energy in specific frequency ranges.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Unbaking the Cake</p>
+<p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+Think about it like this: an oscilloscope shows you <em>when</em> a sound is loud, but the Fast Fourier Transform shows you <em>what</em> the sound is made of. It's like a magical algorithm that unbakes a cake to tell you exactly how many cups of bass, mid, and treble went into it! </p>
+</div>
+<ul>
+<li><strong>FFT Get Energy Bass</strong> (low frequencies, like a kick drum)</li>
+<li><strong>FFT Get Energy LowMid</strong> (cellos and deep voices)</li>
+<li><strong>FFT Get Energy Mid</strong> (standard vocals and guitars)</li>
+<li><strong>FFT Get Energy HighMid</strong> (snares and synthesizers)</li>
+<li><strong>FFT Get Energy Treble</strong> (cymbals and high hats)</li>
+</ul>
 <p>Here is how you might extract these energies:</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">fft</span><span class="p">;</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
@@ -1904,11 +1911,21 @@ If your shapes are twitching too much, try using <code>lerp()</code> to create a
 <p>We can also visualize sound over a longer period using an <strong>Audio Spectrogram Plot</strong>. A spectrogram plots time on the X-axis, frequency on the Y-axis, and amplitude as color intensity. This is widely used in speech analysis and ornithology (studying bird songs).</p>
 <h3 id="handling-feedback">Handling Feedback<a class="headerlink" href="#handling-feedback" title="Permanent link">&para;</a></h3>
 <p>When working with live microphones and speakers simultaneously, you might experience a loud squealing noise. This is acoustic feedback, where the microphone picks up the speaker output, amplifies it, and plays it back in a loop. To prevent this, professional systems use a <strong>Microphone Feedback Gate</strong> (or noise gate) to mute the mic when the volume drops below a certain level.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Beware the Squeal!</p>
+<p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+Watch out for the infinite feedback loop! If your microphone hears your speakers, it will amplify the sound until it creates a deafening screech. To avoid blasting your ears, always wear headphones while coding audio-reactive sketches!</p>
+</div>
 <h3 id="entering-the-third-dimension">Entering the Third Dimension<a class="headerlink" href="#entering-the-third-dimension" title="Permanent link">&para;</a></h3>
 <p>Finally, we can map our FFT data to 3D space using WEBGL. A <strong>3D Audio Reactive Visual</strong> might use the bass energy to deform a 3D sphere, or map the spectrum across a flowing 3D terrain grid, creating a mesmerizing synthetic landscape that dances to the music.</p>
 <h2 id="deep-dive-the-mathematics-of-sound">Deep Dive: The Mathematics of Sound<a class="headerlink" href="#deep-dive-the-mathematics-of-sound" title="Permanent link">&para;</a></h2>
 <p>To truly understand how our digital prism works, we must briefly explore the underlying mathematics. The Fast Fourier Transform (FFT) is an incredibly efficient algorithm for computing the Discrete Fourier Transform (DFT). The DFT takes a discrete signal in the time domain (our audio samples) and transforms it into the frequency domain. </p>
 <p>The core idea, formulated by Jean-Baptiste Joseph Fourier in the 19th century, is that any complex periodic wave can be constructed by adding together a series of simple sine and cosine waves of varying frequencies and amplitudes. When we call the analyze method on our FFT object, the algorithm is essentially working backwards: it takes the complex, chaotic wave recorded by the microphone and calculates the exact recipe of simple sine waves needed to recreate it.</p>
+<div class="admonition mascot-encourage">
+<p class="admonition-title">Breathe and Trust the Math</p>
+<p><img alt="Palette encouraging" class="mascot-admonition-img" src="../../img/mascot/encouraging.png" />
+If the calculus behind the Fast Fourier Transform feels overwhelming, that's completely normal! You don't need to manually calculate sine wave interference to be an artist. Just trust <code>p5.FFT</code> to hand you the frequencies, and focus on the beautiful visuals you can paint with them.</p>
+</div>
 <h3 id="the-anatomy-of-an-audio-buffer">The Anatomy of an Audio Buffer<a class="headerlink" href="#the-anatomy-of-an-audio-buffer" title="Permanent link">&para;</a></h3>
 <p>When the microphone captures sound, it doesn't process continuous analog signals; rather, it takes discrete snapshots of the air pressure thousands of times per second. This rate is known as the sampling rate. A standard CD-quality audio file has a sampling rate of 44,100 Hz, meaning the microphone takes 44,100 snapshots every single second.</p>
 <p>These snapshots are stored in an array known as a buffer. When we request the waveform using our time domain function, p5.js returns an array containing a small segment of this buffer—typically 1024 samples. Each value in this array represents the normalized amplitude of the sound wave at that exact fraction of a second, ranging from -1.0 to 1.0. </p>
@@ -1965,7 +1982,7 @@ If your shapes are twitching too much, try using <code>lerp()</code> to create a
 <div class="admonition mascot-celebration">
 <p class="admonition-title">Awesome Work!</p>
 <p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
-You've mastered the oscilloscope and the prism! Your code is now dancing to the rhythm of the world! Keep experimenting and painting with sound!</p>
+Incredible work! You just mastered capturing real-time <code>p5.AudioIn</code> data, extracting frequency bins with the Fast Fourier Transform, and building dynamic beat detection algorithms!</p>
 </div>
 
 

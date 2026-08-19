@@ -1487,11 +1487,11 @@
 </ul>
 <div class="admonition mascot-welcome">
 <p class="admonition-title">Welcome to the Studio, Artists!</p>
-<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
-Time to color outside the loops! We're stepping into the magical world of sound. Let's blend some code and compose an interactive symphony!</p>
+<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" /></p>
+<p>Hello artists! Who says we can only paint with light? In this chapter, we are going to learn how to generate, sculpt, and control sound itself using pure math. Grab your headphones, because it's time to compose some interactive audio masterpieces!</p>
 </div>
-<h2 id="1-entering-the-sound-studio">1. Entering the Sound Studio<a class="headerlink" href="#1-entering-the-sound-studio" title="Permanent link">&para;</a></h2>
 <p>Imagine walking into a vintage recording studio. In the corner, there's a dusty turntable ready to spin some classic vinyl records. Along the walls, towering modular synthesizers blink with colorful LEDs, their faces covered in a chaotic web of cables connecting different modules together. This is the <strong>synthesizer patchbay</strong>, the central nervous system of sound generation. In this chapter, we are going to learn how to operate this virtual studio using code. </p>
+<h2 id="1-entering-the-sound-studio">1. Entering the Sound Studio<a class="headerlink" href="#1-entering-the-sound-studio" title="Permanent link">&para;</a></h2>
 <p>Before we can even press play on our record player or plug a single cable into our synthesizer, we need to bring our audio equipment into the room. In the world of p5.js, this means we need the <strong>p5 Sound Library Include</strong>. This library is an add-on to the core p5.js library, built on top of the Web Audio API, which gives our browser the superpower to generate, manipulate, and analyze sound. By including the <code>p5.sound.js</code> file in our HTML <code>index.html</code> document alongside <code>p5.js</code>, we unlock all the audio features we'll explore today. </p>
 <p>Once our equipment is in the room, there's an important security protocol we must follow. Modern web browsers have strict rules against websites playing sound automatically without the user's permission—nobody likes a sudden blast of music when opening a tab! To unlock the audio engine, we must trigger a <strong>User Start Audio Context</strong>. This means the browser's audio processing (the audio context) will only begin <em>after</em> the user interacts with the page, such as clicking a button or pressing a key. You can explicitly call <code>userStartAudio()</code> in an interactive event like <code>mousePressed()</code> to ensure the context is active and ready to make noise.</p>
 <h2 id="2-the-turntable-working-with-sound-files">2. The Turntable: Working with Sound Files<a class="headerlink" href="#2-the-turntable-working-with-sound-files" title="Permanent link">&para;</a></h2>
@@ -1509,7 +1509,7 @@ Time to color outside the loops! We're stepping into the magical world of sound.
 <div class="admonition mascot-thinking">
 <p class="admonition-title">Is it playing?</p>
 <p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
-Always check the isPlaying status before telling a sound to play again! If you call play() on a sound that's already playing, you might accidentally start a second overlapping copy of it.</p>
+Think about the <code>play()</code> command like physically dropping a needle on a record. If you put that inside your <code>draw()</code> loop, you are dropping a new needle 60 times a second! That's why we use <code>isPlaying()</code> to make sure the record is already spinning before trying to play it again.</p>
 </div>
 <h3 id="mixing-and-manipulating-the-record">Mixing and Manipulating the Record<a class="headerlink" href="#mixing-and-manipulating-the-record" title="Permanent link">&para;</a></h3>
 <p>Now that the music is playing, let's look at the mixing desk. The most fundamental control is the volume fader. You can <strong>Set Volume Level</strong> using <code>mySong.setVolume()</code>, passing in a value between <code>0.0</code> (complete silence) and <code>1.0</code> (maximum original volume). You can even gently fade the music in or out by providing a second argument for time (e.g., <code>mySong.setVolume(0, 3.0)</code> fades to zero over 3 seconds).</p>
@@ -1548,9 +1548,9 @@ Always check the isPlaying status before telling a sound to play again! If you c
 <div class="admonition mascot-tip">
 <p class="admonition-title">The Shape of Sound</p>
 <p><img alt="Palette tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
-Artists, remember: Attack, Decay, and Release are amounts of TIME (seconds), but Sustain is a LEVEL (volume from 0.0 to 1.0). An envelope shapes the journey of the volume over time!</p>
-</div>
+Here's a shortcut to remember ADSR: Attack, Decay, and Release are amounts of TIME (in seconds), but Sustain is a LEVEL (from 0.0 to 1.0). Try <code>env.setADSR(0.01, 0.1, 0.5, 1.0)</code> to instantly get a classic plucky synthesizer sound!</p>
 <p>Once we have defined our ADSR values (<code>env.setADSR(attack, decay, sustain, release)</code>), we need to trigger it. We connect the envelope to our oscillator, and then issue a <strong>Play Envelope Trigger</strong> (<code>env.play()</code>). This tells the envelope to execute its volume automation, bringing our flat drone to life with percussive plucks or sweeping cinematic swells.</p>
+</div>
 <h2 id="5-noise-and-filters-carving-the-sonic-marble">5. Noise and Filters: Carving the Sonic Marble<a class="headerlink" href="#5-noise-and-filters-carving-the-sonic-marble" title="Permanent link">&para;</a></h2>
 <p>Synthesizers don't just make pure tones; they can also create chaos. In audio, "noise" is an electrical signal that contains all possible frequencies playing at random simultaneously. We can generate this using <strong>p5 Noise White Pink</strong>. </p>
 <p>White noise sounds like static on an old television or the harsh hiss of a crashing wave; it has equal energy across all frequencies. Pink noise is mathematically adjusted to have more energy in the lower frequencies, making it sound warmer and more natural, like heavy rain or a rushing waterfall. Noise is the perfect raw material for synthesizing drums, wind, or sci-fi sweep effects.</p>
@@ -1578,7 +1578,7 @@ Artists, remember: Attack, Decay, and Release are amounts of TIME (seconds), but
 <div class="admonition mascot-warning">
 <p class="admonition-title">Watch your ears!</p>
 <p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
-Artists, be careful with the Distortion effect! It drastically increases the overall volume of your signal and adds harsh frequencies. Turn your headphones down before experimenting with extreme distortion values!</p>
+Watch out when adding distortion! It drastically increases your audio's raw signal amplitude and can hurt your ears or blow out speakers. To fix this, always chain an <code>.amp(0.1)</code> directly after your distortion node to protect your hearing!</p>
 </div>
 <h2 id="7-connecting-the-cables-the-polyphonic-synth">7. Connecting the Cables: The Polyphonic Synth<a class="headerlink" href="#7-connecting-the-cables-the-polyphonic-synth" title="Permanent link">&para;</a></h2>
 <p>To build a complete instrument, we must understand the <strong>Audio Node Signal Route</strong>. In the Web Audio API, audio flows through a chain of interconnected nodes. An oscillator (source node) connects to a filter (processing node), which connects to a reverb (effect node), which finally connects to the master output (destination node). Understanding this signal path is like tracing the cables on our synthesizer patchbay. We use methods like <code>.disconnect()</code> and <code>.connect()</code> in p5.js to route our audio precisely where we want it to go.</p>
@@ -1589,7 +1589,7 @@ Artists, be careful with the Distortion effect! It drastically increases the ove
 <div class="admonition mascot-celebration">
 <p class="admonition-title">Symphony Complete!</p>
 <p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
-What a masterpiece, artists! You've successfully built an electronic orchestra with code. Keep experimenting, keep patching those cables, and let your sketches sing!</p>
+What a masterpiece, artists! You've successfully mastered the p5.sound library, synthesized custom oscillators, shaped time with ADSR envelopes, and routed audio effects! Let your sketches sing!</p>
 </div>
 
 

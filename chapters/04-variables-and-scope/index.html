@@ -1679,11 +1679,11 @@
 <hr />
 <div class="admonition mascot-welcome">
 <p class="admonition-title">Welcome to Chapter 4!</p>
-<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
-Palette here! Are you ready to dive into chapter 4? Time to color outside the loops!</p>
+<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" /></p>
+<p>Welcome back, creators! Do you want your artwork to change, react, and remember things over time? You'll need to understand how our code stores information. This chapter is your secret to unlocking dynamic memory, so let's blend some code and level up your skills!</p>
 </div>
-<h2 id="introduction-the-magic-of-memory">Introduction: The Magic of Memory<a class="headerlink" href="#introduction-the-magic-of-memory" title="Permanent link">&para;</a></h2>
 <p>Imagine for a moment that you are a highly organized warehouse manager. Your warehouse is a gigantic, cavernous building filled with rows upon rows of empty cardboard boxes. Whenever a shipment arrives, you have a choice: you can just throw the items randomly into any open box, or you can carefully label the box with a black marker so you know exactly what is inside. If you choose the random approach, finding a specific item later—like a single red sock or a vintage video game—will be a nightmare. You would have to open every single box and dig through it. But if you slap a label on the box that says "Red Socks," you can walk straight to it the moment you need it. </p>
+<h2 id="introduction-the-magic-of-memory">Introduction: The Magic of Memory<a class="headerlink" href="#introduction-the-magic-of-memory" title="Permanent link">&para;</a></h2>
 <p>In the world of computer programming, the computer's memory (its RAM) is exactly like that massive warehouse. It consists of millions and millions of empty storage slots. When we write programs in p5.js, we often need to remember things: the player's score, the X and Y coordinates of a character on the screen, the color of the background, or the number of lives remaining. To store these pieces of information, we use something called a <strong>variable</strong>. </p>
 <p>A variable is a labeled box in the computer's memory. We give the box a name, we put a value inside it, and whenever we need that value later, we just call it by its name. </p>
 <h2 id="the-art-of-labeling-let-variable-declaration">The Art of Labeling: <strong>Let Variable Declaration</strong><a class="headerlink" href="#the-art-of-labeling-let-variable-declaration" title="Permanent link">&para;</a></h2>
@@ -1704,15 +1704,11 @@ Palette here! Are you ready to dive into chapter 4? Time to color outside the lo
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nx">playerHealth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">playerHealth</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">20</span><span class="p">;</span><span class="w"> </span>
 </span></code></pre></div>
 <p>Now, the <code>playerHealth</code> box holds the number 80. Notice that we didn't use the <code>let</code> keyword the second time. You only need to use <code>let</code> when you are creating the box for the very first time. After the box exists, you can just refer to it by its name to change what's inside. </p>
-<div class="admonition mascot-tip">
-<p class="admonition-title">Palette's Tip</p>
-<p><img alt="Palette tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" /></p>
-<div class="admonition mascot palette">
-<p class="admonition-title">Mascot</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">The Dry-Erase Metaphor</p>
+<p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+Think of <code>let</code> like a dry-erase marker on a plastic storage bin. You can write 'Winter Clothes' on it today, but next season you can wipe it off and write 'Summer Gear'. The label stays the same, but you can swap out the contents whenever you want!</p>
 </div>
-</div>
-<p>the Chameleon says..."
-    "Think of <code>let</code> like a dry-erase marker on a plastic storage bin. You can write 'Winter Clothes' on it today, but next season you can wipe it off and write 'Summer Gear'. The label stays the same, but you can swap out the contents whenever you want! That's why it's a <em>variable</em>—it varies!"</p>
 <h3 id="choosing-good-names-for-your-boxes">Choosing Good Names for Your Boxes<a class="headerlink" href="#choosing-good-names-for-your-boxes" title="Permanent link">&para;</a></h3>
 <p>When you create variables, you get to choose their names. However, you should follow standard conventions. Variable names should be descriptive. A variable named <code>x</code> might be okay for a quick test, but in a large game, a variable named <code>enemyLaserXPosition</code> is much clearer. We typically use a naming style called <strong>camelCase</strong>, where the first word is lowercase, and every following word starts with a capital letter (e.g., <code>myFirstVariable</code>, <code>playerScore</code>, <code>isGameOver</code>). This makes the names easy to read without using spaces, which are not allowed in variable names.</p>
 <h2 id="unchanging-truths-const-constant-variable">Unchanging Truths: <strong>Const Constant Variable</strong><a class="headerlink" href="#unchanging-truths-const-constant-variable" title="Permanent link">&para;</a></h2>
@@ -1773,6 +1769,11 @@ Palette here! Are you ready to dive into chapter 4? Time to color outside the lo
 </span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>This local isolation is fantastic because it means you can reuse variable names like <code>i</code>, <code>x</code>, or <code>tempColor</code> in different functions without them stepping on each other's toes. If you declare <code>let x = 10</code> inside <code>function one()</code>, and <code>let x = 50</code> inside <code>function two()</code>, the computer treats them as two completely separate boxes. They just happen to have the same label, but they are stored in different locked rooms.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">The Undefined Trap</p>
+<p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+Watch out for the "is not defined" error! A common trap is declaring a variable with <code>let</code> inside <code>setup()</code>, and then trying to use it inside <code>draw()</code>. Because it's locked in local block scope, <code>draw()</code> has no idea it exists. To fix this, declare <code>let myVar;</code> globally at the very top of your file, and only assign the actual value inside <code>setup()</code>.</p>
+</div>
 <details class="microsim">
 <summary>MicroSim: Scope Visualizer</summary>
 <b>Type:</b> Interactive p5.js Sketch
@@ -1896,15 +1897,11 @@ Palette here! Are you ready to dive into chapter 4? Time to color outside the lo
 </span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">  </span><span class="nx">updatePlayer</span><span class="p">();</span>
 </span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="p">}</span>
 </span></code></pre></div></p>
-<div class="admonition mascot-tip">
-<p class="admonition-title">Palette's Tip</p>
-<p><img alt="Palette tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" /></p>
-<div class="admonition mascot palette">
-<p class="admonition-title">Mascot</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">The Logic Gate Bouncers</p>
+<p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+Think of Logical Operators like bouncers at an exclusive club. AND (<code>&amp;&amp;</code>) is the strict bouncer who says "You need an ID AND a VIP ticket." OR (<code>||</code>) is the chill bouncer who says "You need a ticket OR a VIP pass, either is fine." NOT (<code>!</code>) is the weird bouncer who says "If you are NOT wearing sneakers, you can come in!"</p>
 </div>
-</div>
-<p>the Chameleon says..."
-    "The Logical Operators are exactly like bouncers at an exclusive club! AND (<code>&amp;&amp;</code>) is the strict bouncer who says 'You need an ID AND a VIP ticket.' OR (<code>||</code>) is the chill bouncer who says 'You need a ticket OR a VIP pass, either is fine.' NOT (<code>!</code>) is the weird bouncer who says 'If you are NOT wearing sneakers, you can come in!'"</p>
 <h2 id="advanced-decision-making">Advanced Decision Making<a class="headerlink" href="#advanced-decision-making" title="Permanent link">&para;</a></h2>
 <p>Once you master <code>if</code>, <code>else</code>, and operators, you can start writing more concise, professional-looking code. JavaScript offers a few shorthand tools for specific situations.</p>
 <h3 id="the-shortcut-ternary-operator-syntax">The Shortcut: <strong>Ternary Operator Syntax</strong><a class="headerlink" href="#the-shortcut-ternary-operator-syntax" title="Permanent link">&para;</a></h3>
@@ -1967,9 +1964,9 @@ The computer evaluates the condition <code>(myScore &gt; 50)</code>. Because it 
 <p>Practice combining your relational and logical operators to build complex rules for your p5.js sketches. Try creating a drawing program that changes colors based on where the mouse is and which keys are currently being pressed.</p>
 <p>In the next chapter, we will look at loops: how to repeat actions hundreds of times a second without having to write hundreds of lines of code!</p>
 <div class="admonition mascot-celebration">
-<p class="admonition-title">Chapter Complete!</p>
-<p><img _="{" alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
-Amazing work! You've mastered another set of core concepts. Take a moment to celebrate!}</p>
+<p class="admonition-title">Memory Unlocked!</p>
+<p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+Incredible work! You just mastered variable declarations, global and local scope, and the complex logic of conditional switchboards! You've given your code both memory and the power to make decisions.</p>
 </div>
 
 

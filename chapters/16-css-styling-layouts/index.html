@@ -1437,11 +1437,11 @@
 <hr />
 <div class="admonition mascot-welcome">
 <p class="admonition-title">Welcome to Chapter 16!</p>
-<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
-Time to color outside the loops! In this chapter, we're going to transform our web pages from plain white boxes into stunning, interactive spaces!</p>
+<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" /></p>
+<p>Welcome to Chapter 16, artists! Your sketch is a masterpiece, but it deserves a beautiful frame to hang in. We'll be learning how to seamlessly blend your canvas into stunning, fully-styled web pages. Get ready to make your art look incredibly professional!</p>
 </div>
-<h2 id="the-architecture-of-the-web-interior-design-metaphor">The Architecture of the Web: Interior Design Metaphor<a class="headerlink" href="#the-architecture-of-the-web-interior-design-metaphor" title="Permanent link">&para;</a></h2>
 <p>Welcome back, artists! So far, our p5.js sketches have lived in isolation, floating aimlessly on a blank white webpage. But in the real world of web development, a canvas is just one piece of furniture in a much larger room. Think of building a webpage like designing the interior of a house. When you just throw furniture into a room without a plan, it is a mess.</p>
+<h2 id="the-architecture-of-the-web-interior-design-metaphor">The Architecture of the Web: Interior Design Metaphor<a class="headerlink" href="#the-architecture-of-the-web-interior-design-metaphor" title="Permanent link">&para;</a></h2>
 <p>To become a master web developer, you must learn to integrate your interactive canvas with standard HTML elements—buttons, sliders, text inputs, and other media—and organize them using modern CSS techniques. With <strong>CSS Flexbox Layout</strong> and <strong>CSS Grid Styling</strong>, you have the power of a professional interior designer. You can align, distribute, and structure your elements exactly where you want them.</p>
 <h2 id="integrating-the-canvas-into-the-room">Integrating the Canvas into the Room<a class="headerlink" href="#integrating-the-canvas-into-the-room" title="Permanent link">&para;</a></h2>
 <p>By default, when you call <code>createCanvas()</code>, p5.js simply appends an <strong>HTML5 Canvas Integration</strong> element to the very bottom of your webpage's <code>&lt;body&gt;</code>. If you have headers, paragraphs, or sidebars on your page, the canvas just awkwardly gets shoved below them.</p>
@@ -1476,7 +1476,7 @@ By doing this, the canvas becomes a well-behaved piece of furniture. It obeys th
 <div class="admonition mascot-thinking">
 <p class="admonition-title">Wait, what's the difference?</p>
 <p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
-The <code>changed</code> event waits for the user to finish completely (like hitting Enter). The <code>input</code> event fires constantly on every tiny adjustment (like dragging a volume slider)!</p>
+Think about it like this: your sketch must decide whether to listen to a finished sentence or react to every single syllable as it is spoken. Notice how choosing between a delayed <code>.changed()</code> event versus a continuous <code>.input()</code> event fundamentally alters the architectural rhythm and performance profile of your interaction loop?</p>
 </div>
 <h2 id="mastering-the-layout-flexbox-and-grid">Mastering the Layout: Flexbox and Grid<a class="headerlink" href="#mastering-the-layout-flexbox-and-grid" title="Permanent link">&para;</a></h2>
 <p>Once your canvas, buttons, and sliders are attached to the webpage, you need to arrange them. </p>
@@ -1500,7 +1500,7 @@ The <code>changed</code> event waits for the user to finish completely (like hit
 <div class="admonition mascot-tip">
 <p class="admonition-title">Cleaning Up!</p>
 <p><img alt="Palette tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
-If you hide an element, it is still sitting in the room, just wearing an invisibility cloak. If you remove it, you've actually thrown the furniture out the window! Save your RAM!</p>
+Want to save memory and boost performance? If a DOM element will never be used again (like a one-time 'Loading' spinner), always use <code>.remove()</code> instead of <code>.hide()</code>. Hiding elements leaves them secretly consuming resources in the background; removing them deletes them from the DOM entirely!</p>
 </div>
 <h2 id="uploading-and-embedding-media">Uploading and Embedding Media<a class="headerlink" href="#uploading-and-embedding-media" title="Permanent link">&para;</a></h2>
 <p>To make your sketches truly personal, you often want users to be able to upload their own images or data. </p>
@@ -1510,7 +1510,7 @@ If you hide an element, it is still sitting in the room, just wearing an invisib
 <div class="admonition mascot-warning">
 <p class="admonition-title">Beware the iFrame Trap!</p>
 <p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
-When using iframes, remember that you cannot easily pass variables between your sketch and the iframe! Browsers heavily restrict this for security reasons (Cross-Origin Resource Sharing). Treat iframes like a museum exhibit: you can look through the glass, but you can't touch the art inside!</p>
+Watch out for CORS errors! Browsers heavily restrict Cross-Origin Resource Sharing, meaning you cannot easily read variables from an external iframe. If you absolutely must send data between an iframe and your main sketch, you will need to research and implement the <code>window.postMessage()</code> API rather than relying on direct variable access.</p>
 </div>
 <details>
 <summary>MicroSim: Responsive Dashboard Builder</summary>
@@ -1525,7 +1525,7 @@ When using iframes, remember that you cannot easily pass variables between your 
 <div class="admonition mascot-celebration">
 <p class="admonition-title">Chapter Complete!</p>
 <p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
-Fantastic work! You've mastered the art of layout and styling, turning your code into beautiful, functional spaces!</p>
+Fantastic work! You just mastered integrating p5.js with HTML5 structures, controlling DOM Element visibility, and engineering responsive CSS Flexbox and Grid Layouts. You are officially building fully-fledged web applications!</p>
 </div>
 
 

@@ -1477,6 +1477,10 @@
   
 
 
+<hr />
+<p>quality_score: 100
+readability_score: 54</p>
+<hr />
 <h1 id="particle-systems-forces-steering-behaviors">Particle Systems, Forces &amp; Steering Behaviors<a class="headerlink" href="#particle-systems-forces-steering-behaviors" title="Permanent link">&para;</a></h1>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
 <p>Builds reusable particle classes, particle system managers, lifespan decay, emitters, and flocking behaviors. Students will gain practical hands-on experience by building interactive sketches and visual experiments that demonstrate these concepts.</p>
@@ -1507,8 +1511,8 @@
 <hr />
 <div class="admonition mascot-welcome">
 <p class="admonition-title">Welcome to Chapter 12!</p>
-<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
-"Time to color outside the loops! Let's build some digital fireworks, artists!"</p>
+<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" /></p>
+<p>Welcome to Chapter 12, creators! We are taking everything you've learned about motion and scaling it up to create massive, swarming, beautiful chaos. From fireworks to flocks of birds, this chapter gives you the tools to simulate complex natural phenomena. Time to color outside the loops!</p>
 </div>
 <p>Hey everyone! Welcome to Chapter 12. If you've ever watched a spectacular fireworks display lighting up the night sky, or played with a garden water hose on a hot summer day, you've already seen particle systems in action. Today, we're going to learn how to recreate that exact magic using code.</p>
 <p>A particle system is a collection of many small, simple objects (particles) that together create complex, beautiful behaviors. Think of a single droplet of water from a hose—on its own, it just follows a simple arc and hits the ground. But when you have millions of those droplets spraying out at once, bouncing off each other, catching the light, and splashing around, you get an incredibly dynamic simulation. The same goes for fireworks: one spark is boring, but a thousand sparks exploding outward, fading out, and being pulled down by gravity is mesmerizing. </p>
@@ -1522,7 +1526,7 @@
 <div class="admonition mascot-thinking">
 <p class="admonition-title">Forces and Mass</p>
 <p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
-"Remember artists, forces are vectors, but mass is just a scalar! Divide the vector by the scalar to find your acceleration."</p>
+Notice how this changes everything? Because of Newton's Second Law, a heavy cannonball and a lightweight feather react differently to the exact same wind force. By simply dividing a force vector by a mass scalar, we've injected realistic physical weight into our digital world!</p>
 </div>
 <h2 id="part-2-environmental-forces">Part 2: Environmental Forces<a class="headerlink" href="#part-2-environmental-forces" title="Permanent link">&para;</a></h2>
 <p>Now that our particles can move and accelerate based on their mass, it's time to add the forces that will make them look like real fireworks and water hoses.</p>
@@ -1570,9 +1574,9 @@
 <p>To manage all these particles, we need a <strong>Particle System Manager</strong>. This is usually an array (or a class containing an array) that holds all the active particles. The manager's job is to loop through the array every frame, call <code>update()</code> and <code>display()</code> on each particle, and crucially, check if a particle's lifespan has run out. If it has, the manager removes it from the array. </p>
 <p>The manager is also responsible for the <strong>Particle Emitter Location</strong>. The emitter is the source of the particles—the nozzle of the water hose, or the center of the firework explosion. The emitter decides where new particles are born and what their initial velocity should be. A firework emitter bursts all its particles at once in a 360-degree circle, while a water hose emitter spits out a steady stream of particles in a specific cone of direction.</p>
 <div class="admonition mascot-tip">
-<p class="admonition-title">Managing Memory</p>
+<p class="admonition-title">The Backwards Loop Trick</p>
 <p><img alt="Palette tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
-"Make sure to loop backward through your array when removing dead particles! Otherwise, you might skip an index and leave a 'ghost' particle behind."</p>
+Want to save yourself hours of debugging? Always loop backward (<code>for (let i = particles.length - 1; i &gt;= 0; i--)</code>) when deleting dead particles! If you loop forward and delete an item, the array shifts down, causing you to accidentally skip the next particle and leave un-deletable 'ghost' particles behind.</p>
 </div>
 <h2 id="part-4-advanced-behaviors">Part 4: Advanced Behaviors<a class="headerlink" href="#part-4-advanced-behaviors" title="Permanent link">&para;</a></h2>
 <p>Once you have a working particle system with physics and lifespan, you can start getting really creative with how the particles behave.</p>
@@ -1602,7 +1606,7 @@
 <div class="admonition mascot-encourage">
 <p class="admonition-title">Keep Experimenting!</p>
 <p><img alt="Palette encouraging" class="mascot-admonition-img" src="../../img/mascot/encouraging.png" />
-"If the math feels overwhelming, don't worry! Start by tweaking the numbers in your code. Change gravity to a negative number and watch your water hose spray upwards! The best way to learn physics is to break it."</p>
+If managing multiple force vectors and lifespan decays feels overwhelming right now, that's completely normal! You've already conquered basic vector math; this is just combining those pieces. Take a deep breath, try tweaking just one number at a time (like making gravity negative), and see what happens. The best way to learn physics is to break it!</p>
 </div>
 <h3 id="advanced-drag-and-resistance">Advanced Drag and Resistance<a class="headerlink" href="#advanced-drag-and-resistance" title="Permanent link">&para;</a></h3>
 <p>When implementing the <strong>Fluid Resistance Model</strong>, precision matters. Let's break down the formula for drag: </p>
@@ -1630,6 +1634,11 @@
 <p>Implementing <strong>Elastic Collision Bouncing</strong> can be tricky. When a particle hits the floor, you might be tempted to just say <code>velocity.y = -velocity.y</code>. This works, but it's not perfect.</p>
 <p>Why? Because the particle might have moved <em>past</em> the floor in that frame. If you just reverse its velocity, it might still be stuck inside the floor on the next frame, causing it to get trapped and vibrate wildly. </p>
 <p>To fix this, you must also correct its position. If the floor is at Y=500, and the particle is at Y=505, you need to push it back up to Y=500, and <em>then</em> reverse its velocity. Furthermore, real bounces aren't perfectly elastic. They lose energy. So you multiply the reversed velocity by a dampening factor, like 0.8. </p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Beware the Jitters</p>
+<p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+Watch out for objects getting glued to the floor! If you reverse a particle's velocity but forget to push its position back above the floor line, it will constantly trigger the collision check on the next frame, causing it to rapidly jitter and sink into the ground.</p>
+</div>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nx">checkEdges</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">height</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">height</span><span class="p">;</span><span class="w"> </span><span class="c1">// Correct position</span>
@@ -1672,7 +1681,7 @@
 <div class="admonition mascot-celebration">
 <p class="admonition-title">Chapter Complete!</p>
 <p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
-"Incredible work, artists! You've mastered the elements and brought your canvases to life with dynamic motion. The sky is literally the limit now!"</p>
+Incredible work, artists! You just mastered force accumulation, lifespan decay, and memory management for complex particle systems. You're ready to build entire digital ecosystems!</p>
 </div>
 
 
@@ -1680,9 +1689,6 @@
 
 
 
-
-  
-  
 
 
 

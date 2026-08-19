@@ -1544,8 +1544,8 @@
 <hr />
 <div class="admonition mascot-welcome">
 <p class="admonition-title">Welcome, Creators!</p>
-<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
-Welcome back, artists! Time to color outside the loops! Today we are moving beyond the mouse and keyboard and stepping into the physical world of touch and motion! Let's blend some code!</p>
+<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" /></p>
+<p>Welcome back, creators! The world isn't just keyboards and mice anymore; it's screens you can touch and devices you can shake. Dive into this chapter to learn how to make your art respond to swipes, pinches, and physical movement. Time to color outside the loops!</p>
 </div>
 <p>Have you ever wondered how your smartphone knows when you turn it sideways to watch a video, or how a mobile game lets you steer a car just by tilting the device? The answer lies in the incredible array of tiny sensors packed inside modern mobile devices. In this chapter, we are going to learn how to access those sensors and use them to make our interactive art and games come alive in a completely new way. </p>
 <p>The smartphone is no longer just a screen; it is a physical object that we hold, move, and interact with in three-dimensional space. To fully take advantage of this, we need to understand the hardware behind it. Mobile devices are equipped with sophisticated hardware called micro-electromechanical systems, or MEMS for short. These tiny machines are what allow your device to sense its orientation and movement. </p>
@@ -1576,7 +1576,7 @@ Welcome back, artists! Time to color outside the loops! Today we are moving beyo
 <div class="admonition mascot-thinking">
 <p class="admonition-title">Tracking Multiple Touches</p>
 <p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
-Remember, artists! Because touches is an array, you have to iterate through it using a loop if you want to draw something at every finger's location! Each touch object in the array has an <code>x</code>, <code>y</code>, and <code>id</code> property.</p>
+Think about it like this: your sketch is no longer tracking a single pointer, but conducting an orchestra of simultaneous interactions. Notice how shifting from a single <code>mouseX</code> coordinate to an entire array of touches fundamentally changes how we must architect our logic to handle multiple independent actors at once?</p>
 </div>
 <details>
 <summary>MicroSim: Multi-Touch Canvas</summary>
@@ -1628,9 +1628,9 @@ Remember, artists! Because touches is an array, you have to iterate through it u
 <div class="admonition mascot-tip">
 <p class="admonition-title">Math Magic!</p>
 <p><img alt="Palette giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
-The <code>dist()</code> function is your best friend when working with circles! It uses the Pythagorean theorem under the hood to measure the exact distance between two points!</p>
-</div>
+Want to save some time? Instead of writing out the complex Pythagorean theorem for every circular hit test, just use p5.js's built-in <code>dist()</code> function! It calculates the exact distance between two points behind the scenes.</p>
 <p>The concept of hit testing scales up to more complex shapes using techniques like polygon hit testing, but rectangles and circles cover 90% of use cases in 2D interactive design. By combining Hit Test Point Rect and Hit Test Point Circle, you can create intricate, responsive interfaces.</p>
+</div>
 <p>Imagine a game where you have to tap falling stars. The stars are circles, so you use Hit Test Point Circle to check if the user's tap coordinates intersect with any of the stars on screen. If <code>true</code>, you remove the star and add a point to the score!</p>
 <h2 id="hovering-and-dragging">Hovering and Dragging<a class="headerlink" href="#hovering-and-dragging" title="Permanent link">&para;</a></h2>
 <p>On a desktop computer, before you click an object, you often move your mouse over it. This triggers a <strong>Hover Focus State</strong>, where the object might light up or change color to indicate it is interactive. It is important to note that pure touch devices <em>do not</em> have a hover state—you are either touching the screen or you aren't! But for hybrid environments (like laptops with touchscreens), programming a hover state is still crucial for accessibility and user experience.</p>
@@ -1681,7 +1681,7 @@ The <code>dist()</code> function is your best friend when working with circles! 
 <div class="admonition mascot-warning">
 <p class="admonition-title">Pointer Lock Constraints</p>
 <p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
-Be careful with Pointer Lock! Browsers require a user to explicitly click the canvas before you can request a pointer lock, for security reasons. You can't just trap their mouse automatically!</p>
+Watch out for security blocks! Browsers will prevent your code from trapping the user's mouse unless they initiate the action. To avoid a broken interface, always tie your <code>requestPointerLock()</code> call to a <code>mouseClicked()</code> event rather than firing it automatically in <code>setup()</code>.</p>
 </div>
 <details>
 <summary>MicroSim: Device Orientation Maze</summary>
@@ -1736,7 +1736,7 @@ Be careful with Pointer Lock! Browsers require a user to explicitly click the ca
 <div class="admonition mascot-celebration">
 <p class="admonition-title">You Did It!</p>
 <p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
-Masterful work, artists! You've learned how to read the physical world through code! From multi-touch to mobile sensors, your interactive palette is richer than ever. Keep exploring and painting with data!</p>
+Incredible work, artists! You just mastered the Touch Touches Array, multi-touch pinch gestures, and mapping Device Motion Acceleration to digital interactions. Your interactive palette is richer than ever!</p>
 </div>
 
 

@@ -1708,11 +1708,11 @@
 <h1 id="dom-controls-input-fields-ui-elements">DOM Controls, Input Fields &amp; UI Elements<a class="headerlink" href="#dom-controls-input-fields-ui-elements" title="Permanent link">&para;</a></h1>
 <div class="admonition mascot-welcome">
 <p class="admonition-title">Welcome Artists!</p>
-<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
-Time to color outside the loops! Welcome to Chapter 15, where we'll turn your sketches into interactive dashboards. Let's blend some code!</p>
+<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" /></p>
+<p>Palette here! Want to give your users a dashboard to play with your generative art? This chapter shows you how to build sliders, buttons, and text inputs right on top of your canvas. Let's turn your sketches into professional, interactive tools!</p>
 </div>
-<h2 id="the-mixing-desk-metaphor">The Mixing Desk Metaphor<a class="headerlink" href="#the-mixing-desk-metaphor" title="Permanent link">&para;</a></h2>
 <p>Imagine stepping into a professional recording studio or a live concert venue. What is the first thing that catches your eye? It is almost certainly the massive mixing desk—a glowing dashboard covered in hundreds of sliders, buttons, knobs, and dials. The audio engineer uses this interface to shape the music, tweaking the bass, raising the vocals, and adjusting the tempo in real-time. </p>
+<h2 id="the-mixing-desk-metaphor">The Mixing Desk Metaphor<a class="headerlink" href="#the-mixing-desk-metaphor" title="Permanent link">&para;</a></h2>
 <p>Up until now, your p5.js sketches have been a bit like a pre-recorded track or an instrument that only responds to simple mouse clicks and keyboard presses. While mouse positions and keyboard events are fantastic for direct interaction, they can sometimes feel limiting. What if you want your users to choose a specific color from a palette, type in their name, select a mode from a list, or smoothly transition between different sizes using a sliding scale? </p>
 <p>To build these richer experiences, we need to build our own mixing desk. In the world of web development and p5.js, this mixing desk is constructed using the Document Object Model (DOM). The DOM is the structure of the web page itself. By using p5.js DOM libraries, we can create standard HTML controls—buttons, sliders, text inputs, dropdowns—and place them right alongside or over our sketch canvas. </p>
 <p>This chapter is your guide to building that dashboard. You will learn how to instantiate these controls, organize them neatly, style them to match your aesthetic, and wire them up so that every toggle, slide, and click immediately influences the generative artwork on your canvas. </p>
@@ -1740,7 +1740,7 @@ Time to color outside the loops! Welcome to Chapter 15, where we'll turn your sk
 <div class="admonition mascot-thinking">
 <p class="admonition-title">Hooking up the wires</p>
 <p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
-Remember, artists: a button does nothing until you tell it what to do! Always use <code>.mousePressed()</code> to connect your button to a function. It's like wiring a pedal to a synthesizer.</p>
+Think about it like this: the DOM interface and your p5.js canvas exist in two fundamentally different systems. A button doesn't intrinsically know about your sketch. Notice how we are establishing an architectural bridge—using event listeners to allow actions in the HTML world to safely mutate the state of the canvas world?</p>
 </div>
 <h3 id="create-slider-control"><strong>Create Slider Control</strong><a class="headerlink" href="#create-slider-control" title="Permanent link">&para;</a></h3>
 <p>While buttons are discrete (on or off, clicked or not), sliders represent a continuous range of values. They are the faders on our mixing desk. To <strong>Create Slider Control</strong>, we use the <code>createSlider(min, max, [default], [step])</code> function.</p>
@@ -1835,7 +1835,7 @@ Remember, artists: a button does nothing until you tell it what to do! Always us
 <div class="admonition mascot-warning">
 <p class="admonition-title">Checked vs Value</p>
 <p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
-Careful here! Unlike sliders and text inputs that use <code>.value()</code>, checkboxes use <code>.checked()</code> to see if they are ticked. It's a small detail, but a common stumbling block!</p>
+Watch out for undefined errors when reading checkboxes! Because a checkbox represents a boolean state rather than a continuous number or string, querying it with <code>.value()</code> will fail. To fix this and avoid broken logic, always use <code>.checked()</code> to verify if the box is ticked.</p>
 </div>
 <h3 id="create-radio-buttons"><strong>Create Radio Buttons</strong><a class="headerlink" href="#create-radio-buttons" title="Permanent link">&para;</a></h3>
 <p>If you have a small list of mutually exclusive options (where only one can be selected at a time) and you want them all visible at once, radio buttons are the way to go. To <strong>Create Radio Buttons</strong>, use <code>createRadio()</code>.</p>
@@ -1952,7 +1952,7 @@ Paragraphs add necessary context to your UI.</p>
 <div class="admonition mascot-tip">
 <p class="admonition-title">Absolute vs Relative</p>
 <p><img alt="Palette tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
-Using <code>.position()</code> places elements relative to the whole web page, not the canvas! If you want a button to sit inside your sketch, you have to add the canvas's X and Y coordinates to the button's position.</p>
+Want to place a DOM control perfectly over your sketch without guessing pixels? Store your canvas in a variable (<code>let cnv = createCanvas(...)</code>), then retrieve its top-left corner with <code>cnv.position()</code>. Add those <code>x</code> and <code>y</code> values to your button's position for perfect, dynamic alignment every time!</p>
 </div>
 <h3 id="dom-element-size"><strong>DOM Element Size</strong><a class="headerlink" href="#dom-element-size" title="Permanent link">&para;</a></h3>
 <p>You can also control the physical dimensions of your inputs. To adjust the <strong>DOM Element Size</strong>, use <code>.size(width, height)</code>.</p>
@@ -2034,7 +2034,7 @@ Using <code>.position()</code> places elements relative to the whole web page, n
 <div class="admonition mascot-celebration">
 <p class="admonition-title">Master of the Dashboard!</p>
 <p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
-Incredible work, artists! You've successfully built your very own mixing desk. By combining canvases with DOM elements, your creations are no longer just pictures; they are robust, interactive applications. Keep experimenting!</p>
+Incredible work, artists! You just mastered instantiating DOM elements, styling them with CSS classes, and wiring their values directly into your canvas loops. You have successfully built a robust, interactive dashboard!</p>
 </div>
 <h2 id="summary-and-next-steps">Summary and Next Steps<a class="headerlink" href="#summary-and-next-steps" title="Permanent link">&para;</a></h2>
 <p>In this chapter, we expanded our toolkit far beyond the canvas. We built a comprehensive UI dashboard—our mixing desk—using buttons, sliders, text inputs, dropdowns, checkboxes, radio buttons, and color pickers. We learned how to organize these controls using standard HTML structures like paragraphs, divs, and spans, and how to display images outside the sketch. </p>
