@@ -1,3 +1,7 @@
+---
+quality_score: 40
+readability_score: 51
+---
 # Touch Gestures, Mobile Sensors & Interaction
 
 ## Summary

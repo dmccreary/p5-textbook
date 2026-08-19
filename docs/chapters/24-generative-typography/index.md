@@ -1,3 +1,7 @@
+---
+quality_score: 40
+readability_score: 56
+---
 # Generative Typography & Vector Font Outlines
 
 ## Summary

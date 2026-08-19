@@ -1,3 +1,7 @@
+---
+quality_score: 40
+readability_score: 29
+---
 # Particle Systems, Forces & Steering Behaviors
 
 ## Summary

@@ -69,3 +69,22 @@ Always place mascot images in the admonition body, never in the title bar:
 - Put mascot admonitions back-to-back
 - Use the mascot for purely decorative purposes
 - Change Palette's personality or speech patterns
+
+## MicroSims (Interactive Examples)
+
+A core pedagogical goal of *The Art of Processing* is to provide hands-on, interactive learning through MicroSims. Text descriptions alone are insufficient for teaching complex, visual computational thinking.
+
+- **Requirement**: Whenever a complex concept can be illustrated with a dynamic, interactive example, you MUST include an in-line MicroSim. 
+- **Format**: If writing the chapter spec, use a `<details markdown="1">` block to define the MicroSim requirements. If the chapter has already been generated, embed the finished p5.js MicroSims directly using HTML `<iframe>` tags pointing to the built simulation.
+- **Tools**: Rely on p5.js for all interactive physics, graphics, or simulation demonstrations. Ensure they are highly visual and manipulative (e.g. including sliders, draggable points, or live readouts).
+
+## Quality Assurance & Validation
+
+All AI-generated markdown must undergo strict programmatic quality assurance. Human language models frequently hallucinate or drift away from strict formatting constraints.
+
+- **Post-Generation Rule**: After any chapter or markdown section is written, the generating agent MUST run automated validation scripts to verify its formatting.
+- **Mascot Validation**: Specifically, after generating chapter content, you must run `python scripts/check_mascots.py` to ensure that:
+  1. The chapter begins with a `mascot-welcome` and ends with a `mascot-celebration`.
+  2. Admonitions follow the strict custom CSS formatting rules.
+  3. No chapter is overwhelmed with too many mascot appearances (no more than 5-6).
+- If the quality checks fail, the agent is responsible for running an automated repair script (or manually fixing the file) until it passes validation before reporting completion to the user.

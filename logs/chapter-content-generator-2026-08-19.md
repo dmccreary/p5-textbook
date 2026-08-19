@@ -59,3 +59,25 @@ docs/chapters/02-2d-primitive-shapes/index.md
 docs/chapters/03-color-theory-pixels/index.md
 docs/chapters/04-variables-and-scope/index.md
 docs/chapters/05-control-flow-and-loops/index.md
+
+## Timing (Chapters 6-10 Parallel Generation)
+
+| Metric | Value |
+|--------|-------|
+| Start Time | 2026-08-19 08:01:00 |
+| End Time | 2026-08-19 08:04:30 |
+| Elapsed Time | 3 minutes 30 seconds |
+
+## Results
+
+- Total chapters: 5 (Chapters 6, 7, 8, 9, 10)
+- Total words: ~16,782
+- All chapters written successfully: Yes
+
+## Files Created/Updated
+
+docs/chapters/06-matrix-transformations/index.md
+docs/chapters/07-linear-motion-trig/index.md
+docs/chapters/08-polar-coordinates-easing/index.md
+docs/chapters/09-randomness-and-walks/index.md
+docs/chapters/10-perlin-noise-fields/index.md

@@ -1,3 +1,7 @@
+---
+quality_score: 40
+readability_score: 34
+---
 # Functions, Arrow Expressions & Callbacks
 
 ## Summary

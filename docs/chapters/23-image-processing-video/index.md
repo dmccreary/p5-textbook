@@ -1,3 +1,7 @@
+---
+quality_score: 40
+readability_score: 52
+---
 # Image Processing, Filters & Video Capture
 
 ## Summary

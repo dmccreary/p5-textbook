@@ -1,3 +1,7 @@
+---
+quality_score: 100
+readability_score: 54
+---
 # Color Theory, Color Modes & Pixel Manipulation
 
 ## Summary
@@ -51,6 +55,12 @@ This chapter builds on concepts from:
 
 ---
 
+
+!!! mascot-welcome "Welcome to Chapter 3!"
+    ![Palette waving welcome](../../img/mascot/welcome.png){ class="mascot-admonition-img" }
+    Palette here! Are you ready to dive into chapter 3? Time to color outside the loops!
+
+
 Welcome to Chapter 3! We are about to dive into one of the most vibrant, expressive, and fundamental aspects of digital art and creative coding: color and pixels. In our previous chapters, you learned the mechanics of drawing shapes—how to command the computer to plot points, draw lines, and render polygons on the digital canvas. But a world of only wireframes and black-and-white outlines can be a bit stark. Now, it's time to bring those geometries to life using the spectacular power of light and mathematics.
 
 By the end of this chapter, you won't just be picking colors from a standard menu like you do in traditional painting software. You will be calculating colors. You will be dynamically generating thousands of unique hues on the fly, manipulating transparency, and diving straight into the microscopic, granular level of the screen itself to reprogram individual pixels. Grab your digital paintbrush, and let's turn on the lights.
@@ -99,7 +109,9 @@ function draw() {
 ```
 
 > [!TIP]
-> **Palette the Chameleon says:** "When you use `fill(255, 0, 0)`, you are telling the computer's microscopic lighting crew to turn the red spotlight all the way up to maximum, and turn the green and blue spotlights completely off! If you want yellow, just turn on Red and Green at the same time: `fill(255, 255, 0)`!"
+!!! mascot-tip "Palette's Tip"
+    ![Palette tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
+    When you use `fill(255, 0, 0)`, you are telling the computer's microscopic lighting crew to turn the red spotlight all the way up to maximum, and turn the green and blue spotlights completely off! If you want yellow, just turn on Red and Green at the same time: `fill(255, 255, 0)`!
 
 What if you just want to draw something simple, like a black and white checkerboard or a stormy gray cloud? Sometimes you only want a shade of gray, varying purely from black to white with no color hue at all. For this, p5.js provides a convenient shortcut called the **Grayscale Value Syntax**. Instead of typing out three identical numbers like `fill(128, 128, 128)` to get a medium gray, you can just provide a single number: `fill(128)`. 
 - `fill(0)` gives you pure black (all lights off).
@@ -228,7 +240,9 @@ In p5.js, the visual canvas is ultimately just a grid of pixels. To gain access 
 Once the data is loaded into the `pixels` array, we can use a `for` loop to write code that mathematically alters those numbers. However, altering the numbers in the array does not automatically change the screen! The array is just a staging area in the computer's memory. After we have finished making our mathematical changes to the array, we must call the **Update Pixels Function**, written as `updatePixels()`, to blast our modified data back onto the actual screen.
 
 > [!NOTE]
-> **Palette the Chameleon says:** "Always remember the magical pixel sandwich! `loadPixels()` is the bottom slice of bread, `updatePixels()` is the top slice, and your crazy pixel math is the delicious filling in the middle. You can't eat the sandwich without both slices of bread! If you forget `updatePixels()`, nothing on your screen will change!"
+!!! mascot-tip "Palette's Tip"
+    ![Palette tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
+    Always remember the magical pixel sandwich! `loadPixels()` is the bottom slice of bread, `updatePixels()` is the top slice, and your crazy pixel math is the delicious filling in the middle. You can't eat the sandwich without both slices of bread! If you forget `updatePixels()`, nothing on your screen will change!
 
 #### Unraveling the Grid: **Pixels Array Indexing**
 
@@ -327,3 +341,8 @@ Color in the world of creative coding is so much more than just picking a pretty
 From painting with pure, additive light in the RGB space, to navigating the intuitive angles of the HSB color wheel compass, to diving deep into the microscopic memory architecture of the 1D pixels array, you now have complete, granular control over every photon of light emitting from the screen. By mastering these 34 concepts, you have unlocked the ability to write algorithms that generate dynamic, mathematically harmonious, and ethically accessible visual experiences. 
 
 You have learned to draw the shapes, and you have learned to light them up. In the next chapter, we will take these glowing, colored shapes and breathe the final element of life into them: movement over time!
+
+
+!!! mascot-celebration "Chapter Complete!"
+    ![Palette celebrating](../../img/mascot/celebration.png){{ class="mascot-admonition-img" }}
+    Amazing work! You've mastered another set of core concepts. Take a moment to celebrate!

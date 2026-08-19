@@ -1,3 +1,7 @@
+---
+quality_score: 40
+readability_score: 46
+---
 # 3D WebGL Coordinates & Primitive Geometries
 
 ## Summary

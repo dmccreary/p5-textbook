@@ -1,3 +1,7 @@
+---
+quality_score: 100
+readability_score: 63
+---
 # Control Flow, Loops & Array Data Structures
 
 ## Summary
@@ -38,6 +42,12 @@ This chapter builds on concepts from:
 
 ---
 
+
+!!! mascot-welcome "Welcome to Chapter 5!"
+    ![Palette waving welcome](../../img/mascot/welcome.png){ class="mascot-admonition-img" }
+    Palette here! Are you ready to dive into chapter 5? Time to color outside the loops!
+
+
 ## Introduction to Repetition: The Factory Assembly Line
 
 Welcome to Chapter 5! Have you ever had to do the exact same thing over and over again? Maybe it was writing sentences on a chalkboard as a punishment, or maybe it was stamping the same logo on a hundred different flyers. In programming, repeating tasks manually is the ultimate buzzkill. It's boring, prone to errors, and totally defeats the purpose of having a powerful computer at your fingertips.
@@ -71,8 +81,9 @@ What happens if you forget to update your loop counter variable? You fall into *
 **Infinite Loop Prevention** is crucial. You must always ensure that the condition evaluated in your `while` loop will eventually become false. If you are checking `count < 5`, you absolutely must ensure that `count` increases during the loop execution.
 
 > [!TIP]
-> **Palette the Chameleon says:** 
-> "Chameleons love a good loop—it's like our curly tails! But be careful not to tie yourself in a knot. Before you hit 'Run' on a `while` loop, always double-check that your counter is actually changing. I once got stuck looking at the same fly forever because my tongue's loop counter was broken. Don't be like me! Always practice **Infinite Loop Prevention**!"
+!!! mascot-tip "Palette's Tip"
+    ![Palette tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
+    Chameleons love a good loop—it's like our curly tails! But be careful not to tie yourself in a knot. Before you hit 'Run' on a `while` loop, always double-check that your counter is actually changing. I once got stuck looking at the same fly forever because my tongue's loop counter was broken. Don't be like me! Always practice **Infinite Loop Prevention**!
 
 ### The **For Loop Construct**
 
@@ -203,8 +214,9 @@ let lastPos = ballXPositions.pop(); // Returns 300. Array is back to [10, 50, 10
 ```
 
 > [!NOTE]
-> **Palette the Chameleon says:**
-> "Arrays are amazing! They're like my color palette. I can `push` a new color into my camouflage options, or `pop` one off if it's out of season. Just remember, **Array Element Indexing** starts at zero. If I want my first color, I ask for index 0. If I ask for index 1, I get the *second* color. It took me a few days to get used to it, but now zero-indexing feels as natural as catching a moth!"
+!!! mascot-tip "Palette's Tip"
+    ![Palette tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
+    Arrays are amazing! They're like my color palette. I can `push` a new color into my camouflage options, or `pop` one off if it's out of season. Just remember, **Array Element Indexing** starts at zero. If I want my first color, I ask for index 0. If I ask for index 1, I get the *second* color. It took me a few days to get used to it, but now zero-indexing feels as natural as catching a moth!
 
 
 ## Advanced Array Maneuvers
@@ -350,3 +362,8 @@ We then introduced the **Array Data Structure**, leveraging **Array Element Inde
 Finally, we used a **Boolean Flag Variable** and **State Machine Logic** to control the flow and state of our applications, breaking out of loops when necessary using **Break and Continue Keywords**.
 
 You now have the tools to manage massive amounts of data and create complex visual patterns with just a few lines of code. Onward to the next challenge!
+
+
+!!! mascot-celebration "Chapter Complete!"
+    ![Palette celebrating](../../img/mascot/celebration.png){{ class="mascot-admonition-img" }}
+    Amazing work! You've mastered another set of core concepts. Take a moment to celebrate!

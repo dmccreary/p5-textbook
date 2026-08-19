@@ -1,3 +1,7 @@
+---
+quality_score: 40
+readability_score: 52
+---
 # DOM Controls, Input Fields & UI Elements
 
 ## Summary

@@ -1,3 +1,7 @@
+---
+quality_score: 40
+readability_score: 35
+---
 # Development Environment, Tools & Pedagogy
 
 ## Summary

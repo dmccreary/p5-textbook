@@ -1,3 +1,7 @@
+---
+quality_score: 100
+readability_score: 62
+---
 # Variables, Data Types & Scope Fundamentals
 
 ## Summary
@@ -29,6 +33,12 @@ This chapter builds on concepts from:
 - [Chapter 3: Color Theory, Color Modes & Pixel Manipulation](../03-color-theory-pixels/index.md)
 
 ---
+
+
+!!! mascot-welcome "Welcome to Chapter 4!"
+    ![Palette waving welcome](../../img/mascot/welcome.png){ class="mascot-admonition-img" }
+    Palette here! Are you ready to dive into chapter 4? Time to color outside the loops!
+
 
 ## Introduction: The Magic of Memory
 
@@ -67,7 +77,10 @@ playerHealth = playerHealth - 20;
 
 Now, the `playerHealth` box holds the number 80. Notice that we didn't use the `let` keyword the second time. You only need to use `let` when you are creating the box for the very first time. After the box exists, you can just refer to it by its name to change what's inside. 
 
-!!! mascot "Palette the Chameleon says..."
+!!! mascot-tip "Palette's Tip"
+    ![Palette tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
+    !!! mascot Palette
+ the Chameleon says..."
     "Think of `let` like a dry-erase marker on a plastic storage bin. You can write 'Winter Clothes' on it today, but next season you can wipe it off and write 'Summer Gear'. The label stays the same, but you can swap out the contents whenever you want! That's why it's a *variable*—it varies!"
 
 ### Choosing Good Names for Your Boxes
@@ -317,7 +330,10 @@ if (!isGameOver) {
 }
 ```
 
-!!! mascot "Palette the Chameleon says..."
+!!! mascot-tip "Palette's Tip"
+    ![Palette tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
+    !!! mascot Palette
+ the Chameleon says..."
     "The Logical Operators are exactly like bouncers at an exclusive club! AND (`&&`) is the strict bouncer who says 'You need an ID AND a VIP ticket.' OR (`||`) is the chill bouncer who says 'You need a ticket OR a VIP pass, either is fine.' NOT (`!`) is the weird bouncer who says 'If you are NOT wearing sneakers, you can come in!'"
 
 ## Advanced Decision Making
@@ -402,3 +418,6 @@ Practice combining your relational and logical operators to build complex rules 
 In the next chapter, we will look at loops: how to repeat actions hundreds of times a second without having to write hundreds of lines of code!
 
 
+!!! mascot-celebration "Chapter Complete!"
+    ![Palette celebrating](../../img/mascot/celebration.png){{ class="mascot-admonition-img" }}
+    Amazing work! You've mastered another set of core concepts. Take a moment to celebrate!

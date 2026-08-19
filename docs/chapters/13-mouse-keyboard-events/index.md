@@ -1,3 +1,7 @@
+---
+quality_score: 40
+readability_score: 61
+---
 # Mouse & Keyboard User Event Sensing
 
 ## Summary

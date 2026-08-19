@@ -1,3 +1,7 @@
+---
+quality_score: 40
+readability_score: 52
+---
 # Audio Synthesis, Oscillators & Envelopes
 
 ## Summary
