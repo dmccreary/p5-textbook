@@ -65,16 +65,14 @@ In this chapter, we will establish the foundational mental models needed to brid
     ![Palette waving welcome](../../img/mascot/welcome.png){ class="mascot-admonition-img" }
     Welcome, creators! Have you ever looked at a blank digital screen and wished you could just paint with pure logic? I'm Palette, and in this very first chapter, we are going to build your digital studio from the ground up to bridge visual art with computer programming. Time to color outside the loops!
 
-## Meet Your Guide: Palette
+    I'll be popping into the margins all the way through this book, but I do not show up randomly. I have exactly **six jobs**, and you'll learn to recognize me by which one I'm doing:
 
-I'll be popping into the margins all the way through this book, but I do not show up randomly. I have exactly **six jobs**, and you'll learn to recognize me by which one I'm doing:
-
-1. **Welcome you** at the start of every chapter.
-2. **Help you think things through** when an idea is particularly clever or abstract.
-3. **Give you tips** — the secret moves a working creative coder uses.
-4. **Warn you gently** about common mistakes and syntax pitfalls.
-5. **Encourage you** when a difficult concept might feel overwhelming.
-6. **Celebrate with you** at the end of each chapter when you've earned it!
+    1. **Welcome you** at the start of every chapter.
+    2. **Help you think things through** when an idea is particularly clever or abstract.
+    3. **Give you tips** — the secret moves a working creative coder uses.
+    4. **Warn you gently** about common mistakes and syntax pitfalls.
+    5. **Encourage you** when a difficult concept might feel overwhelming.
+    6. **Celebrate with you** at the end of each chapter when you've earned it!
 
 ## Building the Artist's Studio
 

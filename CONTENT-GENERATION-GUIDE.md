@@ -62,7 +62,7 @@ Each mascot pose serves a specific cognitive and pedagogical purpose. Future age
 - **Instructional Purpose**: Addresses the "What's In It For Me?" (WIIFM) factor to break down learning anxiety before diving into technical content. It is not there to teach the chapter yet; it is there to **sell** the chapter.
 - **Rule**: Do not summarize technical concepts or explain mechanics. Tell the student *why* they should care and *what amazing things* they will build.
 - **Tone**: Fun, funny, and sincerely warm. Use enthusiastic art-themed metaphors. Always include a signature catchphrase like 'Time to color outside the loops!'
-- **Length**: Strictly 2-4 sentences.
+- **Length**: Strictly 2-4 sentences. *(Exception: Chapter 1, where Palette formally introduces her six jobs).*
 
 #### 2. `mascot-thinking` (Cognitive Scaffolding / Mental Models)
 - **Instructional Purpose**: Highlights a "Eureka!" moment, an abstraction, or a shift in mental models (e.g., computational thinking). It signals to the reader that they need to pause and process the *why* behind the *how*.
@@ -100,7 +100,7 @@ Each mascot pose serves a specific cognitive and pedagogical purpose. Future age
 
 **Don't:**
 
-- Use Palette more than 5-6 times per chapter
+- Use Palette more than 7-8 times per chapter
 - Put mascot admonitions back-to-back
 - Use the mascot for purely decorative purposes
 - Change Palette's personality or speech patterns
