@@ -56,11 +56,13 @@ Always place mascot images in the admonition body, never in the title bar:
 
 ### Welcome Admonition Guidelines
 
-The `mascot-welcome` admonition has a very specific purpose: **to get the student to read the chapter.** 
-- **Goal**: It acts as a sales pitch. It must be a fun, funny, yet sincerely warm welcome that encourages the reader to dive into the chapter.
-- **Voice**: Must be written in the voice of the mascot (Palette).
-- **Length**: Strictly 2-4 sentences.
-- **Content**: Provide a short summary of *WHY* they should read the chapter. **NEVER** start explaining the actual concepts or mechanics in the welcome text.
+The `mascot-welcome` admonition is an **advance organizer** and **motivational hook**. It is not there to teach the chapter yet; it is there to **sell** the chapter. It addresses the "What's In It For Me?" (WIIFM) factor to break down learning anxiety.
+
+When future agents generate this admonition, they must adhere to these rules:
+1. **Be a Salesperson, Not a Professor**: Do not summarize technical concepts, list prerequisites, or explain the mechanics. Tell the student *why* they should care and *what amazing things* they will be able to build by the end.
+2. **Embody the Persona**: Write entirely in the voice of Palette the Chameleon. Use enthusiastic, art-themed metaphors (e.g., 'digital clay', 'painting with pure math'). Call the learners 'artists' or 'creators', and always include a signature catchphrase like 'Time to color outside the loops!'
+3. **Keep it Punchy**: You have precisely 2 to 4 sentences to hook the reader. Make them warm, funny, and impactful.
+4. **Contrast the Tone**: The textbook text immediately following the admonition will transition into a formal, academic introduction. The mascot's job is to provide a vibrant burst of energy right before that transition occurs.
 
 ### Do's and Don'ts
 
