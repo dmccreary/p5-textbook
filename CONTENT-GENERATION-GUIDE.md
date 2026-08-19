@@ -54,15 +54,40 @@ Always place mascot images in the admonition body, never in the title bar:
 | Difficult content | mascot-encourage | Where students may struggle |
 | Section completion | mascot-celebration | End of major sections |
 
-### Welcome Admonition Guidelines
+### Mascot Admonition Guidelines (Instructional Design Rules)
 
-The `mascot-welcome` admonition is an **advance organizer** and **motivational hook**. It is not there to teach the chapter yet; it is there to **sell** the chapter. It addresses the "What's In It For Me?" (WIIFM) factor to break down learning anxiety.
+Each mascot pose serves a specific cognitive and pedagogical purpose. Future agents generating these admonitions must strictly adhere to the following instructional design rules:
 
-When future agents generate this admonition, they must adhere to these rules:
-1. **Be a Salesperson, Not a Professor**: Do not summarize technical concepts, list prerequisites, or explain the mechanics. Tell the student *why* they should care and *what amazing things* they will be able to build by the end.
-2. **Embody the Persona**: Write entirely in the voice of Palette the Chameleon. Use enthusiastic, art-themed metaphors (e.g., 'digital clay', 'painting with pure math'). Call the learners 'artists' or 'creators', and always include a signature catchphrase like 'Time to color outside the loops!'
-3. **Keep it Punchy**: You have precisely 2 to 4 sentences to hook the reader. Make them warm, funny, and impactful.
-4. **Contrast the Tone**: The textbook text immediately following the admonition will transition into a formal, academic introduction. The mascot's job is to provide a vibrant burst of energy right before that transition occurs.
+#### 1. `mascot-welcome` (Motivational Hook / Advance Organizer)
+- **Instructional Purpose**: Addresses the "What's In It For Me?" (WIIFM) factor to break down learning anxiety before diving into technical content. It is not there to teach the chapter yet; it is there to **sell** the chapter.
+- **Rule**: Do not summarize technical concepts or explain mechanics. Tell the student *why* they should care and *what amazing things* they will build.
+- **Tone**: Fun, funny, and sincerely warm. Use enthusiastic art-themed metaphors. Always include a signature catchphrase like 'Time to color outside the loops!'
+- **Length**: Strictly 2-4 sentences.
+
+#### 2. `mascot-thinking` (Cognitive Scaffolding / Mental Models)
+- **Instructional Purpose**: Highlights a "Eureka!" moment, an abstraction, or a shift in mental models (e.g., computational thinking). It signals to the reader that they need to pause and process the *why* behind the *how*.
+- **Rule**: Do not use this for mere facts or syntax. Use it to draw attention to underlying algorithms, core mechanics, or architectural patterns.
+- **Tone**: Insightful, reflective, and thought-provoking. Use rhetorical questions or visual analogies (e.g., "Notice how...", "Think about it like this...").
+
+#### 3. `mascot-tip` (Just-in-Time Support / Heuristics)
+- **Instructional Purpose**: Provides a heuristic, a shortcut, or a best practice that isn't strictly required but significantly reduces cognitive load or friction. It acts as "expert insight" whispered to the novice.
+- **Rule**: Keep it highly actionable. It must contain a practical, immediate takeaway (like a keyboard shortcut, a visual metaphor for a variable, or a clever math trick).
+- **Tone**: Conspiratorial, helpful, and clever (e.g., "Here's a secret...", "Want to save some time?").
+
+#### 4. `mascot-warning` (Anticipatory Guidance / Pitfall Prevention)
+- **Instructional Purpose**: Serves as "anticipatory guidance" to prevent common novice pitfalls (e.g., infinite loops, CORS errors, syntax gotchas). It interrupts flow specifically to prevent frustration.
+- **Rule**: Clearly state the pitfall, *why* it happens, and exactly how to avoid or fix it. You must provide the solution, not just the warning.
+- **Tone**: Alert but reassuring. Never condescending or scary (e.g., "Watch out for...", "A common trap here is...").
+
+#### 5. `mascot-encourage` (Affective Support / Normalizing Struggle)
+- **Instructional Purpose**: Provides affective (emotional) support at known points of high cognitive friction or frustration (e.g., recursion, complex vector math). It normalizes struggle and promotes a growth mindset.
+- **Rule**: Use ONLY when introducing a notoriously difficult topic. Validate the difficulty, remind them of past successes, and encourage them to experiment or take it step by step.
+- **Tone**: Empathetic, validating, and motivating (e.g., "If this feels overwhelming, that's completely normal...", "Take a deep breath...").
+
+#### 6. `mascot-celebration` (Formative Reinforcement / Closure)
+- **Instructional Purpose**: Provides positive reinforcement and closure at the end of a major cognitive milestone or chapter. It satisfies the "Satisfaction" component of the ARCS model to consolidate learning.
+- **Rule**: Do not just say "Good job." Explicitly name the specific concept or skill they just mastered so they feel a concrete sense of achievement.
+- **Tone**: Joyful, celebratory, and proud (e.g., "Incredible work!", "You just mastered...").
 
 ### Do's and Don'ts
 
