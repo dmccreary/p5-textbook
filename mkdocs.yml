@@ -71,6 +71,7 @@ nav:
       - Concept Taxonomy: learning-graph/concept-taxonomy.md
       - Graph Quality Analysis: learning-graph/quality-metrics.md
       - Taxonomy Distribution: learning-graph/taxonomy-distribution.md
+      - Mascot Test: learning-graph/mascot-test.md
 
   - MicroSims:
       - List of MicroSims: sims/index.md
