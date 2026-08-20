@@ -1,3 +1,6 @@
+// P5 Canvas Inspector MicroSim
+// For a complete lession plan see:  https://dmccreary.github.io/p5-textbook/sims/canvas-inspector/
+// This MicroSim is part of the "Art of Processing" interactive intelligent textbook: https://dmccreary.github.io/p5-textbook
 // CANVAS_HEIGHT: 550
 let canvasWidth = 400;
 let drawHeight = 400;
@@ -137,6 +140,12 @@ function draw() {
   textAlign(CENTER, TOP);
   noStroke();
   text('Canvas Inspector', canvasWidth/2, 10);
+
+  textSize(14);
+  textStyle(ITALIC);
+  fill(80);
+  text('drag red dot to move point', canvasWidth/2, 40);
+  textStyle(NORMAL);
 
   // Info panel for loop counts
   fill(255, 255, 255, 230);

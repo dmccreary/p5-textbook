@@ -1,0 +1,1256 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An interactive intelligent textbook about the p5.js processing library and how to use it to teach computational thinking.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/p5-textbook/learning-graph/microsim-specifications/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>MicroSim Functional Specifications - The Art of Processing</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta property="og:type" content="website">
+      
+        <meta property="og:title" content="MicroSim Functional Specifications - The Art of Processing">
+      
+        <meta property="og:description" content="An interactive intelligent textbook about the p5.js processing library and how to use it to teach computational thinking.">
+      
+        <meta property="og:image" content="https://dmccreary.github.io/p5-textbook/assets/images/social/learning-graph/microsim-specifications.png">
+      
+        <meta property="og:image:type" content="image/png">
+      
+        <meta property="og:image:width" content="1200">
+      
+        <meta property="og:image:height" content="630">
+      
+        <meta property="og:url" content="https://dmccreary.github.io/p5-textbook/learning-graph/microsim-specifications/">
+      
+        <meta name="twitter:card" content="summary_large_image">
+      
+        <meta name="twitter:title" content="MicroSim Functional Specifications - The Art of Processing">
+      
+        <meta name="twitter:description" content="An interactive intelligent textbook about the p5.js processing library and how to use it to teach computational thinking.">
+      
+        <meta name="twitter:image" content="https://dmccreary.github.io/p5-textbook/assets/images/social/learning-graph/microsim-specifications.png">
+      
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#microsim-functional-specifications" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="The Art of Processing" class="md-header__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            The Art of Processing
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              MicroSim Functional Specifications
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="The Art of Processing" class="md-nav__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    The Art of Processing
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-canvas-inspector" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Canvas Inspector
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-shape-builder" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Shape Builder
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-color-mixer" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Color Mixer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-algorithm-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Algorithm Visualizer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-robot-arm-kinematics" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Robot Arm Kinematics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-harmonic-oscillator" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Harmonic Oscillator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-terrain-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Terrain Generator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-particle-physics-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Particle Physics Engine
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-interactive-sandbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Interactive Sandbox
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-ui-component-playground" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. UI Component Playground
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-data-flow-debugger" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Data Flow Debugger
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-3d-scene-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. 3D Scene Editor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-synthesizer-board" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. Synthesizer Board
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-audio-visualizer-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      14. Audio Visualizer Lab
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-pixel-processing-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      15. Pixel Processing Pipeline
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-kinetic-typography-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      16. Kinetic Typography Engine
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-dev-environment-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      17. Dev Environment Simulator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-pedagogical-pattern-matcher" class="md-nav__link">
+    <span class="md-ellipsis">
+      18. Pedagogical Pattern Matcher
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/p5-textbook/blob/main/docs/learning-graph/microsim-specifications.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+    </a>
+  
+  
+
+
+<h1 id="microsim-functional-specifications">MicroSim Functional Specifications<a class="headerlink" href="#microsim-functional-specifications" title="Permanent link">¶</a></h1>
+<p>This document provides the detailed functional specifications for the 18 core MicroSim environments required for the <em>Art of Processing</em> textbook. These environments serve as the interactive backbone for teaching all 600 concepts in the learning graph.</p>
+<h2 id="1-canvas-inspector">1. Canvas Inspector<a class="headerlink" href="#1-canvas-inspector" title="Permanent link">¶</a></h2>
+<p><strong>Primary Learning Domain</strong>: Foundation Concepts (FND)</p>
+<p><strong>Educational Purpose</strong>:
+To visualize the foundational p5.js canvas coordinate plane and the render loop mechanics.</p>
+<p><strong>Functional Specification</strong>:
+A split-screen or single-canvas interactive grid displaying an (x,y) plane. A point can be dragged across the grid, instantly updating a visible coordinate readout. The canvas features visual counters displaying the number of times <code>setup()</code> and <code>draw()</code> have executed. Modifying the Frame Rate slider dynamically changes the speed of the <code>draw()</code> loop counter.</p>
+<p><strong>Required Interactive Controls</strong>:
+- Coordinate Dragger (Canvas Interaction)
+- Simulated Width Slider
+- Simulated Height Slider
+- Frame Rate Slider
+- Background Color Picker</p>
+<hr>
+<h2 id="2-shape-builder">2. Shape Builder<a class="headerlink" href="#2-shape-builder" title="Permanent link">¶</a></h2>
+<p><strong>Primary Learning Domain</strong>: 2D Shape &amp; Geometry (PRIM)</p>
+<p><strong>Educational Purpose</strong>:
+To teach 2D primitive shape drawing, origin modes, and stroke/fill properties.</p>
+<p><strong>Functional Specification</strong>:
+An interactive vector playground. The student selects a primitive shape (rect, ellipse, triangle, line) and places it on the canvas. They can toggle rendering modes like <code>CENTER</code> or <code>CORNER</code> and observe how the origin point shifts relative to the shape's visual boundaries. Properties like stroke weight and fill color can be dynamically altered.</p>
+<p><strong>Required Interactive Controls</strong>:
+- Shape Type Dropdown
+- Position (x,y) Sliders
+- Size (w,h) Sliders
+- rectMode/ellipseMode Toggles
+- Stroke Weight Slider
+- Fill/NoFill Toggle</p>
+<hr>
+<h2 id="3-color-mixer">3. Color Mixer<a class="headerlink" href="#3-color-mixer" title="Permanent link">¶</a></h2>
+<p><strong>Primary Learning Domain</strong>: Color Theory &amp; Pixels (CLR)</p>
+<p><strong>Educational Purpose</strong>:
+To demonstrate color spaces (RGB vs HSB), alpha transparency, and pixel array manipulation.</p>
+<p><strong>Functional Specification</strong>:
+Features two main interactive zones. Zone 1 is a color mixing area where sliders adjust RGB and HSB channels to match target colors. Zone 2 is a 'magnifying glass' over a small image or gradient, allowing the student to inspect the <code>pixels[]</code> array values (R, G, B, A) at specific coordinates in real-time.</p>
+<p><strong>Required Interactive Controls</strong>:
+- Color Space Toggle (RGB/HSB)
+- Red/Hue Slider
+- Green/Saturation Slider
+- Blue/Brightness Slider
+- Alpha Slider
+- Blend Mode Dropdown
+- Pixel Magnifier (Mouse Interaction)</p>
+<hr>
+<h2 id="4-algorithm-visualizer">4. Algorithm Visualizer<a class="headerlink" href="#4-algorithm-visualizer" title="Permanent link">¶</a></h2>
+<p><strong>Primary Learning Domain</strong>: Control Flow &amp; Arrays (FLOW)</p>
+<p><strong>Educational Purpose</strong>:
+To visualize loop execution (for/while), conditional branching (if/else), and array iterations.</p>
+<p><strong>Functional Specification</strong>:
+A step-through visualizer where a standard loop generates a 2D grid of shapes. The student can step forward or backward through the loop iterations. A conditional logic threshold determines the color or shape drawn, which the student can adjust via sliders to immediately see how conditional changes affect the overall pattern.</p>
+<p><strong>Required Interactive Controls</strong>:
+- Step Forward/Backward Buttons
+- Loop Type Selector (For/While)
+- Condition Threshold Slider
+- Array Length Adjuster</p>
+<hr>
+<h2 id="5-robot-arm-kinematics">5. Robot Arm Kinematics<a class="headerlink" href="#5-robot-arm-kinematics" title="Permanent link">¶</a></h2>
+<p><strong>Primary Learning Domain</strong>: Matrix Transformations (XFORM)</p>
+<p><strong>Educational Purpose</strong>:
+To teach translation, rotation, scaling, and the matrix stack (<code>push()</code> and <code>pop()</code>).</p>
+<p><strong>Functional Specification</strong>:
+A hierarchical, multi-segment robotic arm drawn using transformations. The student can independently rotate and translate each joint. A toggle visualizes the local coordinate axes for each segment, demonstrating how <code>translate()</code> and <code>rotate()</code> compound, and how <code>push()</code>/<code>pop()</code> isolate these transformations.</p>
+<p><strong>Required Interactive Controls</strong>:
+- Base X/Y Translation Sliders
+- Joint 1 Rotation Slider
+- Joint 2 Rotation Slider
+- Scale Slider
+- Show Local Axes Checkbox
+- Push/Pop Toggle</p>
+<hr>
+<h2 id="6-harmonic-oscillator">6. Harmonic Oscillator<a class="headerlink" href="#6-harmonic-oscillator" title="Permanent link">¶</a></h2>
+<p><strong>Primary Learning Domain</strong>: Animation &amp; Trigonometry (TRIG)</p>
+<p><strong>Educational Purpose</strong>:
+To map trigonometric functions (sine/cosine) and polar coordinates to animation and motion.</p>
+<p><strong>Functional Specification</strong>:
+A real-time graphing tool mapping a rotating circle (polar coordinates) to a standard sine/cosine wave (Cartesian). The student can adjust the amplitude and frequency of the oscillator and observe the resulting Lissajous curves or wave patterns.</p>
+<p><strong>Required Interactive Controls</strong>:
+- Amplitude Slider
+- Frequency Slider
+- Phase Offset Slider
+- Polar/Cartesian View Toggle
+- Angle Mode Toggle (Radians/Degrees)</p>
+<hr>
+<h2 id="7-terrain-generator">7. Terrain Generator<a class="headerlink" href="#7-terrain-generator" title="Permanent link">¶</a></h2>
+<p><strong>Primary Learning Domain</strong>: Randomness &amp; Perlin Noise (NOISE)</p>
+<p><strong>Educational Purpose</strong>:
+To contrast pure randomness with smooth Perlin noise and understand noise detail.</p>
+<p><strong>Functional Specification</strong>:
+Generates a 1D and 2D landscape visualization. The student can toggle between standard <code>random()</code> and <code>noise()</code> to see the structural difference. Sliders allow the adjustment of noise scale, octaves, and falloff, directly altering the generated terrain profile.</p>
+<p><strong>Required Interactive Controls</strong>:
+- Random vs Noise Toggle
+- Noise Scale Slider
+- Octaves (noiseDetail) Slider
+- Falloff Slider
+- Seed Reset Button</p>
+<hr>
+<h2 id="8-particle-physics-engine">8. Particle Physics Engine<a class="headerlink" href="#8-particle-physics-engine" title="Permanent link">¶</a></h2>
+<p><strong>Primary Learning Domain</strong>: Vector Math &amp; Physics (VEC)</p>
+<p><strong>Educational Purpose</strong>:
+To teach vector addition, velocity, acceleration, mass, and environmental forces.</p>
+<p><strong>Functional Specification</strong>:
+A sandbox containing an emitter that shoots particles. The student can manipulate environmental vector forces like gravity and wind. The simulation calculates the sum of forces (F=ma) applied to the particles' velocity vectors, demonstrating realistic physics trajectories.</p>
+<p><strong>Required Interactive Controls</strong>:
+- Wind Force Vector Joystick
+- Gravity Slider
+- Mass Slider
+- Friction/Drag Coefficient Slider
+- Reset Emitter Button</p>
+<hr>
+<h2 id="9-interactive-sandbox">9. Interactive Sandbox<a class="headerlink" href="#9-interactive-sandbox" title="Permanent link">¶</a></h2>
+<p><strong>Primary Learning Domain</strong>: User Input &amp; Sensing (INP)</p>
+<p><strong>Educational Purpose</strong>:
+To handle asynchronous user events (mouse, keyboard, touch) and device inputs.</p>
+<p><strong>Functional Specification</strong>:
+A unified canvas that acts as an event logger and interactive toy. It visually responds to clicks, double-clicks, dragging, and keypresses. An overlay displays the exact p5.js event variables (<code>mouseX</code>, <code>keyIsPressed</code>, <code>keyCode</code>) triggering in real-time.</p>
+<p><strong>Required Interactive Controls</strong>:
+- Interactive Canvas Area
+- Key Logger Readout
+- Touch Simulator Toggle
+- Clear Events Button</p>
+<hr>
+<h2 id="10-ui-component-playground">10. UI Component Playground<a class="headerlink" href="#10-ui-component-playground" title="Permanent link">¶</a></h2>
+<p><strong>Primary Learning Domain</strong>: DOM Controls &amp; HTML (DOM)</p>
+<p><strong>Educational Purpose</strong>:
+To teach the integration of HTML DOM elements (sliders, buttons, inputs) over the p5.js canvas.</p>
+<p><strong>Functional Specification</strong>:
+Demonstrates absolute and relative positioning of DOM elements over a canvas. The student creates generic DOM elements and uses sliders to adjust their <code>position()</code> and <code>style()</code>, visually breaking them out of the standard canvas flow to build a UI overlay.</p>
+<p><strong>Required Interactive Controls</strong>:
+- DOM Element Creator Dropdown
+- Element X/Y Position Sliders
+- CSS Style Injector Input
+- Canvas/DOM Parent Toggle</p>
+<hr>
+<h2 id="11-data-flow-debugger">11. Data Flow Debugger<a class="headerlink" href="#11-data-flow-debugger" title="Permanent link">¶</a></h2>
+<p><strong>Primary Learning Domain</strong>: Modern ES6+ JavaScript (JS)</p>
+<p><strong>Educational Purpose</strong>:
+To visualize standard JS mechanics like array mapping, filtering, object destructuring, and scope.</p>
+<p><strong>Functional Specification</strong>:
+A visual data-pipeline tool. An input array of objects is passed through a sequence of higher-order functions (<code>map</code>, <code>filter</code>, <code>reduce</code>). The student configures the filter conditions or map transformations and sees the visual output representation (e.g., shapes changing color or filtering out) at each stage.</p>
+<p><strong>Required Interactive Controls</strong>:
+- Data Array Length Slider
+- Filter Condition Dropdown
+- Map Transformation Selector
+- Variable Scope Inspector Toggle</p>
+<hr>
+<h2 id="12-3d-scene-editor">12. 3D Scene Editor<a class="headerlink" href="#12-3d-scene-editor" title="Permanent link">¶</a></h2>
+<p><strong>Primary Learning Domain</strong>: 3D WebGL Graphics (WEBGL)</p>
+<p><strong>Educational Purpose</strong>:
+To introduce the WebGL rendering context, 3D primitives, camera controls, and lighting models.</p>
+<p><strong>Functional Specification</strong>:
+A 3D viewport utilizing <code>orbitControl()</code>. The student can place 3D primitives (box, sphere, torus) and toggle different light sources (ambient, directional, point, spot). Different materials (basic, normal, ambient, specular) can be applied to see how they react to the lighting.</p>
+<p><strong>Required Interactive Controls</strong>:
+- Orbit Controls (Mouse Drag)
+- Light Type Selector
+- Light Position Sliders
+- Material Type Dropdown
+- Z-Depth Slider</p>
+<hr>
+<h2 id="13-synthesizer-board">13. Synthesizer Board<a class="headerlink" href="#13-synthesizer-board" title="Permanent link">¶</a></h2>
+<p><strong>Primary Learning Domain</strong>: Audio Synthesis &amp; Sound (SND)</p>
+<p><strong>Educational Purpose</strong>:
+To teach sound generation, oscillators, ADSR envelopes, and basic audio routing.</p>
+<p><strong>Functional Specification</strong>:
+A virtual synthesizer interface utilizing the p5.sound library. The student routes a base oscillator through an ADSR envelope to generate notes. A visual waveform displays the shape of the sound (Sine, Square, Sawtooth, Triangle) as parameters are modified.</p>
+<p><strong>Required Interactive Controls</strong>:
+- Waveform Selector
+- Attack Slider
+- Decay Slider
+- Sustain Slider
+- Release Slider
+- Play Note Button</p>
+<hr>
+<h2 id="14-audio-visualizer-lab">14. Audio Visualizer Lab<a class="headerlink" href="#14-audio-visualizer-lab" title="Permanent link">¶</a></h2>
+<p><strong>Primary Learning Domain</strong>: Signal Processing &amp; FFT (FFT)</p>
+<p><strong>Educational Purpose</strong>:
+To analyze sound frequencies and amplitudes using the Fast Fourier Transform (FFT).</p>
+<p><strong>Functional Specification</strong>:
+A real-time audio spectrum analyzer. It takes an audio input (microphone or file) and maps the FFT frequency bins to visual equalizer bars. The student can adjust smoothing and isolate specific frequency ranges (bass, mid, treble) to trigger visual thresholds.</p>
+<p><strong>Required Interactive Controls</strong>:
+- Audio Source Toggle (Mic/File)
+- FFT Smoothing Slider
+- Frequency Bin Mapper Dropdown
+- Waveform vs Spectrum Toggle</p>
+<hr>
+<h2 id="15-pixel-processing-pipeline">15. Pixel Processing Pipeline<a class="headerlink" href="#15-pixel-processing-pipeline" title="Permanent link">¶</a></h2>
+<p><strong>Primary Learning Domain</strong>: Image &amp; Video Processing (IMG)</p>
+<p><strong>Educational Purpose</strong>:
+To teach image loading, tinting, pixel-level manipulation, and convolution filters.</p>
+<p><strong>Functional Specification</strong>:
+An interactive image filter pipeline. The student loads a static image or webcam feed and applies sequential filters (grayscale, blur, threshold, posterize). A convolution matrix editor allows students to input custom kernel weights for edge detection and sharpening.</p>
+<p><strong>Required Interactive Controls</strong>:
+- Media Source Dropdown
+- Filter Preset Selector
+- Threshold Value Slider
+- 3x3 Convolution Matrix Inputs
+- Blend Mode Dropdown</p>
+<hr>
+<h2 id="16-kinetic-typography-engine">16. Kinetic Typography Engine<a class="headerlink" href="#16-kinetic-typography-engine" title="Permanent link">¶</a></h2>
+<p><strong>Primary Learning Domain</strong>: Generative Typography (TYPO)</p>
+<p><strong>Educational Purpose</strong>:
+To extract font paths and apply generative physics or parameters to text rendering.</p>
+<p><strong>Functional Specification</strong>:
+A text-to-points simulator. The student types a word, and the simulation converts the font glyphs into an array of vector points using <code>textToPoints()</code>. Sliders control the sampling density, and physical forces (wobble, explosion) can be applied to scatter the typography.</p>
+<p><strong>Required Interactive Controls</strong>:
+- Text Input Field
+- Font Selection Dropdown
+- Point Density Slider
+- Wobble Intensity Slider
+- Explode Particles Button</p>
+<hr>
+<h2 id="17-dev-environment-simulator">17. Dev Environment Simulator<a class="headerlink" href="#17-dev-environment-simulator" title="Permanent link">¶</a></h2>
+<p><strong>Primary Learning Domain</strong>: Development Tools (TOOL)</p>
+<p><strong>Educational Purpose</strong>:
+To simulate debugging, console logs, network errors (CORS), and developer tools.</p>
+<p><strong>Functional Specification</strong>:
+A mock 'IDE' layout featuring a code editor panel and a console output panel. The simulation injects intentional errors (like attempting to load a local image without a server). The student must use the mock console and network tabs to identify and 'fix' the configuration.</p>
+<p><strong>Required Interactive Controls</strong>:
+- Mock Code Editor
+- Console Output Viewer
+- Network Tab Viewer
+- Environment Toggle (Local/Server)</p>
+<hr>
+<h2 id="18-pedagogical-pattern-matcher">18. Pedagogical Pattern Matcher<a class="headerlink" href="#18-pedagogical-pattern-matcher" title="Permanent link">¶</a></h2>
+<p><strong>Primary Learning Domain</strong>: Pedagogy &amp; Computation (PED)</p>
+<p><strong>Educational Purpose</strong>:
+To train educators on identifying student misconceptions and selecting scaffolding strategies.</p>
+<p><strong>Functional Specification</strong>:
+A teacher-facing quiz-style simulation. A fictional student's buggy code or misunderstanding is presented. The user must classify the misconception (e.g., scoping error, translation order) and select the most appropriate pedagogical scaffolding (Parsons problem, live coding) to help the student.</p>
+<p><strong>Required Interactive Controls</strong>:
+- Student Scenario Generator
+- Misconception Classifier Dropdown
+- Scaffolding Strategy Selector
+- Submit Evaluation Button</p>
+<hr>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

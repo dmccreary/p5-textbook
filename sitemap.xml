@@ -169,6 +169,10 @@
          <lastmod>2026-08-20</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/p5-textbook/learning-graph/microsim-specifications/</loc>
+         <lastmod>2026-08-20</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/p5-textbook/learning-graph/quality-metrics/</loc>
          <lastmod>2026-08-20</lastmod>
     </url>
@@ -189,7 +193,31 @@
          <lastmod>2026-08-20</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/3d-scene-editor/</loc>
+         <lastmod>2026-08-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/algorithm-visualizer/</loc>
+         <lastmod>2026-08-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/audio-visualizer-lab/</loc>
+         <lastmod>2026-08-20</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/p5-textbook/sims/canvas-inspector/</loc>
+         <lastmod>2026-08-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/color-mixer/</loc>
+         <lastmod>2026-08-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/data-flow-debugger/</loc>
+         <lastmod>2026-08-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/dev-environment-simulator/</loc>
          <lastmod>2026-08-20</lastmod>
     </url>
     <url>
@@ -198,6 +226,50 @@
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/sims/graph-viewer/</loc>
+         <lastmod>2026-08-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/harmonic-oscillator/</loc>
+         <lastmod>2026-08-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/interactive-sandbox/</loc>
+         <lastmod>2026-08-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/kinetic-typography-engine/</loc>
+         <lastmod>2026-08-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/particle-physics-engine/</loc>
+         <lastmod>2026-08-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/pedagogical-pattern-matcher/</loc>
+         <lastmod>2026-08-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/pixel-processing-pipeline/</loc>
+         <lastmod>2026-08-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/robot-arm-kinematics/</loc>
+         <lastmod>2026-08-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/shape-builder/</loc>
+         <lastmod>2026-08-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/synthesizer-board/</loc>
+         <lastmod>2026-08-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/terrain-generator/</loc>
+         <lastmod>2026-08-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/ui-component-playground/</loc>
          <lastmod>2026-08-20</lastmod>
     </url>
 </urlset>

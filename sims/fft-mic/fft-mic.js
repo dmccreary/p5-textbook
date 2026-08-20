@@ -1,4 +1,5 @@
 // FFT Microphone Visualizer MicroSim
+// CANVAS_HEIGHT: 450
 // Canvas dimensions
 let canvasWidth = 500;
 let drawHeight = 400;
