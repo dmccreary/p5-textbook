@@ -1,0 +1,4530 @@
+{
+  "terms": [
+    {
+      "term": "Coordinate System",
+      "category": "Foundation Concepts",
+      "taxonomy_code": "FND",
+      "related_terms": [
+        "Canvas Element",
+        "Pixel Grid",
+        "Point Primitive",
+        "Line Primitive",
+        "Rectangle Primitive",
+        "Ellipse Primitive",
+        "Triangle Primitive",
+        "Quad Primitive",
+        "Begin Shape Function",
+        "Translate Function",
+        "Rotate Function",
+        "Scale Function",
+        "p5 Vector Class Concept",
+        "Mouse X Position",
+        "Mouse Y Position",
+        "3D Coordinate System",
+        "Text Drawing Function"
+      ]
+    },
+    {
+      "term": "Canvas Element",
+      "category": "Foundation Concepts",
+      "taxonomy_code": "FND",
+      "related_terms": [
+        "Setup Function",
+        "Canvas Width",
+        "Canvas Height",
+        "Create Canvas Function",
+        "Background Color Function",
+        "Window Resized Event",
+        "Script Inclusion Tag",
+        "Smooth Rendering",
+        "RGB Color Space",
+        "Create Button Element",
+        "Create Slider Control",
+        "Create Input Textbox",
+        "Create Select Dropdown",
+        "Create Checkbox Control",
+        "Create Radio Buttons",
+        "Create Paragraph Tag",
+        "Create Div Container",
+        "Create Span Text Inline",
+        "Create Img Element",
+        "Canvas Parent Wrapper",
+        "HTML5 Canvas Integration",
+        "Embedded iFrame Canvas",
+        "WEBGL Renderer Mode",
+        "Create Capture Webcam",
+        "Save Canvas Image File",
+        "Graphics Offscreen Buffer",
+        "p5 Web Editor Interface",
+        "VS Code Code Editor",
+        "p5 Accessibility Library"
+      ]
+    },
+    {
+      "term": "Setup Function",
+      "category": "Foundation Concepts",
+      "taxonomy_code": "FND",
+      "related_terms": [
+        "Draw Function",
+        "Preload Function",
+        "Console Log Debugging",
+        "Statement Semicolon Syntax",
+        "Global Mode Execution",
+        "Let Variable Declaration",
+        "Random Function Float",
+        "Computational Thinking Concept",
+        "Live Coding Demonstration",
+        "Scaffolding Starter Code"
+      ]
+    },
+    {
+      "term": "Draw Function",
+      "category": "Foundation Concepts",
+      "taxonomy_code": "FND",
+      "related_terms": [
+        "Frame Rate",
+        "Frame Count",
+        "No Loop Function",
+        "Render Cycle Loop",
+        "Common Misconception Background"
+      ]
+    },
+    {
+      "term": "Frame Rate",
+      "category": "Foundation Concepts",
+      "taxonomy_code": "FND",
+      "related_terms": [
+        "Delta Time Tracking",
+        "Target Frame Rate Setting",
+        "Linear Motion Logic"
+      ]
+    },
+    {
+      "term": "Frame Count",
+      "category": "Foundation Concepts",
+      "taxonomy_code": "FND",
+      "related_terms": []
+    },
+    {
+      "term": "Pixel Grid",
+      "category": "Foundation Concepts",
+      "taxonomy_code": "FND",
+      "related_terms": [
+        "Display Density",
+        "Load Pixels Function",
+        "Get Pixel Color"
+      ]
+    },
+    {
+      "term": "Canvas Width",
+      "category": "Foundation Concepts",
+      "taxonomy_code": "FND",
+      "related_terms": [
+        "Canvas Aspect Ratio"
+      ]
+    },
+    {
+      "term": "Canvas Height",
+      "category": "Foundation Concepts",
+      "taxonomy_code": "FND",
+      "related_terms": [
+        "Canvas Aspect Ratio"
+      ]
+    },
+    {
+      "term": "Create Canvas Function",
+      "category": "Foundation Concepts",
+      "taxonomy_code": "FND",
+      "related_terms": []
+    },
+    {
+      "term": "Background Color Function",
+      "category": "Foundation Concepts",
+      "taxonomy_code": "FND",
+      "related_terms": [
+        "Common Misconception Background"
+      ]
+    },
+    {
+      "term": "Preload Function",
+      "category": "Foundation Concepts",
+      "taxonomy_code": "FND",
+      "related_terms": [
+        "Load Sound File",
+        "Load Image Function",
+        "Load Font File"
+      ]
+    },
+    {
+      "term": "No Loop Function",
+      "category": "Foundation Concepts",
+      "taxonomy_code": "FND",
+      "related_terms": [
+        "Redraw Function",
+        "Loop Control Function"
+      ]
+    },
+    {
+      "term": "Redraw Function",
+      "category": "Foundation Concepts",
+      "taxonomy_code": "FND",
+      "related_terms": []
+    },
+    {
+      "term": "Loop Control Function",
+      "category": "Foundation Concepts",
+      "taxonomy_code": "FND",
+      "related_terms": []
+    },
+    {
+      "term": "Window Resized Event",
+      "category": "Foundation Concepts",
+      "taxonomy_code": "FND",
+      "related_terms": [
+        "Resize Canvas Function"
+      ]
+    },
+    {
+      "term": "Resize Canvas Function",
+      "category": "Foundation Concepts",
+      "taxonomy_code": "FND",
+      "related_terms": [
+        "Full Screen Mode"
+      ]
+    },
+    {
+      "term": "Full Screen Mode",
+      "category": "Foundation Concepts",
+      "taxonomy_code": "FND",
+      "related_terms": []
+    },
+    {
+      "term": "Display Density",
+      "category": "Foundation Concepts",
+      "taxonomy_code": "FND",
+      "related_terms": [
+        "Pixel Density Control"
+      ]
+    },
+    {
+      "term": "Pixel Density Control",
+      "category": "Foundation Concepts",
+      "taxonomy_code": "FND",
+      "related_terms": []
+    },
+    {
+      "term": "Console Log Debugging",
+      "category": "Foundation Concepts",
+      "taxonomy_code": "FND",
+      "related_terms": [
+        "Browser Developer Console",
+        "Debugging Mental Model"
+      ]
+    },
+    {
+      "term": "Statement Semicolon Syntax",
+      "category": "Foundation Concepts",
+      "taxonomy_code": "FND",
+      "related_terms": [
+        "Code Comments Syntax"
+      ]
+    },
+    {
+      "term": "Code Comments Syntax",
+      "category": "Foundation Concepts",
+      "taxonomy_code": "FND",
+      "related_terms": []
+    },
+    {
+      "term": "Script Inclusion Tag",
+      "category": "Foundation Concepts",
+      "taxonomy_code": "FND",
+      "related_terms": [
+        "p5.js Library Import"
+      ]
+    },
+    {
+      "term": "p5.js Library Import",
+      "category": "Foundation Concepts",
+      "taxonomy_code": "FND",
+      "related_terms": [
+        "CDN Script Loading",
+        "p5 Sound Library Include",
+        "Minified Library Production"
+      ]
+    },
+    {
+      "term": "CDN Script Loading",
+      "category": "Foundation Concepts",
+      "taxonomy_code": "FND",
+      "related_terms": []
+    },
+    {
+      "term": "Global Mode Execution",
+      "category": "Foundation Concepts",
+      "taxonomy_code": "FND",
+      "related_terms": [
+        "Instance Mode Execution"
+      ]
+    },
+    {
+      "term": "Instance Mode Execution",
+      "category": "Foundation Concepts",
+      "taxonomy_code": "FND",
+      "related_terms": [
+        "p5 Constructor Function"
+      ]
+    },
+    {
+      "term": "p5 Constructor Function",
+      "category": "Foundation Concepts",
+      "taxonomy_code": "FND",
+      "related_terms": []
+    },
+    {
+      "term": "Render Cycle Loop",
+      "category": "Foundation Concepts",
+      "taxonomy_code": "FND",
+      "related_terms": []
+    },
+    {
+      "term": "Delta Time Tracking",
+      "category": "Foundation Concepts",
+      "taxonomy_code": "FND",
+      "related_terms": [
+        "Frame Independent Motion"
+      ]
+    },
+    {
+      "term": "Target Frame Rate Setting",
+      "category": "Foundation Concepts",
+      "taxonomy_code": "FND",
+      "related_terms": []
+    },
+    {
+      "term": "Canvas Aspect Ratio",
+      "category": "Foundation Concepts",
+      "taxonomy_code": "FND",
+      "related_terms": []
+    },
+    {
+      "term": "Point Primitive",
+      "category": "2D Shape & Geometry",
+      "taxonomy_code": "PRIM",
+      "related_terms": [
+        "Shape Stroke Weight"
+      ]
+    },
+    {
+      "term": "Line Primitive",
+      "category": "2D Shape & Geometry",
+      "taxonomy_code": "PRIM",
+      "related_terms": [
+        "Stroke Cap Style"
+      ]
+    },
+    {
+      "term": "Rectangle Primitive",
+      "category": "2D Shape & Geometry",
+      "taxonomy_code": "PRIM",
+      "related_terms": [
+        "Square Shortcut Function",
+        "Rect Mode Center",
+        "Rect Mode Corner",
+        "Corner Radius Rectangle",
+        "Stroke Join Style",
+        "No Fill Function",
+        "Bounding Box Calculation",
+        "Shape Area Computation",
+        "Hit Test Point Rect",
+        "Audio Visual EQ Bars",
+        "Pixelate Image Mosaic"
+      ]
+    },
+    {
+      "term": "Ellipse Primitive",
+      "category": "2D Shape & Geometry",
+      "taxonomy_code": "PRIM",
+      "related_terms": [
+        "Circle Shortcut Function",
+        "Arc Shape Primitive",
+        "Ellipse Mode Center",
+        "Ellipse Mode Corner",
+        "Shape Area Computation",
+        "Halftone Dot Image Screen"
+      ]
+    },
+    {
+      "term": "Circle Shortcut Function",
+      "category": "2D Shape & Geometry",
+      "taxonomy_code": "PRIM",
+      "related_terms": []
+    },
+    {
+      "term": "Square Shortcut Function",
+      "category": "2D Shape & Geometry",
+      "taxonomy_code": "PRIM",
+      "related_terms": []
+    },
+    {
+      "term": "Triangle Primitive",
+      "category": "2D Shape & Geometry",
+      "taxonomy_code": "PRIM",
+      "related_terms": []
+    },
+    {
+      "term": "Quad Primitive",
+      "category": "2D Shape & Geometry",
+      "taxonomy_code": "PRIM",
+      "related_terms": []
+    },
+    {
+      "term": "Arc Shape Primitive",
+      "category": "2D Shape & Geometry",
+      "taxonomy_code": "PRIM",
+      "related_terms": []
+    },
+    {
+      "term": "Ellipse Mode Center",
+      "category": "2D Shape & Geometry",
+      "taxonomy_code": "PRIM",
+      "related_terms": []
+    },
+    {
+      "term": "Ellipse Mode Corner",
+      "category": "2D Shape & Geometry",
+      "taxonomy_code": "PRIM",
+      "related_terms": []
+    },
+    {
+      "term": "Rect Mode Center",
+      "category": "2D Shape & Geometry",
+      "taxonomy_code": "PRIM",
+      "related_terms": []
+    },
+    {
+      "term": "Rect Mode Corner",
+      "category": "2D Shape & Geometry",
+      "taxonomy_code": "PRIM",
+      "related_terms": []
+    },
+    {
+      "term": "Begin Shape Function",
+      "category": "2D Shape & Geometry",
+      "taxonomy_code": "PRIM",
+      "related_terms": [
+        "End Shape Function",
+        "Vertex Coordinates",
+        "Begin Contour Function",
+        "B\u00e9zier Curve Function",
+        "Curve Shape Function"
+      ]
+    },
+    {
+      "term": "End Shape Function",
+      "category": "2D Shape & Geometry",
+      "taxonomy_code": "PRIM",
+      "related_terms": [
+        "Close Shape Parameter"
+      ]
+    },
+    {
+      "term": "Vertex Coordinates",
+      "category": "2D Shape & Geometry",
+      "taxonomy_code": "PRIM",
+      "related_terms": []
+    },
+    {
+      "term": "Close Shape Parameter",
+      "category": "2D Shape & Geometry",
+      "taxonomy_code": "PRIM",
+      "related_terms": []
+    },
+    {
+      "term": "Begin Contour Function",
+      "category": "2D Shape & Geometry",
+      "taxonomy_code": "PRIM",
+      "related_terms": [
+        "End Contour Function"
+      ]
+    },
+    {
+      "term": "End Contour Function",
+      "category": "2D Shape & Geometry",
+      "taxonomy_code": "PRIM",
+      "related_terms": []
+    },
+    {
+      "term": "B\u00e9zier Curve Function",
+      "category": "2D Shape & Geometry",
+      "taxonomy_code": "PRIM",
+      "related_terms": [
+        "B\u00e9zier Control Points",
+        "B\u00e9zier Vertex Function"
+      ]
+    },
+    {
+      "term": "B\u00e9zier Control Points",
+      "category": "2D Shape & Geometry",
+      "taxonomy_code": "PRIM",
+      "related_terms": []
+    },
+    {
+      "term": "B\u00e9zier Vertex Function",
+      "category": "2D Shape & Geometry",
+      "taxonomy_code": "PRIM",
+      "related_terms": []
+    },
+    {
+      "term": "Curve Shape Function",
+      "category": "2D Shape & Geometry",
+      "taxonomy_code": "PRIM",
+      "related_terms": [
+        "Curve Tightness Setting",
+        "Curve Vertex Function"
+      ]
+    },
+    {
+      "term": "Curve Tightness Setting",
+      "category": "2D Shape & Geometry",
+      "taxonomy_code": "PRIM",
+      "related_terms": []
+    },
+    {
+      "term": "Curve Vertex Function",
+      "category": "2D Shape & Geometry",
+      "taxonomy_code": "PRIM",
+      "related_terms": []
+    },
+    {
+      "term": "Corner Radius Rectangle",
+      "category": "2D Shape & Geometry",
+      "taxonomy_code": "PRIM",
+      "related_terms": []
+    },
+    {
+      "term": "Shape Stroke Weight",
+      "category": "2D Shape & Geometry",
+      "taxonomy_code": "PRIM",
+      "related_terms": [
+        "No Stroke Function"
+      ]
+    },
+    {
+      "term": "Stroke Cap Style",
+      "category": "2D Shape & Geometry",
+      "taxonomy_code": "PRIM",
+      "related_terms": []
+    },
+    {
+      "term": "Stroke Join Style",
+      "category": "2D Shape & Geometry",
+      "taxonomy_code": "PRIM",
+      "related_terms": []
+    },
+    {
+      "term": "No Stroke Function",
+      "category": "2D Shape & Geometry",
+      "taxonomy_code": "PRIM",
+      "related_terms": []
+    },
+    {
+      "term": "No Fill Function",
+      "category": "2D Shape & Geometry",
+      "taxonomy_code": "PRIM",
+      "related_terms": []
+    },
+    {
+      "term": "Smooth Rendering",
+      "category": "2D Shape & Geometry",
+      "taxonomy_code": "PRIM",
+      "related_terms": [
+        "No Smooth Rendering"
+      ]
+    },
+    {
+      "term": "No Smooth Rendering",
+      "category": "2D Shape & Geometry",
+      "taxonomy_code": "PRIM",
+      "related_terms": []
+    },
+    {
+      "term": "Bounding Box Calculation",
+      "category": "2D Shape & Geometry",
+      "taxonomy_code": "PRIM",
+      "related_terms": []
+    },
+    {
+      "term": "Shape Area Computation",
+      "category": "2D Shape & Geometry",
+      "taxonomy_code": "PRIM",
+      "related_terms": []
+    },
+    {
+      "term": "RGB Color Space",
+      "category": "Color Theory & Pixels",
+      "taxonomy_code": "CLR",
+      "related_terms": [
+        "RGBA Alpha Channel",
+        "HSB Color Space",
+        "Color Mode Setting",
+        "Fill Color Function",
+        "Stroke Color Function",
+        "Grayscale Value Syntax",
+        "Hex Color Code Strings",
+        "Web Named Color Strings",
+        "p5 Color Object",
+        "Additive Color Mixing",
+        "Subtractive Color Mixing",
+        "Create Color Picker",
+        "Ambient Light Source",
+        "Image Tint Function"
+      ]
+    },
+    {
+      "term": "RGBA Alpha Channel",
+      "category": "Color Theory & Pixels",
+      "taxonomy_code": "CLR",
+      "related_terms": [
+        "Color Blend Modes"
+      ]
+    },
+    {
+      "term": "HSB Color Space",
+      "category": "Color Theory & Pixels",
+      "taxonomy_code": "CLR",
+      "related_terms": [
+        "HSL Color Space",
+        "Hue Component Extraction",
+        "Saturation Extraction",
+        "Brightness Extraction",
+        "Complimentary Color Logic",
+        "Triadic Palette Generator",
+        "Audio Reactive Color Shift"
+      ]
+    },
+    {
+      "term": "HSL Color Space",
+      "category": "Color Theory & Pixels",
+      "taxonomy_code": "CLR",
+      "related_terms": []
+    },
+    {
+      "term": "Color Mode Setting",
+      "category": "Color Theory & Pixels",
+      "taxonomy_code": "CLR",
+      "related_terms": []
+    },
+    {
+      "term": "Fill Color Function",
+      "category": "Color Theory & Pixels",
+      "taxonomy_code": "CLR",
+      "related_terms": [
+        "Text Stroke Fill Combo"
+      ]
+    },
+    {
+      "term": "Stroke Color Function",
+      "category": "Color Theory & Pixels",
+      "taxonomy_code": "CLR",
+      "related_terms": [
+        "Text Stroke Fill Combo"
+      ]
+    },
+    {
+      "term": "Grayscale Value Syntax",
+      "category": "Color Theory & Pixels",
+      "taxonomy_code": "CLR",
+      "related_terms": []
+    },
+    {
+      "term": "Hex Color Code Strings",
+      "category": "Color Theory & Pixels",
+      "taxonomy_code": "CLR",
+      "related_terms": []
+    },
+    {
+      "term": "Web Named Color Strings",
+      "category": "Color Theory & Pixels",
+      "taxonomy_code": "CLR",
+      "related_terms": []
+    },
+    {
+      "term": "p5 Color Object",
+      "category": "Color Theory & Pixels",
+      "taxonomy_code": "CLR",
+      "related_terms": [
+        "Red Channel Extraction",
+        "Green Channel Extraction",
+        "Blue Channel Extraction",
+        "Alpha Value Extraction",
+        "Hue Component Extraction",
+        "Saturation Extraction",
+        "Brightness Extraction",
+        "Color Interpolation Lerp",
+        "Palette Color Array"
+      ]
+    },
+    {
+      "term": "Red Channel Extraction",
+      "category": "Color Theory & Pixels",
+      "taxonomy_code": "CLR",
+      "related_terms": []
+    },
+    {
+      "term": "Green Channel Extraction",
+      "category": "Color Theory & Pixels",
+      "taxonomy_code": "CLR",
+      "related_terms": []
+    },
+    {
+      "term": "Blue Channel Extraction",
+      "category": "Color Theory & Pixels",
+      "taxonomy_code": "CLR",
+      "related_terms": []
+    },
+    {
+      "term": "Alpha Value Extraction",
+      "category": "Color Theory & Pixels",
+      "taxonomy_code": "CLR",
+      "related_terms": []
+    },
+    {
+      "term": "Hue Component Extraction",
+      "category": "Color Theory & Pixels",
+      "taxonomy_code": "CLR",
+      "related_terms": []
+    },
+    {
+      "term": "Saturation Extraction",
+      "category": "Color Theory & Pixels",
+      "taxonomy_code": "CLR",
+      "related_terms": []
+    },
+    {
+      "term": "Brightness Extraction",
+      "category": "Color Theory & Pixels",
+      "taxonomy_code": "CLR",
+      "related_terms": [
+        "Color Contrast Ratio",
+        "ASCIIfy Image Converter"
+      ]
+    },
+    {
+      "term": "Color Interpolation Lerp",
+      "category": "Color Theory & Pixels",
+      "taxonomy_code": "CLR",
+      "related_terms": []
+    },
+    {
+      "term": "Palette Color Array",
+      "category": "Color Theory & Pixels",
+      "taxonomy_code": "CLR",
+      "related_terms": [
+        "Color Accessibility Palette"
+      ]
+    },
+    {
+      "term": "Complimentary Color Logic",
+      "category": "Color Theory & Pixels",
+      "taxonomy_code": "CLR",
+      "related_terms": []
+    },
+    {
+      "term": "Triadic Palette Generator",
+      "category": "Color Theory & Pixels",
+      "taxonomy_code": "CLR",
+      "related_terms": []
+    },
+    {
+      "term": "Load Pixels Function",
+      "category": "Color Theory & Pixels",
+      "taxonomy_code": "CLR",
+      "related_terms": [
+        "Update Pixels Function",
+        "Pixels Array Indexing",
+        "Image Pixel Array Load",
+        "Webcam Motion Difference"
+      ]
+    },
+    {
+      "term": "Update Pixels Function",
+      "category": "Color Theory & Pixels",
+      "taxonomy_code": "CLR",
+      "related_terms": [
+        "Set Pixel Color",
+        "Noise Texture Map",
+        "Audio Spectrogram Plot"
+      ]
+    },
+    {
+      "term": "Pixels Array Indexing",
+      "category": "Color Theory & Pixels",
+      "taxonomy_code": "CLR",
+      "related_terms": []
+    },
+    {
+      "term": "Get Pixel Color",
+      "category": "Color Theory & Pixels",
+      "taxonomy_code": "CLR",
+      "related_terms": []
+    },
+    {
+      "term": "Set Pixel Color",
+      "category": "Color Theory & Pixels",
+      "taxonomy_code": "CLR",
+      "related_terms": []
+    },
+    {
+      "term": "Color Blend Modes",
+      "category": "Color Theory & Pixels",
+      "taxonomy_code": "CLR",
+      "related_terms": [
+        "Multiply Blend Mode",
+        "Screen Blend Mode"
+      ]
+    },
+    {
+      "term": "Multiply Blend Mode",
+      "category": "Color Theory & Pixels",
+      "taxonomy_code": "CLR",
+      "related_terms": []
+    },
+    {
+      "term": "Screen Blend Mode",
+      "category": "Color Theory & Pixels",
+      "taxonomy_code": "CLR",
+      "related_terms": []
+    },
+    {
+      "term": "Additive Color Mixing",
+      "category": "Color Theory & Pixels",
+      "taxonomy_code": "CLR",
+      "related_terms": []
+    },
+    {
+      "term": "Subtractive Color Mixing",
+      "category": "Color Theory & Pixels",
+      "taxonomy_code": "CLR",
+      "related_terms": []
+    },
+    {
+      "term": "Color Contrast Ratio",
+      "category": "Color Theory & Pixels",
+      "taxonomy_code": "CLR",
+      "related_terms": []
+    },
+    {
+      "term": "Color Accessibility Palette",
+      "category": "Color Theory & Pixels",
+      "taxonomy_code": "CLR",
+      "related_terms": []
+    },
+    {
+      "term": "Let Variable Declaration",
+      "category": "Control Flow & Arrays",
+      "taxonomy_code": "FLOW",
+      "related_terms": [
+        "Const Constant Variable",
+        "Global Variable Scope",
+        "Local Block Scope",
+        "If Conditional Branch",
+        "Array Data Structure",
+        "Function Declaration Syntax",
+        "Object Literal Syntax"
+      ]
+    },
+    {
+      "term": "Const Constant Variable",
+      "category": "Control Flow & Arrays",
+      "taxonomy_code": "FLOW",
+      "related_terms": []
+    },
+    {
+      "term": "Global Variable Scope",
+      "category": "Control Flow & Arrays",
+      "taxonomy_code": "FLOW",
+      "related_terms": [
+        "Common Misconception Scope"
+      ]
+    },
+    {
+      "term": "Local Block Scope",
+      "category": "Control Flow & Arrays",
+      "taxonomy_code": "FLOW",
+      "related_terms": [
+        "Common Misconception Scope"
+      ]
+    },
+    {
+      "term": "If Conditional Branch",
+      "category": "Control Flow & Arrays",
+      "taxonomy_code": "FLOW",
+      "related_terms": [
+        "Else Conditional Branch",
+        "Relational Operators",
+        "Ternary Operator Syntax",
+        "Switch Statement Syntax",
+        "While Loop Construct",
+        "Boolean Flag Variable",
+        "Key Is Pressed Flag"
+      ]
+    },
+    {
+      "term": "Else Conditional Branch",
+      "category": "Control Flow & Arrays",
+      "taxonomy_code": "FLOW",
+      "related_terms": [
+        "Else If Chained Logic"
+      ]
+    },
+    {
+      "term": "Else If Chained Logic",
+      "category": "Control Flow & Arrays",
+      "taxonomy_code": "FLOW",
+      "related_terms": []
+    },
+    {
+      "term": "Relational Operators",
+      "category": "Control Flow & Arrays",
+      "taxonomy_code": "FLOW",
+      "related_terms": [
+        "Logical AND Operator",
+        "Logical OR Operator",
+        "Logical NOT Operator"
+      ]
+    },
+    {
+      "term": "Logical AND Operator",
+      "category": "Control Flow & Arrays",
+      "taxonomy_code": "FLOW",
+      "related_terms": []
+    },
+    {
+      "term": "Logical OR Operator",
+      "category": "Control Flow & Arrays",
+      "taxonomy_code": "FLOW",
+      "related_terms": []
+    },
+    {
+      "term": "Logical NOT Operator",
+      "category": "Control Flow & Arrays",
+      "taxonomy_code": "FLOW",
+      "related_terms": []
+    },
+    {
+      "term": "Ternary Operator Syntax",
+      "category": "Control Flow & Arrays",
+      "taxonomy_code": "FLOW",
+      "related_terms": []
+    },
+    {
+      "term": "Switch Statement Syntax",
+      "category": "Control Flow & Arrays",
+      "taxonomy_code": "FLOW",
+      "related_terms": [
+        "State Machine Logic"
+      ]
+    },
+    {
+      "term": "While Loop Construct",
+      "category": "Control Flow & Arrays",
+      "taxonomy_code": "FLOW",
+      "related_terms": [
+        "For Loop Construct",
+        "Infinite Loop Prevention"
+      ]
+    },
+    {
+      "term": "For Loop Construct",
+      "category": "Control Flow & Arrays",
+      "taxonomy_code": "FLOW",
+      "related_terms": [
+        "Loop Counter Variable",
+        "Nested For Loops",
+        "Break and Continue Keywords",
+        "Spectrum Frequency Chart"
+      ]
+    },
+    {
+      "term": "Loop Counter Variable",
+      "category": "Control Flow & Arrays",
+      "taxonomy_code": "FLOW",
+      "related_terms": []
+    },
+    {
+      "term": "Infinite Loop Prevention",
+      "category": "Control Flow & Arrays",
+      "taxonomy_code": "FLOW",
+      "related_terms": []
+    },
+    {
+      "term": "Nested For Loops",
+      "category": "Control Flow & Arrays",
+      "taxonomy_code": "FLOW",
+      "related_terms": [
+        "2D Grid Iteration"
+      ]
+    },
+    {
+      "term": "2D Grid Iteration",
+      "category": "Control Flow & Arrays",
+      "taxonomy_code": "FLOW",
+      "related_terms": [
+        "Convolution Matrix Filter",
+        "Generative Type Grid",
+        "ASCII Art Text Canvas"
+      ]
+    },
+    {
+      "term": "Array Data Structure",
+      "category": "Control Flow & Arrays",
+      "taxonomy_code": "FLOW",
+      "related_terms": [
+        "Array Element Indexing",
+        "Array Push Method",
+        "Array Pop Method",
+        "Array Length Property",
+        "For Of Loop Iteration",
+        "For Each Array Method",
+        "Array Splice Removal",
+        "Array Concat Joining",
+        "2D Matrix Array",
+        "Array Reverse Ordering",
+        "Array Sort Ordering",
+        "Shuffle Array Order",
+        "Touch Touches Array",
+        "Array Destructuring",
+        "Spread Operator Array",
+        "Array Map Higher Order",
+        "Array Filter Method",
+        "Array Reduce Method",
+        "Set Data Structure"
+      ]
+    },
+    {
+      "term": "Array Element Indexing",
+      "category": "Control Flow & Arrays",
+      "taxonomy_code": "FLOW",
+      "related_terms": []
+    },
+    {
+      "term": "Array Push Method",
+      "category": "Control Flow & Arrays",
+      "taxonomy_code": "FLOW",
+      "related_terms": [
+        "Particle System Manager"
+      ]
+    },
+    {
+      "term": "Array Pop Method",
+      "category": "Control Flow & Arrays",
+      "taxonomy_code": "FLOW",
+      "related_terms": []
+    },
+    {
+      "term": "Array Length Property",
+      "category": "Control Flow & Arrays",
+      "taxonomy_code": "FLOW",
+      "related_terms": []
+    },
+    {
+      "term": "For Of Loop Iteration",
+      "category": "Control Flow & Arrays",
+      "taxonomy_code": "FLOW",
+      "related_terms": []
+    },
+    {
+      "term": "For Each Array Method",
+      "category": "Control Flow & Arrays",
+      "taxonomy_code": "FLOW",
+      "related_terms": []
+    },
+    {
+      "term": "Array Splice Removal",
+      "category": "Control Flow & Arrays",
+      "taxonomy_code": "FLOW",
+      "related_terms": []
+    },
+    {
+      "term": "Array Concat Joining",
+      "category": "Control Flow & Arrays",
+      "taxonomy_code": "FLOW",
+      "related_terms": []
+    },
+    {
+      "term": "2D Matrix Array",
+      "category": "Control Flow & Arrays",
+      "taxonomy_code": "FLOW",
+      "related_terms": []
+    },
+    {
+      "term": "Array Reverse Ordering",
+      "category": "Control Flow & Arrays",
+      "taxonomy_code": "FLOW",
+      "related_terms": []
+    },
+    {
+      "term": "Array Sort Ordering",
+      "category": "Control Flow & Arrays",
+      "taxonomy_code": "FLOW",
+      "related_terms": []
+    },
+    {
+      "term": "Boolean Flag Variable",
+      "category": "Control Flow & Arrays",
+      "taxonomy_code": "FLOW",
+      "related_terms": [
+        "State Machine Logic"
+      ]
+    },
+    {
+      "term": "State Machine Logic",
+      "category": "Control Flow & Arrays",
+      "taxonomy_code": "FLOW",
+      "related_terms": []
+    },
+    {
+      "term": "Break and Continue Keywords",
+      "category": "Control Flow & Arrays",
+      "taxonomy_code": "FLOW",
+      "related_terms": []
+    },
+    {
+      "term": "Translate Function",
+      "category": "Matrix Transformations",
+      "taxonomy_code": "XFORM",
+      "related_terms": [
+        "Push Function",
+        "Transformation Order Logic",
+        "Origin Point Relocation",
+        "Shear X Transformation",
+        "Shear Y Transformation"
+      ]
+    },
+    {
+      "term": "Rotate Function",
+      "category": "Matrix Transformations",
+      "taxonomy_code": "XFORM",
+      "related_terms": [
+        "Transformation Order Logic",
+        "Radians Angle System",
+        "Pivot Point Selection",
+        "Rotation Speed Variable",
+        "Oscillating Rotation Angle",
+        "Kinetic Typography Motion",
+        "Per Character Rotation"
+      ]
+    },
+    {
+      "term": "Scale Function",
+      "category": "Matrix Transformations",
+      "taxonomy_code": "XFORM",
+      "related_terms": [
+        "Uniform Scaling",
+        "Non Uniform Scaling",
+        "Negative Scale Reflection",
+        "Scale Factor Animation",
+        "Audio Reactive Pulse Scale"
+      ]
+    },
+    {
+      "term": "Push Function",
+      "category": "Matrix Transformations",
+      "taxonomy_code": "XFORM",
+      "related_terms": [
+        "Pop Function",
+        "Matrix Stack Operations",
+        "Common Misconception PushPop"
+      ]
+    },
+    {
+      "term": "Pop Function",
+      "category": "Matrix Transformations",
+      "taxonomy_code": "XFORM",
+      "related_terms": [
+        "Matrix Stack Operations",
+        "Isolated Canvas Layers",
+        "Common Misconception PushPop"
+      ]
+    },
+    {
+      "term": "Matrix Stack Operations",
+      "category": "Matrix Transformations",
+      "taxonomy_code": "XFORM",
+      "related_terms": [
+        "Hierarchical Transformation",
+        "Reset Matrix Function"
+      ]
+    },
+    {
+      "term": "Transformation Order Logic",
+      "category": "Matrix Transformations",
+      "taxonomy_code": "XFORM",
+      "related_terms": []
+    },
+    {
+      "term": "Origin Point Relocation",
+      "category": "Matrix Transformations",
+      "taxonomy_code": "XFORM",
+      "related_terms": [
+        "Screen to Local Coordinates",
+        "Local to Screen Coordinates",
+        "Pivot Point Selection"
+      ]
+    },
+    {
+      "term": "Radians Angle System",
+      "category": "Matrix Transformations",
+      "taxonomy_code": "XFORM",
+      "related_terms": [
+        "Degrees Angle System",
+        "Angle Mode Setting",
+        "Sine Function Math",
+        "Cosine Function Math",
+        "Tangent Function Math"
+      ]
+    },
+    {
+      "term": "Degrees Angle System",
+      "category": "Matrix Transformations",
+      "taxonomy_code": "XFORM",
+      "related_terms": [
+        "Angle Mode Setting"
+      ]
+    },
+    {
+      "term": "Angle Mode Setting",
+      "category": "Matrix Transformations",
+      "taxonomy_code": "XFORM",
+      "related_terms": []
+    },
+    {
+      "term": "Shear X Transformation",
+      "category": "Matrix Transformations",
+      "taxonomy_code": "XFORM",
+      "related_terms": []
+    },
+    {
+      "term": "Shear Y Transformation",
+      "category": "Matrix Transformations",
+      "taxonomy_code": "XFORM",
+      "related_terms": []
+    },
+    {
+      "term": "Uniform Scaling",
+      "category": "Matrix Transformations",
+      "taxonomy_code": "XFORM",
+      "related_terms": []
+    },
+    {
+      "term": "Non Uniform Scaling",
+      "category": "Matrix Transformations",
+      "taxonomy_code": "XFORM",
+      "related_terms": []
+    },
+    {
+      "term": "Negative Scale Reflection",
+      "category": "Matrix Transformations",
+      "taxonomy_code": "XFORM",
+      "related_terms": [
+        "Webcam Pixel Mirroring"
+      ]
+    },
+    {
+      "term": "Hierarchical Transformation",
+      "category": "Matrix Transformations",
+      "taxonomy_code": "XFORM",
+      "related_terms": [
+        "Solar System Transformation",
+        "Robot Joint Transformation",
+        "Nested Transformation Trees"
+      ]
+    },
+    {
+      "term": "Solar System Transformation",
+      "category": "Matrix Transformations",
+      "taxonomy_code": "XFORM",
+      "related_terms": []
+    },
+    {
+      "term": "Robot Joint Transformation",
+      "category": "Matrix Transformations",
+      "taxonomy_code": "XFORM",
+      "related_terms": []
+    },
+    {
+      "term": "Reset Matrix Function",
+      "category": "Matrix Transformations",
+      "taxonomy_code": "XFORM",
+      "related_terms": [
+        "Apply Matrix Function"
+      ]
+    },
+    {
+      "term": "Apply Matrix Function",
+      "category": "Matrix Transformations",
+      "taxonomy_code": "XFORM",
+      "related_terms": [
+        "Get Current Matrix",
+        "Transform Matrix Inversion",
+        "Affine Transformation Model"
+      ]
+    },
+    {
+      "term": "Get Current Matrix",
+      "category": "Matrix Transformations",
+      "taxonomy_code": "XFORM",
+      "related_terms": []
+    },
+    {
+      "term": "Screen to Local Coordinates",
+      "category": "Matrix Transformations",
+      "taxonomy_code": "XFORM",
+      "related_terms": []
+    },
+    {
+      "term": "Local to Screen Coordinates",
+      "category": "Matrix Transformations",
+      "taxonomy_code": "XFORM",
+      "related_terms": []
+    },
+    {
+      "term": "Pivot Point Selection",
+      "category": "Matrix Transformations",
+      "taxonomy_code": "XFORM",
+      "related_terms": [
+        "Center Rotation Pattern",
+        "Corner Rotation Pattern"
+      ]
+    },
+    {
+      "term": "Center Rotation Pattern",
+      "category": "Matrix Transformations",
+      "taxonomy_code": "XFORM",
+      "related_terms": []
+    },
+    {
+      "term": "Corner Rotation Pattern",
+      "category": "Matrix Transformations",
+      "taxonomy_code": "XFORM",
+      "related_terms": []
+    },
+    {
+      "term": "Isolated Canvas Layers",
+      "category": "Matrix Transformations",
+      "taxonomy_code": "XFORM",
+      "related_terms": []
+    },
+    {
+      "term": "Nested Transformation Trees",
+      "category": "Matrix Transformations",
+      "taxonomy_code": "XFORM",
+      "related_terms": []
+    },
+    {
+      "term": "Rotation Speed Variable",
+      "category": "Matrix Transformations",
+      "taxonomy_code": "XFORM",
+      "related_terms": []
+    },
+    {
+      "term": "Oscillating Rotation Angle",
+      "category": "Matrix Transformations",
+      "taxonomy_code": "XFORM",
+      "related_terms": []
+    },
+    {
+      "term": "Scale Factor Animation",
+      "category": "Matrix Transformations",
+      "taxonomy_code": "XFORM",
+      "related_terms": []
+    },
+    {
+      "term": "Transform Matrix Inversion",
+      "category": "Matrix Transformations",
+      "taxonomy_code": "XFORM",
+      "related_terms": []
+    },
+    {
+      "term": "Affine Transformation Model",
+      "category": "Matrix Transformations",
+      "taxonomy_code": "XFORM",
+      "related_terms": []
+    },
+    {
+      "term": "Linear Motion Logic",
+      "category": "Animation & Trigonometry",
+      "taxonomy_code": "TRIG",
+      "related_terms": [
+        "Position Displacement",
+        "Map Range Function",
+        "Distance Formula Dist",
+        "Step Motion Accumulator"
+      ]
+    },
+    {
+      "term": "Position Displacement",
+      "category": "Animation & Trigonometry",
+      "taxonomy_code": "TRIG",
+      "related_terms": [
+        "Constant Velocity"
+      ]
+    },
+    {
+      "term": "Constant Velocity",
+      "category": "Animation & Trigonometry",
+      "taxonomy_code": "TRIG",
+      "related_terms": []
+    },
+    {
+      "term": "Sine Function Math",
+      "category": "Animation & Trigonometry",
+      "taxonomy_code": "TRIG",
+      "related_terms": [
+        "Wave Amplitude Parameter",
+        "Wave Frequency Parameter",
+        "Wave Phase Offset",
+        "Harmonic Motion Wave",
+        "Circle Polar Coordinates",
+        "Lissajous Curve Generator",
+        "Trigonometric Lookup Table",
+        "Marble Texture Generator",
+        "Visual Math Pedagogy"
+      ]
+    },
+    {
+      "term": "Cosine Function Math",
+      "category": "Animation & Trigonometry",
+      "taxonomy_code": "TRIG",
+      "related_terms": [
+        "Circle Polar Coordinates",
+        "Lissajous Curve Generator"
+      ]
+    },
+    {
+      "term": "Tangent Function Math",
+      "category": "Animation & Trigonometry",
+      "taxonomy_code": "TRIG",
+      "related_terms": [
+        "Arc Tangent Atan2 Function"
+      ]
+    },
+    {
+      "term": "Wave Amplitude Parameter",
+      "category": "Animation & Trigonometry",
+      "taxonomy_code": "TRIG",
+      "related_terms": [
+        "Harmonic Motion Wave"
+      ]
+    },
+    {
+      "term": "Wave Frequency Parameter",
+      "category": "Animation & Trigonometry",
+      "taxonomy_code": "TRIG",
+      "related_terms": []
+    },
+    {
+      "term": "Wave Phase Offset",
+      "category": "Animation & Trigonometry",
+      "taxonomy_code": "TRIG",
+      "related_terms": []
+    },
+    {
+      "term": "Harmonic Motion Wave",
+      "category": "Animation & Trigonometry",
+      "taxonomy_code": "TRIG",
+      "related_terms": [
+        "Damped Harmonic Oscillation",
+        "Pendulum Swing Simulation",
+        "Wave Interference Pattern"
+      ]
+    },
+    {
+      "term": "Circle Polar Coordinates",
+      "category": "Animation & Trigonometry",
+      "taxonomy_code": "TRIG",
+      "related_terms": [
+        "Polar to Cartesian Formula",
+        "Cartesian to Polar Formula",
+        "Spiral Pattern Generation",
+        "Circular Orbit Simulation",
+        "Elliptical Path Trajectory",
+        "Wobbly Circle Generator",
+        "Circular Audio Visualizer",
+        "Text Path Following Arc",
+        "John Whitney Computer Motion"
+      ]
+    },
+    {
+      "term": "Polar to Cartesian Formula",
+      "category": "Animation & Trigonometry",
+      "taxonomy_code": "TRIG",
+      "related_terms": []
+    },
+    {
+      "term": "Cartesian to Polar Formula",
+      "category": "Animation & Trigonometry",
+      "taxonomy_code": "TRIG",
+      "related_terms": []
+    },
+    {
+      "term": "Arc Tangent Atan2 Function",
+      "category": "Animation & Trigonometry",
+      "taxonomy_code": "TRIG",
+      "related_terms": [
+        "Angle Between Coordinates",
+        "Vector Heading Angle"
+      ]
+    },
+    {
+      "term": "Angle Between Coordinates",
+      "category": "Animation & Trigonometry",
+      "taxonomy_code": "TRIG",
+      "related_terms": [
+        "Rotational Tracking Motion",
+        "Pendulum Swing Simulation"
+      ]
+    },
+    {
+      "term": "Rotational Tracking Motion",
+      "category": "Animation & Trigonometry",
+      "taxonomy_code": "TRIG",
+      "related_terms": []
+    },
+    {
+      "term": "Map Range Function",
+      "category": "Animation & Trigonometry",
+      "taxonomy_code": "TRIG",
+      "related_terms": [
+        "Constrain Value Function",
+        "Linear Interpolation Lerp",
+        "Dynamic Font Scaling"
+      ]
+    },
+    {
+      "term": "Constrain Value Function",
+      "category": "Animation & Trigonometry",
+      "taxonomy_code": "TRIG",
+      "related_terms": []
+    },
+    {
+      "term": "Linear Interpolation Lerp",
+      "category": "Animation & Trigonometry",
+      "taxonomy_code": "TRIG",
+      "related_terms": [
+        "Easing Function In",
+        "Vector Lerp Method",
+        "Smooth Amplitude Level"
+      ]
+    },
+    {
+      "term": "Distance Formula Dist",
+      "category": "Animation & Trigonometry",
+      "taxonomy_code": "TRIG",
+      "related_terms": [
+        "Square Distance Metric",
+        "Worley Cell Noise",
+        "Hit Test Point Circle",
+        "Webcam Motion Difference"
+      ]
+    },
+    {
+      "term": "Square Distance Metric",
+      "category": "Animation & Trigonometry",
+      "taxonomy_code": "TRIG",
+      "related_terms": []
+    },
+    {
+      "term": "Lissajous Curve Generator",
+      "category": "Animation & Trigonometry",
+      "taxonomy_code": "TRIG",
+      "related_terms": []
+    },
+    {
+      "term": "Spiral Pattern Generation",
+      "category": "Animation & Trigonometry",
+      "taxonomy_code": "TRIG",
+      "related_terms": []
+    },
+    {
+      "term": "Damped Harmonic Oscillation",
+      "category": "Animation & Trigonometry",
+      "taxonomy_code": "TRIG",
+      "related_terms": []
+    },
+    {
+      "term": "Pendulum Swing Simulation",
+      "category": "Animation & Trigonometry",
+      "taxonomy_code": "TRIG",
+      "related_terms": []
+    },
+    {
+      "term": "Wave Interference Pattern",
+      "category": "Animation & Trigonometry",
+      "taxonomy_code": "TRIG",
+      "related_terms": []
+    },
+    {
+      "term": "Circular Orbit Simulation",
+      "category": "Animation & Trigonometry",
+      "taxonomy_code": "TRIG",
+      "related_terms": []
+    },
+    {
+      "term": "Elliptical Path Trajectory",
+      "category": "Animation & Trigonometry",
+      "taxonomy_code": "TRIG",
+      "related_terms": []
+    },
+    {
+      "term": "Easing Function In",
+      "category": "Animation & Trigonometry",
+      "taxonomy_code": "TRIG",
+      "related_terms": [
+        "Easing Function Out",
+        "Easing Function In Out"
+      ]
+    },
+    {
+      "term": "Easing Function Out",
+      "category": "Animation & Trigonometry",
+      "taxonomy_code": "TRIG",
+      "related_terms": []
+    },
+    {
+      "term": "Easing Function In Out",
+      "category": "Animation & Trigonometry",
+      "taxonomy_code": "TRIG",
+      "related_terms": []
+    },
+    {
+      "term": "Frame Independent Motion",
+      "category": "Animation & Trigonometry",
+      "taxonomy_code": "TRIG",
+      "related_terms": []
+    },
+    {
+      "term": "Step Motion Accumulator",
+      "category": "Animation & Trigonometry",
+      "taxonomy_code": "TRIG",
+      "related_terms": []
+    },
+    {
+      "term": "Trigonometric Lookup Table",
+      "category": "Animation & Trigonometry",
+      "taxonomy_code": "TRIG",
+      "related_terms": []
+    },
+    {
+      "term": "Random Function Float",
+      "category": "Randomness & Perlin Noise",
+      "taxonomy_code": "NOISE",
+      "related_terms": [
+        "Random Range Function",
+        "Random Seed Setting",
+        "Random Gaussian Normal",
+        "Random Walk Algorithm",
+        "Perlin Noise Concept",
+        "Perlin Noise vs Random",
+        "Monte Carlo Selection",
+        "Weighted Random Choice",
+        "Shuffle Array Order",
+        "Vector Random 2D",
+        "Vera Moln\u00e1r Generative Art"
+      ]
+    },
+    {
+      "term": "Random Range Function",
+      "category": "Randomness & Perlin Noise",
+      "taxonomy_code": "NOISE",
+      "related_terms": []
+    },
+    {
+      "term": "Random Seed Setting",
+      "category": "Randomness & Perlin Noise",
+      "taxonomy_code": "NOISE",
+      "related_terms": []
+    },
+    {
+      "term": "Random Gaussian Normal",
+      "category": "Randomness & Perlin Noise",
+      "taxonomy_code": "NOISE",
+      "related_terms": [
+        "Standard Deviation Spread",
+        "Mean Center Value"
+      ]
+    },
+    {
+      "term": "Standard Deviation Spread",
+      "category": "Randomness & Perlin Noise",
+      "taxonomy_code": "NOISE",
+      "related_terms": []
+    },
+    {
+      "term": "Mean Center Value",
+      "category": "Randomness & Perlin Noise",
+      "taxonomy_code": "NOISE",
+      "related_terms": []
+    },
+    {
+      "term": "Random Walk Algorithm",
+      "category": "Randomness & Perlin Noise",
+      "taxonomy_code": "NOISE",
+      "related_terms": [
+        "Levy Flight Algorithm",
+        "Stochastic Tree Growth",
+        "Brownian Motion Model"
+      ]
+    },
+    {
+      "term": "Levy Flight Algorithm",
+      "category": "Randomness & Perlin Noise",
+      "taxonomy_code": "NOISE",
+      "related_terms": []
+    },
+    {
+      "term": "Perlin Noise Concept",
+      "category": "Randomness & Perlin Noise",
+      "taxonomy_code": "NOISE",
+      "related_terms": [
+        "Noise Function 1D",
+        "Noise Function 2D",
+        "Noise Function 3D",
+        "Noise Detail Octaves",
+        "Noise Seed Function",
+        "Perlin Noise vs Random",
+        "Simplex Noise Derivative",
+        "Worley Cell Noise"
+      ]
+    },
+    {
+      "term": "Noise Function 1D",
+      "category": "Randomness & Perlin Noise",
+      "taxonomy_code": "NOISE",
+      "related_terms": [
+        "Noise Scale Increment",
+        "Organic Curve Generation",
+        "Wobbly Circle Generator",
+        "Wobbly Text Particle Point"
+      ]
+    },
+    {
+      "term": "Noise Function 2D",
+      "category": "Randomness & Perlin Noise",
+      "taxonomy_code": "NOISE",
+      "related_terms": [
+        "Smooth Noise Landscape",
+        "Noise Animated Terrain",
+        "Noise Flow Field Concept",
+        "Noise Texture Map"
+      ]
+    },
+    {
+      "term": "Noise Function 3D",
+      "category": "Randomness & Perlin Noise",
+      "taxonomy_code": "NOISE",
+      "related_terms": []
+    },
+    {
+      "term": "Noise Scale Increment",
+      "category": "Randomness & Perlin Noise",
+      "taxonomy_code": "NOISE",
+      "related_terms": [
+        "Noise Animated Terrain"
+      ]
+    },
+    {
+      "term": "Noise Detail Octaves",
+      "category": "Randomness & Perlin Noise",
+      "taxonomy_code": "NOISE",
+      "related_terms": [
+        "Noise Falloff Ratio"
+      ]
+    },
+    {
+      "term": "Noise Falloff Ratio",
+      "category": "Randomness & Perlin Noise",
+      "taxonomy_code": "NOISE",
+      "related_terms": []
+    },
+    {
+      "term": "Noise Seed Function",
+      "category": "Randomness & Perlin Noise",
+      "taxonomy_code": "NOISE",
+      "related_terms": []
+    },
+    {
+      "term": "Smooth Noise Landscape",
+      "category": "Randomness & Perlin Noise",
+      "taxonomy_code": "NOISE",
+      "related_terms": []
+    },
+    {
+      "term": "Noise Animated Terrain",
+      "category": "Randomness & Perlin Noise",
+      "taxonomy_code": "NOISE",
+      "related_terms": []
+    },
+    {
+      "term": "Noise Flow Field Concept",
+      "category": "Randomness & Perlin Noise",
+      "taxonomy_code": "NOISE",
+      "related_terms": [
+        "Vector Field Direction"
+      ]
+    },
+    {
+      "term": "Vector Field Direction",
+      "category": "Randomness & Perlin Noise",
+      "taxonomy_code": "NOISE",
+      "related_terms": []
+    },
+    {
+      "term": "Organic Curve Generation",
+      "category": "Randomness & Perlin Noise",
+      "taxonomy_code": "NOISE",
+      "related_terms": []
+    },
+    {
+      "term": "Noise Texture Map",
+      "category": "Randomness & Perlin Noise",
+      "taxonomy_code": "NOISE",
+      "related_terms": [
+        "Cloud Texture Generator",
+        "Marble Texture Generator",
+        "Noise Displacement Map"
+      ]
+    },
+    {
+      "term": "Wobbly Circle Generator",
+      "category": "Randomness & Perlin Noise",
+      "taxonomy_code": "NOISE",
+      "related_terms": []
+    },
+    {
+      "term": "Perlin Noise vs Random",
+      "category": "Randomness & Perlin Noise",
+      "taxonomy_code": "NOISE",
+      "related_terms": []
+    },
+    {
+      "term": "Simplex Noise Derivative",
+      "category": "Randomness & Perlin Noise",
+      "taxonomy_code": "NOISE",
+      "related_terms": []
+    },
+    {
+      "term": "Worley Cell Noise",
+      "category": "Randomness & Perlin Noise",
+      "taxonomy_code": "NOISE",
+      "related_terms": []
+    },
+    {
+      "term": "Monte Carlo Selection",
+      "category": "Randomness & Perlin Noise",
+      "taxonomy_code": "NOISE",
+      "related_terms": []
+    },
+    {
+      "term": "Weighted Random Choice",
+      "category": "Randomness & Perlin Noise",
+      "taxonomy_code": "NOISE",
+      "related_terms": []
+    },
+    {
+      "term": "Shuffle Array Order",
+      "category": "Randomness & Perlin Noise",
+      "taxonomy_code": "NOISE",
+      "related_terms": []
+    },
+    {
+      "term": "Stochastic Tree Growth",
+      "category": "Randomness & Perlin Noise",
+      "taxonomy_code": "NOISE",
+      "related_terms": []
+    },
+    {
+      "term": "Brownian Motion Model",
+      "category": "Randomness & Perlin Noise",
+      "taxonomy_code": "NOISE",
+      "related_terms": []
+    },
+    {
+      "term": "Cloud Texture Generator",
+      "category": "Randomness & Perlin Noise",
+      "taxonomy_code": "NOISE",
+      "related_terms": []
+    },
+    {
+      "term": "Marble Texture Generator",
+      "category": "Randomness & Perlin Noise",
+      "taxonomy_code": "NOISE",
+      "related_terms": []
+    },
+    {
+      "term": "Noise Displacement Map",
+      "category": "Randomness & Perlin Noise",
+      "taxonomy_code": "NOISE",
+      "related_terms": []
+    },
+    {
+      "term": "p5 Vector Class Concept",
+      "category": "Vector Math & Physics",
+      "taxonomy_code": "VEC",
+      "related_terms": [
+        "Create Vector Function",
+        "Vector Addition Add",
+        "Vector Subtraction Sub",
+        "Vector Scalar Multiply",
+        "Vector Scalar Divide",
+        "Vector Magnitude Mag",
+        "Vector Heading Angle",
+        "Vector Dot Product",
+        "Vector Cross Product",
+        "Vector Distance Dist",
+        "Vector Lerp Method",
+        "Particle Class Object"
+      ]
+    },
+    {
+      "term": "Create Vector Function",
+      "category": "Vector Math & Physics",
+      "taxonomy_code": "VEC",
+      "related_terms": []
+    },
+    {
+      "term": "Vector Addition Add",
+      "category": "Vector Math & Physics",
+      "taxonomy_code": "VEC",
+      "related_terms": [
+        "Velocity Motion Vector"
+      ]
+    },
+    {
+      "term": "Vector Subtraction Sub",
+      "category": "Vector Math & Physics",
+      "taxonomy_code": "VEC",
+      "related_terms": [
+        "Elastic Collision Bouncing",
+        "Spring Force Hooke Law"
+      ]
+    },
+    {
+      "term": "Vector Scalar Multiply",
+      "category": "Vector Math & Physics",
+      "taxonomy_code": "VEC",
+      "related_terms": []
+    },
+    {
+      "term": "Vector Scalar Divide",
+      "category": "Vector Math & Physics",
+      "taxonomy_code": "VEC",
+      "related_terms": []
+    },
+    {
+      "term": "Vector Magnitude Mag",
+      "category": "Vector Math & Physics",
+      "taxonomy_code": "VEC",
+      "related_terms": [
+        "Vector Magnitude Sq",
+        "Vector Normalize Method",
+        "Vector Limit Magnitude"
+      ]
+    },
+    {
+      "term": "Vector Magnitude Sq",
+      "category": "Vector Math & Physics",
+      "taxonomy_code": "VEC",
+      "related_terms": []
+    },
+    {
+      "term": "Vector Normalize Method",
+      "category": "Vector Math & Physics",
+      "taxonomy_code": "VEC",
+      "related_terms": [
+        "Vector Set Mag Method",
+        "Friction Drag Simulation"
+      ]
+    },
+    {
+      "term": "Vector Set Mag Method",
+      "category": "Vector Math & Physics",
+      "taxonomy_code": "VEC",
+      "related_terms": []
+    },
+    {
+      "term": "Vector Limit Magnitude",
+      "category": "Vector Math & Physics",
+      "taxonomy_code": "VEC",
+      "related_terms": []
+    },
+    {
+      "term": "Vector Heading Angle",
+      "category": "Vector Math & Physics",
+      "taxonomy_code": "VEC",
+      "related_terms": [
+        "Vector From Angle"
+      ]
+    },
+    {
+      "term": "Vector From Angle",
+      "category": "Vector Math & Physics",
+      "taxonomy_code": "VEC",
+      "related_terms": [
+        "Vector Random 2D"
+      ]
+    },
+    {
+      "term": "Vector Random 2D",
+      "category": "Vector Math & Physics",
+      "taxonomy_code": "VEC",
+      "related_terms": []
+    },
+    {
+      "term": "Vector Dot Product",
+      "category": "Vector Math & Physics",
+      "taxonomy_code": "VEC",
+      "related_terms": [
+        "Vector Angle Between"
+      ]
+    },
+    {
+      "term": "Vector Cross Product",
+      "category": "Vector Math & Physics",
+      "taxonomy_code": "VEC",
+      "related_terms": []
+    },
+    {
+      "term": "Vector Distance Dist",
+      "category": "Vector Math & Physics",
+      "taxonomy_code": "VEC",
+      "related_terms": []
+    },
+    {
+      "term": "Vector Angle Between",
+      "category": "Vector Math & Physics",
+      "taxonomy_code": "VEC",
+      "related_terms": []
+    },
+    {
+      "term": "Vector Lerp Method",
+      "category": "Vector Math & Physics",
+      "taxonomy_code": "VEC",
+      "related_terms": []
+    },
+    {
+      "term": "Velocity Motion Vector",
+      "category": "Vector Math & Physics",
+      "taxonomy_code": "VEC",
+      "related_terms": [
+        "Acceleration Force Vector",
+        "Elastic Collision Bouncing",
+        "Particle Class Object"
+      ]
+    },
+    {
+      "term": "Acceleration Force Vector",
+      "category": "Vector Math & Physics",
+      "taxonomy_code": "VEC",
+      "related_terms": [
+        "Accumulate Forces Newton",
+        "Particle Class Object"
+      ]
+    },
+    {
+      "term": "Accumulate Forces Newton",
+      "category": "Vector Math & Physics",
+      "taxonomy_code": "VEC",
+      "related_terms": [
+        "Mass Attribute Scalar",
+        "Gravity Force Simulation",
+        "Friction Drag Simulation",
+        "Spring Force Hooke Law"
+      ]
+    },
+    {
+      "term": "Mass Attribute Scalar",
+      "category": "Vector Math & Physics",
+      "taxonomy_code": "VEC",
+      "related_terms": [
+        "Gravity Force Simulation"
+      ]
+    },
+    {
+      "term": "Gravity Force Simulation",
+      "category": "Vector Math & Physics",
+      "taxonomy_code": "VEC",
+      "related_terms": [
+        "Gravitational Attraction"
+      ]
+    },
+    {
+      "term": "Friction Drag Simulation",
+      "category": "Vector Math & Physics",
+      "taxonomy_code": "VEC",
+      "related_terms": [
+        "Fluid Resistance Model"
+      ]
+    },
+    {
+      "term": "Fluid Resistance Model",
+      "category": "Vector Math & Physics",
+      "taxonomy_code": "VEC",
+      "related_terms": []
+    },
+    {
+      "term": "Gravitational Attraction",
+      "category": "Vector Math & Physics",
+      "taxonomy_code": "VEC",
+      "related_terms": []
+    },
+    {
+      "term": "Elastic Collision Bouncing",
+      "category": "Vector Math & Physics",
+      "taxonomy_code": "VEC",
+      "related_terms": []
+    },
+    {
+      "term": "Particle Class Object",
+      "category": "Vector Math & Physics",
+      "taxonomy_code": "VEC",
+      "related_terms": [
+        "Particle System Manager",
+        "Particle Lifespan Decay"
+      ]
+    },
+    {
+      "term": "Particle System Manager",
+      "category": "Vector Math & Physics",
+      "taxonomy_code": "VEC",
+      "related_terms": [
+        "Particle Emitter Location",
+        "Flocking Boids Steering",
+        "Particle Burst on Beat",
+        "Particle Typography Effect"
+      ]
+    },
+    {
+      "term": "Particle Lifespan Decay",
+      "category": "Vector Math & Physics",
+      "taxonomy_code": "VEC",
+      "related_terms": []
+    },
+    {
+      "term": "Particle Emitter Location",
+      "category": "Vector Math & Physics",
+      "taxonomy_code": "VEC",
+      "related_terms": []
+    },
+    {
+      "term": "Flocking Boids Steering",
+      "category": "Vector Math & Physics",
+      "taxonomy_code": "VEC",
+      "related_terms": []
+    },
+    {
+      "term": "Spring Force Hooke Law",
+      "category": "Vector Math & Physics",
+      "taxonomy_code": "VEC",
+      "related_terms": []
+    },
+    {
+      "term": "Mouse X Position",
+      "category": "User Input & Sensing",
+      "taxonomy_code": "INP",
+      "related_terms": [
+        "Previous Mouse X PmouseX",
+        "Mouse Is Pressed Flag",
+        "Mouse Moved Event",
+        "Mouse Wheel Event",
+        "Device Orientation Tilt",
+        "Hit Test Point Rect",
+        "Hit Test Point Circle",
+        "Cursor Appearance Pointer",
+        "Orbit Control Camera"
+      ]
+    },
+    {
+      "term": "Mouse Y Position",
+      "category": "User Input & Sensing",
+      "taxonomy_code": "INP",
+      "related_terms": [
+        "Previous Mouse Y PmouseY",
+        "Hit Test Point Rect",
+        "Hit Test Point Circle"
+      ]
+    },
+    {
+      "term": "Previous Mouse X PmouseX",
+      "category": "User Input & Sensing",
+      "taxonomy_code": "INP",
+      "related_terms": []
+    },
+    {
+      "term": "Previous Mouse Y PmouseY",
+      "category": "User Input & Sensing",
+      "taxonomy_code": "INP",
+      "related_terms": []
+    },
+    {
+      "term": "Mouse Is Pressed Flag",
+      "category": "User Input & Sensing",
+      "taxonomy_code": "INP",
+      "related_terms": [
+        "Mouse Button Value",
+        "Mouse Pressed Event",
+        "Mouse Released Event",
+        "Mouse Dragged Event"
+      ]
+    },
+    {
+      "term": "Mouse Button Value",
+      "category": "User Input & Sensing",
+      "taxonomy_code": "INP",
+      "related_terms": []
+    },
+    {
+      "term": "Mouse Pressed Event",
+      "category": "User Input & Sensing",
+      "taxonomy_code": "INP",
+      "related_terms": [
+        "Mouse Clicked Event"
+      ]
+    },
+    {
+      "term": "Mouse Released Event",
+      "category": "User Input & Sensing",
+      "taxonomy_code": "INP",
+      "related_terms": []
+    },
+    {
+      "term": "Mouse Moved Event",
+      "category": "User Input & Sensing",
+      "taxonomy_code": "INP",
+      "related_terms": []
+    },
+    {
+      "term": "Mouse Dragged Event",
+      "category": "User Input & Sensing",
+      "taxonomy_code": "INP",
+      "related_terms": [
+        "Drag and Drop Element"
+      ]
+    },
+    {
+      "term": "Mouse Clicked Event",
+      "category": "User Input & Sensing",
+      "taxonomy_code": "INP",
+      "related_terms": []
+    },
+    {
+      "term": "Mouse Wheel Event",
+      "category": "User Input & Sensing",
+      "taxonomy_code": "INP",
+      "related_terms": []
+    },
+    {
+      "term": "Key Is Pressed Flag",
+      "category": "User Input & Sensing",
+      "taxonomy_code": "INP",
+      "related_terms": [
+        "Key Variable Character",
+        "Key Code Number",
+        "Key Pressed Event",
+        "Key Released Event",
+        "Key Typed Event",
+        "Virtual Gamepad Input"
+      ]
+    },
+    {
+      "term": "Key Variable Character",
+      "category": "User Input & Sensing",
+      "taxonomy_code": "INP",
+      "related_terms": []
+    },
+    {
+      "term": "Key Code Number",
+      "category": "User Input & Sensing",
+      "taxonomy_code": "INP",
+      "related_terms": []
+    },
+    {
+      "term": "Key Pressed Event",
+      "category": "User Input & Sensing",
+      "taxonomy_code": "INP",
+      "related_terms": []
+    },
+    {
+      "term": "Key Released Event",
+      "category": "User Input & Sensing",
+      "taxonomy_code": "INP",
+      "related_terms": []
+    },
+    {
+      "term": "Key Typed Event",
+      "category": "User Input & Sensing",
+      "taxonomy_code": "INP",
+      "related_terms": []
+    },
+    {
+      "term": "Touch Touches Array",
+      "category": "User Input & Sensing",
+      "taxonomy_code": "INP",
+      "related_terms": [
+        "Touch Started Event",
+        "Touch Moved Event",
+        "Touch Ended Event",
+        "Multi Touch Gesture Pinch"
+      ]
+    },
+    {
+      "term": "Touch Started Event",
+      "category": "User Input & Sensing",
+      "taxonomy_code": "INP",
+      "related_terms": []
+    },
+    {
+      "term": "Touch Moved Event",
+      "category": "User Input & Sensing",
+      "taxonomy_code": "INP",
+      "related_terms": []
+    },
+    {
+      "term": "Touch Ended Event",
+      "category": "User Input & Sensing",
+      "taxonomy_code": "INP",
+      "related_terms": []
+    },
+    {
+      "term": "Device Orientation Tilt",
+      "category": "User Input & Sensing",
+      "taxonomy_code": "INP",
+      "related_terms": [
+        "Device Motion Acceleration"
+      ]
+    },
+    {
+      "term": "Device Motion Acceleration",
+      "category": "User Input & Sensing",
+      "taxonomy_code": "INP",
+      "related_terms": [
+        "Shake Gesture Event"
+      ]
+    },
+    {
+      "term": "Shake Gesture Event",
+      "category": "User Input & Sensing",
+      "taxonomy_code": "INP",
+      "related_terms": []
+    },
+    {
+      "term": "Hit Test Point Rect",
+      "category": "User Input & Sensing",
+      "taxonomy_code": "INP",
+      "related_terms": [
+        "Hover Focus State",
+        "Drag and Drop Element"
+      ]
+    },
+    {
+      "term": "Hit Test Point Circle",
+      "category": "User Input & Sensing",
+      "taxonomy_code": "INP",
+      "related_terms": []
+    },
+    {
+      "term": "Hover Focus State",
+      "category": "User Input & Sensing",
+      "taxonomy_code": "INP",
+      "related_terms": []
+    },
+    {
+      "term": "Drag and Drop Element",
+      "category": "User Input & Sensing",
+      "taxonomy_code": "INP",
+      "related_terms": [
+        "DOM Drag File Event"
+      ]
+    },
+    {
+      "term": "Cursor Appearance Pointer",
+      "category": "User Input & Sensing",
+      "taxonomy_code": "INP",
+      "related_terms": [
+        "No Cursor Function",
+        "Request Pointer Lock"
+      ]
+    },
+    {
+      "term": "No Cursor Function",
+      "category": "User Input & Sensing",
+      "taxonomy_code": "INP",
+      "related_terms": []
+    },
+    {
+      "term": "Request Pointer Lock",
+      "category": "User Input & Sensing",
+      "taxonomy_code": "INP",
+      "related_terms": []
+    },
+    {
+      "term": "Virtual Gamepad Input",
+      "category": "User Input & Sensing",
+      "taxonomy_code": "INP",
+      "related_terms": []
+    },
+    {
+      "term": "Multi Touch Gesture Pinch",
+      "category": "User Input & Sensing",
+      "taxonomy_code": "INP",
+      "related_terms": []
+    },
+    {
+      "term": "Create Button Element",
+      "category": "DOM Controls & HTML",
+      "taxonomy_code": "DOM",
+      "related_terms": [
+        "DOM Element Position",
+        "DOM Element Size",
+        "DOM Element Style CSS",
+        "DOM Mouse Pressed Event",
+        "Hide DOM Element",
+        "Select HTML Element",
+        "Interactive MicroSim Design"
+      ]
+    },
+    {
+      "term": "Create Slider Control",
+      "category": "DOM Controls & HTML",
+      "taxonomy_code": "DOM",
+      "related_terms": [
+        "DOM Element Value Get",
+        "DOM Element Value Set",
+        "DOM Changed Event"
+      ]
+    },
+    {
+      "term": "Create Input Textbox",
+      "category": "DOM Controls & HTML",
+      "taxonomy_code": "DOM",
+      "related_terms": [
+        "DOM Input Event",
+        "File Input Button",
+        "Interactive Text Input Typo"
+      ]
+    },
+    {
+      "term": "Create Select Dropdown",
+      "category": "DOM Controls & HTML",
+      "taxonomy_code": "DOM",
+      "related_terms": [
+        "DOM Changed Event"
+      ]
+    },
+    {
+      "term": "Create Checkbox Control",
+      "category": "DOM Controls & HTML",
+      "taxonomy_code": "DOM",
+      "related_terms": []
+    },
+    {
+      "term": "Create Radio Buttons",
+      "category": "DOM Controls & HTML",
+      "taxonomy_code": "DOM",
+      "related_terms": []
+    },
+    {
+      "term": "Create Color Picker",
+      "category": "DOM Controls & HTML",
+      "taxonomy_code": "DOM",
+      "related_terms": []
+    },
+    {
+      "term": "Create Paragraph Tag",
+      "category": "DOM Controls & HTML",
+      "taxonomy_code": "DOM",
+      "related_terms": []
+    },
+    {
+      "term": "Create Div Container",
+      "category": "DOM Controls & HTML",
+      "taxonomy_code": "DOM",
+      "related_terms": [
+        "Parent Container Attachment",
+        "Canvas Parent Wrapper",
+        "DOM Drag File Event"
+      ]
+    },
+    {
+      "term": "Create Span Text Inline",
+      "category": "DOM Controls & HTML",
+      "taxonomy_code": "DOM",
+      "related_terms": []
+    },
+    {
+      "term": "Create Img Element",
+      "category": "DOM Controls & HTML",
+      "taxonomy_code": "DOM",
+      "related_terms": [
+        "Texture Mapping Function",
+        "Load Image Function"
+      ]
+    },
+    {
+      "term": "DOM Element Position",
+      "category": "DOM Controls & HTML",
+      "taxonomy_code": "DOM",
+      "related_terms": [
+        "Responsive Layout Handler"
+      ]
+    },
+    {
+      "term": "DOM Element Size",
+      "category": "DOM Controls & HTML",
+      "taxonomy_code": "DOM",
+      "related_terms": [
+        "Responsive Layout Handler"
+      ]
+    },
+    {
+      "term": "DOM Element Style CSS",
+      "category": "DOM Controls & HTML",
+      "taxonomy_code": "DOM",
+      "related_terms": [
+        "DOM Element Class Add",
+        "CSS Flexbox Layout",
+        "CSS Grid Styling"
+      ]
+    },
+    {
+      "term": "DOM Element Class Add",
+      "category": "DOM Controls & HTML",
+      "taxonomy_code": "DOM",
+      "related_terms": []
+    },
+    {
+      "term": "DOM Element Value Get",
+      "category": "DOM Controls & HTML",
+      "taxonomy_code": "DOM",
+      "related_terms": []
+    },
+    {
+      "term": "DOM Element Value Set",
+      "category": "DOM Controls & HTML",
+      "taxonomy_code": "DOM",
+      "related_terms": []
+    },
+    {
+      "term": "DOM Mouse Pressed Event",
+      "category": "DOM Controls & HTML",
+      "taxonomy_code": "DOM",
+      "related_terms": []
+    },
+    {
+      "term": "DOM Changed Event",
+      "category": "DOM Controls & HTML",
+      "taxonomy_code": "DOM",
+      "related_terms": []
+    },
+    {
+      "term": "DOM Input Event",
+      "category": "DOM Controls & HTML",
+      "taxonomy_code": "DOM",
+      "related_terms": []
+    },
+    {
+      "term": "Parent Container Attachment",
+      "category": "DOM Controls & HTML",
+      "taxonomy_code": "DOM",
+      "related_terms": [
+        "Child Element Removal"
+      ]
+    },
+    {
+      "term": "Child Element Removal",
+      "category": "DOM Controls & HTML",
+      "taxonomy_code": "DOM",
+      "related_terms": []
+    },
+    {
+      "term": "Canvas Parent Wrapper",
+      "category": "DOM Controls & HTML",
+      "taxonomy_code": "DOM",
+      "related_terms": []
+    },
+    {
+      "term": "Hide DOM Element",
+      "category": "DOM Controls & HTML",
+      "taxonomy_code": "DOM",
+      "related_terms": [
+        "Show DOM Element",
+        "Video Capture Hide DOM"
+      ]
+    },
+    {
+      "term": "Show DOM Element",
+      "category": "DOM Controls & HTML",
+      "taxonomy_code": "DOM",
+      "related_terms": []
+    },
+    {
+      "term": "Select HTML Element",
+      "category": "DOM Controls & HTML",
+      "taxonomy_code": "DOM",
+      "related_terms": [
+        "Select All HTML Elements"
+      ]
+    },
+    {
+      "term": "Select All HTML Elements",
+      "category": "DOM Controls & HTML",
+      "taxonomy_code": "DOM",
+      "related_terms": []
+    },
+    {
+      "term": "HTML5 Canvas Integration",
+      "category": "DOM Controls & HTML",
+      "taxonomy_code": "DOM",
+      "related_terms": []
+    },
+    {
+      "term": "CSS Flexbox Layout",
+      "category": "DOM Controls & HTML",
+      "taxonomy_code": "DOM",
+      "related_terms": []
+    },
+    {
+      "term": "CSS Grid Styling",
+      "category": "DOM Controls & HTML",
+      "taxonomy_code": "DOM",
+      "related_terms": []
+    },
+    {
+      "term": "Responsive Layout Handler",
+      "category": "DOM Controls & HTML",
+      "taxonomy_code": "DOM",
+      "related_terms": []
+    },
+    {
+      "term": "DOM Drag File Event",
+      "category": "DOM Controls & HTML",
+      "taxonomy_code": "DOM",
+      "related_terms": []
+    },
+    {
+      "term": "File Input Button",
+      "category": "DOM Controls & HTML",
+      "taxonomy_code": "DOM",
+      "related_terms": []
+    },
+    {
+      "term": "Embedded iFrame Canvas",
+      "category": "DOM Controls & HTML",
+      "taxonomy_code": "DOM",
+      "related_terms": []
+    },
+    {
+      "term": "Function Declaration Syntax",
+      "category": "Modern ES6+ JavaScript",
+      "taxonomy_code": "JS",
+      "related_terms": [
+        "Function Parameters Arguments",
+        "Function Return Statement",
+        "Arrow Function Expression",
+        "Callback Function Logic",
+        "Anonymous Function Usage",
+        "ES6 Class Declaration",
+        "Try Catch Error Handling"
+      ]
+    },
+    {
+      "term": "Function Parameters Arguments",
+      "category": "Modern ES6+ JavaScript",
+      "taxonomy_code": "JS",
+      "related_terms": [
+        "Rest Parameters Function"
+      ]
+    },
+    {
+      "term": "Function Return Statement",
+      "category": "Modern ES6+ JavaScript",
+      "taxonomy_code": "JS",
+      "related_terms": []
+    },
+    {
+      "term": "Arrow Function Expression",
+      "category": "Modern ES6+ JavaScript",
+      "taxonomy_code": "JS",
+      "related_terms": []
+    },
+    {
+      "term": "Callback Function Logic",
+      "category": "Modern ES6+ JavaScript",
+      "taxonomy_code": "JS",
+      "related_terms": [
+        "Array Map Higher Order",
+        "Array Filter Method",
+        "Array Reduce Method",
+        "Promise Object Async"
+      ]
+    },
+    {
+      "term": "Anonymous Function Usage",
+      "category": "Modern ES6+ JavaScript",
+      "taxonomy_code": "JS",
+      "related_terms": []
+    },
+    {
+      "term": "ES6 Class Declaration",
+      "category": "Modern ES6+ JavaScript",
+      "taxonomy_code": "JS",
+      "related_terms": [
+        "Class Constructor Method",
+        "Class Method Definition",
+        "This Keyword Binding",
+        "Class Inheritance Extends",
+        "Static Method Definition",
+        "ES6 Module Import Export"
+      ]
+    },
+    {
+      "term": "Class Constructor Method",
+      "category": "Modern ES6+ JavaScript",
+      "taxonomy_code": "JS",
+      "related_terms": [
+        "Class Instance Instantiation"
+      ]
+    },
+    {
+      "term": "Class Method Definition",
+      "category": "Modern ES6+ JavaScript",
+      "taxonomy_code": "JS",
+      "related_terms": []
+    },
+    {
+      "term": "Class Instance Instantiation",
+      "category": "Modern ES6+ JavaScript",
+      "taxonomy_code": "JS",
+      "related_terms": []
+    },
+    {
+      "term": "This Keyword Binding",
+      "category": "Modern ES6+ JavaScript",
+      "taxonomy_code": "JS",
+      "related_terms": []
+    },
+    {
+      "term": "Class Inheritance Extends",
+      "category": "Modern ES6+ JavaScript",
+      "taxonomy_code": "JS",
+      "related_terms": [
+        "Super Constructor Call"
+      ]
+    },
+    {
+      "term": "Super Constructor Call",
+      "category": "Modern ES6+ JavaScript",
+      "taxonomy_code": "JS",
+      "related_terms": []
+    },
+    {
+      "term": "Static Method Definition",
+      "category": "Modern ES6+ JavaScript",
+      "taxonomy_code": "JS",
+      "related_terms": []
+    },
+    {
+      "term": "Object Literal Syntax",
+      "category": "Modern ES6+ JavaScript",
+      "taxonomy_code": "JS",
+      "related_terms": [
+        "Object Property Access",
+        "Object Destructuring"
+      ]
+    },
+    {
+      "term": "Object Property Access",
+      "category": "Modern ES6+ JavaScript",
+      "taxonomy_code": "JS",
+      "related_terms": []
+    },
+    {
+      "term": "Object Destructuring",
+      "category": "Modern ES6+ JavaScript",
+      "taxonomy_code": "JS",
+      "related_terms": []
+    },
+    {
+      "term": "Array Destructuring",
+      "category": "Modern ES6+ JavaScript",
+      "taxonomy_code": "JS",
+      "related_terms": []
+    },
+    {
+      "term": "Spread Operator Array",
+      "category": "Modern ES6+ JavaScript",
+      "taxonomy_code": "JS",
+      "related_terms": []
+    },
+    {
+      "term": "Rest Parameters Function",
+      "category": "Modern ES6+ JavaScript",
+      "taxonomy_code": "JS",
+      "related_terms": []
+    },
+    {
+      "term": "Array Map Higher Order",
+      "category": "Modern ES6+ JavaScript",
+      "taxonomy_code": "JS",
+      "related_terms": []
+    },
+    {
+      "term": "Array Filter Method",
+      "category": "Modern ES6+ JavaScript",
+      "taxonomy_code": "JS",
+      "related_terms": []
+    },
+    {
+      "term": "Array Reduce Method",
+      "category": "Modern ES6+ JavaScript",
+      "taxonomy_code": "JS",
+      "related_terms": []
+    },
+    {
+      "term": "Promise Object Async",
+      "category": "Modern ES6+ JavaScript",
+      "taxonomy_code": "JS",
+      "related_terms": [
+        "Async Keyword Function",
+        "Fetch API Web Request"
+      ]
+    },
+    {
+      "term": "Async Keyword Function",
+      "category": "Modern ES6+ JavaScript",
+      "taxonomy_code": "JS",
+      "related_terms": [
+        "Await Keyword Expression"
+      ]
+    },
+    {
+      "term": "Await Keyword Expression",
+      "category": "Modern ES6+ JavaScript",
+      "taxonomy_code": "JS",
+      "related_terms": []
+    },
+    {
+      "term": "Fetch API Web Request",
+      "category": "Modern ES6+ JavaScript",
+      "taxonomy_code": "JS",
+      "related_terms": [
+        "JSON Parse String",
+        "Browser Network Tab"
+      ]
+    },
+    {
+      "term": "JSON Parse String",
+      "category": "Modern ES6+ JavaScript",
+      "taxonomy_code": "JS",
+      "related_terms": [
+        "JSON Stringify Object",
+        "Load JSON p5 Function"
+      ]
+    },
+    {
+      "term": "JSON Stringify Object",
+      "category": "Modern ES6+ JavaScript",
+      "taxonomy_code": "JS",
+      "related_terms": [
+        "Local Storage Persistence"
+      ]
+    },
+    {
+      "term": "Load JSON p5 Function",
+      "category": "Modern ES6+ JavaScript",
+      "taxonomy_code": "JS",
+      "related_terms": []
+    },
+    {
+      "term": "ES6 Module Import Export",
+      "category": "Modern ES6+ JavaScript",
+      "taxonomy_code": "JS",
+      "related_terms": []
+    },
+    {
+      "term": "Try Catch Error Handling",
+      "category": "Modern ES6+ JavaScript",
+      "taxonomy_code": "JS",
+      "related_terms": []
+    },
+    {
+      "term": "Local Storage Persistence",
+      "category": "Modern ES6+ JavaScript",
+      "taxonomy_code": "JS",
+      "related_terms": []
+    },
+    {
+      "term": "Set Data Structure",
+      "category": "Modern ES6+ JavaScript",
+      "taxonomy_code": "JS",
+      "related_terms": []
+    },
+    {
+      "term": "WEBGL Renderer Mode",
+      "category": "3D WebGL Graphics",
+      "taxonomy_code": "WEBGL",
+      "related_terms": [
+        "3D Coordinate System",
+        "Orbit Control Camera",
+        "Camera Position Setting",
+        "Ambient Light Source",
+        "Normal Material Shading",
+        "Basic Material Shading",
+        "Texture Mapping Function",
+        "Create Shader Function",
+        "3D Model OBJ Import",
+        "3D Audio Reactive Visual",
+        "3D Text Extrusion WebGL"
+      ]
+    },
+    {
+      "term": "3D Coordinate System",
+      "category": "3D WebGL Graphics",
+      "taxonomy_code": "WEBGL",
+      "related_terms": [
+        "Z Axis Depth Position",
+        "Box 3D Primitive",
+        "Sphere 3D Primitive",
+        "Cylinder 3D Primitive",
+        "Cone 3D Primitive",
+        "Torus 3D Primitive",
+        "Plane 3D Geometry",
+        "Ellipsoid 3D Geometry",
+        "Manfred Mohr Algorithmic Art"
+      ]
+    },
+    {
+      "term": "Z Axis Depth Position",
+      "category": "3D WebGL Graphics",
+      "taxonomy_code": "WEBGL",
+      "related_terms": [
+        "Z Buffer Depth Test"
+      ]
+    },
+    {
+      "term": "Box 3D Primitive",
+      "category": "3D WebGL Graphics",
+      "taxonomy_code": "WEBGL",
+      "related_terms": []
+    },
+    {
+      "term": "Sphere 3D Primitive",
+      "category": "3D WebGL Graphics",
+      "taxonomy_code": "WEBGL",
+      "related_terms": []
+    },
+    {
+      "term": "Cylinder 3D Primitive",
+      "category": "3D WebGL Graphics",
+      "taxonomy_code": "WEBGL",
+      "related_terms": []
+    },
+    {
+      "term": "Cone 3D Primitive",
+      "category": "3D WebGL Graphics",
+      "taxonomy_code": "WEBGL",
+      "related_terms": []
+    },
+    {
+      "term": "Torus 3D Primitive",
+      "category": "3D WebGL Graphics",
+      "taxonomy_code": "WEBGL",
+      "related_terms": []
+    },
+    {
+      "term": "Plane 3D Geometry",
+      "category": "3D WebGL Graphics",
+      "taxonomy_code": "WEBGL",
+      "related_terms": []
+    },
+    {
+      "term": "Ellipsoid 3D Geometry",
+      "category": "3D WebGL Graphics",
+      "taxonomy_code": "WEBGL",
+      "related_terms": []
+    },
+    {
+      "term": "Orbit Control Camera",
+      "category": "3D WebGL Graphics",
+      "taxonomy_code": "WEBGL",
+      "related_terms": []
+    },
+    {
+      "term": "Camera Position Setting",
+      "category": "3D WebGL Graphics",
+      "taxonomy_code": "WEBGL",
+      "related_terms": [
+        "Perspective Camera Mode",
+        "Ortho Camera Mode"
+      ]
+    },
+    {
+      "term": "Perspective Camera Mode",
+      "category": "3D WebGL Graphics",
+      "taxonomy_code": "WEBGL",
+      "related_terms": []
+    },
+    {
+      "term": "Ortho Camera Mode",
+      "category": "3D WebGL Graphics",
+      "taxonomy_code": "WEBGL",
+      "related_terms": []
+    },
+    {
+      "term": "Ambient Light Source",
+      "category": "3D WebGL Graphics",
+      "taxonomy_code": "WEBGL",
+      "related_terms": [
+        "Directional Light Source",
+        "Point Light Source",
+        "Spot Light Source",
+        "Ambient Material Shading"
+      ]
+    },
+    {
+      "term": "Directional Light Source",
+      "category": "3D WebGL Graphics",
+      "taxonomy_code": "WEBGL",
+      "related_terms": [
+        "3D Lighting Model Combined"
+      ]
+    },
+    {
+      "term": "Point Light Source",
+      "category": "3D WebGL Graphics",
+      "taxonomy_code": "WEBGL",
+      "related_terms": [
+        "Specular Material Shading",
+        "3D Lighting Model Combined"
+      ]
+    },
+    {
+      "term": "Spot Light Source",
+      "category": "3D WebGL Graphics",
+      "taxonomy_code": "WEBGL",
+      "related_terms": []
+    },
+    {
+      "term": "Normal Material Shading",
+      "category": "3D WebGL Graphics",
+      "taxonomy_code": "WEBGL",
+      "related_terms": []
+    },
+    {
+      "term": "Basic Material Shading",
+      "category": "3D WebGL Graphics",
+      "taxonomy_code": "WEBGL",
+      "related_terms": []
+    },
+    {
+      "term": "Ambient Material Shading",
+      "category": "3D WebGL Graphics",
+      "taxonomy_code": "WEBGL",
+      "related_terms": []
+    },
+    {
+      "term": "Specular Material Shading",
+      "category": "3D WebGL Graphics",
+      "taxonomy_code": "WEBGL",
+      "related_terms": [
+        "Shininess Parameter"
+      ]
+    },
+    {
+      "term": "Shininess Parameter",
+      "category": "3D WebGL Graphics",
+      "taxonomy_code": "WEBGL",
+      "related_terms": []
+    },
+    {
+      "term": "Texture Mapping Function",
+      "category": "3D WebGL Graphics",
+      "taxonomy_code": "WEBGL",
+      "related_terms": [
+        "Offscreen Texture Render"
+      ]
+    },
+    {
+      "term": "Create Shader Function",
+      "category": "3D WebGL Graphics",
+      "taxonomy_code": "WEBGL",
+      "related_terms": [
+        "Load Shader p5 Files",
+        "Shader Uniform Variables",
+        "Fragment Shader Filter",
+        "Vertex Shader Displacement"
+      ]
+    },
+    {
+      "term": "Load Shader p5 Files",
+      "category": "3D WebGL Graphics",
+      "taxonomy_code": "WEBGL",
+      "related_terms": []
+    },
+    {
+      "term": "Shader Uniform Variables",
+      "category": "3D WebGL Graphics",
+      "taxonomy_code": "WEBGL",
+      "related_terms": []
+    },
+    {
+      "term": "Fragment Shader Filter",
+      "category": "3D WebGL Graphics",
+      "taxonomy_code": "WEBGL",
+      "related_terms": []
+    },
+    {
+      "term": "Vertex Shader Displacement",
+      "category": "3D WebGL Graphics",
+      "taxonomy_code": "WEBGL",
+      "related_terms": []
+    },
+    {
+      "term": "3D Model OBJ Import",
+      "category": "3D WebGL Graphics",
+      "taxonomy_code": "WEBGL",
+      "related_terms": [
+        "Load Model Function",
+        "3D Mesh Vertex Array"
+      ]
+    },
+    {
+      "term": "Load Model Function",
+      "category": "3D WebGL Graphics",
+      "taxonomy_code": "WEBGL",
+      "related_terms": []
+    },
+    {
+      "term": "3D Mesh Vertex Array",
+      "category": "3D WebGL Graphics",
+      "taxonomy_code": "WEBGL",
+      "related_terms": []
+    },
+    {
+      "term": "3D Lighting Model Combined",
+      "category": "3D WebGL Graphics",
+      "taxonomy_code": "WEBGL",
+      "related_terms": []
+    },
+    {
+      "term": "Z Buffer Depth Test",
+      "category": "3D WebGL Graphics",
+      "taxonomy_code": "WEBGL",
+      "related_terms": []
+    },
+    {
+      "term": "p5 Sound Library Include",
+      "category": "Audio Synthesis & Sound",
+      "taxonomy_code": "SND",
+      "related_terms": [
+        "User Start Audio Context",
+        "Load Sound File",
+        "Set Volume Level",
+        "Sound Pan Spatial",
+        "p5 Oscillator Class",
+        "p5 Noise White Pink",
+        "Audio Filter Lowpass",
+        "Audio Filter Highpass",
+        "Audio Filter Bandpass",
+        "Reverb Sound Effect",
+        "Delay Sound Effect",
+        "Audio Distortion Effect",
+        "Audio Node Signal Route",
+        "p5 AudioIn Microphone",
+        "p5 Amplitude Class",
+        "p5 FFT Class Concept",
+        "p5 Sound Local Host CORS",
+        "p5 Sound Recording Tool"
+      ]
+    },
+    {
+      "term": "User Start Audio Context",
+      "category": "Audio Synthesis & Sound",
+      "taxonomy_code": "SND",
+      "related_terms": [
+        "p5 AudioIn Microphone",
+        "Common Misconception Audio"
+      ]
+    },
+    {
+      "term": "Load Sound File",
+      "category": "Audio Synthesis & Sound",
+      "taxonomy_code": "SND",
+      "related_terms": [
+        "Sound File Play",
+        "Sound File Stop",
+        "Sound File Pause",
+        "Sound File Loop",
+        "Playback Rate Speed"
+      ]
+    },
+    {
+      "term": "Sound File Play",
+      "category": "Audio Synthesis & Sound",
+      "taxonomy_code": "SND",
+      "related_terms": [
+        "Sound Is Playing Status"
+      ]
+    },
+    {
+      "term": "Sound File Stop",
+      "category": "Audio Synthesis & Sound",
+      "taxonomy_code": "SND",
+      "related_terms": []
+    },
+    {
+      "term": "Sound File Pause",
+      "category": "Audio Synthesis & Sound",
+      "taxonomy_code": "SND",
+      "related_terms": []
+    },
+    {
+      "term": "Sound File Loop",
+      "category": "Audio Synthesis & Sound",
+      "taxonomy_code": "SND",
+      "related_terms": []
+    },
+    {
+      "term": "Sound Is Playing Status",
+      "category": "Audio Synthesis & Sound",
+      "taxonomy_code": "SND",
+      "related_terms": []
+    },
+    {
+      "term": "Set Volume Level",
+      "category": "Audio Synthesis & Sound",
+      "taxonomy_code": "SND",
+      "related_terms": []
+    },
+    {
+      "term": "Sound Pan Spatial",
+      "category": "Audio Synthesis & Sound",
+      "taxonomy_code": "SND",
+      "related_terms": []
+    },
+    {
+      "term": "Playback Rate Speed",
+      "category": "Audio Synthesis & Sound",
+      "taxonomy_code": "SND",
+      "related_terms": []
+    },
+    {
+      "term": "p5 Oscillator Class",
+      "category": "Audio Synthesis & Sound",
+      "taxonomy_code": "SND",
+      "related_terms": [
+        "Oscillator Wave Sine",
+        "Oscillator Wave Square",
+        "Oscillator Wave Triangle",
+        "Oscillator Wave Sawtooth",
+        "Oscillator Start Stop",
+        "Oscillator Frequency Set",
+        "ADSR Envelope Class",
+        "Play Envelope Trigger",
+        "Polyphonic Synthesizer"
+      ]
+    },
+    {
+      "term": "Oscillator Wave Sine",
+      "category": "Audio Synthesis & Sound",
+      "taxonomy_code": "SND",
+      "related_terms": []
+    },
+    {
+      "term": "Oscillator Wave Square",
+      "category": "Audio Synthesis & Sound",
+      "taxonomy_code": "SND",
+      "related_terms": []
+    },
+    {
+      "term": "Oscillator Wave Triangle",
+      "category": "Audio Synthesis & Sound",
+      "taxonomy_code": "SND",
+      "related_terms": []
+    },
+    {
+      "term": "Oscillator Wave Sawtooth",
+      "category": "Audio Synthesis & Sound",
+      "taxonomy_code": "SND",
+      "related_terms": []
+    },
+    {
+      "term": "Oscillator Start Stop",
+      "category": "Audio Synthesis & Sound",
+      "taxonomy_code": "SND",
+      "related_terms": []
+    },
+    {
+      "term": "Oscillator Frequency Set",
+      "category": "Audio Synthesis & Sound",
+      "taxonomy_code": "SND",
+      "related_terms": [
+        "Midi Note to Frequency"
+      ]
+    },
+    {
+      "term": "ADSR Envelope Class",
+      "category": "Audio Synthesis & Sound",
+      "taxonomy_code": "SND",
+      "related_terms": [
+        "Envelope Attack Time",
+        "Envelope Decay Time",
+        "Envelope Sustain Level",
+        "Envelope Release Time",
+        "Play Envelope Trigger",
+        "Polyphonic Synthesizer"
+      ]
+    },
+    {
+      "term": "Envelope Attack Time",
+      "category": "Audio Synthesis & Sound",
+      "taxonomy_code": "SND",
+      "related_terms": []
+    },
+    {
+      "term": "Envelope Decay Time",
+      "category": "Audio Synthesis & Sound",
+      "taxonomy_code": "SND",
+      "related_terms": []
+    },
+    {
+      "term": "Envelope Sustain Level",
+      "category": "Audio Synthesis & Sound",
+      "taxonomy_code": "SND",
+      "related_terms": []
+    },
+    {
+      "term": "Envelope Release Time",
+      "category": "Audio Synthesis & Sound",
+      "taxonomy_code": "SND",
+      "related_terms": []
+    },
+    {
+      "term": "Play Envelope Trigger",
+      "category": "Audio Synthesis & Sound",
+      "taxonomy_code": "SND",
+      "related_terms": []
+    },
+    {
+      "term": "p5 Noise White Pink",
+      "category": "Audio Synthesis & Sound",
+      "taxonomy_code": "SND",
+      "related_terms": []
+    },
+    {
+      "term": "Audio Filter Lowpass",
+      "category": "Audio Synthesis & Sound",
+      "taxonomy_code": "SND",
+      "related_terms": []
+    },
+    {
+      "term": "Audio Filter Highpass",
+      "category": "Audio Synthesis & Sound",
+      "taxonomy_code": "SND",
+      "related_terms": []
+    },
+    {
+      "term": "Audio Filter Bandpass",
+      "category": "Audio Synthesis & Sound",
+      "taxonomy_code": "SND",
+      "related_terms": []
+    },
+    {
+      "term": "Reverb Sound Effect",
+      "category": "Audio Synthesis & Sound",
+      "taxonomy_code": "SND",
+      "related_terms": []
+    },
+    {
+      "term": "Delay Sound Effect",
+      "category": "Audio Synthesis & Sound",
+      "taxonomy_code": "SND",
+      "related_terms": []
+    },
+    {
+      "term": "Audio Distortion Effect",
+      "category": "Audio Synthesis & Sound",
+      "taxonomy_code": "SND",
+      "related_terms": []
+    },
+    {
+      "term": "Polyphonic Synthesizer",
+      "category": "Audio Synthesis & Sound",
+      "taxonomy_code": "SND",
+      "related_terms": []
+    },
+    {
+      "term": "Midi Note to Frequency",
+      "category": "Audio Synthesis & Sound",
+      "taxonomy_code": "SND",
+      "related_terms": []
+    },
+    {
+      "term": "Audio Node Signal Route",
+      "category": "Audio Synthesis & Sound",
+      "taxonomy_code": "SND",
+      "related_terms": []
+    },
+    {
+      "term": "p5 AudioIn Microphone",
+      "category": "Signal Processing & FFT",
+      "taxonomy_code": "FFT",
+      "related_terms": [
+        "Microphone Start Input",
+        "Microphone Stop Input",
+        "Microphone Get Level",
+        "Microphone Feedback Gate"
+      ]
+    },
+    {
+      "term": "Microphone Start Input",
+      "category": "Signal Processing & FFT",
+      "taxonomy_code": "FFT",
+      "related_terms": []
+    },
+    {
+      "term": "Microphone Stop Input",
+      "category": "Signal Processing & FFT",
+      "taxonomy_code": "FFT",
+      "related_terms": []
+    },
+    {
+      "term": "Microphone Get Level",
+      "category": "Signal Processing & FFT",
+      "taxonomy_code": "FFT",
+      "related_terms": []
+    },
+    {
+      "term": "p5 Amplitude Class",
+      "category": "Signal Processing & FFT",
+      "taxonomy_code": "FFT",
+      "related_terms": [
+        "Amplitude Get Level"
+      ]
+    },
+    {
+      "term": "Amplitude Get Level",
+      "category": "Signal Processing & FFT",
+      "taxonomy_code": "FFT",
+      "related_terms": [
+        "Smooth Amplitude Level",
+        "Beat Detection Threshold",
+        "Audio Reactive Pulse Scale",
+        "Audio Input Peak Hold"
+      ]
+    },
+    {
+      "term": "Smooth Amplitude Level",
+      "category": "Signal Processing & FFT",
+      "taxonomy_code": "FFT",
+      "related_terms": []
+    },
+    {
+      "term": "p5 FFT Class Concept",
+      "category": "Signal Processing & FFT",
+      "taxonomy_code": "FFT",
+      "related_terms": [
+        "FFT Analyze Spectrum",
+        "FFT Waveform Time Domain",
+        "Fast Fourier Transform Math",
+        "Acoustic Signal Processing",
+        "Acoustic Signal Pedagogy"
+      ]
+    },
+    {
+      "term": "FFT Analyze Spectrum",
+      "category": "Signal Processing & FFT",
+      "taxonomy_code": "FFT",
+      "related_terms": [
+        "FFT Frequency Bins Array",
+        "FFT Get Energy Bass",
+        "FFT Get Energy LowMid",
+        "FFT Get Energy Mid",
+        "FFT Get Energy HighMid",
+        "FFT Get Energy Treble",
+        "Audio Pitch Detection",
+        "Frequency Centroid Math"
+      ]
+    },
+    {
+      "term": "FFT Frequency Bins Array",
+      "category": "Signal Processing & FFT",
+      "taxonomy_code": "FFT",
+      "related_terms": [
+        "Spectrum Frequency Chart",
+        "Circular Audio Visualizer",
+        "Audio Spectrogram Plot",
+        "Logarithmic Frequency Scale",
+        "Octave Band Splitting",
+        "Audio Visual EQ Bars",
+        "3D Audio Reactive Visual"
+      ]
+    },
+    {
+      "term": "FFT Get Energy Bass",
+      "category": "Signal Processing & FFT",
+      "taxonomy_code": "FFT",
+      "related_terms": [
+        "Beat Detection Energy Peak",
+        "Audio Reactive Color Shift"
+      ]
+    },
+    {
+      "term": "FFT Get Energy LowMid",
+      "category": "Signal Processing & FFT",
+      "taxonomy_code": "FFT",
+      "related_terms": []
+    },
+    {
+      "term": "FFT Get Energy Mid",
+      "category": "Signal Processing & FFT",
+      "taxonomy_code": "FFT",
+      "related_terms": []
+    },
+    {
+      "term": "FFT Get Energy HighMid",
+      "category": "Signal Processing & FFT",
+      "taxonomy_code": "FFT",
+      "related_terms": []
+    },
+    {
+      "term": "FFT Get Energy Treble",
+      "category": "Signal Processing & FFT",
+      "taxonomy_code": "FFT",
+      "related_terms": []
+    },
+    {
+      "term": "FFT Waveform Time Domain",
+      "category": "Signal Processing & FFT",
+      "taxonomy_code": "FFT",
+      "related_terms": []
+    },
+    {
+      "term": "Spectrum Frequency Chart",
+      "category": "Signal Processing & FFT",
+      "taxonomy_code": "FFT",
+      "related_terms": []
+    },
+    {
+      "term": "Circular Audio Visualizer",
+      "category": "Signal Processing & FFT",
+      "taxonomy_code": "FFT",
+      "related_terms": []
+    },
+    {
+      "term": "Beat Detection Threshold",
+      "category": "Signal Processing & FFT",
+      "taxonomy_code": "FFT",
+      "related_terms": [
+        "Beat Detection Energy Peak"
+      ]
+    },
+    {
+      "term": "Beat Detection Energy Peak",
+      "category": "Signal Processing & FFT",
+      "taxonomy_code": "FFT",
+      "related_terms": [
+        "Particle Burst on Beat"
+      ]
+    },
+    {
+      "term": "Audio Reactive Pulse Scale",
+      "category": "Signal Processing & FFT",
+      "taxonomy_code": "FFT",
+      "related_terms": []
+    },
+    {
+      "term": "Audio Reactive Color Shift",
+      "category": "Signal Processing & FFT",
+      "taxonomy_code": "FFT",
+      "related_terms": []
+    },
+    {
+      "term": "Particle Burst on Beat",
+      "category": "Signal Processing & FFT",
+      "taxonomy_code": "FFT",
+      "related_terms": []
+    },
+    {
+      "term": "Fast Fourier Transform Math",
+      "category": "Signal Processing & FFT",
+      "taxonomy_code": "FFT",
+      "related_terms": []
+    },
+    {
+      "term": "Audio Spectrogram Plot",
+      "category": "Signal Processing & FFT",
+      "taxonomy_code": "FFT",
+      "related_terms": []
+    },
+    {
+      "term": "Audio Pitch Detection",
+      "category": "Signal Processing & FFT",
+      "taxonomy_code": "FFT",
+      "related_terms": []
+    },
+    {
+      "term": "Frequency Centroid Math",
+      "category": "Signal Processing & FFT",
+      "taxonomy_code": "FFT",
+      "related_terms": []
+    },
+    {
+      "term": "Logarithmic Frequency Scale",
+      "category": "Signal Processing & FFT",
+      "taxonomy_code": "FFT",
+      "related_terms": []
+    },
+    {
+      "term": "Octave Band Splitting",
+      "category": "Signal Processing & FFT",
+      "taxonomy_code": "FFT",
+      "related_terms": []
+    },
+    {
+      "term": "Audio Input Peak Hold",
+      "category": "Signal Processing & FFT",
+      "taxonomy_code": "FFT",
+      "related_terms": []
+    },
+    {
+      "term": "Audio Visual EQ Bars",
+      "category": "Signal Processing & FFT",
+      "taxonomy_code": "FFT",
+      "related_terms": []
+    },
+    {
+      "term": "3D Audio Reactive Visual",
+      "category": "Signal Processing & FFT",
+      "taxonomy_code": "FFT",
+      "related_terms": []
+    },
+    {
+      "term": "Microphone Feedback Gate",
+      "category": "Signal Processing & FFT",
+      "taxonomy_code": "FFT",
+      "related_terms": []
+    },
+    {
+      "term": "Acoustic Signal Processing",
+      "category": "Signal Processing & FFT",
+      "taxonomy_code": "FFT",
+      "related_terms": []
+    },
+    {
+      "term": "Load Image Function",
+      "category": "Image & Video Processing",
+      "taxonomy_code": "IMG",
+      "related_terms": [
+        "Image Drawing Function",
+        "Image Resize Function",
+        "Image Tint Function",
+        "Create Image Blank",
+        "p5 Image Class Object",
+        "Image Filter Grayscale",
+        "Image Filter Invert",
+        "Image Filter Threshold",
+        "Image Filter Blur",
+        "Image Filter Posterize",
+        "Image Filter Erode",
+        "Image Filter Dilate",
+        "Create Capture Webcam",
+        "Mask Image Alpha Shape"
+      ]
+    },
+    {
+      "term": "Image Drawing Function",
+      "category": "Image & Video Processing",
+      "taxonomy_code": "IMG",
+      "related_terms": [
+        "Image Crop Subrectangle"
+      ]
+    },
+    {
+      "term": "Image Resize Function",
+      "category": "Image & Video Processing",
+      "taxonomy_code": "IMG",
+      "related_terms": []
+    },
+    {
+      "term": "Image Tint Function",
+      "category": "Image & Video Processing",
+      "taxonomy_code": "IMG",
+      "related_terms": [
+        "No Tint Function"
+      ]
+    },
+    {
+      "term": "No Tint Function",
+      "category": "Image & Video Processing",
+      "taxonomy_code": "IMG",
+      "related_terms": []
+    },
+    {
+      "term": "Image Crop Subrectangle",
+      "category": "Image & Video Processing",
+      "taxonomy_code": "IMG",
+      "related_terms": [
+        "Slit Scan Video Effect"
+      ]
+    },
+    {
+      "term": "Create Image Blank",
+      "category": "Image & Video Processing",
+      "taxonomy_code": "IMG",
+      "related_terms": []
+    },
+    {
+      "term": "p5 Image Class Object",
+      "category": "Image & Video Processing",
+      "taxonomy_code": "IMG",
+      "related_terms": [
+        "Image Pixel Array Load"
+      ]
+    },
+    {
+      "term": "Image Pixel Array Load",
+      "category": "Image & Video Processing",
+      "taxonomy_code": "IMG",
+      "related_terms": [
+        "ASCIIfy Image Converter",
+        "Halftone Dot Image Screen",
+        "Pixelate Image Mosaic",
+        "Convolution Matrix Filter"
+      ]
+    },
+    {
+      "term": "Image Filter Grayscale",
+      "category": "Image & Video Processing",
+      "taxonomy_code": "IMG",
+      "related_terms": []
+    },
+    {
+      "term": "Image Filter Invert",
+      "category": "Image & Video Processing",
+      "taxonomy_code": "IMG",
+      "related_terms": []
+    },
+    {
+      "term": "Image Filter Threshold",
+      "category": "Image & Video Processing",
+      "taxonomy_code": "IMG",
+      "related_terms": []
+    },
+    {
+      "term": "Image Filter Blur",
+      "category": "Image & Video Processing",
+      "taxonomy_code": "IMG",
+      "related_terms": []
+    },
+    {
+      "term": "Image Filter Posterize",
+      "category": "Image & Video Processing",
+      "taxonomy_code": "IMG",
+      "related_terms": []
+    },
+    {
+      "term": "Image Filter Erode",
+      "category": "Image & Video Processing",
+      "taxonomy_code": "IMG",
+      "related_terms": []
+    },
+    {
+      "term": "Image Filter Dilate",
+      "category": "Image & Video Processing",
+      "taxonomy_code": "IMG",
+      "related_terms": []
+    },
+    {
+      "term": "Create Capture Webcam",
+      "category": "Image & Video Processing",
+      "taxonomy_code": "IMG",
+      "related_terms": [
+        "Video Capture Hide DOM",
+        "Webcam Pixel Mirroring",
+        "Webcam Motion Difference",
+        "Slit Scan Video Effect"
+      ]
+    },
+    {
+      "term": "Video Capture Hide DOM",
+      "category": "Image & Video Processing",
+      "taxonomy_code": "IMG",
+      "related_terms": []
+    },
+    {
+      "term": "Webcam Pixel Mirroring",
+      "category": "Image & Video Processing",
+      "taxonomy_code": "IMG",
+      "related_terms": []
+    },
+    {
+      "term": "Webcam Motion Difference",
+      "category": "Image & Video Processing",
+      "taxonomy_code": "IMG",
+      "related_terms": []
+    },
+    {
+      "term": "Slit Scan Video Effect",
+      "category": "Image & Video Processing",
+      "taxonomy_code": "IMG",
+      "related_terms": []
+    },
+    {
+      "term": "ASCIIfy Image Converter",
+      "category": "Image & Video Processing",
+      "taxonomy_code": "IMG",
+      "related_terms": []
+    },
+    {
+      "term": "Halftone Dot Image Screen",
+      "category": "Image & Video Processing",
+      "taxonomy_code": "IMG",
+      "related_terms": []
+    },
+    {
+      "term": "Pixelate Image Mosaic",
+      "category": "Image & Video Processing",
+      "taxonomy_code": "IMG",
+      "related_terms": []
+    },
+    {
+      "term": "Convolution Matrix Filter",
+      "category": "Image & Video Processing",
+      "taxonomy_code": "IMG",
+      "related_terms": [
+        "Sobel Edge Detection Filter"
+      ]
+    },
+    {
+      "term": "Sobel Edge Detection Filter",
+      "category": "Image & Video Processing",
+      "taxonomy_code": "IMG",
+      "related_terms": []
+    },
+    {
+      "term": "Save Canvas Image File",
+      "category": "Image & Video Processing",
+      "taxonomy_code": "IMG",
+      "related_terms": [
+        "Save Frames Animation GIF",
+        "p5 Sound Recording Tool"
+      ]
+    },
+    {
+      "term": "Save Frames Animation GIF",
+      "category": "Image & Video Processing",
+      "taxonomy_code": "IMG",
+      "related_terms": []
+    },
+    {
+      "term": "Graphics Offscreen Buffer",
+      "category": "Image & Video Processing",
+      "taxonomy_code": "IMG",
+      "related_terms": [
+        "Create Graphics Function"
+      ]
+    },
+    {
+      "term": "Create Graphics Function",
+      "category": "Image & Video Processing",
+      "taxonomy_code": "IMG",
+      "related_terms": [
+        "Offscreen Texture Render"
+      ]
+    },
+    {
+      "term": "Offscreen Texture Render",
+      "category": "Image & Video Processing",
+      "taxonomy_code": "IMG",
+      "related_terms": []
+    },
+    {
+      "term": "Mask Image Alpha Shape",
+      "category": "Image & Video Processing",
+      "taxonomy_code": "IMG",
+      "related_terms": []
+    },
+    {
+      "term": "Text Drawing Function",
+      "category": "Generative Typography",
+      "taxonomy_code": "TYPO",
+      "related_terms": [
+        "Text Size Setting",
+        "Text Align Alignment",
+        "Load Font File",
+        "Kinetic Typography Motion",
+        "Text Leading Spacing",
+        "Text Style Bold Italic",
+        "Text Wrap Word Container",
+        "Interactive Text Input Typo",
+        "ASCII Art Text Canvas",
+        "Text Stroke Fill Combo",
+        "Per Character Rotation",
+        "Kerning Letter Spacing"
+      ]
+    },
+    {
+      "term": "Text Size Setting",
+      "category": "Generative Typography",
+      "taxonomy_code": "TYPO",
+      "related_terms": [
+        "Dynamic Font Scaling"
+      ]
+    },
+    {
+      "term": "Text Align Alignment",
+      "category": "Generative Typography",
+      "taxonomy_code": "TYPO",
+      "related_terms": []
+    },
+    {
+      "term": "Load Font File",
+      "category": "Generative Typography",
+      "taxonomy_code": "TYPO",
+      "related_terms": [
+        "Text Font Setting",
+        "p5 Font Class Object",
+        "OTF TTF Font Support"
+      ]
+    },
+    {
+      "term": "Text Font Setting",
+      "category": "Generative Typography",
+      "taxonomy_code": "TYPO",
+      "related_terms": [
+        "System Web Font Stack"
+      ]
+    },
+    {
+      "term": "p5 Font Class Object",
+      "category": "Generative Typography",
+      "taxonomy_code": "TYPO",
+      "related_terms": [
+        "Text Bounds Bounding Box",
+        "Text To Points Vector",
+        "Variable Font Parameters",
+        "3D Text Extrusion WebGL"
+      ]
+    },
+    {
+      "term": "Text Bounds Bounding Box",
+      "category": "Generative Typography",
+      "taxonomy_code": "TYPO",
+      "related_terms": [
+        "Text Ascent Descent Metric"
+      ]
+    },
+    {
+      "term": "Text To Points Vector",
+      "category": "Generative Typography",
+      "taxonomy_code": "TYPO",
+      "related_terms": [
+        "Font Glyph Outlines",
+        "Particle Typography Effect",
+        "Wobbly Text Particle Point",
+        "Text Path Following Arc",
+        "Generative Type Grid",
+        "Deconstructed Letterforms",
+        "SVG Font Path Parsing"
+      ]
+    },
+    {
+      "term": "Font Glyph Outlines",
+      "category": "Generative Typography",
+      "taxonomy_code": "TYPO",
+      "related_terms": []
+    },
+    {
+      "term": "Particle Typography Effect",
+      "category": "Generative Typography",
+      "taxonomy_code": "TYPO",
+      "related_terms": []
+    },
+    {
+      "term": "Wobbly Text Particle Point",
+      "category": "Generative Typography",
+      "taxonomy_code": "TYPO",
+      "related_terms": []
+    },
+    {
+      "term": "Kinetic Typography Motion",
+      "category": "Generative Typography",
+      "taxonomy_code": "TYPO",
+      "related_terms": []
+    },
+    {
+      "term": "Text Leading Spacing",
+      "category": "Generative Typography",
+      "taxonomy_code": "TYPO",
+      "related_terms": []
+    },
+    {
+      "term": "Text Style Bold Italic",
+      "category": "Generative Typography",
+      "taxonomy_code": "TYPO",
+      "related_terms": []
+    },
+    {
+      "term": "Text Ascent Descent Metric",
+      "category": "Generative Typography",
+      "taxonomy_code": "TYPO",
+      "related_terms": []
+    },
+    {
+      "term": "Text Wrap Word Container",
+      "category": "Generative Typography",
+      "taxonomy_code": "TYPO",
+      "related_terms": []
+    },
+    {
+      "term": "System Web Font Stack",
+      "category": "Generative Typography",
+      "taxonomy_code": "TYPO",
+      "related_terms": []
+    },
+    {
+      "term": "OTF TTF Font Support",
+      "category": "Generative Typography",
+      "taxonomy_code": "TYPO",
+      "related_terms": []
+    },
+    {
+      "term": "Variable Font Parameters",
+      "category": "Generative Typography",
+      "taxonomy_code": "TYPO",
+      "related_terms": []
+    },
+    {
+      "term": "3D Text Extrusion WebGL",
+      "category": "Generative Typography",
+      "taxonomy_code": "TYPO",
+      "related_terms": []
+    },
+    {
+      "term": "Text Path Following Arc",
+      "category": "Generative Typography",
+      "taxonomy_code": "TYPO",
+      "related_terms": []
+    },
+    {
+      "term": "Interactive Text Input Typo",
+      "category": "Generative Typography",
+      "taxonomy_code": "TYPO",
+      "related_terms": []
+    },
+    {
+      "term": "Generative Type Grid",
+      "category": "Generative Typography",
+      "taxonomy_code": "TYPO",
+      "related_terms": []
+    },
+    {
+      "term": "Deconstructed Letterforms",
+      "category": "Generative Typography",
+      "taxonomy_code": "TYPO",
+      "related_terms": []
+    },
+    {
+      "term": "ASCII Art Text Canvas",
+      "category": "Generative Typography",
+      "taxonomy_code": "TYPO",
+      "related_terms": []
+    },
+    {
+      "term": "Text Stroke Fill Combo",
+      "category": "Generative Typography",
+      "taxonomy_code": "TYPO",
+      "related_terms": []
+    },
+    {
+      "term": "Per Character Rotation",
+      "category": "Generative Typography",
+      "taxonomy_code": "TYPO",
+      "related_terms": []
+    },
+    {
+      "term": "Dynamic Font Scaling",
+      "category": "Generative Typography",
+      "taxonomy_code": "TYPO",
+      "related_terms": []
+    },
+    {
+      "term": "Kerning Letter Spacing",
+      "category": "Generative Typography",
+      "taxonomy_code": "TYPO",
+      "related_terms": []
+    },
+    {
+      "term": "SVG Font Path Parsing",
+      "category": "Generative Typography",
+      "taxonomy_code": "TYPO",
+      "related_terms": []
+    },
+    {
+      "term": "p5 Web Editor Interface",
+      "category": "Development Tools",
+      "taxonomy_code": "TOOL",
+      "related_terms": [
+        "Web Editor Sketch File",
+        "Web Editor Asset Sidebar",
+        "Offline p5 Reference Guide"
+      ]
+    },
+    {
+      "term": "Web Editor Sketch File",
+      "category": "Development Tools",
+      "taxonomy_code": "TOOL",
+      "related_terms": []
+    },
+    {
+      "term": "Web Editor Asset Sidebar",
+      "category": "Development Tools",
+      "taxonomy_code": "TOOL",
+      "related_terms": []
+    },
+    {
+      "term": "VS Code Code Editor",
+      "category": "Development Tools",
+      "taxonomy_code": "TOOL",
+      "related_terms": [
+        "Live Server VS Extension",
+        "Git Version Control",
+        "npm Package Manager",
+        "ESLint Code Formatter",
+        "Prettier Code Formatting"
+      ]
+    },
+    {
+      "term": "Live Server VS Extension",
+      "category": "Development Tools",
+      "taxonomy_code": "TOOL",
+      "related_terms": [
+        "p5 Sound Local Host CORS",
+        "Local Web Server Python"
+      ]
+    },
+    {
+      "term": "Browser Developer Console",
+      "category": "Development Tools",
+      "taxonomy_code": "TOOL",
+      "related_terms": [
+        "Browser Element Inspector",
+        "Browser Network Tab",
+        "JavaScript Breakpoints",
+        "Source Maps Debugging"
+      ]
+    },
+    {
+      "term": "Browser Element Inspector",
+      "category": "Development Tools",
+      "taxonomy_code": "TOOL",
+      "related_terms": []
+    },
+    {
+      "term": "Browser Network Tab",
+      "category": "Development Tools",
+      "taxonomy_code": "TOOL",
+      "related_terms": []
+    },
+    {
+      "term": "JavaScript Breakpoints",
+      "category": "Development Tools",
+      "taxonomy_code": "TOOL",
+      "related_terms": [
+        "Debugger Keyword Syntax"
+      ]
+    },
+    {
+      "term": "Debugger Keyword Syntax",
+      "category": "Development Tools",
+      "taxonomy_code": "TOOL",
+      "related_terms": []
+    },
+    {
+      "term": "p5 Sound Local Host CORS",
+      "category": "Development Tools",
+      "taxonomy_code": "TOOL",
+      "related_terms": [
+        "CORS Security Policy"
+      ]
+    },
+    {
+      "term": "CORS Security Policy",
+      "category": "Development Tools",
+      "taxonomy_code": "TOOL",
+      "related_terms": [
+        "Local Web Server Python"
+      ]
+    },
+    {
+      "term": "Local Web Server Python",
+      "category": "Development Tools",
+      "taxonomy_code": "TOOL",
+      "related_terms": []
+    },
+    {
+      "term": "Git Version Control",
+      "category": "Development Tools",
+      "taxonomy_code": "TOOL",
+      "related_terms": [
+        "GitHub Repository Hosting"
+      ]
+    },
+    {
+      "term": "GitHub Repository Hosting",
+      "category": "Development Tools",
+      "taxonomy_code": "TOOL",
+      "related_terms": [
+        "GitHub Pages Deployment"
+      ]
+    },
+    {
+      "term": "GitHub Pages Deployment",
+      "category": "Development Tools",
+      "taxonomy_code": "TOOL",
+      "related_terms": [
+        "MkDocs Material Textbook",
+        "Student Portfolio Showcase"
+      ]
+    },
+    {
+      "term": "MkDocs Material Textbook",
+      "category": "Development Tools",
+      "taxonomy_code": "TOOL",
+      "related_terms": []
+    },
+    {
+      "term": "p5 Accessibility Library",
+      "category": "Development Tools",
+      "taxonomy_code": "TOOL",
+      "related_terms": [
+        "Screen Reader Description",
+        "Text Output Accessible",
+        "Grid Output Accessible",
+        "Universal Design Learning UDL"
+      ]
+    },
+    {
+      "term": "Screen Reader Description",
+      "category": "Development Tools",
+      "taxonomy_code": "TOOL",
+      "related_terms": []
+    },
+    {
+      "term": "Text Output Accessible",
+      "category": "Development Tools",
+      "taxonomy_code": "TOOL",
+      "related_terms": []
+    },
+    {
+      "term": "Grid Output Accessible",
+      "category": "Development Tools",
+      "taxonomy_code": "TOOL",
+      "related_terms": []
+    },
+    {
+      "term": "p5 Sound Recording Tool",
+      "category": "Development Tools",
+      "taxonomy_code": "TOOL",
+      "related_terms": []
+    },
+    {
+      "term": "Minified Library Production",
+      "category": "Development Tools",
+      "taxonomy_code": "TOOL",
+      "related_terms": [
+        "Source Maps Debugging"
+      ]
+    },
+    {
+      "term": "Source Maps Debugging",
+      "category": "Development Tools",
+      "taxonomy_code": "TOOL",
+      "related_terms": []
+    },
+    {
+      "term": "npm Package Manager",
+      "category": "Development Tools",
+      "taxonomy_code": "TOOL",
+      "related_terms": [
+        "Bundler Vite Webpack",
+        "p5 CLI Command Tool"
+      ]
+    },
+    {
+      "term": "Bundler Vite Webpack",
+      "category": "Development Tools",
+      "taxonomy_code": "TOOL",
+      "related_terms": []
+    },
+    {
+      "term": "ESLint Code Formatter",
+      "category": "Development Tools",
+      "taxonomy_code": "TOOL",
+      "related_terms": []
+    },
+    {
+      "term": "Prettier Code Formatting",
+      "category": "Development Tools",
+      "taxonomy_code": "TOOL",
+      "related_terms": []
+    },
+    {
+      "term": "p5 CLI Command Tool",
+      "category": "Development Tools",
+      "taxonomy_code": "TOOL",
+      "related_terms": []
+    },
+    {
+      "term": "Offline p5 Reference Guide",
+      "category": "Development Tools",
+      "taxonomy_code": "TOOL",
+      "related_terms": []
+    },
+    {
+      "term": "Computational Thinking Concept",
+      "category": "Pedagogy & Computation",
+      "taxonomy_code": "PED",
+      "related_terms": [
+        "Algorithmic Decomposition",
+        "Pattern Recognition Visual",
+        "Abstraction Problem Solving",
+        "Creative Coding Art History",
+        "Artistic Computational Synthesis"
+      ]
+    },
+    {
+      "term": "Algorithmic Decomposition",
+      "category": "Pedagogy & Computation",
+      "taxonomy_code": "PED",
+      "related_terms": [
+        "Algorithm Design Step",
+        "Debugging Mental Model"
+      ]
+    },
+    {
+      "term": "Pattern Recognition Visual",
+      "category": "Pedagogy & Computation",
+      "taxonomy_code": "PED",
+      "related_terms": []
+    },
+    {
+      "term": "Abstraction Problem Solving",
+      "category": "Pedagogy & Computation",
+      "taxonomy_code": "PED",
+      "related_terms": [
+        "Algorithm Design Step",
+        "Interactive MicroSim Design",
+        "Visual Math Pedagogy",
+        "Acoustic Signal Pedagogy"
+      ]
+    },
+    {
+      "term": "Algorithm Design Step",
+      "category": "Pedagogy & Computation",
+      "taxonomy_code": "PED",
+      "related_terms": [
+        "Summative Capstone Project"
+      ]
+    },
+    {
+      "term": "Live Coding Demonstration",
+      "category": "Pedagogy & Computation",
+      "taxonomy_code": "PED",
+      "related_terms": [
+        "Pair Programming Practice"
+      ]
+    },
+    {
+      "term": "Pair Programming Practice",
+      "category": "Pedagogy & Computation",
+      "taxonomy_code": "PED",
+      "related_terms": [
+        "Code Review Peer Rubric",
+        "Inclusive Mentoring Workshop"
+      ]
+    },
+    {
+      "term": "Code Review Peer Rubric",
+      "category": "Pedagogy & Computation",
+      "taxonomy_code": "PED",
+      "related_terms": [
+        "Formative Code Assessment"
+      ]
+    },
+    {
+      "term": "Scaffolding Starter Code",
+      "category": "Pedagogy & Computation",
+      "taxonomy_code": "PED",
+      "related_terms": [
+        "Parsons Problems Syntax",
+        "Predict Output Exercises",
+        "Differentiated Challenge Level"
+      ]
+    },
+    {
+      "term": "Parsons Problems Syntax",
+      "category": "Pedagogy & Computation",
+      "taxonomy_code": "PED",
+      "related_terms": []
+    },
+    {
+      "term": "Predict Output Exercises",
+      "category": "Pedagogy & Computation",
+      "taxonomy_code": "PED",
+      "related_terms": []
+    },
+    {
+      "term": "Debugging Mental Model",
+      "category": "Pedagogy & Computation",
+      "taxonomy_code": "PED",
+      "related_terms": []
+    },
+    {
+      "term": "Common Misconception Background",
+      "category": "Pedagogy & Computation",
+      "taxonomy_code": "PED",
+      "related_terms": []
+    },
+    {
+      "term": "Common Misconception PushPop",
+      "category": "Pedagogy & Computation",
+      "taxonomy_code": "PED",
+      "related_terms": []
+    },
+    {
+      "term": "Common Misconception Scope",
+      "category": "Pedagogy & Computation",
+      "taxonomy_code": "PED",
+      "related_terms": []
+    },
+    {
+      "term": "Common Misconception Audio",
+      "category": "Pedagogy & Computation",
+      "taxonomy_code": "PED",
+      "related_terms": []
+    },
+    {
+      "term": "Creative Coding Art History",
+      "category": "Pedagogy & Computation",
+      "taxonomy_code": "PED",
+      "related_terms": [
+        "Vera Moln\u00e1r Generative Art",
+        "John Whitney Computer Motion",
+        "Manfred Mohr Algorithmic Art",
+        "Casey Reas Ben Fry Processing",
+        "Artistic Computational Synthesis"
+      ]
+    },
+    {
+      "term": "Vera Moln\u00e1r Generative Art",
+      "category": "Pedagogy & Computation",
+      "taxonomy_code": "PED",
+      "related_terms": []
+    },
+    {
+      "term": "John Whitney Computer Motion",
+      "category": "Pedagogy & Computation",
+      "taxonomy_code": "PED",
+      "related_terms": []
+    },
+    {
+      "term": "Manfred Mohr Algorithmic Art",
+      "category": "Pedagogy & Computation",
+      "taxonomy_code": "PED",
+      "related_terms": []
+    },
+    {
+      "term": "Casey Reas Ben Fry Processing",
+      "category": "Pedagogy & Computation",
+      "taxonomy_code": "PED",
+      "related_terms": []
+    },
+    {
+      "term": "Interactive MicroSim Design",
+      "category": "Pedagogy & Computation",
+      "taxonomy_code": "PED",
+      "related_terms": [
+        "Summative Capstone Project"
+      ]
+    },
+    {
+      "term": "Differentiated Challenge Level",
+      "category": "Pedagogy & Computation",
+      "taxonomy_code": "PED",
+      "related_terms": []
+    },
+    {
+      "term": "Inclusive Mentoring Workshop",
+      "category": "Pedagogy & Computation",
+      "taxonomy_code": "PED",
+      "related_terms": [
+        "Universal Design Learning UDL"
+      ]
+    },
+    {
+      "term": "Formative Code Assessment",
+      "category": "Pedagogy & Computation",
+      "taxonomy_code": "PED",
+      "related_terms": []
+    },
+    {
+      "term": "Summative Capstone Project",
+      "category": "Pedagogy & Computation",
+      "taxonomy_code": "PED",
+      "related_terms": [
+        "Rubric Creativity Code Quality",
+        "Student Portfolio Showcase",
+        "Artistic Computational Synthesis"
+      ]
+    },
+    {
+      "term": "Rubric Creativity Code Quality",
+      "category": "Pedagogy & Computation",
+      "taxonomy_code": "PED",
+      "related_terms": []
+    },
+    {
+      "term": "Student Portfolio Showcase",
+      "category": "Pedagogy & Computation",
+      "taxonomy_code": "PED",
+      "related_terms": []
+    },
+    {
+      "term": "Universal Design Learning UDL",
+      "category": "Pedagogy & Computation",
+      "taxonomy_code": "PED",
+      "related_terms": []
+    },
+    {
+      "term": "Visual Math Pedagogy",
+      "category": "Pedagogy & Computation",
+      "taxonomy_code": "PED",
+      "related_terms": []
+    },
+    {
+      "term": "Acoustic Signal Pedagogy",
+      "category": "Pedagogy & Computation",
+      "taxonomy_code": "PED",
+      "related_terms": []
+    },
+    {
+      "term": "Artistic Computational Synthesis",
+      "category": "Pedagogy & Computation",
+      "taxonomy_code": "PED",
+      "related_terms": []
+    }
+  ]
+}

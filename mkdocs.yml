@@ -71,11 +71,17 @@ nav:
       - Concept Taxonomy: learning-graph/concept-taxonomy.md
       - Graph Quality Analysis: learning-graph/quality-metrics.md
       - Taxonomy Distribution: learning-graph/taxonomy-distribution.md
+      - Glossary Quality Report: learning-graph/glossary-quality-report.md
+      - FAQ Quality Report: learning-graph/faq-quality-report.md
+      - FAQ Coverage Gaps: learning-graph/faq-coverage-gaps.md
       - Mascot Test: learning-graph/mascot-test.md
 
   - MicroSims:
       - List of MicroSims: sims/index.md
       - Learning Graph Viewer: sims/graph-viewer/index.md
+
+  - Glossary: glossary.md
+  - FAQ: faq.md
 
   - License: license.md
   - Contact: contact.md
@@ -108,21 +114,21 @@ theme:
 plugins:
   - search
   # Uncomment after running `pip install "mkdocs-material[imaging]"`:
-  # - social
+  - social
   # Uncomment after running `pip install mkdocs-glightbox`:
-  # - glightbox:
-  #     touchNavigation: true
-  #     loop: false
-  #     effect: zoom
-  #     slide_effect: slide
-  #     width: 100%
-  #     height: auto
-  #     zoomable: true
-  #     draggable: true
-  #     auto_caption: false
-  #     caption_position: bottom
-  #     skip_classes:
-  #       - mascot-admonition-img   # keep mascot poses out of the lightbox gallery
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: zoom
+      slide_effect: slide
+      width: 100%
+      height: auto
+      zoomable: true
+      draggable: true
+      auto_caption: false
+      caption_position: bottom
+      skip_classes:
+        - mascot-admonition-img   # keep mascot poses out of the lightbox gallery
 
 # Markdown extensions
 markdown_extensions:
@@ -143,15 +149,19 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.arithmatex:
       generic: true
+      inline_syntax: ['round']
+      block_syntax: ['dollar', 'square']
 
 # Custom CSS — file is created by init-textbook
 extra_css:
   - css/extra.css
   - css/mascot.css
+  - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css
 
-# Custom JavaScript — uncomment once a corresponding file exists
-# extra_javascript:
-#   - js/extra.js
+extra_javascript:
+  - js/katex.js
+  - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js
+  - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js
 
 # Exclude prompt scratch files and TODOs from build/search/sitemap
 exclude_docs: |
@@ -159,7 +169,7 @@ exclude_docs: |
   **/image-prompts*.md
   **/cover-prompt.md
   **/TODO.md
-  docs/learning-graph/mascot-test.md
+  img/mascot/character-sheet.md
 
 # Rebuild on changes during `mkdocs serve`
 watch:

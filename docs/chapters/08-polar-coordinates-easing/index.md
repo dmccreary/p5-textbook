@@ -189,7 +189,7 @@ To bypass this bottleneck, older video games and modern high-performance engines
 
 When working with radar systems, planetary orbits, or any kind of game physics, you frequently need to know exactly how far apart two distinct objects are. Is the spaceship close enough to the asteroid to crash? Is the player's mouse hovering over the button?
 
-To find out, we rely on the **Distance Formula Dist**. In p5.js, you can conveniently use the built-in `dist(x1, y1, x2, y2)` function. Under the hood, this function is simply executing the Pythagorean theorem: $a^2 + b^2 = c^2$. It calculates the horizontal difference between the two points, squares it, adds it to the squared vertical difference, and then takes the square root of the total.
+To find out, we rely on the **Distance Formula Dist**. In p5.js, you can conveniently use the built-in `dist(x1, y1, x2, y2)` function. Under the hood, this function is simply executing the Pythagorean theorem: \(a^2 + b^2 = c^2\). It calculates the horizontal difference between the two points, squares it, adds it to the squared vertical difference, and then takes the square root of the total.
 
 However, just like trigonometric functions, calculating a true square root is computationally "expensive" and slow for a computer. If you only need to know if an object is *closer* than a certain limit (like detecting a collision radius of 50 pixels), you can optimize your code by comparing their squared distances instead! 
 
@@ -267,7 +267,7 @@ There are three primary categories of easing:
 2.  **Easing Function Out** (Ease-Out): This is the exact opposite. The object starts at a high velocity and smoothly decelerate to a gentle stop. It resembles a car gently braking at a stop sign, or a sliding puck slowly losing momentum to friction. (Our `lerp` trick from the previous section is a rudimentary form of Ease-Out!)
 3.  **Easing Function In Out** (Ease-In-Out): This function masterfully combines both ends of the spectrum. The object starts from a dead stop, smoothly accelerates to top speed in the middle of the journey, and then gracefully decelerates to a halt at its destination. It is widely considered the most organic, natural-looking movement for any object transitioning between two resting states. It perfectly mimics the movement of a human arm reaching out to grab a glass of water.
 
-These easing functions are driven by different mathematical curves—from simple quadratic equations ($x^2$) to complex exponential and trigonometric curves. By passing a normalized time variable (ranging from 0 to 1) into these mathematical functions, they warp and bend the output, returning a new smoothed value that drives your animation.
+These easing functions are driven by different mathematical curves—from simple quadratic equations (\(x^2\)) to complex exponential and trigonometric curves. By passing a normalized time variable (ranging from 0 to 1) into these mathematical functions, they warp and bend the output, returning a new smoothed value that drives your animation.
 
 !!! mascot-thinking "Palette's Insight"
     ![Palette thinking](../../img/mascot/thinking.png){ class="mascot-admonition-img" }

@@ -160,7 +160,7 @@ Imagine a large, open field. You are holding a handful of dandelion seeds. You r
 
 We can simulate these invisible currents using Perlin noise. 
 
-Instead of using the output of `noise(x, y)` to set a pixel's color or a mountain's height, what if we use it to set an *angle*? We map the noise value (which is between 0 and 1) to an angle between 0 and 360 degrees (or $0$ to $2\pi$ radians).
+Instead of using the output of `noise(x, y)` to set a pixel's color or a mountain's height, what if we use it to set an *angle*? We map the noise value (which is between 0 and 1) to an angle between 0 and 360 degrees (or \(0\) to \(2\pi\) radians).
 
 By calculating this for every point on a grid, we create a **Vector Field Direction** map. It is essentially a mathematical weather map. Every location on the screen has an invisible arrow pointing in a specific direction. Because Perlin noise is smooth and continuous, adjacent arrows will point in very similar directions. The arrows don't point chaotically; they form sweeping currents, swirling eddies, and smooth rivers of force.
 
@@ -188,7 +188,7 @@ This results in **Organic Curve Generation**. The particles group together, flow
 
 The concept of continuous 1D noise can be applied to geometry to create organic, breathing shapes. 
 
-Imagine you want to draw a circle. Normally, you use trigonometry (sine and cosine) to calculate the $x$ and $y$ coordinates of points along a fixed radius. This draws a perfectly rigid, mathematical circle.
+Imagine you want to draw a circle. Normally, you use trigonometry (sine and cosine) to calculate the \(x\) and \(y\) coordinates of points along a fixed radius. This draws a perfectly rigid, mathematical circle.
 
 But what if we make the radius variable? As we calculate the points around the circumference (from 0 to 360 degrees), we map the angle to a 1D Perlin noise lookup. We add or subtract a little bit of radius based on the noise value. 
 
@@ -221,10 +221,10 @@ Sometimes, we don't have distinct items to choose from; we have a continuous ran
 We can achieve this using a broad class of algorithms called **Monte Carlo Selection** (named after the famous casino in Monaco). 
 
 A common Monte Carlo technique is the "accept-reject" method:
-1. Pick a random number $R_1$ between 0 and 1 (this represents the rock size).
-2. We want smaller rocks to be more likely, so the *probability of keeping* $R_1$ should be higher when $R_1$ is small. 
-3. Pick a second random number $R_2$ between 0 and 1. 
-4. If $R_2$ is less than a calculated probability curve (e.g., $1 - R_1$), we "accept" $R_1$ and use it! 
+1. Pick a random number \(R_1\) between 0 and 1 (this represents the rock size).
+2. We want smaller rocks to be more likely, so the *probability of keeping* \(R_1\) should be higher when \(R_1\) is small. 
+3. Pick a second random number \(R_2\) between 0 and 1. 
+4. If \(R_2\) is less than a calculated probability curve (e.g., \(1 - R_1\)), we "accept" \(R_1\) and use it! 
 5. If it fails the test, we "reject" it, throw it away, and start over at step 1.
 
 Because a large rock size (say, 0.9) has a very low probability curve (1 - 0.9 = 0.1), it is very hard for the second random number to be smaller than 0.1. Thus, large rocks are frequently rejected, and the final output organically clusters heavily toward the smaller pebble sizes.
@@ -242,7 +242,7 @@ If you observe pollen grains suspended in water under a powerful microscope, you
 
 This erratic, jittery path is called the **Brownian Motion Model** (named after botanist Robert Brown). 
 
-In our code, we can simulate this easily using a random walk. Every frame, we take an object's current $x$ and $y$ position, and we add a tiny, random positive or negative value to both. 
+In our code, we can simulate this easily using a random walk. Every frame, we take an object's current \(x\) and \(y\) position, and we add a tiny, random positive or negative value to both. 
 `x += random(-1, 1);`
 `y += random(-1, 1);`
 

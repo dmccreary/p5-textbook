@@ -58,7 +58,7 @@ But velocity alone is boring. Objects in the real world don't just move at a con
 
 Sir Isaac Newton gave us the rules for how forces create acceleration. The most important rule for us is that we can **Accumulate Forces Newton**-style. What does this mean? It means that if multiple forces are acting on a particle at the same time—like gravity pulling it down, and wind pushing it to the side—we can simply add those force vectors together to get the net force. Then, we apply that net force to the particle's acceleration. 
 
-But wait, there's a catch! Not all particles react to forces the same way. A heavy cannonball is harder to push than a lightweight feather. This introduces the concept of the **Mass Attribute Scalar**. Mass is a single scalar value that represents how much matter an object has. According to Newton's Second Law ($F = M \\times A$, or $A = F / M$), when you apply a force to an object, its resulting acceleration is divided by its mass. So, heavier particles in our firework will accelerate less from the initial blast than the lighter ones!
+But wait, there's a catch! Not all particles react to forces the same way. A heavy cannonball is harder to push than a lightweight feather. This introduces the concept of the **Mass Attribute Scalar**. Mass is a single scalar value that represents how much matter an object has. According to Newton's Second Law (\(F = M \\times A\), or \(A = F / M\)), when you apply a force to an object, its resulting acceleration is divided by its mass. So, heavier particles in our firework will accelerate less from the initial blast than the lighter ones!
 
 !!! mascot-thinking "Forces and Mass"
     ![Palette thinking](../../img/mascot/thinking.png){ class="mascot-admonition-img" }
@@ -135,7 +135,7 @@ Once you have a working particle system with physics and lifespan, you can start
 
 Have you ever watched a flock of birds flying in the sky, or a school of fish swimming in the ocean? They move together in a synchronized, fluid way without a leader. We can simulate this using **Flocking Boids Steering** behaviors. By applying three simple rules—Separation (don't crowd your neighbors), Alignment (steer in the same direction as your neighbors), and Cohesion (steer toward the center of your neighbors)—we can turn our simple particles into a lifelike flock. Imagine a firework where the sparks don't just fall, but actively flock together like glowing fireflies!
 
-Another fantastic behavior to add is the **Spring Force Hooke Law**. A spring force pulls an object toward an anchor point, but the further away the object gets, the stronger the pull becomes. This is described by Hooke's Law ($F = -k \times x$). We can use springs to connect particles together. If you connect a bunch of particles in a grid using spring forces, you can simulate a piece of cloth flapping in the wind, or a jelly-like blob bouncing around the screen!
+Another fantastic behavior to add is the **Spring Force Hooke Law**. A spring force pulls an object toward an anchor point, but the further away the object gets, the stronger the pull becomes. This is described by Hooke's Law (\(F = -k \times x\)). We can use springs to connect particles together. If you connect a bunch of particles in a grid using spring forces, you can simulate a piece of cloth flapping in the wind, or a jelly-like blob bouncing around the screen!
 
 <details markdown="1">
 <summary>MicroSim: Interactive Flocking Fireworks</summary>
@@ -179,11 +179,11 @@ You can also animate the emitter itself! What if the emitter is attached to the 
 
 When implementing the **Fluid Resistance Model**, precision matters. Let's break down the formula for drag: 
 
-$F_d = - \frac{1}{2} \rho v^2 C_d A \hat{v}$
+\(F_d = - \frac{1}{2} \rho v^2 C_d A \hat{v}\)
 
-In the context of our high school physics engine, we can simplify this. We don't really care about the density of the fluid ($\rho$) or the cross-sectional area of our particle ($A$), because we are just trying to make it look cool, not send a rocket to Mars. We can combine all those constants into a single "drag coefficient" ($C$).
+In the context of our high school physics engine, we can simplify this. We don't really care about the density of the fluid (\(\rho\)) or the cross-sectional area of our particle (\(A\)), because we are just trying to make it look cool, not send a rocket to Mars. We can combine all those constants into a single "drag coefficient" (\(C\)).
 
-The simplified formula becomes: $F_d = -C \times ||v||^2 \times \hat{v}$
+The simplified formula becomes: \(F_d = -C \times ||v||^2 \times \hat{v}\)
 
 Here's how you translate that into p5.js code for your particle class:
 
