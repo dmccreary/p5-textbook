@@ -1,3 +1,7 @@
+---
+quality_score: 100
+readability_score: 61
+---
 
 ---
 quality_score: 100
@@ -118,8 +122,10 @@ function setup() {
 
 When you rotate, the grid spins around the `(0, 0)` point. This is why the **Translate Function** is so critical to use *before* the **Rotate Function**. If you don't translate first, your shape will orbit the top-left corner of the canvas! By translating to the center of your shape first, you achieve a **Center Rotation Pattern**. If you translate to a corner of the shape, you achieve a **Corner Rotation Pattern**. It's all about **Pivot Point Selection**.
 
+#### Diagram: Pivot Point Selection
+
 <details class="microsim">
-<summary>MicroSim: Pivot Point Selection</summary>
+<summary>MicroSim: Pivot Point Selection</summary><summary>MicroSim: Pivot Point Selection</summary>
 This simulation demonstrates the difference between the Center Rotation Pattern and Corner Rotation Pattern. Click to toggle where the origin point is translated before the rotation happens. Notice how the grid spins around the red dot (the origin).
 ```html
 <div class="microsim-container" style="height: 400px; border: 1px solid #ccc; background: #f9f9f9;">
@@ -187,8 +193,10 @@ Imagine drawing the sun, the Earth, and the moon.
 
 This creates **Nested Transformation Trees**. By pushing and popping inside of other pushes and pops, we create a chain of dependencies. The moon inherits the Earth's rotation and translation, and the Earth inherits the sun's translation. This is exactly how the **Solar System Transformation** is modeled, as well as complex mechanical movements like a **Robot Joint Transformation** (where the hand is attached to the forearm, which is attached to the upper arm).
 
+#### Diagram: The Solar System Hierarchy
+
 <details class="microsim">
-<summary>MicroSim: The Solar System Hierarchy</summary>
+<summary>MicroSim: The Solar System Hierarchy</summary><summary>MicroSim: The Solar System Hierarchy</summary>
 Watch how the nested transformations create complex orbital paths. The moon revolves around the Earth, while the Earth revolves around the sun. This is achieved entirely through pushing, popping, translating, and rotating in a hierarchical structure.
 ```html
 <div class="microsim-container" style="height: 400px; border: 1px solid #ccc; background: #f9f9f9;">

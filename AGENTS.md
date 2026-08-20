@@ -12,3 +12,17 @@ Before you make any changes to the markdown files or chapter content, you **MUST
 3. **Quality Assurance**: Do not assume your generated output was formatted perfectly on the first try. You are required to run `python scripts/check_mascots.py` (and any other validation scripts) after generating a chapter to mathematically prove your formatting aligns with the project rules.
 
 Failure to follow the guide will result in broken page layouts and an inconsistent student experience. Read `CONTENT-GENERATION-GUIDE.md` now if you have not already.
+
+## MicroSim Comment Header
+
+When generating any MicroSim, add the following block of comments to the JavaScript file:
+
+```js
+/* {MICROSIM_NAME} MicroSim
+   This MicroSim is part of the "Art of Processing" interactive intelligent textbook: https://dmccreary.github.io/p5-textbook
+   For a complete lesson plan see:  https://dmccreary.github.io/p5-textbook/sims/{MICROSIM_ID}/
+*/
+```
+
+Where {MICROSIM_NAME} is a title-case name of the MicroSim
+and {MICROSIM_ID} is the kabab-case directory of the MicroSim

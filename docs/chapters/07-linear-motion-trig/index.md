@@ -1,6 +1,6 @@
 ---
 quality_score: 100
-readability_score: 52
+readability_score: 50
 ---
 # Linear Motion, Trigonometry & Wave Math
 
@@ -148,8 +148,10 @@ When we construct a wave using trigonometric functions, there are three primary 
 2. **Wave Frequency Parameter**: This controls how fast the wave oscillates. How quickly is the Slinky bouncing up and down? In our code, adding `0.05` to the `angle` each frame determines the frequency. If we added `0.2` instead, the angle would increase faster, the `sin()` function would cycle through its values faster, and our circle would bounce furiously. A higher frequency means more wave cycles squeezed into the same amount of time.
 3. **Wave Phase Offset**: This determines where the wave begins its cycle at time zero. Imagine you have two identical Slinkies bouncing next to each other. If you let them go at the exact same time, they bounce together in perfect sync. But if you let one go a split second after the other, they are out of phase. In code, we create this offset by adding a value directly to the angle before passing it into the `sin()` function (e.g., `sin(angle + PI)`).
 
+#### Diagram: Interactive Wave Maker Laboratory
+
 <details>
-<summary>MicroSim: Interactive Wave Maker Laboratory</summary>
+<summary>MicroSim: Interactive Wave Maker Laboratory</summary><summary>MicroSim: Interactive Wave Maker Laboratory</summary>
 
 **Goal:** Create a rich interactive simulation where the user can manipulate sliders to adjust the amplitude, frequency, and phase offset of a sine wave, visualizing how these parameters alter the shape of the wave in real-time.
 
@@ -329,8 +331,10 @@ function draw() {
 }
 ```
 
+#### Diagram: Orbital Mechanics Simulator
+
 <details>
-<summary>MicroSim: Orbital Mechanics Simulator</summary>
+<summary>MicroSim: Orbital Mechanics Simulator</summary><summary>MicroSim: Orbital Mechanics Simulator</summary>
 
 **Goal:** Create an advanced, integrated simulation demonstrating polar coordinates, rotational tracking, and mapping all working simultaneously in a dynamic system.
 

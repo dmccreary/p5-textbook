@@ -1,6 +1,6 @@
 ---
 quality_score: 100
-readability_score: 49
+readability_score: 48
 ---
 # Polar Coordinates, Oscillation & Easing
 
@@ -114,8 +114,10 @@ If we wanted to make the orbit squashed into an oval, we would need to create an
 
     Here is a secret to perfect rainbow gradients: map your `theta` angle directly to the hue in HSB color mode! Because polar angles loop seamlessly, your colors will transition without any harsh jumps when the circle completes.
 
+#### Diagram: Polar Radar Sweeper
+
 <details>
-<summary>MicroSim: Polar Radar Sweeper</summary>
+<summary>MicroSim: Polar Radar Sweeper</summary><summary>MicroSim: Polar Radar Sweeper</summary>
 
 **Type:** p5.js  
 **Title:** Polar Coordinate Radar System  
@@ -274,8 +276,10 @@ These easing functions are driven by different mathematical curves—from simple
 
     Notice how easing isn't just for physical physics? Think about how blending a harsh color change with an Ease-In-Out transition alters the mental perception of the interface. You are injecting simulated physical weight into abstract concepts!
 
+#### Diagram: The Great Easing Race
+
 <details>
-<summary>MicroSim: The Great Easing Race</summary>
+<summary>MicroSim: The Great Easing Race</summary><summary>MicroSim: The Great Easing Race</summary>
 
 **Type:** p5.js  
 **Title:** Easing Function Comparison Tool  

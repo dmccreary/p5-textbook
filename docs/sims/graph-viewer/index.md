@@ -1,3 +1,7 @@
+---
+quality_score: 52
+---
+
 # Learning Graph Viewer
 
 This interactive viewer allows you to explore the learning graph for this course.

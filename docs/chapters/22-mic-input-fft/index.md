@@ -152,8 +152,10 @@ function draw() {
 }
 ```
 
+#### Diagram: Spectrum Analyzer
+
 <details markdown="1">
-<summary>MicroSim: Spectrum Analyzer</summary>
+<summary>MicroSim: Spectrum Analyzer</summary><summary>MicroSim: Spectrum Analyzer</summary>
 - Uses `p5.FFT` to display a live **Spectrum Frequency Chart**.
 - Shows 5 large bars representing Bass, LowMid, Mid, HighMid, and Treble.
 - Includes a toggle to switch to a detailed view of the full **FFT Frequency Bins Array**.
@@ -199,8 +201,10 @@ function detectBeat(bassEnergy) {
 }
 ```
 
+#### Diagram: Beat Detector System
+
 <details markdown="1">
-<summary>MicroSim: Beat Detector System</summary>
+<summary>MicroSim: Beat Detector System</summary><summary>MicroSim: Beat Detector System</summary>
 - A live audio-reactive scene with a central pulsing circle.
 - The circle demonstrates **Audio Reactive Pulse Scale** and **Audio Reactive Color Shift**.
 - On beat, it creates a **Particle Burst on Beat**.

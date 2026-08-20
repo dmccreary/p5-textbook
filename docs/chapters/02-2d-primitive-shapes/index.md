@@ -140,10 +140,10 @@ What if you don't want a full circle? What if you want a Pac-Man shape, a half-m
 
 An arc is a partial ellipse. It requires you to define a starting angle and an ending angle. In p5.js (and most mathematics), angles are traditionally measured in Radians, not Degrees. A full circle is \(2\pi\) radians. The right side of the circle (3 o'clock) is 0. The bottom (6 o'clock) is \(\pi/2\). The left (9 o'clock) is \(\pi\).
 
-#### Diagram: Angle Explorer
+#### Diagram: Arc and Angle Explorer
 
 <details markdown="1">
-<summary>Arc and Angle Explorer</summary>
+<summary>Arc and Angle Explorer</summary><summary>Arc and Angle Explorer</summary>
 Type: MicroSim
 **sim-id:** arc-angle-explorer<br/>
 **Library:** p5.js<br/>
@@ -259,7 +259,7 @@ If managing complex control points feels too mathematical, p5.js offers a simple
 #### Diagram: Bézier Control Point Sandbox
 
 <details markdown="1">
-<summary>Bézier Control Point Sandbox</summary>
+<summary>Bézier Control Point Sandbox</summary><summary>Bézier Control Point Sandbox</summary>
 Type: MicroSim
 **sim-id:** bezier-sandbox<br/>
 **Library:** p5.js<br/>

@@ -1,6 +1,6 @@
 ---
 quality_score: 100
-readability_score: 61
+readability_score: 62
 ---
 # Audio Synthesis, Oscillators & Envelopes
 
@@ -107,8 +107,10 @@ Think of an oscillator like a glowing, vibrating string of energy. The shape of 
 3. **Oscillator Wave Triangle**: A wave that ramps up and down in straight, diagonal lines. It sounds slightly brighter than a sine wave but remains relatively mellow and flute-like.
 4. **Oscillator Wave Sawtooth**: A wave that ramps up gradually and then drops instantly, looking like the teeth of a saw. It is rich, bright, and buzzing, perfect for creating huge synthesizer brass sections or aggressive lead sounds.
 
+#### Diagram: Waveform Visualizer & Hearer
+
 <details markdown="1">
-<summary>MicroSim: Waveform Visualizer & Hearer</summary>
+<summary>MicroSim: Waveform Visualizer & Hearer</summary><summary>MicroSim: Waveform Visualizer & Hearer</summary>
 
 **Goal:** Allow students to see and hear the four basic oscillator waveforms to understand the relationship between wave shape and timbre.
 
@@ -154,8 +156,10 @@ But pure noise is too raw. To make it musical, we must carve away the frequencie
 2. **Audio Filter Highpass**: The exact opposite. It lets high frequencies pass while slicing away the heavy bass. It makes sounds thin, airy, and tinny, like music playing from a cheap phone speaker.
 3. **Audio Filter Bandpass**: This filter only lets a narrow "band" or chunk of frequencies pass through, rejecting both the extreme highs and the extreme lows. It sounds like someone talking through a walkie-talkie or an old telephone.
 
+#### Diagram: Interactive Filter Sweep on Noise
+
 <details markdown="1">
-<summary>MicroSim: Interactive Filter Sweep on Noise</summary>
+<summary>MicroSim: Interactive Filter Sweep on Noise</summary><summary>MicroSim: Interactive Filter Sweep on Noise</summary>
 
 **Goal:** Demonstrate how a Lowpass filter shapes the frequency content of White Noise.
 

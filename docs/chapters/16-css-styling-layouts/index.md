@@ -1,6 +1,6 @@
 ---
 quality_score: 90
-readability_score: 52
+readability_score: 51
 ---
 # CSS Styling, Layouts & Web Page Integration
 
@@ -107,8 +107,10 @@ Historically, web developers used clumsy tricks like "floats" and tables to posi
 
 **CSS Grid Styling** is designed for two-dimensional layoutsâ€”defining rigid rows and columns simultaneously. It is exactly like drawing an architectural floor plan. You can define a grid with three columns and two rows, and explicitly say, "Put the canvas in row 1 spanning all three columns, and put the sliders in row 2."
 
+#### Diagram: DOM Layout Explorer
+
 <details markdown="1">
-<summary>MicroSim: DOM Layout Explorer</summary>
+<summary>MicroSim: DOM Layout Explorer</summary><summary>MicroSim: DOM Layout Explorer</summary>
 
 **Goal:** Create an interactive space where students can toggle between Flexbox and Grid behaviors.
 **Features:**
@@ -146,8 +148,10 @@ Finally, what if you want to include content from an entirely different websiteâ
     ![Palette warning](../../img/mascot/warning.png){ class="mascot-admonition-img" }
     Watch out for CORS errors! Browsers heavily restrict Cross-Origin Resource Sharing, meaning you cannot easily read variables from an external iframe. If you absolutely must send data between an iframe and your main sketch, you will need to research and implement the `window.postMessage()` API rather than relying on direct variable access.
 
+#### Diagram: Responsive Dashboard Builder
+
 <details markdown="1">
-<summary>MicroSim: Responsive Dashboard Builder</summary>
+<summary>MicroSim: Responsive Dashboard Builder</summary><summary>MicroSim: Responsive Dashboard Builder</summary>
 
 **Goal:** Allow students to build a mini-dashboard using DOM elements.
 **Features:**

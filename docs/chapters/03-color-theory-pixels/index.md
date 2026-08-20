@@ -1,3 +1,7 @@
+---
+quality_score: 100
+readability_score: 53
+---
 
 ---
 quality_score: 100
@@ -145,8 +149,10 @@ fill("cornflowerblue");
 stroke("#FFcc00");
 ```
 
+#### Diagram: Additive Color Mixer
+
 <details>
-<summary><strong>MicroSim: Additive Color Mixer</strong></summary>
+<summary><strong>MicroSim: Additive Color Mixer</strong></summary><summary><strong>MicroSim: Additive Color Mixer</strong></summary>
 <strong>Goal:</strong> Allow students to visually experiment with mixing Red, Green, and Blue light to see how Additive Color Mixing creates secondary colors and pure white.
 <strong>Visualization:</strong> A stark black canvas background. In the center, three large overlapping circles—representing three colored spotlights (red, green, blue).
 <strong>Interactivity:</strong> Below the canvas are three horizontal slider UI elements, each labeled and mapped from 0 to 255, controlling the intensity of the Red, Green, and Blue channels independently. As a student moves the sliders, the respective circles dynamically update their brightness. The overlapping regions in the center automatically compute the additive mixed color (e.g., full red + full green circles overlapping creates a bright yellow intersection).
@@ -184,8 +190,10 @@ Let's use a mental metaphor: think of the Color Wheel as a navigational compass.
 
 In the HSB color space, making a color "more yellow" is gloriously easy. You don't have to balance red and green lights. You just turn your hue "compass" to 60 degrees. Making it "darker" just means lowering the brightness number.
 
+#### Diagram: The Color Compass
+
 <details>
-<summary><strong>MicroSim: The Color Compass</strong></summary>
+<summary><strong>MicroSim: The Color Compass</strong></summary><summary><strong>MicroSim: The Color Compass</strong></summary>
 <strong>Goal:</strong> Visualize the HSB Color Space as an interactive navigational wheel, clearly separating hue from saturation and brightness.
 <strong>Visualization:</strong> A large, circular color wheel on the left side of the screen, displaying a smooth gradient of all 360 hues around its circumference, fading to gray/white in the exact center. On the right, a tall vertical slider labeled "Brightness".
 <strong>Interactivity:</strong> Students can click and drag a small reticle (crosshair) anywhere inside the circular wheel to simultaneously change the Hue (angle) and Saturation (distance from center). The selected color is displayed in a large preview box. They can independently drag the vertical brightness slider to see how lighting affects the chosen hue and saturation coordinate.
@@ -280,8 +288,10 @@ updatePixels();
 
 While this complex array-indexing formula is incredibly fast—allowing you to manipulate hundreds of thousands of pixels in milliseconds—p5.js also provides a much easier, albeit significantly slower, alternative. You can use the **Get Pixel Color** function (`get(x, y)`) to read a pixel, and the **Set Pixel Color** function (`set(x, y, color)`) to change a pixel. These are great for simple tasks where speed isn't critical, but for heavy image processing, the raw `pixels` array formula is mandatory.
 
+#### Diagram: The Magnifying Glass Array Translator
+
 <details>
-<summary><strong>MicroSim: The Magnifying Glass Array Translator</strong></summary>
+<summary><strong>MicroSim: The Magnifying Glass Array Translator</strong></summary><summary><strong>MicroSim: The Magnifying Glass Array Translator</strong></summary>
 <strong>Goal:</strong> Visually demystify the relationship between the 2D screen coordinate system and the 1D flat memory architecture of the `pixels` array.
 <strong>Visualization:</strong> The screen is split. On the left is a small 10x10 grid of brightly colored squares (representing a tiny 100-pixel canvas). On the right is a long, winding snake-like ribbon representing the 1D `pixels` array in computer memory, clearly segmented into groups of 4 slots (R, G, B, A).
 <strong>Interactivity:</strong> The user hovers their mouse over any square on the 2D grid. Instantly, the corresponding 4 slots on the 1D memory ribbon light up. A dynamic text overlay displays the math in real-time: `(x + y * width) * 4`. As the mouse moves, the numbers change, proving exactly how the formula jumps through the memory slots.

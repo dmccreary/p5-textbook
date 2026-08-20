@@ -65,7 +65,7 @@ Let's explore this with an interactive tool.
 #### Diagram: Interactive 3D Coordinate System
 
 <details markdown="1">
-<summary>Interactive 3D Coordinate System</summary>
+<summary>Interactive 3D Coordinate System</summary><summary>Interactive 3D Coordinate System</summary>
 Type: MicroSim
 **sim-id:** 3d-coordinate-system
 **Library:** p5.js
@@ -110,7 +110,7 @@ By default, p5.js sets up a basic camera that looks straight down the Z-axis. Bu
 #### Diagram: Shape Explorer Turntable
 
 <details markdown="1">
-<summary>Shape Explorer Turntable</summary>
+<summary>Shape Explorer Turntable</summary><summary>Shape Explorer Turntable</summary>
 Type: MicroSim
 **sim-id:** shape-explorer-turntable
 **Library:** p5.js

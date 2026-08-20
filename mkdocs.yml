@@ -77,8 +77,35 @@ nav:
       - Mascot Test: learning-graph/mascot-test.md
 
   - MicroSims:
-      - List of MicroSims: sims/index.md
-      - Learning Graph Viewer: sims/graph-viewer/index.md
+    - List of MicroSims: sims/index.md
+    - 3D Scene Editor: sims/3d-scene-editor/index.md
+    - Algorithm Visualizer: sims/algorithm-visualizer/index.md
+    - Audio Visualizer Lab: sims/audio-visualizer-lab/index.md
+    - Canvas Inspector: sims/canvas-inspector/index.md
+    - Color Mixer: sims/color-mixer/index.md
+    - Data Flow Debugger: sims/data-flow-debugger/index.md
+    - Dev Environment Simulator: sims/dev-environment-simulator/index.md
+    - Harmonic Oscillator: sims/harmonic-oscillator/index.md
+    - Interactive Sandbox: sims/interactive-sandbox/index.md
+    - Kinetic Typography Engine: sims/kinetic-typography-engine/index.md
+    - Learning Graph Viewer: sims/graph-viewer/index.md
+    - Microphone Frequency Visualization with FFT: sims/fft-mic/index.md
+    - Particle Physics Engine: sims/particle-physics-engine/index.md
+    - Pedagogical Pattern Matcher: sims/pedagogical-pattern-matcher/index.md
+    - Pixel Processing Pipeline: sims/pixel-processing-pipeline/index.md
+    - Robot Arm Kinematics: sims/robot-arm-kinematics/index.md
+    - Shape Builder: sims/shape-builder/index.md
+    - Synthesizer Board: sims/synthesizer-board/index.md
+    - Terrain Generator: sims/terrain-generator/index.md
+    - UI Component Playground: sims/ui-component-playground/index.md
+
+
+
+
+
+
+
+
 
   - Glossary: glossary.md
   - FAQ: faq.md

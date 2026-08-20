@@ -12,5 +12,6 @@ Plotly, Venn.js).
 
 ## Available MicroSims & Visualizers
 
+* [FFT Microphone Visualizer](fft-mic/index.md) — Real-time audio frequency spectrum analysis with color-coded bars and peak frequency detection.
 * [Learning Graph Viewer](graph-viewer/index.md) — Interactive 600-concept vis-network graph viewer with search, filtering, and legend statistics.
 

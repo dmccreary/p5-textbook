@@ -1,6 +1,6 @@
 ---
 quality_score: 100
-readability_score: 55
+readability_score: 54
 ---
 # Touch Gestures, Mobile Sensors & Interaction
 
@@ -91,8 +91,10 @@ Finally, when the finger is lifted off the glass, a **Touch Ended Event** occurs
     ![Palette thinking](../../img/mascot/thinking.png){ class="mascot-admonition-img" }
     Think about it like this: your sketch is no longer tracking a single pointer, but conducting an orchestra of simultaneous interactions. Notice how shifting from a single `mouseX` coordinate to an entire array of touches fundamentally changes how we must architect our logic to handle multiple independent actors at once?
 
+#### Diagram: Multi-Touch Canvas
+
 <details markdown="1">
-<summary>MicroSim: Multi-Touch Canvas</summary>
+<summary>MicroSim: Multi-Touch Canvas</summary><summary>MicroSim: Multi-Touch Canvas</summary>
 **Goal:** Create a simple drawing canvas that supports drawing with up to 5 fingers simultaneously.
 **Features:**
 - A blank canvas that clears on a double-tap.
@@ -231,8 +233,10 @@ If you are building a 3D first-person game, you might want the mouse movements t
     ![Palette warning](../../img/mascot/warning.png){ class="mascot-admonition-img" }
     Watch out for security blocks! Browsers will prevent your code from trapping the user's mouse unless they initiate the action. To avoid a broken interface, always tie your `requestPointerLock()` call to a `mouseClicked()` event rather than firing it automatically in `setup()`.
 
+#### Diagram: Device Orientation Maze
+
 <details markdown="1">
-<summary>MicroSim: Device Orientation Maze</summary>
+<summary>MicroSim: Device Orientation Maze</summary><summary>MicroSim: Device Orientation Maze</summary>
 **Goal:** Create a simple marble maze where the user tilts their mobile device to roll a ball.
 **Features:**
 - A ball object with velocity and position.

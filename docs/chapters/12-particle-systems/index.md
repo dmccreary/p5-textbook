@@ -1,3 +1,7 @@
+---
+quality_score: 100
+readability_score: 53
+---
 
 ---
 quality_score: 100
@@ -78,8 +82,10 @@ We can also play with **Gravitational Attraction**. What if instead of one globa
 
 Finally, what happens when particles hit something? The **Elastic Collision Bouncing** concept covers this. If our water hose sprays against a wall, the particles shouldn't just pass through it. We need to detect when their position intersects the wall, and then reverse their velocity vector, simulating a bounce. By keeping some of the velocity but losing a little bit to heat and sound (inelasticity), we can make the bounce look incredibly realistic.
 
+#### Diagram: Water Hose Particle Emitter
+
 <details markdown="1">
-<summary>MicroSim: Water Hose Particle Emitter</summary>
+<summary>MicroSim: Water Hose Particle Emitter</summary><summary>MicroSim: Water Hose Particle Emitter</summary>
 Build a p5.js sketch with a draggable emitter that represents a water hose. Particles should have lifespan, gravity, and random initial velocities. Add a "wall" object in the center of the screen that the particles bounce off of using elastic collisions. Include sliders to adjust the gravity strength, the water pressure (initial velocity magnitude), and the bounciness of the wall!
 </details>
 
@@ -137,8 +143,10 @@ Have you ever watched a flock of birds flying in the sky, or a school of fish sw
 
 Another fantastic behavior to add is the **Spring Force Hooke Law**. A spring force pulls an object toward an anchor point, but the further away the object gets, the stronger the pull becomes. This is described by Hooke's Law (\(F = -k \times x\)). We can use springs to connect particles together. If you connect a bunch of particles in a grid using spring forces, you can simulate a piece of cloth flapping in the wind, or a jelly-like blob bouncing around the screen!
 
+#### Diagram: Interactive Flocking Fireworks
+
 <details markdown="1">
-<summary>MicroSim: Interactive Flocking Fireworks</summary>
+<summary>MicroSim: Interactive Flocking Fireworks</summary><summary>MicroSim: Interactive Flocking Fireworks</summary>
 Create a particle system where clicking the mouse triggers a firework explosion. The particles shoot out with a blast force. However, once their initial velocity slows down due to drag, they should activate flocking behaviors (separation, alignment, cohesion). The sparks will burst outward and then smoothly coalesce into a flock of glowing boids that fly around the canvas!
 </details>
 

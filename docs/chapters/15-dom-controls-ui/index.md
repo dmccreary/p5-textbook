@@ -1,6 +1,6 @@
 ---
 quality_score: 100
-readability_score: 52
+readability_score: 51
 ---
 # DOM Controls, Input Fields & UI Elements
 
@@ -215,8 +215,10 @@ function draw() {
 
 Color pickers immediately transform a static sketch into a vibrant, personalized digital canvas.
 
+#### Diagram: The Generative Art Mixing Desk
+
 <details markdown="1">
-<summary>MicroSim Specification: The Generative Art Mixing Desk</summary>
+<summary>MicroSim Specification: The Generative Art Mixing Desk</summary><summary>MicroSim Specification: The Generative Art Mixing Desk</summary>
 
 **Title**: The Generative Art Mixing Desk
 **Goal**: Allow students to interact with multiple DOM controls simultaneously to see how they govern a complex visual system.
@@ -373,8 +375,10 @@ function setup() {
 
 Using classes keeps your code clean and allows you to update the look of your entire dashboard from one centralized CSS file.
 
+#### Diagram: Interactive Image Gallery Filter
+
 <details markdown="1">
-<summary>MicroSim Specification: Interactive Image Gallery Filter</summary>
+<summary>MicroSim Specification: Interactive Image Gallery Filter</summary><summary>MicroSim Specification: Interactive Image Gallery Filter</summary>
 
 **Title**: Interactive Image Gallery Filter
 **Goal**: Demonstrate how HTML structures (divs, spans), positioning, and CSS styling work together to create a cohesive web application layout outside the canvas.

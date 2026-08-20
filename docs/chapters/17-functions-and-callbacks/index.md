@@ -1,6 +1,6 @@
 ---
 quality_score: 100
-readability_score: 46
+readability_score: 45
 ---
 # Functions, Arrow Expressions & Callbacks
 
@@ -173,8 +173,10 @@ chopOnions(() => {
     ![Palette giving a tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
     Want to save lines of code and keep your logic centralized? When setting up a one-time callback (like a button click listener), don't bother defining a named function elsewhere in your file. Drop a sleek arrow function `() => { ... }` directly into the argument slot instead!
 
+#### Diagram: The Callback Kitchen
+
 <details markdown="1">
-<summary>MicroSim: The Callback Kitchen</summary>
+<summary>MicroSim: The Callback Kitchen</summary><summary>MicroSim: The Callback Kitchen</summary>
 
 **Goal:** Demonstrate callback functions visually and interactively.
 **Interactive Elements:**
@@ -352,8 +354,10 @@ console.log(RecipeBlueprint.compareYield(basicPancakes, giantCake));
     ![Palette encouraging](../../img/mascot/encouraging.png){ class="mascot-admonition-img" }
     If object-oriented programming and inheritance feel incredibly abstract right now, that is completely normal! Just like mastering the complex coordinate system earlier in the book took a bit of practice, mastering structural blueprints takes time. Take a deep breath and keep experimenting—you've got this!
 
+#### Diagram: The Object Factory
+
 <details markdown="1">
-<summary>MicroSim: The Object Factory</summary>
+<summary>MicroSim: The Object Factory</summary><summary>MicroSim: The Object Factory</summary>
 
 **Goal:** Visualize Class Instance Instantiation and Class Inheritance Extends in a highly dynamic way.
 **Interactive Elements:**

@@ -1,3 +1,7 @@
+---
+quality_score: 50
+readability_score: 64
+---
 
 ---
 
@@ -210,15 +214,19 @@ To find out how far away another shopper is, you can use the Vector Distance Dis
 
 ### Interactive Physics
 
+#### Diagram: Shopping Cart Acceleration
+
 <details markdown="1">
-<summary>MicroSim: Shopping Cart Acceleration</summary>
+<summary>MicroSim: Shopping Cart Acceleration</summary><summary>MicroSim: Shopping Cart Acceleration</summary>
 This MicroSim should display a shopping cart from a top-down view. 
 Users can click and drag to apply a force vector to the cart.
 The cart's velocity should be visualized with an arrow, updating dynamically as acceleration is added.
 </details>
 
+#### Diagram: Vector Dot Product Visualizer
+
 <details markdown="1">
-<summary>MicroSim: Vector Dot Product Visualizer</summary>
+<summary>MicroSim: Vector Dot Product Visualizer</summary><summary>MicroSim: Vector Dot Product Visualizer</summary>
 A visualizer showing two vectors, A and B. As the user rotates A, a bar graph shows the dot product. It peaks when they align and hits zero when perpendicular.
 </details>
 

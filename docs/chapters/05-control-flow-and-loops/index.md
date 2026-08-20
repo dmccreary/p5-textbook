@@ -1,6 +1,6 @@
 ---
 quality_score: 100
-readability_score: 63
+readability_score: 62
 ---
 # Control Flow, Loops & Array Data Structures
 
@@ -144,8 +144,10 @@ For every single step of the outer `y` loop, the inner `x` loop runs to completi
 
 This process is known as **2D Grid Iteration**. It is the fundamental technique for processing images (which are just grids of pixels), generating tile-based game maps, or creating complex, repeating geometric art. By mastering **Nested For Loops**, you unlock the ability to cover the entire canvas systematically.
 
+#### Diagram: Nested Grid Explorer
+
 <details>
-<summary><b>MicroSim: Nested Grid Explorer</b></summary>
+<summary><b>MicroSim: Nested Grid Explorer</b></summary><summary><b>MicroSim: Nested Grid Explorer</b></summary>
 <b>Type:</b> p5.js Interactive Concept Explorer
 
 <b>Description:</b> A visual simulation demonstrating how **Nested For Loops** execute over a **2D Grid Iteration**. The canvas shows a 5x5 grid of cells. 
@@ -338,8 +340,10 @@ function draw() {
 
 By organizing your code with **State Machine Logic**, you can easily transition from one scene of your interactive application to the next.
 
+#### Diagram: The Interactive Array Train
+
 <details>
-<summary><b>MicroSim: The Interactive Array Train</b></summary>
+<summary><b>MicroSim: The Interactive Array Train</b></summary><summary><b>MicroSim: The Interactive Array Train</b></summary>
 <b>Type:</b> p5.js Interactive Concept Explorer
 
 <b>Description:</b> A drag-and-drop interactive visualization of an **Array Data Structure** represented as train cars on a track.

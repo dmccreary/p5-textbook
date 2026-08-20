@@ -1,3 +1,7 @@
+---
+quality_score: 100
+readability_score: 41
+---
 
 ---
 quality_score: 100
@@ -103,8 +107,10 @@ When things go wrong, the **Browser Developer Console** is your best friend for 
 
     When working with local audio files, you might encounter a **p5 Sound Local Host CORS** error. Browsers enforce a strict **CORS Security Policy** to prevent malicious scripts from reading local files. To solve this, you need a **Local Web Server Python** (like `python -m http.server`) to serve your files properly. Once your environment is configured, you can work anywhere using the **Offline p5 Reference Guide** and manage projects with the **p5 CLI Command Tool**.
 
+#### Diagram: CORS Blockage Visualization
+
 <details markdown="1">
-<summary>MicroSim: CORS Blockage Visualization</summary>
+<summary>MicroSim: CORS Blockage Visualization</summary><summary>MicroSim: CORS Blockage Visualization</summary>
 - **Title**: Browser Security vs Local Audio
 - **Description**: An interactive diagram showing an HTTP request for an `.mp3` file. When the user tries to load it via `file:///`, a large red shield blocks the request, illustrating the CORS security constraints. When the user toggles on the Python server, the shield turns green and the audio file successfully loads into the p5.js sketch.
 </details>
@@ -258,8 +264,10 @@ Be prepared for standard pitfalls:
 - **Common Misconception Scope**: Declaring variables locally instead of globally.
 - **Common Misconception Audio**: Autoplaying sound before a user gesture.
 
+#### Diagram: Scope Visualizer
+
 <details markdown="1">
-<summary>MicroSim: Scope Visualizer</summary>
+<summary>MicroSim: Scope Visualizer</summary><summary>MicroSim: Scope Visualizer</summary>
 - **Title**: Variable Scope Interactive Tool
 - **Description**: A split-screen UI. On the left, code blocks for `setup()` and `draw()`. On the right, glowing boxes representing computer memory. When the user drags a variable declaration into `setup()`, it gets locked in a localized box. When dragged outside to the top of the file, it becomes available to all functions.
 </details>

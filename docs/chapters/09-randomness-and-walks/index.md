@@ -1,3 +1,7 @@
+---
+quality_score: 100
+readability_score: 65
+---
 
 ---
 quality_score: 100
@@ -177,8 +181,10 @@ class Walker {
 
 Every frame, the walker picks one of four directions and moves a single pixel. Over time, it leaves a trail. 
 
+#### Diagram: Random Walk Simulation
+
 <details>
-<summary>MicroSim: Random Walk Simulation</summary>
+<summary>MicroSim: Random Walk Simulation</summary><summary>MicroSim: Random Walk Simulation</summary>
 
 **Goal:** Create a visual comparison of different types of Random Walks.
 
@@ -302,8 +308,10 @@ We can control how many layers are used with **Noise Detail Octaves**. By defaul
 
 When layering these octaves, the smaller detail layers don't have as much influence as the big main layers. The rate at which the smaller layers lose influence is called the **Noise Falloff Ratio**. By default, each smaller octave has half the amplitude (50% falloff) of the one before it. You can adjust this by passing a second argument to `noiseDetail(octaves, falloff)`. A higher falloff means the tiny details are stronger, making the result look sharper and rougher.
 
+#### Diagram: Perlin Noise Terrain Generation
+
 <details>
-<summary>MicroSim: Perlin Noise Terrain Generation</summary>
+<summary>MicroSim: Perlin Noise Terrain Generation</summary><summary>MicroSim: Perlin Noise Terrain Generation</summary>
 
 **Goal:** Create an interactive 2D map generator using Perlin Noise to demonstrate scale, octaves, and falloff.
 

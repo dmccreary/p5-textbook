@@ -1,6 +1,6 @@
 ---
 quality_score: 100
-readability_score: 40
+readability_score: 41
 ---
 # Image Processing, Filters & Video Capture
 
@@ -208,8 +208,10 @@ Morphological operations adjust the structure of shapes within the frame. The **
     ![Palette sharing a tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
     Here's a secret recipe for cool effects: stack your filters! If you run `filter(BLUR)` right before `filter(THRESHOLD)`, you'll melt away all the noisy jagged edges and get perfectly smooth, organic blobs.
 
+#### Diagram: Interactive Filter Studio
+
 <details markdown="1">
-<summary>MicroSim: Interactive Filter Studio</summary>
+<summary>MicroSim: Interactive Filter Studio</summary><summary>MicroSim: Interactive Filter Studio</summary>
 ### MicroSim Specification
 
 **Title:** Interactive Filter Studio
@@ -296,8 +298,10 @@ A simpler spatial effect is the **Pixelate Image Mosaic**. Rather than rendering
     ![Palette warning](../../img/mascot/warning.png){ class="mascot-admonition-img" }
     Watch out for the freeze! If you try to loop through every single pixel of an HD webcam feed every frame, your browser will crash from the sheer mathematical load. To avoid this, change your `for` loops to skip by a step size (`i += 10`) instead of checking every pixel.
 
+#### Diagram: Real-Time ASCIIfy Camera
+
 <details markdown="1">
-<summary>MicroSim: Real-Time ASCIIfy Camera</summary>
+<summary>MicroSim: Real-Time ASCIIfy Camera</summary><summary>MicroSim: Real-Time ASCIIfy Camera</summary>
 ### MicroSim Specification
 
 **Title:** Real-Time ASCIIfy Camera

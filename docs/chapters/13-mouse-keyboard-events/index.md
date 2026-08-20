@@ -1,6 +1,6 @@
 ---
 quality_score: 100
-readability_score: 60
+readability_score: 59
 ---
 # Mouse & Keyboard User Event Sensing
 
@@ -84,8 +84,10 @@ Sometimes, knowing *where* the mouse is isn't enough; we need to know *how fast*
 
 By calculating the difference between `mouseX` and `pmouseX` (or `mouseY` and `pmouseY`), you can determine the speed and direction of the mouse movement. This is exactly how dragging or throwing mechanics work in physics games!
 
+#### Diagram: Mouse Speed Tracker
+
 <details markdown="1">
-<summary>MicroSim: Mouse Speed Tracker</summary>
+<summary>MicroSim: Mouse Speed Tracker</summary><summary>MicroSim: Mouse Speed Tracker</summary>
 **Objective**: Visualize the speed of the mouse by drawing a line from the previous position to the current position. The thickness of the line should be proportional to the speed.
 **Elements**:
 - A canvas that does not clear its background every frame.
@@ -125,8 +127,10 @@ Sometimes, the action isn't just a simple click; it's a combination of movement 
 - **Mouse Dragged Event**: The `mouseDragged()` function is called every time the mouse moves while a button *is* pressed. This is essential for dragging objects around the screen, drawing, or panning a map.
 - **Mouse Wheel Event**: The `mouseWheel()` function is called when the scroll wheel is rotated. The event object passed to this function tells you the direction and amount of the scroll. It's perfect for zooming in and out or scrolling through menus!
 
+#### Diagram: Interactive Map Panning and Zooming
+
 <details markdown="1">
-<summary>MicroSim: Interactive Map Panning and Zooming</summary>
+<summary>MicroSim: Interactive Map Panning and Zooming</summary><summary>MicroSim: Interactive Map Panning and Zooming</summary>
 **Objective**: Create a large grid or image that the user can navigate using drag and scroll.
 **Elements**:
 - A large grid drawn on the screen.

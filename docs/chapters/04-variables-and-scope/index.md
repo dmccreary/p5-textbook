@@ -1,6 +1,6 @@
 ---
 quality_score: 100
-readability_score: 62
+readability_score: 61
 ---
 # Variables, Data Types & Scope Fundamentals
 
@@ -169,8 +169,10 @@ This local isolation is fantastic because it means you can reuse variable names 
     ![Palette warning](../../img/mascot/warning.png){ class="mascot-admonition-img" }
     Watch out for the "is not defined" error! A common trap is declaring a variable with `let` inside `setup()`, and then trying to use it inside `draw()`. Because it's locked in local block scope, `draw()` has no idea it exists. To fix this, declare `let myVar;` globally at the very top of your file, and only assign the actual value inside `setup()`.
 
+#### Diagram: Scope Visualizer
+
 <details class="microsim">
-<summary>MicroSim: Scope Visualizer</summary>
+<summary>MicroSim: Scope Visualizer</summary><summary>MicroSim: Scope Visualizer</summary>
 <b>Type:</b> Interactive p5.js Sketch
 <b>Goal:</b> Let students drag a magnifying glass over different functions to see which variables are currently "visible" in the scope.
 <b>Features:</b>
@@ -391,8 +393,10 @@ Here is how a `switch` works:
 4. When it hits the `break` keyword, it immediately exits the switch statement. If you forget the `break`, it will "fall through" and accidentally run the code in the cases below it!
 5. The `default` case at the bottom acts exactly like an `else` statement. It catches anything that didn't match the specific cases above.
 
+#### Diagram: The Logic Gate Switchboard
+
 <details class="microsim">
-<summary>MicroSim: The Logic Gate Switchboard</summary>
+<summary>MicroSim: The Logic Gate Switchboard</summary><summary>MicroSim: The Logic Gate Switchboard</summary>
 <b>Type:</b> Interactive p5.js Puzzle
 <b>Goal:</b> Wire up a switchboard using AND, OR, and NOT logic gates to route power to a neon sign.
 <b>Features:</b>

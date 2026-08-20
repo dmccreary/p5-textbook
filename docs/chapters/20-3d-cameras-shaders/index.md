@@ -120,10 +120,10 @@ As the director, you also have to manage the staging. When you draw multiple obj
     ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     Incredible work! You just mastered ambient and specular lighting, texture mapping, and even wrote your own GLSL shaders. You are a true director of the digital stage!
 
-## MicroSim: Interactive Lighting
+#### Diagram: Stage Lighting Setup
 
 <details markdown="1">
-<summary>MicroSim: Stage Lighting Setup</summary>
+<summary>MicroSim: Stage Lighting Setup</summary><summary>MicroSim: Stage Lighting Setup</summary>
 
 **Goal**: Allow students to interactively place lights on a 3D stage and observe how different materials react.
 
@@ -139,10 +139,10 @@ As the director, you also have to manage the staging. When you draw multiple obj
 
 </details>
 
-## MicroSim: Custom Shader Effects
+#### Diagram: Exploring Shaders
 
 <details markdown="1">
-<summary>MicroSim: Exploring Shaders</summary>
+<summary>MicroSim: Exploring Shaders</summary><summary>MicroSim: Exploring Shaders</summary>
 
 **Goal**: Demonstrate the power of GLSL shaders for real-time visual effects.
 

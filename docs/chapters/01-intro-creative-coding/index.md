@@ -5,7 +5,7 @@ generated_by: claude skill chapter-content-generator
 date: 2026-08-19 07:34:00
 version: 0.09
 quality_score: 100
-readability_score: 55
+readability_score: 54
 ---
 # Introduction to Creative Coding & Canvas Foundations
 
@@ -128,7 +128,7 @@ In p5.js, the origin `(0, 0)` is located at the **top-left corner** of the canva
 #### Diagram: Coordinate System Explorer
 
 <details markdown="1">
-<summary>Coordinate System Explorer</summary>
+<summary>Coordinate System Explorer</summary><summary>Coordinate System Explorer</summary>
 Type: MicroSim
 **sim-id:** coordinate-system-explorer<br/>
 **Library:** p5.js<br/>
@@ -224,7 +224,7 @@ To solve this, professional developers use **Delta Time Tracking**. The system v
 #### Diagram: Render Cycle and Frame Rate Monitor
 
 <details markdown="1">
-<summary>Render Cycle and Frame Rate Monitor</summary>
+<summary>Render Cycle and Frame Rate Monitor</summary><summary>Render Cycle and Frame Rate Monitor</summary>
 Type: MicroSim
 **sim-id:** frame-rate-monitor<br/>
 **Library:** p5.js<br/>

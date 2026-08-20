@@ -1,6 +1,6 @@
 ---
 quality_score: 100
-readability_score: 50
+readability_score: 49
 ---
 # Generative Typography & Vector Font Outlines
 
@@ -110,8 +110,10 @@ function setup() {
 }
 ```
 
+#### Diagram: Text Formatting Basics
+
 <details markdown="1">
-<summary>MicroSim: Text Formatting Basics</summary>
+<summary>MicroSim: Text Formatting Basics</summary><summary>MicroSim: Text Formatting Basics</summary>
 - **Objective:** Create a dashboard where students can adjust text settings interactively.
 - **Controls:** Sliders for `textSize` (10 to 100), `textLeading` (10 to 100), and a dropdown for `textAlign` (LEFT, CENTER, RIGHT).
 - **Visual:** A paragraph of text reacting in real-time to the adjustments, demonstrating bounding boxes and word wrapping.
@@ -205,8 +207,10 @@ function draw() {
 
 Once we have these points, we can apply a **Particle Typography Effect**. By animating each coordinate independently, we create **Wobbly Text Particle Point** behaviors. Combine this with physics, and you achieve stunning **Kinetic Typography Motion**. Text can explode, reform, or blow away in the wind.
 
+#### Diagram: Kinetic Text to Points
+
 <details markdown="1">
-<summary>MicroSim: Kinetic Text to Points</summary>
+<summary>MicroSim: Kinetic Text to Points</summary><summary>MicroSim: Kinetic Text to Points</summary>
 - **Objective:** Demonstrate the power of `textToPoints()`.
 - **Controls:** Slider for `sampleFactor`, a "Scatter" button.
 - **Visual:** The word "EXPLODE" rendered as points. When "Scatter" is clicked, points drift away using Perlin noise, then slowly return to their original text formation using steering behaviors.

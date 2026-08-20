@@ -1,6 +1,6 @@
 ---
 quality_score: 100
-readability_score: 46
+readability_score: 45
 ---
 # Chapter 18: ES6 Classes, Object-Oriented Programming & Async Data
 
@@ -111,8 +111,10 @@ const values = [1, 2, 3, 4];
 const sum = values.reduce((acc, val) => acc + val, 0);
 ```
 
+#### Diagram: Array Methods Visualizer
+
 <details markdown="1">
-<summary>MicroSim: Array Methods Visualizer</summary>
+<summary>MicroSim: Array Methods Visualizer</summary><summary>MicroSim: Array Methods Visualizer</summary>
 An interactive MicroSim that allows students to input an array of numbers and apply `map`, `filter`, or `reduce` visually.
 1. The original array is displayed as a row of boxes.
 2. Clicking 'Map (*2)' creates a second row of boxes below, with animations showing each box multiplying.
@@ -194,8 +196,10 @@ const uniqueColors = new Set(['red', 'green', 'red', 'blue']);
 // uniqueColors now contains 'red', 'green', 'blue' (no duplicates)
 ```
 
+#### Diagram: Async Data Fetcher
+
 <details markdown="1">
-<summary>MicroSim: Async Data Fetcher</summary>
+<summary>MicroSim: Async Data Fetcher</summary><summary>MicroSim: Async Data Fetcher</summary>
 An interactive MicroSim where students can click a button to initiate a `fetch()` request.
 1. A visual timeline shows the request leaving the client and traveling to a server.
 2. The user must wait (simulating network latency).
