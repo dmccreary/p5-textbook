@@ -1,7 +1,4 @@
-
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
+<!DOCTYPE html><html lang="en" class="no-js"><head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -26,7 +23,7 @@
     
     
       
-        <title>25. Development Environment, Tools & Pedagogy - The Art of Processing</title>
+        <title>25. Development Environment, Tools &amp; Pedagogy - The Art of Processing</title>
       
     
     
@@ -47,7 +44,7 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
@@ -56,14 +53,52 @@
     
       <link rel="stylesheet" href="../../css/mascot.css">
     
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
+      
+        <meta property="og:type" content="website">
+      
+        <meta property="og:title" content="25. Development Environment, Tools &amp; Pedagogy - The Art of Processing">
+      
+        <meta property="og:description" content="An interactive intelligent textbook about the p5.js processing library and how to use it to teach computational thinking.">
+      
+        <meta property="og:image" content="https://dmccreary.github.io/p5-textbook/assets/images/social/chapters/25-dev-environment-pedagogy/index.png">
+      
+        <meta property="og:image:type" content="image/png">
+      
+        <meta property="og:image:width" content="1200">
+      
+        <meta property="og:image:height" content="630">
+      
+        <meta property="og:url" content="https://dmccreary.github.io/p5-textbook/chapters/25-dev-environment-pedagogy/">
+      
+        <meta name="twitter:card" content="summary_large_image">
+      
+        <meta name="twitter:title" content="25. Development Environment, Tools &amp; Pedagogy - The Art of Processing">
+      
+        <meta name="twitter:description" content="An interactive intelligent textbook about the p5.js processing library and how to use it to teach computational thinking.">
+      
+        <meta name="twitter:image" content="https://dmccreary.github.io/p5-textbook/assets/images/social/chapters/25-dev-environment-pedagogy/index.png">
+      
     
-  </head>
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
   
   
     
@@ -99,12 +134,12 @@
     <a href="../.." title="The Art of Processing" class="md-header__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -116,7 +151,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              25. Development Environment, Tools & Pedagogy
+              25. Development Environment, Tools &amp; Pedagogy
             
           </span>
         </div>
@@ -130,7 +165,7 @@
     
       <label class="md-header__button md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
       </label>
       <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
@@ -139,20 +174,20 @@
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
           <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
             
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
           </a>
         
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
         </button>
       </nav>
       
@@ -177,7 +212,7 @@
         <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -201,7 +236,7 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -213,7 +248,7 @@
     <a href="../.." title="The Art of Processing" class="md-nav__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     The Art of Processing
@@ -223,7 +258,7 @@
       <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -459,7 +494,7 @@
         
   
   <span class="md-ellipsis">
-    1. Introduction to Creative Coding & Canvas Foundations
+    1. Introduction to Creative Coding &amp; Canvas Foundations
   </span>
   
 
@@ -480,7 +515,7 @@
         
   
   <span class="md-ellipsis">
-    2. 2D Primitive Shapes & Custom Geometries
+    2. 2D Primitive Shapes &amp; Custom Geometries
   </span>
   
 
@@ -501,7 +536,7 @@
         
   
   <span class="md-ellipsis">
-    3. Color Theory, Color Modes & Pixel Manipulation
+    3. Color Theory, Color Modes &amp; Pixel Manipulation
   </span>
   
 
@@ -522,7 +557,7 @@
         
   
   <span class="md-ellipsis">
-    4. Variables, Data Types & Scope Fundamentals
+    4. Variables, Data Types &amp; Scope Fundamentals
   </span>
   
 
@@ -543,7 +578,7 @@
         
   
   <span class="md-ellipsis">
-    5. Control Flow, Loops & Array Data Structures
+    5. Control Flow, Loops &amp; Array Data Structures
   </span>
   
 
@@ -564,7 +599,7 @@
         
   
   <span class="md-ellipsis">
-    6. Matrix Transformations & Coordinate Systems
+    6. Matrix Transformations &amp; Coordinate Systems
   </span>
   
 
@@ -585,7 +620,7 @@
         
   
   <span class="md-ellipsis">
-    7. Linear Motion, Trigonometry & Wave Math
+    7. Linear Motion, Trigonometry &amp; Wave Math
   </span>
   
 
@@ -606,7 +641,7 @@
         
   
   <span class="md-ellipsis">
-    8. Polar Coordinates, Oscillation & Easing
+    8. Polar Coordinates, Oscillation &amp; Easing
   </span>
   
 
@@ -627,7 +662,7 @@
         
   
   <span class="md-ellipsis">
-    9. Randomness, Gaussian Distributions & Random Walk
+    9. Randomness, Gaussian Distributions &amp; Random Walk
   </span>
   
 
@@ -648,7 +683,7 @@
         
   
   <span class="md-ellipsis">
-    10. Perlin Noise Landscapes & Vector Flow Fields
+    10. Perlin Noise Landscapes &amp; Vector Flow Fields
   </span>
   
 
@@ -669,7 +704,7 @@
         
   
   <span class="md-ellipsis">
-    11. Vector Math Fundamentals & Physics Acceleration
+    11. Vector Math Fundamentals &amp; Physics Acceleration
   </span>
   
 
@@ -690,7 +725,7 @@
         
   
   <span class="md-ellipsis">
-    12. Particle Systems, Forces & Steering Behaviors
+    12. Particle Systems, Forces &amp; Steering Behaviors
   </span>
   
 
@@ -711,7 +746,7 @@
         
   
   <span class="md-ellipsis">
-    13. Mouse & Keyboard User Event Sensing
+    13. Mouse &amp; Keyboard User Event Sensing
   </span>
   
 
@@ -732,7 +767,7 @@
         
   
   <span class="md-ellipsis">
-    14. Touch Gestures, Mobile Sensors & Interaction
+    14. Touch Gestures, Mobile Sensors &amp; Interaction
   </span>
   
 
@@ -753,7 +788,7 @@
         
   
   <span class="md-ellipsis">
-    15. DOM Controls, Input Fields & UI Elements
+    15. DOM Controls, Input Fields &amp; UI Elements
   </span>
   
 
@@ -774,7 +809,7 @@
         
   
   <span class="md-ellipsis">
-    16. CSS Styling, Layouts & Web Page Integration
+    16. CSS Styling, Layouts &amp; Web Page Integration
   </span>
   
 
@@ -795,7 +830,7 @@
         
   
   <span class="md-ellipsis">
-    17. Functions, Arrow Expressions & Callbacks
+    17. Functions, Arrow Expressions &amp; Callbacks
   </span>
   
 
@@ -816,7 +851,7 @@
         
   
   <span class="md-ellipsis">
-    18. ES6 Classes, Object-Oriented Programming & Async Data
+    18. ES6 Classes, Object-Oriented Programming &amp; Async Data
   </span>
   
 
@@ -837,7 +872,7 @@
         
   
   <span class="md-ellipsis">
-    19. 3D WebGL Coordinates & Primitive Geometries
+    19. 3D WebGL Coordinates &amp; Primitive Geometries
   </span>
   
 
@@ -858,7 +893,7 @@
         
   
   <span class="md-ellipsis">
-    20. 3D Cameras, Lighting Models, Materials & Shaders
+    20. 3D Cameras, Lighting Models, Materials &amp; Shaders
   </span>
   
 
@@ -879,7 +914,7 @@
         
   
   <span class="md-ellipsis">
-    21. Audio Synthesis, Oscillators & Envelopes
+    21. Audio Synthesis, Oscillators &amp; Envelopes
   </span>
   
 
@@ -900,7 +935,7 @@
         
   
   <span class="md-ellipsis">
-    22. Microphone Input & FFT Spectral Analysis
+    22. Microphone Input &amp; FFT Spectral Analysis
   </span>
   
 
@@ -921,7 +956,7 @@
         
   
   <span class="md-ellipsis">
-    23. Image Processing, Filters & Video Capture
+    23. Image Processing, Filters &amp; Video Capture
   </span>
   
 
@@ -942,7 +977,7 @@
         
   
   <span class="md-ellipsis">
-    24. Generative Typography & Vector Font Outlines
+    24. Generative Typography &amp; Vector Font Outlines
   </span>
   
 
@@ -972,7 +1007,7 @@
           
   
   <span class="md-ellipsis">
-    25. Development Environment, Tools & Pedagogy
+    25. Development Environment, Tools &amp; Pedagogy
   </span>
   
 
@@ -983,7 +1018,7 @@
         
   
   <span class="md-ellipsis">
-    25. Development Environment, Tools & Pedagogy
+    25. Development Environment, Tools &amp; Pedagogy
   </span>
   
 
@@ -1038,6 +1073,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="The Professional Workbench">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-cors-blockage-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: CORS Blockage Visualization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1076,6 +1126,15 @@
   
     <nav class="md-nav" aria-label="Teaching Strategies and Pedagogy">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-scope-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Scope Visualizer
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#expanding-the-word-count-naturally" class="md-nav__link">
@@ -1139,6 +1198,14 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1188,6 +1255,14 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1216,6 +1291,46 @@
   
 
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1268,7 +1383,7 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1320,6 +1435,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="The Professional Workbench">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-cors-blockage-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: CORS Blockage Visualization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1358,6 +1488,15 @@
   
     <nav class="md-nav" aria-label="Teaching Strategies and Pedagogy">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-scope-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Scope Visualizer
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#expanding-the-word-count-naturally" class="md-nav__link">
@@ -1399,20 +1538,20 @@
   
     <a href="https://github.com/dmccreary/p5-textbook/blob/main/docs/chapters/25-dev-environment-pedagogy/index.md" title="Edit this page" class="md-content__button md-icon">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
     </a>
   
   
 
 
-<hr />
+<hr>
 <p>quality_score: 100
 readability_score: 41</p>
-<hr />
-<h1 id="development-environment-tools-pedagogy">Development Environment, Tools &amp; Pedagogy<a class="headerlink" href="#development-environment-tools-pedagogy" title="Permanent link">&para;</a></h1>
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<hr>
+<h1 id="development-environment-tools-pedagogy">Development Environment, Tools &amp; Pedagogy<a class="headerlink" href="#development-environment-tools-pedagogy" title="Permanent link">¶</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">¶</a></h2>
 <p>Covers p5.js Web Editor, VS Code, Git, GitHub Pages, accessibility features (p5.accessibility), live-coding, and computational thinking pedagogy. Students will gain practical hands-on experience by building interactive sketches and visual experiments that demonstrate these concepts.</p>
-<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">¶</a></h2>
 <p>This chapter covers the following 62 concepts from the learning graph:</p>
 <ol>
 <li>p5 Web Editor Interface</li>
@@ -1478,45 +1617,45 @@ readability_score: 41</p>
 <li>Acoustic Signal Pedagogy</li>
 <li>Artistic Computational Synthesis</li>
 </ol>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">¶</a></h2>
 <p>This chapter builds on concepts from:</p>
 <ul>
 <li><a href="../24-generative-typography/">Chapter 24: Generative Typography &amp; Vector Font Outlines</a></li>
 </ul>
-<hr />
+<hr>
 <div class="admonition mascot-welcome">
 <p class="admonition-title">Graduating to the Workbench</p>
-<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" /></p>
+<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png"></p>
 <p>Welcome to the final chapter, creators! You've outgrown the sandbox and it's time to set up your professional studio workbench. This chapter will equip you with the advanced tools and workflows you need to build serious, large-scale projects. Let's color outside the loops one last time!</p>
 </div>
 <p>Welcome to the transition from the sandbox to the professional workbench. Up until now, the <strong>p5 Web Editor Interface</strong> has been our safe haven. It automatically manages your <strong>Web Editor Sketch File</strong> and gives you a visual <strong>Web Editor Asset Sidebar</strong> for dropping in images and sounds. However, as your projects grow, you need more powerful tools to manage complexity.</p>
-<h2 id="the-professional-workbench">The Professional Workbench<a class="headerlink" href="#the-professional-workbench" title="Permanent link">&para;</a></h2>
+<h2 id="the-professional-workbench">The Professional Workbench<a class="headerlink" href="#the-professional-workbench" title="Permanent link">¶</a></h2>
 <p>Stepping up to a local development environment means setting up the <strong>VS Code Code Editor</strong>. This is your new workbench. Instead of relying on a web page to run your code, you'll use the <strong>Live Server VS Extension</strong> to host your files locally. </p>
 <p>When things go wrong, the <strong>Browser Developer Console</strong> is your best friend for printing error messages, while the <strong>Browser Element Inspector</strong> lets you examine the generated HTML canvas. Monitoring asset loading is done via the <strong>Browser Network Tab</strong>. For deep debugging, you can click on line numbers to set <strong>JavaScript Breakpoints</strong> or use the <strong>Debugger Keyword Syntax</strong> directly in your code to pause execution.</p>
 <div class="admonition mascot-warning">
 <p class="admonition-title">Security Blockers!</p>
-<p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+<p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png">
 Watch out for the CORS blocker! If you just double-click your <code>index.html</code> file, your browser's security policy will block your local audio and image files from loading, resulting in a blank screen. To fix this, you must run a <strong>Local Web Server Python</strong> (like <code>python -m http.server</code>) and open <code>localhost</code> in your browser!</p>
 <p>When working with local audio files, you might encounter a <strong>p5 Sound Local Host CORS</strong> error. Browsers enforce a strict <strong>CORS Security Policy</strong> to prevent malicious scripts from reading local files. To solve this, you need a <strong>Local Web Server Python</strong> (like <code>python -m http.server</code>) to serve your files properly. Once your environment is configured, you can work anywhere using the <strong>Offline p5 Reference Guide</strong> and manage projects with the <strong>p5 CLI Command Tool</strong>.</p>
 </div>
+<h4 id="diagram-cors-blockage-visualization">Diagram: CORS Blockage Visualization<a class="headerlink" href="#diagram-cors-blockage-visualization" title="Permanent link">¶</a></h4>
 <details>
 <summary>MicroSim: CORS Blockage Visualization</summary>
-<ul>
-<li><strong>Title</strong>: Browser Security vs Local Audio</li>
-<li><strong>Description</strong>: An interactive diagram showing an HTTP request for an <code>.mp3</code> file. When the user tries to load it via <code>file:///</code>, a large red shield blocks the request, illustrating the CORS security constraints. When the user toggles on the Python server, the shield turns green and the audio file successfully loads into the p5.js sketch.</li>
-</ul>
+<p></p><summary>MicroSim: CORS Blockage Visualization</summary>
+- <strong>Title</strong>: Browser Security vs Local Audio
+- <strong>Description</strong>: An interactive diagram showing an HTTP request for an <code>.mp3</code> file. When the user tries to load it via <code>file:///</code>, a large red shield blocks the request, illustrating the CORS security constraints. When the user toggles on the Python server, the shield turns green and the audio file successfully loads into the p5.js sketch.<p></p>
 </details>
 <p>Here is an example of setting up your HTML file to load p5.js locally. Notice how we must structure our files explicitly, unlike the automatic web editor.</p>
 <div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"en"</span><span class="p">&gt;</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"UTF-8"</span><span class="p">&gt;</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Local p5.js Project<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  <span class="cm">&lt;!-- Load the library locally or via CDN --&gt;</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  <span class="cm">&lt;!-- Load accessibility features --&gt;</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/addons/p5.sound.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;sketch.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/addons/p5.sound.min.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"sketch.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
 </span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>  <span class="p">&lt;</span><span class="nt">main</span><span class="p">&gt;</span>
@@ -1525,43 +1664,43 @@ Watch out for the CORS blocker! If you just double-click your <code>index.html</
 </span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 </span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </span></code></pre></div>
-<h2 id="version-control-and-modern-tooling">Version Control and Modern Tooling<a class="headerlink" href="#version-control-and-modern-tooling" title="Permanent link">&para;</a></h2>
+<h2 id="version-control-and-modern-tooling">Version Control and Modern Tooling<a class="headerlink" href="#version-control-and-modern-tooling" title="Permanent link">¶</a></h2>
 <p>At the workbench, professionals track changes. Using <strong>Git Version Control</strong>, you can save snapshots of your code. You'll push these snapshots to <strong>GitHub Repository Hosting</strong> for backup and collaboration.</p>
 <div class="admonition mascot-tip">
 <p class="admonition-title">Time Travel with Git</p>
-<p><img alt="Palette giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+<p><img alt="Palette giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png">
 Here's a pro-tip for fearless coding: commit your changes to <strong>Git Version Control</strong> frequently! If you accidentally break your sketch while experimenting, you don't have to panic. You can simply time-travel back to your last working commit with a single click. When you're ready to show the world, <strong>GitHub Pages Deployment</strong> hosts your interactive sketches for free. Documentation for your projects can be generated beautifully using a <strong>MkDocs Material Textbook</strong> layout.</p>
 </div>
 <p>Modern web development relies on the <strong>npm Package Manager</strong> to install external libraries. To optimize your code for speed, a <strong>Bundler Vite Webpack</strong> will combine your files, outputting a <strong>Minified Library Production</strong> build. Even when the code is squished, <strong>Source Maps Debugging</strong> lets you read your original lines in the browser. To keep your code clean, the <strong>ESLint Code Formatter</strong> spots errors, while <strong>Prettier Code Formatting</strong> ensures your indentation is flawless.</p>
 <p>Below is an example of a simple <code>package.json</code> file configuring these modern tools:</p>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;generative-art-project&quot;</span><span class="p">,</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My professional p5.js environment&quot;</span><span class="p">,</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">&quot;scripts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nt">&quot;dev&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite&quot;</span><span class="p">,</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nt">&quot;build&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite build&quot;</span><span class="p">,</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;prettier --write src/**/*.js&quot;</span><span class="p">,</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="nt">&quot;lint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eslint src/**/*.js&quot;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"generative-art-project"</span><span class="p">,</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My professional p5.js environment"</span><span class="p">,</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nt">"dev"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vite"</span><span class="p">,</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nt">"build"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vite build"</span><span class="p">,</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="nt">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prettier --write src/**/*.js"</span><span class="p">,</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="nt">"lint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eslint src/**/*.js"</span>
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="p">},</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">  </span><span class="nt">&quot;dependencies&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="nt">&quot;p5&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^1.9.0&quot;</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">  </span><span class="nt">"dependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="nt">"p5"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^1.9.0"</span>
 </span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">  </span><span class="p">},</span>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">  </span><span class="nt">&quot;devDependencies&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="nt">&quot;eslint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^8.56.0&quot;</span><span class="p">,</span>
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="nt">&quot;prettier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^3.2.4&quot;</span><span class="p">,</span>
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="nt">&quot;vite&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^5.0.12&quot;</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">  </span><span class="nt">"devDependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="nt">"eslint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^8.56.0"</span><span class="p">,</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="nt">"prettier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^3.2.4"</span><span class="p">,</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="nt">"vite"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^5.0.12"</span>
 </span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">  </span><span class="p">}</span>
 </span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="p">}</span>
 </span></code></pre></div>
-<h2 id="accessibility-and-audio">Accessibility and Audio<a class="headerlink" href="#accessibility-and-audio" title="Permanent link">&para;</a></h2>
+<h2 id="accessibility-and-audio">Accessibility and Audio<a class="headerlink" href="#accessibility-and-audio" title="Permanent link">¶</a></h2>
 <p>Building for everyone means utilizing the <strong>p5 Accessibility Library</strong>. It translates your canvas into a <strong>Screen Reader Description</strong>, ensuring your visual art is understood via <strong>Text Output Accessible</strong> features and structured <strong>Grid Output Accessible</strong> navigation. For audio creators, the <strong>p5 Sound Recording Tool</strong> lets you capture your generative music straight from the browser.</p>
 <p>Consider the following snippet demonstrating how to enable screen reader descriptions for a complex canvas:</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nx">createCanvas</span><span class="p">(</span><span class="mf">400</span><span class="p">,</span><span class="w"> </span><span class="mf">400</span><span class="p">);</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="c1">// Provide a holistic description of what the sketch does</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;A generative art piece that creates a swirling pattern of circles.&#39;</span><span class="p">);</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nx">describe</span><span class="p">(</span><span class="s1">'A generative art piece that creates a swirling pattern of circles.'</span><span class="p">);</span>
 </span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
 </span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="c1">// Provide specific grid-based accessible output</span>
 </span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="nx">textOutput</span><span class="p">();</span><span class="w"> </span><span class="c1">// Generates a text summary of shapes</span>
@@ -1574,14 +1713,14 @@ Here's a pro-tip for fearless coding: commit your changes to <strong>Git Version
 </span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
 </span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">  </span><span class="c1">// Individual elements can also be described</span>
 </span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">  </span><span class="nx">circle</span><span class="p">(</span><span class="nx">width</span><span class="o">/</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">height</span><span class="o">/</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">50</span><span class="p">);</span>
-</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">  </span><span class="nx">describeElement</span><span class="p">(</span><span class="s1">&#39;Circle&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;A red circle in the center of the canvas.&#39;</span><span class="p">);</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">  </span><span class="nx">describeElement</span><span class="p">(</span><span class="s1">'Circle'</span><span class="p">,</span><span class="w"> </span><span class="s1">'A red circle in the center of the canvas.'</span><span class="p">);</span>
 </span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="p">}</span>
 </span></code></pre></div>
-<h2 id="art-history-and-computational-logic">Art History and Computational Logic<a class="headerlink" href="#art-history-and-computational-logic" title="Permanent link">&para;</a></h2>
+<h2 id="art-history-and-computational-logic">Art History and Computational Logic<a class="headerlink" href="#art-history-and-computational-logic" title="Permanent link">¶</a></h2>
 <p>Generative art is built on a deep <strong>Creative Coding Art History</strong>. We stand on the shoulders of pioneers like <strong>Vera Molnár Generative Art</strong>, who explored geometric plotter routines, and <strong>John Whitney Computer Motion</strong>, a pioneer in analog and digital animation. <strong>Manfred Mohr Algorithmic Art</strong> mapped multidimensional cubes, and this lineage directly inspired <strong>Casey Reas Ben Fry Processing</strong>, the foundation of p5.js.</p>
 <div class="admonition mascot-thinking">
 <p class="admonition-title">Connecting the Logic</p>
-<p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+<p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png">
 Think about it like this: computational thinking isn't just about writing code; it's a mental model for translating artistic vision into logic. By breaking a masterpiece down through <strong>Algorithmic Decomposition</strong>, you turn an overwhelmingly complex painting into a series of simple, repeatable brush strokes.</p>
 <p>To replicate their success, we must apply every <strong>Computational Thinking Concept</strong>: breaking large tasks down via <strong>Algorithmic Decomposition</strong>, identifying repetitive sequences with <strong>Pattern Recognition Visual</strong>, simplifying details through <strong>Abstraction Problem Solving</strong>, and formulating logical instructions via <strong>Algorithm Design Step</strong>. This synergy leads to a beautiful <strong>Artistic Computational Synthesis</strong>.</p>
 </div>
@@ -1606,7 +1745,7 @@ Think about it like this: computational thinking isn't just about writing code; 
 </span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">GRID_SIZE</span><span class="p">;</span><span class="w"> </span><span class="nx">x</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">GRID_SIZE</span><span class="p">;</span><span class="w"> </span><span class="nx">y</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">      </span><span class="nx">push</span><span class="p">();</span>
-</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">      </span><span class="c1">// Translate to the cell&#39;s center</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">      </span><span class="c1">// Translate to the cell's center</span>
 </span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">      </span><span class="nx">translate</span><span class="p">(</span><span class="nx">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">TILE_SIZE</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">TILE_SIZE</span><span class="o">/</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">TILE_SIZE</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">TILE_SIZE</span><span class="o">/</span><span class="mf">2</span><span class="p">);</span>
 </span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>
 </span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">      </span><span class="c1">// Abstraction: calculate randomized displacement</span>
@@ -1621,12 +1760,12 @@ Think about it like this: computational thinking isn't just about writing code; 
 </span><span id="__span-3-33"><a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="w">  </span><span class="p">}</span>
 </span><span id="__span-3-34"><a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a><span class="p">}</span>
 </span></code></pre></div>
-<h2 id="teaching-strategies-and-pedagogy">Teaching Strategies and Pedagogy<a class="headerlink" href="#teaching-strategies-and-pedagogy" title="Permanent link">&para;</a></h2>
+<h2 id="teaching-strategies-and-pedagogy">Teaching Strategies and Pedagogy<a class="headerlink" href="#teaching-strategies-and-pedagogy" title="Permanent link">¶</a></h2>
 <p>If you are guiding others, start with a <strong>Live Coding Demonstration</strong> to show how a blank file evolves. Pair students up for <strong>Pair Programming Practice</strong>, reinforcing teamwork, and introduce a structured <strong>Code Review Peer Rubric</strong> for constructive feedback. </p>
 <p>Provide <strong>Scaffolding Starter Code</strong> to reduce initial friction. Challenge their logic using <strong>Parsons Problems Syntax</strong> (reordering mixed lines of code) and <strong>Predict Output Exercises</strong> to strengthen their <strong>Debugging Mental Model</strong>. </p>
 <div class="admonition mascot-encourage">
 <p class="admonition-title">Embrace the Bugs</p>
-<p><img alt="Palette encouraging" class="mascot-admonition-img" src="../../img/mascot/encouraging.png" />
+<p><img alt="Palette encouraging" class="mascot-admonition-img" src="../../img/mascot/encouraging.png">
 If your screen is suddenly filled with red error text, take a deep breath! Every programmer, from beginners to experts, makes typos and scope errors. Bugs aren't failures; they are just puzzles waiting for your new <strong>Debugging Mental Model</strong> to solve them.</p>
 </div>
 <p>Be prepared for standard pitfalls:
@@ -1634,16 +1773,16 @@ If your screen is suddenly filled with red error text, take a deep breath! Every
 - <strong>Common Misconception PushPop</strong>: Forgetting to isolate transformations.
 - <strong>Common Misconception Scope</strong>: Declaring variables locally instead of globally.
 - <strong>Common Misconception Audio</strong>: Autoplaying sound before a user gesture.</p>
+<h4 id="diagram-scope-visualizer">Diagram: Scope Visualizer<a class="headerlink" href="#diagram-scope-visualizer" title="Permanent link">¶</a></h4>
 <details>
 <summary>MicroSim: Scope Visualizer</summary>
-<ul>
-<li><strong>Title</strong>: Variable Scope Interactive Tool</li>
-<li><strong>Description</strong>: A split-screen UI. On the left, code blocks for <code>setup()</code> and <code>draw()</code>. On the right, glowing boxes representing computer memory. When the user drags a variable declaration into <code>setup()</code>, it gets locked in a localized box. When dragged outside to the top of the file, it becomes available to all functions.</li>
-</ul>
+<p></p><summary>MicroSim: Scope Visualizer</summary>
+- <strong>Title</strong>: Variable Scope Interactive Tool
+- <strong>Description</strong>: A split-screen UI. On the left, code blocks for <code>setup()</code> and <code>draw()</code>. On the right, glowing boxes representing computer memory. When the user drags a variable declaration into <code>setup()</code>, it gets locked in a localized box. When dragged outside to the top of the file, it becomes available to all functions.<p></p>
 </details>
 <p>Ensure your classroom supports <strong>Inclusive Mentoring Workshop</strong> practices, balancing tasks with a <strong>Differentiated Challenge Level</strong> and adhering to <strong>Universal Design Learning UDL</strong>. Enhance comprehension using <strong>Visual Math Pedagogy</strong> for geometry and <strong>Acoustic Signal Pedagogy</strong> for sound. </p>
 <p>Assess progress through <strong>Formative Code Assessment</strong> (low-stakes check-ins) and a <strong>Summative Capstone Project</strong>. Evaluate the final pieces using a <strong>Rubric Creativity Code Quality</strong> and celebrate their achievements in a public <strong>Student Portfolio Showcase</strong>. Finally, encourage students to build their own <strong>Interactive MicroSim Design</strong> projects to teach others.</p>
-<h3 id="expanding-the-word-count-naturally">Expanding the Word Count Naturally<a class="headerlink" href="#expanding-the-word-count-naturally" title="Permanent link">&para;</a></h3>
+<h3 id="expanding-the-word-count-naturally">Expanding the Word Count Naturally<a class="headerlink" href="#expanding-the-word-count-naturally" title="Permanent link">¶</a></h3>
 <p>To ensure a comprehensive understanding of the development environment, let us dive deeper into the specific mechanics of Git and GitHub, two tools that are indispensable in modern software engineering. Version control systems like Git allow multiple developers to work on the same codebase simultaneously without overwriting each other's changes. This is achieved through branching and merging. When a developer wants to add a new feature, they create a new branch. This branch is an isolated environment where changes can be made safely. Once the feature is complete and tested, the branch is merged back into the main codebase.</p>
 <p>GitHub acts as a centralized hub for these repositories, providing a web-based interface for managing pull requests, code reviews, and issue tracking. Pull requests are a critical component of collaborative development. They allow developers to propose changes to a repository and request feedback from their peers before the changes are integrated. This process ensures that code meets quality standards and aligns with the project's goals.</p>
 <p>Furthermore, CI/CD (Continuous Integration and Continuous Deployment) pipelines, often configured via GitHub Actions, automate the testing and deployment of code. When a pull request is submitted, automated tests are triggered to verify that the new code does not break existing functionality. If the tests pass, the code can be automatically deployed to a staging or production environment. This automation significantly reduces the manual effort required to release software and minimizes the risk of human error.</p>
@@ -1653,10 +1792,10 @@ If your screen is suddenly filled with red error text, take a deep breath! Every
 <p>Ultimately, the goal of transitioning from the sandbox to the workbench is to empower students to create robust, accessible, and collaborative generative art projects. By mastering these professional tools and pedagogical practices, educators can cultivate the next generation of creative coders who are equipped to tackle complex challenges and contribute meaningfully to the digital arts community.</p>
 <div class="admonition mascot-celebration">
 <p class="admonition-title">Master of the Workbench!</p>
-<p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+<p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png">
 Incredible work! You just mastered configuring a local <code>VS Code Code Editor</code>, squashing bugs with <code>JavaScript Breakpoints</code>, and sharing your sketches via <code>GitHub Pages Deployment</code>!</p>
 </div>
-<h3 id="additional-context-on-tooling">Additional Context on Tooling<a class="headerlink" href="#additional-context-on-tooling" title="Permanent link">&para;</a></h3>
+<h3 id="additional-context-on-tooling">Additional Context on Tooling<a class="headerlink" href="#additional-context-on-tooling" title="Permanent link">¶</a></h3>
 <p>The integration of bundlers like Vite and Webpack into the development workflow cannot be overstated. These tools take raw, modularized source code and transform it into optimized assets ready for the browser. They handle tasks such as transpiling modern JavaScript to ensure compatibility with older browsers, minifying CSS and JavaScript to reduce file sizes, and bundling assets like images and fonts. This optimization is crucial for delivering fast, responsive web applications, particularly when dealing with complex, graphics-intensive p5.js sketches.</p>
 <p>Moreover, the use of a package manager like npm or Yarn simplifies the process of managing external dependencies. Instead of manually downloading and including script files, developers can specify their dependencies in a package.json file and let the package manager handle the rest. This approach not only streamlines the setup process but also ensures that all team members are using the exact same versions of the required libraries, thereby preventing the dreaded "it works on my machine" syndrome.</p>
 <p>As students progress in their journey, they will inevitably encounter the need for debugging. While <code>console.log()</code> is a useful starting point, mastering the browser's developer tools is essential for diagnosing complex issues. The Elements panel allows developers to inspect and manipulate the DOM in real-time, which is invaluable for troubleshooting layout and styling problems. The Network panel provides insights into resource loading, helping to identify bottlenecks and optimize performance. And the Sources panel, with its powerful JavaScript debugger, enables developers to step through code execution, inspect variable states, and pinpoint the exact source of errors.</p>
@@ -1667,6 +1806,9 @@ Incredible work! You just mastered configuring a local <code>VS Code Code Editor
 
 
 
+
+  
+  
 
 
 
@@ -1683,7 +1825,7 @@ Incredible work! You just mastered configuring a local <code>VS Code Code Editor
         
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
   Back to top
 </button>
         
@@ -1693,20 +1835,20 @@ Incredible work! You just mastered configuring a local <code>VS Code Code Editor
   
     
       
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
         
           
           <a href="../24-generative-typography/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 24. Generative Typography &amp; Vector Font Outlines">
             <div class="md-footer__button md-icon">
               
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
             </div>
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Previous
               </span>
               <div class="md-ellipsis">
-                24. Generative Typography & Vector Font Outlines
+                24. Generative Typography &amp; Vector Font Outlines
               </div>
             </div>
           </a>
@@ -1724,7 +1866,7 @@ Incredible work! You just mastered configuring a local <code>VS Code Code Editor
             </div>
             <div class="md-footer__button md-icon">
               
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
             </div>
           </a>
         
@@ -1736,7 +1878,7 @@ Incredible work! You just mastered configuring a local <code>VS Code Code Editor
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+      Copyright © 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
     </div>
   
   
@@ -1757,6 +1899,14 @@ Incredible work! You just mastered configuring a local <code>VS Code Code Editor
     
       <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
+        <script src="../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
     
-  </body>
-</html>
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

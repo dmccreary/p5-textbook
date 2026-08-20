@@ -1,7 +1,4 @@
-
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
+<!DOCTYPE html><html lang="en" class="no-js"><head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -26,7 +23,7 @@
     
     
       
-        <title>7. Linear Motion, Trigonometry & Wave Math - The Art of Processing</title>
+        <title>7. Linear Motion, Trigonometry &amp; Wave Math - The Art of Processing</title>
       
     
     
@@ -47,7 +44,7 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
@@ -56,14 +53,52 @@
     
       <link rel="stylesheet" href="../../css/mascot.css">
     
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
+      
+        <meta property="og:type" content="website">
+      
+        <meta property="og:title" content="7. Linear Motion, Trigonometry &amp; Wave Math - The Art of Processing">
+      
+        <meta property="og:description" content="An interactive intelligent textbook about the p5.js processing library and how to use it to teach computational thinking.">
+      
+        <meta property="og:image" content="https://dmccreary.github.io/p5-textbook/assets/images/social/chapters/07-linear-motion-trig/index.png">
+      
+        <meta property="og:image:type" content="image/png">
+      
+        <meta property="og:image:width" content="1200">
+      
+        <meta property="og:image:height" content="630">
+      
+        <meta property="og:url" content="https://dmccreary.github.io/p5-textbook/chapters/07-linear-motion-trig/">
+      
+        <meta name="twitter:card" content="summary_large_image">
+      
+        <meta name="twitter:title" content="7. Linear Motion, Trigonometry &amp; Wave Math - The Art of Processing">
+      
+        <meta name="twitter:description" content="An interactive intelligent textbook about the p5.js processing library and how to use it to teach computational thinking.">
+      
+        <meta name="twitter:image" content="https://dmccreary.github.io/p5-textbook/assets/images/social/chapters/07-linear-motion-trig/index.png">
+      
     
-  </head>
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
   
   
     
@@ -99,12 +134,12 @@
     <a href="../.." title="The Art of Processing" class="md-header__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -116,7 +151,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              7. Linear Motion, Trigonometry & Wave Math
+              7. Linear Motion, Trigonometry &amp; Wave Math
             
           </span>
         </div>
@@ -130,7 +165,7 @@
     
       <label class="md-header__button md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
       </label>
       <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
@@ -139,20 +174,20 @@
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
           <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
             
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
           </a>
         
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
         </button>
       </nav>
       
@@ -177,7 +212,7 @@
         <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -201,7 +236,7 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -213,7 +248,7 @@
     <a href="../.." title="The Art of Processing" class="md-nav__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     The Art of Processing
@@ -223,7 +258,7 @@
       <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -459,7 +494,7 @@
         
   
   <span class="md-ellipsis">
-    1. Introduction to Creative Coding & Canvas Foundations
+    1. Introduction to Creative Coding &amp; Canvas Foundations
   </span>
   
 
@@ -480,7 +515,7 @@
         
   
   <span class="md-ellipsis">
-    2. 2D Primitive Shapes & Custom Geometries
+    2. 2D Primitive Shapes &amp; Custom Geometries
   </span>
   
 
@@ -501,7 +536,7 @@
         
   
   <span class="md-ellipsis">
-    3. Color Theory, Color Modes & Pixel Manipulation
+    3. Color Theory, Color Modes &amp; Pixel Manipulation
   </span>
   
 
@@ -522,7 +557,7 @@
         
   
   <span class="md-ellipsis">
-    4. Variables, Data Types & Scope Fundamentals
+    4. Variables, Data Types &amp; Scope Fundamentals
   </span>
   
 
@@ -543,7 +578,7 @@
         
   
   <span class="md-ellipsis">
-    5. Control Flow, Loops & Array Data Structures
+    5. Control Flow, Loops &amp; Array Data Structures
   </span>
   
 
@@ -564,7 +599,7 @@
         
   
   <span class="md-ellipsis">
-    6. Matrix Transformations & Coordinate Systems
+    6. Matrix Transformations &amp; Coordinate Systems
   </span>
   
 
@@ -594,7 +629,7 @@
           
   
   <span class="md-ellipsis">
-    7. Linear Motion, Trigonometry & Wave Math
+    7. Linear Motion, Trigonometry &amp; Wave Math
   </span>
   
 
@@ -605,7 +640,7 @@
         
   
   <span class="md-ellipsis">
-    7. Linear Motion, Trigonometry & Wave Math
+    7. Linear Motion, Trigonometry &amp; Wave Math
   </span>
   
 
@@ -709,6 +744,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#diagram-interactive-wave-maker-laboratory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Interactive Wave Maker Laboratory
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -766,6 +810,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#diagram-orbital-mechanics-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Orbital Mechanics Simulator
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -805,7 +858,7 @@
         
   
   <span class="md-ellipsis">
-    8. Polar Coordinates, Oscillation & Easing
+    8. Polar Coordinates, Oscillation &amp; Easing
   </span>
   
 
@@ -826,7 +879,7 @@
         
   
   <span class="md-ellipsis">
-    9. Randomness, Gaussian Distributions & Random Walk
+    9. Randomness, Gaussian Distributions &amp; Random Walk
   </span>
   
 
@@ -847,7 +900,7 @@
         
   
   <span class="md-ellipsis">
-    10. Perlin Noise Landscapes & Vector Flow Fields
+    10. Perlin Noise Landscapes &amp; Vector Flow Fields
   </span>
   
 
@@ -868,7 +921,7 @@
         
   
   <span class="md-ellipsis">
-    11. Vector Math Fundamentals & Physics Acceleration
+    11. Vector Math Fundamentals &amp; Physics Acceleration
   </span>
   
 
@@ -889,7 +942,7 @@
         
   
   <span class="md-ellipsis">
-    12. Particle Systems, Forces & Steering Behaviors
+    12. Particle Systems, Forces &amp; Steering Behaviors
   </span>
   
 
@@ -910,7 +963,7 @@
         
   
   <span class="md-ellipsis">
-    13. Mouse & Keyboard User Event Sensing
+    13. Mouse &amp; Keyboard User Event Sensing
   </span>
   
 
@@ -931,7 +984,7 @@
         
   
   <span class="md-ellipsis">
-    14. Touch Gestures, Mobile Sensors & Interaction
+    14. Touch Gestures, Mobile Sensors &amp; Interaction
   </span>
   
 
@@ -952,7 +1005,7 @@
         
   
   <span class="md-ellipsis">
-    15. DOM Controls, Input Fields & UI Elements
+    15. DOM Controls, Input Fields &amp; UI Elements
   </span>
   
 
@@ -973,7 +1026,7 @@
         
   
   <span class="md-ellipsis">
-    16. CSS Styling, Layouts & Web Page Integration
+    16. CSS Styling, Layouts &amp; Web Page Integration
   </span>
   
 
@@ -994,7 +1047,7 @@
         
   
   <span class="md-ellipsis">
-    17. Functions, Arrow Expressions & Callbacks
+    17. Functions, Arrow Expressions &amp; Callbacks
   </span>
   
 
@@ -1015,7 +1068,7 @@
         
   
   <span class="md-ellipsis">
-    18. ES6 Classes, Object-Oriented Programming & Async Data
+    18. ES6 Classes, Object-Oriented Programming &amp; Async Data
   </span>
   
 
@@ -1036,7 +1089,7 @@
         
   
   <span class="md-ellipsis">
-    19. 3D WebGL Coordinates & Primitive Geometries
+    19. 3D WebGL Coordinates &amp; Primitive Geometries
   </span>
   
 
@@ -1057,7 +1110,7 @@
         
   
   <span class="md-ellipsis">
-    20. 3D Cameras, Lighting Models, Materials & Shaders
+    20. 3D Cameras, Lighting Models, Materials &amp; Shaders
   </span>
   
 
@@ -1078,7 +1131,7 @@
         
   
   <span class="md-ellipsis">
-    21. Audio Synthesis, Oscillators & Envelopes
+    21. Audio Synthesis, Oscillators &amp; Envelopes
   </span>
   
 
@@ -1099,7 +1152,7 @@
         
   
   <span class="md-ellipsis">
-    22. Microphone Input & FFT Spectral Analysis
+    22. Microphone Input &amp; FFT Spectral Analysis
   </span>
   
 
@@ -1120,7 +1173,7 @@
         
   
   <span class="md-ellipsis">
-    23. Image Processing, Filters & Video Capture
+    23. Image Processing, Filters &amp; Video Capture
   </span>
   
 
@@ -1141,7 +1194,7 @@
         
   
   <span class="md-ellipsis">
-    24. Generative Typography & Vector Font Outlines
+    24. Generative Typography &amp; Vector Font Outlines
   </span>
   
 
@@ -1162,7 +1215,7 @@
         
   
   <span class="md-ellipsis">
-    25. Development Environment, Tools & Pedagogy
+    25. Development Environment, Tools &amp; Pedagogy
   </span>
   
 
@@ -1190,6 +1243,14 @@
       
         
           
+        
+      
+        
+      
+        
+      
+        
+      
         
       
         
@@ -1251,6 +1312,14 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1279,6 +1348,46 @@
   
 
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1331,7 +1440,7 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1432,6 +1541,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#diagram-interactive-wave-maker-laboratory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Interactive Wave Maker Laboratory
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1489,6 +1607,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#diagram-orbital-mechanics-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Orbital Mechanics Simulator
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1525,16 +1652,16 @@
   
     <a href="https://github.com/dmccreary/p5-textbook/blob/main/docs/chapters/07-linear-motion-trig/index.md" title="Edit this page" class="md-content__button md-icon">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
     </a>
   
   
 
 
-<h1 id="linear-motion-trigonometry-wave-math">Linear Motion, Trigonometry &amp; Wave Math<a class="headerlink" href="#linear-motion-trigonometry-wave-math" title="Permanent link">&para;</a></h1>
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<h1 id="linear-motion-trigonometry-wave-math">Linear Motion, Trigonometry &amp; Wave Math<a class="headerlink" href="#linear-motion-trigonometry-wave-math" title="Permanent link">¶</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">¶</a></h2>
 <p>Applies linear displacement, velocity, sine/cosine wave functions, and range mapping (map(), lerp()). Students will gain practical hands-on experience by building interactive sketches and visual experiments that demonstrate these concepts.</p>
-<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">¶</a></h2>
 <p>This chapter covers the following 17 concepts from the learning graph:</p>
 <ol>
 <li>Linear Motion Logic</li>
@@ -1555,21 +1682,21 @@
 <li>Rotational Tracking Motion</li>
 <li>Map Range Function</li>
 </ol>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">¶</a></h2>
 <p>This chapter builds on concepts from:</p>
 <ul>
 <li><a href="../06-matrix-transformations/">Chapter 6: Matrix Transformations &amp; Coordinate Systems</a></li>
 </ul>
-<hr />
+<hr>
 <div class="admonition mascot-welcome">
 <p class="admonition-title">Welcome to Chapter 7!</p>
-<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" /></p>
+<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png"></p>
 <p>Hello creators! Static art is beautiful, but things get really exciting when they start to move. We'll be using some surprisingly fun math to make your sketches slide, swing, and breathe with natural rhythm. Get ready to bring your canvases to life!</p>
 </div>
 <p>Have you ever watched a pendulum swing back and forth, or seen the rhythmic rise and fall of ocean waves, or marveled at the smooth rotation of a Ferris wheel? These mesmerizing patterns are everywhere in nature and mechanics, and they all share a common, elegant mathematical foundation. When we learn to harness this math, we unlock the ability to breathe life into our digital creations. In this chapter, we are going to dive deep into how we can recreate these natural, fluid movements using code. We will start simple, by moving objects in straight lines, and then we will unlock the powerful secrets of circles, waves, and oscillation using trigonometry.</p>
-<h2 id="the-beauty-of-mathematics-in-motion">The Beauty of Mathematics in Motion<a class="headerlink" href="#the-beauty-of-mathematics-in-motion" title="Permanent link">&para;</a></h2>
+<h2 id="the-beauty-of-mathematics-in-motion">The Beauty of Mathematics in Motion<a class="headerlink" href="#the-beauty-of-mathematics-in-motion" title="Permanent link">¶</a></h2>
 <p>Trigonometry often gets a bad rap in high school classrooms as a collection of dry formulas and abstract triangles. But in the world of creative coding, trigonometry is your paintbrush. It is the language of continuous, organic movement. By the end of this chapter, you won’t just be drawing static shapes on a screen; you will be choreographing dynamic, breathing animations that feel alive!</p>
-<h3 id="linear-motion-getting-from-point-a-to-point-b">Linear Motion: Getting from Point A to Point B<a class="headerlink" href="#linear-motion-getting-from-point-a-to-point-b" title="Permanent link">&para;</a></h3>
+<h3 id="linear-motion-getting-from-point-a-to-point-b">Linear Motion: Getting from Point A to Point B<a class="headerlink" href="#linear-motion-getting-from-point-a-to-point-b" title="Permanent link">¶</a></h3>
 <p>Before we tackle the complexities of waves and circular paths, let's establish a solid foundation with the most basic form of movement: moving in a straight line. In the digital world, <strong>Linear Motion Logic</strong> involves updating an object's position on the screen frame by frame. Since our sketches run in a loop (the <code>draw()</code> function), we can make small changes to our variables every time the loop runs, creating the illusion of smooth motion over time.</p>
 <p>Think about how you move across a room. You start at one spot, and with each step, your position changes. In programming, this change in position over time is called <strong>Position Displacement</strong>. </p>
 <p>If an object moves the exact same amount in the exact same direction every single frame, it is exhibiting <strong>Constant Velocity</strong>. Velocity is simply speed with a direction. In our 2D canvas, we handle velocity by changing the x-coordinate to move horizontally, the y-coordinate to move vertically, or both simultaneously to move diagonally.</p>
@@ -1582,7 +1709,7 @@
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">}</span>
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="kd">function</span><span class="w"> </span><span class="nx">draw</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="c1">// Clear the background every frame so we don&#39;t leave a trail</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="c1">// Clear the background every frame so we don't leave a trail</span>
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="nx">background</span><span class="p">(</span><span class="mf">220</span><span class="p">);</span>
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="c1">// Draw the ball at the current xPosition</span>
@@ -1596,22 +1723,22 @@
 <p>This simple addition (<code>xPosition += speed;</code>) is the beating heart of <strong>Linear Motion Logic</strong>. But what happens when the ball reaches the right edge of the canvas? Because we never told it to stop, it will continue moving to the right, into the vast, unseen digital void beyond the screen's boundaries.</p>
 <div class="admonition mascot-tip">
 <p class="admonition-title">Palette's Tip</p>
-<p><img alt="Palette tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" /></p>
+<p><img alt="Palette tip" class="mascot-admonition-img" src="../../img/mascot/tip.png"></p>
 <p>Want a quick trick to keep objects from flying off the screen? Multiply their velocity by <code>-1</code> the moment they hit the edge! It instantly reverses their direction and creates a perfect bouncing effect with almost zero extra code.</p>
 </div>
 <p>To handle edges, we use conditional statements (<code>if</code> statements) to reverse the velocity when the position exceeds the canvas boundaries. This turns simple displacement into a bouncing simulation, setting the stage for more complex behaviors.</p>
-<h3 id="the-magic-of-trigonometry-circles-and-waves">The Magic of Trigonometry: Circles and Waves<a class="headerlink" href="#the-magic-of-trigonometry-circles-and-waves" title="Permanent link">&para;</a></h3>
+<h3 id="the-magic-of-trigonometry-circles-and-waves">The Magic of Trigonometry: Circles and Waves<a class="headerlink" href="#the-magic-of-trigonometry-circles-and-waves" title="Permanent link">¶</a></h3>
 <p>Straight lines and bouncing off walls are great for simple arcade games like Pong, but nature loves curves. How do we make things move in smooth circles, or oscillate back and forth like a leaf in the wind? Enter trigonometry, the mathematics of triangles and circles.</p>
-<h4 id="the-slinky-metaphor">The Slinky Metaphor<a class="headerlink" href="#the-slinky-metaphor" title="Permanent link">&para;</a></h4>
+<h4 id="the-slinky-metaphor">The Slinky Metaphor<a class="headerlink" href="#the-slinky-metaphor" title="Permanent link">¶</a></h4>
 <p>To truly understand how trigonometric functions translate into motion, imagine a Slinky hanging from your hand. If you pull the bottom of the Slinky down and let go, it bounces up and down. As it bounces, its position changes smoothly over time. It moves fastest when it passes through its resting position in the middle, and it momentarily stops at the very top and bottom of its path before reversing direction. This rhythmic, incredibly smooth bouncing is a perfect, physical example of a <strong>Harmonic Motion Wave</strong>.</p>
 <p>Now, take this mental image a step further. Imagine attaching a pen to the bottom of that bouncing Slinky. As the Slinky bounces up and down, you slowly drag a long piece of paper past it horizontally. What does the pen draw? It draws a perfect, smooth, continuous wave on the paper. </p>
 <p>This wave shape is exactly what we get when we graph the sine and cosine functions!</p>
 <div class="admonition mascot-thinking">
 <p class="admonition-title">Palette's Insight</p>
-<p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" /></p>
+<p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png"></p>
 <p>Notice how the physical bouncing up and down perfectly maps to the Y-axis, while time progressing maps to the X-axis? You are translating a physical dimension into a temporal one! The up-and-down motion of the Slinky represents the value of the function, and the horizontal dragging of the paper represents the progression of time.</p>
 </div>
-<h4 id="sine-and-cosine-the-heartbeat-of-animation">Sine and Cosine: The Heartbeat of Animation<a class="headerlink" href="#sine-and-cosine-the-heartbeat-of-animation" title="Permanent link">&para;</a></h4>
+<h4 id="sine-and-cosine-the-heartbeat-of-animation">Sine and Cosine: The Heartbeat of Animation<a class="headerlink" href="#sine-and-cosine-the-heartbeat-of-animation" title="Permanent link">¶</a></h4>
 <p>In our code, <strong>Sine Function Math</strong> (<code>sin()</code>) and <strong>Cosine Function Math</strong> (<code>cos()</code>) are the twin engines of organic motion. Both functions take an angle as their input (which we typically measure in radians, not degrees) and return a value that smoothly and eternally oscillates between -1 and 1. </p>
 <ul>
 <li><code>sin(angle)</code> starts at 0, smoothly goes up to 1, gracefully curves down through 0 to -1, and comes back up to 0.</li>
@@ -1640,15 +1767,16 @@
 </span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>By simply mapping the output of <code>sin()</code> to the y-coordinate of a circle, we have successfully simulated our bouncing Slinky!</p>
-<h4 id="anatomy-of-a-wave">Anatomy of a Wave<a class="headerlink" href="#anatomy-of-a-wave" title="Permanent link">&para;</a></h4>
+<h4 id="anatomy-of-a-wave">Anatomy of a Wave<a class="headerlink" href="#anatomy-of-a-wave" title="Permanent link">¶</a></h4>
 <p>When we construct a wave using trigonometric functions, there are three primary parameters we can manipulate to change its behavior. These are the dials and knobs of our harmonic engine:</p>
 <ol>
 <li><strong>Wave Amplitude Parameter</strong>: This dictates the height of the wave. How far up and down does the Slinky bounce? In our code snippet above, <code>100</code> is the amplitude. Because <code>sin()</code> maxes out at 1 and bottoms out at -1, multiplying by 100 stretches the wave so it ranges from -100 to 100 pixels. A larger amplitude means a taller, more dramatic wave.</li>
 <li><strong>Wave Frequency Parameter</strong>: This controls how fast the wave oscillates. How quickly is the Slinky bouncing up and down? In our code, adding <code>0.05</code> to the <code>angle</code> each frame determines the frequency. If we added <code>0.2</code> instead, the angle would increase faster, the <code>sin()</code> function would cycle through its values faster, and our circle would bounce furiously. A higher frequency means more wave cycles squeezed into the same amount of time.</li>
 <li><strong>Wave Phase Offset</strong>: This determines where the wave begins its cycle at time zero. Imagine you have two identical Slinkies bouncing next to each other. If you let them go at the exact same time, they bounce together in perfect sync. But if you let one go a split second after the other, they are out of phase. In code, we create this offset by adding a value directly to the angle before passing it into the <code>sin()</code> function (e.g., <code>sin(angle + PI)</code>).</li>
 </ol>
+<h4 id="diagram-interactive-wave-maker-laboratory">Diagram: Interactive Wave Maker Laboratory<a class="headerlink" href="#diagram-interactive-wave-maker-laboratory" title="Permanent link">¶</a></h4>
 <details>
-<summary>MicroSim: Interactive Wave Maker Laboratory</summary>
+<summary>MicroSim: Interactive Wave Maker Laboratory</summary><summary>MicroSim: Interactive Wave Maker Laboratory</summary>
 
 **Goal:** Create a rich interactive simulation where the user can manipulate sliders to adjust the amplitude, frequency, and phase offset of a sine wave, visualizing how these parameters alter the shape of the wave in real-time.
 
@@ -1660,14 +1788,14 @@
 - Overlay text on the canvas to display the precise numerical values of the current slider settings, reinforcing the connection between the math and the visual output.
 </details>
 
-<h3 id="navigating-the-circle-polar-coordinates">Navigating the Circle: Polar Coordinates<a class="headerlink" href="#navigating-the-circle-polar-coordinates" title="Permanent link">&para;</a></h3>
+<h3 id="navigating-the-circle-polar-coordinates">Navigating the Circle: Polar Coordinates<a class="headerlink" href="#navigating-the-circle-polar-coordinates" title="Permanent link">¶</a></h3>
 <p>Up until this point in your programming journey, you have likely positioned every single object using its x and y coordinates on a rectangular grid. This standard system is known as the Cartesian coordinate system, named after René Descartes. </p>
 <p>The Cartesian system is perfect for <strong>Linear Motion Logic</strong>, but it becomes incredibly cumbersome when we want to place objects on a circle or make them move in a circular orbit. Calculating the exact x and y coordinates of a point moving smoothly along a circular curve is a headache if you only use addition and subtraction.</p>
 <p>Thankfully, mathematics provides a much better tool for this specific job: <strong>Circle Polar Coordinates</strong>.</p>
 <p>Instead of defining a point by its horizontal distance (x) and vertical distance (y) from the origin, the polar coordinate system defines a point using two entirely different metrics:
 1. <code>r</code> (radius): The straight-line distance from the center origin to the point.
 2. <code>theta</code> (angle): The angle of rotation from a reference line (usually the horizontal x-axis pointing to the right).</p>
-<h4 id="translating-between-systems-the-ultimate-bridge">Translating Between Systems: The Ultimate Bridge<a class="headerlink" href="#translating-between-systems-the-ultimate-bridge" title="Permanent link">&para;</a></h4>
+<h4 id="translating-between-systems-the-ultimate-bridge">Translating Between Systems: The Ultimate Bridge<a class="headerlink" href="#translating-between-systems-the-ultimate-bridge" title="Permanent link">¶</a></h4>
 <p>While polar coordinates are incredibly intuitive for designing circular motion, computer screens and graphics libraries (like p5.js) are strictly Cartesian. They only know how to draw pixels at specific (x, y) locations. </p>
 <p>Therefore, if we want to design our animation in the elegant world of polar coordinates, we need a reliable bridge to translate those instructions back into the Cartesian world the computer understands. </p>
 <p>This bridge is the <strong>Polar to Cartesian Formula</strong>, and it is arguably the most powerful mathematical spell in your trigonometry spellbook. It flawlessly converts a radius and an angle into an x and y coordinate:</p>
@@ -1691,7 +1819,7 @@
 </span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">  </span><span class="c1">// Center our origin point in the middle of the canvas</span>
 </span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">  </span><span class="nx">translate</span><span class="p">(</span><span class="nx">width</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">height</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
 </span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">  </span><span class="c1">// Draw the central &quot;sun&quot;</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">  </span><span class="c1">// Draw the central "sun"</span>
 </span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">  </span><span class="nx">fill</span><span class="p">(</span><span class="mf">255</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
 </span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">  </span><span class="nx">circle</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">80</span><span class="p">);</span>
 </span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
@@ -1699,7 +1827,7 @@
 </span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">orbitingX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">cos</span><span class="p">(</span><span class="nx">theta</span><span class="p">);</span>
 </span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">orbitingY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">sin</span><span class="p">(</span><span class="nx">theta</span><span class="p">);</span>
 </span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>
-</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">  </span><span class="c1">// Draw the &quot;planet&quot; at the calculated Cartesian coordinates</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">  </span><span class="c1">// Draw the "planet" at the calculated Cartesian coordinates</span>
 </span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">  </span><span class="nx">fill</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">,</span><span class="w"> </span><span class="mf">255</span><span class="p">);</span>
 </span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">  </span><span class="nx">circle</span><span class="p">(</span><span class="nx">orbitingX</span><span class="p">,</span><span class="w"> </span><span class="nx">orbitingY</span><span class="p">,</span><span class="w"> </span><span class="mf">30</span><span class="p">);</span>
 </span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>
@@ -1710,7 +1838,7 @@
 <p>By simply updating one variable (<code>theta</code>), we achieve complex, curved motion. This is the elegance of polar coordinates.</p>
 <p>Conversely, there are many situations where you have an (x, y) point (like the location of the mouse cursor) and you need to know its angle and distance from a central point. This reverse process requires the <strong>Cartesian to Polar Formula</strong>. </p>
 <p>Finding the distance (the radius <code>r</code>) is straightforward using the Pythagorean theorem (<code>r = sqrt(x*x + y*y)</code>) or the built-in <code>dist()</code> function. However, finding the exact angle is much trickier, because a standard tangent calculation loses track of which quadrant the point is in. This brings us to a specialized mathematical tool designed specifically to solve this problem.</p>
-<h3 id="the-power-of-tangent-and-atan2">The Power of Tangent and Atan2<a class="headerlink" href="#the-power-of-tangent-and-atan2" title="Permanent link">&para;</a></h3>
+<h3 id="the-power-of-tangent-and-atan2">The Power of Tangent and Atan2<a class="headerlink" href="#the-power-of-tangent-and-atan2" title="Permanent link">¶</a></h3>
 <p>We've established that sine and cosine are the undisputed stars for generating smooth circles and harmonic waves. But what about the third primary trigonometric function? </p>
 <p><strong>Tangent Function Math</strong> (<code>tan()</code>) mathematically represents the ratio between sine and cosine (<code>sin/cos</code>). Visually, if you graph the tangent function, it looks completely different from its siblings. Instead of smooth, continuous waves, the tangent function produces severe curves that periodically shoot off to positive and negative infinity. Because it's discontinuous, it is rarely used directly for creating smooth animations.</p>
 <p>However, its <em>inverse</em> function is an incredibly vital tool for interactive programming.</p>
@@ -1748,12 +1876,12 @@
 <p>This specific technique—calculating the delta, feeding it into <code>atan2</code>, and applying the resulting angle to a rotation—is the absolute foundation of <strong>Rotational Tracking Motion</strong>. Whether it's a turret aiming at an enemy, a character's eyes following the cursor, or a plant tilting toward the sun, <code>atan2</code> is the function that makes it happen.</p>
 <div class="admonition mascot-warning">
 <p class="admonition-title">Palette's Warning</p>
-<p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" /></p>
+<p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png"></p>
 <p>Watch out for the great <code>atan2</code> trap! A common mistake is flipping the arguments by passing X before Y. Because of old math library standards, it always expects <code>atan2(dy, dx)</code>. If your objects are rotating strangely, check your argument order first!</p>
 </div>
-<h3 id="mapping-values-the-universal-translator">Mapping Values: The Universal Translator<a class="headerlink" href="#mapping-values-the-universal-translator" title="Permanent link">&para;</a></h3>
+<h3 id="mapping-values-the-universal-translator">Mapping Values: The Universal Translator<a class="headerlink" href="#mapping-values-the-universal-translator" title="Permanent link">¶</a></h3>
 <p>We have covered movement, oscillation, and rotation. Let's conclude this chapter with one final, incredibly practical utility function that ties everything together: the <strong>Map Range Function</strong>.</p>
-<h4 id="the-thermometer-metaphor">The Thermometer Metaphor<a class="headerlink" href="#the-thermometer-metaphor" title="Permanent link">&para;</a></h4>
+<h4 id="the-thermometer-metaphor">The Thermometer Metaphor<a class="headerlink" href="#the-thermometer-metaphor" title="Permanent link">¶</a></h4>
 <p>To understand mapping, imagine a digital weather thermometer mounted outside your window. This thermometer measures temperatures ranging from a freezing 0 degrees up to a sweltering 100 degrees Celsius. </p>
 <p>Now, imagine you are building a smart-home dashboard that displays this temperature not as a number, but as an ambient background color. You want the background to smoothly transition from a deep, icy blue when it's 0 degrees, to a blazing, bright red when it hits 100 degrees.</p>
 <p>Your input data (the temperature) exists on a scale of 0 to 100. 
@@ -1786,8 +1914,9 @@ However, your output system (the red color channel in RGB) expects a value stric
 </span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">  </span><span class="nx">angle</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mf">0.05</span><span class="p">;</span>
 </span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="p">}</span>
 </span></code></pre></div>
+<h4 id="diagram-orbital-mechanics-simulator">Diagram: Orbital Mechanics Simulator<a class="headerlink" href="#diagram-orbital-mechanics-simulator" title="Permanent link">¶</a></h4>
 <details>
-<summary>MicroSim: Orbital Mechanics Simulator</summary>
+<summary>MicroSim: Orbital Mechanics Simulator</summary><summary>MicroSim: Orbital Mechanics Simulator</summary>
 
 **Goal:** Create an advanced, integrated simulation demonstrating polar coordinates, rotational tracking, and mapping all working simultaneously in a dynamic system.
 
@@ -1800,13 +1929,13 @@ However, your output system (the red color channel in RGB) expects a value stric
 - Finally, use the **Map Range Function** to dynamically alter the visual state based on distance. Calculate the distance between the planet and the satellite, and map that distance to the fill color of the planet (e.g., mapping a distance range of 0-400 to a color range of red to blue), creating a visual heat-map effect.
 </details>
 
-<h3 id="conclusion-choreographing-with-code">Conclusion: Choreographing with Code<a class="headerlink" href="#conclusion-choreographing-with-code" title="Permanent link">&para;</a></h3>
+<h3 id="conclusion-choreographing-with-code">Conclusion: Choreographing with Code<a class="headerlink" href="#conclusion-choreographing-with-code" title="Permanent link">¶</a></h3>
 <p>Trigonometry might have seemed like an abstract, intimidating subject in a textbook, but in the realm of creative coding, it is the fundamental engine of life, oscillation, and organic movement. </p>
 <p>By mastering the rigid predictability of <strong>Linear Motion Logic</strong>, understanding the smooth, eternal oscillations provided by <strong>Sine Function Math</strong> and <strong>Cosine Function Math</strong>, and wielding the rotational targeting power of the <strong>Arc Tangent Atan2 Function</strong>, you have vastly expanded your programming toolkit. </p>
 <p>When you learn to seamlessly link these mathematical properties together using the <strong>Map Range Function</strong>, your code transcends simple drawing. You are no longer just rendering shapes; you are choreographing intricate, dynamic systems that breathe, pulse, and interact with the fluidity of the natural world. Keep experimenting, keep tweaking those wave parameters, and watch your sketches come alive!</p>
 <div class="admonition mascot-celebration">
 <p class="admonition-title">Chapter Complete!</p>
-<p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" /></p>
+<p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png"></p>
 <p>Incredible work! You just mastered linear displacement, harmonic sine waves, and rotational tracking using atan2. You have everything you need to choreograph organic movement!</p>
 </div>
 
@@ -1834,7 +1963,7 @@ However, your output system (the red color channel in RGB) expects a value stric
         
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
   Back to top
 </button>
         
@@ -1844,20 +1973,20 @@ However, your output system (the red color channel in RGB) expects a value stric
   
     
       
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
         
           
           <a href="../06-matrix-transformations/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 6. Matrix Transformations &amp; Coordinate Systems">
             <div class="md-footer__button md-icon">
               
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
             </div>
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Previous
               </span>
               <div class="md-ellipsis">
-                6. Matrix Transformations & Coordinate Systems
+                6. Matrix Transformations &amp; Coordinate Systems
               </div>
             </div>
           </a>
@@ -1870,12 +1999,12 @@ However, your output system (the red color channel in RGB) expects a value stric
                 Next
               </span>
               <div class="md-ellipsis">
-                8. Polar Coordinates, Oscillation & Easing
+                8. Polar Coordinates, Oscillation &amp; Easing
               </div>
             </div>
             <div class="md-footer__button md-icon">
               
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
             </div>
           </a>
         
@@ -1887,7 +2016,7 @@ However, your output system (the red color channel in RGB) expects a value stric
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+      Copyright © 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
     </div>
   
   
@@ -1908,6 +2037,14 @@ However, your output system (the red color channel in RGB) expects a value stric
     
       <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
+        <script src="../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
     
-  </body>
-</html>
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

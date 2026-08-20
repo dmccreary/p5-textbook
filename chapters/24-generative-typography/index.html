@@ -1,7 +1,4 @@
-
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
+<!DOCTYPE html><html lang="en" class="no-js"><head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -26,7 +23,7 @@
     
     
       
-        <title>24. Generative Typography & Vector Font Outlines - The Art of Processing</title>
+        <title>24. Generative Typography &amp; Vector Font Outlines - The Art of Processing</title>
       
     
     
@@ -47,7 +44,7 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
@@ -56,14 +53,52 @@
     
       <link rel="stylesheet" href="../../css/mascot.css">
     
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
+      
+        <meta property="og:type" content="website">
+      
+        <meta property="og:title" content="24. Generative Typography &amp; Vector Font Outlines - The Art of Processing">
+      
+        <meta property="og:description" content="An interactive intelligent textbook about the p5.js processing library and how to use it to teach computational thinking.">
+      
+        <meta property="og:image" content="https://dmccreary.github.io/p5-textbook/assets/images/social/chapters/24-generative-typography/index.png">
+      
+        <meta property="og:image:type" content="image/png">
+      
+        <meta property="og:image:width" content="1200">
+      
+        <meta property="og:image:height" content="630">
+      
+        <meta property="og:url" content="https://dmccreary.github.io/p5-textbook/chapters/24-generative-typography/">
+      
+        <meta name="twitter:card" content="summary_large_image">
+      
+        <meta name="twitter:title" content="24. Generative Typography &amp; Vector Font Outlines - The Art of Processing">
+      
+        <meta name="twitter:description" content="An interactive intelligent textbook about the p5.js processing library and how to use it to teach computational thinking.">
+      
+        <meta name="twitter:image" content="https://dmccreary.github.io/p5-textbook/assets/images/social/chapters/24-generative-typography/index.png">
+      
     
-  </head>
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
   
   
     
@@ -99,12 +134,12 @@
     <a href="../.." title="The Art of Processing" class="md-header__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -116,7 +151,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              24. Generative Typography & Vector Font Outlines
+              24. Generative Typography &amp; Vector Font Outlines
             
           </span>
         </div>
@@ -130,7 +165,7 @@
     
       <label class="md-header__button md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
       </label>
       <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
@@ -139,20 +174,20 @@
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
           <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
             
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
           </a>
         
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
         </button>
       </nav>
       
@@ -177,7 +212,7 @@
         <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -201,7 +236,7 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -213,7 +248,7 @@
     <a href="../.." title="The Art of Processing" class="md-nav__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     The Art of Processing
@@ -223,7 +258,7 @@
       <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -459,7 +494,7 @@
         
   
   <span class="md-ellipsis">
-    1. Introduction to Creative Coding & Canvas Foundations
+    1. Introduction to Creative Coding &amp; Canvas Foundations
   </span>
   
 
@@ -480,7 +515,7 @@
         
   
   <span class="md-ellipsis">
-    2. 2D Primitive Shapes & Custom Geometries
+    2. 2D Primitive Shapes &amp; Custom Geometries
   </span>
   
 
@@ -501,7 +536,7 @@
         
   
   <span class="md-ellipsis">
-    3. Color Theory, Color Modes & Pixel Manipulation
+    3. Color Theory, Color Modes &amp; Pixel Manipulation
   </span>
   
 
@@ -522,7 +557,7 @@
         
   
   <span class="md-ellipsis">
-    4. Variables, Data Types & Scope Fundamentals
+    4. Variables, Data Types &amp; Scope Fundamentals
   </span>
   
 
@@ -543,7 +578,7 @@
         
   
   <span class="md-ellipsis">
-    5. Control Flow, Loops & Array Data Structures
+    5. Control Flow, Loops &amp; Array Data Structures
   </span>
   
 
@@ -564,7 +599,7 @@
         
   
   <span class="md-ellipsis">
-    6. Matrix Transformations & Coordinate Systems
+    6. Matrix Transformations &amp; Coordinate Systems
   </span>
   
 
@@ -585,7 +620,7 @@
         
   
   <span class="md-ellipsis">
-    7. Linear Motion, Trigonometry & Wave Math
+    7. Linear Motion, Trigonometry &amp; Wave Math
   </span>
   
 
@@ -606,7 +641,7 @@
         
   
   <span class="md-ellipsis">
-    8. Polar Coordinates, Oscillation & Easing
+    8. Polar Coordinates, Oscillation &amp; Easing
   </span>
   
 
@@ -627,7 +662,7 @@
         
   
   <span class="md-ellipsis">
-    9. Randomness, Gaussian Distributions & Random Walk
+    9. Randomness, Gaussian Distributions &amp; Random Walk
   </span>
   
 
@@ -648,7 +683,7 @@
         
   
   <span class="md-ellipsis">
-    10. Perlin Noise Landscapes & Vector Flow Fields
+    10. Perlin Noise Landscapes &amp; Vector Flow Fields
   </span>
   
 
@@ -669,7 +704,7 @@
         
   
   <span class="md-ellipsis">
-    11. Vector Math Fundamentals & Physics Acceleration
+    11. Vector Math Fundamentals &amp; Physics Acceleration
   </span>
   
 
@@ -690,7 +725,7 @@
         
   
   <span class="md-ellipsis">
-    12. Particle Systems, Forces & Steering Behaviors
+    12. Particle Systems, Forces &amp; Steering Behaviors
   </span>
   
 
@@ -711,7 +746,7 @@
         
   
   <span class="md-ellipsis">
-    13. Mouse & Keyboard User Event Sensing
+    13. Mouse &amp; Keyboard User Event Sensing
   </span>
   
 
@@ -732,7 +767,7 @@
         
   
   <span class="md-ellipsis">
-    14. Touch Gestures, Mobile Sensors & Interaction
+    14. Touch Gestures, Mobile Sensors &amp; Interaction
   </span>
   
 
@@ -753,7 +788,7 @@
         
   
   <span class="md-ellipsis">
-    15. DOM Controls, Input Fields & UI Elements
+    15. DOM Controls, Input Fields &amp; UI Elements
   </span>
   
 
@@ -774,7 +809,7 @@
         
   
   <span class="md-ellipsis">
-    16. CSS Styling, Layouts & Web Page Integration
+    16. CSS Styling, Layouts &amp; Web Page Integration
   </span>
   
 
@@ -795,7 +830,7 @@
         
   
   <span class="md-ellipsis">
-    17. Functions, Arrow Expressions & Callbacks
+    17. Functions, Arrow Expressions &amp; Callbacks
   </span>
   
 
@@ -816,7 +851,7 @@
         
   
   <span class="md-ellipsis">
-    18. ES6 Classes, Object-Oriented Programming & Async Data
+    18. ES6 Classes, Object-Oriented Programming &amp; Async Data
   </span>
   
 
@@ -837,7 +872,7 @@
         
   
   <span class="md-ellipsis">
-    19. 3D WebGL Coordinates & Primitive Geometries
+    19. 3D WebGL Coordinates &amp; Primitive Geometries
   </span>
   
 
@@ -858,7 +893,7 @@
         
   
   <span class="md-ellipsis">
-    20. 3D Cameras, Lighting Models, Materials & Shaders
+    20. 3D Cameras, Lighting Models, Materials &amp; Shaders
   </span>
   
 
@@ -879,7 +914,7 @@
         
   
   <span class="md-ellipsis">
-    21. Audio Synthesis, Oscillators & Envelopes
+    21. Audio Synthesis, Oscillators &amp; Envelopes
   </span>
   
 
@@ -900,7 +935,7 @@
         
   
   <span class="md-ellipsis">
-    22. Microphone Input & FFT Spectral Analysis
+    22. Microphone Input &amp; FFT Spectral Analysis
   </span>
   
 
@@ -921,7 +956,7 @@
         
   
   <span class="md-ellipsis">
-    23. Image Processing, Filters & Video Capture
+    23. Image Processing, Filters &amp; Video Capture
   </span>
   
 
@@ -951,7 +986,7 @@
           
   
   <span class="md-ellipsis">
-    24. Generative Typography & Vector Font Outlines
+    24. Generative Typography &amp; Vector Font Outlines
   </span>
   
 
@@ -962,7 +997,7 @@
         
   
   <span class="md-ellipsis">
-    24. Generative Typography & Vector Font Outlines
+    24. Generative Typography &amp; Vector Font Outlines
   </span>
   
 
@@ -1017,6 +1052,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="The Basics of Text on the Canvas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-text-formatting-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Text Formatting Basics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1034,6 +1084,21 @@
       Beyond the Pixel: Vector Outlines
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Beyond the Pixel: Vector Outlines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-kinetic-text-to-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Kinetic Text to Points
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1153,7 +1218,7 @@
         
   
   <span class="md-ellipsis">
-    25. Development Environment, Tools & Pedagogy
+    25. Development Environment, Tools &amp; Pedagogy
   </span>
   
 
@@ -1181,6 +1246,14 @@
       
         
           
+        
+      
+        
+      
+        
+      
+        
+      
         
       
         
@@ -1242,6 +1315,14 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1270,6 +1351,46 @@
   
 
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1322,7 +1443,7 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1374,6 +1495,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="The Basics of Text on the Canvas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-text-formatting-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Text Formatting Basics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1391,6 +1527,21 @@
       Beyond the Pixel: Vector Outlines
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Beyond the Pixel: Vector Outlines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-kinetic-text-to-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Kinetic Text to Points
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1507,16 +1658,16 @@
   
     <a href="https://github.com/dmccreary/p5-textbook/blob/main/docs/chapters/24-generative-typography/index.md" title="Edit this page" class="md-content__button md-icon">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
     </a>
   
   
 
 
-<h1 id="generative-typography-vector-font-outlines">Generative Typography &amp; Vector Font Outlines<a class="headerlink" href="#generative-typography-vector-font-outlines" title="Permanent link">&para;</a></h1>
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<h1 id="generative-typography-vector-font-outlines">Generative Typography &amp; Vector Font Outlines<a class="headerlink" href="#generative-typography-vector-font-outlines" title="Permanent link">¶</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">¶</a></h2>
 <p>Renders custom font files, extracts glyph vector points (textToPoints()), and creates kinetic particle typography. Students will gain practical hands-on experience by building interactive sketches and visual experiments that demonstrate these concepts.</p>
-<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">¶</a></h2>
 <p>This chapter covers the following 30 concepts from the learning graph:</p>
 <ol>
 <li>Text Drawing Function</li>
@@ -1550,19 +1701,19 @@
 <li>Kerning Letter Spacing</li>
 <li>SVG Font Path Parsing</li>
 </ol>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">¶</a></h2>
 <p>This chapter builds on concepts from:</p>
 <ul>
 <li><a href="../23-image-processing-video/">Chapter 23: Image Processing, Filters &amp; Video Capture</a></li>
 </ul>
-<hr />
+<hr>
 <div class="admonition mascot-welcome">
 <p class="admonition-title">Welcome to Generative Typography!</p>
-<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" /></p>
+<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png"></p>
 <p>Hey artists! Letters don't have to be boring, static blocks of ink on a page. This chapter gives you the tools to explode fonts, manipulate outlines, and treat words as living, kinetic geometry. Get ready to completely reinvent how you look at text!</p>
 </div>
 <p>For centuries, the printing press locked letters into rigid metal blocks. Each character was static, unchanging, and confined to a strict grid. Today, the digital brush liberates these letterforms. In p5.js, typography isn't just about stamping ink onto a page; it's about treating text as living, breathing data. We can stretch, explode, and reconstruct words dynamically. </p>
-<h2 id="the-basics-of-text-on-the-canvas">The Basics of Text on the Canvas<a class="headerlink" href="#the-basics-of-text-on-the-canvas" title="Permanent link">&para;</a></h2>
+<h2 id="the-basics-of-text-on-the-canvas">The Basics of Text on the Canvas<a class="headerlink" href="#the-basics-of-text-on-the-canvas" title="Permanent link">¶</a></h2>
 <p>Before we shatter the printing press, we need to know how to use it. The primary <strong>Text Drawing Function</strong> in p5.js is <code>text()</code>. It places a string of characters onto the canvas at a specific coordinate. You can adjust its dimensions using the <strong>Text Size Setting</strong> <code>textSize()</code>, and control its placement with <strong>Text Align Alignment</strong> via <code>textAlign()</code>. </p>
 <p>Let's look at a comprehensive example of basic text rendering in p5.js:</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -1581,7 +1732,7 @@
 </span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span><span class="nx">strokeWeight</span><span class="p">(</span><span class="mf">3</span><span class="p">);</span><span class="w"> </span><span class="c1">// Thick outline for emphasis</span>
 </span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
 </span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">  </span><span class="c1">// Draw the text</span>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">  </span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Hello Generative World&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">width</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">height</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">  </span><span class="nx">text</span><span class="p">(</span><span class="s2">"Hello Generative World"</span><span class="p">,</span><span class="w"> </span><span class="nx">width</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">height</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
 </span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>Notice how we used a <strong>Text Stroke Fill Combo</strong> above? Text can be styled exactly like shapes. You can also apply a <strong>Text Style Bold Italic</strong> with <code>textStyle(BOLD)</code> or <code>textStyle(ITALIC)</code>. For multi-line paragraphs, you'll need a <strong>Text Wrap Word Container</strong> to ensure sentences flow neatly within a bounding box. When styling paragraphs, <strong>Text Leading Spacing</strong> controls the vertical distance between lines of text. </p>
@@ -1599,26 +1750,26 @@
 </span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">  </span><span class="c1">// Adjust the leading space between lines</span>
 </span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">  </span><span class="nx">textLeading</span><span class="p">(</span><span class="mf">36</span><span class="p">);</span><span class="w"> </span>
 </span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">paragraph</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;This is a long paragraph that demonstrates how a Text Wrap Word Container functions in p5.js. By specifying a width and height in the text() function, we force the text to wrap automatically.&quot;</span><span class="p">;</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">paragraph</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"This is a long paragraph that demonstrates how a Text Wrap Word Container functions in p5.js. By specifying a width and height in the text() function, we force the text to wrap automatically."</span><span class="p">;</span>
 </span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
 </span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">  </span><span class="c1">// Draw the wrapped text within a rectangle of width 300 and height 300</span>
 </span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">  </span><span class="nx">text</span><span class="p">(</span><span class="nx">paragraph</span><span class="p">,</span><span class="w"> </span><span class="mf">50</span><span class="p">,</span><span class="w"> </span><span class="mf">50</span><span class="p">,</span><span class="w"> </span><span class="mf">300</span><span class="p">,</span><span class="w"> </span><span class="mf">300</span><span class="p">);</span>
 </span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="p">}</span>
 </span></code></pre></div>
+<h4 id="diagram-text-formatting-basics">Diagram: Text Formatting Basics<a class="headerlink" href="#diagram-text-formatting-basics" title="Permanent link">¶</a></h4>
 <details>
 <summary>MicroSim: Text Formatting Basics</summary>
-<ul>
-<li><strong>Objective:</strong> Create a dashboard where students can adjust text settings interactively.</li>
-<li><strong>Controls:</strong> Sliders for <code>textSize</code> (10 to 100), <code>textLeading</code> (10 to 100), and a dropdown for <code>textAlign</code> (LEFT, CENTER, RIGHT).</li>
-<li><strong>Visual:</strong> A paragraph of text reacting in real-time to the adjustments, demonstrating bounding boxes and word wrapping.</li>
-</ul>
+<p></p><summary>MicroSim: Text Formatting Basics</summary>
+- <strong>Objective:</strong> Create a dashboard where students can adjust text settings interactively.
+- <strong>Controls:</strong> Sliders for <code>textSize</code> (10 to 100), <code>textLeading</code> (10 to 100), and a dropdown for <code>textAlign</code> (LEFT, CENTER, RIGHT).
+- <strong>Visual:</strong> A paragraph of text reacting in real-time to the adjustments, demonstrating bounding boxes and word wrapping.<p></p>
 </details>
-<h2 id="custom-fonts-and-metrics">Custom Fonts and Metrics<a class="headerlink" href="#custom-fonts-and-metrics" title="Permanent link">&para;</a></h2>
+<h2 id="custom-fonts-and-metrics">Custom Fonts and Metrics<a class="headerlink" href="#custom-fonts-and-metrics" title="Permanent link">¶</a></h2>
 <p>By default, browsers rely on a <strong>System Web Font Stack</strong>. However, to ensure your sketch looks identical on every device, you should utilize a <strong>Load Font File</strong> workflow. Using <code>loadFont()</code> in the <code>preload()</code> function guarantees the font is ready before setup. You apply it using the <strong>Text Font Setting</strong> <code>textFont()</code>. p5.js has robust <strong>OTF TTF Font Support</strong>, allowing you to bring in almost any standard font format.</p>
 <p>When you load a custom font, it becomes a <strong>p5 Font Class Object</strong>. This object holds powerful metric data. For precise layout, you can extract the <strong>Text Ascent Descent Metric</strong>, which tells you how far letters reach above or drop below the baseline. If you need to know exactly how much space a word occupies, use the <strong>Text Bounds Bounding Box</strong> to calculate its precise pixel dimensions.</p>
 <div class="admonition mascot-thinking">
 <p class="admonition-title">Measuring Up</p>
-<p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+<p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png">
 Think about it like this: a word isn't just a stamp of ink, it's an invisible rectangular container occupying physical space on your canvas. By extracting the <strong>Text Bounds Bounding Box</strong>, you can finally 'see' that invisible container, allowing your code to perfectly align shapes or detect when a mouse touches a specific letter!</p>
 <p>Let's see how we can load a font and measure its bounds:</p>
 </div>
@@ -1626,7 +1777,7 @@ Think about it like this: a word isn't just a stamp of ink, it's an invisible re
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kd">function</span><span class="w"> </span><span class="nx">preload</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="c1">// Load a TTF or OTF font file</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nx">myFont</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">loadFont</span><span class="p">(</span><span class="s1">&#39;assets/Roboto-Black.ttf&#39;</span><span class="p">);</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nx">myFont</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">loadFont</span><span class="p">(</span><span class="s1">'assets/Roboto-Black.ttf'</span><span class="p">);</span>
 </span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">}</span>
 </span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
 </span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="kd">function</span><span class="w"> </span><span class="nx">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -1636,7 +1787,7 @@ Think about it like this: a word isn't just a stamp of ink, it's an invisible re
 </span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">  </span><span class="nx">textFont</span><span class="p">(</span><span class="nx">myFont</span><span class="p">);</span>
 </span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">  </span><span class="nx">textSize</span><span class="p">(</span><span class="mf">64</span><span class="p">);</span>
 </span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">word</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;BOUNDING BOX&quot;</span><span class="p">;</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">word</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"BOUNDING BOX"</span><span class="p">;</span>
 </span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
 </span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">  </span><span class="c1">// Get the bounding box metrics</span>
 </span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">bounds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">myFont</span><span class="p">.</span><span class="nx">textBounds</span><span class="p">(</span><span class="nx">word</span><span class="p">,</span><span class="w"> </span><span class="mf">50</span><span class="p">,</span><span class="w"> </span><span class="mf">150</span><span class="p">,</span><span class="w"> </span><span class="mf">64</span><span class="p">);</span>
@@ -1654,25 +1805,25 @@ Think about it like this: a word isn't just a stamp of ink, it's an invisible re
 </span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>Advanced typographers also care about <strong>Kerning Letter Spacing</strong>—the specific spacing between individual characters. While p5.js handles default kerning, custom generative grids often require manual spacing calculations. Additionally, some modern designs utilize <strong>Variable Font Parameters</strong> where weight and width interpolate smoothly, though in standard p5.js, we typically simulate these dynamic shifts using transformations. </p>
-<h2 id="beyond-the-pixel-vector-outlines">Beyond the Pixel: Vector Outlines<a class="headerlink" href="#beyond-the-pixel-vector-outlines" title="Permanent link">&para;</a></h2>
+<h2 id="beyond-the-pixel-vector-outlines">Beyond the Pixel: Vector Outlines<a class="headerlink" href="#beyond-the-pixel-vector-outlines" title="Permanent link">¶</a></h2>
 <p>Here is where the digital brush truly shines. A font is actually a set of mathematical instructions. We can extract <strong>Font Glyph Outlines</strong> directly. The most powerful tool for this is the <strong>Text To Points Vector</strong> conversion via <code>myFont.textToPoints()</code>. Instead of rendering the text, this function returns an array of coordinates mapping the outline of the letters.</p>
 <div class="admonition mascot-tip">
 <p class="admonition-title">Too Many Points?</p>
-<p><img alt="Palette giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+<p><img alt="Palette giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png">
 Here's a secret: if your kinetic text sketch is running slow, check your <code>sampleFactor</code>! Lowering it from <code>0.25</code> to <code>0.1</code> will drastically reduce the number of vector points generated, speeding up your physics calculations without ruining the shape of the letters.</p>
 </div>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">pts</span><span class="p">;</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">myFont</span><span class="p">;</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="kd">function</span><span class="w"> </span><span class="nx">preload</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="nx">myFont</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">loadFont</span><span class="p">(</span><span class="s1">&#39;assets/Roboto-Black.ttf&#39;</span><span class="p">);</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="nx">myFont</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">loadFont</span><span class="p">(</span><span class="s1">'assets/Roboto-Black.ttf'</span><span class="p">);</span>
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">}</span>
 </span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
 </span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="kd">function</span><span class="w"> </span><span class="nx">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="nx">createCanvas</span><span class="p">(</span><span class="mf">600</span><span class="p">,</span><span class="w"> </span><span class="mf">300</span><span class="p">);</span>
 </span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
 </span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">  </span><span class="c1">// Extract the points</span>
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">  </span><span class="nx">pts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">myFont</span><span class="p">.</span><span class="nx">textToPoints</span><span class="p">(</span><span class="s1">&#39;CODE&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">50</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">,</span><span class="w"> </span><span class="mf">150</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">  </span><span class="nx">pts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">myFont</span><span class="p">.</span><span class="nx">textToPoints</span><span class="p">(</span><span class="s1">'CODE'</span><span class="p">,</span><span class="w"> </span><span class="mf">50</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">,</span><span class="w"> </span><span class="mf">150</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="nx">sampleFactor</span><span class="o">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="c1">// Determines how many points are generated</span>
 </span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="nx">simplifyThreshold</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span>
 </span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">  </span><span class="p">});</span>
@@ -1691,20 +1842,20 @@ Here's a secret: if your kinetic text sketch is running slow, check your <code>s
 </span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>Once we have these points, we can apply a <strong>Particle Typography Effect</strong>. By animating each coordinate independently, we create <strong>Wobbly Text Particle Point</strong> behaviors. Combine this with physics, and you achieve stunning <strong>Kinetic Typography Motion</strong>. Text can explode, reform, or blow away in the wind.</p>
+<h4 id="diagram-kinetic-text-to-points">Diagram: Kinetic Text to Points<a class="headerlink" href="#diagram-kinetic-text-to-points" title="Permanent link">¶</a></h4>
 <details>
 <summary>MicroSim: Kinetic Text to Points</summary>
-<ul>
-<li><strong>Objective:</strong> Demonstrate the power of <code>textToPoints()</code>.</li>
-<li><strong>Controls:</strong> Slider for <code>sampleFactor</code>, a "Scatter" button.</li>
-<li><strong>Visual:</strong> The word "EXPLODE" rendered as points. When "Scatter" is clicked, points drift away using Perlin noise, then slowly return to their original text formation using steering behaviors.</li>
-</ul>
+<p></p><summary>MicroSim: Kinetic Text to Points</summary>
+- <strong>Objective:</strong> Demonstrate the power of <code>textToPoints()</code>.
+- <strong>Controls:</strong> Slider for <code>sampleFactor</code>, a "Scatter" button.
+- <strong>Visual:</strong> The word "EXPLODE" rendered as points. When "Scatter" is clicked, points drift away using Perlin noise, then slowly return to their original text formation using steering behaviors.<p></p>
 </details>
-<h2 id="generative-layouts-and-effects">Generative Layouts and Effects<a class="headerlink" href="#generative-layouts-and-effects" title="Permanent link">&para;</a></h2>
+<h2 id="generative-layouts-and-effects">Generative Layouts and Effects<a class="headerlink" href="#generative-layouts-and-effects" title="Permanent link">¶</a></h2>
 <p>Text doesn't have to sit in straight lines. Using trigonometry, we can calculate a <strong>Text Path Following Arc</strong>, wrapping letters around a circle. If we apply a <code>translate()</code> and <code>rotate()</code> in a loop, we achieve <strong>Per Character Rotation</strong>, allowing each letter to spin independently. </p>
 <p>For a more structured but chaotic aesthetic, we can build a <strong>Generative Type Grid</strong>, breaking strings apart and placing them in mathematical matrices. We can also explore <strong>Deconstructed Letterforms</strong>, where we only draw certain segments of the font paths, or use <strong>SVG Font Path Parsing</strong> to access raw bezier curve data for custom manipulation.</p>
 <p>What if the text itself becomes the image? An <strong>ASCII Art Text Canvas</strong> translates pixel brightness into characters. This involves reading the pixel array of an image or video feed and mapping the brightness values to an array of characters, from dark characters like '@' to light characters like '.'.</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">// Simple Per Character Rotation</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">word</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;SPINNING&quot;</span><span class="p">;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">word</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"SPINNING"</span><span class="p">;</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="kd">function</span><span class="w"> </span><span class="nx">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="nx">createCanvas</span><span class="p">(</span><span class="mf">400</span><span class="p">,</span><span class="w"> </span><span class="mf">400</span><span class="p">);</span>
@@ -1733,17 +1884,17 @@ Here's a secret: if your kinetic text sketch is running slow, check your <code>s
 </span></code></pre></div>
 <p>We can also bridge typography with user behavior. An <strong>Interactive Text Input Typo</strong> sketch updates its display seamlessly as the user types on the keyboard. By linking <code>textSize()</code> to mouse position or audio input volume, we achieve <strong>Dynamic Font Scaling</strong>. Finally, for those pushing the boundaries of the canvas, <strong>3D Text Extrusion WebGL</strong> turns flat vectors into volumetric blocks, giving depth to your digital typography.</p>
 <p>To ensure you fully grasp the potential of these techniques, let's explore a few more complex code snippets.</p>
-<h3 id="advanced-generative-type-grid">Advanced: Generative Type Grid<a class="headerlink" href="#advanced-generative-type-grid" title="Permanent link">&para;</a></h3>
+<h3 id="advanced-generative-type-grid">Advanced: Generative Type Grid<a class="headerlink" href="#advanced-generative-type-grid" title="Permanent link">¶</a></h3>
 <div class="admonition mascot-warning">
 <p class="admonition-title">Beware the Infinite Loop</p>
-<p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+<p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png">
 Watch out when building text grids! If you use <code>textWidth()</code> inside a <code>for</code> loop that runs thousands of times, it will drastically slow down your sketch. Always calculate your font metrics once in <code>setup()</code> and store them in variables before drawing!</p>
 </div>
 <p>A generative type grid involves arranging characters in a systematic yet randomized layout. We can use loops to create a grid and populate it with letters from a string or random characters.</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">rows</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="kd">let</span><span class="w"> </span><span class="nx">cellW</span><span class="p">,</span><span class="w"> </span><span class="nx">cellH</span><span class="p">;</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="kd">let</span><span class="w"> </span><span class="nx">characters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789&quot;</span><span class="p">;</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="kd">let</span><span class="w"> </span><span class="nx">characters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"</span><span class="p">;</span>
 </span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
 </span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="kd">function</span><span class="w"> </span><span class="nx">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="nx">createCanvas</span><span class="p">(</span><span class="mf">500</span><span class="p">,</span><span class="w"> </span><span class="mf">500</span><span class="p">);</span>
@@ -1779,9 +1930,9 @@ Watch out when building text grids! If you use <code>textWidth()</code> inside a
 </span><span id="__span-5-37"><a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>This grid system forms the foundation for many generative design posters.</p>
-<h3 id="advanced-interactive-text-input-typo">Advanced: Interactive Text Input Typo<a class="headerlink" href="#advanced-interactive-text-input-typo" title="Permanent link">&para;</a></h3>
+<h3 id="advanced-interactive-text-input-typo">Advanced: Interactive Text Input Typo<a class="headerlink" href="#advanced-interactive-text-input-typo" title="Permanent link">¶</a></h3>
 <p>Creating an interactive text input allows users to influence the sketch directly. We can capture key presses and dynamically render the text with various effects.</p>
-<div class="language-javascript highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">typedText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">typedText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span><span class="p">;</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="kd">function</span><span class="w"> </span><span class="nx">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="nx">createCanvas</span><span class="p">(</span><span class="mf">600</span><span class="p">,</span><span class="w"> </span><span class="mf">400</span><span class="p">);</span>
@@ -1816,20 +1967,20 @@ Watch out when building text grids! If you use <code>textWidth()</code> inside a
 </span><span id="__span-6-33"><a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a><span class="w">  </span><span class="p">}</span>
 </span><span id="__span-6-34"><a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a><span class="p">}</span>
 </span></code></pre></div>
-<h3 id="advanced-particle-typography-effect">Advanced: Particle Typography Effect<a class="headerlink" href="#advanced-particle-typography-effect" title="Permanent link">&para;</a></h3>
+<h3 id="advanced-particle-typography-effect">Advanced: Particle Typography Effect<a class="headerlink" href="#advanced-particle-typography-effect" title="Permanent link">¶</a></h3>
 <p>Let's dive deeper into building a particle system from font vectors. This is where we combine physics with typography.</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">font</span><span class="p">;</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">vehicles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
 </span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="kd">function</span><span class="w"> </span><span class="nx">preload</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">  </span><span class="nx">font</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">loadFont</span><span class="p">(</span><span class="s1">&#39;assets/AvenirNextLTPro-Demi.otf&#39;</span><span class="p">);</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">  </span><span class="nx">font</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">loadFont</span><span class="p">(</span><span class="s1">'assets/AvenirNextLTPro-Demi.otf'</span><span class="p">);</span>
 </span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="p">}</span>
 </span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
 </span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="kd">function</span><span class="w"> </span><span class="nx">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">  </span><span class="nx">createCanvas</span><span class="p">(</span><span class="mf">800</span><span class="p">,</span><span class="w"> </span><span class="mf">300</span><span class="p">);</span>
 </span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">  </span><span class="nx">background</span><span class="p">(</span><span class="mf">51</span><span class="p">);</span>
 </span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>
-</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">points</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">font</span><span class="p">.</span><span class="nx">textToPoints</span><span class="p">(</span><span class="s1">&#39;CODE&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">,</span><span class="w"> </span><span class="mf">192</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">points</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">font</span><span class="p">.</span><span class="nx">textToPoints</span><span class="p">(</span><span class="s1">'CODE'</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">,</span><span class="w"> </span><span class="mf">192</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">    </span><span class="nx">sampleFactor</span><span class="o">:</span><span class="w"> </span><span class="mf">0.25</span>
 </span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">  </span><span class="p">});</span>
 </span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>
@@ -1854,10 +2005,10 @@ Watch out when building text grids! If you use <code>textWidth()</code> inside a
 </span><span id="__span-7-34"><a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a><span class="c1">// but it typically includes arrive(), seek(), and flee() behaviors.</span>
 </span></code></pre></div>
 <p>By dissecting the traditional approach to text rendering, we can build dynamic, interactive, and visually striking applications. Whether you are using a <strong>System Web Font Stack</strong> or loading custom <strong>OTF TTF Font Support</strong>, the possibilities are boundless when you treat text as data.</p>
-<h3 id="understanding-ascii-art-text-canvas-in-depth">Understanding ASCII Art Text Canvas in Depth<a class="headerlink" href="#understanding-ascii-art-text-canvas-in-depth" title="Permanent link">&para;</a></h3>
+<h3 id="understanding-ascii-art-text-canvas-in-depth">Understanding ASCII Art Text Canvas in Depth<a class="headerlink" href="#understanding-ascii-art-text-canvas-in-depth" title="Permanent link">¶</a></h3>
 <p>ASCII art is a fascinating intersection of typography and image processing. By mapping the brightness of an image to specific characters, we can recreate photographs using only text. The characters act as "pixels" with varying density. Darker pixels might be represented by characters like '@' or '#', which cover a large area of their bounding box. Lighter pixels are represented by characters like '.' or ' ', which have less visual weight.</p>
 <p>To create an <strong>ASCII Art Text Canvas</strong>, you typically iterate over the pixels of an image or a video feed. For each pixel, you calculate its brightness. Then, you map this brightness value (0-255) to the index of a character array sorted by density.</p>
-<div class="language-javascript highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">density</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Ñ@#W$9876543210?!abc;:+=-,._ &quot;</span><span class="p">;</span>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">density</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Ñ@#W$9876543210?!abc;:+=-,._ "</span><span class="p">;</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">video</span><span class="p">;</span>
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="kd">let</span><span class="w"> </span><span class="nx">asciiDiv</span><span class="p">;</span>
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
@@ -1870,7 +2021,7 @@ Watch out when building text grids! If you use <code>textWidth()</code> inside a
 </span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
 </span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="kd">function</span><span class="w"> </span><span class="nx">draw</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">  </span><span class="nx">video</span><span class="p">.</span><span class="nx">loadPixels</span><span class="p">();</span>
-</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">asciiImage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">asciiImage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span><span class="p">;</span>
 </span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">video</span><span class="p">.</span><span class="nx">height</span><span class="p">;</span><span class="w"> </span><span class="nx">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">video</span><span class="p">.</span><span class="nx">width</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">pixelIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">j</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">video</span><span class="p">.</span><span class="nx">width</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">4</span><span class="p">;</span>
@@ -1881,19 +2032,19 @@ Watch out when building text grids! If you use <code>textWidth()</code> inside a
 </span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">density</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
 </span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">charIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">floor</span><span class="p">(</span><span class="nx">map</span><span class="p">(</span><span class="nx">avg</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">255</span><span class="p">,</span><span class="w"> </span><span class="nx">len</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">));</span>
 </span><span id="__span-8-24"><a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">density</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="nx">charIndex</span><span class="p">);</span>
-</span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot; &quot;</span><span class="p">)</span><span class="w"> </span><span class="nx">asciiImage</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s2">&quot;&amp;nbsp;&quot;</span><span class="p">;</span>
+</span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">" "</span><span class="p">)</span><span class="w"> </span><span class="nx">asciiImage</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s2">"&amp;nbsp;"</span><span class="p">;</span>
 </span><span id="__span-8-26"><a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a><span class="w">      </span><span class="k">else</span><span class="w"> </span><span class="nx">asciiImage</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">c</span><span class="p">;</span>
 </span><span id="__span-8-27"><a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-8-28"><a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a><span class="w">    </span><span class="nx">asciiImage</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s1">&#39;&lt;br/&gt;&#39;</span><span class="p">;</span>
+</span><span id="__span-8-28"><a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a><span class="w">    </span><span class="nx">asciiImage</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s1">'&lt;br/&gt;'</span><span class="p">;</span>
 </span><span id="__span-8-29"><a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a><span class="w">  </span><span class="p">}</span>
 </span><span id="__span-8-30"><a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a><span class="w">  </span><span class="nx">asciiDiv</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="nx">asciiImage</span><span class="p">);</span>
 </span><span id="__span-8-31"><a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>This technique bridges the gap between text and image, demonstrating how typographic elements can function as foundational building blocks for complex visual compositions. It forces us to reconsider the role of the character—no longer just a symbol for language, but a unit of light and shadow.</p>
-<h3 id="mastering-kerning-letter-spacing-and-layout">Mastering Kerning Letter Spacing and Layout<a class="headerlink" href="#mastering-kerning-letter-spacing-and-layout" title="Permanent link">&para;</a></h3>
+<h3 id="mastering-kerning-letter-spacing-and-layout">Mastering Kerning Letter Spacing and Layout<a class="headerlink" href="#mastering-kerning-letter-spacing-and-layout" title="Permanent link">¶</a></h3>
 <p>While p5.js provides robust default text rendering, fine-tuning typography often requires manual intervention. <strong>Kerning Letter Spacing</strong> is the adjustment of space between individual characters to achieve a visually pleasing result. In generative design, you might want to dynamically adjust kerning based on user interaction or algorithmic rules.</p>
 <p>Imagine a sketch where the space between letters expands and contracts rhythmically, simulating breathing. This requires breaking a string into individual characters, calculating their widths, and drawing them sequentially with added offsets.</p>
-<div class="language-javascript highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">word</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;BREATHE&quot;</span><span class="p">;</span>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">word</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"BREATHE"</span><span class="p">;</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">baseSpacing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">50</span><span class="p">;</span>
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
 </span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="kd">function</span><span class="w"> </span><span class="nx">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -1917,10 +2068,10 @@ Watch out when building text grids! If you use <code>textWidth()</code> inside a
 </span><span id="__span-9-22"><a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="w">  </span><span class="p">}</span>
 </span><span id="__span-9-23"><a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="p">}</span>
 </span></code></pre></div>
-<h3 id="advanced-text-path-following-arc">Advanced Text Path Following Arc<a class="headerlink" href="#advanced-text-path-following-arc" title="Permanent link">&para;</a></h3>
+<h3 id="advanced-text-path-following-arc">Advanced Text Path Following Arc<a class="headerlink" href="#advanced-text-path-following-arc" title="Permanent link">¶</a></h3>
 <p>Placing text along a curve or an arc is a classic typographic technique. In vector graphic software, this is a straightforward tool. In p5.js, it requires an understanding of polar coordinates and trigonometry.</p>
 <p>By calculating the angle for each character based on its width and the radius of the arc, we can seamlessly wrap text around a circle. This <strong>Text Path Following Arc</strong> technique is essential for creating seals, badges, and complex typographic diagrams.</p>
-<div class="language-javascript highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;GENERATIVE TYPOGRAPHY AROUND A CIRCLE &quot;</span><span class="p">;</span>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"GENERATIVE TYPOGRAPHY AROUND A CIRCLE "</span><span class="p">;</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">radius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">150</span><span class="p">;</span>
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
 </span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="kd">function</span><span class="w"> </span><span class="nx">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -1963,18 +2114,18 @@ Watch out when building text grids! If you use <code>textWidth()</code> inside a
 </span><span id="__span-10-41"><a id="__codelineno-10-41" name="__codelineno-10-41" href="#__codelineno-10-41"></a><span class="w">  </span><span class="p">}</span>
 </span><span id="__span-10-42"><a id="__codelineno-10-42" name="__codelineno-10-42" href="#__codelineno-10-42"></a><span class="p">}</span>
 </span></code></pre></div>
-<h3 id="the-intersection-of-webgl-and-3d-text-extrusion">The Intersection of WebGL and 3D Text Extrusion<a class="headerlink" href="#the-intersection-of-webgl-and-3d-text-extrusion" title="Permanent link">&para;</a></h3>
+<h3 id="the-intersection-of-webgl-and-3d-text-extrusion">The Intersection of WebGL and 3D Text Extrusion<a class="headerlink" href="#the-intersection-of-webgl-and-3d-text-extrusion" title="Permanent link">¶</a></h3>
 <p>As creative coding moves into three dimensions, typography follows. <strong>3D Text Extrusion WebGL</strong> allows developers to take flat, 2D vector outlines and project them into the Z-axis, creating solid, volumetric shapes. While p5.js has limited built-in support for 3D text extrusion compared to libraries like Three.js, we can simulate the effect or utilize specific WebGL features to render text with depth.</p>
 <p>Creating 3D text often involves generating the glyph outlines and then constructing a mesh of polygons (triangles and quads) to form the front, back, and sides of the letterforms. This requires a deep understanding of computer graphics principles and vertex manipulation.</p>
-<h3 id="final-thoughts-on-deconstructed-letterforms">Final Thoughts on Deconstructed Letterforms<a class="headerlink" href="#final-thoughts-on-deconstructed-letterforms" title="Permanent link">&para;</a></h3>
+<h3 id="final-thoughts-on-deconstructed-letterforms">Final Thoughts on Deconstructed Letterforms<a class="headerlink" href="#final-thoughts-on-deconstructed-letterforms" title="Permanent link">¶</a></h3>
 <p>Generative typography encourages us to break rules. <strong>Deconstructed Letterforms</strong> involve taking the paths that make up a letter and intentionally misaligning, omitting, or distorting them. By accessing the underlying vector data—perhaps through <strong>SVG Font Path Parsing</strong>—we can isolate the distinct strokes, stems, and bowls of a typeface.</p>
 <p>This deconstruction can yield abstract, avant-garde designs that challenge legibility while prioritizing aesthetic impact. It represents the ultimate synthesis of the printing press and the digital brush: acknowledging the historical structure of the letterform while subjecting it to algorithmic manipulation.</p>
 <div class="admonition mascot-celebration">
 <p class="admonition-title">Masterpiece Complete!</p>
-<p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+<p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png">
 Incredible work! You just mastered loading custom <code>.ttf</code> files, extracting vector coordinates using <code>textToPoints()</code>, and building interactive, kinetic typography systems!</p>
 </div>
-<h3 id="the-evolution-of-typography-in-creative-coding">The Evolution of Typography in Creative Coding<a class="headerlink" href="#the-evolution-of-typography-in-creative-coding" title="Permanent link">&para;</a></h3>
+<h3 id="the-evolution-of-typography-in-creative-coding">The Evolution of Typography in Creative Coding<a class="headerlink" href="#the-evolution-of-typography-in-creative-coding" title="Permanent link">¶</a></h3>
 <p>Typography in computational design has evolved significantly over the past decades. Initially, text was simply a mechanism for logging data or providing rudimentary user interfaces. The resolution of early screens limited the expressiveness of fonts, resulting in blocky, pixelated characters that prioritized legibility over aesthetics. However, as display technologies advanced and processing power increased, the potential for typographic experimentation expanded exponentially.</p>
 <p>The introduction of anti-aliasing techniques allowed for smoother curves and more nuanced letterforms. This paved the way for designers to utilize a broader range of typefaces, moving beyond monospaced system fonts to elegant serif and sans-serif variations. The ability to load external font files empowered artists to embed specific typographic identities within their applications, ensuring consistency across different platforms and devices.</p>
 <p>Simultaneously, the development of robust vector graphics APIs, such as the HTML5 Canvas and WebGL, provided developers with low-level access to rendering pipelines. This meant that text was no longer confined to the rendering engine of the browser; it could be drawn, manipulated, and transformed just like any other geometric shape. The synthesis of typography and computer graphics led to the emergence of generative typography—a discipline where algorithms and data govern the generation and layout of text.</p>
@@ -2007,7 +2158,7 @@ Incredible work! You just mastered loading custom <code>.ttf</code> files, extra
         
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
   Back to top
 </button>
         
@@ -2017,20 +2168,20 @@ Incredible work! You just mastered loading custom <code>.ttf</code> files, extra
   
     
       
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
         
           
           <a href="../23-image-processing-video/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 23. Image Processing, Filters &amp; Video Capture">
             <div class="md-footer__button md-icon">
               
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
             </div>
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Previous
               </span>
               <div class="md-ellipsis">
-                23. Image Processing, Filters & Video Capture
+                23. Image Processing, Filters &amp; Video Capture
               </div>
             </div>
           </a>
@@ -2043,12 +2194,12 @@ Incredible work! You just mastered loading custom <code>.ttf</code> files, extra
                 Next
               </span>
               <div class="md-ellipsis">
-                25. Development Environment, Tools & Pedagogy
+                25. Development Environment, Tools &amp; Pedagogy
               </div>
             </div>
             <div class="md-footer__button md-icon">
               
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
             </div>
           </a>
         
@@ -2060,7 +2211,7 @@ Incredible work! You just mastered loading custom <code>.ttf</code> files, extra
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+      Copyright © 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
     </div>
   
   
@@ -2081,6 +2232,14 @@ Incredible work! You just mastered loading custom <code>.ttf</code> files, extra
     
       <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
+        <script src="../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
     
-  </body>
-</html>
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

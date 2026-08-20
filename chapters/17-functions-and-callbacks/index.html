@@ -1,7 +1,4 @@
-
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
+<!DOCTYPE html><html lang="en" class="no-js"><head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -26,7 +23,7 @@
     
     
       
-        <title>17. Functions, Arrow Expressions & Callbacks - The Art of Processing</title>
+        <title>17. Functions, Arrow Expressions &amp; Callbacks - The Art of Processing</title>
       
     
     
@@ -47,7 +44,7 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
@@ -56,14 +53,52 @@
     
       <link rel="stylesheet" href="../../css/mascot.css">
     
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
+      
+        <meta property="og:type" content="website">
+      
+        <meta property="og:title" content="17. Functions, Arrow Expressions &amp; Callbacks - The Art of Processing">
+      
+        <meta property="og:description" content="An interactive intelligent textbook about the p5.js processing library and how to use it to teach computational thinking.">
+      
+        <meta property="og:image" content="https://dmccreary.github.io/p5-textbook/assets/images/social/chapters/17-functions-and-callbacks/index.png">
+      
+        <meta property="og:image:type" content="image/png">
+      
+        <meta property="og:image:width" content="1200">
+      
+        <meta property="og:image:height" content="630">
+      
+        <meta property="og:url" content="https://dmccreary.github.io/p5-textbook/chapters/17-functions-and-callbacks/">
+      
+        <meta name="twitter:card" content="summary_large_image">
+      
+        <meta name="twitter:title" content="17. Functions, Arrow Expressions &amp; Callbacks - The Art of Processing">
+      
+        <meta name="twitter:description" content="An interactive intelligent textbook about the p5.js processing library and how to use it to teach computational thinking.">
+      
+        <meta name="twitter:image" content="https://dmccreary.github.io/p5-textbook/assets/images/social/chapters/17-functions-and-callbacks/index.png">
+      
     
-  </head>
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
   
   
     
@@ -99,12 +134,12 @@
     <a href="../.." title="The Art of Processing" class="md-header__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -116,7 +151,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              17. Functions, Arrow Expressions & Callbacks
+              17. Functions, Arrow Expressions &amp; Callbacks
             
           </span>
         </div>
@@ -130,7 +165,7 @@
     
       <label class="md-header__button md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
       </label>
       <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
@@ -139,20 +174,20 @@
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
           <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
             
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
           </a>
         
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
         </button>
       </nav>
       
@@ -177,7 +212,7 @@
         <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -201,7 +236,7 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -213,7 +248,7 @@
     <a href="../.." title="The Art of Processing" class="md-nav__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     The Art of Processing
@@ -223,7 +258,7 @@
       <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -459,7 +494,7 @@
         
   
   <span class="md-ellipsis">
-    1. Introduction to Creative Coding & Canvas Foundations
+    1. Introduction to Creative Coding &amp; Canvas Foundations
   </span>
   
 
@@ -480,7 +515,7 @@
         
   
   <span class="md-ellipsis">
-    2. 2D Primitive Shapes & Custom Geometries
+    2. 2D Primitive Shapes &amp; Custom Geometries
   </span>
   
 
@@ -501,7 +536,7 @@
         
   
   <span class="md-ellipsis">
-    3. Color Theory, Color Modes & Pixel Manipulation
+    3. Color Theory, Color Modes &amp; Pixel Manipulation
   </span>
   
 
@@ -522,7 +557,7 @@
         
   
   <span class="md-ellipsis">
-    4. Variables, Data Types & Scope Fundamentals
+    4. Variables, Data Types &amp; Scope Fundamentals
   </span>
   
 
@@ -543,7 +578,7 @@
         
   
   <span class="md-ellipsis">
-    5. Control Flow, Loops & Array Data Structures
+    5. Control Flow, Loops &amp; Array Data Structures
   </span>
   
 
@@ -564,7 +599,7 @@
         
   
   <span class="md-ellipsis">
-    6. Matrix Transformations & Coordinate Systems
+    6. Matrix Transformations &amp; Coordinate Systems
   </span>
   
 
@@ -585,7 +620,7 @@
         
   
   <span class="md-ellipsis">
-    7. Linear Motion, Trigonometry & Wave Math
+    7. Linear Motion, Trigonometry &amp; Wave Math
   </span>
   
 
@@ -606,7 +641,7 @@
         
   
   <span class="md-ellipsis">
-    8. Polar Coordinates, Oscillation & Easing
+    8. Polar Coordinates, Oscillation &amp; Easing
   </span>
   
 
@@ -627,7 +662,7 @@
         
   
   <span class="md-ellipsis">
-    9. Randomness, Gaussian Distributions & Random Walk
+    9. Randomness, Gaussian Distributions &amp; Random Walk
   </span>
   
 
@@ -648,7 +683,7 @@
         
   
   <span class="md-ellipsis">
-    10. Perlin Noise Landscapes & Vector Flow Fields
+    10. Perlin Noise Landscapes &amp; Vector Flow Fields
   </span>
   
 
@@ -669,7 +704,7 @@
         
   
   <span class="md-ellipsis">
-    11. Vector Math Fundamentals & Physics Acceleration
+    11. Vector Math Fundamentals &amp; Physics Acceleration
   </span>
   
 
@@ -690,7 +725,7 @@
         
   
   <span class="md-ellipsis">
-    12. Particle Systems, Forces & Steering Behaviors
+    12. Particle Systems, Forces &amp; Steering Behaviors
   </span>
   
 
@@ -711,7 +746,7 @@
         
   
   <span class="md-ellipsis">
-    13. Mouse & Keyboard User Event Sensing
+    13. Mouse &amp; Keyboard User Event Sensing
   </span>
   
 
@@ -732,7 +767,7 @@
         
   
   <span class="md-ellipsis">
-    14. Touch Gestures, Mobile Sensors & Interaction
+    14. Touch Gestures, Mobile Sensors &amp; Interaction
   </span>
   
 
@@ -753,7 +788,7 @@
         
   
   <span class="md-ellipsis">
-    15. DOM Controls, Input Fields & UI Elements
+    15. DOM Controls, Input Fields &amp; UI Elements
   </span>
   
 
@@ -774,7 +809,7 @@
         
   
   <span class="md-ellipsis">
-    16. CSS Styling, Layouts & Web Page Integration
+    16. CSS Styling, Layouts &amp; Web Page Integration
   </span>
   
 
@@ -804,7 +839,7 @@
           
   
   <span class="md-ellipsis">
-    17. Functions, Arrow Expressions & Callbacks
+    17. Functions, Arrow Expressions &amp; Callbacks
   </span>
   
 
@@ -815,7 +850,7 @@
         
   
   <span class="md-ellipsis">
-    17. Functions, Arrow Expressions & Callbacks
+    17. Functions, Arrow Expressions &amp; Callbacks
   </span>
   
 
@@ -888,6 +923,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Delegating Tasks: Callbacks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-callback-kitchen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Callback Kitchen
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -914,6 +964,21 @@
       Inheriting Traits: Expanding the Blueprint
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Inheriting Traits: Expanding the Blueprint">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-object-factory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Object Factory
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -946,7 +1011,7 @@
         
   
   <span class="md-ellipsis">
-    18. ES6 Classes, Object-Oriented Programming & Async Data
+    18. ES6 Classes, Object-Oriented Programming &amp; Async Data
   </span>
   
 
@@ -967,7 +1032,7 @@
         
   
   <span class="md-ellipsis">
-    19. 3D WebGL Coordinates & Primitive Geometries
+    19. 3D WebGL Coordinates &amp; Primitive Geometries
   </span>
   
 
@@ -988,7 +1053,7 @@
         
   
   <span class="md-ellipsis">
-    20. 3D Cameras, Lighting Models, Materials & Shaders
+    20. 3D Cameras, Lighting Models, Materials &amp; Shaders
   </span>
   
 
@@ -1009,7 +1074,7 @@
         
   
   <span class="md-ellipsis">
-    21. Audio Synthesis, Oscillators & Envelopes
+    21. Audio Synthesis, Oscillators &amp; Envelopes
   </span>
   
 
@@ -1030,7 +1095,7 @@
         
   
   <span class="md-ellipsis">
-    22. Microphone Input & FFT Spectral Analysis
+    22. Microphone Input &amp; FFT Spectral Analysis
   </span>
   
 
@@ -1051,7 +1116,7 @@
         
   
   <span class="md-ellipsis">
-    23. Image Processing, Filters & Video Capture
+    23. Image Processing, Filters &amp; Video Capture
   </span>
   
 
@@ -1072,7 +1137,7 @@
         
   
   <span class="md-ellipsis">
-    24. Generative Typography & Vector Font Outlines
+    24. Generative Typography &amp; Vector Font Outlines
   </span>
   
 
@@ -1093,7 +1158,7 @@
         
   
   <span class="md-ellipsis">
-    25. Development Environment, Tools & Pedagogy
+    25. Development Environment, Tools &amp; Pedagogy
   </span>
   
 
@@ -1121,6 +1186,14 @@
       
         
           
+        
+      
+        
+      
+        
+      
+        
+      
         
       
         
@@ -1182,6 +1255,14 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1210,6 +1291,46 @@
   
 
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1262,7 +1383,7 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1332,6 +1453,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Delegating Tasks: Callbacks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-callback-kitchen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Callback Kitchen
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1358,6 +1494,21 @@
       Inheriting Traits: Expanding the Blueprint
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Inheriting Traits: Expanding the Blueprint">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-object-factory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Object Factory
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1387,16 +1538,16 @@
   
     <a href="https://github.com/dmccreary/p5-textbook/blob/main/docs/chapters/17-functions-and-callbacks/index.md" title="Edit this page" class="md-content__button md-icon">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
     </a>
   
   
 
 
-<h1 id="functions-arrow-expressions-callbacks">Functions, Arrow Expressions &amp; Callbacks<a class="headerlink" href="#functions-arrow-expressions-callbacks" title="Permanent link">&para;</a></h1>
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<h1 id="functions-arrow-expressions-callbacks">Functions, Arrow Expressions &amp; Callbacks<a class="headerlink" href="#functions-arrow-expressions-callbacks" title="Permanent link">¶</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">¶</a></h2>
 <p>Deepens function modularity, parameter passing, return values, arrow syntax, and callback functions. Students will gain practical hands-on experience by building interactive sketches and visual experiments that demonstrate these concepts.</p>
-<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">¶</a></h2>
 <p>This chapter covers the following 16 concepts from the learning graph:</p>
 <ol>
 <li>Function Declaration Syntax</li>
@@ -1416,68 +1567,68 @@
 <li>Object Literal Syntax</li>
 <li>Object Property Access</li>
 </ol>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">¶</a></h2>
 <p>This chapter builds on concepts from:</p>
 <ul>
 <li><a href="../16-css-styling-layouts/">Chapter 16: CSS Styling, Layouts &amp; Web Page Integration</a></li>
 </ul>
-<hr />
+<hr>
 <div class="admonition mascot-welcome">
 <p class="admonition-title">Welcome to the Kitchen!</p>
-<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" /></p>
+<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png"></p>
 <p>Hello creators! As your artistic ambitions grow, your code is going to get messy if you don't organize your studio. This chapter is all about writing clean, modular recipes so you can focus on creativity instead of hunting down bugs. Let's blend some code and tidy up!</p>
 </div>
 <p>Welcome to our virtual kitchen! When you're making a grand, complex meal for a huge banquet, you certainly don't invent every single dish from scratch in one giant, disorganized sequence of steps. Imagine trying to read a single list of ten thousand steps that jumped wildly between chopping carrots, boiling water, setting the table, and frosting a cake. It would be an absolute nightmare. Instead, you use clearly defined, reusable recipes. </p>
-<h2 id="the-art-of-recipes-functions">The Art of Recipes: Functions<a class="headerlink" href="#the-art-of-recipes-functions" title="Permanent link">&para;</a></h2>
+<h2 id="the-art-of-recipes-functions">The Art of Recipes: Functions<a class="headerlink" href="#the-art-of-recipes-functions" title="Permanent link">¶</a></h2>
 <p>In the world of coding, a recipe is what we call a function. You write down the steps for a specific task once, and then you can recreate that exact outcome perfectly, every single time, just by calling the function's name. This allows you to break massive problems into small, manageable, bite-sized pieces. </p>
 <p>Let's start by looking at <strong>Function Declaration Syntax</strong>. A function declaration is literally how we write down our recipe in JavaScript. We give the function a clear, descriptive name, we state what ingredients it might need, and then we define the exact sequence of steps inside a block of code surrounded by curly braces <code>{}</code>.</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">bakeStandardCake</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Step 1: Mixing the dry ingredients...&quot;</span><span class="p">);</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Step 2: Adding the eggs and milk...&quot;</span><span class="p">);</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Step 3: Baking in the oven for exactly 30 minutes...&quot;</span><span class="p">);</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Result: The cake is ready!&quot;</span><span class="p">);</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Step 1: Mixing the dry ingredients..."</span><span class="p">);</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Step 2: Adding the eggs and milk..."</span><span class="p">);</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Step 3: Baking in the oven for exactly 30 minutes..."</span><span class="p">);</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Result: The cake is ready!"</span><span class="p">);</span>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>This is the most basic form of syntax. But what if we want to change the flavor of the cake? What if we want a strawberry cake one day, and a chocolate cake the next? Do we write two entirely different functions? Absolutely not! That would be inefficient. This is where <strong>Function Parameters Arguments</strong> come in to save the day.</p>
 <p>Parameters are essentially the empty, labeled slots in our recipe (like "flavor" or "bakeTime"), and arguments are the specific, concrete ingredients we pass into those slots when we actually execute the function (like "chocolate" or <code>45</code>).</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">bakeCustomCake</span><span class="p">(</span><span class="nx">flavor</span><span class="p">,</span><span class="w"> </span><span class="nx">bakeTime</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Step 1: Mixing the &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">flavor</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; ingredients...&quot;</span><span class="p">);</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Step 2: Adding the wet ingredients...&quot;</span><span class="p">);</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Step 3: Baking for &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">bakeTime</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; minutes...&quot;</span><span class="p">);</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Result: The &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">flavor</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; cake is ready!&quot;</span><span class="p">);</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Step 1: Mixing the "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">flavor</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">" ingredients..."</span><span class="p">);</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Step 2: Adding the wet ingredients..."</span><span class="p">);</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Step 3: Baking for "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">bakeTime</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">" minutes..."</span><span class="p">);</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Result: The "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">flavor</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">" cake is ready!"</span><span class="p">);</span>
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">}</span>
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
 </span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1">// When we call the function, we pass in the arguments:</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="nx">bakeCustomCake</span><span class="p">(</span><span class="s2">&quot;chocolate&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">30</span><span class="p">);</span><span class="w"> </span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="nx">bakeCustomCake</span><span class="p">(</span><span class="s2">&quot;strawberry&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">25</span><span class="p">);</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="nx">bakeCustomCake</span><span class="p">(</span><span class="s2">"chocolate"</span><span class="p">,</span><span class="w"> </span><span class="mf">30</span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="nx">bakeCustomCake</span><span class="p">(</span><span class="s2">"strawberry"</span><span class="p">,</span><span class="w"> </span><span class="mf">25</span><span class="p">);</span>
 </span></code></pre></div>
 <p>As you can see, by using parameters and arguments, our function becomes infinitely more flexible and powerful. We wrote the code once, but we can use it in countless different ways. </p>
 <p>But wait, sometimes a recipe doesn't just print something to the console; it actually hands you back a finished product. Think of a juice machine. You put the raw fruit in (the argument), the machine runs its internal process (the function body), and it physically hands you a glass of juice back. In programming, we achieve this using a <strong>Function Return Statement</strong>.</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">makeJuice</span><span class="p">(</span><span class="nx">fruit</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">finishedJuice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Delicious &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">fruit</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; juice&quot;</span><span class="p">;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">finishedJuice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Delicious "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">fruit</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">" juice"</span><span class="p">;</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">finishedJuice</span><span class="p">;</span><span class="w"> </span><span class="c1">// The function stops here and hands this value back!</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">}</span>
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="kd">let</span><span class="w"> </span><span class="nx">myMorningDrink</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">makeJuice</span><span class="p">(</span><span class="s2">&quot;apple&quot;</span><span class="p">);</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myMorningDrink</span><span class="p">);</span><span class="w"> </span><span class="c1">// Outputs: &quot;Delicious apple juice&quot;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="kd">let</span><span class="w"> </span><span class="nx">myMorningDrink</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">makeJuice</span><span class="p">(</span><span class="s2">"apple"</span><span class="p">);</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myMorningDrink</span><span class="p">);</span><span class="w"> </span><span class="c1">// Outputs: "Delicious apple juice"</span>
 </span></code></pre></div>
 <p>The <code>return</code> statement is incredibly important. Without it, the function might do a lot of hard work calculating something, but it would keep the answer a secret! The return statement is how the function communicates its final answer back to the rest of your program.</p>
 <div class="admonition mascot-thinking">
 <p class="admonition-title">Parameters vs Arguments</p>
-<p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+<p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png">
 Think about it like this: parameters represent the mathematical blueprint of <em>possibility</em>, while arguments represent the <em>concrete reality</em> at a specific moment in time. Notice how treating a variable as a temporary, empty slot fundamentally changes how we architect our logic compared to hard-coding a static value?</p>
 </div>
-<h2 id="speeding-things-up-arrow-functions">Speeding Things Up: Arrow Functions<a class="headerlink" href="#speeding-things-up-arrow-functions" title="Permanent link">&para;</a></h2>
+<h2 id="speeding-things-up-arrow-functions">Speeding Things Up: Arrow Functions<a class="headerlink" href="#speeding-things-up-arrow-functions" title="Permanent link">¶</a></h2>
 <p>As you spend more and more time in the kitchen, you inevitably pick up little shortcuts to speed up your prep work. In modern JavaScript (specifically ES6 and newer), we have a brilliantly concise shortcut for writing functions known as the <strong>Arrow Function Expression</strong>. </p>
 <p>It looks strange at first, but it's really just a shorthand way to write a recipe. Instead of typing out the full word <code>function(x)</code>, we can use an arrow <code>=&gt;</code> to point the parameters to the code block.</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">// The old, traditional way:</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">traditionalJuice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">fruit</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">fruit</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; juice&quot;</span><span class="p">;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">fruit</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">" juice"</span><span class="p">;</span>
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">};</span>
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c1">// The modern Arrow Function Expression:</span>
 </span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="kd">const</span><span class="w"> </span><span class="nx">modernJuice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">fruit</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">fruit</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; juice&quot;</span><span class="p">;</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">fruit</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">" juice"</span><span class="p">;</span>
 </span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="p">};</span>
 </span></code></pre></div>
 <p>But it gets even better! If your arrow function only has a single line of code, and that line is just returning a value, you can drop the curly braces and the <code>return</code> keyword entirely. This is called an implicit return, and it is extremely elegant.</p>
@@ -1487,16 +1638,16 @@ Think about it like this: parameters represent the mathematical blueprint of <em
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">doubleAmount</span><span class="p">(</span><span class="mf">5</span><span class="p">));</span><span class="w"> </span><span class="c1">// Outputs: 10</span>
 </span></code></pre></div>
 <p>Arrow functions are incredibly popular in modern web development, particularly in React and other frontend frameworks, so getting comfortable with this syntax early will give you a huge advantage!</p>
-<h2 id="delegating-tasks-callbacks">Delegating Tasks: Callbacks<a class="headerlink" href="#delegating-tasks-callbacks" title="Permanent link">&para;</a></h2>
+<h2 id="delegating-tasks-callbacks">Delegating Tasks: Callbacks<a class="headerlink" href="#delegating-tasks-callbacks" title="Permanent link">¶</a></h2>
 <p>In a large, fast-paced professional kitchen, the head executive chef doesn't do every single task themselves. If they tried to chop every onion, stir every sauce, and plate every dish simultaneously, the restaurant would fail immediately. Instead, they rely heavily on delegation. "Hey sous-chef," the head chef yells, "chop these onions perfectly. When you are completely done, call me so I can add them to the sizzling pan."</p>
 <p>In the coding universe, we delegate tasks by utilizing <strong>Callback Function Logic</strong>. A callback is simply a function that you pass as an argument into <em>another</em> function, with strict instructions to "call this function back" later when a certain event happens or a task is finally finished.</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1">// This function takes another function as its parameter</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kd">function</span><span class="w"> </span><span class="nx">chopOnions</span><span class="p">(</span><span class="nx">callbackFunction</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Sous-chef is aggressively chopping onions...&quot;</span><span class="p">);</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Sous-chef is aggressively chopping onions..."</span><span class="p">);</span>
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="c1">// Let&#39;s pretend it takes a little time...</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Still chopping...&quot;</span><span class="p">);</span>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Finished chopping!&quot;</span><span class="p">);</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="c1">// Let's pretend it takes a little time...</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Still chopping..."</span><span class="p">);</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Finished chopping!"</span><span class="p">);</span>
 </span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
 </span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">  </span><span class="c1">// Now we execute the callback that was passed in!</span>
 </span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">  </span><span class="nx">callbackFunction</span><span class="p">();</span><span class="w"> </span>
@@ -1504,7 +1655,7 @@ Think about it like this: parameters represent the mathematical blueprint of <em
 </span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
 </span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="c1">// Here is the function we want to run LATER</span>
 </span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="kd">function</span><span class="w"> </span><span class="nx">addToHotPan</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Head chef is adding the chopped onions to the hot pan!&quot;</span><span class="p">);</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Head chef is adding the chopped onions to the hot pan!"</span><span class="p">);</span>
 </span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="p">}</span>
 </span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>
 </span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="c1">// We pass addToHotPan WITHOUT parentheses. </span>
@@ -1514,21 +1665,23 @@ Think about it like this: parameters represent the mathematical blueprint of <em
 <p>Callbacks are everywhere in web development. Whenever you listen for a mouse click, wait for a file to download, or set a timer, you are using a callback function.</p>
 <p>Often, the delegated task is so incredibly small, specific, and single-use that we don't even bother giving it a formal name. We just pass an <strong>Anonymous Function Usage</strong> right there on the spot.</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nx">chopOnions</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Adding onions to the pan immediately via an anonymous function!&quot;</span><span class="p">);</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Adding onions to the pan immediately via an anonymous function!"</span><span class="p">);</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="p">});</span>
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
 </span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c1">// Or, even better, using an arrow function expression:</span>
 </span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="nx">chopOnions</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Adding onions using a sleek anonymous arrow function!&quot;</span><span class="p">);</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Adding onions using a sleek anonymous arrow function!"</span><span class="p">);</span>
 </span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="p">});</span>
 </span></code></pre></div>
 <div class="admonition mascot-tip">
 <p class="admonition-title">Anonymous Shortcuts</p>
-<p><img alt="Palette giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+<p><img alt="Palette giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png">
 Want to save lines of code and keep your logic centralized? When setting up a one-time callback (like a button click listener), don't bother defining a named function elsewhere in your file. Drop a sleek arrow function <code>() =&gt; { ... }</code> directly into the argument slot instead!</p>
 </div>
+<h4 id="diagram-the-callback-kitchen">Diagram: The Callback Kitchen<a class="headerlink" href="#diagram-the-callback-kitchen" title="Permanent link">¶</a></h4>
 <details>
 <summary>MicroSim: The Callback Kitchen</summary>
+<p></p><summary>MicroSim: The Callback Kitchen</summary><p></p>
 <p><strong>Goal:</strong> Demonstrate callback functions visually and interactively.
 <strong>Interactive Elements:</strong>
 - A large, styled "Chop Onions" button.
@@ -1537,11 +1690,11 @@ Want to save lines of code and keep your logic centralized? When setting up a on
 - When the progress bar hits 100%, a callback function automatically fires that updates a prominent text log on the screen (e.g., "Onions perfectly chopped! Adding to pan immediately...").
 <strong>Implementation Notes:</strong> Use p5.js frame counts or standard JavaScript <code>setTimeout</code>/<code>setInterval</code> to simulate the delay before the callback function is executed. Ensure the UI clearly shows the "waiting" state versus the "callback executed" state.</p>
 </details>
-<h2 id="organizing-data-object-literals">Organizing Data: Object Literals<a class="headerlink" href="#organizing-data-object-literals" title="Permanent link">&para;</a></h2>
+<h2 id="organizing-data-object-literals">Organizing Data: Object Literals<a class="headerlink" href="#organizing-data-object-literals" title="Permanent link">¶</a></h2>
 <p>Before we start building massively complex machines and factories in our kitchen, let's look at a simpler, more straightforward way to organize data. Imagine a simple recipe index card. It has various pieces of related information written on it: a title, the number of servings, and perhaps a flag indicating if it's vegetarian or not. </p>
 <p>In JavaScript, we can store related pieces of data together in a single bundle using <strong>Object Literal Syntax</strong>. An object literal uses curly braces <code>{}</code> and contains key-value pairs separated by commas.</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">myFavoriteRecipe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Fluffy Buttermilk Pancakes&quot;</span><span class="p">,</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s2">"Fluffy Buttermilk Pancakes"</span><span class="p">,</span>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="nx">servings</span><span class="o">:</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span>
 </span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span><span class="nx">isVegetarian</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 </span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">  </span><span class="nx">prepTimeMinutes</span><span class="o">:</span><span class="w"> </span><span class="mf">15</span>
@@ -1549,13 +1702,13 @@ Want to save lines of code and keep your logic centralized? When setting up a on
 </span></code></pre></div>
 <p>This is infinitely better than having four separate, disconnected variables (<code>let title = ...</code>, <code>let servings = ...</code>). All the data is logically grouped together.</p>
 <p>To actually read or modify the data stored on that index card, we use <strong>Object Property Access</strong>. The most common and preferred way is "dot notation" (<code>myFavoriteRecipe.title</code>), but you can also use "bracket notation" (<code>myFavoriteRecipe["servings"]</code>), which is useful if the property name has spaces or is stored in a variable.</p>
-<div class="language-javascript highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Today we are making: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">myFavoriteRecipe</span><span class="p">.</span><span class="nx">title</span><span class="p">);</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;This will serve &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">myFavoriteRecipe</span><span class="p">.</span><span class="nx">servings</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; hungry people.&quot;</span><span class="p">);</span>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Today we are making: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">myFavoriteRecipe</span><span class="p">.</span><span class="nx">title</span><span class="p">);</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"This will serve "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">myFavoriteRecipe</span><span class="p">.</span><span class="nx">servings</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">" hungry people."</span><span class="p">);</span>
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1">// We can also change properties!</span>
 </span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="nx">myFavoriteRecipe</span><span class="p">.</span><span class="nx">servings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">8</span><span class="p">;</span><span class="w"> </span><span class="c1">// Double the recipe!</span>
 </span></code></pre></div>
-<h2 id="the-factory-blueprint-classes">The Factory Blueprint: Classes<a class="headerlink" href="#the-factory-blueprint-classes" title="Permanent link">&para;</a></h2>
+<h2 id="the-factory-blueprint-classes">The Factory Blueprint: Classes<a class="headerlink" href="#the-factory-blueprint-classes" title="Permanent link">¶</a></h2>
 <p>Object literals are absolutely fantastic for one-off items. But what if we are launching a massive recipe website and we need to create 10,000 different recipe cards? We certainly don't want to manually type out the object literal syntax 10,000 times. We are guaranteed to make typos. What we need is a standardized blueprint. </p>
 <p>An <strong>ES6 Class Declaration</strong> is exactly that: a rigid, formal blueprint for creating many similar objects. It clearly defines the exact structure and capabilities that every single object of that specific type will share.</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kd">class</span><span class="w"> </span><span class="nx">RecipeBlueprint</span><span class="w"> </span><span class="p">{</span>
@@ -1572,8 +1725,8 @@ Want to save lines of code and keep your logic centralized? When setting up a on
 </span></code></pre></div>
 <p>Wait a minute, what is that weird <code>this</code> word doing there? The <strong>This Keyword Binding</strong> is one of the most notoriously confusing concepts for beginners, but in the context of classes, it's actually quite simple. <code>this</code> is a way for an object to refer to itself. Inside the class blueprint, <code>this.title</code> quite literally translates to "the title property of the specific, unique object instance that we are currently creating or interacting with."</p>
 <p>Once we have fully defined our class blueprint and its constructor, we can start creating actual, tangible objects using <strong>Class Instance Instantiation</strong>. We accomplish this using the incredibly important <code>new</code> keyword, which tells JavaScript to spin up a fresh, brand-new instance of the class in the computer's memory.</p>
-<div class="language-javascript highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">fluffyPancakes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">RecipeBlueprint</span><span class="p">(</span><span class="s2">&quot;Pancakes&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">);</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">crispyWaffles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">RecipeBlueprint</span><span class="p">(</span><span class="s2">&quot;Waffles&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">fluffyPancakes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">RecipeBlueprint</span><span class="p">(</span><span class="s2">"Pancakes"</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">);</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">crispyWaffles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">RecipeBlueprint</span><span class="p">(</span><span class="s2">"Waffles"</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
 </span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
 </span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="c1">// We now have two distinct objects made from the same blueprint!</span>
 </span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fluffyPancakes</span><span class="p">.</span><span class="nx">title</span><span class="p">);</span><span class="w"> </span><span class="c1">// Outputs: Pancakes</span>
@@ -1597,10 +1750,10 @@ Want to save lines of code and keep your logic centralized? When setting up a on
 </span></code></pre></div>
 <div class="admonition mascot-warning">
 <p class="admonition-title">Don't Forget 'this'!</p>
-<p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+<p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png">
 Watch out for ReferenceErrors when designing classes! If you try to read a property inside a method by just typing <code>title</code>, JavaScript will search for a global variable and crash. To fix this, always prepend <code>this.</code> (e.g., <code>this.title</code>) to explicitly tell JavaScript you mean the property belonging to this specific instance.</p>
 </div>
-<h2 id="inheriting-traits-expanding-the-blueprint">Inheriting Traits: Expanding the Blueprint<a class="headerlink" href="#inheriting-traits-expanding-the-blueprint" title="Permanent link">&para;</a></h2>
+<h2 id="inheriting-traits-expanding-the-blueprint">Inheriting Traits: Expanding the Blueprint<a class="headerlink" href="#inheriting-traits-expanding-the-blueprint" title="Permanent link">¶</a></h2>
 <p>Sometimes in programming, you find yourself with a highly specialized version of an existing blueprint. Let's imagine we have our general <code>RecipeBlueprint</code> class, which works perfectly. But now, we also want to create a <code>DessertRecipe</code> class. Desserts have all the exact same properties as a regular recipe (a title, servings), but they also have unique, specialized properties, like a <code>sugarContent</code> tracking variable.</p>
 <p>We definitely do not want to rewrite the entire <code>RecipeBlueprint</code> class from scratch just to add one little variable. That violates the golden rule of coding: DRY (Don't Repeat Yourself). Instead, we utilize the magic of <strong>Class Inheritance Extends</strong>. We explicitly declare that <code>DessertRecipe</code> "extends" (inherits from) <code>RecipeBlueprint</code>.</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kd">class</span><span class="w"> </span><span class="nx">DessertRecipe</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">RecipeBlueprint</span><span class="w"> </span><span class="p">{</span>
@@ -1611,7 +1764,7 @@ Watch out for ReferenceErrors when designing classes! If you try to read a prope
 <p>The <code>super()</code> function is a direct hotline to the parent class's constructor. You must call <code>super()</code> inside the child's constructor before you can use the <code>this</code> keyword.</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kd">class</span><span class="w"> </span><span class="nx">DessertRecipe</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">RecipeBlueprint</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">title</span><span class="p">,</span><span class="w"> </span><span class="nx">servings</span><span class="p">,</span><span class="w"> </span><span class="nx">sugarContent</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="c1">// We MUST call the parent&#39;s constructor first!</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="c1">// We MUST call the parent's constructor first!</span>
 </span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">    </span><span class="k">super</span><span class="p">(</span><span class="nx">title</span><span class="p">,</span><span class="w"> </span><span class="nx">servings</span><span class="p">);</span><span class="w"> </span>
 </span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>
 </span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">    </span><span class="c1">// Now we can handle the dessert-specific property</span>
@@ -1621,14 +1774,14 @@ Watch out for ReferenceErrors when designing classes! If you try to read a prope
 </span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="w">  </span><span class="c1">// A method specific only to desserts</span>
 </span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="w">  </span><span class="nx">printHealthWarning</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sugarContent</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">50</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Warning: This dessert is extremely sweet!&quot;</span><span class="p">);</span>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Warning: This dessert is extremely sweet!"</span><span class="p">);</span>
 </span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a><span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;This dessert has a reasonable amount of sugar.&quot;</span><span class="p">);</span>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a><span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"This dessert has a reasonable amount of sugar."</span><span class="p">);</span>
 </span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a><span class="w">  </span><span class="p">}</span>
 </span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a><span class="p">}</span>
 </span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>
-</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a><span class="kd">const</span><span class="w"> </span><span class="nx">chocolateCake</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">DessertRecipe</span><span class="p">(</span><span class="s2">&quot;Decadent Chocolate Cake&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">8</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">);</span>
+</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a><span class="kd">const</span><span class="w"> </span><span class="nx">chocolateCake</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">DessertRecipe</span><span class="p">(</span><span class="s2">"Decadent Chocolate Cake"</span><span class="p">,</span><span class="w"> </span><span class="mf">8</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">);</span>
 </span><span id="__span-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>
 </span><span id="__span-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a><span class="c1">// We can use methods inherited from the parent class...</span>
 </span><span id="__span-14-23"><a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a><span class="nx">chocolateCake</span><span class="p">.</span><span class="nx">printSummary</span><span class="p">();</span><span class="w"> </span>
@@ -1644,20 +1797,20 @@ Watch out for ReferenceErrors when designing classes! If you try to read a prope
 </span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">servings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">servings</span><span class="p">;</span>
 </span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">  </span><span class="p">}</span>
 </span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>
-</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">  </span><span class="c1">// A static method definition! Notice the &#39;static&#39; keyword.</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">  </span><span class="c1">// A static method definition! Notice the 'static' keyword.</span>
 </span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="nx">compareYield</span><span class="p">(</span><span class="nx">recipeA</span><span class="p">,</span><span class="w"> </span><span class="nx">recipeB</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">recipeA</span><span class="p">.</span><span class="nx">servings</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">recipeB</span><span class="p">.</span><span class="nx">servings</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">recipeA</span><span class="p">.</span><span class="nx">title</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; yields a larger amount of food.&quot;</span><span class="p">;</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">recipeA</span><span class="p">.</span><span class="nx">title</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">" yields a larger amount of food."</span><span class="p">;</span>
 </span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">recipeB</span><span class="p">.</span><span class="nx">servings</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">recipeA</span><span class="p">.</span><span class="nx">servings</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">recipeB</span><span class="p">.</span><span class="nx">title</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; yields a larger amount of food.&quot;</span><span class="p">;</span>
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">recipeB</span><span class="p">.</span><span class="nx">title</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">" yields a larger amount of food."</span><span class="p">;</span>
 </span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;Both recipes yield the exact same amount.&quot;</span><span class="p">;</span>
+</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="s2">"Both recipes yield the exact same amount."</span><span class="p">;</span>
 </span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="w">  </span><span class="p">}</span>
 </span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="p">}</span>
 </span><span id="__span-15-18"><a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a>
-</span><span id="__span-15-19"><a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="kd">const</span><span class="w"> </span><span class="nx">basicPancakes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">RecipeBlueprint</span><span class="p">(</span><span class="s2">&quot;Basic Pancakes&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">);</span>
-</span><span id="__span-15-20"><a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="kd">const</span><span class="w"> </span><span class="nx">giantCake</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">RecipeBlueprint</span><span class="p">(</span><span class="s2">&quot;Giant Party Cake&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">);</span>
+</span><span id="__span-15-19"><a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="kd">const</span><span class="w"> </span><span class="nx">basicPancakes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">RecipeBlueprint</span><span class="p">(</span><span class="s2">"Basic Pancakes"</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">);</span>
+</span><span id="__span-15-20"><a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="kd">const</span><span class="w"> </span><span class="nx">giantCake</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">RecipeBlueprint</span><span class="p">(</span><span class="s2">"Giant Party Cake"</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">);</span>
 </span><span id="__span-15-21"><a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a>
 </span><span id="__span-15-22"><a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a><span class="c1">// We call the static method directly on the class name (RecipeBlueprint), </span>
 </span><span id="__span-15-23"><a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a><span class="c1">// NOT on basicPancakes or giantCake!</span>
@@ -1665,11 +1818,13 @@ Watch out for ReferenceErrors when designing classes! If you try to read a prope
 </span></code></pre></div>
 <div class="admonition mascot-encourage">
 <p class="admonition-title">Keep Practicing!</p>
-<p><img alt="Palette encouraging" class="mascot-admonition-img" src="../../img/mascot/encouraging.png" />
+<p><img alt="Palette encouraging" class="mascot-admonition-img" src="../../img/mascot/encouraging.png">
 If object-oriented programming and inheritance feel incredibly abstract right now, that is completely normal! Just like mastering the complex coordinate system earlier in the book took a bit of practice, mastering structural blueprints takes time. Take a deep breath and keep experimenting—you've got this!</p>
 </div>
+<h4 id="diagram-the-object-factory">Diagram: The Object Factory<a class="headerlink" href="#diagram-the-object-factory" title="Permanent link">¶</a></h4>
 <details>
 <summary>MicroSim: The Object Factory</summary>
+<p></p><summary>MicroSim: The Object Factory</summary><p></p>
 <p><strong>Goal:</strong> Visualize Class Instance Instantiation and Class Inheritance Extends in a highly dynamic way.
 <strong>Interactive Elements:</strong>
 - Sliders on the left side of the screen to define real-time properties (e.g., <code>radius</code>, <code>hue</code>, <code>bounceSpeed</code>).
@@ -1678,7 +1833,7 @@ If object-oriented programming and inheritance feel incredibly abstract right no
 - A large visual canvas area where the instantiated objects appear and immediately begin behaving according to their specific class methods.
 <strong>Implementation Notes:</strong> Use p5.js. The <code>StaticParticle</code> class must have <code>x</code>, <code>y</code>, <code>radius</code>, and <code>color</code> properties defined in its Class Constructor Method, and a <code>display()</code> Class Method Definition. The <code>BouncingParticle</code> class uses Class Inheritance Extends to get those properties via a Super Constructor Call, but it also adds <code>speedX</code> and <code>speedY</code>, and a custom <code>update()</code> method to aggressively bounce off the edges of the canvas.</p>
 </details>
-<h2 id="bringing-it-all-together-the-ultimate-kitchen-setup">Bringing It All Together: The Ultimate Kitchen Setup<a class="headerlink" href="#bringing-it-all-together-the-ultimate-kitchen-setup" title="Permanent link">&para;</a></h2>
+<h2 id="bringing-it-all-together-the-ultimate-kitchen-setup">Bringing It All Together: The Ultimate Kitchen Setup<a class="headerlink" href="#bringing-it-all-together-the-ultimate-kitchen-setup" title="Permanent link">¶</a></h2>
 <p>Let's take a moment to review the incredibly powerful, professional toolkit you've just built in this chapter. You have learned how to structure code so that it is reusable, modular, and easy to read.</p>
 <p>Here is a master summary of the concepts we explored:</p>
 <ul>
@@ -1702,7 +1857,7 @@ If object-oriented programming and inheritance feel incredibly abstract right no
 <p>By mastering these concepts, you are no longer just writing disorganized lists of commands. You are actively architecting complex, interactive software systems. You can create hundreds of interactive objects on a screen, each managing its own state and behavior, all while keeping your code clean and manageable.</p>
 <div class="admonition mascot-celebration">
 <p class="admonition-title">Chef's Kiss! Masterpiece Completed!</p>
-<p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+<p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png">
 Incredible work! You just mastered ES6 Class Declarations, arrow function expressions, and managing asynchronous logic with callbacks. Your code is now incredibly organized, highly modular, and ready for massive software projects!</p>
 </div>
 
@@ -1730,7 +1885,7 @@ Incredible work! You just mastered ES6 Class Declarations, arrow function expres
         
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
   Back to top
 </button>
         
@@ -1740,20 +1895,20 @@ Incredible work! You just mastered ES6 Class Declarations, arrow function expres
   
     
       
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
         
           
           <a href="../16-css-styling-layouts/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 16. CSS Styling, Layouts &amp; Web Page Integration">
             <div class="md-footer__button md-icon">
               
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
             </div>
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Previous
               </span>
               <div class="md-ellipsis">
-                16. CSS Styling, Layouts & Web Page Integration
+                16. CSS Styling, Layouts &amp; Web Page Integration
               </div>
             </div>
           </a>
@@ -1766,12 +1921,12 @@ Incredible work! You just mastered ES6 Class Declarations, arrow function expres
                 Next
               </span>
               <div class="md-ellipsis">
-                18. ES6 Classes, Object-Oriented Programming & Async Data
+                18. ES6 Classes, Object-Oriented Programming &amp; Async Data
               </div>
             </div>
             <div class="md-footer__button md-icon">
               
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
             </div>
           </a>
         
@@ -1783,7 +1938,7 @@ Incredible work! You just mastered ES6 Class Declarations, arrow function expres
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+      Copyright © 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
     </div>
   
   
@@ -1804,6 +1959,14 @@ Incredible work! You just mastered ES6 Class Declarations, arrow function expres
     
       <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
+        <script src="../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
     
-  </body>
-</html>
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

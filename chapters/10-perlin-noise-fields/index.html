@@ -1,7 +1,4 @@
-
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
+<!DOCTYPE html><html lang="en" class="no-js"><head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -26,7 +23,7 @@
     
     
       
-        <title>10. Perlin Noise Landscapes & Vector Flow Fields - The Art of Processing</title>
+        <title>10. Perlin Noise Landscapes &amp; Vector Flow Fields - The Art of Processing</title>
       
     
     
@@ -47,7 +44,7 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
@@ -56,14 +53,52 @@
     
       <link rel="stylesheet" href="../../css/mascot.css">
     
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
+      
+        <meta property="og:type" content="website">
+      
+        <meta property="og:title" content="10. Perlin Noise Landscapes &amp; Vector Flow Fields - The Art of Processing">
+      
+        <meta property="og:description" content="An interactive intelligent textbook about the p5.js processing library and how to use it to teach computational thinking.">
+      
+        <meta property="og:image" content="https://dmccreary.github.io/p5-textbook/assets/images/social/chapters/10-perlin-noise-fields/index.png">
+      
+        <meta property="og:image:type" content="image/png">
+      
+        <meta property="og:image:width" content="1200">
+      
+        <meta property="og:image:height" content="630">
+      
+        <meta property="og:url" content="https://dmccreary.github.io/p5-textbook/chapters/10-perlin-noise-fields/">
+      
+        <meta name="twitter:card" content="summary_large_image">
+      
+        <meta name="twitter:title" content="10. Perlin Noise Landscapes &amp; Vector Flow Fields - The Art of Processing">
+      
+        <meta name="twitter:description" content="An interactive intelligent textbook about the p5.js processing library and how to use it to teach computational thinking.">
+      
+        <meta name="twitter:image" content="https://dmccreary.github.io/p5-textbook/assets/images/social/chapters/10-perlin-noise-fields/index.png">
+      
     
-  </head>
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
   
   
     
@@ -99,12 +134,12 @@
     <a href="../.." title="The Art of Processing" class="md-header__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -116,7 +151,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              10. Perlin Noise Landscapes & Vector Flow Fields
+              10. Perlin Noise Landscapes &amp; Vector Flow Fields
             
           </span>
         </div>
@@ -130,7 +165,7 @@
     
       <label class="md-header__button md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
       </label>
       <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
@@ -139,20 +174,20 @@
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
           <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
             
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
           </a>
         
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
         </button>
       </nav>
       
@@ -177,7 +212,7 @@
         <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -201,7 +236,7 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -213,7 +248,7 @@
     <a href="../.." title="The Art of Processing" class="md-nav__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     The Art of Processing
@@ -223,7 +258,7 @@
       <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -459,7 +494,7 @@
         
   
   <span class="md-ellipsis">
-    1. Introduction to Creative Coding & Canvas Foundations
+    1. Introduction to Creative Coding &amp; Canvas Foundations
   </span>
   
 
@@ -480,7 +515,7 @@
         
   
   <span class="md-ellipsis">
-    2. 2D Primitive Shapes & Custom Geometries
+    2. 2D Primitive Shapes &amp; Custom Geometries
   </span>
   
 
@@ -501,7 +536,7 @@
         
   
   <span class="md-ellipsis">
-    3. Color Theory, Color Modes & Pixel Manipulation
+    3. Color Theory, Color Modes &amp; Pixel Manipulation
   </span>
   
 
@@ -522,7 +557,7 @@
         
   
   <span class="md-ellipsis">
-    4. Variables, Data Types & Scope Fundamentals
+    4. Variables, Data Types &amp; Scope Fundamentals
   </span>
   
 
@@ -543,7 +578,7 @@
         
   
   <span class="md-ellipsis">
-    5. Control Flow, Loops & Array Data Structures
+    5. Control Flow, Loops &amp; Array Data Structures
   </span>
   
 
@@ -564,7 +599,7 @@
         
   
   <span class="md-ellipsis">
-    6. Matrix Transformations & Coordinate Systems
+    6. Matrix Transformations &amp; Coordinate Systems
   </span>
   
 
@@ -585,7 +620,7 @@
         
   
   <span class="md-ellipsis">
-    7. Linear Motion, Trigonometry & Wave Math
+    7. Linear Motion, Trigonometry &amp; Wave Math
   </span>
   
 
@@ -606,7 +641,7 @@
         
   
   <span class="md-ellipsis">
-    8. Polar Coordinates, Oscillation & Easing
+    8. Polar Coordinates, Oscillation &amp; Easing
   </span>
   
 
@@ -627,7 +662,7 @@
         
   
   <span class="md-ellipsis">
-    9. Randomness, Gaussian Distributions & Random Walk
+    9. Randomness, Gaussian Distributions &amp; Random Walk
   </span>
   
 
@@ -657,7 +692,7 @@
           
   
   <span class="md-ellipsis">
-    10. Perlin Noise Landscapes & Vector Flow Fields
+    10. Perlin Noise Landscapes &amp; Vector Flow Fields
   </span>
   
 
@@ -668,7 +703,7 @@
         
   
   <span class="md-ellipsis">
-    10. Perlin Noise Landscapes & Vector Flow Fields
+    10. Perlin Noise Landscapes &amp; Vector Flow Fields
   </span>
   
 
@@ -816,6 +851,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="The Magic of Vector Field Direction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-flow-field-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Flow Field Visualizer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -880,6 +930,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Growing Complexity: Stochastic Tree Growth">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-stochastic-l-system-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Stochastic L-System Tree
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -916,7 +981,7 @@
         
   
   <span class="md-ellipsis">
-    11. Vector Math Fundamentals & Physics Acceleration
+    11. Vector Math Fundamentals &amp; Physics Acceleration
   </span>
   
 
@@ -937,7 +1002,7 @@
         
   
   <span class="md-ellipsis">
-    12. Particle Systems, Forces & Steering Behaviors
+    12. Particle Systems, Forces &amp; Steering Behaviors
   </span>
   
 
@@ -958,7 +1023,7 @@
         
   
   <span class="md-ellipsis">
-    13. Mouse & Keyboard User Event Sensing
+    13. Mouse &amp; Keyboard User Event Sensing
   </span>
   
 
@@ -979,7 +1044,7 @@
         
   
   <span class="md-ellipsis">
-    14. Touch Gestures, Mobile Sensors & Interaction
+    14. Touch Gestures, Mobile Sensors &amp; Interaction
   </span>
   
 
@@ -1000,7 +1065,7 @@
         
   
   <span class="md-ellipsis">
-    15. DOM Controls, Input Fields & UI Elements
+    15. DOM Controls, Input Fields &amp; UI Elements
   </span>
   
 
@@ -1021,7 +1086,7 @@
         
   
   <span class="md-ellipsis">
-    16. CSS Styling, Layouts & Web Page Integration
+    16. CSS Styling, Layouts &amp; Web Page Integration
   </span>
   
 
@@ -1042,7 +1107,7 @@
         
   
   <span class="md-ellipsis">
-    17. Functions, Arrow Expressions & Callbacks
+    17. Functions, Arrow Expressions &amp; Callbacks
   </span>
   
 
@@ -1063,7 +1128,7 @@
         
   
   <span class="md-ellipsis">
-    18. ES6 Classes, Object-Oriented Programming & Async Data
+    18. ES6 Classes, Object-Oriented Programming &amp; Async Data
   </span>
   
 
@@ -1084,7 +1149,7 @@
         
   
   <span class="md-ellipsis">
-    19. 3D WebGL Coordinates & Primitive Geometries
+    19. 3D WebGL Coordinates &amp; Primitive Geometries
   </span>
   
 
@@ -1105,7 +1170,7 @@
         
   
   <span class="md-ellipsis">
-    20. 3D Cameras, Lighting Models, Materials & Shaders
+    20. 3D Cameras, Lighting Models, Materials &amp; Shaders
   </span>
   
 
@@ -1126,7 +1191,7 @@
         
   
   <span class="md-ellipsis">
-    21. Audio Synthesis, Oscillators & Envelopes
+    21. Audio Synthesis, Oscillators &amp; Envelopes
   </span>
   
 
@@ -1147,7 +1212,7 @@
         
   
   <span class="md-ellipsis">
-    22. Microphone Input & FFT Spectral Analysis
+    22. Microphone Input &amp; FFT Spectral Analysis
   </span>
   
 
@@ -1168,7 +1233,7 @@
         
   
   <span class="md-ellipsis">
-    23. Image Processing, Filters & Video Capture
+    23. Image Processing, Filters &amp; Video Capture
   </span>
   
 
@@ -1189,7 +1254,7 @@
         
   
   <span class="md-ellipsis">
-    24. Generative Typography & Vector Font Outlines
+    24. Generative Typography &amp; Vector Font Outlines
   </span>
   
 
@@ -1210,7 +1275,7 @@
         
   
   <span class="md-ellipsis">
-    25. Development Environment, Tools & Pedagogy
+    25. Development Environment, Tools &amp; Pedagogy
   </span>
   
 
@@ -1238,6 +1303,14 @@
       
         
           
+        
+      
+        
+      
+        
+      
+        
+      
         
       
         
@@ -1299,6 +1372,14 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1327,6 +1408,46 @@
   
 
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1379,7 +1500,7 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1524,6 +1645,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="The Magic of Vector Field Direction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-flow-field-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Flow Field Visualizer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1588,6 +1724,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Growing Complexity: Stochastic Tree Growth">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-stochastic-l-system-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Stochastic L-System Tree
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1621,16 +1772,16 @@
   
     <a href="https://github.com/dmccreary/p5-textbook/blob/main/docs/chapters/10-perlin-noise-fields/index.md" title="Edit this page" class="md-content__button md-icon">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
     </a>
   
   
 
 
-<h1 id="perlin-noise-landscapes-vector-flow-fields">Perlin Noise Landscapes &amp; Vector Flow Fields<a class="headerlink" href="#perlin-noise-landscapes-vector-flow-fields" title="Permanent link">&para;</a></h1>
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<h1 id="perlin-noise-landscapes-vector-flow-fields">Perlin Noise Landscapes &amp; Vector Flow Fields<a class="headerlink" href="#perlin-noise-landscapes-vector-flow-fields" title="Permanent link">¶</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">¶</a></h2>
 <p>Introduces 1D/2D/3D Perlin noise, octaves, detail settings, organic terrain generation, and vector flow fields. Students will gain practical hands-on experience by building interactive sketches and visual experiments that demonstrate these concepts.</p>
-<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">¶</a></h2>
 <p>This chapter covers the following 18 concepts from the learning graph:</p>
 <ol>
 <li>Smooth Noise Landscape</li>
@@ -1652,39 +1803,39 @@
 <li>Marble Texture Generator</li>
 <li>Noise Displacement Map</li>
 </ol>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">¶</a></h2>
 <p>This chapter builds on concepts from:</p>
 <ul>
 <li><a href="../09-randomness-and-walks/">Chapter 9: Randomness, Gaussian Distributions &amp; Random Walk</a></li>
 </ul>
-<hr />
+<hr>
 <div class="admonition mascot-welcome">
 <p class="admonition-title">Welcome to Chapter 10!</p>
-<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" /></p>
+<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png"></p>
 <p>Welcome, creators! If standard randomness looks too chaotic and noisy, wait until you discover the smooth, rolling hills of Perlin noise. This chapter will teach you how to generate stunning, natural textures and mesmerizing flow fields. Let's blend some code and build worlds!</p>
 </div>
 <p>Welcome to the magic of organic randomness! In the previous chapter, we looked at pure randomness—like flipping a coin, rolling a die, or wandering aimlessly in a random walk. But if you look around at the real world, things are rarely completely chaotic or disconnected. Mountains don't look like television static; they have sweeping curves, ridgelines, and valleys that connect logically from one point to the next. Clouds have soft, puffy shapes that gently transition into the clear blue sky. Wood has flowing grain patterns that swirl smoothly around knots. Nature is undoubtedly random, but it is a <em>smooth</em>, connected kind of random. It has structure, flow, and memory.</p>
 <p>This chapter is all about capturing that organic, natural feel in our code. We will explore how to tame randomness, smooth it out, bend it to our will, and use it to simulate the beautiful complexity of the physical world. By the end of this chapter, you won't just be generating static on a screen; you will be growing forests, shaping mountains, and painting with invisible digital wind.</p>
-<h2 id="the-problem-with-pure-randomness">The Problem with Pure Randomness<a class="headerlink" href="#the-problem-with-pure-randomness" title="Permanent link">&para;</a></h2>
+<h2 id="the-problem-with-pure-randomness">The Problem with Pure Randomness<a class="headerlink" href="#the-problem-with-pure-randomness" title="Permanent link">¶</a></h2>
 <p>To understand why we need new tools, we have to understand the limitations of the tools we already have. When we use a standard <code>random()</code> function in programming, each value it gives us is completely, 100% independent of the value that came before it. If <code>random()</code> gives us a 0.9, the next call is just as likely to give us a 0.1 as a 0.8. </p>
 <p>If we were to draw a line graph of these pure random values, the line would jump wildly and violently up and down. This is called "white noise." It is chaotic, unpredictable, and harsh. This is perfect for simulating a roll of the dice in a game of Monopoly, or randomly shuffling a deck of cards. </p>
 <p>But imagine you are trying to write a program that draws a natural horizon line—the silhouette of a distant mountain range. If you use pure randomness to pick the height of each pixel along the screen, you won't get a mountain. You will get a jagged, fuzzy mess that looks like a barcode or static on a broken television. The mountain lacks continuity. In the real world, if a mountain is 500 meters high at one spot, it is physically impossible for it to be 10 meters high just one step to the right. The heights of adjacent points in space are correlated; they are related to each other.</p>
 <p>This was exactly the problem facing computer graphics pioneers in the early 1980s. </p>
-<h2 id="the-birth-of-perlin-noise">The Birth of Perlin Noise<a class="headerlink" href="#the-birth-of-perlin-noise" title="Permanent link">&para;</a></h2>
+<h2 id="the-birth-of-perlin-noise">The Birth of Perlin Noise<a class="headerlink" href="#the-birth-of-perlin-noise" title="Permanent link">¶</a></h2>
 <p>In the early 1980s, a computer scientist named Ken Perlin was working on the groundbreaking sci-fi movie <em>Tron</em>. At the time, computer-generated imagery (CGI) was in its infancy. Everything rendered by computers looked perfectly flat, mathematically smooth, and incredibly artificial. Things looked like plastic. </p>
 <p>Perlin wanted to make surfaces look more realistic. He wanted to give objects the appearance of dirt, rust, marble, and skin. But when he tried using pure random numbers to generate textures, it just looked like white noise. It didn't look like dirt; it looked like a broken computer.</p>
 <p>To solve this, he invented a brand new mathematical algorithm. He created a type of "gradient noise" that produced a sequence of random numbers that smoothly transitioned from one to the next. He called it Perlin noise. The algorithm was so revolutionary, so fundamentally important to the future of computer graphics, that Ken Perlin was later awarded an Academy Award for Technical Achievement. Today, Perlin noise is used in almost every video game, animated movie, and generative art piece to create natural-looking textures and movement.</p>
-<h3 id="perlin-noise-vs-random"><strong>Perlin Noise vs Random</strong><a class="headerlink" href="#perlin-noise-vs-random" title="Permanent link">&para;</a></h3>
+<h3 id="perlin-noise-vs-random"><strong>Perlin Noise vs Random</strong><a class="headerlink" href="#perlin-noise-vs-random" title="Permanent link">¶</a></h3>
 <p>The crucial difference when comparing <strong>Perlin Noise vs Random</strong> is the concept of <em>continuity</em>. </p>
 <p>Think of <code>random()</code> as a grasshopper trapped in a box, instantly teleporting from one random spot to another. You have no idea where it will appear next.</p>
 <p>Think of Perlin noise (accessed via the <code>noise()</code> function in p5.js) as an ant walking across a bumpy terrain. You might not know exactly where the ant will be in ten minutes, but you know for an absolute fact that one second from now, the ant will be very close to where it is right now. It can't teleport. It must walk a continuous path.</p>
 <p>When you pass a value (like time or a coordinate) into the <code>noise(t)</code> function, it returns a value between 0 and 1. If you pass in <code>noise(1.0)</code> and it returns 0.6, and then you pass in <code>noise(1.01)</code>, the return value is mathematically guaranteed to be very close to 0.6, perhaps 0.61 or 0.59. </p>
 <div class="admonition mascot-thinking">
 <p class="admonition-title">Continuity is Key</p>
-<p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+<p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png">
 Think about it like this: <code>random()</code> has no memory of the past, like throwing darts blindly. But <code>noise()</code> remembers its neighbors! It builds a continuous world because it's mapping a connected landscape.</p>
 </div>
-<h2 id="one-dimensional-noise-the-smooth-noise-landscape">One-Dimensional Noise: The <strong>Smooth Noise Landscape</strong><a class="headerlink" href="#one-dimensional-noise-the-smooth-noise-landscape" title="Permanent link">&para;</a></h2>
+<h2 id="one-dimensional-noise-the-smooth-noise-landscape">One-Dimensional Noise: The <strong>Smooth Noise Landscape</strong><a class="headerlink" href="#one-dimensional-noise-the-smooth-noise-landscape" title="Permanent link">¶</a></h2>
 <p>The simplest way to use Perlin noise is in one dimension (1D). We typically pass in a variable representing time (often called <code>t</code> or <code>xOffset</code>) that slowly increases each frame. </p>
 <p>If we map the output of the <code>noise()</code> function to the y-coordinate of a point, and slowly pan our x-coordinate across the screen, we generate a <strong>Smooth Noise Landscape</strong>. Instead of harsh, jagged spikes, the line swoops gracefully up and down, creating gentle hills and valleys.</p>
 <p>The secret to controlling this landscape is the "step size"—how much we increase our time variable <code>t</code> between each reading.
@@ -1693,31 +1844,31 @@ Think about it like this: <code>random()</code> has no memory of the past, like 
 <p>By using this 1D noise, you can procedurally generate the ground for a 2D side-scrolling video game, ensuring the player always has a smoothly varying path to run across, without ever having to draw the level yourself by hand.</p>
 <div class="admonition mascot-warning">
 <p class="admonition-title">Frozen in Time?</p>
-<p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+<p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png">
 Watch out for stagnant noise! If you pass the exact same <code>t</code> value into <code>noise()</code> every single frame, your landscape will be completely frozen. Always remember to add a tiny amount (like <code>t += 0.01</code>) inside your <code>draw()</code> loop to make the landscape scroll!</p>
 </div>
-<h2 id="two-dimensional-noise-textures-and-maps">Two-Dimensional Noise: Textures and Maps<a class="headerlink" href="#two-dimensional-noise-textures-and-maps" title="Permanent link">&para;</a></h2>
+<h2 id="two-dimensional-noise-textures-and-maps">Two-Dimensional Noise: Textures and Maps<a class="headerlink" href="#two-dimensional-noise-textures-and-maps" title="Permanent link">¶</a></h2>
 <p>Perlin noise becomes truly magical when we expand it into two dimensions. Instead of just passing in a single value <code>t</code>, we pass in two coordinates: <code>x</code> and <code>y</code>. </p>
 <p>Think of 2D noise as a vast, infinite, invisible landscape of rolling hills and valleys. When we ask for <code>noise(x, y)</code>, we are asking the computer, "What is the altitude of the terrain at this specific GPS coordinate?"</p>
 <p>We can use this to create a <strong>Noise Texture Map</strong>. Imagine a grid of pixels on your screen. For every single pixel, we calculate its <code>x</code> and <code>y</code> position, feed those into the <code>noise(x, y)</code> function, and get back a value between 0 and 1. We then translate that value into a grayscale color (0 = black, 1 = white, 0.5 = gray).</p>
 <p>Because the noise is continuous across both the X and Y axes, the resulting image doesn't look like static. It looks like beautiful, blurry, organic clouds. The bright white patches smoothly fade into gray, which fade into deep black pools. </p>
-<h3 id="layering-detail-the-cloud-texture-generator">Layering Detail: The <strong>Cloud Texture Generator</strong><a class="headerlink" href="#layering-detail-the-cloud-texture-generator" title="Permanent link">&para;</a></h3>
+<h3 id="layering-detail-the-cloud-texture-generator">Layering Detail: The <strong>Cloud Texture Generator</strong><a class="headerlink" href="#layering-detail-the-cloud-texture-generator" title="Permanent link">¶</a></h3>
 <p>A single pass of Perlin noise looks a bit like an out-of-focus photograph. It's too smooth to look like a realistic natural surface. To make it realistic, we use a technique called "Fractional Brownian Motion" (fBm), which is the engine behind a realistic <strong>Cloud Texture Generator</strong>.</p>
 <p>The idea is to add multiple layers of noise on top of each other. These layers are called "octaves," borrowing a term from music.
 - <strong>Octave 1 (The Fundamental):</strong> We start with large, smooth noise. This defines the overall shape—the big continents of our map, or the main body of a cloud.
 - <strong>Octave 2:</strong> We add a second layer of noise, but we double the "frequency" (we zoom out, making the bumps closer together) and halve the "amplitude" (we make the bumps less tall). This adds medium-sized details, like peninsulas or smaller cloud puffs.
 - <strong>Octave 3:</strong> We double frequency and halve amplitude again. This adds tiny, sharp details, like rugged coastlines or wispy cloud edges.</p>
 <p>By adding 4, 6, or 8 octaves together, we create a texture that has massive, sweeping forms, but is heavily textured with intricate, sharp details when you zoom in. This is exactly how massive open-world video games generate endless, detailed terrain on the fly.</p>
-<h3 id="distorting-math-the-marble-texture-generator">Distorting Math: The <strong>Marble Texture Generator</strong><a class="headerlink" href="#distorting-math-the-marble-texture-generator" title="Permanent link">&para;</a></h3>
+<h3 id="distorting-math-the-marble-texture-generator">Distorting Math: The <strong>Marble Texture Generator</strong><a class="headerlink" href="#distorting-math-the-marble-texture-generator" title="Permanent link">¶</a></h3>
 <p>We don't have to just map noise directly to black and white. We can use noise to <em>distort</em> other mathematical functions. </p>
 <p>Consider a simple sine wave mapped across the screen. It creates perfectly straight, repeating black and white stripes. It's very rigid and mathematical. </p>
 <p>But what if we take the <code>x</code> coordinate of our pixel, add a value derived from Perlin noise, and <em>then</em> feed that warped coordinate into the sine wave function? The perfectly straight stripes will be pushed and pulled out of alignment by the underlying noise landscape. </p>
 <p>This technique creates a <strong>Marble Texture Generator</strong>. The straight lines become wavy, swirling bands that look exactly like the natural veins running through a polished slab of marble or the rings inside a cross-section of wood. We are using the chaotic nature of noise to add organic imperfection to the rigid perfection of geometry.</p>
-<h3 id="3d-noise-and-the-noise-displacement-map">3D Noise and the <strong>Noise Displacement Map</strong><a class="headerlink" href="#3d-noise-and-the-noise-displacement-map" title="Permanent link">&para;</a></h3>
+<h3 id="3d-noise-and-the-noise-displacement-map">3D Noise and the <strong>Noise Displacement Map</strong><a class="headerlink" href="#3d-noise-and-the-noise-displacement-map" title="Permanent link">¶</a></h3>
 <p>Perlin noise can exist in 3D space, too (<code>noise(x, y, z)</code>). </p>
 <p>If we have a flat 2D grid of triangles in a 3D environment (like p5.js in WEBGL mode), we can use a 2D noise map not to color the pixels, but to physically lift the vertices of the grid upwards along the Z-axis. This is called a <strong>Noise Displacement Map</strong>. The bright spots push the geometry high to form mountains, and the dark spots leave the geometry low to form oceans. </p>
 <p>If we take our 2D terrain and slowly change the <code>y</code> coordinate that we use to sample the noise, the entire landscape will appear to scroll toward the camera. We have created a <strong>Noise Animated Terrain</strong>! The mountains and valleys will ripple and flow smoothly, creating the illusion that we are flying an airplane endlessly over a procedurally generated planet.</p>
-<h2 id="alternative-algorithms-simplex-and-cellular-noise">Alternative Algorithms: Simplex and Cellular Noise<a class="headerlink" href="#alternative-algorithms-simplex-and-cellular-noise" title="Permanent link">&para;</a></h2>
+<h2 id="alternative-algorithms-simplex-and-cellular-noise">Alternative Algorithms: Simplex and Cellular Noise<a class="headerlink" href="#alternative-algorithms-simplex-and-cellular-noise" title="Permanent link">¶</a></h2>
 <p>Ken Perlin wasn't finished. In 2001, he recognized that his original algorithm had some limitations. When scaling up to higher dimensions, classic Perlin noise became computationally expensive. Furthermore, because it was calculated on a square grid, it sometimes produced subtle visual artifacts—if you looked closely, you could see faint vertical and horizontal alignments in the noise.</p>
 <p>To solve this, he developed the <strong>Simplex Noise Derivative</strong>. Instead of calculating values on a square grid, Simplex noise uses a grid of triangles (or tetrahedra in 3D space). This brilliant shift drastically reduced the computational cost and eliminated the grid-like artifacts, resulting in a cleaner, faster, and more isotropic (uniform in all directions) noise. Simplex noise has largely become the modern industry standard for high-performance graphics.</p>
 <p>Another completely different approach is <strong>Worley Cell Noise</strong> (also known as Voronoi noise), invented by Steven Worley in 1996. </p>
@@ -1727,7 +1878,7 @@ Watch out for stagnant noise! If you pass the exact same <code>t</code> value in
 2. For every pixel on the screen, it calculates the distance to the <em>closest</em> feature point.
 3. It uses that shortest distance to determine the pixel's color (e.g., closer pixels are darker, further pixels are lighter).</p>
 <p>The result is a stunning pattern that looks like microscopic biological cells, dry cracked earth, the surface of a sponge, or the scales on a reptile. </p>
-<h2 id="the-magic-of-vector-field-direction">The Magic of <strong>Vector Field Direction</strong><a class="headerlink" href="#the-magic-of-vector-field-direction" title="Permanent link">&para;</a></h2>
+<h2 id="the-magic-of-vector-field-direction">The Magic of <strong>Vector Field Direction</strong><a class="headerlink" href="#the-magic-of-vector-field-direction" title="Permanent link">¶</a></h2>
 <p>Now we arrive at one of the most mesmerizing and popular techniques in all of generative art: the <strong>Noise Flow Field Concept</strong>.</p>
 <p>Imagine a large, open field. You are holding a handful of dandelion seeds. You release them into the air. Do they fall straight down? Do they move randomly, zigzagging like a random walk? No. They are caught by the wind. They flow together, tracing out the invisible currents of the air. </p>
 <p>We can simulate these invisible currents using Perlin noise. </p>
@@ -1735,8 +1886,9 @@ Watch out for stagnant noise! If you pass the exact same <code>t</code> value in
 <p>By calculating this for every point on a grid, we create a <strong>Vector Field Direction</strong> map. It is essentially a mathematical weather map. Every location on the screen has an invisible arrow pointing in a specific direction. Because Perlin noise is smooth and continuous, adjacent arrows will point in very similar directions. The arrows don't point chaotically; they form sweeping currents, swirling eddies, and smooth rivers of force.</p>
 <p>When we drop thousands of tiny digital "particles" onto our canvas, each particle looks at the invisible arrow directly beneath it and takes a tiny step in that direction. As the particles move, they leave a trail behind them. </p>
 <p>This results in <strong>Organic Curve Generation</strong>. The particles group together, flowing along the noise ridges and valleys, drawing thick, sweeping lines that look remarkably like hair, wood grain, muscle fibers, or long-exposure photographs of river currents. </p>
+<h4 id="diagram-flow-field-visualizer">Diagram: Flow Field Visualizer<a class="headerlink" href="#diagram-flow-field-visualizer" title="Permanent link">¶</a></h4>
 <details>
-<summary>MicroSim: Flow Field Visualizer</summary>
+<summary>MicroSim: Flow Field Visualizer</summary><summary>MicroSim: Flow Field Visualizer</summary>
 
 **Goal:** Visualize how a grid of angles generated by 2D Perlin noise creates a flow field, and observe how particles follow those invisible currents to draw organic lines.
 **Type:** p5.js Interactive Simulation
@@ -1751,25 +1903,25 @@ Watch out for stagnant noise! If you pass the exact same <code>t</code> value in
 **Interaction:** The user can manipulate the noise landscape in real-time, watching the particle streams break apart, merge, and swirl in response to the changing mathematical winds.
 </details>
 
-<h2 id="morphing-shapes-the-wobbly-circle-generator">Morphing Shapes: The <strong>Wobbly Circle Generator</strong><a class="headerlink" href="#morphing-shapes-the-wobbly-circle-generator" title="Permanent link">&para;</a></h2>
+<h2 id="morphing-shapes-the-wobbly-circle-generator">Morphing Shapes: The <strong>Wobbly Circle Generator</strong><a class="headerlink" href="#morphing-shapes-the-wobbly-circle-generator" title="Permanent link">¶</a></h2>
 <p>The concept of continuous 1D noise can be applied to geometry to create organic, breathing shapes. </p>
 <p>Imagine you want to draw a circle. Normally, you use trigonometry (sine and cosine) to calculate the <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> coordinates of points along a fixed radius. This draws a perfectly rigid, mathematical circle.</p>
 <p>But what if we make the radius variable? As we calculate the points around the circumference (from 0 to 360 degrees), we map the angle to a 1D Perlin noise lookup. We add or subtract a little bit of radius based on the noise value. </p>
 <p>Because the noise is continuous, the circle doesn't become jagged; it becomes a <strong>Wobbly Circle Generator</strong>. It looks like an amoeba, an ink splat, or a squishy balloon. </p>
 <p>If we take this a step further and add a time variable to our noise lookup (effectively sliding our circular sampling window through a 2D noise landscape), the wobbly circle will appear to breathe, morph, and squirm on the screen like a living microscopic organism.</p>
-<h2 id="advanced-stochastic-methods-controlling-chaos">Advanced Stochastic Methods: Controlling Chaos<a class="headerlink" href="#advanced-stochastic-methods-controlling-chaos" title="Permanent link">&para;</a></h2>
+<h2 id="advanced-stochastic-methods-controlling-chaos">Advanced Stochastic Methods: Controlling Chaos<a class="headerlink" href="#advanced-stochastic-methods-controlling-chaos" title="Permanent link">¶</a></h2>
 <p>"Stochastic" is a complex-sounding word for a simple concept: systems that are randomly determined, but follow statistical probabilities. In generative art, we rarely want pure, unadulterated randomness. We want to <em>direct</em> the randomness. We want to stack the deck in our favor.</p>
-<h3 id="biasing-the-dice-weighted-random-choice">Biasing the Dice: <strong>Weighted Random Choice</strong><a class="headerlink" href="#biasing-the-dice-weighted-random-choice" title="Permanent link">&para;</a></h3>
+<h3 id="biasing-the-dice-weighted-random-choice">Biasing the Dice: <strong>Weighted Random Choice</strong><a class="headerlink" href="#biasing-the-dice-weighted-random-choice" title="Permanent link">¶</a></h3>
 <p>Imagine you are programming a role-playing game (RPG). When a player defeats a monster, they get "loot." You want a 70% chance they get a simple iron sword, a 25% chance they get a steel sword, and a 5% chance they get the legendary flaming sword. </p>
 <p>A standard <code>random()</code> function simply picks a number between 0 and 1, giving all outcomes equal probability. To achieve our RPG loot system, we use a <strong>Weighted Random Choice</strong>.</p>
 <p>We assign a "weight" to every item (Iron: 70, Steel: 25, Legendary: 5). We sum up all the weights (Total: 100). We pick a random number between 0 and the Total. We then iterate through our items, subtracting their weight from our random number until we hit zero or drop below it. Whichever item causes us to hit zero is our selection! </p>
 <p>This allows us to inject extreme rarity and controlled scarcity into our generated worlds. </p>
 <div class="admonition mascot-tip">
 <p class="admonition-title">Palette's Tip</p>
-<p><img alt="Palette tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+<p><img alt="Palette tip" class="mascot-admonition-img" src="../../img/mascot/tip.png">
 Here's a secret for easy balancing: don't use percentages for everything! Just give common items huge whole-number weights (like 1000 for oak trees) and rare items tiny weights (like 2 for magic mushrooms). Sum them up, and your procedural world will instantly feel realistic.</p>
 </div>
-<h3 id="shaping-probability-monte-carlo-selection">Shaping Probability: <strong>Monte Carlo Selection</strong><a class="headerlink" href="#shaping-probability-monte-carlo-selection" title="Permanent link">&para;</a></h3>
+<h3 id="shaping-probability-monte-carlo-selection">Shaping Probability: <strong>Monte Carlo Selection</strong><a class="headerlink" href="#shaping-probability-monte-carlo-selection" title="Permanent link">¶</a></h3>
 <p>Sometimes, we don't have distinct items to choose from; we have a continuous range of numbers, but we want to skew the results. For example, you want to pick a random size for rocks on the ground. You want lots of small pebbles, a few medium rocks, and very rarely, a massive boulder. </p>
 <p>We can achieve this using a broad class of algorithms called <strong>Monte Carlo Selection</strong> (named after the famous casino in Monaco). </p>
 <p>A common Monte Carlo technique is the "accept-reject" method:
@@ -1779,18 +1931,18 @@ Here's a secret for easy balancing: don't use percentages for everything! Just g
 4. If <span class="arithmatex">\(R_2\)</span> is less than a calculated probability curve (e.g., <span class="arithmatex">\(1 - R_1\)</span>), we "accept" <span class="arithmatex">\(R_1\)</span> and use it! 
 5. If it fails the test, we "reject" it, throw it away, and start over at step 1.</p>
 <p>Because a large rock size (say, 0.9) has a very low probability curve (1 - 0.9 = 0.1), it is very hard for the second random number to be smaller than 0.1. Thus, large rocks are frequently rejected, and the final output organically clusters heavily toward the smaller pebble sizes.</p>
-<h3 id="ensuring-fairness-shuffle-array-order">Ensuring Fairness: <strong>Shuffle Array Order</strong><a class="headerlink" href="#ensuring-fairness-shuffle-array-order" title="Permanent link">&para;</a></h3>
+<h3 id="ensuring-fairness-shuffle-array-order">Ensuring Fairness: <strong>Shuffle Array Order</strong><a class="headerlink" href="#ensuring-fairness-shuffle-array-order" title="Permanent link">¶</a></h3>
 <p>When dealing with a deck of cards or a playlist of songs, picking random items with replacement is a bad idea (you might pick the Ace of Spades twice). We need to randomize the order of an existing list without destroying or duplicating any elements. </p>
 <p>The gold standard for this is the Fisher-Yates shuffle algorithm. It allows us to seamlessly <strong>Shuffle Array Order</strong>. 
 The algorithm is elegant and efficient: It loops backward through the array. For each position, it picks a random index from the unshuffled portion of the array and swaps the elements. In just one pass through the data, it guarantees a perfectly fair, mathematically unbiased randomized order every single time. </p>
-<h3 id="simulating-physics-the-brownian-motion-model">Simulating Physics: The <strong>Brownian Motion Model</strong><a class="headerlink" href="#simulating-physics-the-brownian-motion-model" title="Permanent link">&para;</a></h3>
+<h3 id="simulating-physics-the-brownian-motion-model">Simulating Physics: The <strong>Brownian Motion Model</strong><a class="headerlink" href="#simulating-physics-the-brownian-motion-model" title="Permanent link">¶</a></h3>
 <p>If you observe pollen grains suspended in water under a powerful microscope, you'll see them jiggling around erratically. This isn't because the pollen is alive; it's because millions of invisible, microscopic water molecules are constantly slamming into the pollen grain from all directions. </p>
 <p>This erratic, jittery path is called the <strong>Brownian Motion Model</strong> (named after botanist Robert Brown). </p>
 <p>In our code, we can simulate this easily using a random walk. Every frame, we take an object's current <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> position, and we add a tiny, random positive or negative value to both. 
 <code>x += random(-1, 1);</code>
 <code>y += random(-1, 1);</code></p>
 <p>While the movement of a single particle seems like chaotic noise, when you apply the <strong>Brownian Motion Model</strong> to millions of particles, fascinating emergent behaviors appear. The particles diffuse outward from the center, perfectly simulating how a drop of ink slowly spreads and mixes when dropped into a glass of water.</p>
-<h3 id="growing-complexity-stochastic-tree-growth">Growing Complexity: <strong>Stochastic Tree Growth</strong><a class="headerlink" href="#growing-complexity-stochastic-tree-growth" title="Permanent link">&para;</a></h3>
+<h3 id="growing-complexity-stochastic-tree-growth">Growing Complexity: <strong>Stochastic Tree Growth</strong><a class="headerlink" href="#growing-complexity-stochastic-tree-growth" title="Permanent link">¶</a></h3>
 <p>Finally, we can combine our knowledge of structure (algorithms) and chaos (randomness) to simulate biological growth. </p>
 <p>Consider a tree. A tree grows through recursion: a trunk splits into two branches; those branches split into two twigs; those twigs grow leaves. We can easily write a recursive function (like an L-System) to draw this. However, a purely mathematical recursive tree looks stiff, symmetrical, and artificial. It looks like a crystalline antenna, not a living oak. </p>
 <p>To make it live, we implement <strong>Stochastic Tree Growth</strong>. We take our rigid recursive algorithm and inject tiny doses of controlled randomness (stochasticity) at every step.
@@ -1798,8 +1950,9 @@ The algorithm is elegant and efficient: It loops backward through the array. For
 - The length of the new branches isn't always exactly 70% of the parent. We use a Gaussian distribution (bell curve) to make some branches slightly stubby and others reaching and long.
 - We might even use probability to decide if a branch splits into three instead of two, or if it dies off early.</p>
 <p>By allowing randomness to influence the <em>parameters</em> of a structured system, the resulting forms are endlessly unique. They look wind-blown, sun-seeking, and organic.</p>
+<h4 id="diagram-stochastic-l-system-tree">Diagram: Stochastic L-System Tree<a class="headerlink" href="#diagram-stochastic-l-system-tree" title="Permanent link">¶</a></h4>
 <details>
-<summary>MicroSim: Stochastic L-System Tree</summary>
+<summary>MicroSim: Stochastic L-System Tree</summary><summary>MicroSim: Stochastic L-System Tree</summary>
 
 **Goal:** Understand how small amounts of controlled randomness applied to recursive branching logic create highly lifelike, organic structures.
 **Type:** p5.js Interactive Generation
@@ -1813,13 +1966,13 @@ The algorithm is elegant and efficient: It loops backward through the array. For
 **Interaction:** By playing with the variance sliders, the user actively witnesses the transition from cold mathematical geometry into warm, **Stochastic Tree Growth**.
 </details>
 
-<h2 id="conclusion-taming-the-chaos">Conclusion: Taming the Chaos<a class="headerlink" href="#conclusion-taming-the-chaos" title="Permanent link">&para;</a></h2>
+<h2 id="conclusion-taming-the-chaos">Conclusion: Taming the Chaos<a class="headerlink" href="#conclusion-taming-the-chaos" title="Permanent link">¶</a></h2>
 <p>Pure randomness is chaotic and disconnected, like a TV tuned to a dead channel. But the natural world is full of connected randomness: the smooth contours of a <strong>Smooth Noise Landscape</strong>, the swirling currents of a <strong>Vector Field Direction</strong>, and the beautiful, unpredictable branching of <strong>Stochastic Tree Growth</strong>. </p>
 <p>By mastering tools like Perlin noise, Monte Carlo selection, and weighted probabilities, you elevate your code. You transition from simply drawing pixels to simulating the fundamental forces of nature. You learn to tame the chaos, giving it memory, structure, and flow. </p>
 <p>In the next chapters, we will take these organic shapes and generated worlds and begin wrapping them into reusable classes and complex objects!</p>
 <div class="admonition mascot-celebration">
 <p class="admonition-title">Chapter Complete!</p>
-<p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+<p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png">
 Incredible work! You just mastered generating Perlin noise landscapes, directing vector flow fields, and shaping probability with Monte Carlo selection! Your generative worlds are about to look stunning.</p>
 </div>
 
@@ -1847,7 +2000,7 @@ Incredible work! You just mastered generating Perlin noise landscapes, directing
         
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
   Back to top
 </button>
         
@@ -1857,20 +2010,20 @@ Incredible work! You just mastered generating Perlin noise landscapes, directing
   
     
       
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
         
           
           <a href="../09-randomness-and-walks/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 9. Randomness, Gaussian Distributions &amp; Random Walk">
             <div class="md-footer__button md-icon">
               
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
             </div>
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Previous
               </span>
               <div class="md-ellipsis">
-                9. Randomness, Gaussian Distributions & Random Walk
+                9. Randomness, Gaussian Distributions &amp; Random Walk
               </div>
             </div>
           </a>
@@ -1883,12 +2036,12 @@ Incredible work! You just mastered generating Perlin noise landscapes, directing
                 Next
               </span>
               <div class="md-ellipsis">
-                11. Vector Math Fundamentals & Physics Acceleration
+                11. Vector Math Fundamentals &amp; Physics Acceleration
               </div>
             </div>
             <div class="md-footer__button md-icon">
               
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
             </div>
           </a>
         
@@ -1900,7 +2053,7 @@ Incredible work! You just mastered generating Perlin noise landscapes, directing
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+      Copyright © 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
     </div>
   
   
@@ -1921,6 +2074,14 @@ Incredible work! You just mastered generating Perlin noise landscapes, directing
     
       <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
+        <script src="../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
     
-  </body>
-</html>
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

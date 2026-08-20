@@ -1,7 +1,4 @@
-
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
+<!DOCTYPE html><html lang="en" class="no-js"><head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -26,7 +23,7 @@
     
     
       
-        <title>1. Introduction to Creative Coding & Canvas Foundations - The Art of Processing</title>
+        <title>1. Introduction to Creative Coding &amp; Canvas Foundations - The Art of Processing</title>
       
     
     
@@ -47,7 +44,7 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
@@ -56,14 +53,52 @@
     
       <link rel="stylesheet" href="../../css/mascot.css">
     
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
+      
+        <meta property="og:type" content="website">
+      
+        <meta property="og:title" content="1. Introduction to Creative Coding &amp; Canvas Foundations - The Art of Processing">
+      
+        <meta property="og:description" content="Introduces the p5.js canvas environment, the setup() and draw() lifecycle loops, coordinate grids, and render cycles.">
+      
+        <meta property="og:image" content="https://dmccreary.github.io/p5-textbook/assets/images/social/chapters/01-intro-creative-coding/index.png">
+      
+        <meta property="og:image:type" content="image/png">
+      
+        <meta property="og:image:width" content="1200">
+      
+        <meta property="og:image:height" content="630">
+      
+        <meta property="og:url" content="https://dmccreary.github.io/p5-textbook/chapters/01-intro-creative-coding/">
+      
+        <meta name="twitter:card" content="summary_large_image">
+      
+        <meta name="twitter:title" content="1. Introduction to Creative Coding &amp; Canvas Foundations - The Art of Processing">
+      
+        <meta name="twitter:description" content="Introduces the p5.js canvas environment, the setup() and draw() lifecycle loops, coordinate grids, and render cycles.">
+      
+        <meta name="twitter:image" content="https://dmccreary.github.io/p5-textbook/assets/images/social/chapters/01-intro-creative-coding/index.png">
+      
     
-  </head>
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
   
   
     
@@ -99,12 +134,12 @@
     <a href="../.." title="The Art of Processing" class="md-header__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -116,7 +151,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1. Introduction to Creative Coding & Canvas Foundations
+              1. Introduction to Creative Coding &amp; Canvas Foundations
             
           </span>
         </div>
@@ -130,7 +165,7 @@
     
       <label class="md-header__button md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
       </label>
       <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
@@ -139,20 +174,20 @@
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
           <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
             
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
           </a>
         
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
         </button>
       </nav>
       
@@ -177,7 +212,7 @@
         <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -201,7 +236,7 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -213,7 +248,7 @@
     <a href="../.." title="The Art of Processing" class="md-nav__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     The Art of Processing
@@ -223,7 +258,7 @@
       <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -468,7 +503,7 @@
           
   
   <span class="md-ellipsis">
-    1. Introduction to Creative Coding & Canvas Foundations
+    1. Introduction to Creative Coding &amp; Canvas Foundations
   </span>
   
 
@@ -479,7 +514,7 @@
         
   
   <span class="md-ellipsis">
-    1. Introduction to Creative Coding & Canvas Foundations
+    1. Introduction to Creative Coding &amp; Canvas Foundations
   </span>
   
 
@@ -703,7 +738,7 @@
         
   
   <span class="md-ellipsis">
-    2. 2D Primitive Shapes & Custom Geometries
+    2. 2D Primitive Shapes &amp; Custom Geometries
   </span>
   
 
@@ -724,7 +759,7 @@
         
   
   <span class="md-ellipsis">
-    3. Color Theory, Color Modes & Pixel Manipulation
+    3. Color Theory, Color Modes &amp; Pixel Manipulation
   </span>
   
 
@@ -745,7 +780,7 @@
         
   
   <span class="md-ellipsis">
-    4. Variables, Data Types & Scope Fundamentals
+    4. Variables, Data Types &amp; Scope Fundamentals
   </span>
   
 
@@ -766,7 +801,7 @@
         
   
   <span class="md-ellipsis">
-    5. Control Flow, Loops & Array Data Structures
+    5. Control Flow, Loops &amp; Array Data Structures
   </span>
   
 
@@ -787,7 +822,7 @@
         
   
   <span class="md-ellipsis">
-    6. Matrix Transformations & Coordinate Systems
+    6. Matrix Transformations &amp; Coordinate Systems
   </span>
   
 
@@ -808,7 +843,7 @@
         
   
   <span class="md-ellipsis">
-    7. Linear Motion, Trigonometry & Wave Math
+    7. Linear Motion, Trigonometry &amp; Wave Math
   </span>
   
 
@@ -829,7 +864,7 @@
         
   
   <span class="md-ellipsis">
-    8. Polar Coordinates, Oscillation & Easing
+    8. Polar Coordinates, Oscillation &amp; Easing
   </span>
   
 
@@ -850,7 +885,7 @@
         
   
   <span class="md-ellipsis">
-    9. Randomness, Gaussian Distributions & Random Walk
+    9. Randomness, Gaussian Distributions &amp; Random Walk
   </span>
   
 
@@ -871,7 +906,7 @@
         
   
   <span class="md-ellipsis">
-    10. Perlin Noise Landscapes & Vector Flow Fields
+    10. Perlin Noise Landscapes &amp; Vector Flow Fields
   </span>
   
 
@@ -892,7 +927,7 @@
         
   
   <span class="md-ellipsis">
-    11. Vector Math Fundamentals & Physics Acceleration
+    11. Vector Math Fundamentals &amp; Physics Acceleration
   </span>
   
 
@@ -913,7 +948,7 @@
         
   
   <span class="md-ellipsis">
-    12. Particle Systems, Forces & Steering Behaviors
+    12. Particle Systems, Forces &amp; Steering Behaviors
   </span>
   
 
@@ -934,7 +969,7 @@
         
   
   <span class="md-ellipsis">
-    13. Mouse & Keyboard User Event Sensing
+    13. Mouse &amp; Keyboard User Event Sensing
   </span>
   
 
@@ -955,7 +990,7 @@
         
   
   <span class="md-ellipsis">
-    14. Touch Gestures, Mobile Sensors & Interaction
+    14. Touch Gestures, Mobile Sensors &amp; Interaction
   </span>
   
 
@@ -976,7 +1011,7 @@
         
   
   <span class="md-ellipsis">
-    15. DOM Controls, Input Fields & UI Elements
+    15. DOM Controls, Input Fields &amp; UI Elements
   </span>
   
 
@@ -997,7 +1032,7 @@
         
   
   <span class="md-ellipsis">
-    16. CSS Styling, Layouts & Web Page Integration
+    16. CSS Styling, Layouts &amp; Web Page Integration
   </span>
   
 
@@ -1018,7 +1053,7 @@
         
   
   <span class="md-ellipsis">
-    17. Functions, Arrow Expressions & Callbacks
+    17. Functions, Arrow Expressions &amp; Callbacks
   </span>
   
 
@@ -1039,7 +1074,7 @@
         
   
   <span class="md-ellipsis">
-    18. ES6 Classes, Object-Oriented Programming & Async Data
+    18. ES6 Classes, Object-Oriented Programming &amp; Async Data
   </span>
   
 
@@ -1060,7 +1095,7 @@
         
   
   <span class="md-ellipsis">
-    19. 3D WebGL Coordinates & Primitive Geometries
+    19. 3D WebGL Coordinates &amp; Primitive Geometries
   </span>
   
 
@@ -1081,7 +1116,7 @@
         
   
   <span class="md-ellipsis">
-    20. 3D Cameras, Lighting Models, Materials & Shaders
+    20. 3D Cameras, Lighting Models, Materials &amp; Shaders
   </span>
   
 
@@ -1102,7 +1137,7 @@
         
   
   <span class="md-ellipsis">
-    21. Audio Synthesis, Oscillators & Envelopes
+    21. Audio Synthesis, Oscillators &amp; Envelopes
   </span>
   
 
@@ -1123,7 +1158,7 @@
         
   
   <span class="md-ellipsis">
-    22. Microphone Input & FFT Spectral Analysis
+    22. Microphone Input &amp; FFT Spectral Analysis
   </span>
   
 
@@ -1144,7 +1179,7 @@
         
   
   <span class="md-ellipsis">
-    23. Image Processing, Filters & Video Capture
+    23. Image Processing, Filters &amp; Video Capture
   </span>
   
 
@@ -1165,7 +1200,7 @@
         
   
   <span class="md-ellipsis">
-    24. Generative Typography & Vector Font Outlines
+    24. Generative Typography &amp; Vector Font Outlines
   </span>
   
 
@@ -1186,7 +1221,7 @@
         
   
   <span class="md-ellipsis">
-    25. Development Environment, Tools & Pedagogy
+    25. Development Environment, Tools &amp; Pedagogy
   </span>
   
 
@@ -1214,6 +1249,14 @@
       
         
           
+        
+      
+        
+      
+        
+      
+        
+      
         
       
         
@@ -1275,6 +1318,14 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1303,6 +1354,46 @@
   
 
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1355,7 +1446,7 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1573,16 +1664,16 @@
   
     <a href="https://github.com/dmccreary/p5-textbook/blob/main/docs/chapters/01-intro-creative-coding/index.md" title="Edit this page" class="md-content__button md-icon">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
     </a>
   
   
 
 
-<h1 id="introduction-to-creative-coding-canvas-foundations">Introduction to Creative Coding &amp; Canvas Foundations<a class="headerlink" href="#introduction-to-creative-coding-canvas-foundations" title="Permanent link">&para;</a></h1>
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<h1 id="introduction-to-creative-coding-canvas-foundations">Introduction to Creative Coding &amp; Canvas Foundations<a class="headerlink" href="#introduction-to-creative-coding-canvas-foundations" title="Permanent link">¶</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">¶</a></h2>
 <p>Introduces the p5.js canvas environment, the setup() and draw() lifecycle loops, coordinate grids, and render cycles. Students will gain practical hands-on experience by building interactive sketches and visual experiments that demonstrate these concepts.</p>
-<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">¶</a></h2>
 <p>This chapter covers the following 33 concepts from the learning graph:</p>
 <ol>
 <li>Coordinate System</li>
@@ -1619,14 +1710,14 @@
 <li>Target Frame Rate Setting</li>
 <li>Canvas Aspect Ratio</li>
 </ol>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">¶</a></h2>
 <p>This chapter assumes only the prerequisites listed in the <a href="../../course-description/">course description</a>.</p>
-<hr />
+<hr>
 <p>Welcome to the expansive and liberating world of creative coding! If you've ever looked at a blank piece of paper and felt the thrill of infinite possibilities, you already understand the mindset required for this journey. In traditional fine arts, your mediums are charcoal, watercolor, clay, or oil paints. In creative coding, your medium is logic, math, and light. Your brush is the code you write, and your canvas is the digital screen.</p>
 <p>In this chapter, we will establish the foundational mental models needed to bridge visual art and computer programming. We will build your digital studio from the ground up, understand how a computer maps mathematical coordinates to physical pixels on a screen, and learn the essential lifecycle loops that bring static code to animated life. </p>
 <div class="admonition mascot-welcome">
 <p class="admonition-title">Welcome to The Art of Processing!</p>
-<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png">
 Welcome, creators! Have you ever looked at a blank digital screen and wished you could just paint with pure logic? I'm Palette, and in this very first chapter, we are going to build your digital studio from the ground up to bridge visual art with computer programming. Time to color outside the loops!</p>
 <p>I'll be popping into the margins all the way through this book, but I do not show up randomly. I have exactly <strong>six jobs</strong>, and you'll learn to recognize me by which one I'm doing:</p>
 <ol>
@@ -1638,7 +1729,7 @@ Welcome, creators! Have you ever looked at a blank digital screen and wished you
 <li><strong>Celebrate with you</strong> at the end of each chapter when you've earned it!</li>
 </ol>
 </div>
-<h2 id="building-the-artists-studio">Building the Artist's Studio<a class="headerlink" href="#building-the-artists-studio" title="Permanent link">&para;</a></h2>
+<h2 id="building-the-artists-studio">Building the Artist's Studio<a class="headerlink" href="#building-the-artists-studio" title="Permanent link">¶</a></h2>
 <p>Before a painter can begin a masterpiece, they must prepare their studio. They set up the easel, stretch the canvas, and lay out their palettes. In web-based creative coding, our studio is the web browser, and our easel is an HTML document. </p>
 <p>However, web browsers natively only understand standard JavaScript, which is designed for building forms, handling buttons, and manipulating text. To draw graphics easily, we need a specialized toolkit. This is where the <strong>p5.js Library Import</strong> comes in. A code library is a collection of pre-written functions that extends the capabilities of the language. The p5.js library was created by artists, for artists, specifically to make drawing and animating on the web intuitive.</p>
 <p>To bring this library into our studio, we use a <strong>Script Inclusion Tag</strong> in our HTML file. Think of this tag as a delivery truck bringing supplies to your door. Rather than downloading the entire p5.js library file to our local computer, we use a technique called <strong>CDN Script Loading</strong>. CDN stands for Content Delivery Network. It is a system of globally distributed servers. When you use a CDN, your browser fetches the p5.js library from the server closest to you, making the loading process incredibly fast and efficient.</p>
@@ -1646,15 +1737,15 @@ Welcome, creators! Have you ever looked at a blank digital screen and wished you
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="cm">&lt;!-- Script Inclusion Tag using CDN Script Loading --&gt;</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="cm">&lt;!-- This is where your actual sketch file is loaded --&gt;</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;sketch.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"sketch.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </span></code></pre></div>
-<h3 id="the-grammar-of-code">The Grammar of Code<a class="headerlink" href="#the-grammar-of-code" title="Permanent link">&para;</a></h3>
+<h3 id="the-grammar-of-code">The Grammar of Code<a class="headerlink" href="#the-grammar-of-code" title="Permanent link">¶</a></h3>
 <p>When writing instructions for the computer, we must follow strict grammatical rules, known as syntax. In English, we use periods to end sentences. In JavaScript, we use the <strong>Statement Semicolon Syntax</strong>. Placing a semicolon (<code>;</code>) at the end of a command tells the computer, "I have finished this instruction; please move on to the next one."</p>
 <p>While modern JavaScript engines are sometimes forgiving and will try to guess where your semicolons should go (a process called Automatic Semicolon Insertion), relying on the computer's guesswork is a bad habit. As an artist, you want absolute control over your medium. A missing semicolon in a complex mathematical formula can cause bizarre, hard-to-track errors.</p>
 <p>Equally important to the code the computer <em>reads</em> is the code the computer <em>ignores</em>. We use <strong>Code Comments Syntax</strong> to leave notes for ourselves and our collaborators. Comments are an essential storytelling tool in programming. They explain the <em>why</em> behind the <em>what</em>. In JavaScript, any text following two forward slashes (<code>//</code>) on a line is completely ignored by the execution engine.</p>
@@ -1663,20 +1754,21 @@ Welcome, creators! Have you ever looked at a blank digital screen and wished you
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="kd">let</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span><span class="w"> </span><span class="c1">// The semicolon ends the statement.</span>
 </span></code></pre></div>
-<h2 id="the-digital-canvas-and-the-woven-screen">The Digital Canvas and the Woven Screen<a class="headerlink" href="#the-digital-canvas-and-the-woven-screen" title="Permanent link">&para;</a></h2>
+<h2 id="the-digital-canvas-and-the-woven-screen">The Digital Canvas and the Woven Screen<a class="headerlink" href="#the-digital-canvas-and-the-woven-screen" title="Permanent link">¶</a></h2>
 <p>Traditional artists paint on woven linen or cotton canvas. Creative coders paint on a <strong>Canvas Element</strong>, a specialized digital drawing area embedded directly inside a webpage. </p>
 <p>If you look very closely at a digital screen with a magnifying glass, you won't see continuous brush strokes. Instead, you will see a <strong>Pixel Grid</strong>—a dense matrix of tiny, discrete light-emitting squares (pixels). Every drawing, photograph, and animation on a computer is an optical illusion created by turning millions of these individual squares on and off at varying brightness levels.</p>
 <p>To command this grid, we must be able to specify exact locations. We do this using a <strong>Coordinate System</strong>. </p>
 <p>If you remember graphing from high school algebra, you likely used a Cartesian coordinate system where the origin <code>(0, 0)</code> is in the center, the x-axis goes right, and the y-axis goes <em>up</em>. </p>
 <p>Computer graphics work differently. Because early television and computer monitors (CRT displays) rendered images by shooting an electron beam across the screen starting from the top-left corner and scanning left-to-right, top-to-bottom, the digital coordinate system was designed to match this hardware reality.</p>
 <p>In p5.js, the origin <code>(0, 0)</code> is located at the <strong>top-left corner</strong> of the canvas. The x-axis extends to the right (positive x values), and critically, the y-axis extends <strong>downward</strong> (positive y values).</p>
-<h4 id="diagram-coordinate-system-explorer">Diagram: Coordinate System Explorer<a class="headerlink" href="#diagram-coordinate-system-explorer" title="Permanent link">&para;</a></h4>
+<h4 id="diagram-coordinate-system-explorer">Diagram: Coordinate System Explorer<a class="headerlink" href="#diagram-coordinate-system-explorer" title="Permanent link">¶</a></h4>
 <details>
 <summary>Coordinate System Explorer</summary>
-<p>Type: MicroSim
-<strong>sim-id:</strong> coordinate-system-explorer<br/>
-<strong>Library:</strong> p5.js<br/>
-<strong>Status:</strong> Specified</p>
+<p></p><summary>Coordinate System Explorer</summary>
+Type: MicroSim
+<strong>sim-id:</strong> coordinate-system-explorer<br>
+<strong>Library:</strong> p5.js<br>
+<strong>Status:</strong> Specified<p></p>
 <p><strong>Learning Objective:</strong> Understanding (Students will interactively explore how (x, y) coordinates map to the top-left origin canvas).</p>
 <p><strong>Visual Elements:</strong>
 - A large grid representing the p5.js canvas.
@@ -1690,12 +1782,12 @@ Welcome, creators! Have you ever looked at a blank digital screen and wished you
 - The grid features horizontal and vertical sliders to resize the canvas dynamically, demonstrating how <code>width</code> and <code>height</code> boundary limits shift.</p>
 <p>Implementation: p5.js canvas with <code>mouseDragged</code> events to update the coordinate display and <code>text()</code> calls to render the math.</p>
 </details>
-<h3 id="dimension-and-proportion">Dimension and Proportion<a class="headerlink" href="#dimension-and-proportion" title="Permanent link">&para;</a></h3>
+<h3 id="dimension-and-proportion">Dimension and Proportion<a class="headerlink" href="#dimension-and-proportion" title="Permanent link">¶</a></h3>
 <p>Before we can paint, we must stretch the canvas to a specific size. The canvas has an exact horizontal span measured in pixels, called the <strong>Canvas Width</strong>, and a vertical span, called the <strong>Canvas Height</strong>. </p>
 <p>The relationship between these two measurements is known as the <strong>Canvas Aspect Ratio</strong>. Understanding aspect ratios is vital for visual composition. A 1:1 aspect ratio produces a perfect square (popular in generative art for Instagram). A 16:9 ratio produces a widescreen cinematic rectangle. A 9:16 ratio is tall and vertical, ideal for smartphone screens.</p>
 <p>To physically create this drawing space in memory, we invoke the <strong>Create Canvas Function</strong> (<code>createCanvas()</code>), passing in the desired width and height.</p>
 <p>Immediately after creating the canvas, we typically want to prime it with a base layer of paint. We do this using the <strong>Background Color Function</strong> (<code>background()</code>). Calling <code>background(200)</code> will fill the entire pixel grid with a light gray color, effectively erasing anything that was previously there.</p>
-<h2 id="the-lifecycle-preload-setup-and-draw">The Lifecycle: Preload, Setup, and Draw<a class="headerlink" href="#the-lifecycle-preload-setup-and-draw" title="Permanent link">&para;</a></h2>
+<h2 id="the-lifecycle-preload-setup-and-draw">The Lifecycle: Preload, Setup, and Draw<a class="headerlink" href="#the-lifecycle-preload-setup-and-draw" title="Permanent link">¶</a></h2>
 <p>Think of a p5.js program as a theatrical production. A successful play requires preparation before the audience arrives, an opening sequence, and finally, the live performance. In p5.js, this lifecycle is managed by three core functions: <code>preload()</code>, <code>setup()</code>, and <code>draw()</code>.</p>
 <p>The <strong>Preload Function</strong> (<code>preload()</code>) is the equivalent of building the sets and gathering the props before the theater doors open. If your artwork relies on large external files—like a high-resolution photograph, a custom typography font file, or a massive audio track—the browser needs time to download them over the internet. </p>
 <p>If you try to draw an image before it has fully downloaded, the program will crash. The <code>preload()</code> function solves this. It acts as a strict gatekeeper: the program will absolutely halt and wait until every file requested inside <code>preload()</code> is 100% loaded into memory before allowing the rest of the program to begin.</p>
@@ -1704,7 +1796,7 @@ Welcome, creators! Have you ever looked at a blank digital screen and wished you
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1">// The Preload Function runs first and waits for completion</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="kd">function</span><span class="w"> </span><span class="nx">preload</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nx">myFont</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">loadFont</span><span class="p">(</span><span class="s1">&#39;assets/inconsolata.otf&#39;</span><span class="p">);</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nx">myFont</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">loadFont</span><span class="p">(</span><span class="s1">'assets/inconsolata.otf'</span><span class="p">);</span>
 </span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">}</span>
 </span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
 </span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1">// The Setup Function runs once</span>
@@ -1728,7 +1820,7 @@ Welcome, creators! Have you ever looked at a blank digital screen and wished you
 </span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">  </span><span class="nx">circleX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">circleX</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span><span class="w"> </span>
 </span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="p">}</span>
 </span></code></pre></div>
-<h2 id="the-engine-of-time-frame-rates-and-deltas">The Engine of Time: Frame Rates and Deltas<a class="headerlink" href="#the-engine-of-time-frame-rates-and-deltas" title="Permanent link">&para;</a></h2>
+<h2 id="the-engine-of-time-frame-rates-and-deltas">The Engine of Time: Frame Rates and Deltas<a class="headerlink" href="#the-engine-of-time-frame-rates-and-deltas" title="Permanent link">¶</a></h2>
 <p>The illusion of motion relies heavily on the speed at which the Render Cycle Loop executes. This speed is measured by the <strong>Frame Rate</strong>, which is expressed in frames per second (FPS). </p>
 <p>Historically, cinematic film runs at 24 FPS, television at 30 FPS, and modern fluid video games and interactive graphics target 60 FPS. By default, p5.js aggressively attempts to run your <code>draw()</code> loop 60 times every single second. </p>
 <p>You can artificially limit this speed using the <strong>Target Frame Rate Setting</strong> (<code>frameRate(fps)</code>). For example, calling <code>frameRate(10)</code> inside your <code>setup()</code> function will force the sketch to intentionally slow down, creating a choppy, stop-motion aesthetic.</p>
@@ -1736,13 +1828,14 @@ Welcome, creators! Have you ever looked at a blank digital screen and wished you
 <p>However, relying solely on <code>frameCount</code> to dictate motion can be dangerous if you are building complex simulations or games.</p>
 <p>Imagine you write code that moves a racecar forward by 5 pixels every frame. On your powerful brand-new laptop, the sketch easily hits 60 FPS, meaning the car moves 300 pixels per second (5 * 60). But what if your user opens the sketch on an old, struggling five-year-old smartphone? The phone might only be able to calculate 30 frames per second. On that phone, the car will only move 150 pixels per second. The simulation is broken; time is moving at half speed!</p>
 <p>To solve this, professional developers use <strong>Delta Time Tracking</strong>. The system variable <code>deltaTime</code> records the precise number of milliseconds that have elapsed since the <em>previous</em> frame was rendered. By multiplying your car's speed by <code>deltaTime</code>, the movement becomes time-dependent, rather than frame-dependent. If the frame rate drops, <code>deltaTime</code> goes up, and the car takes a larger mathematical "step" to compensate, ensuring it crosses the screen in the exact same amount of physical time regardless of device horsepower.</p>
-<h4 id="diagram-render-cycle-and-frame-rate-monitor">Diagram: Render Cycle and Frame Rate Monitor<a class="headerlink" href="#diagram-render-cycle-and-frame-rate-monitor" title="Permanent link">&para;</a></h4>
+<h4 id="diagram-render-cycle-and-frame-rate-monitor">Diagram: Render Cycle and Frame Rate Monitor<a class="headerlink" href="#diagram-render-cycle-and-frame-rate-monitor" title="Permanent link">¶</a></h4>
 <details>
 <summary>Render Cycle and Frame Rate Monitor</summary>
-<p>Type: MicroSim
-<strong>sim-id:</strong> frame-rate-monitor<br/>
-<strong>Library:</strong> p5.js<br/>
-<strong>Status:</strong> Specified</p>
+<p></p><summary>Render Cycle and Frame Rate Monitor</summary>
+Type: MicroSim
+<strong>sim-id:</strong> frame-rate-monitor<br>
+<strong>Library:</strong> p5.js<br>
+<strong>Status:</strong> Specified<p></p>
 <p><strong>Learning Objective:</strong> Analyzing (Students will observe the relationship between the target frame rate, the actual delta time, and the resulting visual smoothness).</p>
 <p><strong>Visual Elements:</strong>
 - Two identical moving objects (like cars) racing across the screen.
@@ -1757,19 +1850,19 @@ Welcome, creators! Have you ever looked at a blank digital screen and wished you
 - The chart updates dynamically to show the inverse relationship: when the frame rate plummets, <code>deltaTime</code> spikes.</p>
 <p>Implementation: p5.js canvas utilizing DOM sliders. The chart can be drawn using <code>beginShape()</code> and <code>endShape()</code> tracking a history array of frame rates.</p>
 </details>
-<h2 id="pausing-the-performance">Pausing the Performance<a class="headerlink" href="#pausing-the-performance" title="Permanent link">&para;</a></h2>
+<h2 id="pausing-the-performance">Pausing the Performance<a class="headerlink" href="#pausing-the-performance" title="Permanent link">¶</a></h2>
 <p>The Render Cycle Loop is an incredible engine for animation, but it is also a resource-hungry beast. Running a <code>draw()</code> loop 60 times a second drains laptop batteries and heats up smartphone processors. </p>
 <p>If you are creating a static piece of generative art—perhaps a complex geometric mandala that never moves or animates—running the loop is a massive waste of energy. The computer is erasing and redrawing the exact same mandala 60 times a second.</p>
 <p>You can halt the loop entirely by calling the <strong>No Loop Function</strong> (<code>noLoop()</code>). Typically placed at the bottom of <code>setup()</code>, <code>noLoop()</code> tells the engine to run the <code>draw()</code> function exactly once to paint the screen, and then stop forever. The sketch enters a frozen, static state.</p>
 <div class="admonition mascot-tip">
 <p class="admonition-title">Static Art Optimization</p>
-<p><img alt="Palette tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+<p><img alt="Palette tip" class="mascot-admonition-img" src="../../img/mascot/tip.png">
 Here's a secret to keeping your users happy: if your digital painting doesn't actually animate, always drop <code>noLoop();</code> into your <code>setup()</code> function! It forcefully stops the engine from redrawing a static image 60 times a second, instantly saving battery life and keeping laptop fans silent.</p>
 </div>
 <p>But what if you want to generate a new static mandala every time the user clicks the mouse? You don't want continuous animation, but you do need to update the screen occasionally. </p>
 <p>In this scenario, you can trigger a single, isolated execution of the <code>draw()</code> loop by calling the <strong>Redraw Function</strong> (<code>redraw()</code>). Calling <code>redraw()</code> inside a mouse click event will paint exactly one new frame and then immediately stop again.</p>
 <p>Finally, if you have halted the loop with <code>noLoop()</code>, but an event occurs that requires continuous animation to resume (perhaps the user clicks a "Play" button), you can restart the infinite cycle by calling the <strong>Loop Control Function</strong> (<code>loop()</code>).</p>
-<h2 id="adapting-to-the-environment-responsiveness">Adapting to the Environment: Responsiveness<a class="headerlink" href="#adapting-to-the-environment-responsiveness" title="Permanent link">&para;</a></h2>
+<h2 id="adapting-to-the-environment-responsiveness">Adapting to the Environment: Responsiveness<a class="headerlink" href="#adapting-to-the-environment-responsiveness" title="Permanent link">¶</a></h2>
 <p>A traditional oil painter controls the exact dimensions of their physical canvas, and they know the gallery wall it will hang on. A web-based creative coder has no such luxury. Your artwork might be viewed on a massive 4K ultra-wide monitor, a tiny cracked smartphone screen held in portrait orientation, or a tablet rotating wildly between the two. </p>
 <p>A robust sketch must act like a liquid, adapting fluidly to its container. </p>
 <p>The primary mechanism for this adaptation is the <strong>Window Resized Event</strong> (<code>windowResized()</code>). This is a special function that p5.js automatically listens for. The instant the user clicks and drags the corner of their web browser to change its size, or rotates their phone, the <code>windowResized()</code> function fires.</p>
@@ -1781,35 +1874,35 @@ Here's a secret to keeping your users happy: if your digital painting doesn't ac
 </span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>Sometimes, you don't want your artwork constrained by the browser's menus, address bars, and tabs. You want total immersion. By calling the <strong>Full Screen Mode</strong> function (<code>fullscreen(true)</code>), you can command the browser to expand the sketch to take over the user's entire physical monitor. (Note: for security reasons, browsers require this command to be triggered by an explicit user action, like a mouse click or key press, to prevent websites from hijacking the screen unexpectedly).</p>
-<h3 id="the-density-problem-retina-displays">The Density Problem: Retina Displays<a class="headerlink" href="#the-density-problem-retina-displays" title="Permanent link">&para;</a></h3>
+<h3 id="the-density-problem-retina-displays">The Density Problem: Retina Displays<a class="headerlink" href="#the-density-problem-retina-displays" title="Permanent link">¶</a></h3>
 <p>Adapting to the <em>size</em> of the screen is only half the battle. Modern hardware has introduced a new complication: screen sharpness. </p>
 <p>Older monitors had a 1-to-1 relationship: one pixel in your software code equaled one physical LED light on the hardware screen. </p>
 <p>Then came "Retina" and high-density displays. To make text and images look incredibly crisp, hardware manufacturers packed four (or even nine) physical LED lights into the physical space that used to hold just one. This ratio between software pixels and hardware pixels is called the <strong>Display Density</strong>.</p>
 <p>By default, p5.js automatically detects high-density displays and secretly scales up your canvas behind the scenes so that your graphics look razor-sharp. </p>
 <p>However, this crispness comes at a massive computational cost. If you create an 800x600 canvas on a standard monitor, the computer calculates 480,000 pixels per frame. If you open that exact same sketch on a high-density Retina screen with a density of 2, the computer is secretly calculating a 1600x1200 canvas—nearly 2 million pixels per frame!</p>
 <p>If you are writing an intensive 3D simulation with thousands of particles, the high-density display might cause your sketch to lag horribly. As the artist, you can intervene. You can use <strong>Pixel Density Control</strong> (<code>pixelDensity(1)</code>) inside your <code>setup()</code> function. This forces the canvas to ignore the high-density hardware and render at standard resolution. Your artwork might look slightly softer or "pixelated," but it will run blazing fast, prioritizing fluid motion over razor-sharp edges.</p>
-<h2 id="modes-of-execution-and-the-developers-flashlight">Modes of Execution and the Developer's Flashlight<a class="headerlink" href="#modes-of-execution-and-the-developers-flashlight" title="Permanent link">&para;</a></h2>
+<h2 id="modes-of-execution-and-the-developers-flashlight">Modes of Execution and the Developer's Flashlight<a class="headerlink" href="#modes-of-execution-and-the-developers-flashlight" title="Permanent link">¶</a></h2>
 <p>As you learn p5.js throughout this book, we will write our code using <strong>Global Mode Execution</strong>. </p>
 <p>In Global Mode, every tool in the p5.js library is universally available. You can type <code>circle()</code> or <code>background()</code> anywhere in your file, and the computer knows exactly what you mean. It is the easiest, most frictionless way to learn creative coding. It is like having a private art studio where all the paints are laid out on a central table, accessible from anywhere in the room.</p>
 <p>However, the real world of professional web development is rarely so isolated. Eventually, you may want to embed your beautiful generative art piece into a complex, massive web application built with frameworks like React, Vue, or Angular. </p>
 <p>If you use Global Mode in a massive web app, your private studio suddenly merges with everyone else's. Your variable named <code>score</code> might accidentally overwrite the website's shopping cart <code>score</code> variable. Chaos ensues.</p>
 <p>To solve this, professional developers wrap their sketches in <strong>Instance Mode Execution</strong>. In Instance Mode, the entire sketch is bundled tightly inside a <strong>p5 Constructor Function</strong> (<code>new p5()</code>). This creates a protective bubble around your code. To draw a circle, you can no longer just say <code>circle()</code>; you must ask the specific instance of the library, often written as <code>p.circle()</code>. Instance Mode is like sharing a massive communal warehouse studio: you keep your paints strictly on your own desk so they don't spill onto your neighbor's work.</p>
-<h3 id="finding-the-truth-with-the-console">Finding the Truth with the Console<a class="headerlink" href="#finding-the-truth-with-the-console" title="Permanent link">&para;</a></h3>
+<h3 id="finding-the-truth-with-the-console">Finding the Truth with the Console<a class="headerlink" href="#finding-the-truth-with-the-console" title="Permanent link">¶</a></h3>
 <p>Regardless of whether you use Global or Instance mode, you will eventually write code that doesn't do what you expect. A shape will vanish off-screen, a color will render as black, or a loop will freeze the browser. </p>
 <p>When a sketch is failing visually, beginners often try to guess the problem, randomly changing numbers and hoping the visual output fixes itself. This is a path to madness. </p>
 <p>Professional coders rely on data. To peer inside the invisible brain of the program, we use <strong>Console Log Debugging</strong>. </p>
 <p>Every web browser has a hidden "Developer Tools" panel featuring a text console. By writing <code>console.log(myVariable)</code> in your code, you command the computer to print the exact, real-time mathematical value of that variable to this hidden text console. </p>
 <div class="admonition mascot-thinking">
 <p class="admonition-title">The Invisible Canvas</p>
-<p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+<p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png">
 Think about it like this: the computer's memory is a vast, invisible canvas, and your screen is just a tiny window looking at one small piece of it. If your circle disappears, is it gone, or did a math error just push it miles off-screen? The console is your flashlight for looking into the dark, invisible spaces where the screen can't see!</p>
 </div>
-<h2 id="summary_1">Summary<a class="headerlink" href="#summary_1" title="Permanent link">&para;</a></h2>
+<h2 id="summary_1">Summary<a class="headerlink" href="#summary_1" title="Permanent link">¶</a></h2>
 <p>We have mapped the foundational architecture of a creative coding environment. You now understand the top-left coordinate system, the execution pipeline from <code>preload()</code> to <code>setup()</code> to the continuous <code>draw()</code> render cycle, and the critical distinction between frame rates and real-time delta tracking. You also possess the tools to make your canvas responsive and debug logic errors using the console. </p>
 <p>In the next chapter, we will take these structural concepts and begin rendering geometry to the screen using 2D primitive shapes.</p>
 <div class="admonition mascot-celebration">
 <p class="admonition-title">Canvas Mastered!</p>
-<p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+<p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png">
 Incredible work, creators! You just mastered the top-left coordinate system and successfully wired up the <code>preload()</code>, <code>setup()</code>, and <code>draw()</code> lifecycle loops. Your digital studio is officially open for business!</p>
 </div>
 
@@ -1837,7 +1930,7 @@ Incredible work, creators! You just mastered the top-left coordinate system and 
         
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
   Back to top
 </button>
         
@@ -1847,13 +1940,13 @@ Incredible work, creators! You just mastered the top-left coordinate system and 
   
     
       
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
         
           
           <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: List of Chapters">
             <div class="md-footer__button md-icon">
               
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
             </div>
             <div class="md-footer__title">
               <span class="md-footer__direction">
@@ -1873,12 +1966,12 @@ Incredible work, creators! You just mastered the top-left coordinate system and 
                 Next
               </span>
               <div class="md-ellipsis">
-                2. 2D Primitive Shapes & Custom Geometries
+                2. 2D Primitive Shapes &amp; Custom Geometries
               </div>
             </div>
             <div class="md-footer__button md-icon">
               
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
             </div>
           </a>
         
@@ -1890,7 +1983,7 @@ Incredible work, creators! You just mastered the top-left coordinate system and 
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+      Copyright © 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
     </div>
   
   
@@ -1911,6 +2004,14 @@ Incredible work, creators! You just mastered the top-left coordinate system and 
     
       <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
+        <script src="../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
     
-  </body>
-</html>
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

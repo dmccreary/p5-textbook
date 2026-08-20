@@ -1,7 +1,4 @@
-
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
+<!DOCTYPE html><html lang="en" class="no-js"><head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -26,7 +23,7 @@
     
     
       
-        <title>2. 2D Primitive Shapes & Custom Geometries - The Art of Processing</title>
+        <title>2. 2D Primitive Shapes &amp; Custom Geometries - The Art of Processing</title>
       
     
     
@@ -47,7 +44,7 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
@@ -56,14 +53,52 @@
     
       <link rel="stylesheet" href="../../css/mascot.css">
     
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
+      
+        <meta property="og:type" content="website">
+      
+        <meta property="og:title" content="2. 2D Primitive Shapes &amp; Custom Geometries - The Art of Processing">
+      
+        <meta property="og:description" content="Covers 2D drawing primitives, stroke/fill settings, vertex shapes, and Bézier curves.">
+      
+        <meta property="og:image" content="https://dmccreary.github.io/p5-textbook/assets/images/social/chapters/02-2d-primitive-shapes/index.png">
+      
+        <meta property="og:image:type" content="image/png">
+      
+        <meta property="og:image:width" content="1200">
+      
+        <meta property="og:image:height" content="630">
+      
+        <meta property="og:url" content="https://dmccreary.github.io/p5-textbook/chapters/02-2d-primitive-shapes/">
+      
+        <meta name="twitter:card" content="summary_large_image">
+      
+        <meta name="twitter:title" content="2. 2D Primitive Shapes &amp; Custom Geometries - The Art of Processing">
+      
+        <meta name="twitter:description" content="Covers 2D drawing primitives, stroke/fill settings, vertex shapes, and Bézier curves.">
+      
+        <meta name="twitter:image" content="https://dmccreary.github.io/p5-textbook/assets/images/social/chapters/02-2d-primitive-shapes/index.png">
+      
     
-  </head>
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
   
   
     
@@ -99,12 +134,12 @@
     <a href="../.." title="The Art of Processing" class="md-header__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -116,7 +151,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2. 2D Primitive Shapes & Custom Geometries
+              2. 2D Primitive Shapes &amp; Custom Geometries
             
           </span>
         </div>
@@ -130,7 +165,7 @@
     
       <label class="md-header__button md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
       </label>
       <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
@@ -139,20 +174,20 @@
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
           <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
             
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
           </a>
         
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
         </button>
       </nav>
       
@@ -177,7 +212,7 @@
         <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -201,7 +236,7 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -213,7 +248,7 @@
     <a href="../.." title="The Art of Processing" class="md-nav__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     The Art of Processing
@@ -223,7 +258,7 @@
       <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -459,7 +494,7 @@
         
   
   <span class="md-ellipsis">
-    1. Introduction to Creative Coding & Canvas Foundations
+    1. Introduction to Creative Coding &amp; Canvas Foundations
   </span>
   
 
@@ -489,7 +524,7 @@
           
   
   <span class="md-ellipsis">
-    2. 2D Primitive Shapes & Custom Geometries
+    2. 2D Primitive Shapes &amp; Custom Geometries
   </span>
   
 
@@ -500,7 +535,7 @@
         
   
   <span class="md-ellipsis">
-    2. 2D Primitive Shapes & Custom Geometries
+    2. 2D Primitive Shapes &amp; Custom Geometries
   </span>
   
 
@@ -617,9 +652,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#diagram-angle-explorer" class="md-nav__link">
+  <a href="#diagram-arc-and-angle-explorer" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Angle Explorer
+      Diagram: Arc and Angle Explorer
     </span>
   </a>
   
@@ -739,7 +774,7 @@
         
   
   <span class="md-ellipsis">
-    3. Color Theory, Color Modes & Pixel Manipulation
+    3. Color Theory, Color Modes &amp; Pixel Manipulation
   </span>
   
 
@@ -760,7 +795,7 @@
         
   
   <span class="md-ellipsis">
-    4. Variables, Data Types & Scope Fundamentals
+    4. Variables, Data Types &amp; Scope Fundamentals
   </span>
   
 
@@ -781,7 +816,7 @@
         
   
   <span class="md-ellipsis">
-    5. Control Flow, Loops & Array Data Structures
+    5. Control Flow, Loops &amp; Array Data Structures
   </span>
   
 
@@ -802,7 +837,7 @@
         
   
   <span class="md-ellipsis">
-    6. Matrix Transformations & Coordinate Systems
+    6. Matrix Transformations &amp; Coordinate Systems
   </span>
   
 
@@ -823,7 +858,7 @@
         
   
   <span class="md-ellipsis">
-    7. Linear Motion, Trigonometry & Wave Math
+    7. Linear Motion, Trigonometry &amp; Wave Math
   </span>
   
 
@@ -844,7 +879,7 @@
         
   
   <span class="md-ellipsis">
-    8. Polar Coordinates, Oscillation & Easing
+    8. Polar Coordinates, Oscillation &amp; Easing
   </span>
   
 
@@ -865,7 +900,7 @@
         
   
   <span class="md-ellipsis">
-    9. Randomness, Gaussian Distributions & Random Walk
+    9. Randomness, Gaussian Distributions &amp; Random Walk
   </span>
   
 
@@ -886,7 +921,7 @@
         
   
   <span class="md-ellipsis">
-    10. Perlin Noise Landscapes & Vector Flow Fields
+    10. Perlin Noise Landscapes &amp; Vector Flow Fields
   </span>
   
 
@@ -907,7 +942,7 @@
         
   
   <span class="md-ellipsis">
-    11. Vector Math Fundamentals & Physics Acceleration
+    11. Vector Math Fundamentals &amp; Physics Acceleration
   </span>
   
 
@@ -928,7 +963,7 @@
         
   
   <span class="md-ellipsis">
-    12. Particle Systems, Forces & Steering Behaviors
+    12. Particle Systems, Forces &amp; Steering Behaviors
   </span>
   
 
@@ -949,7 +984,7 @@
         
   
   <span class="md-ellipsis">
-    13. Mouse & Keyboard User Event Sensing
+    13. Mouse &amp; Keyboard User Event Sensing
   </span>
   
 
@@ -970,7 +1005,7 @@
         
   
   <span class="md-ellipsis">
-    14. Touch Gestures, Mobile Sensors & Interaction
+    14. Touch Gestures, Mobile Sensors &amp; Interaction
   </span>
   
 
@@ -991,7 +1026,7 @@
         
   
   <span class="md-ellipsis">
-    15. DOM Controls, Input Fields & UI Elements
+    15. DOM Controls, Input Fields &amp; UI Elements
   </span>
   
 
@@ -1012,7 +1047,7 @@
         
   
   <span class="md-ellipsis">
-    16. CSS Styling, Layouts & Web Page Integration
+    16. CSS Styling, Layouts &amp; Web Page Integration
   </span>
   
 
@@ -1033,7 +1068,7 @@
         
   
   <span class="md-ellipsis">
-    17. Functions, Arrow Expressions & Callbacks
+    17. Functions, Arrow Expressions &amp; Callbacks
   </span>
   
 
@@ -1054,7 +1089,7 @@
         
   
   <span class="md-ellipsis">
-    18. ES6 Classes, Object-Oriented Programming & Async Data
+    18. ES6 Classes, Object-Oriented Programming &amp; Async Data
   </span>
   
 
@@ -1075,7 +1110,7 @@
         
   
   <span class="md-ellipsis">
-    19. 3D WebGL Coordinates & Primitive Geometries
+    19. 3D WebGL Coordinates &amp; Primitive Geometries
   </span>
   
 
@@ -1096,7 +1131,7 @@
         
   
   <span class="md-ellipsis">
-    20. 3D Cameras, Lighting Models, Materials & Shaders
+    20. 3D Cameras, Lighting Models, Materials &amp; Shaders
   </span>
   
 
@@ -1117,7 +1152,7 @@
         
   
   <span class="md-ellipsis">
-    21. Audio Synthesis, Oscillators & Envelopes
+    21. Audio Synthesis, Oscillators &amp; Envelopes
   </span>
   
 
@@ -1138,7 +1173,7 @@
         
   
   <span class="md-ellipsis">
-    22. Microphone Input & FFT Spectral Analysis
+    22. Microphone Input &amp; FFT Spectral Analysis
   </span>
   
 
@@ -1159,7 +1194,7 @@
         
   
   <span class="md-ellipsis">
-    23. Image Processing, Filters & Video Capture
+    23. Image Processing, Filters &amp; Video Capture
   </span>
   
 
@@ -1180,7 +1215,7 @@
         
   
   <span class="md-ellipsis">
-    24. Generative Typography & Vector Font Outlines
+    24. Generative Typography &amp; Vector Font Outlines
   </span>
   
 
@@ -1201,7 +1236,7 @@
         
   
   <span class="md-ellipsis">
-    25. Development Environment, Tools & Pedagogy
+    25. Development Environment, Tools &amp; Pedagogy
   </span>
   
 
@@ -1229,6 +1264,14 @@
       
         
           
+        
+      
+        
+      
+        
+      
+        
+      
         
       
         
@@ -1290,6 +1333,14 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1318,6 +1369,46 @@
   
 
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1370,7 +1461,7 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1484,9 +1575,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#diagram-angle-explorer" class="md-nav__link">
+  <a href="#diagram-arc-and-angle-explorer" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Angle Explorer
+      Diagram: Arc and Angle Explorer
     </span>
   </a>
   
@@ -1603,16 +1694,16 @@
   
     <a href="https://github.com/dmccreary/p5-textbook/blob/main/docs/chapters/02-2d-primitive-shapes/index.md" title="Edit this page" class="md-content__button md-icon">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
     </a>
   
   
 
 
-<h1 id="2d-primitive-shapes-custom-geometries">2D Primitive Shapes &amp; Custom Geometries<a class="headerlink" href="#2d-primitive-shapes-custom-geometries" title="Permanent link">&para;</a></h1>
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<h1 id="2d-primitive-shapes-custom-geometries">2D Primitive Shapes &amp; Custom Geometries<a class="headerlink" href="#2d-primitive-shapes-custom-geometries" title="Permanent link">¶</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">¶</a></h2>
 <p>Covers 2D drawing primitives (points, lines, rectangles, ellipses, arcs), stroke/fill settings, vertex shapes, and Bézier curves. Students will gain practical hands-on experience by building interactive sketches and visual experiments that demonstrate these concepts.</p>
-<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">¶</a></h2>
 <p>This chapter covers the following 35 concepts from the learning graph:</p>
 <ol>
 <li>Point Primitive</li>
@@ -1651,21 +1742,21 @@
 <li>Bounding Box Calculation</li>
 <li>Shape Area Computation</li>
 </ol>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">¶</a></h2>
 <p>This chapter builds on concepts from:</p>
 <ul>
 <li><a href="../01-intro-creative-coding/">Chapter 1: Introduction to Creative Coding &amp; Canvas Foundations</a></li>
 </ul>
-<hr />
+<hr>
 <p>Every great painting, no matter how complex or hyper-realistic, can be broken down into fundamental brushstrokes. In the world of creative coding, our brushstrokes are geometric primitives: simple mathematical shapes that the computer knows how to render instantly. By layering, scaling, and coloring these simple shapes, we can build infinite visual complexity.</p>
 <p>In this chapter, we transition from setting up our digital canvas to actually leaving marks upon it. We will start with the simplest possible mark—a single pixel—and progress through lines, basic geometry, custom polygons, and finally the elegant, sweeping curves that revolutionized automotive design in the 1960s.</p>
 <div class="admonition mascot-welcome">
 <p class="admonition-title">Time to Draw!</p>
-<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" /></p>
+<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png"></p>
 <p>Welcome to Chapter 2, artists! Sure, a blank canvas is exciting, but it's time to actually start making marks. In this chapter, we'll give you the fundamental geometric building blocks you need to sketch absolutely anything your imagination can dream up. Grab your digital stylus and let's get drawing!</p>
 </div>
 <p>The absolute simplest mark you can make on a digital canvas is a <strong>Point Primitive</strong>. A point occupies exactly one unit of space on your pixel grid. It is defined by two numbers: its horizontal <code>x</code> position and its vertical <code>y</code> position. </p>
-<h2 id="the-simplest-mark-points-and-lines">The Simplest Mark: Points and Lines<a class="headerlink" href="#the-simplest-mark-points-and-lines" title="Permanent link">&para;</a></h2>
+<h2 id="the-simplest-mark-points-and-lines">The Simplest Mark: Points and Lines<a class="headerlink" href="#the-simplest-mark-points-and-lines" title="Permanent link">¶</a></h2>
 <p>Drawing a point in p5.js is as simple as calling <code>point(x, y)</code>. While a single point might not seem incredibly useful, remember that a digital photograph is nothing more than millions of colored points arranged in a grid. In generative art, we often use thousands of points to create "particle systems"—simulations of rain, smoke, or swarming bees.</p>
 <p>When you connect two points, you create a <strong>Line Primitive</strong>. A line requires two sets of coordinates: a starting point <code>(x1, y1)</code> and an ending point <code>(x2, y2)</code>. The computer calculates the shortest path between these two points and illuminates the pixels along that path. </p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">draw</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -1678,11 +1769,11 @@
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="nx">line</span><span class="p">(</span><span class="mf">50</span><span class="p">,</span><span class="w"> </span><span class="mf">50</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">,</span><span class="w"> </span><span class="mf">150</span><span class="p">);</span>
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p">}</span>
 </span></code></pre></div>
-<h3 id="smoothing-the-jagged-edges">Smoothing the Jagged Edges<a class="headerlink" href="#smoothing-the-jagged-edges" title="Permanent link">&para;</a></h3>
+<h3 id="smoothing-the-jagged-edges">Smoothing the Jagged Edges<a class="headerlink" href="#smoothing-the-jagged-edges" title="Permanent link">¶</a></h3>
 <p>When a computer attempts to draw a diagonal line across a grid of square pixels, a visual artifact occurs. The line looks jagged, like a staircase. This is called "aliasing." </p>
 <p>To fix this, graphics engines use an optical illusion called anti-aliasing. By coloring the pixels along the edge of the line with semi-transparent shades of gray, the human eye is tricked into seeing a perfectly smooth diagonal. By default, p5.js automatically uses <strong>Smooth Rendering</strong> (<code>smooth()</code>) for all geometry. </p>
 <p>However, if you are intentionally trying to create retro, 8-bit, "pixel art" aesthetics, that smoothness ruins the effect. You can force the computer to draw the raw, jagged, blocky pixels by calling the <strong>No Smooth Rendering</strong> function (<code>noSmooth()</code>).</p>
-<h2 id="rectilinear-geometry-framing-the-world">Rectilinear Geometry: Framing the World<a class="headerlink" href="#rectilinear-geometry-framing-the-world" title="Permanent link">&para;</a></h2>
+<h2 id="rectilinear-geometry-framing-the-world">Rectilinear Geometry: Framing the World<a class="headerlink" href="#rectilinear-geometry-framing-the-world" title="Permanent link">¶</a></h2>
 <p>Much of human architecture and design is based on straight lines and right angles. The most fundamental shape in this category is the <strong>Rectangle Primitive</strong>. To draw a rectangle, we call <code>rect(x, y, width, height)</code>.</p>
 <p>If you need a perfectly square rectangle, you <em>could</em> use <code>rect(x, y, size, size)</code>. But because squares are so common, p5.js provides a convenient <strong>Square Shortcut Function</strong> (<code>square(x, y, size)</code>). </p>
 <p>When drawing user interfaces—like buttons or text boxes—sharp 90-degree corners can feel harsh and aggressive. Modern design heavily favors soft, rounded corners. p5.js allows you to automatically curve the corners of any rectangle by providing an optional fifth parameter: the <strong>Corner Radius Rectangle</strong> value. </p>
@@ -1692,29 +1783,30 @@
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1">// Draws a rectangle with softly rounded corners (10px radius)</span>
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nx">rect</span><span class="p">(</span><span class="mf">150</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">50</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">);</span>
 </span></code></pre></div>
-<h3 id="the-anchor-point-rect-modes">The Anchor Point: Rect Modes<a class="headerlink" href="#the-anchor-point-rect-modes" title="Permanent link">&para;</a></h3>
+<h3 id="the-anchor-point-rect-modes">The Anchor Point: Rect Modes<a class="headerlink" href="#the-anchor-point-rect-modes" title="Permanent link">¶</a></h3>
 <p>When you say <code>rect(50, 50, 100, 100)</code>, where exactly does the rectangle go? By default, p5.js uses <strong>Rect Mode Corner</strong> (<code>rectMode(CORNER)</code>). This means the <code>(x, y)</code> coordinate you provide acts as the top-left anchor point. The rectangle extends 100 pixels to the right, and 100 pixels down from that anchor.</p>
 <p>This is perfect for aligning shapes to the edge of a screen. But what if you want to draw a rectangle exactly in the dead center of the canvas? Doing the math from the top-left corner is tedious. </p>
 <p>Instead, you can change the drawing behavior using <strong>Rect Mode Center</strong> (<code>rectMode(CENTER)</code>). Once activated, the <code>(x, y)</code> coordinates define the exact <em>middle</em> of the rectangle, and it grows outward in all directions equally. </p>
 <div class="admonition mascot-tip">
 <p class="admonition-title">The Alignment Shortcut</p>
-<p><img alt="Palette tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+<p><img alt="Palette tip" class="mascot-admonition-img" src="../../img/mascot/tip.png">
 Want to save some time doing math? Instead of calculating complex offsets to center a box on your screen, just use <code>rectMode(CENTER)</code> and place it at <code>width/2, height/2</code>. It's a massive time-saver for UI design!</p>
 </div>
-<h2 id="curves-and-arcs-the-compass-and-protractor">Curves and Arcs: The Compass and Protractor<a class="headerlink" href="#curves-and-arcs-the-compass-and-protractor" title="Permanent link">&para;</a></h2>
+<h2 id="curves-and-arcs-the-compass-and-protractor">Curves and Arcs: The Compass and Protractor<a class="headerlink" href="#curves-and-arcs-the-compass-and-protractor" title="Permanent link">¶</a></h2>
 <p>In contrast to rigid rectangles, organic shapes require curves. The foundational curved primitive is the <strong>Ellipse Primitive</strong> (<code>ellipse(x, y, width, height)</code>). An ellipse is simply a squashed or stretched circle. </p>
 <p>Just like rectangles have a square shortcut, ellipses have a <strong>Circle Shortcut Function</strong> (<code>circle(x, y, diameter)</code>), allowing you to define a perfectly symmetrical shape with a single size parameter.</p>
 <p>Critically, the anchor point logic for ellipses is the exact opposite of rectangles! By default, p5.js uses <strong>Ellipse Mode Center</strong> (<code>ellipseMode(CENTER)</code>). The <code>(x, y)</code> coordinate dictates the center of the shape. If you prefer to draw your ellipses bounding outward from a top-left origin, you can switch to <strong>Ellipse Mode Corner</strong> (<code>ellipseMode(CORNER)</code>).</p>
-<h3 id="slicing-the-pie">Slicing the Pie<a class="headerlink" href="#slicing-the-pie" title="Permanent link">&para;</a></h3>
+<h3 id="slicing-the-pie">Slicing the Pie<a class="headerlink" href="#slicing-the-pie" title="Permanent link">¶</a></h3>
 <p>What if you don't want a full circle? What if you want a Pac-Man shape, a half-moon, or a slice of pie? For this, we use the <strong>Arc Shape Primitive</strong> (<code>arc(x, y, width, height, startAngle, stopAngle)</code>). </p>
 <p>An arc is a partial ellipse. It requires you to define a starting angle and an ending angle. In p5.js (and most mathematics), angles are traditionally measured in Radians, not Degrees. A full circle is <span class="arithmatex">\(2\pi\)</span> radians. The right side of the circle (3 o'clock) is 0. The bottom (6 o'clock) is <span class="arithmatex">\(\pi/2\)</span>. The left (9 o'clock) is <span class="arithmatex">\(\pi\)</span>.</p>
-<h4 id="diagram-angle-explorer">Diagram: Angle Explorer<a class="headerlink" href="#diagram-angle-explorer" title="Permanent link">&para;</a></h4>
+<h4 id="diagram-arc-and-angle-explorer">Diagram: Arc and Angle Explorer<a class="headerlink" href="#diagram-arc-and-angle-explorer" title="Permanent link">¶</a></h4>
 <details>
 <summary>Arc and Angle Explorer</summary>
-<p>Type: MicroSim
-<strong>sim-id:</strong> arc-angle-explorer<br/>
-<strong>Library:</strong> p5.js<br/>
-<strong>Status:</strong> Specified</p>
+<p></p><summary>Arc and Angle Explorer</summary>
+Type: MicroSim
+<strong>sim-id:</strong> arc-angle-explorer<br>
+<strong>Library:</strong> p5.js<br>
+<strong>Status:</strong> Specified<p></p>
 <p><strong>Learning Objective:</strong> Applying (Students will interactively visualize the relationship between radians, degrees, and the drawn arc slice).</p>
 <p><strong>Visual Elements:</strong>
 - A large circle with major angles labeled in both Degrees (0, 90, 180, 270) and Radians (0, PI/2, PI, 3*PI/2).
@@ -1726,11 +1818,11 @@ Want to save some time doing math? Instead of calculating complex offsets to cen
 - A readout box shows the exact code generated: <code>arc(200, 200, 100, 100, 0, PI);</code></p>
 <p>Implementation: Use <code>arc()</code> with the <code>mode</code> parameter driven by a dropdown menu. Map slider values to angles.</p>
 </details>
-<h2 id="polygons-the-building-blocks-of-graphics">Polygons: The Building Blocks of Graphics<a class="headerlink" href="#polygons-the-building-blocks-of-graphics" title="Permanent link">&para;</a></h2>
+<h2 id="polygons-the-building-blocks-of-graphics">Polygons: The Building Blocks of Graphics<a class="headerlink" href="#polygons-the-building-blocks-of-graphics" title="Permanent link">¶</a></h2>
 <p>Moving beyond four-sided shapes, we encounter polygons. The most important polygon in all of computer graphics is the <strong>Triangle Primitive</strong> (<code>triangle(x1, y1, x2, y2, x3, y3)</code>). </p>
 <p>A triangle requires three explicit points. Why are triangles so important? Because mathematically, any 3-dimensional shape in existence—from a simple cube to a hyper-realistic video game character—can be broken down into a mesh of flat triangles. The modern GPU (Graphics Processing Unit) in your computer is essentially a highly specialized microchip designed to do exactly one thing: draw millions of triangles insanely fast.</p>
 <p>For 2D shapes with exactly four irregular sides (like a trapezoid or a diamond), we use the <strong>Quad Primitive</strong> (<code>quad(x1, y1, x2, y2, x3, y3, x4, y4)</code>). You must define all four corners in either clockwise or counter-clockwise order to ensure the shape doesn't "bowtie" or twist over itself.</p>
-<h2 id="the-inkwell-and-the-brush-styling-shapes">The Inkwell and the Brush: Styling Shapes<a class="headerlink" href="#the-inkwell-and-the-brush-styling-shapes" title="Permanent link">&para;</a></h2>
+<h2 id="the-inkwell-and-the-brush-styling-shapes">The Inkwell and the Brush: Styling Shapes<a class="headerlink" href="#the-inkwell-and-the-brush-styling-shapes" title="Permanent link">¶</a></h2>
 <p>So far, we have only discussed the geometry—the invisible mathematical boundaries of the shapes. Now we must discuss the ink. In p5.js, every shape has two styling properties: a stroke (the outline) and a fill (the inside color).</p>
 <p>By default, shapes have a 1-pixel black stroke and a white fill. We can change the thickness of the outline using the <strong>Shape Stroke Weight</strong> function (<code>strokeWeight(pixels)</code>). </p>
 <p>When drawing thick lines, the very ends of the lines become noticeable. Do you want the line to end in a sharp, flat cut? Or a soft, rounded pill shape? This is controlled by the <strong>Stroke Cap Style</strong> (<code>strokeCap(ROUND, SQUARE, or PROJECT)</code>). </p>
@@ -1738,10 +1830,10 @@ Want to save some time doing math? Instead of calculating complex offsets to cen
 <p>Sometimes, you only want an outline, making the shape completely transparent on the inside. You achieve this using the <strong>No Fill Function</strong> (<code>noFill()</code>). Conversely, if you want a solid block of color without any outline border, you use the <strong>No Stroke Function</strong> (<code>noStroke()</code>).</p>
 <div class="admonition mascot-warning">
 <p class="admonition-title">The State Machine Trap</p>
-<p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+<p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png">
 Watch out for ghost shapes! Styling commands like <code>noStroke()</code> are persistent state changes. If you remove borders for one circle, every subsequent shape will also lack a border. To fix this, always explicitly reset your styles by calling <code>stroke(0)</code> (or your desired color) right before drawing your next shape.</p>
 </div>
-<h2 id="custom-polygons-connecting-the-dots">Custom Polygons: Connecting the Dots<a class="headerlink" href="#custom-polygons-connecting-the-dots" title="Permanent link">&para;</a></h2>
+<h2 id="custom-polygons-connecting-the-dots">Custom Polygons: Connecting the Dots<a class="headerlink" href="#custom-polygons-connecting-the-dots" title="Permanent link">¶</a></h2>
 <p>What happens when you want to draw a 5-sided pentagon? Or a 12-sided star? The standard primitives (<code>rect</code>, <code>triangle</code>) are insufficient. You need to define a custom geometry point by point.</p>
 <p>We do this by opening a custom drawing block with the <strong>Begin Shape Function</strong> (<code>beginShape()</code>). Once the block is open, we can declare as many <strong>Vertex Coordinates</strong> as we want using <code>vertex(x, y)</code>. Think of this exactly like a child's "connect-the-dots" puzzle. The computer will automatically draw lines connecting each vertex in the exact order you declare them.</p>
 <p>When you are finished connecting the dots, you lock the geometry by calling the <strong>End Shape Function</strong> (<code>endShape()</code>). </p>
@@ -1753,7 +1845,7 @@ Watch out for ghost shapes! Styling commands like <code>noStroke()</code> are pe
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nx">vertex</span><span class="p">(</span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">250</span><span class="p">);</span><span class="w"> </span><span class="c1">// Point 4</span>
 </span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nx">endShape</span><span class="p">(</span><span class="nx">CLOSE</span><span class="p">);</span><span class="w"> </span><span class="c1">// Connects Point 4 back to Point 1</span>
 </span></code></pre></div>
-<h3 id="cutting-holes-contours-and-stencils">Cutting Holes: Contours and Stencils<a class="headerlink" href="#cutting-holes-contours-and-stencils" title="Permanent link">&para;</a></h3>
+<h3 id="cutting-holes-contours-and-stencils">Cutting Holes: Contours and Stencils<a class="headerlink" href="#cutting-holes-contours-and-stencils" title="Permanent link">¶</a></h3>
 <p>Sometimes you need to draw a shape with a hole punched out of the middle, like a doughnut or the letter 'O'. This is known as negative space. </p>
 <p>To achieve this, you start a normal <code>beginShape()</code>, draw the outer boundary, and then call the <strong>Begin Contour Function</strong> (<code>beginContour()</code>). Inside the contour block, you define the vertices of the <em>hole</em>. Crucially, the vertices of the hole must be defined in the <em>opposite direction</em> of the outer boundary (e.g., if you drew the outside clockwise, you must draw the inside hole counter-clockwise). </p>
 <p>Let's imagine you are trying to draw a slice of Swiss cheese. A yellow rectangle is easy. But how do you draw the holes? You could draw background-colored circles on top of the yellow rectangle, but what if there's a complex, moving image <em>behind</em> the cheese? If you just draw gray circles, they will block the image behind the cheese. You need <em>actual holes</em> where the geometry does not exist, allowing the background to show through.</p>
@@ -1776,25 +1868,26 @@ Watch out for ghost shapes! Styling commands like <code>noStroke()</code> are pe
 </span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">  </span><span class="nx">endContour</span><span class="p">();</span>
 </span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="nx">endShape</span><span class="p">(</span><span class="nx">CLOSE</span><span class="p">);</span>
 </span></code></pre></div>
-<h2 id="the-art-of-splines-bezier-curves">The Art of Splines: Bézier Curves<a class="headerlink" href="#the-art-of-splines-bezier-curves" title="Permanent link">&para;</a></h2>
+<h2 id="the-art-of-splines-bezier-curves">The Art of Splines: Bézier Curves<a class="headerlink" href="#the-art-of-splines-bezier-curves" title="Permanent link">¶</a></h2>
 <p>Straight lines and custom polygons are powerful, but the natural world is rarely sharp and angular. Vines, ocean waves, and human silhouettes are defined by smooth, flowing curves. </p>
 <p>In the 1960s, a French engineer named Pierre Bézier was working for the Renault car company. He needed a mathematical way to describe the sweeping, elegant curves of a car's chassis to a computer-controlled milling machine. He popularized a mathematical formula that we now call the <strong>Bézier Curve Function</strong> (<code>bezier()</code>).</p>
 <p>A Bézier curve is defined by four points. The first and fourth points are the physical anchors—where the line starts and ends. The second and third points are the <strong>Bézier Control Points</strong>. </p>
 <p>The curve never actually touches the control points. Instead, the control points exert a magnetic "pull" on the line, bending it toward them. </p>
 <div class="admonition mascot-thinking">
 <p class="admonition-title">The Magnetic Pull</p>
-<p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+<p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png">
 Notice how the curve never actually touches the control points? Think about it like a rubber band stretched between two thumbtacks. The control points act as invisible magnets pulling on the middle of the band. This separation of anchor and control is a core architectural pattern behind all modern vector graphics!</p>
 </div>
 <p>If you need a continuous, flowing ribbon of multiple curves attached end-to-end, you can use <code>beginShape()</code> combined with the <strong>Bézier Vertex Function</strong> (<code>bezierVertex()</code>). This allows you to construct complex vector art illustrations, identical to how the Pen Tool works in Adobe Illustrator.</p>
 <p>If managing complex control points feels too mathematical, p5.js offers a simpler alternative: the <strong>Curve Shape Function</strong> (<code>curve()</code>) and the <strong>Curve Vertex Function</strong> (<code>curveVertex()</code>). Unlike Bézier curves, a Catmull-Rom curve (which p5.js uses here) actually passes directly <em>through</em> all the points you define, making it much more intuitive to draw a smooth path. You can even adjust how sharply the line bends around the points using the <strong>Curve Tightness Setting</strong> (<code>curveTightness()</code>).</p>
-<h4 id="diagram-bezier-control-point-sandbox">Diagram: Bézier Control Point Sandbox<a class="headerlink" href="#diagram-bezier-control-point-sandbox" title="Permanent link">&para;</a></h4>
+<h4 id="diagram-bezier-control-point-sandbox">Diagram: Bézier Control Point Sandbox<a class="headerlink" href="#diagram-bezier-control-point-sandbox" title="Permanent link">¶</a></h4>
 <details>
 <summary>Bézier Control Point Sandbox</summary>
-<p>Type: MicroSim
-<strong>sim-id:</strong> bezier-sandbox<br/>
-<strong>Library:</strong> p5.js<br/>
-<strong>Status:</strong> Specified</p>
+<p></p><summary>Bézier Control Point Sandbox</summary>
+Type: MicroSim
+<strong>sim-id:</strong> bezier-sandbox<br>
+<strong>Library:</strong> p5.js<br>
+<strong>Status:</strong> Specified<p></p>
 <p><strong>Learning Objective:</strong> Evaluating (Students will manipulate invisible control points to see how magnetic tension bends a mathematical curve).</p>
 <p><strong>Visual Elements:</strong>
 - A thick, smooth Bézier curve drawn across the screen.
@@ -1806,18 +1899,18 @@ Notice how the curve never actually touches the control points? Think about it l
 - A readout displays the live <code>bezier(x1, y1, x2, y2, x3, y3, x4, y4)</code> code so the user can copy/paste their custom curve directly into their own sketch.</p>
 <p>Implementation: Store the 4 coordinate pairs in variables. Use <code>dist()</code> to check for mouse drag collisions on the handles. Render the curve with <code>bezier()</code> and the tangent lines with standard <code>line()</code> calls.</p>
 </details>
-<h2 id="mathematical-geometry-the-invisible-fences">Mathematical Geometry: The Invisible Fences<a class="headerlink" href="#mathematical-geometry-the-invisible-fences" title="Permanent link">&para;</a></h2>
+<h2 id="mathematical-geometry-the-invisible-fences">Mathematical Geometry: The Invisible Fences<a class="headerlink" href="#mathematical-geometry-the-invisible-fences" title="Permanent link">¶</a></h2>
 <p>As we draw shapes, we must also think about how they exist within the mathematical space of our canvas. If you draw a complex 12-sided star, how do you know if the user's mouse is hovering over it? Calculating collisions against complex polygons is computationally expensive.</p>
 <p>Game developers solve this by calculating an invisible, simplified rectangle that perfectly wraps around the complex shape. This is known as a <strong>Bounding Box Calculation</strong>. For a circle, the bounding box is a square whose width equals the circle's diameter. For a custom polygon, the bounding box is determined by finding the minimum and maximum X and Y coordinates of all the vertices. </p>
 <p>By checking if the mouse is inside the simple bounding box first, the computer saves massive amounts of processing power. If the mouse is outside the bounding box, it is mathematically impossible for it to be touching the complex star inside.</p>
 <p>Similarly, we often need to calculate the physical weight or mass of a shape in a physics simulation. This requires <strong>Shape Area Computation</strong>. The area of a rectangle is simple (width × height). The area of a circle is <span class="arithmatex">\(\pi r^2\)</span>. For complex custom polygons, the area is computed by dividing the polygon into a series of triangles, calculating the area of each triangle, and summing them together. </p>
 <p>Understanding these invisible mathematical boundaries—bounding boxes and area calculations—is the bridge between simply drawing a pretty picture and building a fully interactive, physics-driven simulation.</p>
-<h2 id="summary_1">Summary<a class="headerlink" href="#summary_1" title="Permanent link">&para;</a></h2>
+<h2 id="summary_1">Summary<a class="headerlink" href="#summary_1" title="Permanent link">¶</a></h2>
 <p>In this chapter, we have expanded our artistic vocabulary from a single point to complex, sweeping splines. We learned how to lay down the rigid rectilinear geometry of rectangles and triangles, how to slice arcs using radians, and how to define custom polygons vertex by vertex.</p>
 <p>Crucially, we explored the styling state machine, learning how to dip our brush in different colors and stroke weights, and how the computer uses magnetic control points to bend mathematical curves. Finally, we peeked behind the curtain at the invisible bounding boxes that game engines use to understand where these shapes exist in physical space.</p>
 <div class="admonition mascot-celebration">
 <p class="admonition-title">Shapes Mastered!</p>
-<p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+<p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png">
 Incredible work! You just mastered 2D primitives, custom polygons, Bézier curves, and the styling state machine! You have all the mathematical building blocks needed to sketch any geometry. Next, we will dive deep into the science of color!</p>
 </div>
 
@@ -1845,7 +1938,7 @@ Incredible work! You just mastered 2D primitives, custom polygons, Bézier curve
         
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
   Back to top
 </button>
         
@@ -1855,20 +1948,20 @@ Incredible work! You just mastered 2D primitives, custom polygons, Bézier curve
   
     
       
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
         
           
           <a href="../01-intro-creative-coding/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 1. Introduction to Creative Coding &amp; Canvas Foundations">
             <div class="md-footer__button md-icon">
               
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
             </div>
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Previous
               </span>
               <div class="md-ellipsis">
-                1. Introduction to Creative Coding & Canvas Foundations
+                1. Introduction to Creative Coding &amp; Canvas Foundations
               </div>
             </div>
           </a>
@@ -1881,12 +1974,12 @@ Incredible work! You just mastered 2D primitives, custom polygons, Bézier curve
                 Next
               </span>
               <div class="md-ellipsis">
-                3. Color Theory, Color Modes & Pixel Manipulation
+                3. Color Theory, Color Modes &amp; Pixel Manipulation
               </div>
             </div>
             <div class="md-footer__button md-icon">
               
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
             </div>
           </a>
         
@@ -1898,7 +1991,7 @@ Incredible work! You just mastered 2D primitives, custom polygons, Bézier curve
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+      Copyright © 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
     </div>
   
   
@@ -1919,6 +2012,14 @@ Incredible work! You just mastered 2D primitives, custom polygons, Bézier curve
     
       <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
+        <script src="../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
     
-  </body>
-</html>
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

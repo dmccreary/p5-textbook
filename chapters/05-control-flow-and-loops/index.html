@@ -1,7 +1,4 @@
-
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
+<!DOCTYPE html><html lang="en" class="no-js"><head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -26,7 +23,7 @@
     
     
       
-        <title>5. Control Flow, Loops & Array Data Structures - The Art of Processing</title>
+        <title>5. Control Flow, Loops &amp; Array Data Structures - The Art of Processing</title>
       
     
     
@@ -47,7 +44,7 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
@@ -56,14 +53,52 @@
     
       <link rel="stylesheet" href="../../css/mascot.css">
     
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
+      
+        <meta property="og:type" content="website">
+      
+        <meta property="og:title" content="5. Control Flow, Loops &amp; Array Data Structures - The Art of Processing">
+      
+        <meta property="og:description" content="An interactive intelligent textbook about the p5.js processing library and how to use it to teach computational thinking.">
+      
+        <meta property="og:image" content="https://dmccreary.github.io/p5-textbook/assets/images/social/chapters/05-control-flow-and-loops/index.png">
+      
+        <meta property="og:image:type" content="image/png">
+      
+        <meta property="og:image:width" content="1200">
+      
+        <meta property="og:image:height" content="630">
+      
+        <meta property="og:url" content="https://dmccreary.github.io/p5-textbook/chapters/05-control-flow-and-loops/">
+      
+        <meta name="twitter:card" content="summary_large_image">
+      
+        <meta name="twitter:title" content="5. Control Flow, Loops &amp; Array Data Structures - The Art of Processing">
+      
+        <meta name="twitter:description" content="An interactive intelligent textbook about the p5.js processing library and how to use it to teach computational thinking.">
+      
+        <meta name="twitter:image" content="https://dmccreary.github.io/p5-textbook/assets/images/social/chapters/05-control-flow-and-loops/index.png">
+      
     
-  </head>
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
   
   
     
@@ -99,12 +134,12 @@
     <a href="../.." title="The Art of Processing" class="md-header__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -116,7 +151,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              5. Control Flow, Loops & Array Data Structures
+              5. Control Flow, Loops &amp; Array Data Structures
             
           </span>
         </div>
@@ -130,7 +165,7 @@
     
       <label class="md-header__button md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
       </label>
       <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
@@ -139,20 +174,20 @@
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
           <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
             
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
           </a>
         
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
         </button>
       </nav>
       
@@ -177,7 +212,7 @@
         <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -201,7 +236,7 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -213,7 +248,7 @@
     <a href="../.." title="The Art of Processing" class="md-nav__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     The Art of Processing
@@ -223,7 +258,7 @@
       <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -459,7 +494,7 @@
         
   
   <span class="md-ellipsis">
-    1. Introduction to Creative Coding & Canvas Foundations
+    1. Introduction to Creative Coding &amp; Canvas Foundations
   </span>
   
 
@@ -480,7 +515,7 @@
         
   
   <span class="md-ellipsis">
-    2. 2D Primitive Shapes & Custom Geometries
+    2. 2D Primitive Shapes &amp; Custom Geometries
   </span>
   
 
@@ -501,7 +536,7 @@
         
   
   <span class="md-ellipsis">
-    3. Color Theory, Color Modes & Pixel Manipulation
+    3. Color Theory, Color Modes &amp; Pixel Manipulation
   </span>
   
 
@@ -522,7 +557,7 @@
         
   
   <span class="md-ellipsis">
-    4. Variables, Data Types & Scope Fundamentals
+    4. Variables, Data Types &amp; Scope Fundamentals
   </span>
   
 
@@ -552,7 +587,7 @@
           
   
   <span class="md-ellipsis">
-    5. Control Flow, Loops & Array Data Structures
+    5. Control Flow, Loops &amp; Array Data Structures
   </span>
   
 
@@ -563,7 +598,7 @@
         
   
   <span class="md-ellipsis">
-    5. Control Flow, Loops & Array Data Structures
+    5. Control Flow, Loops &amp; Array Data Structures
   </span>
   
 
@@ -697,6 +732,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="2D Grid Iteration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-nested-grid-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Nested Grid Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -814,6 +864,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Managing State: Boolean Flag Variable and State Machine Logic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-interactive-array-train" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Interactive Array Train
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -850,7 +915,7 @@
         
   
   <span class="md-ellipsis">
-    6. Matrix Transformations & Coordinate Systems
+    6. Matrix Transformations &amp; Coordinate Systems
   </span>
   
 
@@ -871,7 +936,7 @@
         
   
   <span class="md-ellipsis">
-    7. Linear Motion, Trigonometry & Wave Math
+    7. Linear Motion, Trigonometry &amp; Wave Math
   </span>
   
 
@@ -892,7 +957,7 @@
         
   
   <span class="md-ellipsis">
-    8. Polar Coordinates, Oscillation & Easing
+    8. Polar Coordinates, Oscillation &amp; Easing
   </span>
   
 
@@ -913,7 +978,7 @@
         
   
   <span class="md-ellipsis">
-    9. Randomness, Gaussian Distributions & Random Walk
+    9. Randomness, Gaussian Distributions &amp; Random Walk
   </span>
   
 
@@ -934,7 +999,7 @@
         
   
   <span class="md-ellipsis">
-    10. Perlin Noise Landscapes & Vector Flow Fields
+    10. Perlin Noise Landscapes &amp; Vector Flow Fields
   </span>
   
 
@@ -955,7 +1020,7 @@
         
   
   <span class="md-ellipsis">
-    11. Vector Math Fundamentals & Physics Acceleration
+    11. Vector Math Fundamentals &amp; Physics Acceleration
   </span>
   
 
@@ -976,7 +1041,7 @@
         
   
   <span class="md-ellipsis">
-    12. Particle Systems, Forces & Steering Behaviors
+    12. Particle Systems, Forces &amp; Steering Behaviors
   </span>
   
 
@@ -997,7 +1062,7 @@
         
   
   <span class="md-ellipsis">
-    13. Mouse & Keyboard User Event Sensing
+    13. Mouse &amp; Keyboard User Event Sensing
   </span>
   
 
@@ -1018,7 +1083,7 @@
         
   
   <span class="md-ellipsis">
-    14. Touch Gestures, Mobile Sensors & Interaction
+    14. Touch Gestures, Mobile Sensors &amp; Interaction
   </span>
   
 
@@ -1039,7 +1104,7 @@
         
   
   <span class="md-ellipsis">
-    15. DOM Controls, Input Fields & UI Elements
+    15. DOM Controls, Input Fields &amp; UI Elements
   </span>
   
 
@@ -1060,7 +1125,7 @@
         
   
   <span class="md-ellipsis">
-    16. CSS Styling, Layouts & Web Page Integration
+    16. CSS Styling, Layouts &amp; Web Page Integration
   </span>
   
 
@@ -1081,7 +1146,7 @@
         
   
   <span class="md-ellipsis">
-    17. Functions, Arrow Expressions & Callbacks
+    17. Functions, Arrow Expressions &amp; Callbacks
   </span>
   
 
@@ -1102,7 +1167,7 @@
         
   
   <span class="md-ellipsis">
-    18. ES6 Classes, Object-Oriented Programming & Async Data
+    18. ES6 Classes, Object-Oriented Programming &amp; Async Data
   </span>
   
 
@@ -1123,7 +1188,7 @@
         
   
   <span class="md-ellipsis">
-    19. 3D WebGL Coordinates & Primitive Geometries
+    19. 3D WebGL Coordinates &amp; Primitive Geometries
   </span>
   
 
@@ -1144,7 +1209,7 @@
         
   
   <span class="md-ellipsis">
-    20. 3D Cameras, Lighting Models, Materials & Shaders
+    20. 3D Cameras, Lighting Models, Materials &amp; Shaders
   </span>
   
 
@@ -1165,7 +1230,7 @@
         
   
   <span class="md-ellipsis">
-    21. Audio Synthesis, Oscillators & Envelopes
+    21. Audio Synthesis, Oscillators &amp; Envelopes
   </span>
   
 
@@ -1186,7 +1251,7 @@
         
   
   <span class="md-ellipsis">
-    22. Microphone Input & FFT Spectral Analysis
+    22. Microphone Input &amp; FFT Spectral Analysis
   </span>
   
 
@@ -1207,7 +1272,7 @@
         
   
   <span class="md-ellipsis">
-    23. Image Processing, Filters & Video Capture
+    23. Image Processing, Filters &amp; Video Capture
   </span>
   
 
@@ -1228,7 +1293,7 @@
         
   
   <span class="md-ellipsis">
-    24. Generative Typography & Vector Font Outlines
+    24. Generative Typography &amp; Vector Font Outlines
   </span>
   
 
@@ -1249,7 +1314,7 @@
         
   
   <span class="md-ellipsis">
-    25. Development Environment, Tools & Pedagogy
+    25. Development Environment, Tools &amp; Pedagogy
   </span>
   
 
@@ -1277,6 +1342,14 @@
       
         
           
+        
+      
+        
+      
+        
+      
+        
+      
         
       
         
@@ -1338,6 +1411,14 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1366,6 +1447,46 @@
   
 
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1418,7 +1539,7 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1549,6 +1670,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="2D Grid Iteration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-nested-grid-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Nested Grid Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1666,6 +1802,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Managing State: Boolean Flag Variable and State Machine Logic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-interactive-array-train" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Interactive Array Train
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1699,16 +1850,16 @@
   
     <a href="https://github.com/dmccreary/p5-textbook/blob/main/docs/chapters/05-control-flow-and-loops/index.md" title="Edit this page" class="md-content__button md-icon">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
     </a>
   
   
 
 
-<h1 id="control-flow-loops-array-data-structures">Control Flow, Loops &amp; Array Data Structures<a class="headerlink" href="#control-flow-loops-array-data-structures" title="Permanent link">&para;</a></h1>
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<h1 id="control-flow-loops-array-data-structures">Control Flow, Loops &amp; Array Data Structures<a class="headerlink" href="#control-flow-loops-array-data-structures" title="Permanent link">¶</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">¶</a></h2>
 <p>Covers conditional branching (if/else, switch), loop constructs (for, while), nested grid iterations, and dynamic array methods. Students will gain practical hands-on experience by building interactive sketches and visual experiments that demonstrate these concepts.</p>
-<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">¶</a></h2>
 <p>This chapter covers the following 21 concepts from the learning graph:</p>
 <ol>
 <li>While Loop Construct</li>
@@ -1733,48 +1884,48 @@
 <li>State Machine Logic</li>
 <li>Break and Continue Keywords</li>
 </ol>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">¶</a></h2>
 <p>This chapter builds on concepts from:</p>
 <ul>
 <li><a href="../04-variables-and-scope/">Chapter 4: Variables, Data Types &amp; Scope Fundamentals</a></li>
 </ul>
-<hr />
+<hr>
 <div class="admonition mascot-welcome">
 <p class="admonition-title">Welcome to Chapter 5!</p>
-<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" /></p>
+<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png"></p>
 <p>Hey artists, why draw one circle when you could draw ten thousand in the blink of an eye? This chapter is all about giving you the incredible superpower of automation and repetition. Learn to command armies of shapes and watch your complex patterns unfold!</p>
 </div>
 <p>Welcome to Chapter 5! Have you ever had to do the exact same thing over and over again? Maybe it was writing sentences on a chalkboard as a punishment, or maybe it was stamping the same logo on a hundred different flyers. In programming, repeating tasks manually is the ultimate buzzkill. It's boring, prone to errors, and totally defeats the purpose of having a powerful computer at your fingertips.</p>
-<h2 id="introduction-to-repetition-the-factory-assembly-line">Introduction to Repetition: The Factory Assembly Line<a class="headerlink" href="#introduction-to-repetition-the-factory-assembly-line" title="Permanent link">&para;</a></h2>
+<h2 id="introduction-to-repetition-the-factory-assembly-line">Introduction to Repetition: The Factory Assembly Line<a class="headerlink" href="#introduction-to-repetition-the-factory-assembly-line" title="Permanent link">¶</a></h2>
 <p>Imagine your code as a factory. The <strong>Factory Assembly Line</strong> is a perfect metaphor for loops. On an assembly line, the same operation happens repeatedly to different items as they pass down the belt. A robot arm might tighten exactly four bolts on every car chassis that goes by. It doesn't need a separate instruction manual for each car; it just repeats the "tighten four bolts" sequence as long as the conveyor belt keeps moving.</p>
 <p>In p5.js, when we want to draw 100 circles across the screen, we don't write <code>circle()</code> 100 times. Instead, we build a loop—our own little factory assembly line—that says, "Hey computer, execute this block of code 100 times."</p>
-<h3 id="the-while-loop-construct">The <strong>While Loop Construct</strong><a class="headerlink" href="#the-while-loop-construct" title="Permanent link">&para;</a></h3>
+<h3 id="the-while-loop-construct">The <strong>While Loop Construct</strong><a class="headerlink" href="#the-while-loop-construct" title="Permanent link">¶</a></h3>
 <p>The simplest way to create this assembly line is using the <strong>While Loop Construct</strong>. A <code>while</code> loop is exactly what it sounds like: it keeps executing a block of code <em>while</em> a certain condition is true.</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">count</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Stamping flyer number &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">count</span><span class="p">);</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Stamping flyer number "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">count</span><span class="p">);</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>In this example, the loop checks the condition <code>count &lt; 5</code>. If it's true, it runs the code inside the curly braces. After running the code, it goes back up, checks the condition again, and repeats. This brings us to a critical piece of the puzzle: the <strong>Loop Counter Variable</strong>.</p>
-<h3 id="the-loop-counter-variable">The <strong>Loop Counter Variable</strong><a class="headerlink" href="#the-loop-counter-variable" title="Permanent link">&para;</a></h3>
+<h3 id="the-loop-counter-variable">The <strong>Loop Counter Variable</strong><a class="headerlink" href="#the-loop-counter-variable" title="Permanent link">¶</a></h3>
 <p>The <strong>Loop Counter Variable</strong> (in the example above, <code>count</code>) is the foreman of our factory. It keeps track of how many times the loop has run. Without it, the loop wouldn't know when to stop. We initialize it before the loop, check its value in the loop condition, and update it (like <code>count = count + 1</code>) inside the loop body.</p>
-<h3 id="the-infinite-loop-prevention-and-the-infinite-loop-trap">The <strong>Infinite Loop Prevention</strong> and The Infinite Loop Trap<a class="headerlink" href="#the-infinite-loop-prevention-and-the-infinite-loop-trap" title="Permanent link">&para;</a></h3>
+<h3 id="the-infinite-loop-prevention-and-the-infinite-loop-trap">The <strong>Infinite Loop Prevention</strong> and The Infinite Loop Trap<a class="headerlink" href="#the-infinite-loop-prevention-and-the-infinite-loop-trap" title="Permanent link">¶</a></h3>
 <p>What happens if you forget to update your loop counter variable? You fall into <strong>The Infinite Loop Trap</strong>. Imagine the robot arm on the assembly line goes rogue, repeatedly tightening the same bolt forever because the conveyor belt broke. Your program will get stuck in that loop, running as fast as the processor allows, until the browser crashes or your computer fans start screaming.</p>
 <p><strong>Infinite Loop Prevention</strong> is crucial. You must always ensure that the condition evaluated in your <code>while</code> loop will eventually become false. If you are checking <code>count &lt; 5</code>, you absolutely must ensure that <code>count</code> increases during the loop execution.</p>
 <div class="admonition mascot-warning">
 <p class="admonition-title">The Infinite Loop Trap</p>
-<p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+<p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png">
 Watch out for browser crashes! If you write a <code>while</code> loop but forget to update the counter variable inside the curly braces, the condition will never become false. The computer will run the loop forever, locking up your entire browser. To prevent this, always make sure your update statement (like <code>count = count + 1</code>) is the very last line inside your loop body before you hit the run button!</p>
 </div>
-<h3 id="the-for-loop-construct">The <strong>For Loop Construct</strong><a class="headerlink" href="#the-for-loop-construct" title="Permanent link">&para;</a></h3>
+<h3 id="the-for-loop-construct">The <strong>For Loop Construct</strong><a class="headerlink" href="#the-for-loop-construct" title="Permanent link">¶</a></h3>
 <p>Because setting up a loop counter, checking a condition, and updating the counter is so common, programmers created a streamlined version: the <strong>For Loop Construct</strong>. It packages all three steps (initialization, condition, and update) into a single, neat line of code.</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Stamping flyer number &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">i</span><span class="p">);</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Stamping flyer number "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">i</span><span class="p">);</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>Here, <code>let i = 0</code> sets up our <strong>Loop Counter Variable</strong>. <code>i &lt; 5</code> is our condition. And <code>i++</code> (which is shorthand for <code>i = i + 1</code>) is the update step. The <code>for</code> loop is often the preferred choice when you know exactly how many times you want the assembly line to run.</p>
-<h3 id="break-and-continue-keywords"><strong>Break and Continue Keywords</strong><a class="headerlink" href="#break-and-continue-keywords" title="Permanent link">&para;</a></h3>
+<h3 id="break-and-continue-keywords"><strong>Break and Continue Keywords</strong><a class="headerlink" href="#break-and-continue-keywords" title="Permanent link">¶</a></h3>
 <p>Sometimes, you need to disrupt the assembly line. Maybe a defective product comes down the belt, and you need to skip it, or maybe the factory catches fire and you need to shut down the line entirely.</p>
 <p>The <strong>Break and Continue Keywords</strong> give you this control.
 - <code>break</code>: Completely exits the loop immediately. The factory shuts down.
@@ -1789,10 +1940,10 @@ Watch out for browser crashes! If you write a <code>while</code> loop but forget
 </span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span><span class="w"> </span><span class="c1">// This will only print 1 and 3</span>
 </span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="p">}</span>
 </span></code></pre></div>
-<h2 id="grids-and-patterns-the-spreadsheet-metaphor">Grids and Patterns: The Spreadsheet Metaphor<a class="headerlink" href="#grids-and-patterns-the-spreadsheet-metaphor" title="Permanent link">&para;</a></h2>
+<h2 id="grids-and-patterns-the-spreadsheet-metaphor">Grids and Patterns: The Spreadsheet Metaphor<a class="headerlink" href="#grids-and-patterns-the-spreadsheet-metaphor" title="Permanent link">¶</a></h2>
 <p>Now that we can draw a row of shapes using a single loop, how do we draw a grid of shapes? Imagine a checkerboard, a brick wall, or the pixels on your screen. To create these 2D patterns, we need to think about <strong>The Spreadsheet</strong>.</p>
 <p>A spreadsheet is organized into rows and columns. If you want to visit every cell in a spreadsheet, you might say, "Go to row 1, then read column A, B, C. Then go to row 2, and read column A, B, C."</p>
-<h3 id="nested-for-loops"><strong>Nested For Loops</strong><a class="headerlink" href="#nested-for-loops" title="Permanent link">&para;</a></h3>
+<h3 id="nested-for-loops"><strong>Nested For Loops</strong><a class="headerlink" href="#nested-for-loops" title="Permanent link">¶</a></h3>
 <p>In code, we achieve this "spreadsheet scanning" by putting one loop inside another. This is called <strong>Nested For Loops</strong>. The outer loop typically controls the rows (the Y-axis in p5.js), and the inner loop controls the columns (the X-axis).</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">height</span><span class="p">;</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mf">40</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">width</span><span class="p">;</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mf">40</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -1804,13 +1955,14 @@ Watch out for browser crashes! If you write a <code>while</code> loop but forget
 <p>For every single step of the outer <code>y</code> loop, the inner <code>x</code> loop runs to completion. So, if <code>y = 0</code>, the <code>x</code> loop draws a full row of squares across the top of the screen. Then <code>y</code> becomes 40, and the <code>x</code> loop draws another full row.</p>
 <div class="admonition mascot-encourage">
 <p class="admonition-title">The Nested Loop Brain-Bender</p>
-<p><img alt="Palette encouraging" class="mascot-admonition-img" src="../../img/mascot/encouraging.png" />
+<p><img alt="Palette encouraging" class="mascot-admonition-img" src="../../img/mascot/encouraging.png">
 If your brain feels completely twisted trying to visualize a loop running inside another loop, take a deep breath. That is totally normal! It is one of the first major cognitive hurdles in all of programming. Don't rush it. Grab a piece of paper and manually write down the values of <code>x</code> and <code>y</code> for the first few steps. It will click soon!</p>
 </div>
-<h3 id="2d-grid-iteration"><strong>2D Grid Iteration</strong><a class="headerlink" href="#2d-grid-iteration" title="Permanent link">&para;</a></h3>
+<h3 id="2d-grid-iteration"><strong>2D Grid Iteration</strong><a class="headerlink" href="#2d-grid-iteration" title="Permanent link">¶</a></h3>
 <p>This process is known as <strong>2D Grid Iteration</strong>. It is the fundamental technique for processing images (which are just grids of pixels), generating tile-based game maps, or creating complex, repeating geometric art. By mastering <strong>Nested For Loops</strong>, you unlock the ability to cover the entire canvas systematically.</p>
+<h4 id="diagram-nested-grid-explorer">Diagram: Nested Grid Explorer<a class="headerlink" href="#diagram-nested-grid-explorer" title="Permanent link">¶</a></h4>
 <details>
-<summary><b>MicroSim: Nested Grid Explorer</b></summary>
+<summary><b>MicroSim: Nested Grid Explorer</b></summary><summary><b>MicroSim: Nested Grid Explorer</b></summary>
 <b>Type:</b> p5.js Interactive Concept Explorer
 
 <b>Description:</b> A visual simulation demonstrating how **Nested For Loops** execute over a **2D Grid Iteration**. The canvas shows a 5x5 grid of cells. 
@@ -1821,20 +1973,20 @@ If your brain feels completely twisted trying to visualize a loop running inside
 - A slider controls the speed of an "Auto-Play" mode.
 </details>
 
-<h2 id="data-collections-the-train-cars">Data Collections: The Train Cars<a class="headerlink" href="#data-collections-the-train-cars" title="Permanent link">&para;</a></h2>
+<h2 id="data-collections-the-train-cars">Data Collections: The Train Cars<a class="headerlink" href="#data-collections-the-train-cars" title="Permanent link">¶</a></h2>
 <p>Up until now, our variables have been like single boxes, capable of holding only one value at a time. <code>let x = 50;</code> holds exactly one number. But what if we want to keep track of the X coordinates for 100 different bouncing balls? Creating 100 separate variables (<code>x1</code>, <code>x2</code>, <code>x3</code>...) is a nightmare.</p>
 <p>We need a way to organize multiple related pieces of data. Enter the <strong>Array Data Structure</strong>.</p>
 <p>Think of an Array as a train. The train has a locomotive at the front (the variable name), and trailing behind it are multiple train cars linked together in a specific order. Each train car holds one piece of data.</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">ballXPositions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">50</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">];</span>
 </span></code></pre></div>
 <p>The square brackets <code>[]</code> are the tracks that define our train. Inside, separated by commas, are the contents of our train cars.</p>
-<h3 id="array-element-indexing"><strong>Array Element Indexing</strong><a class="headerlink" href="#array-element-indexing" title="Permanent link">&para;</a></h3>
+<h3 id="array-element-indexing"><strong>Array Element Indexing</strong><a class="headerlink" href="#array-element-indexing" title="Permanent link">¶</a></h3>
 <p>How do we access a specific train car? We use its position number, which in programming is called an index. But there's a catch: programmers start counting from zero!</p>
 <p>This is known as <strong>Array Element Indexing</strong>. The first item is at index 0, the second is at index 1, and so on.</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">ballXPositions</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span><span class="w"> </span><span class="c1">// Prints 10</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">ballXPositions</span><span class="p">[</span><span class="mf">2</span><span class="p">]);</span><span class="w"> </span><span class="c1">// Prints 100</span>
 </span></code></pre></div>
-<h3 id="the-array-length-property">The <strong>Array Length Property</strong><a class="headerlink" href="#the-array-length-property" title="Permanent link">&para;</a></h3>
+<h3 id="the-array-length-property">The <strong>Array Length Property</strong><a class="headerlink" href="#the-array-length-property" title="Permanent link">¶</a></h3>
 <p>Every array automatically keeps track of how many train cars it has. This is the <strong>Array Length Property</strong>. You access it using <code>.length</code>.</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">ballXPositions</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span><span class="w"> </span><span class="c1">// Prints 4</span>
 </span></code></pre></div>
@@ -1843,7 +1995,7 @@ If your brain feels completely twisted trying to visualize a loop running inside
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nx">circle</span><span class="p">(</span><span class="nx">ballXPositions</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">);</span>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">}</span>
 </span></code></pre></div>
-<h3 id="expanding-and-shrinking-array-push-method-and-array-pop-method">Expanding and Shrinking: <strong>Array Push Method</strong> and <strong>Array Pop Method</strong><a class="headerlink" href="#expanding-and-shrinking-array-push-method-and-array-pop-method" title="Permanent link">&para;</a></h3>
+<h3 id="expanding-and-shrinking-array-push-method-and-array-pop-method">Expanding and Shrinking: <strong>Array Push Method</strong> and <strong>Array Pop Method</strong><a class="headerlink" href="#expanding-and-shrinking-array-push-method-and-array-pop-method" title="Permanent link">¶</a></h3>
 <p>Arrays in JavaScript are dynamic; they can grow and shrink while your program runs. We can add and remove train cars.</p>
 <p>The <strong>Array Push Method</strong> adds a new item to the <em>end</em> of the array. It pushes a new train car onto the tracks.</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nx">ballXPositions</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mf">300</span><span class="p">);</span><span class="w"> </span><span class="c1">// Array is now [10, 50, 100, 200, 300]</span>
@@ -1853,68 +2005,68 @@ If your brain feels completely twisted trying to visualize a loop running inside
 </span></code></pre></div>
 <div class="admonition mascot-tip">
 <p class="admonition-title">The Last Element Shortcut</p>
-<p><img alt="Palette tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+<p><img alt="Palette tip" class="mascot-admonition-img" src="../../img/mascot/tip.png">
 Here's a secret for dealing with dynamic arrays that are constantly growing or shrinking: if you ever need to grab the very last item in the train, but you don't know exactly how many cars there are, you don't need to count them! Just ask for <code>yourArray[yourArray.length - 1]</code>. It works perfectly every single time!</p>
 </div>
-<h2 id="advanced-array-maneuvers">Advanced Array Maneuvers<a class="headerlink" href="#advanced-array-maneuvers" title="Permanent link">&para;</a></h2>
+<h2 id="advanced-array-maneuvers">Advanced Array Maneuvers<a class="headerlink" href="#advanced-array-maneuvers" title="Permanent link">¶</a></h2>
 <p>Once you're comfortable with basic array trains, you'll find there are many specialized methods to manage your data collections efficiently.</p>
-<h3 id="for-of-loop-iteration"><strong>For Of Loop Iteration</strong><a class="headerlink" href="#for-of-loop-iteration" title="Permanent link">&para;</a></h3>
+<h3 id="for-of-loop-iteration"><strong>For Of Loop Iteration</strong><a class="headerlink" href="#for-of-loop-iteration" title="Permanent link">¶</a></h3>
 <p>When you want to look at every single item in an array, the standard <code>for</code> loop works, but it can be a bit clunky to write out <code>let i = 0; i &lt; array.length; i++</code> every time. Modern JavaScript gives us a cleaner alternative: the <strong>For Of Loop Iteration</strong>.</p>
-<div class="language-javascript highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">colors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;blue&#39;</span><span class="p">];</span>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">colors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">'red'</span><span class="p">,</span><span class="w"> </span><span class="s1">'green'</span><span class="p">,</span><span class="w"> </span><span class="s1">'blue'</span><span class="p">];</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">col</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">colors</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="nx">fill</span><span class="p">(</span><span class="nx">col</span><span class="p">);</span>
 </span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">  </span><span class="nx">circle</span><span class="p">(</span><span class="nx">random</span><span class="p">(</span><span class="nx">width</span><span class="p">),</span><span class="w"> </span><span class="nx">random</span><span class="p">(</span><span class="nx">height</span><span class="p">),</span><span class="w"> </span><span class="mf">50</span><span class="p">);</span>
 </span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>This loop automatically iterates through every element in the <code>colors</code> array. In each iteration, the variable <code>col</code> takes on the value of the current element. It is much easier to read!</p>
-<h3 id="the-for-each-array-method">The <strong>For Each Array Method</strong><a class="headerlink" href="#the-for-each-array-method" title="Permanent link">&para;</a></h3>
+<h3 id="the-for-each-array-method">The <strong>For Each Array Method</strong><a class="headerlink" href="#the-for-each-array-method" title="Permanent link">¶</a></h3>
 <p>Another popular way to loop through arrays is the <strong>For Each Array Method</strong>. This relies on a concept called callbacks (which we will explore deeply later), but essentially, it asks the array to run a specific function for every item it contains.</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">sizes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">,</span><span class="w"> </span><span class="mf">30</span><span class="p">];</span>
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nx">sizes</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">size</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="nx">rect</span><span class="p">(</span><span class="nx">width</span><span class="o">/</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">height</span><span class="o">/</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">size</span><span class="p">,</span><span class="w"> </span><span class="nx">size</span><span class="p">);</span>
 </span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="p">});</span>
 </span></code></pre></div>
-<h3 id="removing-and-joining-array-splice-removal-and-array-concat-joining">Removing and Joining: <strong>Array Splice Removal</strong> and <strong>Array Concat Joining</strong><a class="headerlink" href="#removing-and-joining-array-splice-removal-and-array-concat-joining" title="Permanent link">&para;</a></h3>
+<h3 id="removing-and-joining-array-splice-removal-and-array-concat-joining">Removing and Joining: <strong>Array Splice Removal</strong> and <strong>Array Concat Joining</strong><a class="headerlink" href="#removing-and-joining-array-splice-removal-and-array-concat-joining" title="Permanent link">¶</a></h3>
 <p>What if you want to remove a train car from the <em>middle</em> of the train? You can't use <code>pop()</code>, because that only targets the end. For precise surgery, we use <strong>Array Splice Removal</strong>.</p>
 <p>The <code>splice()</code> method requires two arguments: the index where you want to start cutting, and how many items you want to remove.</p>
-<div class="language-javascript highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">animals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;bird&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;fish&#39;</span><span class="p">];</span>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">animals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">'dog'</span><span class="p">,</span><span class="w"> </span><span class="s1">'cat'</span><span class="p">,</span><span class="w"> </span><span class="s1">'bird'</span><span class="p">,</span><span class="w"> </span><span class="s1">'fish'</span><span class="p">];</span>
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nx">animals</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span><span class="w"> </span>
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="c1">// Starts at index 1 (&#39;cat&#39;), removes 2 items (&#39;cat&#39; and &#39;bird&#39;)</span>
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="c1">// Array is now [&#39;dog&#39;, &#39;fish&#39;]</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="c1">// Starts at index 1 ('cat'), removes 2 items ('cat' and 'bird')</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="c1">// Array is now ['dog', 'fish']</span>
 </span></code></pre></div>
 <p>Sometimes you have two separate trains and you want to hitch them together into one long train. We use <strong>Array Concat Joining</strong> for this.</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">trainA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">];</span>
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">trainB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">];</span>
 </span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="kd">let</span><span class="w"> </span><span class="nx">longTrain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">trainA</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">trainB</span><span class="p">);</span><span class="w"> </span><span class="c1">// [1, 2, 3, 4, 5, 6]</span>
 </span></code></pre></div>
-<h3 id="order-and-chaos-array-reverse-ordering-and-array-sort-ordering">Order and Chaos: <strong>Array Reverse Ordering</strong> and <strong>Array Sort Ordering</strong><a class="headerlink" href="#order-and-chaos-array-reverse-ordering-and-array-sort-ordering" title="Permanent link">&para;</a></h3>
+<h3 id="order-and-chaos-array-reverse-ordering-and-array-sort-ordering">Order and Chaos: <strong>Array Reverse Ordering</strong> and <strong>Array Sort Ordering</strong><a class="headerlink" href="#order-and-chaos-array-reverse-ordering-and-array-sort-ordering" title="Permanent link">¶</a></h3>
 <p>You can quickly flip the entire order of your array using <strong>Array Reverse Ordering</strong>.</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">countdown</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">];</span>
 </span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nx">countdown</span><span class="p">.</span><span class="nx">reverse</span><span class="p">();</span><span class="w"> </span><span class="c1">// Now [5, 4, 3, 2, 1]</span>
 </span></code></pre></div>
 <p>Sorting elements is another incredibly common task. The <strong>Array Sort Ordering</strong> method can alphabetize strings or arrange numbers (though number sorting requires a little extra helper function in JavaScript).</p>
-<div class="language-javascript highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Zebra&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Ape&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Lion&#39;</span><span class="p">];</span>
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nx">names</span><span class="p">.</span><span class="nx">sort</span><span class="p">();</span><span class="w"> </span><span class="c1">// Now [&#39;Ape&#39;, &#39;Lion&#39;, &#39;Zebra&#39;]</span>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">'Zebra'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Ape'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Lion'</span><span class="p">];</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nx">names</span><span class="p">.</span><span class="nx">sort</span><span class="p">();</span><span class="w"> </span><span class="c1">// Now ['Ape', 'Lion', 'Zebra']</span>
 </span></code></pre></div>
-<h2 id="grids-and-data-the-2d-matrix-array">Grids and Data: The 2D Matrix Array<a class="headerlink" href="#grids-and-data-the-2d-matrix-array" title="Permanent link">&para;</a></h2>
+<h2 id="grids-and-data-the-2d-matrix-array">Grids and Data: The 2D Matrix Array<a class="headerlink" href="#grids-and-data-the-2d-matrix-array" title="Permanent link">¶</a></h2>
 <p>We learned about 2D grids earlier using nested loops. But how do we <em>store</em> data for a 2D grid? We can put arrays inside of arrays! This creates a <strong>2D Matrix Array</strong>.</p>
 <p>Imagine a tic-tac-toe board. It's a 3x3 grid. We can represent it as an array that contains three arrays (one for each row).</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">board</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">],</span>
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">  </span><span class="p">[</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;O&#39;</span><span class="p">],</span>
-</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">  </span><span class="p">[</span><span class="s1">&#39;O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;X&#39;</span><span class="p">]</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="p">[</span><span class="s1">'X'</span><span class="p">,</span><span class="w"> </span><span class="s1">'O'</span><span class="p">,</span><span class="w"> </span><span class="s1">' '</span><span class="p">],</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">  </span><span class="p">[</span><span class="s1">' '</span><span class="p">,</span><span class="w"> </span><span class="s1">'X'</span><span class="p">,</span><span class="w"> </span><span class="s1">'O'</span><span class="p">],</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">  </span><span class="p">[</span><span class="s1">'O'</span><span class="p">,</span><span class="w"> </span><span class="s1">' '</span><span class="p">,</span><span class="w"> </span><span class="s1">'X'</span><span class="p">]</span>
 </span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="p">];</span>
 </span></code></pre></div>
 <p>To access the top-middle element, we first select the row array at index 0, and then the column element at index 1: <code>board[0][1]</code>, which gives us 'O'. By combining <strong>Nested For Loops</strong> with a <strong>2D Matrix Array</strong>, you can build complex systems like chess boards, Sudoku games, or terrain maps.</p>
-<h3 id="managing-state-boolean-flag-variable-and-state-machine-logic">Managing State: <strong>Boolean Flag Variable</strong> and <strong>State Machine Logic</strong><a class="headerlink" href="#managing-state-boolean-flag-variable-and-state-machine-logic" title="Permanent link">&para;</a></h3>
+<h3 id="managing-state-boolean-flag-variable-and-state-machine-logic">Managing State: <strong>Boolean Flag Variable</strong> and <strong>State Machine Logic</strong><a class="headerlink" href="#managing-state-boolean-flag-variable-and-state-machine-logic" title="Permanent link">¶</a></h3>
 <p>As your programs become more complex, especially with interactivity, you need to keep track of what "mode" the program is in. Is the game paused or running? Is the player jumping or falling?</p>
 <p>A <strong>Boolean Flag Variable</strong> is a simple true/false variable that acts like a switch.</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">isGameOver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
 </span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
 </span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="kd">function</span><span class="w"> </span><span class="nx">draw</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">isGameOver</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Game Over!&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">width</span><span class="o">/</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">height</span><span class="o">/</span><span class="mf">2</span><span class="p">);</span>
-</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">    </span><span class="c1">// Don&#39;t update game logic</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="nx">text</span><span class="p">(</span><span class="s2">"Game Over!"</span><span class="p">,</span><span class="w"> </span><span class="nx">width</span><span class="o">/</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">height</span><span class="o">/</span><span class="mf">2</span><span class="p">);</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">    </span><span class="c1">// Don't update game logic</span>
 </span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">    </span><span class="c1">// Run normal game loops</span>
 </span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">  </span><span class="p">}</span>
@@ -1922,21 +2074,22 @@ Here's a secret for dealing with dynamic arrays that are constantly growing or s
 </span></code></pre></div>
 <p>When you have many different states (Start Menu, Playing, Paused, Game Over, High Score Screen), a simple flag isn't enough. You need <strong>State Machine Logic</strong>.</p>
 <p>A State Machine uses a variable (often a string or number) to track the current phase of the program, and a <code>switch</code> statement (or <code>if/else if</code> blocks) to decide which code to run.</p>
-<div class="language-javascript highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">gameState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;MENU&quot;</span><span class="p">;</span>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">gameState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"MENU"</span><span class="p">;</span>
 </span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
 </span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="kd">function</span><span class="w"> </span><span class="nx">draw</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">gameState</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;MENU&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">gameState</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">"MENU"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">    </span><span class="nx">drawMainMenu</span><span class="p">();</span>
-</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">gameState</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;PLAYING&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">gameState</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">"PLAYING"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">    </span><span class="nx">playGame</span><span class="p">();</span>
-</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">gameState</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;GAMEOVER&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">gameState</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">"GAMEOVER"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">    </span><span class="nx">showGameOverScreen</span><span class="p">();</span>
 </span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">  </span><span class="p">}</span>
 </span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>By organizing your code with <strong>State Machine Logic</strong>, you can easily transition from one scene of your interactive application to the next.</p>
+<h4 id="diagram-the-interactive-array-train">Diagram: The Interactive Array Train<a class="headerlink" href="#diagram-the-interactive-array-train" title="Permanent link">¶</a></h4>
 <details>
-<summary><b>MicroSim: The Interactive Array Train</b></summary>
+<summary><b>MicroSim: The Interactive Array Train</b></summary><summary><b>MicroSim: The Interactive Array Train</b></summary>
 <b>Type:</b> p5.js Interactive Concept Explorer
 
 <b>Description:</b> A drag-and-drop interactive visualization of an **Array Data Structure** represented as train cars on a track.
@@ -1947,14 +2100,14 @@ Here's a secret for dealing with dynamic arrays that are constantly growing or s
 - Each train car clearly displays its **Array Element Indexing** number on its side, reinforcing that the first car is always index 0.
 </details>
 
-<h2 id="chapter-summary">Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permanent link">&para;</a></h2>
+<h2 id="chapter-summary">Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permanent link">¶</a></h2>
 <p>In this chapter, we conquered the core concepts of repetition and data organization. We learned how the <strong>While Loop Construct</strong> and <strong>For Loop Construct</strong> let us automate repetitive tasks, relying on a <strong>Loop Counter Variable</strong> while avoiding the dreaded <strong>Infinite Loop Prevention</strong> pitfalls. We used <strong>Nested For Loops</strong> to master <strong>2D Grid Iteration</strong>.</p>
 <p>We then introduced the <strong>Array Data Structure</strong>, leveraging <strong>Array Element Indexing</strong> and the <strong>Array Length Property</strong> to manage lists of data. We manipulated arrays dynamically using the <strong>Array Push Method</strong>, <strong>Array Pop Method</strong>, <strong>Array Splice Removal</strong>, and <strong>Array Concat Joining</strong>, and learned how to iterate cleanly with <strong>For Of Loop Iteration</strong> and the <strong>For Each Array Method</strong>. We even flipped and ordered arrays with <strong>Array Reverse Ordering</strong> and <strong>Array Sort Ordering</strong>, and nested them to create a <strong>2D Matrix Array</strong>.</p>
 <p>Finally, we used a <strong>Boolean Flag Variable</strong> and <strong>State Machine Logic</strong> to control the flow and state of our applications, breaking out of loops when necessary using <strong>Break and Continue Keywords</strong>.</p>
 <p>You now have the tools to manage massive amounts of data and create complex visual patterns with just a few lines of code. Onward to the next challenge!</p>
 <div class="admonition mascot-celebration">
 <p class="admonition-title">Automation Mastered!</p>
-<p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+<p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png">
 Incredible work! You just mastered while loops, for loops, 2D nested grid iteration, and dynamic array data structures! You now have the power to command armies of shapes and manage complex data with just a few lines of code.</p>
 </div>
 
@@ -1982,7 +2135,7 @@ Incredible work! You just mastered while loops, for loops, 2D nested grid iterat
         
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
   Back to top
 </button>
         
@@ -1992,20 +2145,20 @@ Incredible work! You just mastered while loops, for loops, 2D nested grid iterat
   
     
       
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
         
           
           <a href="../04-variables-and-scope/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 4. Variables, Data Types &amp; Scope Fundamentals">
             <div class="md-footer__button md-icon">
               
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
             </div>
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Previous
               </span>
               <div class="md-ellipsis">
-                4. Variables, Data Types & Scope Fundamentals
+                4. Variables, Data Types &amp; Scope Fundamentals
               </div>
             </div>
           </a>
@@ -2018,12 +2171,12 @@ Incredible work! You just mastered while loops, for loops, 2D nested grid iterat
                 Next
               </span>
               <div class="md-ellipsis">
-                6. Matrix Transformations & Coordinate Systems
+                6. Matrix Transformations &amp; Coordinate Systems
               </div>
             </div>
             <div class="md-footer__button md-icon">
               
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
             </div>
           </a>
         
@@ -2035,7 +2188,7 @@ Incredible work! You just mastered while loops, for loops, 2D nested grid iterat
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+      Copyright © 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
     </div>
   
   
@@ -2056,6 +2209,14 @@ Incredible work! You just mastered while loops, for loops, 2D nested grid iterat
     
       <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
+        <script src="../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
     
-  </body>
-</html>
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

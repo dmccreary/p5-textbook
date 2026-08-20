@@ -1,7 +1,4 @@
-
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
+<!DOCTYPE html><html lang="en" class="no-js"><head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -26,7 +23,7 @@
     
     
       
-        <title>6. Matrix Transformations & Coordinate Systems - The Art of Processing</title>
+        <title>6. Matrix Transformations &amp; Coordinate Systems - The Art of Processing</title>
       
     
     
@@ -47,7 +44,7 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
@@ -56,14 +53,52 @@
     
       <link rel="stylesheet" href="../../css/mascot.css">
     
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
+      
+        <meta property="og:type" content="website">
+      
+        <meta property="og:title" content="6. Matrix Transformations &amp; Coordinate Systems - The Art of Processing">
+      
+        <meta property="og:description" content="An interactive intelligent textbook about the p5.js processing library and how to use it to teach computational thinking.">
+      
+        <meta property="og:image" content="https://dmccreary.github.io/p5-textbook/assets/images/social/chapters/06-matrix-transformations/index.png">
+      
+        <meta property="og:image:type" content="image/png">
+      
+        <meta property="og:image:width" content="1200">
+      
+        <meta property="og:image:height" content="630">
+      
+        <meta property="og:url" content="https://dmccreary.github.io/p5-textbook/chapters/06-matrix-transformations/">
+      
+        <meta name="twitter:card" content="summary_large_image">
+      
+        <meta name="twitter:title" content="6. Matrix Transformations &amp; Coordinate Systems - The Art of Processing">
+      
+        <meta name="twitter:description" content="An interactive intelligent textbook about the p5.js processing library and how to use it to teach computational thinking.">
+      
+        <meta name="twitter:image" content="https://dmccreary.github.io/p5-textbook/assets/images/social/chapters/06-matrix-transformations/index.png">
+      
     
-  </head>
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
   
   
     
@@ -99,12 +134,12 @@
     <a href="../.." title="The Art of Processing" class="md-header__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -116,7 +151,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              6. Matrix Transformations & Coordinate Systems
+              6. Matrix Transformations &amp; Coordinate Systems
             
           </span>
         </div>
@@ -130,7 +165,7 @@
     
       <label class="md-header__button md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
       </label>
       <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
@@ -139,20 +174,20 @@
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
           <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
             
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
           </a>
         
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
         </button>
       </nav>
       
@@ -177,7 +212,7 @@
         <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -201,7 +236,7 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -213,7 +248,7 @@
     <a href="../.." title="The Art of Processing" class="md-nav__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     The Art of Processing
@@ -223,7 +258,7 @@
       <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -459,7 +494,7 @@
         
   
   <span class="md-ellipsis">
-    1. Introduction to Creative Coding & Canvas Foundations
+    1. Introduction to Creative Coding &amp; Canvas Foundations
   </span>
   
 
@@ -480,7 +515,7 @@
         
   
   <span class="md-ellipsis">
-    2. 2D Primitive Shapes & Custom Geometries
+    2. 2D Primitive Shapes &amp; Custom Geometries
   </span>
   
 
@@ -501,7 +536,7 @@
         
   
   <span class="md-ellipsis">
-    3. Color Theory, Color Modes & Pixel Manipulation
+    3. Color Theory, Color Modes &amp; Pixel Manipulation
   </span>
   
 
@@ -522,7 +557,7 @@
         
   
   <span class="md-ellipsis">
-    4. Variables, Data Types & Scope Fundamentals
+    4. Variables, Data Types &amp; Scope Fundamentals
   </span>
   
 
@@ -543,7 +578,7 @@
         
   
   <span class="md-ellipsis">
-    5. Control Flow, Loops & Array Data Structures
+    5. Control Flow, Loops &amp; Array Data Structures
   </span>
   
 
@@ -573,7 +608,7 @@
           
   
   <span class="md-ellipsis">
-    6. Matrix Transformations & Coordinate Systems
+    6. Matrix Transformations &amp; Coordinate Systems
   </span>
   
 
@@ -584,7 +619,7 @@
         
   
   <span class="md-ellipsis">
-    6. Matrix Transformations & Coordinate Systems
+    6. Matrix Transformations &amp; Coordinate Systems
   </span>
   
 
@@ -649,6 +684,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Spinning the Grid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-pivot-point-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Pivot Point Selection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -693,6 +743,21 @@
       Nested Transformation Trees: The Solar System
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Nested Transformation Trees: The Solar System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-solar-system-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Solar System Hierarchy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -784,7 +849,7 @@
         
   
   <span class="md-ellipsis">
-    7. Linear Motion, Trigonometry & Wave Math
+    7. Linear Motion, Trigonometry &amp; Wave Math
   </span>
   
 
@@ -805,7 +870,7 @@
         
   
   <span class="md-ellipsis">
-    8. Polar Coordinates, Oscillation & Easing
+    8. Polar Coordinates, Oscillation &amp; Easing
   </span>
   
 
@@ -826,7 +891,7 @@
         
   
   <span class="md-ellipsis">
-    9. Randomness, Gaussian Distributions & Random Walk
+    9. Randomness, Gaussian Distributions &amp; Random Walk
   </span>
   
 
@@ -847,7 +912,7 @@
         
   
   <span class="md-ellipsis">
-    10. Perlin Noise Landscapes & Vector Flow Fields
+    10. Perlin Noise Landscapes &amp; Vector Flow Fields
   </span>
   
 
@@ -868,7 +933,7 @@
         
   
   <span class="md-ellipsis">
-    11. Vector Math Fundamentals & Physics Acceleration
+    11. Vector Math Fundamentals &amp; Physics Acceleration
   </span>
   
 
@@ -889,7 +954,7 @@
         
   
   <span class="md-ellipsis">
-    12. Particle Systems, Forces & Steering Behaviors
+    12. Particle Systems, Forces &amp; Steering Behaviors
   </span>
   
 
@@ -910,7 +975,7 @@
         
   
   <span class="md-ellipsis">
-    13. Mouse & Keyboard User Event Sensing
+    13. Mouse &amp; Keyboard User Event Sensing
   </span>
   
 
@@ -931,7 +996,7 @@
         
   
   <span class="md-ellipsis">
-    14. Touch Gestures, Mobile Sensors & Interaction
+    14. Touch Gestures, Mobile Sensors &amp; Interaction
   </span>
   
 
@@ -952,7 +1017,7 @@
         
   
   <span class="md-ellipsis">
-    15. DOM Controls, Input Fields & UI Elements
+    15. DOM Controls, Input Fields &amp; UI Elements
   </span>
   
 
@@ -973,7 +1038,7 @@
         
   
   <span class="md-ellipsis">
-    16. CSS Styling, Layouts & Web Page Integration
+    16. CSS Styling, Layouts &amp; Web Page Integration
   </span>
   
 
@@ -994,7 +1059,7 @@
         
   
   <span class="md-ellipsis">
-    17. Functions, Arrow Expressions & Callbacks
+    17. Functions, Arrow Expressions &amp; Callbacks
   </span>
   
 
@@ -1015,7 +1080,7 @@
         
   
   <span class="md-ellipsis">
-    18. ES6 Classes, Object-Oriented Programming & Async Data
+    18. ES6 Classes, Object-Oriented Programming &amp; Async Data
   </span>
   
 
@@ -1036,7 +1101,7 @@
         
   
   <span class="md-ellipsis">
-    19. 3D WebGL Coordinates & Primitive Geometries
+    19. 3D WebGL Coordinates &amp; Primitive Geometries
   </span>
   
 
@@ -1057,7 +1122,7 @@
         
   
   <span class="md-ellipsis">
-    20. 3D Cameras, Lighting Models, Materials & Shaders
+    20. 3D Cameras, Lighting Models, Materials &amp; Shaders
   </span>
   
 
@@ -1078,7 +1143,7 @@
         
   
   <span class="md-ellipsis">
-    21. Audio Synthesis, Oscillators & Envelopes
+    21. Audio Synthesis, Oscillators &amp; Envelopes
   </span>
   
 
@@ -1099,7 +1164,7 @@
         
   
   <span class="md-ellipsis">
-    22. Microphone Input & FFT Spectral Analysis
+    22. Microphone Input &amp; FFT Spectral Analysis
   </span>
   
 
@@ -1120,7 +1185,7 @@
         
   
   <span class="md-ellipsis">
-    23. Image Processing, Filters & Video Capture
+    23. Image Processing, Filters &amp; Video Capture
   </span>
   
 
@@ -1141,7 +1206,7 @@
         
   
   <span class="md-ellipsis">
-    24. Generative Typography & Vector Font Outlines
+    24. Generative Typography &amp; Vector Font Outlines
   </span>
   
 
@@ -1162,7 +1227,7 @@
         
   
   <span class="md-ellipsis">
-    25. Development Environment, Tools & Pedagogy
+    25. Development Environment, Tools &amp; Pedagogy
   </span>
   
 
@@ -1190,6 +1255,14 @@
       
         
           
+        
+      
+        
+      
+        
+      
+        
+      
         
       
         
@@ -1251,6 +1324,14 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1279,6 +1360,46 @@
   
 
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1331,7 +1452,7 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1393,6 +1514,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Spinning the Grid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-pivot-point-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Pivot Point Selection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1437,6 +1573,21 @@
       Nested Transformation Trees: The Solar System
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Nested Transformation Trees: The Solar System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-solar-system-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Solar System Hierarchy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1525,20 +1676,20 @@
   
     <a href="https://github.com/dmccreary/p5-textbook/blob/main/docs/chapters/06-matrix-transformations/index.md" title="Edit this page" class="md-content__button md-icon">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
     </a>
   
   
 
 
-<hr />
+<hr>
 <p>quality_score: 100
 readability_score: 62</p>
-<hr />
-<h1 id="matrix-transformations-coordinate-systems">Matrix Transformations &amp; Coordinate Systems<a class="headerlink" href="#matrix-transformations-coordinate-systems" title="Permanent link">&para;</a></h1>
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<hr>
+<h1 id="matrix-transformations-coordinate-systems">Matrix Transformations &amp; Coordinate Systems<a class="headerlink" href="#matrix-transformations-coordinate-systems" title="Permanent link">¶</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">¶</a></h2>
 <p>Explains canvas translation, rotation, scaling, matrix isolation (push()/pop()), and hierarchical transformation trees. Students will gain practical hands-on experience by building interactive sketches and visual experiments that demonstrate these concepts.</p>
-<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">¶</a></h2>
 <p>This chapter covers the following 34 concepts from the learning graph:</p>
 <ol>
 <li>Translate Function</li>
@@ -1576,21 +1727,21 @@ readability_score: 62</p>
 <li>Transform Matrix Inversion</li>
 <li>Affine Transformation Model</li>
 </ol>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">¶</a></h2>
 <p>This chapter builds on concepts from:</p>
 <ul>
 <li><a href="../05-control-flow-and-loops/">Chapter 5: Control Flow, Loops &amp; Array Data Structures</a></li>
 </ul>
-<hr />
+<hr>
 <div class="admonition mascot-welcome">
 <p class="admonition-title">Welcome to Chapter 6!</p>
-<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" /></p>
+<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png"></p>
 <p>Welcome to Chapter 6! If you've ever felt constrained by plotting every single point by hand, this is the chapter that sets you free. We are going to learn how to bend, twist, and spin the entire digital canvas itself. Time to color outside the loops!</p>
 </div>
 <p>Welcome to the mind-bending world of matrix transformations! Up until now, we've been drawing shapes by explicitly telling our code exactly where to put them using X and Y coordinates. If you wanted a rectangle at <code>(100, 100)</code>, you typed <code>rect(100, 100, 50, 50)</code>. </p>
 <p>But what if you want to draw a robot arm that bends at the elbow? Or a spinning solar system with planets orbiting a sun while moons orbit the planets? Doing the math for every single point as it rotates and moves across the screen would be incredibly tedious and complex. </p>
 <p>This is where the magic of transformations comes in. Instead of calculating the math to move a shape, we are going to learn how to change the underlying fabric of the coordinate system itself! </p>
-<h3 id="the-moving-camera-vs-moving-the-world">The Moving Camera vs Moving the World<a class="headerlink" href="#the-moving-camera-vs-moving-the-world" title="Permanent link">&para;</a></h3>
+<h3 id="the-moving-camera-vs-moving-the-world">The Moving Camera vs Moving the World<a class="headerlink" href="#the-moving-camera-vs-moving-the-world" title="Permanent link">¶</a></h3>
 <p>Here is the most important metaphor to keep in your head: <strong>The moving camera vs moving the world</strong>. When you use the <strong>Translate Function</strong>, you might think you are picking up your rectangle and moving it 50 pixels to the right. But in reality, you are leaving the rectangle exactly where it is (often drawn at <code>(0, 0)</code>), and instead, you are picking up the entire coordinate grid and dragging it! </p>
 <p>Imagine you are standing in a room and you want to take a picture of an apple on a table. You have two options:
 1. Walk over to the apple, pick it up, and move it to the center of your camera frame.
@@ -1604,23 +1755,23 @@ readability_score: 62</p>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nx">background</span><span class="p">(</span><span class="mf">220</span><span class="p">);</span>
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="c1">// Draw a red square at the default origin (top-left)</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="nx">fill</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">);</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="nx">fill</span><span class="p">(</span><span class="s1">'red'</span><span class="p">);</span>
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="nx">rect</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">50</span><span class="p">,</span><span class="w"> </span><span class="mf">50</span><span class="p">);</span><span class="w"> </span>
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="c1">// Perform an Origin Point Relocation</span>
 </span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="nx">translate</span><span class="p">(</span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">);</span>
 </span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
 </span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">  </span><span class="c1">// Draw a blue square at the NEW origin</span>
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">  </span><span class="nx">fill</span><span class="p">(</span><span class="s1">&#39;blue&#39;</span><span class="p">);</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">  </span><span class="nx">fill</span><span class="p">(</span><span class="s1">'blue'</span><span class="p">);</span>
 </span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">  </span><span class="nx">rect</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">50</span><span class="p">,</span><span class="w"> </span><span class="mf">50</span><span class="p">);</span>
 </span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="p">}</span>
 </span></code></pre></div>
 <div class="admonition mascot-tip">
 <p class="admonition-title">Palette's Tip</p>
-<p><img alt="Palette tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" /></p>
+<p><img alt="Palette tip" class="mascot-admonition-img" src="../../img/mascot/tip.png"></p>
 <p>Want to save yourself a massive headache? Here is a shortcut: always draw your shapes exactly at <code>(0, 0)</code> when using transformations! Let <code>translate()</code> do the heavy lifting of moving the grid, and your shape will follow perfectly without you recalculating its center.</p>
 </div>
-<h3 id="spinning-the-grid">Spinning the Grid<a class="headerlink" href="#spinning-the-grid" title="Permanent link">&para;</a></h3>
+<h3 id="spinning-the-grid">Spinning the Grid<a class="headerlink" href="#spinning-the-grid" title="Permanent link">¶</a></h3>
 <p>Once you've moved the origin point, you might want to spin things around. The <strong>Rotate Function</strong> tilts the entire coordinate grid around the current origin point. </p>
 <p>However, before you rotate, you need to understand how p5.js measures angles. By default, it uses the <strong>Radians Angle System</strong>, where a full circle is <code>TWO_PI</code> (about 6.28) radians. If you are more comfortable with the <strong>Degrees Angle System</strong> (where a circle is 360 degrees), you can easily switch by changing the <strong>Angle Mode Setting</strong> in your <code>setup()</code> function:</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -1629,42 +1780,43 @@ readability_score: 62</p>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>When you rotate, the grid spins around the <code>(0, 0)</code> point. This is why the <strong>Translate Function</strong> is so critical to use <em>before</em> the <strong>Rotate Function</strong>. If you don't translate first, your shape will orbit the top-left corner of the canvas! By translating to the center of your shape first, you achieve a <strong>Center Rotation Pattern</strong>. If you translate to a corner of the shape, you achieve a <strong>Corner Rotation Pattern</strong>. It's all about <strong>Pivot Point Selection</strong>.</p>
+<h4 id="diagram-pivot-point-selection">Diagram: Pivot Point Selection<a class="headerlink" href="#diagram-pivot-point-selection" title="Permanent link">¶</a></h4>
 <details class="microsim">
-<summary>MicroSim: Pivot Point Selection</summary>
+<summary>MicroSim: Pivot Point Selection</summary><summary>MicroSim: Pivot Point Selection</summary>
 This simulation demonstrates the difference between the Center Rotation Pattern and Corner Rotation Pattern. Click to toggle where the origin point is translated before the rotation happens. Notice how the grid spins around the red dot (the origin).
-<div class="language-html highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;microsim-container&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;height: 400px; border: 1px solid #ccc; background: #f9f9f9;&quot;</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"microsim-container"</span> <span class="na">style</span><span class="o">=</span><span class="s">"height: 400px; border: 1px solid #ccc; background: #f9f9f9;"</span><span class="p">&gt;</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  <span class="cm">&lt;!-- Simulation code placeholder --&gt;</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>  <span class="p">&lt;</span><span class="nt">p</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;text-align:center; padding-top: 180px;&quot;</span><span class="p">&gt;</span>[Interactive Rotation Simulator Loading...]<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>  <span class="p">&lt;</span><span class="nt">p</span> <span class="na">style</span><span class="o">=</span><span class="s">"text-align:center; padding-top: 180px;"</span><span class="p">&gt;</span>[Interactive Rotation Simulator Loading...]<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </span></code></pre></div>
 </details>
 
-<h3 id="making-things-bigger-and-smaller">Making Things Bigger and Smaller<a class="headerlink" href="#making-things-bigger-and-smaller" title="Permanent link">&para;</a></h3>
+<h3 id="making-things-bigger-and-smaller">Making Things Bigger and Smaller<a class="headerlink" href="#making-things-bigger-and-smaller" title="Permanent link">¶</a></h3>
 <p>Next up is the <strong>Scale Function</strong>. This stretches or shrinks the coordinate grid. If you call <code>scale(2)</code>, every coordinate point becomes twice as far away, and every shape is drawn twice as large. This is called <strong>Uniform Scaling</strong>. </p>
 <p>If you pass two numbers, like <code>scale(2, 0.5)</code>, the grid stretches horizontally but shrinks vertically. This is <strong>Non Uniform Scaling</strong>. </p>
 <p>A clever trick with scaling is <strong>Negative Scale Reflection</strong>. If you use <code>scale(-1, 1)</code>, you flip the grid horizontally, creating a mirror image. This is incredibly useful for drawing characters that need to face left or right without redrawing all their parts!</p>
-<h3 id="shearing-the-grid">Shearing the Grid<a class="headerlink" href="#shearing-the-grid" title="Permanent link">&para;</a></h3>
+<h3 id="shearing-the-grid">Shearing the Grid<a class="headerlink" href="#shearing-the-grid" title="Permanent link">¶</a></h3>
 <p>If moving, spinning, and stretching aren't enough, you can also slant the grid using the <strong>Shear X Transformation</strong> and <strong>Shear Y Transformation</strong>. These functions push the parallel lines of the grid into parallelograms, allowing you to create skewed, italic-like effects on your shapes.</p>
-<h3 id="save-states-the-push-and-pop-functions">Save States: The Push and Pop Functions<a class="headerlink" href="#save-states-the-push-and-pop-functions" title="Permanent link">&para;</a></h3>
+<h3 id="save-states-the-push-and-pop-functions">Save States: The Push and Pop Functions<a class="headerlink" href="#save-states-the-push-and-pop-functions" title="Permanent link">¶</a></h3>
 <p>If you change the grid by translating, rotating, and scaling, how do you get back to normal? Every time the <code>draw()</code> loop finishes, the grid automatically resets. But what if you want to rotate a square in the center of the screen, and then draw an un-rotated square in the corner?</p>
 <p>This brings us to our second major metaphor: <strong>The Push/Pop Save States like video game checkpoints</strong>.</p>
 <p>Think of the <strong>Push Function</strong> (<code>push()</code>) as saving your game before a boss fight. It records the exact current state of the coordinate system. You can then translate, rotate, and scale to your heart's content. When you are done, you call the <strong>Pop Function</strong> (<code>pop()</code>), which restores the coordinate system to exactly how it was when you last pushed! </p>
 <p>These functions create <strong>Isolated Canvas Layers</strong>, ensuring that the transformations applied to one object don't accidentally leak over and affect the next object. The mathematical engine behind this relies on <strong>Matrix Stack Operations</strong>. When you <code>push()</code>, you add the current transformation state to a stack (like a stack of plates). When you <code>pop()</code>, you take the top plate off, returning to the previous state.</p>
 <div class="admonition mascot-warning">
 <p class="admonition-title">Palette's Warning</p>
-<p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" /></p>
+<p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png"></p>
 <p>Watch out for stack overflow crashes! If you call <code>push()</code> inside the <code>draw()</code> loop without a matching <code>pop()</code>, the browser memory will quickly fill up. A common fix is to immediately write <code>pop()</code> on the next line after <code>push()</code>, then insert your transformations between them.</p>
 </div>
-<h3 id="transformation-order-logic">Transformation Order Logic<a class="headerlink" href="#transformation-order-logic" title="Permanent link">&para;</a></h3>
+<h3 id="transformation-order-logic">Transformation Order Logic<a class="headerlink" href="#transformation-order-logic" title="Permanent link">¶</a></h3>
 <p>The order in which you apply transformations is absolutely critical. <strong>Transformation Order Logic</strong> dictates that transformations stack up and affect each other. </p>
 <p>Let's say you want to draw a spinning square 100 pixels to the right. 
 - If you <code>translate(100, 0)</code> and then <code>rotate(45)</code>, the grid moves right, and then the grid spins on that new spot. The square spins in place.
 - If you <code>rotate(45)</code> and then <code>translate(100, 0)</code>, the grid spins FIRST, meaning the "right" direction is now pointing diagonally down! When you move 100 pixels, it travels along that new diagonal path. </p>
 <p>As a general rule, you should translate first, then rotate, then scale!</p>
-<h3 id="nested-transformation-trees-the-solar-system">Nested Transformation Trees: The Solar System<a class="headerlink" href="#nested-transformation-trees-the-solar-system" title="Permanent link">&para;</a></h3>
+<h3 id="nested-transformation-trees-the-solar-system">Nested Transformation Trees: The Solar System<a class="headerlink" href="#nested-transformation-trees-the-solar-system" title="Permanent link">¶</a></h3>
 <div class="admonition mascot-thinking">
 <p class="admonition-title">Palette's Insight</p>
-<p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" /></p>
+<p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png"></p>
 <p>Think about it like this... when your shoulder moves, your hand moves with it. The matrix stack isn't just saving coordinates; it is passing the coordinate system down a chain of dependents to create articulated movement.</p>
 </div>
 <p>Our third metaphor is <strong>The Solar System</strong>, representing a <strong>Hierarchical Transformation</strong>. </p>
@@ -1678,17 +1830,18 @@ This simulation demonstrates the difference between the Center Rotation Pattern 
 7. We translate outward by 30 pixels and draw the moon.
 8. We <code>pop()</code> twice to get back to the sun's baseline state.</p>
 <p>This creates <strong>Nested Transformation Trees</strong>. By pushing and popping inside of other pushes and pops, we create a chain of dependencies. The moon inherits the Earth's rotation and translation, and the Earth inherits the sun's translation. This is exactly how the <strong>Solar System Transformation</strong> is modeled, as well as complex mechanical movements like a <strong>Robot Joint Transformation</strong> (where the hand is attached to the forearm, which is attached to the upper arm).</p>
+<h4 id="diagram-the-solar-system-hierarchy">Diagram: The Solar System Hierarchy<a class="headerlink" href="#diagram-the-solar-system-hierarchy" title="Permanent link">¶</a></h4>
 <details class="microsim">
-<summary>MicroSim: The Solar System Hierarchy</summary>
+<summary>MicroSim: The Solar System Hierarchy</summary><summary>MicroSim: The Solar System Hierarchy</summary>
 Watch how the nested transformations create complex orbital paths. The moon revolves around the Earth, while the Earth revolves around the sun. This is achieved entirely through pushing, popping, translating, and rotating in a hierarchical structure.
-<div class="language-html highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;microsim-container&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;height: 400px; border: 1px solid #ccc; background: #f9f9f9;&quot;</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"microsim-container"</span> <span class="na">style</span><span class="o">=</span><span class="s">"height: 400px; border: 1px solid #ccc; background: #f9f9f9;"</span><span class="p">&gt;</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  <span class="cm">&lt;!-- Simulation code placeholder --&gt;</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  <span class="p">&lt;</span><span class="nt">p</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;text-align:center; padding-top: 180px;&quot;</span><span class="p">&gt;</span>[Hierarchical Solar System Simulator Loading...]<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  <span class="p">&lt;</span><span class="nt">p</span> <span class="na">style</span><span class="o">=</span><span class="s">"text-align:center; padding-top: 180px;"</span><span class="p">&gt;</span>[Hierarchical Solar System Simulator Loading...]<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </span></code></pre></div>
 </details>
 
-<h3 id="animating-transformations">Animating Transformations<a class="headerlink" href="#animating-transformations" title="Permanent link">&para;</a></h3>
+<h3 id="animating-transformations">Animating Transformations<a class="headerlink" href="#animating-transformations" title="Permanent link">¶</a></h3>
 <p>To make things move over time, we use variables. By creating a <strong>Rotation Speed Variable</strong>, we can steadily increase an angle every frame. </p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">rotationSpeed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// Rotation Speed Variable</span>
@@ -1710,15 +1863,15 @@ Watch how the nested transformations create complex orbital paths. The moon revo
 </span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>If you want an object to swing back and forth instead of spinning continuously, you can use the <code>sin()</code> or <code>cos()</code> functions to create an <strong>Oscillating Rotation Angle</strong>. Similarly, you can apply a changing number to the scale function to create a breathing or pulsing <strong>Scale Factor Animation</strong>.</p>
-<h3 id="under-the-hood-matrix-math">Under the Hood: Matrix Math<a class="headerlink" href="#under-the-hood-matrix-math" title="Permanent link">&para;</a></h3>
+<h3 id="under-the-hood-matrix-math">Under the Hood: Matrix Math<a class="headerlink" href="#under-the-hood-matrix-math" title="Permanent link">¶</a></h3>
 <p>If you are feeling brave, let's talk about what's actually happening mathematically. Every transformation alters a grid of numbers in the background known as an <strong>Affine Transformation Model</strong>. </p>
 <p>You have direct access to this math if you need it. You can call the <strong>Reset Matrix Function</strong> (<code>resetMatrix()</code>) to instantly clear all translations, rotations, and scales, snapping the grid back to the default top-left origin. </p>
 <p>You can also use the <strong>Get Current Matrix</strong> function to look at the raw mathematical numbers that define the current grid state, or use the <strong>Apply Matrix Function</strong> (<code>applyMatrix()</code>) to perform complex custom skews and morphs by manually feeding it 6 specific numbers. </p>
-<h3 id="bridging-the-two-worlds">Bridging the Two Worlds<a class="headerlink" href="#bridging-the-two-worlds" title="Permanent link">&para;</a></h3>
+<h3 id="bridging-the-two-worlds">Bridging the Two Worlds<a class="headerlink" href="#bridging-the-two-worlds" title="Permanent link">¶</a></h3>
 <p>Sometimes, you need to know where a transformed object actually is on your computer screen. If you translated 100 right, rotated 45 degrees, and translated 50 right, what is the actual X and Y pixel coordinate of your shape? </p>
 <p>You can map between the transformed grid and the raw screen pixels. To convert a point from your weird, spun-around coordinate grid back to the flat screen coordinates, you use <strong>Local to Screen Coordinates</strong> mapping functions (<code>screenX()</code> and <code>screenY()</code>). Conversely, if a user clicks their mouse on the screen and you need to know where that click lands in your rotated world, you calculate the <strong>Screen to Local Coordinates</strong> (which sometimes involves a <strong>Transform Matrix Inversion</strong> to run the math backwards!).</p>
 <p>Understanding how to manipulate the coordinate grid transforms you from someone who draws static shapes into an architect who can construct complex, articulated, and infinitely scalable digital worlds!</p>
-<h3 id="deep-dive-step-by-step-robot-arm">Deep Dive: Step-by-Step Robot Arm<a class="headerlink" href="#deep-dive-step-by-step-robot-arm" title="Permanent link">&para;</a></h3>
+<h3 id="deep-dive-step-by-step-robot-arm">Deep Dive: Step-by-Step Robot Arm<a class="headerlink" href="#deep-dive-step-by-step-robot-arm" title="Permanent link">¶</a></h3>
 <p>Let's put everything together to build a classic project: a robotic arm. This perfectly illustrates the power of <strong>Nested Transformation Trees</strong> and <strong>Robot Joint Transformation</strong>. </p>
 <p>Imagine a robot arm with three parts: a base, a lower arm, and an upper arm. If we didn't use transformations, calculating the tip of the arm as the base rotates and the elbow bends would require serious trigonometry (sines, cosines, and the Pythagorean theorem). But with our matrix functions, it becomes incredibly simple. We just "walk" along the arm, placing our coordinate system at each joint.</p>
 <p>Here is the plan:
@@ -1766,7 +1919,7 @@ Watch how the nested transformations create complex orbital paths. The moon revo
 </span><span id="__span-5-36"><a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>By changing the <code>baseAngle</code>, the entire arm sways. By changing the <code>elbowAngle</code>, only the upper arm bends, but it perfectly follows the swaying base because of <strong>Transformation Order Logic</strong>. The second translation and rotation are happening <em>relative</em> to the first one!</p>
-<h3 id="troubleshooting-matrix-mayhem">Troubleshooting Matrix Mayhem<a class="headerlink" href="#troubleshooting-matrix-mayhem" title="Permanent link">&para;</a></h3>
+<h3 id="troubleshooting-matrix-mayhem">Troubleshooting Matrix Mayhem<a class="headerlink" href="#troubleshooting-matrix-mayhem" title="Permanent link">¶</a></h3>
 <p>As you start using <strong>Push Function</strong> and <strong>Pop Function</strong>, you might run into some wild visual glitches. Here are the most common pitfalls and how to fix them:</p>
 <p><strong>The Runaway Spin:</strong>
 If your object is spinning faster and faster, or flying off the screen, you might have forgotten to use <code>push()</code> and <code>pop()</code>. If you don't isolate your transformations into <strong>Isolated Canvas Layers</strong>, the rotation from frame 1 will carry over into frame 2, and frame 3, accumulating endlessly. Always reset your grid, or use push/pop pairs!</p>
@@ -1774,12 +1927,12 @@ If your object is spinning faster and faster, or flying off the screen, you migh
 If you intended to have an object spin on its center (a <strong>Center Rotation Pattern</strong>), but it looks like a moon orbiting a planet, you probably called <code>rotate()</code> <em>before</em> <code>translate()</code>. Remember, <strong>Rotate Function</strong> always spins around <code>(0, 0)</code>. If <code>(0, 0)</code> is far away from your shape, your shape will travel in a giant circle.</p>
 <p><strong>The Squished Distortions:</strong>
 When using <strong>Non Uniform Scaling</strong> (like <code>scale(2, 0.5)</code>), everything you draw afterwards is going to be stretched wide and squished flat. Even worse, if you try to rotate <em>after</em> a non-uniform scale, your shape will distort in bizarre ways. The underlying <strong>Affine Transformation Model</strong> gets skewed. Always try to scale <em>last</em> in your order of operations. </p>
-<h3 id="why-does-this-matter-the-video-game-connection">Why Does This Matter? The Video Game Connection<a class="headerlink" href="#why-does-this-matter-the-video-game-connection" title="Permanent link">&para;</a></h3>
+<h3 id="why-does-this-matter-the-video-game-connection">Why Does This Matter? The Video Game Connection<a class="headerlink" href="#why-does-this-matter-the-video-game-connection" title="Permanent link">¶</a></h3>
 <p>You might be wondering if professional programmers actually use these tools. The answer is a resounding YES!</p>
 <p>Every 3D video game you have ever played relies entirely on matrix transformations. When you play Minecraft, the game engine uses a giant matrix stack to figure out where every block is relative to the world, and then another matrix to figure out where the world is relative to your player's camera. </p>
 <p>When you move your mouse to look around in a first-person shooter, you aren't actually moving the world; the engine is applying an <strong>Origin Point Relocation</strong> and a <strong>Transform Matrix Inversion</strong> to figure out how to project the 3D world onto your flat 2D screen. </p>
 <p>By mastering the <strong>Translate Function</strong>, <strong>Rotate Function</strong>, and <strong>Scale Function</strong> in 2D space right now, you are building the exact mathematical intuition you will need if you ever decide to learn 3D graphics, Unity, Unreal Engine, or advanced physics simulations.</p>
-<h3 id="summary-challenge">Summary Challenge<a class="headerlink" href="#summary-challenge" title="Permanent link">&para;</a></h3>
+<h3 id="summary-challenge">Summary Challenge<a class="headerlink" href="#summary-challenge" title="Permanent link">¶</a></h3>
 <p>Before moving on to the next chapter, try this challenge:
 Create a sketch with three gears that interlock. 
 - The first gear should spin clockwise.
@@ -1789,7 +1942,7 @@ Create a sketch with three gears that interlock.
 <p>You've got this! Matrices are powerful, but with a little practice, you'll be bending the coordinate grid to your will.</p>
 <div class="admonition mascot-celebration">
 <p class="admonition-title">Chapter Complete!</p>
-<p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" /></p>
+<p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png"></p>
 <p>Incredible work! You just mastered translating, rotating, scaling, and the matrix stack. You can now build complex, hierarchical digital worlds!</p>
 </div>
 
@@ -1798,6 +1951,9 @@ Create a sketch with three gears that interlock.
 
 
 
+
+  
+  
 
 
 
@@ -1814,7 +1970,7 @@ Create a sketch with three gears that interlock.
         
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
   Back to top
 </button>
         
@@ -1824,20 +1980,20 @@ Create a sketch with three gears that interlock.
   
     
       
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
         
           
           <a href="../05-control-flow-and-loops/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 5. Control Flow, Loops &amp; Array Data Structures">
             <div class="md-footer__button md-icon">
               
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
             </div>
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Previous
               </span>
               <div class="md-ellipsis">
-                5. Control Flow, Loops & Array Data Structures
+                5. Control Flow, Loops &amp; Array Data Structures
               </div>
             </div>
           </a>
@@ -1850,12 +2006,12 @@ Create a sketch with three gears that interlock.
                 Next
               </span>
               <div class="md-ellipsis">
-                7. Linear Motion, Trigonometry & Wave Math
+                7. Linear Motion, Trigonometry &amp; Wave Math
               </div>
             </div>
             <div class="md-footer__button md-icon">
               
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
             </div>
           </a>
         
@@ -1867,7 +2023,7 @@ Create a sketch with three gears that interlock.
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+      Copyright © 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
     </div>
   
   
@@ -1888,6 +2044,14 @@ Create a sketch with three gears that interlock.
     
       <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
+        <script src="../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
     
-  </body>
-</html>
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

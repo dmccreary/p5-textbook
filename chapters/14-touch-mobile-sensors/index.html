@@ -1,7 +1,4 @@
-
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
+<!DOCTYPE html><html lang="en" class="no-js"><head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -26,7 +23,7 @@
     
     
       
-        <title>14. Touch Gestures, Mobile Sensors & Interaction - The Art of Processing</title>
+        <title>14. Touch Gestures, Mobile Sensors &amp; Interaction - The Art of Processing</title>
       
     
     
@@ -47,7 +44,7 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
@@ -56,14 +53,52 @@
     
       <link rel="stylesheet" href="../../css/mascot.css">
     
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
+      
+        <meta property="og:type" content="website">
+      
+        <meta property="og:title" content="14. Touch Gestures, Mobile Sensors &amp; Interaction - The Art of Processing">
+      
+        <meta property="og:description" content="An interactive intelligent textbook about the p5.js processing library and how to use it to teach computational thinking.">
+      
+        <meta property="og:image" content="https://dmccreary.github.io/p5-textbook/assets/images/social/chapters/14-touch-mobile-sensors/index.png">
+      
+        <meta property="og:image:type" content="image/png">
+      
+        <meta property="og:image:width" content="1200">
+      
+        <meta property="og:image:height" content="630">
+      
+        <meta property="og:url" content="https://dmccreary.github.io/p5-textbook/chapters/14-touch-mobile-sensors/">
+      
+        <meta name="twitter:card" content="summary_large_image">
+      
+        <meta name="twitter:title" content="14. Touch Gestures, Mobile Sensors &amp; Interaction - The Art of Processing">
+      
+        <meta name="twitter:description" content="An interactive intelligent textbook about the p5.js processing library and how to use it to teach computational thinking.">
+      
+        <meta name="twitter:image" content="https://dmccreary.github.io/p5-textbook/assets/images/social/chapters/14-touch-mobile-sensors/index.png">
+      
     
-  </head>
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
   
   
     
@@ -99,12 +134,12 @@
     <a href="../.." title="The Art of Processing" class="md-header__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -116,7 +151,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              14. Touch Gestures, Mobile Sensors & Interaction
+              14. Touch Gestures, Mobile Sensors &amp; Interaction
             
           </span>
         </div>
@@ -130,7 +165,7 @@
     
       <label class="md-header__button md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
       </label>
       <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
@@ -139,20 +174,20 @@
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
           <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
             
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
           </a>
         
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
         </button>
       </nav>
       
@@ -177,7 +212,7 @@
         <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -201,7 +236,7 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -213,7 +248,7 @@
     <a href="../.." title="The Art of Processing" class="md-nav__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     The Art of Processing
@@ -223,7 +258,7 @@
       <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -459,7 +494,7 @@
         
   
   <span class="md-ellipsis">
-    1. Introduction to Creative Coding & Canvas Foundations
+    1. Introduction to Creative Coding &amp; Canvas Foundations
   </span>
   
 
@@ -480,7 +515,7 @@
         
   
   <span class="md-ellipsis">
-    2. 2D Primitive Shapes & Custom Geometries
+    2. 2D Primitive Shapes &amp; Custom Geometries
   </span>
   
 
@@ -501,7 +536,7 @@
         
   
   <span class="md-ellipsis">
-    3. Color Theory, Color Modes & Pixel Manipulation
+    3. Color Theory, Color Modes &amp; Pixel Manipulation
   </span>
   
 
@@ -522,7 +557,7 @@
         
   
   <span class="md-ellipsis">
-    4. Variables, Data Types & Scope Fundamentals
+    4. Variables, Data Types &amp; Scope Fundamentals
   </span>
   
 
@@ -543,7 +578,7 @@
         
   
   <span class="md-ellipsis">
-    5. Control Flow, Loops & Array Data Structures
+    5. Control Flow, Loops &amp; Array Data Structures
   </span>
   
 
@@ -564,7 +599,7 @@
         
   
   <span class="md-ellipsis">
-    6. Matrix Transformations & Coordinate Systems
+    6. Matrix Transformations &amp; Coordinate Systems
   </span>
   
 
@@ -585,7 +620,7 @@
         
   
   <span class="md-ellipsis">
-    7. Linear Motion, Trigonometry & Wave Math
+    7. Linear Motion, Trigonometry &amp; Wave Math
   </span>
   
 
@@ -606,7 +641,7 @@
         
   
   <span class="md-ellipsis">
-    8. Polar Coordinates, Oscillation & Easing
+    8. Polar Coordinates, Oscillation &amp; Easing
   </span>
   
 
@@ -627,7 +662,7 @@
         
   
   <span class="md-ellipsis">
-    9. Randomness, Gaussian Distributions & Random Walk
+    9. Randomness, Gaussian Distributions &amp; Random Walk
   </span>
   
 
@@ -648,7 +683,7 @@
         
   
   <span class="md-ellipsis">
-    10. Perlin Noise Landscapes & Vector Flow Fields
+    10. Perlin Noise Landscapes &amp; Vector Flow Fields
   </span>
   
 
@@ -669,7 +704,7 @@
         
   
   <span class="md-ellipsis">
-    11. Vector Math Fundamentals & Physics Acceleration
+    11. Vector Math Fundamentals &amp; Physics Acceleration
   </span>
   
 
@@ -690,7 +725,7 @@
         
   
   <span class="md-ellipsis">
-    12. Particle Systems, Forces & Steering Behaviors
+    12. Particle Systems, Forces &amp; Steering Behaviors
   </span>
   
 
@@ -711,7 +746,7 @@
         
   
   <span class="md-ellipsis">
-    13. Mouse & Keyboard User Event Sensing
+    13. Mouse &amp; Keyboard User Event Sensing
   </span>
   
 
@@ -741,7 +776,7 @@
           
   
   <span class="md-ellipsis">
-    14. Touch Gestures, Mobile Sensors & Interaction
+    14. Touch Gestures, Mobile Sensors &amp; Interaction
   </span>
   
 
@@ -752,7 +787,7 @@
         
   
   <span class="md-ellipsis">
-    14. Touch Gestures, Mobile Sensors & Interaction
+    14. Touch Gestures, Mobile Sensors &amp; Interaction
   </span>
   
 
@@ -816,6 +851,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Sensing Touch: Beyond the Mouse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-multi-touch-canvas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Multi-Touch Canvas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -851,6 +901,21 @@
       Cursor Control and Immersive Experiences
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Cursor Control and Immersive Experiences">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-device-orientation-maze" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Device Orientation Maze
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -943,7 +1008,7 @@
         
   
   <span class="md-ellipsis">
-    15. DOM Controls, Input Fields & UI Elements
+    15. DOM Controls, Input Fields &amp; UI Elements
   </span>
   
 
@@ -964,7 +1029,7 @@
         
   
   <span class="md-ellipsis">
-    16. CSS Styling, Layouts & Web Page Integration
+    16. CSS Styling, Layouts &amp; Web Page Integration
   </span>
   
 
@@ -985,7 +1050,7 @@
         
   
   <span class="md-ellipsis">
-    17. Functions, Arrow Expressions & Callbacks
+    17. Functions, Arrow Expressions &amp; Callbacks
   </span>
   
 
@@ -1006,7 +1071,7 @@
         
   
   <span class="md-ellipsis">
-    18. ES6 Classes, Object-Oriented Programming & Async Data
+    18. ES6 Classes, Object-Oriented Programming &amp; Async Data
   </span>
   
 
@@ -1027,7 +1092,7 @@
         
   
   <span class="md-ellipsis">
-    19. 3D WebGL Coordinates & Primitive Geometries
+    19. 3D WebGL Coordinates &amp; Primitive Geometries
   </span>
   
 
@@ -1048,7 +1113,7 @@
         
   
   <span class="md-ellipsis">
-    20. 3D Cameras, Lighting Models, Materials & Shaders
+    20. 3D Cameras, Lighting Models, Materials &amp; Shaders
   </span>
   
 
@@ -1069,7 +1134,7 @@
         
   
   <span class="md-ellipsis">
-    21. Audio Synthesis, Oscillators & Envelopes
+    21. Audio Synthesis, Oscillators &amp; Envelopes
   </span>
   
 
@@ -1090,7 +1155,7 @@
         
   
   <span class="md-ellipsis">
-    22. Microphone Input & FFT Spectral Analysis
+    22. Microphone Input &amp; FFT Spectral Analysis
   </span>
   
 
@@ -1111,7 +1176,7 @@
         
   
   <span class="md-ellipsis">
-    23. Image Processing, Filters & Video Capture
+    23. Image Processing, Filters &amp; Video Capture
   </span>
   
 
@@ -1132,7 +1197,7 @@
         
   
   <span class="md-ellipsis">
-    24. Generative Typography & Vector Font Outlines
+    24. Generative Typography &amp; Vector Font Outlines
   </span>
   
 
@@ -1153,7 +1218,7 @@
         
   
   <span class="md-ellipsis">
-    25. Development Environment, Tools & Pedagogy
+    25. Development Environment, Tools &amp; Pedagogy
   </span>
   
 
@@ -1181,6 +1246,14 @@
       
         
           
+        
+      
+        
+      
+        
+      
+        
+      
         
       
         
@@ -1242,6 +1315,14 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1270,6 +1351,46 @@
   
 
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1322,7 +1443,7 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1383,6 +1504,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Sensing Touch: Beyond the Mouse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-multi-touch-canvas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Multi-Touch Canvas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1418,6 +1554,21 @@
       Cursor Control and Immersive Experiences
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Cursor Control and Immersive Experiences">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-device-orientation-maze" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Device Orientation Maze
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1507,16 +1658,16 @@
   
     <a href="https://github.com/dmccreary/p5-textbook/blob/main/docs/chapters/14-touch-mobile-sensors/index.md" title="Edit this page" class="md-content__button md-icon">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
     </a>
   
   
 
 
-<h1 id="touch-gestures-mobile-sensors-interaction">Touch Gestures, Mobile Sensors &amp; Interaction<a class="headerlink" href="#touch-gestures-mobile-sensors-interaction" title="Permanent link">&para;</a></h1>
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<h1 id="touch-gestures-mobile-sensors-interaction">Touch Gestures, Mobile Sensors &amp; Interaction<a class="headerlink" href="#touch-gestures-mobile-sensors-interaction" title="Permanent link">¶</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">¶</a></h2>
 <p>Implements multi-touch arrays, mobile device orientation/tilt sensors, shake gestures, and pointer locking. Students will gain practical hands-on experience by building interactive sketches and visual experiments that demonstrate these concepts.</p>
-<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">¶</a></h2>
 <p>This chapter covers the following 16 concepts from the learning graph:</p>
 <ol>
 <li>Touch Touches Array</li>
@@ -1536,28 +1687,28 @@
 <li>Virtual Gamepad Input</li>
 <li>Multi Touch Gesture Pinch</li>
 </ol>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">¶</a></h2>
 <p>This chapter builds on concepts from:</p>
 <ul>
 <li><a href="../13-mouse-keyboard-events/">Chapter 13: Mouse &amp; Keyboard User Event Sensing</a></li>
 </ul>
-<hr />
+<hr>
 <div class="admonition mascot-welcome">
 <p class="admonition-title">Welcome, Creators!</p>
-<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" /></p>
+<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png"></p>
 <p>Welcome back, creators! The world isn't just keyboards and mice anymore; it's screens you can touch and devices you can shake. Dive into this chapter to learn how to make your art respond to swipes, pinches, and physical movement. Time to color outside the loops!</p>
 </div>
 <p>Have you ever wondered how your smartphone knows when you turn it sideways to watch a video, or how a mobile game lets you steer a car just by tilting the device? The answer lies in the incredible array of tiny sensors packed inside modern mobile devices. In this chapter, we are going to learn how to access those sensors and use them to make our interactive art and games come alive in a completely new way. </p>
 <p>The smartphone is no longer just a screen; it is a physical object that we hold, move, and interact with in three-dimensional space. To fully take advantage of this, we need to understand the hardware behind it. Mobile devices are equipped with sophisticated hardware called micro-electromechanical systems, or MEMS for short. These tiny machines are what allow your device to sense its orientation and movement. </p>
 <p>By the end of this chapter, you will be able to harness these sensors to create experiences that react to real-world physics. You will also learn how to handle multiple touches simultaneously, creating rich, tactile experiences that feel natural and intuitive to the user. We will cover a lot of ground, but don't worry, we will take it step-by-step.</p>
-<h2 id="the-smartphone-as-a-digital-level">The Smartphone as a Digital Level<a class="headerlink" href="#the-smartphone-as-a-digital-level" title="Permanent link">&para;</a></h2>
+<h2 id="the-smartphone-as-a-digital-level">The Smartphone as a Digital Level<a class="headerlink" href="#the-smartphone-as-a-digital-level" title="Permanent link">¶</a></h2>
 <p>Think about a traditional carpenter's level—a simple tool with a liquid-filled vial and a small air bubble inside. When you place it on a surface, the bubble floats to the highest point, telling the carpenter whether the surface is perfectly flat. If the surface is tilted even slightly, the bubble moves away from the center. </p>
 <p>Your smartphone acts exactly like a highly advanced, three-dimensional digital version of that level. Deep inside the phone are tiny electromechanical sensors (like the accelerometer and gyroscope) that constantly measure the forces acting upon the device. They detect gravity, movement, and rotation. Just like observing the bubble in a level, our code can read the exact angle and orientation of the device at any given millisecond. This allows us to map the physical tilt of the device to the movement of digital objects on the screen.</p>
 <p>When you tilt your phone left, the "bubble" (our data) shifts left. When you tilt it forward, it shifts forward. We can use this <strong>Device Orientation Tilt</strong> to create natural, intuitive controls that feel like an extension of the user's hands.</p>
 <p>To understand this better, let's dive into how the accelerometer works. Inside the chip, there is a microscopic mass attached to springs. When you move the device, the mass lags behind due to inertia, stretching the springs. The chip measures this stretch to calculate acceleration. Gravity is a constant acceleration pulling downwards, so even when the phone is still, the accelerometer senses it. This is how the device knows which way is "down."</p>
 <p>The gyroscope complements the accelerometer by measuring rotation. While the accelerometer is great at determining the overall orientation relative to gravity, the gyroscope excels at tracking quick twists and turns. Together, they provide a complete picture of the device's state in 3D space. We can read these values in p5.js using variables like <code>rotationX</code>, <code>rotationY</code>, and <code>rotationZ</code>.</p>
 <p>Let's imagine you are building a marble maze game. By reading the Device Orientation Tilt, you can adjust the "gravity" acting on the marble in your simulation. If the user tilts the phone to the right, the marble rolls to the right. It feels incredibly natural because the digital world is mimicking the physical world. This is the power of sensor-based interactions.</p>
-<h2 id="sensing-touch-beyond-the-mouse">Sensing Touch: Beyond the Mouse<a class="headerlink" href="#sensing-touch-beyond-the-mouse" title="Permanent link">&para;</a></h2>
+<h2 id="sensing-touch-beyond-the-mouse">Sensing Touch: Beyond the Mouse<a class="headerlink" href="#sensing-touch-beyond-the-mouse" title="Permanent link">¶</a></h2>
 <p>While a computer mouse provides a single, precise point of interaction, mobile devices introduce the complexity (and power) of multiple simultaneous inputs. When you tap a screen with two fingers, the device registers both independently. This fundamentally changes how we design our interfaces and interactions.</p>
 <p>To manage this, p5.js provides the <strong>Touch Touches Array</strong>. This is a built-in list that stores the x and y coordinates of every single finger currently touching the screen. If you have one finger on the screen, the array has one item. If you place four fingers on the screen, the array holds four sets of coordinates!</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">draw</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -1575,20 +1726,22 @@
 <p>Finally, when the finger is lifted off the glass, a <strong>Touch Ended Event</strong> occurs, allowing us to finalize an action or drop an object. The <code>touchEnded()</code> function captures this moment.</p>
 <div class="admonition mascot-thinking">
 <p class="admonition-title">Tracking Multiple Touches</p>
-<p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+<p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png">
 Think about it like this: your sketch is no longer tracking a single pointer, but conducting an orchestra of simultaneous interactions. Notice how shifting from a single <code>mouseX</code> coordinate to an entire array of touches fundamentally changes how we must architect our logic to handle multiple independent actors at once?</p>
 </div>
+<h4 id="diagram-multi-touch-canvas">Diagram: Multi-Touch Canvas<a class="headerlink" href="#diagram-multi-touch-canvas" title="Permanent link">¶</a></h4>
 <details>
 <summary>MicroSim: Multi-Touch Canvas</summary>
-<p><strong>Goal:</strong> Create a simple drawing canvas that supports drawing with up to 5 fingers simultaneously.
+<p></p><summary>MicroSim: Multi-Touch Canvas</summary>
+<strong>Goal:</strong> Create a simple drawing canvas that supports drawing with up to 5 fingers simultaneously.
 <strong>Features:</strong>
 - A blank canvas that clears on a double-tap.
 - A <code>for</code> loop that iterates through the <code>touches</code> array.
 - Drawing a different colored circle for each active touch point based on its index in the array.
-- Uses <code>touchMoved()</code> to prevent default scrolling behavior by returning <code>false</code>.</p>
+- Uses <code>touchMoved()</code> to prevent default scrolling behavior by returning <code>false</code>.<p></p>
 </details>
 <p>Understanding these three events—Touch Started Event, Touch Moved Event, and Touch Ended Event—is crucial for building robust touch interfaces. You can think of them as the lifecycle of a touch. It is born when contact is made, it lives while it moves, and it dies when it is lifted.</p>
-<h2 id="multi-touch-gestures-and-device-motion">Multi-Touch Gestures and Device Motion<a class="headerlink" href="#multi-touch-gestures-and-device-motion" title="Permanent link">&para;</a></h2>
+<h2 id="multi-touch-gestures-and-device-motion">Multi-Touch Gestures and Device Motion<a class="headerlink" href="#multi-touch-gestures-and-device-motion" title="Permanent link">¶</a></h2>
 <p>Once we understand basic touches, we can start interpreting patterns of touches. The most common of these is the <strong>Multi Touch Gesture Pinch</strong>, used to zoom in or out. A pinch involves two fingers moving closer together (zoom out) or further apart (zoom in). By calculating the distance between <code>touches[0]</code> and <code>touches[1]</code>, we can scale our sketches dynamically.</p>
 <p>Imagine a map application. You place two fingers on the screen and spread them apart. The app calculates the distance between those two points frame by frame. As the distance increases, it scales up the map, giving you a zoomed-in view. Implementing a Multi Touch Gesture Pinch requires a bit of math, but it provides a very intuitive way for users to explore large visual spaces.</p>
 <p>But what if the user moves the whole device? We return to our digital level metaphor. Aside from orientation, devices measure the raw forces of acceleration through the <strong>Device Motion Acceleration</strong> variables (<code>accelerationX</code>, <code>accelerationY</code>, <code>accelerationZ</code>). This measures how fast the device's velocity is changing. </p>
@@ -1596,12 +1749,12 @@ Think about it like this: your sketch is no longer tracking a single pointer, bu
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">deviceShaken</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="c1">// This function is automatically called during a Shake Gesture Event</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nx">background</span><span class="p">(</span><span class="mf">255</span><span class="p">);</span><span class="w"> </span><span class="c1">// Clear the canvas like an Etch-a-Sketch</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Device shaken!&quot;</span><span class="p">);</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Device shaken!"</span><span class="p">);</span>
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>The Shake Gesture Event is a fun, visceral way to interact. It can be used to randomize a generative art piece, clear a canvas, or trigger an explosion in a game. It requires the user to perform a physical action that goes beyond simply tapping a screen, creating a stronger connection to the digital experience.</p>
 <p>When working with Device Motion Acceleration, it's important to understand the difference between acceleration and velocity. Acceleration is the <em>rate of change</em> of velocity. When your phone is resting on a table, its velocity is zero, and its acceleration (excluding gravity) is also zero. If you push the phone across the table, it accelerates briefly, then reaches a constant velocity (zero acceleration), and finally decelerates when you stop pushing. Our sensors detect these changes, allowing us to infer movement.</p>
-<h2 id="making-things-interactive-hit-testing">Making Things Interactive: Hit Testing<a class="headerlink" href="#making-things-interactive-hit-testing" title="Permanent link">&para;</a></h2>
+<h2 id="making-things-interactive-hit-testing">Making Things Interactive: Hit Testing<a class="headerlink" href="#making-things-interactive-hit-testing" title="Permanent link">¶</a></h2>
 <p>Knowing where a user touched is only half the battle. The other half is knowing <em>what</em> they touched. If you have a digital button or a game character on screen, you need math to determine if the touch coordinates overlap with the object's graphics. This process is called hit testing.</p>
 <p>The simplest form is the <strong>Hit Test Point Rect</strong>, used for rectangular objects like buttons. You check if the touch X is between the left and right edges, and if the touch Y is between the top and bottom edges.</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// Hit Test Point Rect</span>
@@ -1627,12 +1780,12 @@ Think about it like this: your sketch is no longer tracking a single pointer, bu
 </span></code></pre></div>
 <div class="admonition mascot-tip">
 <p class="admonition-title">Math Magic!</p>
-<p><img alt="Palette giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+<p><img alt="Palette giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png">
 Want to save some time? Instead of writing out the complex Pythagorean theorem for every circular hit test, just use p5.js's built-in <code>dist()</code> function! It calculates the exact distance between two points behind the scenes.</p>
 <p>The concept of hit testing scales up to more complex shapes using techniques like polygon hit testing, but rectangles and circles cover 90% of use cases in 2D interactive design. By combining Hit Test Point Rect and Hit Test Point Circle, you can create intricate, responsive interfaces.</p>
 </div>
 <p>Imagine a game where you have to tap falling stars. The stars are circles, so you use Hit Test Point Circle to check if the user's tap coordinates intersect with any of the stars on screen. If <code>true</code>, you remove the star and add a point to the score!</p>
-<h2 id="hovering-and-dragging">Hovering and Dragging<a class="headerlink" href="#hovering-and-dragging" title="Permanent link">&para;</a></h2>
+<h2 id="hovering-and-dragging">Hovering and Dragging<a class="headerlink" href="#hovering-and-dragging" title="Permanent link">¶</a></h2>
 <p>On a desktop computer, before you click an object, you often move your mouse over it. This triggers a <strong>Hover Focus State</strong>, where the object might light up or change color to indicate it is interactive. It is important to note that pure touch devices <em>do not</em> have a hover state—you are either touching the screen or you aren't! But for hybrid environments (like laptops with touchscreens), programming a hover state is still crucial for accessibility and user experience.</p>
 <p>A Hover Focus State provides immediate visual feedback. It tells the user "Yes, this object is clickable." When designing for a broad audience, it's essential to include these affordances.</p>
 <p>Once an object is selected (clicked or touched), we can implement a <strong>Drag and Drop Element</strong>. This involves three steps:
@@ -1665,7 +1818,7 @@ Want to save some time? Instead of writing out the complex Pythagorean theorem f
 </span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>This pattern is the foundation for puzzle games, inventory systems, and customizable layouts. Drag and Drop Element interaction bridges the gap between seeing an object and manipulating it.</p>
-<h2 id="cursor-control-and-immersive-experiences">Cursor Control and Immersive Experiences<a class="headerlink" href="#cursor-control-and-immersive-experiences" title="Permanent link">&para;</a></h2>
+<h2 id="cursor-control-and-immersive-experiences">Cursor Control and Immersive Experiences<a class="headerlink" href="#cursor-control-and-immersive-experiences" title="Permanent link">¶</a></h2>
 <p>Sometimes, you want to change how the cursor looks to give the user hints. By setting the <strong>Cursor Appearance Pointer</strong>, the standard arrow turns into a hand with a pointing finger, universally recognized as a signal that an object is clickable.</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">draw</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">isTouchingRect</span><span class="p">(</span><span class="nx">mouseX</span><span class="p">,</span><span class="w"> </span><span class="nx">mouseY</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">50</span><span class="p">,</span><span class="w"> </span><span class="mf">50</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
@@ -1680,54 +1833,56 @@ Want to save some time? Instead of writing out the complex Pythagorean theorem f
 <p>If you are building a 3D first-person game, you might want the mouse movements to control the camera without the cursor ever leaving the canvas or hitting the edge of the screen. To do this, we use the <strong>Request Pointer Lock</strong> feature. This "traps" the mouse inside the canvas, hiding the cursor and providing continuous raw movement data until the user presses the Escape key to exit.</p>
 <div class="admonition mascot-warning">
 <p class="admonition-title">Pointer Lock Constraints</p>
-<p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+<p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png">
 Watch out for security blocks! Browsers will prevent your code from trapping the user's mouse unless they initiate the action. To avoid a broken interface, always tie your <code>requestPointerLock()</code> call to a <code>mouseClicked()</code> event rather than firing it automatically in <code>setup()</code>.</p>
 </div>
+<h4 id="diagram-device-orientation-maze">Diagram: Device Orientation Maze<a class="headerlink" href="#diagram-device-orientation-maze" title="Permanent link">¶</a></h4>
 <details>
 <summary>MicroSim: Device Orientation Maze</summary>
-<p><strong>Goal:</strong> Create a simple marble maze where the user tilts their mobile device to roll a ball.
+<p></p><summary>MicroSim: Device Orientation Maze</summary>
+<strong>Goal:</strong> Create a simple marble maze where the user tilts their mobile device to roll a ball.
 <strong>Features:</strong>
 - A ball object with velocity and position.
 - Uses <code>rotationX</code> and <code>rotationY</code> (the Device Orientation Tilt) to apply forces to the ball's velocity.
 - Wall objects that use Hit Test Point Circle to bounce the ball back.
-- If viewed on a desktop, fall back to mouse coordinates to apply gravity.</p>
+- If viewed on a desktop, fall back to mouse coordinates to apply gravity.<p></p>
 </details>
-<h2 id="virtual-gamepads">Virtual Gamepads<a class="headerlink" href="#virtual-gamepads" title="Permanent link">&para;</a></h2>
+<h2 id="virtual-gamepads">Virtual Gamepads<a class="headerlink" href="#virtual-gamepads" title="Permanent link">¶</a></h2>
 <p>Sometimes, touch interactions and tilts aren't enough, and you want the tactile feel of traditional console gaming. We can simulate this by drawing a <strong>Virtual Gamepad Input</strong> directly on the screen. This involves drawing a directional pad (D-pad) or a joystick using circles and rectangles, and then using our hit testing functions to detect when the user touches the specific regions of our virtual controller. </p>
 <p>A Virtual Gamepad Input often consists of a base circle and a smaller inner circle that represents the thumbstick. When the user initiates a Touch Started Event on the base circle, we track the Touch Moved Event to update the position of the inner circle, clamping its distance so it doesn't leave the base. We then calculate the vector between the center of the base and the thumbstick to determine the direction and magnitude of the input.</p>
 <p>This technique is widely used in mobile gaming, providing complex controls without physical buttons.</p>
 <p>By combining all these concepts—touches, hit testing, drag-and-drop, and device orientation—we can build complex, rich, and highly interactive applications that feel at home on any modern smart device. The possibilities are endless when you treat the device as a physical object and not just a screen.</p>
-<h3 id="deep-dive-processing-sensor-data">Deep Dive: Processing Sensor Data<a class="headerlink" href="#deep-dive-processing-sensor-data" title="Permanent link">&para;</a></h3>
+<h3 id="deep-dive-processing-sensor-data">Deep Dive: Processing Sensor Data<a class="headerlink" href="#deep-dive-processing-sensor-data" title="Permanent link">¶</a></h3>
 <p>Let's take a moment to really explore what goes on under the hood when we process sensor data. As artists and programmers, we are essentially acting as translators. We take raw, numerical data generated by tiny crystals and silicon bridges, and we translate that into color, motion, and form. </p>
 <p>When you read <code>rotationX</code>, you are reading an angle. This angle is calculated by complex algorithms running on the device's hardware, often combining data from both the accelerometer and the gyroscope in a process called "sensor fusion." Sensor fusion smooths out the jitter from the accelerometer and corrects the drift from the gyroscope, providing a stable, reliable orientation reading.</p>
 <p>This stability is crucial when we use the Device Orientation Tilt for control. Imagine trying to steer a digital car if the steering wheel was constantly vibrating and drifting to the left! Sensor fusion ensures our "digital level" remains perfectly calibrated.</p>
 <p>Furthermore, we must consider the update rate. Sensors can report their data hundreds of times per second. However, our <code>draw()</code> loop typically runs at 60 frames per second. This means we are only taking snapshots of the sensor state. For most applications, this is perfectly fine. But for high-precision interactions, we might need to average the readings over a few frames to get an even smoother result.</p>
 <p>It is this attention to detail that separates a good interactive experience from a great one. The user should never have to think about the sensors or the code; they should simply feel like their intentions are magically flowing into the device.</p>
-<h3 id="the-evolution-of-interaction">The Evolution of Interaction<a class="headerlink" href="#the-evolution-of-interaction" title="Permanent link">&para;</a></h3>
+<h3 id="the-evolution-of-interaction">The Evolution of Interaction<a class="headerlink" href="#the-evolution-of-interaction" title="Permanent link">¶</a></h3>
 <p>To truly appreciate these tools, it helps to understand how far we've come. In the early days of computing, interaction was limited to punch cards and text terminals. The invention of the mouse and the graphical user interface (GUI) was a monumental leap forward, introducing concepts like the Cursor Appearance Pointer and the Hover Focus State.</p>
 <p>However, the mouse still required an intermediary device. You moved your hand on the desk to move a cursor on the screen. The advent of capacitive touch screens removed that barrier. Suddenly, you could directly manipulate the digital world. The Touch Started Event became the modern equivalent of a mouse click, but far more intuitive.</p>
 <p>The integration of accelerometers and gyroscopes took things a step further. We moved from 2D interaction on a flat surface to 3D interaction in the physical world. The Shake Gesture Event and Device Motion Acceleration allow for full-body interaction. </p>
 <p>As you build your sketches, think about this evolution. How can you use these sensors to create something that would have been impossible ten years ago? How can you blur the line between the physical and digital worlds? The tools are all here: the Touch Touches Array, the Multi Touch Gesture Pinch, the hit testing functions. The only limit is your imagination.</p>
 <p>As we continue our journey, remember that interaction is a dialogue between the user and the code. Make it responsive, make it intuitive, and most importantly, make it fun!</p>
-<h3 id="deep-dive-processing-sensor-data_1">Deep Dive: Processing Sensor Data<a class="headerlink" href="#deep-dive-processing-sensor-data_1" title="Permanent link">&para;</a></h3>
+<h3 id="deep-dive-processing-sensor-data_1">Deep Dive: Processing Sensor Data<a class="headerlink" href="#deep-dive-processing-sensor-data_1" title="Permanent link">¶</a></h3>
 <p>Let's take a moment to really explore what goes on under the hood when we process sensor data. As artists and programmers, we are essentially acting as translators. We take raw, numerical data generated by tiny crystals and silicon bridges, and we translate that into color, motion, and form. </p>
 <p>When you read <code>rotationX</code>, you are reading an angle. This angle is calculated by complex algorithms running on the device's hardware, often combining data from both the accelerometer and the gyroscope in a process called "sensor fusion." Sensor fusion smooths out the jitter from the accelerometer and corrects the drift from the gyroscope, providing a stable, reliable orientation reading.</p>
 <p>This stability is crucial when we use the Device Orientation Tilt for control. Imagine trying to steer a digital car if the steering wheel was constantly vibrating and drifting to the left! Sensor fusion ensures our "digital level" remains perfectly calibrated.</p>
 <p>Furthermore, we must consider the update rate. Sensors can report their data hundreds of times per second. However, our <code>draw()</code> loop typically runs at 60 frames per second. This means we are only taking snapshots of the sensor state. For most applications, this is perfectly fine. But for high-precision interactions, we might need to average the readings over a few frames to get an even smoother result.</p>
 <p>It is this attention to detail that separates a good interactive experience from a great one. The user should never have to think about the sensors or the code; they should simply feel like their intentions are magically flowing into the device.</p>
-<h3 id="the-evolution-of-interaction_1">The Evolution of Interaction<a class="headerlink" href="#the-evolution-of-interaction_1" title="Permanent link">&para;</a></h3>
+<h3 id="the-evolution-of-interaction_1">The Evolution of Interaction<a class="headerlink" href="#the-evolution-of-interaction_1" title="Permanent link">¶</a></h3>
 <p>To truly appreciate these tools, it helps to understand how far we've come. In the early days of computing, interaction was limited to punch cards and text terminals. The invention of the mouse and the graphical user interface (GUI) was a monumental leap forward, introducing concepts like the Cursor Appearance Pointer and the Hover Focus State.</p>
 <p>However, the mouse still required an intermediary device. You moved your hand on the desk to move a cursor on the screen. The advent of capacitive touch screens removed that barrier. Suddenly, you could directly manipulate the digital world. The Touch Started Event became the modern equivalent of a mouse click, but far more intuitive.</p>
 <p>The integration of accelerometers and gyroscopes took things a step further. We moved from 2D interaction on a flat surface to 3D interaction in the physical world. The Shake Gesture Event and Device Motion Acceleration allow for full-body interaction. </p>
 <p>As you build your sketches, think about this evolution. How can you use these sensors to create something that would have been impossible ten years ago? How can you blur the line between the physical and digital worlds? The tools are all here: the Touch Touches Array, the Multi Touch Gesture Pinch, the hit testing functions. The only limit is your imagination.</p>
 <p>As we continue our journey, remember that interaction is a dialogue between the user and the code. Make it responsive, make it intuitive, and most importantly, make it fun!</p>
-<h3 id="deep-dive-processing-sensor-data_2">Deep Dive: Processing Sensor Data<a class="headerlink" href="#deep-dive-processing-sensor-data_2" title="Permanent link">&para;</a></h3>
+<h3 id="deep-dive-processing-sensor-data_2">Deep Dive: Processing Sensor Data<a class="headerlink" href="#deep-dive-processing-sensor-data_2" title="Permanent link">¶</a></h3>
 <p>Let's take a moment to really explore what goes on under the hood when we process sensor data. As artists and programmers, we are essentially acting as translators. We take raw, numerical data generated by tiny crystals and silicon bridges, and we translate that into color, motion, and form. </p>
 <p>When you read <code>rotationX</code>, you are reading an angle. This angle is calculated by complex algorithms running on the device's hardware, often combining data from both the accelerometer and the gyroscope in a process called "sensor fusion." Sensor fusion smooths out the jitter from the accelerometer and corrects the drift from the gyroscope, providing a stable, reliable orientation reading.</p>
 <p>This stability is crucial when we use the Device Orientation Tilt for control. Imagine trying to steer a digital car if the steering wheel was constantly vibrating and drifting to the left! Sensor fusion ensures our "digital level" remains perfectly calibrated.</p>
 <p>Furthermore, we must consider the update rate. Sensors can report their data hundreds of times per second. However, our <code>draw()</code> loop typically runs at 60 frames per second. This means we are only taking snapshots of the sensor state. For most applications, this is perfectly fine. But for high-precision interactions, we might need to average the readings over a few frames to get an even smoother result.</p>
 <p>It is this attention to detail that separates a good interactive experience from a great one. The user should never have to think about the sensors or the code; they should simply feel like their intentions are magically flowing into the device.</p>
-<h3 id="the-evolution-of-interaction_2">The Evolution of Interaction<a class="headerlink" href="#the-evolution-of-interaction_2" title="Permanent link">&para;</a></h3>
+<h3 id="the-evolution-of-interaction_2">The Evolution of Interaction<a class="headerlink" href="#the-evolution-of-interaction_2" title="Permanent link">¶</a></h3>
 <p>To truly appreciate these tools, it helps to understand how far we've come. In the early days of computing, interaction was limited to punch cards and text terminals. The invention of the mouse and the graphical user interface (GUI) was a monumental leap forward, introducing concepts like the Cursor Appearance Pointer and the Hover Focus State.</p>
 <p>However, the mouse still required an intermediary device. You moved your hand on the desk to move a cursor on the screen. The advent of capacitive touch screens removed that barrier. Suddenly, you could directly manipulate the digital world. The Touch Started Event became the modern equivalent of a mouse click, but far more intuitive.</p>
 <p>The integration of accelerometers and gyroscopes took things a step further. We moved from 2D interaction on a flat surface to 3D interaction in the physical world. The Shake Gesture Event and Device Motion Acceleration allow for full-body interaction. </p>
@@ -1735,7 +1890,7 @@ Watch out for security blocks! Browsers will prevent your code from trapping the
 <p>As we continue our journey, remember that interaction is a dialogue between the user and the code. Make it responsive, make it intuitive, and most importantly, make it fun!</p>
 <div class="admonition mascot-celebration">
 <p class="admonition-title">You Did It!</p>
-<p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+<p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png">
 Incredible work, artists! You just mastered the Touch Touches Array, multi-touch pinch gestures, and mapping Device Motion Acceleration to digital interactions. Your interactive palette is richer than ever!</p>
 </div>
 
@@ -1763,7 +1918,7 @@ Incredible work, artists! You just mastered the Touch Touches Array, multi-touch
         
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
   Back to top
 </button>
         
@@ -1773,20 +1928,20 @@ Incredible work, artists! You just mastered the Touch Touches Array, multi-touch
   
     
       
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
         
           
           <a href="../13-mouse-keyboard-events/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 13. Mouse &amp; Keyboard User Event Sensing">
             <div class="md-footer__button md-icon">
               
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
             </div>
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Previous
               </span>
               <div class="md-ellipsis">
-                13. Mouse & Keyboard User Event Sensing
+                13. Mouse &amp; Keyboard User Event Sensing
               </div>
             </div>
           </a>
@@ -1799,12 +1954,12 @@ Incredible work, artists! You just mastered the Touch Touches Array, multi-touch
                 Next
               </span>
               <div class="md-ellipsis">
-                15. DOM Controls, Input Fields & UI Elements
+                15. DOM Controls, Input Fields &amp; UI Elements
               </div>
             </div>
             <div class="md-footer__button md-icon">
               
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
             </div>
           </a>
         
@@ -1816,7 +1971,7 @@ Incredible work, artists! You just mastered the Touch Touches Array, multi-touch
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+      Copyright © 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
     </div>
   
   
@@ -1837,6 +1992,14 @@ Incredible work, artists! You just mastered the Touch Touches Array, multi-touch
     
       <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
+        <script src="../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
     
-  </body>
-</html>
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

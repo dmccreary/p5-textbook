@@ -1,7 +1,4 @@
-
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
+<!DOCTYPE html><html lang="en" class="no-js"><head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -26,7 +23,7 @@
     
     
       
-        <title>22. Microphone Input & FFT Spectral Analysis - The Art of Processing</title>
+        <title>22. Microphone Input &amp; FFT Spectral Analysis - The Art of Processing</title>
       
     
     
@@ -47,7 +44,7 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
@@ -56,14 +53,52 @@
     
       <link rel="stylesheet" href="../../css/mascot.css">
     
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
+      
+        <meta property="og:type" content="website">
+      
+        <meta property="og:title" content="22. Microphone Input &amp; FFT Spectral Analysis - The Art of Processing">
+      
+        <meta property="og:description" content="An interactive intelligent textbook about the p5.js processing library and how to use it to teach computational thinking.">
+      
+        <meta property="og:image" content="https://dmccreary.github.io/p5-textbook/assets/images/social/chapters/22-mic-input-fft/index.png">
+      
+        <meta property="og:image:type" content="image/png">
+      
+        <meta property="og:image:width" content="1200">
+      
+        <meta property="og:image:height" content="630">
+      
+        <meta property="og:url" content="https://dmccreary.github.io/p5-textbook/chapters/22-mic-input-fft/">
+      
+        <meta name="twitter:card" content="summary_large_image">
+      
+        <meta name="twitter:title" content="22. Microphone Input &amp; FFT Spectral Analysis - The Art of Processing">
+      
+        <meta name="twitter:description" content="An interactive intelligent textbook about the p5.js processing library and how to use it to teach computational thinking.">
+      
+        <meta name="twitter:image" content="https://dmccreary.github.io/p5-textbook/assets/images/social/chapters/22-mic-input-fft/index.png">
+      
     
-  </head>
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
   
   
     
@@ -99,12 +134,12 @@
     <a href="../.." title="The Art of Processing" class="md-header__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -116,7 +151,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              22. Microphone Input & FFT Spectral Analysis
+              22. Microphone Input &amp; FFT Spectral Analysis
             
           </span>
         </div>
@@ -130,7 +165,7 @@
     
       <label class="md-header__button md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
       </label>
       <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
@@ -139,20 +174,20 @@
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
           <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
             
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
           </a>
         
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
         </button>
       </nav>
       
@@ -177,7 +212,7 @@
         <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -201,7 +236,7 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -213,7 +248,7 @@
     <a href="../.." title="The Art of Processing" class="md-nav__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     The Art of Processing
@@ -223,7 +258,7 @@
       <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -459,7 +494,7 @@
         
   
   <span class="md-ellipsis">
-    1. Introduction to Creative Coding & Canvas Foundations
+    1. Introduction to Creative Coding &amp; Canvas Foundations
   </span>
   
 
@@ -480,7 +515,7 @@
         
   
   <span class="md-ellipsis">
-    2. 2D Primitive Shapes & Custom Geometries
+    2. 2D Primitive Shapes &amp; Custom Geometries
   </span>
   
 
@@ -501,7 +536,7 @@
         
   
   <span class="md-ellipsis">
-    3. Color Theory, Color Modes & Pixel Manipulation
+    3. Color Theory, Color Modes &amp; Pixel Manipulation
   </span>
   
 
@@ -522,7 +557,7 @@
         
   
   <span class="md-ellipsis">
-    4. Variables, Data Types & Scope Fundamentals
+    4. Variables, Data Types &amp; Scope Fundamentals
   </span>
   
 
@@ -543,7 +578,7 @@
         
   
   <span class="md-ellipsis">
-    5. Control Flow, Loops & Array Data Structures
+    5. Control Flow, Loops &amp; Array Data Structures
   </span>
   
 
@@ -564,7 +599,7 @@
         
   
   <span class="md-ellipsis">
-    6. Matrix Transformations & Coordinate Systems
+    6. Matrix Transformations &amp; Coordinate Systems
   </span>
   
 
@@ -585,7 +620,7 @@
         
   
   <span class="md-ellipsis">
-    7. Linear Motion, Trigonometry & Wave Math
+    7. Linear Motion, Trigonometry &amp; Wave Math
   </span>
   
 
@@ -606,7 +641,7 @@
         
   
   <span class="md-ellipsis">
-    8. Polar Coordinates, Oscillation & Easing
+    8. Polar Coordinates, Oscillation &amp; Easing
   </span>
   
 
@@ -627,7 +662,7 @@
         
   
   <span class="md-ellipsis">
-    9. Randomness, Gaussian Distributions & Random Walk
+    9. Randomness, Gaussian Distributions &amp; Random Walk
   </span>
   
 
@@ -648,7 +683,7 @@
         
   
   <span class="md-ellipsis">
-    10. Perlin Noise Landscapes & Vector Flow Fields
+    10. Perlin Noise Landscapes &amp; Vector Flow Fields
   </span>
   
 
@@ -669,7 +704,7 @@
         
   
   <span class="md-ellipsis">
-    11. Vector Math Fundamentals & Physics Acceleration
+    11. Vector Math Fundamentals &amp; Physics Acceleration
   </span>
   
 
@@ -690,7 +725,7 @@
         
   
   <span class="md-ellipsis">
-    12. Particle Systems, Forces & Steering Behaviors
+    12. Particle Systems, Forces &amp; Steering Behaviors
   </span>
   
 
@@ -711,7 +746,7 @@
         
   
   <span class="md-ellipsis">
-    13. Mouse & Keyboard User Event Sensing
+    13. Mouse &amp; Keyboard User Event Sensing
   </span>
   
 
@@ -732,7 +767,7 @@
         
   
   <span class="md-ellipsis">
-    14. Touch Gestures, Mobile Sensors & Interaction
+    14. Touch Gestures, Mobile Sensors &amp; Interaction
   </span>
   
 
@@ -753,7 +788,7 @@
         
   
   <span class="md-ellipsis">
-    15. DOM Controls, Input Fields & UI Elements
+    15. DOM Controls, Input Fields &amp; UI Elements
   </span>
   
 
@@ -774,7 +809,7 @@
         
   
   <span class="md-ellipsis">
-    16. CSS Styling, Layouts & Web Page Integration
+    16. CSS Styling, Layouts &amp; Web Page Integration
   </span>
   
 
@@ -795,7 +830,7 @@
         
   
   <span class="md-ellipsis">
-    17. Functions, Arrow Expressions & Callbacks
+    17. Functions, Arrow Expressions &amp; Callbacks
   </span>
   
 
@@ -816,7 +851,7 @@
         
   
   <span class="md-ellipsis">
-    18. ES6 Classes, Object-Oriented Programming & Async Data
+    18. ES6 Classes, Object-Oriented Programming &amp; Async Data
   </span>
   
 
@@ -837,7 +872,7 @@
         
   
   <span class="md-ellipsis">
-    19. 3D WebGL Coordinates & Primitive Geometries
+    19. 3D WebGL Coordinates &amp; Primitive Geometries
   </span>
   
 
@@ -858,7 +893,7 @@
         
   
   <span class="md-ellipsis">
-    20. 3D Cameras, Lighting Models, Materials & Shaders
+    20. 3D Cameras, Lighting Models, Materials &amp; Shaders
   </span>
   
 
@@ -879,7 +914,7 @@
         
   
   <span class="md-ellipsis">
-    21. Audio Synthesis, Oscillators & Envelopes
+    21. Audio Synthesis, Oscillators &amp; Envelopes
   </span>
   
 
@@ -909,7 +944,7 @@
           
   
   <span class="md-ellipsis">
-    22. Microphone Input & FFT Spectral Analysis
+    22. Microphone Input &amp; FFT Spectral Analysis
   </span>
   
 
@@ -920,7 +955,7 @@
         
   
   <span class="md-ellipsis">
-    22. Microphone Input & FFT Spectral Analysis
+    22. Microphone Input &amp; FFT Spectral Analysis
   </span>
   
 
@@ -1012,6 +1047,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#diagram-spectrum-analyzer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Spectrum Analyzer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#visualizing-the-data" class="md-nav__link">
     <span class="md-ellipsis">
       Visualizing the Data
@@ -1031,6 +1075,21 @@
       Beat Detection
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Beat Detection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-beat-detector-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Beat Detector System
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1216,7 +1275,7 @@
         
   
   <span class="md-ellipsis">
-    23. Image Processing, Filters & Video Capture
+    23. Image Processing, Filters &amp; Video Capture
   </span>
   
 
@@ -1237,7 +1296,7 @@
         
   
   <span class="md-ellipsis">
-    24. Generative Typography & Vector Font Outlines
+    24. Generative Typography &amp; Vector Font Outlines
   </span>
   
 
@@ -1258,7 +1317,7 @@
         
   
   <span class="md-ellipsis">
-    25. Development Environment, Tools & Pedagogy
+    25. Development Environment, Tools &amp; Pedagogy
   </span>
   
 
@@ -1286,6 +1345,14 @@
       
         
           
+        
+      
+        
+      
+        
+      
+        
+      
         
       
         
@@ -1347,6 +1414,14 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1375,6 +1450,46 @@
   
 
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1427,7 +1542,7 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1516,6 +1631,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#diagram-spectrum-analyzer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Spectrum Analyzer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#visualizing-the-data" class="md-nav__link">
     <span class="md-ellipsis">
       Visualizing the Data
@@ -1535,6 +1659,21 @@
       Beat Detection
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Beat Detection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-beat-detector-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Beat Detector System
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1717,16 +1856,16 @@
   
     <a href="https://github.com/dmccreary/p5-textbook/blob/main/docs/chapters/22-mic-input-fft/index.md" title="Edit this page" class="md-content__button md-icon">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
     </a>
   
   
 
 
-<h1 id="microphone-input-fft-spectral-analysis">Microphone Input &amp; FFT Spectral Analysis<a class="headerlink" href="#microphone-input-fft-spectral-analysis" title="Permanent link">&para;</a></h1>
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<h1 id="microphone-input-fft-spectral-analysis">Microphone Input &amp; FFT Spectral Analysis<a class="headerlink" href="#microphone-input-fft-spectral-analysis" title="Permanent link">¶</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">¶</a></h2>
 <p>Captures live microphone input (p5.AudioIn), amplitude tracking, Fast Fourier Transform (p5.FFT) frequency bins, and beat detection. Students will gain practical hands-on experience by building interactive sketches and visual experiments that demonstrate these concepts.</p>
-<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">¶</a></h2>
 <p>This chapter covers the following 34 concepts from the learning graph:</p>
 <ol>
 <li>p5 AudioIn Microphone</li>
@@ -1764,22 +1903,22 @@
 <li>Microphone Feedback Gate</li>
 <li>Acoustic Signal Processing</li>
 </ol>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">¶</a></h2>
 <p>This chapter builds on concepts from:</p>
 <ul>
 <li><a href="../21-audio-synthesis-sound/">Chapter 21: Audio Synthesis, Oscillators &amp; Envelopes</a></li>
 </ul>
-<hr />
+<hr>
 <div class="admonition mascot-welcome">
 <p class="admonition-title">Sound Becomes Color!</p>
-<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" /></p>
+<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png"></p>
 <p>Welcome back, creators! Have you ever wanted to see what music actually looks like? This chapter will teach you how to analyze real-time sound and transform it into jaw-dropping visual equalizers and responsive art. Time to color outside the loops and see the music!</p>
 </div>
 <p>When you look at a rainbow, you are seeing a prism split white light into its component colors. The prism reveals the hidden spectrum of light. What if we could do the same for sound? In this chapter, we will build digital prisms and oscilloscopes to visualize the hidden world of sound waves. </p>
-<h2 id="introduction-the-oscilloscope-and-the-prism">Introduction: The Oscilloscope and the Prism<a class="headerlink" href="#introduction-the-oscilloscope-and-the-prism" title="Permanent link">&para;</a></h2>
+<h2 id="introduction-the-oscilloscope-and-the-prism">Introduction: The Oscilloscope and the Prism<a class="headerlink" href="#introduction-the-oscilloscope-and-the-prism" title="Permanent link">¶</a></h2>
 <p>The oscilloscope represents the time domain: it shows how the volume of a sound changes over time, graphing pressure variations as a continuous wave. The prism represents the frequency domain: it splits a complex sound into its individual pitches, showing us how much bass, mid, and treble energy is present.</p>
 <p>To capture the raw sound, we use a <strong>p5 AudioIn Microphone</strong>. This acts as our ear, capturing the physical vibrations of the air and converting them into electrical signals. But the signal alone is just a stream of numbers. We need algorithms like the <strong>Fast Fourier Transform Math</strong> to make sense of it.</p>
-<h2 id="setting-up-the-microphone">Setting up the Microphone<a class="headerlink" href="#setting-up-the-microphone" title="Permanent link">&para;</a></h2>
+<h2 id="setting-up-the-microphone">Setting up the Microphone<a class="headerlink" href="#setting-up-the-microphone" title="Permanent link">¶</a></h2>
 <p>Before we can visualize sound, we must let the code listen to our environment. In p5.js, we initiate a <strong>Microphone Start Input</strong> command to request access to the user's audio device. It is good practice to provide a toggle button so the user can use the <strong>Microphone Stop Input</strong> when they are done.</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">mic</span><span class="p">;</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
@@ -1807,19 +1946,19 @@
 </span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">  </span><span class="nx">ellipse</span><span class="p">(</span><span class="nx">width</span><span class="o">/</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">h</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">25</span><span class="p">,</span><span class="w"> </span><span class="mf">50</span><span class="p">,</span><span class="w"> </span><span class="mf">50</span><span class="p">);</span>
 </span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="p">}</span>
 </span></code></pre></div>
-<h3 id="amplitude-tracking">Amplitude Tracking<a class="headerlink" href="#amplitude-tracking" title="Permanent link">&para;</a></h3>
+<h3 id="amplitude-tracking">Amplitude Tracking<a class="headerlink" href="#amplitude-tracking" title="Permanent link">¶</a></h3>
 <p>While the microphone captures the raw audio, we often just want to know how loud it is overall. We can use a <strong>p5 Amplitude Class</strong> to track the overall volume. By calling <strong>Amplitude Get Level</strong>, we receive a value between 0.0 and 1.0 representing the volume. However, raw amplitude changes very rapidly, causing our visuals to flicker erratically. To fix this, we apply a <strong>Smooth Amplitude Level</strong> technique, interpolating between the current and previous volume levels for a buttery-smooth visual response. Alternatively, you can use the <strong>Microphone Get Level</strong> method directly if you just need the microphone's immediate amplitude.</p>
 <div class="admonition mascot-tip">
 <p class="admonition-title">Smoothing is Key!</p>
-<p><img alt="Palette giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+<p><img alt="Palette giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png">
 Here's a secret for buttery visuals: raw microphone data flickers way too fast. Wrap your volume variable in <code>lerp(currentVol, targetVol, 0.1)</code> to smoothly glide between values and create a <strong>Smooth Amplitude Level</strong>. Your users' eyes will thank you!</p>
 </div>
-<h2 id="the-prism-fast-fourier-transform-fft">The Prism: Fast Fourier Transform (FFT)<a class="headerlink" href="#the-prism-fast-fourier-transform-fft" title="Permanent link">&para;</a></h2>
+<h2 id="the-prism-fast-fourier-transform-fft">The Prism: Fast Fourier Transform (FFT)<a class="headerlink" href="#the-prism-fast-fourier-transform-fft" title="Permanent link">¶</a></h2>
 <p>Now we move from the oscilloscope to the prism. The <strong>p5 FFT Class Concept</strong> introduces the Fast Fourier Transform, a powerful algorithm that analyzes a sound wave and separates it into its individual frequencies. By calling <strong>FFT Analyze Spectrum</strong>, the algorithm returns a <strong>FFT Frequency Bins Array</strong>, typically containing 1024 values representing the volume at different frequency bands.</p>
 <p>With this array, we can ask for the energy in specific frequency ranges.</p>
 <div class="admonition mascot-thinking">
 <p class="admonition-title">Unbaking the Cake</p>
-<p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+<p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png">
 Think about it like this: an oscilloscope shows you <em>when</em> a sound is loud, but the Fast Fourier Transform shows you <em>what</em> the sound is made of. It's like a magical algorithm that unbakes a cake to tell you exactly how many cups of bass, mid, and treble went into it! </p>
 </div>
 <ul>
@@ -1845,30 +1984,30 @@ Think about it like this: an oscilloscope shows you <em>when</em> a sound is lou
 </span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">  </span><span class="nx">background</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
 </span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">spectrum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fft</span><span class="p">.</span><span class="nx">analyze</span><span class="p">();</span>
 </span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">bass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fft</span><span class="p">.</span><span class="nx">getEnergy</span><span class="p">(</span><span class="s2">&quot;bass&quot;</span><span class="p">);</span>
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">lowMid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fft</span><span class="p">.</span><span class="nx">getEnergy</span><span class="p">(</span><span class="s2">&quot;lowMid&quot;</span><span class="p">);</span>
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fft</span><span class="p">.</span><span class="nx">getEnergy</span><span class="p">(</span><span class="s2">&quot;mid&quot;</span><span class="p">);</span>
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">highMid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fft</span><span class="p">.</span><span class="nx">getEnergy</span><span class="p">(</span><span class="s2">&quot;highMid&quot;</span><span class="p">);</span>
-</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">treble</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fft</span><span class="p">.</span><span class="nx">getEnergy</span><span class="p">(</span><span class="s2">&quot;treble&quot;</span><span class="p">);</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">bass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fft</span><span class="p">.</span><span class="nx">getEnergy</span><span class="p">(</span><span class="s2">"bass"</span><span class="p">);</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">lowMid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fft</span><span class="p">.</span><span class="nx">getEnergy</span><span class="p">(</span><span class="s2">"lowMid"</span><span class="p">);</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fft</span><span class="p">.</span><span class="nx">getEnergy</span><span class="p">(</span><span class="s2">"mid"</span><span class="p">);</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">highMid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fft</span><span class="p">.</span><span class="nx">getEnergy</span><span class="p">(</span><span class="s2">"highMid"</span><span class="p">);</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">treble</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fft</span><span class="p">.</span><span class="nx">getEnergy</span><span class="p">(</span><span class="s2">"treble"</span><span class="p">);</span>
 </span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>
 </span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">  </span><span class="c1">// Visualize the energies</span>
 </span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">  </span><span class="c1">// ...</span>
 </span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="p">}</span>
 </span></code></pre></div>
+<h4 id="diagram-spectrum-analyzer">Diagram: Spectrum Analyzer<a class="headerlink" href="#diagram-spectrum-analyzer" title="Permanent link">¶</a></h4>
 <details>
 <summary>MicroSim: Spectrum Analyzer</summary>
-<ul>
-<li>Uses <code>p5.FFT</code> to display a live <strong>Spectrum Frequency Chart</strong>.</li>
-<li>Shows 5 large bars representing Bass, LowMid, Mid, HighMid, and Treble.</li>
-<li>Includes a toggle to switch to a detailed view of the full <strong>FFT Frequency Bins Array</strong>.</li>
-<li>Sliders to adjust the <strong>Smooth Amplitude Level</strong>.</li>
-</ul>
+<p></p><summary>MicroSim: Spectrum Analyzer</summary>
+- Uses <code>p5.FFT</code> to display a live <strong>Spectrum Frequency Chart</strong>.
+- Shows 5 large bars representing Bass, LowMid, Mid, HighMid, and Treble.
+- Includes a toggle to switch to a detailed view of the full <strong>FFT Frequency Bins Array</strong>.
+- Sliders to adjust the <strong>Smooth Amplitude Level</strong>.<p></p>
 </details>
-<h3 id="visualizing-the-data">Visualizing the Data<a class="headerlink" href="#visualizing-the-data" title="Permanent link">&para;</a></h3>
+<h3 id="visualizing-the-data">Visualizing the Data<a class="headerlink" href="#visualizing-the-data" title="Permanent link">¶</a></h3>
 <p>With the FFT data, we can create a classic <strong>Spectrum Frequency Chart</strong> or <strong>Audio Visual EQ Bars</strong>. We can plot the energies in a bar graph, where the height of each bar corresponds to the energy in that frequency band.</p>
 <p>Another popular visualization is the <strong>Circular Audio Visualizer</strong>. Instead of drawing bars in a straight line, we map the frequency bins to a circle using trigonometry (<code>sin</code> and <code>cos</code>). This creates a dynamic, flower-like shape that expands and contracts with the music. </p>
 <p>We can also view the sound in the time domain using the <strong>FFT Waveform Time Domain</strong> method, which returns an array of amplitude values over a small time window. This is our digital oscilloscope.</p>
-<h2 id="beat-detection">Beat Detection<a class="headerlink" href="#beat-detection" title="Permanent link">&para;</a></h2>
+<h2 id="beat-detection">Beat Detection<a class="headerlink" href="#beat-detection" title="Permanent link">¶</a></h2>
 <p>A common feature in audio visualization is reacting to the "beat" or tempo of the music. To achieve this, we need a <strong>Beat Detection Threshold</strong>. When the energy in a specific frequency band (like the bass) exceeds this threshold, we register a beat. </p>
 <p>However, a static threshold isn't enough, because a loud song will constantly trigger it. We need a dynamic threshold that tracks the <strong>Beat Detection Energy Peak</strong> and slowly decays. This is often called an <strong>Audio Input Peak Hold</strong> algorithm.</p>
 <p>When a beat is detected, we can trigger exciting visual effects:
@@ -1885,7 +2024,7 @@ Think about it like this: an oscilloscope shows you <em>when</em> a sound is lou
 </span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="nx">triggerColorShift</span><span class="p">();</span>
 </span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="nx">triggerParticles</span><span class="p">();</span>
 </span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="c1">// Bump the threshold up so it doesn&#39;t immediately trigger again</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="c1">// Bump the threshold up so it doesn't immediately trigger again</span>
 </span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="nx">beatThreshold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">bassEnergy</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.1</span><span class="p">;</span><span class="w"> </span>
 </span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">  </span><span class="p">}</span>
 </span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">  </span><span class="c1">// Decay the threshold slowly</span>
@@ -1893,40 +2032,40 @@ Think about it like this: an oscilloscope shows you <em>when</em> a sound is lou
 </span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">  </span><span class="nx">beatThreshold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">max</span><span class="p">(</span><span class="nx">beatThreshold</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">);</span><span class="w"> </span><span class="c1">// Minimum threshold</span>
 </span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="p">}</span>
 </span></code></pre></div>
+<h4 id="diagram-beat-detector-system">Diagram: Beat Detector System<a class="headerlink" href="#diagram-beat-detector-system" title="Permanent link">¶</a></h4>
 <details>
 <summary>MicroSim: Beat Detector System</summary>
-<ul>
-<li>A live audio-reactive scene with a central pulsing circle.</li>
-<li>The circle demonstrates <strong>Audio Reactive Pulse Scale</strong> and <strong>Audio Reactive Color Shift</strong>.</li>
-<li>On beat, it creates a <strong>Particle Burst on Beat</strong>.</li>
-<li>UI controls to manually adjust the <strong>Beat Detection Threshold</strong> and observe the <strong>Beat Detection Energy Peak</strong>.</li>
-</ul>
+<p></p><summary>MicroSim: Beat Detector System</summary>
+- A live audio-reactive scene with a central pulsing circle.
+- The circle demonstrates <strong>Audio Reactive Pulse Scale</strong> and <strong>Audio Reactive Color Shift</strong>.
+- On beat, it creates a <strong>Particle Burst on Beat</strong>.
+- UI controls to manually adjust the <strong>Beat Detection Threshold</strong> and observe the <strong>Beat Detection Energy Peak</strong>.<p></p>
 </details>
-<h2 id="advanced-topics">Advanced Topics<a class="headerlink" href="#advanced-topics" title="Permanent link">&para;</a></h2>
+<h2 id="advanced-topics">Advanced Topics<a class="headerlink" href="#advanced-topics" title="Permanent link">¶</a></h2>
 <p>As you explore deeper into <strong>Acoustic Signal Processing</strong>, you will encounter more complex techniques.</p>
-<h3 id="pitch-and-centroid">Pitch and Centroid<a class="headerlink" href="#pitch-and-centroid" title="Permanent link">&para;</a></h3>
+<h3 id="pitch-and-centroid">Pitch and Centroid<a class="headerlink" href="#pitch-and-centroid" title="Permanent link">¶</a></h3>
 <p>While FFT tells us the energy across many frequencies, sometimes we just want to know the single dominant pitch. <strong>Audio Pitch Detection</strong> algorithms analyze the waveform to find the fundamental frequency. A simpler metric is the <strong>Frequency Centroid Math</strong>, which calculates the "center of mass" of the spectrum. A bright, tinny sound has a high centroid, while a dark, muffled sound has a low centroid.</p>
-<h3 id="logarithmic-scales-and-spectrograms">Logarithmic Scales and Spectrograms<a class="headerlink" href="#logarithmic-scales-and-spectrograms" title="Permanent link">&para;</a></h3>
+<h3 id="logarithmic-scales-and-spectrograms">Logarithmic Scales and Spectrograms<a class="headerlink" href="#logarithmic-scales-and-spectrograms" title="Permanent link">¶</a></h3>
 <p>Human hearing is not linear. We hear pitch logarithmically. The distance from 100Hz to 200Hz is one octave, but the distance from 1000Hz to 2000Hz is also one octave. To make our visualizers look natural, we often use a <strong>Logarithmic Frequency Scale</strong> and perform <strong>Octave Band Splitting</strong> to group frequencies the way our ears perceive them.</p>
 <p>We can also visualize sound over a longer period using an <strong>Audio Spectrogram Plot</strong>. A spectrogram plots time on the X-axis, frequency on the Y-axis, and amplitude as color intensity. This is widely used in speech analysis and ornithology (studying bird songs).</p>
-<h3 id="handling-feedback">Handling Feedback<a class="headerlink" href="#handling-feedback" title="Permanent link">&para;</a></h3>
+<h3 id="handling-feedback">Handling Feedback<a class="headerlink" href="#handling-feedback" title="Permanent link">¶</a></h3>
 <p>When working with live microphones and speakers simultaneously, you might experience a loud squealing noise. This is acoustic feedback, where the microphone picks up the speaker output, amplifies it, and plays it back in a loop. To prevent this, professional systems use a <strong>Microphone Feedback Gate</strong> (or noise gate) to mute the mic when the volume drops below a certain level.</p>
 <div class="admonition mascot-warning">
 <p class="admonition-title">Beware the Squeal!</p>
-<p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+<p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png">
 Watch out for the infinite feedback loop! If your microphone hears your speakers, it will amplify the sound until it creates a deafening screech. To avoid blasting your ears, always wear headphones while coding audio-reactive sketches!</p>
 </div>
-<h3 id="entering-the-third-dimension">Entering the Third Dimension<a class="headerlink" href="#entering-the-third-dimension" title="Permanent link">&para;</a></h3>
+<h3 id="entering-the-third-dimension">Entering the Third Dimension<a class="headerlink" href="#entering-the-third-dimension" title="Permanent link">¶</a></h3>
 <p>Finally, we can map our FFT data to 3D space using WEBGL. A <strong>3D Audio Reactive Visual</strong> might use the bass energy to deform a 3D sphere, or map the spectrum across a flowing 3D terrain grid, creating a mesmerizing synthetic landscape that dances to the music.</p>
-<h2 id="deep-dive-the-mathematics-of-sound">Deep Dive: The Mathematics of Sound<a class="headerlink" href="#deep-dive-the-mathematics-of-sound" title="Permanent link">&para;</a></h2>
+<h2 id="deep-dive-the-mathematics-of-sound">Deep Dive: The Mathematics of Sound<a class="headerlink" href="#deep-dive-the-mathematics-of-sound" title="Permanent link">¶</a></h2>
 <p>To truly understand how our digital prism works, we must briefly explore the underlying mathematics. The Fast Fourier Transform (FFT) is an incredibly efficient algorithm for computing the Discrete Fourier Transform (DFT). The DFT takes a discrete signal in the time domain (our audio samples) and transforms it into the frequency domain. </p>
 <p>The core idea, formulated by Jean-Baptiste Joseph Fourier in the 19th century, is that any complex periodic wave can be constructed by adding together a series of simple sine and cosine waves of varying frequencies and amplitudes. When we call the analyze method on our FFT object, the algorithm is essentially working backwards: it takes the complex, chaotic wave recorded by the microphone and calculates the exact recipe of simple sine waves needed to recreate it.</p>
 <div class="admonition mascot-encourage">
 <p class="admonition-title">Breathe and Trust the Math</p>
-<p><img alt="Palette encouraging" class="mascot-admonition-img" src="../../img/mascot/encouraging.png" />
+<p><img alt="Palette encouraging" class="mascot-admonition-img" src="../../img/mascot/encouraging.png">
 If the calculus behind the Fast Fourier Transform feels overwhelming, that's completely normal! You don't need to manually calculate sine wave interference to be an artist. Just trust <code>p5.FFT</code> to hand you the frequencies, and focus on the beautiful visuals you can paint with them.</p>
 </div>
-<h3 id="the-anatomy-of-an-audio-buffer">The Anatomy of an Audio Buffer<a class="headerlink" href="#the-anatomy-of-an-audio-buffer" title="Permanent link">&para;</a></h3>
+<h3 id="the-anatomy-of-an-audio-buffer">The Anatomy of an Audio Buffer<a class="headerlink" href="#the-anatomy-of-an-audio-buffer" title="Permanent link">¶</a></h3>
 <p>When the microphone captures sound, it doesn't process continuous analog signals; rather, it takes discrete snapshots of the air pressure thousands of times per second. This rate is known as the sampling rate. A standard CD-quality audio file has a sampling rate of 44,100 Hz, meaning the microphone takes 44,100 snapshots every single second.</p>
 <p>These snapshots are stored in an array known as a buffer. When we request the waveform using our time domain function, p5.js returns an array containing a small segment of this buffer—typically 1024 samples. Each value in this array represents the normalized amplitude of the sound wave at that exact fraction of a second, ranging from -1.0 to 1.0. </p>
 <p>By iterating through this array and mapping the values to the Y-axis of our canvas while mapping the array index to the X-axis, we can draw the actual shape of the sound wave. This is precisely how an oscilloscope works, painting the invisible pressure variations onto a glowing screen.</p>
@@ -1946,42 +2085,42 @@ If the calculus behind the Fast Fourier Transform feels overwhelming, that's com
 </span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">  </span><span class="nx">endShape</span><span class="p">();</span>
 </span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="p">}</span>
 </span></code></pre></div>
-<h3 id="advanced-spectrogram-generation">Advanced Spectrogram Generation<a class="headerlink" href="#advanced-spectrogram-generation" title="Permanent link">&para;</a></h3>
+<h3 id="advanced-spectrogram-generation">Advanced Spectrogram Generation<a class="headerlink" href="#advanced-spectrogram-generation" title="Permanent link">¶</a></h3>
 <p>A spectrogram provides a historical record of the frequency spectrum over time. To build an audio spectrogram plot, we need to continuously sample the FFT spectrum and draw it to the screen. However, instead of drawing bars, we map the energy of each frequency bin to a color or grayscale value, and draw a single vertical line of pixels for that moment in time.</p>
 <p>As time progresses, we shift the entire image to the left (or scroll it downwards) and draw the new frequency data on the right edge. This creates a scrolling waterfall of color that reveals the intricate structure of complex sounds, such as spoken words or musical chords. The X-axis represents time, the Y-axis represents frequency (often using a logarithmic scale for better low-frequency resolution), and the color intensity represents the amplitude of that specific frequency band.</p>
 <p>This technique is not just for making pretty visuals; it is a fundamental tool in acoustic signal processing, used by engineers to analyze room acoustics, by linguists to study phonetics, and by musicians to tune their instruments.</p>
-<h3 id="fine-tuning-the-visual-experience">Fine-Tuning the Visual Experience<a class="headerlink" href="#fine-tuning-the-visual-experience" title="Permanent link">&para;</a></h3>
+<h3 id="fine-tuning-the-visual-experience">Fine-Tuning the Visual Experience<a class="headerlink" href="#fine-tuning-the-visual-experience" title="Permanent link">¶</a></h3>
 <p>When designing interactive audio experiences, developers must consider the user experience and hardware limitations. The visual frame rate of a web browser typically caps at 60 frames per second, while audio is processed at thousands of samples per second. This mismatch means that our visuals are essentially sampling the audio data at a much lower rate.</p>
 <p>To prevent our visuals from appearing jittery or disjointed, we rely heavily on interpolation and smoothing techniques. When mapping an audio reactive pulse scale to a shape, for example, we don't apply the raw amplitude directly to the scale factor. Instead, we use linear interpolation to smoothly transition the current scale towards the target scale defined by the audio energy. This gives the visual a sense of physical mass and inertia, making it feel more organic and responsive.</p>
 <p>Furthermore, when dealing with dynamic ranges, it is often necessary to apply mathematical functions like logarithms or power curves to the raw data. Human perception of loudness is logarithmic; an increase in acoustic power by a factor of ten is perceived as roughly twice as loud. Therefore, simply mapping the linear amplitude to the size of a circle may not look accurate to the viewer. Applying a curve to the data ensures that the visual representation matches the human sensory experience.</p>
 <p>By combining these mathematical principles, careful data structuring, and a strong aesthetic vision, developers can create truly immersive and responsive interactive art. The combination of the microphone as an ear, the FFT as a prism, and the canvas as a stage allows us to bridge the gap between the auditory and visual domains, revealing the hidden beauty of the acoustic world.</p>
-<h3 id="understanding-windowing-functions-in-fft">Understanding Windowing Functions in FFT<a class="headerlink" href="#understanding-windowing-functions-in-fft" title="Permanent link">&para;</a></h3>
+<h3 id="understanding-windowing-functions-in-fft">Understanding Windowing Functions in FFT<a class="headerlink" href="#understanding-windowing-functions-in-fft" title="Permanent link">¶</a></h3>
 <p>When the Fast Fourier Transform operates on an audio buffer, it inherently assumes that the small chunk of data it is analyzing is a single period of an infinitely repeating waveform. However, in reality, we are just chopping an arbitrary slice out of a continuous audio stream. This sudden chopping creates sharp discontinuities at the beginning and end of the buffer.</p>
 <p>If the algorithm processes these sharp edges directly, it introduces artificial high-frequency noise into the spectrum, a phenomenon known as spectral leakage. To mitigate this, engineers apply a mathematical technique called windowing. A windowing function gradually fades the audio signal in at the start of the buffer and fades it out at the end, smoothly tapering the edges down to zero.</p>
 <p>Common windowing functions include the Hamming, Hanning, and Blackman windows. Each offers a different trade-off between frequency resolution (how well we can distinguish between two closely spaced pitches) and amplitude accuracy (how accurately we can measure the energy of a given pitch). In p5.js, a default windowing function is applied behind the scenes when you instantiate the FFT object, ensuring that the resulting frequency bins provide a clean and accurate representation of the sound without requiring manual intervention from the developer.</p>
-<h3 id="the-challenge-of-pitch-detection">The Challenge of Pitch Detection<a class="headerlink" href="#the-challenge-of-pitch-detection" title="Permanent link">&para;</a></h3>
+<h3 id="the-challenge-of-pitch-detection">The Challenge of Pitch Detection<a class="headerlink" href="#the-challenge-of-pitch-detection" title="Permanent link">¶</a></h3>
 <p>While identifying the dominant frequencies is straightforward with FFT, extracting the exact musical pitch is surprisingly difficult. A musical note played on an instrument is rarely a pure sine wave. Instead, it consists of a fundamental frequency (which determines the perceived pitch) and a series of harmonic overtones (which determine the timbre, or tone color, of the instrument).</p>
 <p>Sometimes, the fundamental frequency might actually have less energy than its overtones, tricking simple algorithms into misidentifying the pitch. Advanced pitch detection algorithms, such as the YIN algorithm or autocorrelation methods, do not just look for the highest peak in the frequency spectrum. Instead, they analyze the waveform in the time domain, looking for repeating patterns and calculating the exact time difference between these repetitions.</p>
 <p>By measuring the period of the repeating pattern, the algorithm can calculate the true fundamental frequency with high precision, even if the overtones are louder. This level of accuracy is essential for building applications like digital guitar tuners or interactive vocal training software, where knowing the precise musical note is critical.</p>
-<h3 id="spatial-audio-and-3d-visualization">Spatial Audio and 3D Visualization<a class="headerlink" href="#spatial-audio-and-3d-visualization" title="Permanent link">&para;</a></h3>
+<h3 id="spatial-audio-and-3d-visualization">Spatial Audio and 3D Visualization<a class="headerlink" href="#spatial-audio-and-3d-visualization" title="Permanent link">¶</a></h3>
 <p>As web technologies have evolved, the integration of 3D graphics via WebGL and spatial audio via the Web Audio API has opened up new frontiers for creative coders. Imagine not just drawing a 2D spectrum on the screen, but positioning sound sources in a 3D virtual environment.</p>
 <p>When an audio source is spatialized, the browser automatically calculates the volume, panning, and even the Doppler effect based on the listener's position relative to the sound. By linking this spatial audio data with 3D graphics, developers can create immersive experiences where shapes react differently depending on where the sound is coming from.</p>
 <p>For instance, a cluster of 3D cubes on the left side of the screen might pulsate only when low frequencies are detected from a left-panned audio channel, while a particle system on the right explodes in response to high-frequency transients from a right-panned channel. This synthesis of spatial audio and 3D rendering creates a deeply engaging, multi-sensory environment that pushes the boundaries of what is possible in the browser.</p>
 <p>By mastering the tools presented in this chapter—from the simple act of requesting microphone access to the complex mathematics of the Fast Fourier Transform—you are acquiring the fundamental skills necessary to build these advanced interactive systems. The journey from a basic bouncing ball to a fully realized, audio-reactive 3D landscape begins with a solid understanding of how digital audio is captured, analyzed, and visualized.</p>
-<h2 id="expanding-our-sonic-palette">Expanding Our Sonic Palette<a class="headerlink" href="#expanding-our-sonic-palette" title="Permanent link">&para;</a></h2>
+<h2 id="expanding-our-sonic-palette">Expanding Our Sonic Palette<a class="headerlink" href="#expanding-our-sonic-palette" title="Permanent link">¶</a></h2>
 <p>To truly master these concepts, we must look beyond the immediate algorithms and consider the broader context of creative coding. Sound is a physical medium, and our digital tools are merely translations of that physical reality into numbers. When you use an <code>AudioIn</code> object, you are opening a portal between the physical vibration of the speaker's vocal cords and the glowing pixels of your monitor.</p>
-<h3 id="crafting-a-sensory-experience">Crafting a Sensory Experience<a class="headerlink" href="#crafting-a-sensory-experience" title="Permanent link">&para;</a></h3>
+<h3 id="crafting-a-sensory-experience">Crafting a Sensory Experience<a class="headerlink" href="#crafting-a-sensory-experience" title="Permanent link">¶</a></h3>
 <p>A great visualizer does not just blindly map data to shapes; it creates a synesthetic experience. Synesthesia is a perceptual phenomenon where stimulation of one sensory or cognitive pathway leads to involuntary experiences in a second sensory or cognitive pathway. In our context, we are artificially constructing a synesthetic experience for the user.</p>
 <p>When the bass drops in a song, the visualizer shouldn't just change a number; the entire screen should feel the impact. This is where concepts like screen shake, color inversion, and particle physics come into play. By combining the rigid mathematical output of the FFT with organic physics simulations, we bridge the gap between sterile data and visceral art.</p>
-<h3 id="optimization-and-performance-tuning">Optimization and Performance Tuning<a class="headerlink" href="#optimization-and-performance-tuning" title="Permanent link">&para;</a></h3>
+<h3 id="optimization-and-performance-tuning">Optimization and Performance Tuning<a class="headerlink" href="#optimization-and-performance-tuning" title="Permanent link">¶</a></h3>
 <p>As your visualizers become more complex, especially when moving into 3D, performance becomes a critical concern. JavaScript is a single-threaded language, meaning all your calculations, audio processing, and rendering must happen in a tight sequence 60 times a second. If your code takes too long to execute, the animation will stutter, and the illusion is broken.</p>
 <p>To optimize, avoid creating new objects or arrays inside the <code>draw</code> loop. Instead, allocate your arrays in the <code>setup</code> function and reuse them. Furthermore, consider how many geometric shapes you are drawing. Drawing 1024 individual rectangles for every frequency bin might be visually impressive, but it is computationally expensive. Often, averaging groups of bins together—a process sometimes referred to as downsampling or creating a low-resolution representation—can result in a smoother performance and a cleaner, more readable visual aesthetic.</p>
-<h3 id="bridging-sound-and-light">Bridging Sound and Light<a class="headerlink" href="#bridging-sound-and-light" title="Permanent link">&para;</a></h3>
+<h3 id="bridging-sound-and-light">Bridging Sound and Light<a class="headerlink" href="#bridging-sound-and-light" title="Permanent link">¶</a></h3>
 <p>Let us consider one final, advanced example. Imagine we want to build a visualizer that doesn't just react to the music, but feels like an integral part of it. To do this, we need to map the characteristics of sound to the characteristics of light. Pitch can map to hue, amplitude to brightness, and timbre (the complexity of the spectrum) to saturation or physical texture.</p>
 <p>If we apply a Fast Fourier Transform and find a high concentration of energy in the treble, we might shift the global palette towards bright blues and whites, triggering sharp, geometric shapes. If the energy sits in the bass, we might shift towards deep reds and oranges, using soft, rounded, slowly pulsing organic shapes. We can extract the Frequency Centroid Math to determine this overall color temperature of the sound. This level of nuanced mapping elevates our project from a simple audio visualizer to an interactive, algorithmic instrument. </p>
 <div class="admonition mascot-celebration">
 <p class="admonition-title">Awesome Work!</p>
-<p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+<p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png">
 Incredible work! You just mastered capturing real-time <code>p5.AudioIn</code> data, extracting frequency bins with the Fast Fourier Transform, and building dynamic beat detection algorithms!</p>
 </div>
 
@@ -2009,7 +2148,7 @@ Incredible work! You just mastered capturing real-time <code>p5.AudioIn</code> d
         
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
   Back to top
 </button>
         
@@ -2019,20 +2158,20 @@ Incredible work! You just mastered capturing real-time <code>p5.AudioIn</code> d
   
     
       
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
         
           
           <a href="../21-audio-synthesis-sound/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 21. Audio Synthesis, Oscillators &amp; Envelopes">
             <div class="md-footer__button md-icon">
               
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
             </div>
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Previous
               </span>
               <div class="md-ellipsis">
-                21. Audio Synthesis, Oscillators & Envelopes
+                21. Audio Synthesis, Oscillators &amp; Envelopes
               </div>
             </div>
           </a>
@@ -2045,12 +2184,12 @@ Incredible work! You just mastered capturing real-time <code>p5.AudioIn</code> d
                 Next
               </span>
               <div class="md-ellipsis">
-                23. Image Processing, Filters & Video Capture
+                23. Image Processing, Filters &amp; Video Capture
               </div>
             </div>
             <div class="md-footer__button md-icon">
               
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
             </div>
           </a>
         
@@ -2062,7 +2201,7 @@ Incredible work! You just mastered capturing real-time <code>p5.AudioIn</code> d
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+      Copyright © 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
     </div>
   
   
@@ -2083,6 +2222,14 @@ Incredible work! You just mastered capturing real-time <code>p5.AudioIn</code> d
     
       <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
+        <script src="../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
     
-  </body>
-</html>
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

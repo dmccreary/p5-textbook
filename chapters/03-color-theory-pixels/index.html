@@ -1,7 +1,4 @@
-
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
+<!DOCTYPE html><html lang="en" class="no-js"><head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -26,7 +23,7 @@
     
     
       
-        <title>3. Color Theory, Color Modes & Pixel Manipulation - The Art of Processing</title>
+        <title>3. Color Theory, Color Modes &amp; Pixel Manipulation - The Art of Processing</title>
       
     
     
@@ -47,7 +44,7 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
@@ -56,14 +53,52 @@
     
       <link rel="stylesheet" href="../../css/mascot.css">
     
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
+      
+        <meta property="og:type" content="website">
+      
+        <meta property="og:title" content="3. Color Theory, Color Modes &amp; Pixel Manipulation - The Art of Processing">
+      
+        <meta property="og:description" content="An interactive intelligent textbook about the p5.js processing library and how to use it to teach computational thinking.">
+      
+        <meta property="og:image" content="https://dmccreary.github.io/p5-textbook/assets/images/social/chapters/03-color-theory-pixels/index.png">
+      
+        <meta property="og:image:type" content="image/png">
+      
+        <meta property="og:image:width" content="1200">
+      
+        <meta property="og:image:height" content="630">
+      
+        <meta property="og:url" content="https://dmccreary.github.io/p5-textbook/chapters/03-color-theory-pixels/">
+      
+        <meta name="twitter:card" content="summary_large_image">
+      
+        <meta name="twitter:title" content="3. Color Theory, Color Modes &amp; Pixel Manipulation - The Art of Processing">
+      
+        <meta name="twitter:description" content="An interactive intelligent textbook about the p5.js processing library and how to use it to teach computational thinking.">
+      
+        <meta name="twitter:image" content="https://dmccreary.github.io/p5-textbook/assets/images/social/chapters/03-color-theory-pixels/index.png">
+      
     
-  </head>
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
   
   
     
@@ -99,12 +134,12 @@
     <a href="../.." title="The Art of Processing" class="md-header__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -116,7 +151,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              3. Color Theory, Color Modes & Pixel Manipulation
+              3. Color Theory, Color Modes &amp; Pixel Manipulation
             
           </span>
         </div>
@@ -130,7 +165,7 @@
     
       <label class="md-header__button md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
       </label>
       <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
@@ -139,20 +174,20 @@
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
           <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
             
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
           </a>
         
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
         </button>
       </nav>
       
@@ -177,7 +212,7 @@
         <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -201,7 +236,7 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -213,7 +248,7 @@
     <a href="../.." title="The Art of Processing" class="md-nav__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     The Art of Processing
@@ -223,7 +258,7 @@
       <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -459,7 +494,7 @@
         
   
   <span class="md-ellipsis">
-    1. Introduction to Creative Coding & Canvas Foundations
+    1. Introduction to Creative Coding &amp; Canvas Foundations
   </span>
   
 
@@ -480,7 +515,7 @@
         
   
   <span class="md-ellipsis">
-    2. 2D Primitive Shapes & Custom Geometries
+    2. 2D Primitive Shapes &amp; Custom Geometries
   </span>
   
 
@@ -510,7 +545,7 @@
           
   
   <span class="md-ellipsis">
-    3. Color Theory, Color Modes & Pixel Manipulation
+    3. Color Theory, Color Modes &amp; Pixel Manipulation
   </span>
   
 
@@ -521,7 +556,7 @@
         
   
   <span class="md-ellipsis">
-    3. Color Theory, Color Modes & Pixel Manipulation
+    3. Color Theory, Color Modes &amp; Pixel Manipulation
   </span>
   
 
@@ -616,6 +651,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#diagram-additive-color-mixer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Additive Color Mixer
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -635,6 +679,15 @@
   <a href="#a-better-compass-hsb-color-space-and-hsl-color-space" class="md-nav__link">
     <span class="md-ellipsis">
       A Better Compass: HSB Color Space and HSL Color Space
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-color-compass" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Color Compass
     </span>
   </a>
   
@@ -677,6 +730,15 @@
   <a href="#unraveling-the-grid-pixels-array-indexing" class="md-nav__link">
     <span class="md-ellipsis">
       Unraveling the Grid: Pixels Array Indexing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-magnifying-glass-array-translator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Magnifying Glass Array Translator
     </span>
   </a>
   
@@ -763,7 +825,7 @@
         
   
   <span class="md-ellipsis">
-    4. Variables, Data Types & Scope Fundamentals
+    4. Variables, Data Types &amp; Scope Fundamentals
   </span>
   
 
@@ -784,7 +846,7 @@
         
   
   <span class="md-ellipsis">
-    5. Control Flow, Loops & Array Data Structures
+    5. Control Flow, Loops &amp; Array Data Structures
   </span>
   
 
@@ -805,7 +867,7 @@
         
   
   <span class="md-ellipsis">
-    6. Matrix Transformations & Coordinate Systems
+    6. Matrix Transformations &amp; Coordinate Systems
   </span>
   
 
@@ -826,7 +888,7 @@
         
   
   <span class="md-ellipsis">
-    7. Linear Motion, Trigonometry & Wave Math
+    7. Linear Motion, Trigonometry &amp; Wave Math
   </span>
   
 
@@ -847,7 +909,7 @@
         
   
   <span class="md-ellipsis">
-    8. Polar Coordinates, Oscillation & Easing
+    8. Polar Coordinates, Oscillation &amp; Easing
   </span>
   
 
@@ -868,7 +930,7 @@
         
   
   <span class="md-ellipsis">
-    9. Randomness, Gaussian Distributions & Random Walk
+    9. Randomness, Gaussian Distributions &amp; Random Walk
   </span>
   
 
@@ -889,7 +951,7 @@
         
   
   <span class="md-ellipsis">
-    10. Perlin Noise Landscapes & Vector Flow Fields
+    10. Perlin Noise Landscapes &amp; Vector Flow Fields
   </span>
   
 
@@ -910,7 +972,7 @@
         
   
   <span class="md-ellipsis">
-    11. Vector Math Fundamentals & Physics Acceleration
+    11. Vector Math Fundamentals &amp; Physics Acceleration
   </span>
   
 
@@ -931,7 +993,7 @@
         
   
   <span class="md-ellipsis">
-    12. Particle Systems, Forces & Steering Behaviors
+    12. Particle Systems, Forces &amp; Steering Behaviors
   </span>
   
 
@@ -952,7 +1014,7 @@
         
   
   <span class="md-ellipsis">
-    13. Mouse & Keyboard User Event Sensing
+    13. Mouse &amp; Keyboard User Event Sensing
   </span>
   
 
@@ -973,7 +1035,7 @@
         
   
   <span class="md-ellipsis">
-    14. Touch Gestures, Mobile Sensors & Interaction
+    14. Touch Gestures, Mobile Sensors &amp; Interaction
   </span>
   
 
@@ -994,7 +1056,7 @@
         
   
   <span class="md-ellipsis">
-    15. DOM Controls, Input Fields & UI Elements
+    15. DOM Controls, Input Fields &amp; UI Elements
   </span>
   
 
@@ -1015,7 +1077,7 @@
         
   
   <span class="md-ellipsis">
-    16. CSS Styling, Layouts & Web Page Integration
+    16. CSS Styling, Layouts &amp; Web Page Integration
   </span>
   
 
@@ -1036,7 +1098,7 @@
         
   
   <span class="md-ellipsis">
-    17. Functions, Arrow Expressions & Callbacks
+    17. Functions, Arrow Expressions &amp; Callbacks
   </span>
   
 
@@ -1057,7 +1119,7 @@
         
   
   <span class="md-ellipsis">
-    18. ES6 Classes, Object-Oriented Programming & Async Data
+    18. ES6 Classes, Object-Oriented Programming &amp; Async Data
   </span>
   
 
@@ -1078,7 +1140,7 @@
         
   
   <span class="md-ellipsis">
-    19. 3D WebGL Coordinates & Primitive Geometries
+    19. 3D WebGL Coordinates &amp; Primitive Geometries
   </span>
   
 
@@ -1099,7 +1161,7 @@
         
   
   <span class="md-ellipsis">
-    20. 3D Cameras, Lighting Models, Materials & Shaders
+    20. 3D Cameras, Lighting Models, Materials &amp; Shaders
   </span>
   
 
@@ -1120,7 +1182,7 @@
         
   
   <span class="md-ellipsis">
-    21. Audio Synthesis, Oscillators & Envelopes
+    21. Audio Synthesis, Oscillators &amp; Envelopes
   </span>
   
 
@@ -1141,7 +1203,7 @@
         
   
   <span class="md-ellipsis">
-    22. Microphone Input & FFT Spectral Analysis
+    22. Microphone Input &amp; FFT Spectral Analysis
   </span>
   
 
@@ -1162,7 +1224,7 @@
         
   
   <span class="md-ellipsis">
-    23. Image Processing, Filters & Video Capture
+    23. Image Processing, Filters &amp; Video Capture
   </span>
   
 
@@ -1183,7 +1245,7 @@
         
   
   <span class="md-ellipsis">
-    24. Generative Typography & Vector Font Outlines
+    24. Generative Typography &amp; Vector Font Outlines
   </span>
   
 
@@ -1204,7 +1266,7 @@
         
   
   <span class="md-ellipsis">
-    25. Development Environment, Tools & Pedagogy
+    25. Development Environment, Tools &amp; Pedagogy
   </span>
   
 
@@ -1232,6 +1294,14 @@
       
         
           
+        
+      
+        
+      
+        
+      
+        
+      
         
       
         
@@ -1293,6 +1363,14 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1321,6 +1399,46 @@
   
 
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1373,7 +1491,7 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1465,6 +1583,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#diagram-additive-color-mixer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Additive Color Mixer
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1484,6 +1611,15 @@
   <a href="#a-better-compass-hsb-color-space-and-hsl-color-space" class="md-nav__link">
     <span class="md-ellipsis">
       A Better Compass: HSB Color Space and HSL Color Space
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-color-compass" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Color Compass
     </span>
   </a>
   
@@ -1526,6 +1662,15 @@
   <a href="#unraveling-the-grid-pixels-array-indexing" class="md-nav__link">
     <span class="md-ellipsis">
       Unraveling the Grid: Pixels Array Indexing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-magnifying-glass-array-translator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Magnifying Glass Array Translator
     </span>
   </a>
   
@@ -1609,20 +1754,20 @@
   
     <a href="https://github.com/dmccreary/p5-textbook/blob/main/docs/chapters/03-color-theory-pixels/index.md" title="Edit this page" class="md-content__button md-icon">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
     </a>
   
   
 
 
-<hr />
+<hr>
 <p>quality_score: 100
 readability_score: 54</p>
-<hr />
-<h1 id="color-theory-color-modes-pixel-manipulation">Color Theory, Color Modes &amp; Pixel Manipulation<a class="headerlink" href="#color-theory-color-modes-pixel-manipulation" title="Permanent link">&para;</a></h1>
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<hr>
+<h1 id="color-theory-color-modes-pixel-manipulation">Color Theory, Color Modes &amp; Pixel Manipulation<a class="headerlink" href="#color-theory-color-modes-pixel-manipulation" title="Permanent link">¶</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">¶</a></h2>
 <p>Explores RGB, HSB, and HSL color models, alpha transparency, color interpolation, and direct pixel array operations. Students will gain practical hands-on experience by building interactive sketches and visual experiments that demonstrate these concepts.</p>
-<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">¶</a></h2>
 <p>This chapter covers the following 34 concepts from the learning graph:</p>
 <ol>
 <li>RGB Color Space</li>
@@ -1660,27 +1805,27 @@ readability_score: 54</p>
 <li>Color Contrast Ratio</li>
 <li>Color Accessibility Palette</li>
 </ol>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">¶</a></h2>
 <p>This chapter builds on concepts from:</p>
 <ul>
 <li><a href="../02-2d-primitive-shapes/">Chapter 2: 2D Primitive Shapes &amp; Custom Geometries</a></li>
 </ul>
-<hr />
+<hr>
 <div class="admonition mascot-welcome">
 <p class="admonition-title">Welcome to Chapter 3!</p>
-<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" /></p>
+<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png"></p>
 <p>Palette here! Wireframes are fine, but let's be honest—color is where the real magic happens. This chapter will teach you how to paint with pure math and light, giving you the power to dynamically generate thousands of hues on the fly. Time to color outside the loops!</p>
 </div>
 <p>Welcome to Chapter 3! We are about to dive into one of the most vibrant, expressive, and fundamental aspects of digital art and creative coding: color and pixels. In our previous chapters, you learned the mechanics of drawing shapes—how to command the computer to plot points, draw lines, and render polygons on the digital canvas. But a world of only wireframes and black-and-white outlines can be a bit stark. Now, it's time to bring those geometries to life using the spectacular power of light and mathematics.</p>
 <p>By the end of this chapter, you won't just be picking colors from a standard menu like you do in traditional painting software. You will be calculating colors. You will be dynamically generating thousands of unique hues on the fly, manipulating transparency, and diving straight into the microscopic, granular level of the screen itself to reprogram individual pixels. Grab your digital paintbrush, and let's turn on the lights.</p>
-<hr />
-<h3 id="part-1-painting-with-light">Part 1: Painting with Light<a class="headerlink" href="#part-1-painting-with-light" title="Permanent link">&para;</a></h3>
-<h4 id="the-illusion-of-paint-vs-the-reality-of-screens">The Illusion of Paint vs. The Reality of Screens<a class="headerlink" href="#the-illusion-of-paint-vs-the-reality-of-screens" title="Permanent link">&para;</a></h4>
+<hr>
+<h3 id="part-1-painting-with-light">Part 1: Painting with Light<a class="headerlink" href="#part-1-painting-with-light" title="Permanent link">¶</a></h3>
+<h4 id="the-illusion-of-paint-vs-the-reality-of-screens">The Illusion of Paint vs. The Reality of Screens<a class="headerlink" href="#the-illusion-of-paint-vs-the-reality-of-screens" title="Permanent link">¶</a></h4>
 <p>When you were in elementary school art class, you were almost certainly taught the basics of mixing color using paint. You learned that the primary colors are red, blue, and yellow. You learned that if you mix red and yellow, you get orange. If you mix all the colors together, you get a muddy, dark brown or black. This real-world physical mixing process is known as <strong>Subtractive Color Mixing</strong>. </p>
 <p>It is called "subtractive" because of how physical pigments interact with light. A red apple looks red because its surface absorbs (or subtracts) all the blue and green light hitting it, reflecting only the red light into your eye. When you mix paints together, you are combining their light-absorbing properties. The more paint colors you mix together, the more wavelengths of light are subtracted from the reflection, and the darker the resulting puddle of paint becomes. </p>
 <p>However, computer screens, smartphones, tablets, and LED displays do not work with physical paint. They don't reflect light; they <em>emit</em> light. When you are coding in p5.js, you are not mixing pigments. You are quite literally painting with pure light.</p>
 <p>If you take three flashlights—one projecting a red beam, one green, and one blue—and shine them all at the exact same spot on a dark wall, the overlapping center won't be dark brown. It will be pure, blinding white. This phenomenon is known as <strong>Additive Color Mixing</strong>. The more colors of light you add together, the brighter and closer to white the result becomes. </p>
-<h4 id="the-standard-digital-canvas-rgb-color-space">The Standard Digital Canvas: <strong>RGB Color Space</strong><a class="headerlink" href="#the-standard-digital-canvas-rgb-color-space" title="Permanent link">&para;</a></h4>
+<h4 id="the-standard-digital-canvas-rgb-color-space">The Standard Digital Canvas: <strong>RGB Color Space</strong><a class="headerlink" href="#the-standard-digital-canvas-rgb-color-space" title="Permanent link">¶</a></h4>
 <p>Because screens are built using millions of microscopic light-emitting diodes that emit red, green, and blue light, the most fundamental and common way to represent color in the digital world is the <strong>RGB Color Space</strong>. RGB stands for Red, Green, and Blue. </p>
 <p>Imagine every single pixel on your computer monitor is actually a cluster of three incredibly tiny lightbulbs (subpixels): one red, one green, and one blue. By individually adjusting the brightness of each of these three tiny bulbs, the screen can trick your human eyes into seeing almost any color imaginable. </p>
 <p>In p5.js, the brightness of each of these three color channels is measured on a scale from <code>0</code> to <code>255</code>. 
@@ -1702,13 +1847,13 @@ readability_score: 54</p>
 </span></code></pre></div>
 <div class="admonition mascot-thinking">
 <p class="admonition-title">The Spotlight Metaphor</p>
-<p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+<p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png">
 Think of <code>fill(255, 0, 0)</code> not as mixing paint, but as directing a microscopic lighting crew. You are commanding them to turn the red spotlight up to maximum brightness, while turning the green and blue spotlights completely off! This additive light model is the foundational architecture of every digital screen you've ever looked at.</p>
 </div>
 <p>What if you just want to draw something simple, like a black and white checkerboard or a stormy gray cloud? Sometimes you only want a shade of gray, varying purely from black to white with no color hue at all. For this, p5.js provides a convenient shortcut called the <strong>Grayscale Value Syntax</strong>. Instead of typing out three identical numbers like <code>fill(128, 128, 128)</code> to get a medium gray, you can just provide a single number: <code>fill(128)</code>. 
 - <code>fill(0)</code> gives you pure black (all lights off).
 - <code>fill(255)</code> gives you pure white (all lights on maximum).</p>
-<h4 id="adding-transparency-the-rgba-alpha-channel">Adding Transparency: The <strong>RGBA Alpha Channel</strong><a class="headerlink" href="#adding-transparency-the-rgba-alpha-channel" title="Permanent link">&para;</a></h4>
+<h4 id="adding-transparency-the-rgba-alpha-channel">Adding Transparency: The <strong>RGBA Alpha Channel</strong><a class="headerlink" href="#adding-transparency-the-rgba-alpha-channel" title="Permanent link">¶</a></h4>
 <p>In the real world, not everything is solid. Glass, water, smoke, and tracing paper all allow light to pass through them. In digital graphics, we simulate this using transparency. We can easily draw shapes that are slightly see-through by adding a fourth number to our color functions. </p>
 <p>This fourth value is known as the <strong>RGBA Alpha Channel</strong>. The 'A' stands for Alpha, a mathematical term in computer graphics that dictates opacity. </p>
 <p>Just like the red, green, and blue values, the alpha value operates on a scale from 0 to 255 by default.
@@ -1716,27 +1861,28 @@ Think of <code>fill(255, 0, 0)</code> not as mixing paint, but as directing a mi
 - An alpha of <code>255</code> is completely solid, entirely opaque like a brick wall.
 - An alpha of <code>127</code> is exactly halfway transparent.</p>
 <p>If you wanted to draw a transparent blue square over a red circle to see how they mix, you would use four numbers: <code>fill(0, 0, 255, 127)</code>.</p>
-<h4 id="alternative-vocabularies-hex-and-named-colors">Alternative Vocabularies: Hex and Named Colors<a class="headerlink" href="#alternative-vocabularies-hex-and-named-colors" title="Permanent link">&para;</a></h4>
+<h4 id="alternative-vocabularies-hex-and-named-colors">Alternative Vocabularies: Hex and Named Colors<a class="headerlink" href="#alternative-vocabularies-hex-and-named-colors" title="Permanent link">¶</a></h4>
 <p>While typing out three numbers from 0 to 255 is the standard way a computer understands RGB, it can be a little annoying to remember that <code>255, 165, 0</code> makes orange. Sometimes, especially if you are working with web development or copying colors from a design program like Photoshop or Figma, you will want to use alternative ways of specifying color.</p>
 <p>One extremely common method is using <strong>Hex Color Code Strings</strong>. These look like <code>"#FF5733"</code>. They are exact mathematical representations of RGB values, just written in a base-16 number system (hexadecimal) instead of our standard base-10 decimal system. In hex, <code>FF</code> is exactly equal to 255. In p5.js, you can pass these hex codes directly into your color functions, as long as you wrap them in quotation marks so the computer knows it is reading text (a string): <code>fill("#FF5733")</code>.</p>
 <p>Alternatively, for quick sketching and prototyping, you can use <strong>Web Named Color Strings</strong>. There are over 140 standard color names built into all web browsers. These include simple names like <code>"red"</code> and <code>"blue"</code>, but also wonderfully specific names like <code>"tomato"</code>, <code>"cornflowerblue"</code>, <code>"goldenrod"</code>, <code>"papayawhip"</code>, and <code>"chartreuse"</code>.</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// Using a Web Named Color String</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nx">fill</span><span class="p">(</span><span class="s2">&quot;cornflowerblue&quot;</span><span class="p">);</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nx">fill</span><span class="p">(</span><span class="s2">"cornflowerblue"</span><span class="p">);</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1">// Using a Hex Color Code String</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nx">stroke</span><span class="p">(</span><span class="s2">&quot;#FFcc00&quot;</span><span class="p">);</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nx">stroke</span><span class="p">(</span><span class="s2">"#FFcc00"</span><span class="p">);</span>
 </span></code></pre></div>
+<h4 id="diagram-additive-color-mixer">Diagram: Additive Color Mixer<a class="headerlink" href="#diagram-additive-color-mixer" title="Permanent link">¶</a></h4>
 <details>
-<summary><strong>MicroSim: Additive Color Mixer</strong></summary>
+<summary><strong>MicroSim: Additive Color Mixer</strong></summary><summary><strong>MicroSim: Additive Color Mixer</strong></summary>
 <strong>Goal:</strong> Allow students to visually experiment with mixing Red, Green, and Blue light to see how Additive Color Mixing creates secondary colors and pure white.
 <strong>Visualization:</strong> A stark black canvas background. In the center, three large overlapping circles—representing three colored spotlights (red, green, blue).
 <strong>Interactivity:</strong> Below the canvas are three horizontal slider UI elements, each labeled and mapped from 0 to 255, controlling the intensity of the Red, Green, and Blue channels independently. As a student moves the sliders, the respective circles dynamically update their brightness. The overlapping regions in the center automatically compute the additive mixed color (e.g., full red + full green circles overlapping creates a bright yellow intersection).
 <strong>Expected Insight:</strong> Students will see firsthand that mixing full red and green light creates yellow, a classic example of additive mixing, which usually surprises beginners who expect a muddy brown due to their intuition originating from physical paint.
 </details>
 
-<hr />
-<h3 id="part-2-navigating-the-color-wheel">Part 2: Navigating the Color Wheel<a class="headerlink" href="#part-2-navigating-the-color-wheel" title="Permanent link">&para;</a></h3>
-<h4 id="a-better-compass-hsb-color-space-and-hsl-color-space">A Better Compass: <strong>HSB Color Space</strong> and <strong>HSL Color Space</strong><a class="headerlink" href="#a-better-compass-hsb-color-space-and-hsl-color-space" title="Permanent link">&para;</a></h4>
+<hr>
+<h3 id="part-2-navigating-the-color-wheel">Part 2: Navigating the Color Wheel<a class="headerlink" href="#part-2-navigating-the-color-wheel" title="Permanent link">¶</a></h3>
+<h4 id="a-better-compass-hsb-color-space-and-hsl-color-space">A Better Compass: <strong>HSB Color Space</strong> and <strong>HSL Color Space</strong><a class="headerlink" href="#a-better-compass-hsb-color-space-and-hsl-color-space" title="Permanent link">¶</a></h4>
 <p>While the RGB color space makes absolute, perfect mathematical sense to a computer hardware engineer (since physical screens are built using red, green, and blue diodes), it is deeply unintuitive for a human artist trying to design a beautiful image. </p>
 <p>If I show you a pastel pink color on screen and say, "Make it slightly more yellow and a little bit darker," it is incredibly difficult to guess how to adjust the three RGB numbers to achieve that effect. Does adding more green make it yellow? Does lowering blue make it darker? The cognitive load of doing light-mixing math in your head is frustrating.</p>
 <p>To make picking colors feel natural, organic, and mathematically predictable for humans, graphic designers rely on alternative color models: the <strong>HSB Color Space</strong> (Hue, Saturation, Brightness) or the closely related <strong>HSL Color Space</strong> (Hue, Saturation, Lightness).</p>
@@ -1755,15 +1901,16 @@ Think of <code>fill(255, 0, 0)</code> not as mixing paint, but as directing a mi
 <li><strong>Brightness</strong>: This is a measure of how much literal light is shining on the entire compass. It is also measured from <code>0</code> to <code>100</code>. A brightness of <code>0</code> means you are standing in a pitch-black room; the hue and saturation do not matter because you can't see anything—it's just pure black. A brightness of <code>100</code> means the color is fully illuminated.</li>
 </ul>
 <p>In the HSB color space, making a color "more yellow" is gloriously easy. You don't have to balance red and green lights. You just turn your hue "compass" to 60 degrees. Making it "darker" just means lowering the brightness number.</p>
+<h4 id="diagram-the-color-compass">Diagram: The Color Compass<a class="headerlink" href="#diagram-the-color-compass" title="Permanent link">¶</a></h4>
 <details>
-<summary><strong>MicroSim: The Color Compass</strong></summary>
+<summary><strong>MicroSim: The Color Compass</strong></summary><summary><strong>MicroSim: The Color Compass</strong></summary>
 <strong>Goal:</strong> Visualize the HSB Color Space as an interactive navigational wheel, clearly separating hue from saturation and brightness.
 <strong>Visualization:</strong> A large, circular color wheel on the left side of the screen, displaying a smooth gradient of all 360 hues around its circumference, fading to gray/white in the exact center. On the right, a tall vertical slider labeled "Brightness".
 <strong>Interactivity:</strong> Students can click and drag a small reticle (crosshair) anywhere inside the circular wheel to simultaneously change the Hue (angle) and Saturation (distance from center). The selected color is displayed in a large preview box. They can independently drag the vertical brightness slider to see how lighting affects the chosen hue and saturation coordinate.
 <strong>Expected Insight:</strong> Students will intuitively grasp that Hue is purely a geometric angle on a circle. This spatial understanding makes it very easy to transition into using mathematical formulas for color harmonies, like adding 180 degrees to find an exact opposite.
 </details>
 
-<h4 id="algorithmic-harmony-generating-palettes-dynamically">Algorithmic Harmony: Generating Palettes Dynamically<a class="headerlink" href="#algorithmic-harmony-generating-palettes-dynamically" title="Permanent link">&para;</a></h4>
+<h4 id="algorithmic-harmony-generating-palettes-dynamically">Algorithmic Harmony: Generating Palettes Dynamically<a class="headerlink" href="#algorithmic-harmony-generating-palettes-dynamically" title="Permanent link">¶</a></h4>
 <p>When designing a generative artwork, a user interface, or a data visualization, you rarely use just one single color. You need a collection of colors that look aesthetically pleasing when placed next to each other. In programming, we store these curated collections in a <strong>Palette Color Array</strong>, which is simply a structured list of colors that our code can systematically loop through.</p>
 <p>Instead of manually picking five colors that look nice, we can generate these arrays dynamically on the fly using math! This is where the geometric angle nature of the HSB color wheel becomes a superpower.</p>
 <p>For example, <strong>Complimentary Color Logic</strong> relies on the psychological and visual fact that colors located directly opposite each other on the color wheel create the highest vibrant contrast when paired together. If your base hue is defined by the variable <code>H</code>, its exact mathematical compliment is located directly across the circle at <code>(H + 180)</code>. Because a circle only has 360 degrees, we use the modulo operator <code>%</code> to make sure our math wraps around the circle like a clock. If we add 180 to a hue of 300, we get 480. <code>480 % 360 = 120</code>. So the compliment of 300 is 120!</p>
@@ -1780,9 +1927,9 @@ Think of <code>fill(255, 0, 0)</code> not as mixing paint, but as directing a mi
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1">// Find the color exactly 50% between red and blue</span>
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="kd">let</span><span class="w"> </span><span class="nx">blendedColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">lerpColor</span><span class="p">(</span><span class="nx">colorStart</span><span class="p">,</span><span class="w"> </span><span class="nx">colorEnd</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">);</span><span class="w"> </span>
 </span></code></pre></div>
-<hr />
-<h3 id="part-3-the-microscopic-grid">Part 3: The Microscopic Grid<a class="headerlink" href="#part-3-the-microscopic-grid" title="Permanent link">&para;</a></h3>
-<h4 id="the-tv-screen-magnifying-glass-direct-pixel-manipulation">The TV Screen Magnifying Glass: Direct Pixel Manipulation<a class="headerlink" href="#the-tv-screen-magnifying-glass-direct-pixel-manipulation" title="Permanent link">&para;</a></h4>
+<hr>
+<h3 id="part-3-the-microscopic-grid">Part 3: The Microscopic Grid<a class="headerlink" href="#part-3-the-microscopic-grid" title="Permanent link">¶</a></h3>
+<h4 id="the-tv-screen-magnifying-glass-direct-pixel-manipulation">The TV Screen Magnifying Glass: Direct Pixel Manipulation<a class="headerlink" href="#the-tv-screen-magnifying-glass-direct-pixel-manipulation" title="Permanent link">¶</a></h4>
 <p>Up until this point, we have been drawing shapes. We tell p5.js, "Draw a circle at coordinate X and Y with a radius of 50." And p5.js complies. But how does the computer actually do that? </p>
 <p>Imagine taking a powerful magnifying glass and pressing it right up against an old television screen or a modern LED monitor. You wouldn't see smooth, perfect circles anymore. You would see a massive, rigid, unyielding grid of tiny glowing rectangular dots. These dots are the pixels (short for "picture elements"). </p>
 <p>When you command p5.js to draw an <code>ellipse()</code>, the computer's graphics processor rapidly calculates exactly which tiny pixels in the grid fall inside the radius of the circle, and turns those specific pixels on. </p>
@@ -1791,10 +1938,10 @@ Think of <code>fill(255, 0, 0)</code> not as mixing paint, but as directing a mi
 <p>Once the data is loaded into the <code>pixels</code> array, we can use a <code>for</code> loop to write code that mathematically alters those numbers. However, altering the numbers in the array does not automatically change the screen! The array is just a staging area in the computer's memory. After we have finished making our mathematical changes to the array, we must call the <strong>Update Pixels Function</strong>, written as <code>updatePixels()</code>, to blast our modified data back onto the actual screen.</p>
 <div class="admonition mascot-warning">
 <p class="admonition-title">The Missing Bread Pitfall</p>
-<p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+<p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png">
 A common trap when editing the pixel array is writing brilliant math but seeing absolutely nothing change on the canvas! This happens because the array is just temporary memory. To fix this, you must always "close the sandwich" by explicitly calling <code>updatePixels()</code> at the very end of your code block to push your changes to the screen.</p>
 </div>
-<h4 id="unraveling-the-grid-pixels-array-indexing">Unraveling the Grid: <strong>Pixels Array Indexing</strong><a class="headerlink" href="#unraveling-the-grid-pixels-array-indexing" title="Permanent link">&para;</a></h4>
+<h4 id="unraveling-the-grid-pixels-array-indexing">Unraveling the Grid: <strong>Pixels Array Indexing</strong><a class="headerlink" href="#unraveling-the-grid-pixels-array-indexing" title="Permanent link">¶</a></h4>
 <p>Here is the most mind-bending part of direct pixel manipulation: the <code>pixels</code> array is not a 2D grid of X and Y coordinates. It is a 1D list. It is a single, incredibly long, flat line of numbers in the computer's RAM. </p>
 <p>When the computer scans the 2D screen to create the array, it reads it like a book: starting at the top-left corner, reading all the pixels across the first row from left to right, then moving down to the second row, reading it left to right, and so on.</p>
 <p>This structure requires a specialized mathematical formula to translate a 2D <code>(x, y)</code> coordinate into a 1D index location. We call this <strong>Pixels Array Indexing</strong>. </p>
@@ -1804,7 +1951,7 @@ A common trap when editing the pixel array is writing brilliant math but seeing 
 <p>Let's break that down. <code>y * width</code> skips over all the full rows of pixels above the one we want. <code>+ x</code> moves us across the current row to the specific column we want. And <code>* 4</code> multiplies the whole position by 4 because every single pixel requires four individual slots of memory.</p>
 <div class="admonition mascot-encourage">
 <p class="admonition-title">The Pixel Math Wall</p>
-<p><img alt="Palette encouraging" class="mascot-admonition-img" src="../../img/mascot/encouraging.png" />
+<p><img alt="Palette encouraging" class="mascot-admonition-img" src="../../img/mascot/encouraging.png">
 If the formula <code>(x + y * width) * 4</code> feels incredibly overwhelming right now, take a deep breath. That's completely normal! Converting 2D space into 1D memory is one of the hardest concepts in creative coding. Don't worry about memorizing the formula—just copy and paste it until it clicks. You've got this!</p>
 </div>
 <p>Once you calculate the starting index, you can set the color values directly in the array memory:</p>
@@ -1822,15 +1969,16 @@ If the formula <code>(x + y * width) * 4</code> feels incredibly overwhelming ri
 </span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="nx">updatePixels</span><span class="p">();</span>
 </span></code></pre></div>
 <p>While this complex array-indexing formula is incredibly fast—allowing you to manipulate hundreds of thousands of pixels in milliseconds—p5.js also provides a much easier, albeit significantly slower, alternative. You can use the <strong>Get Pixel Color</strong> function (<code>get(x, y)</code>) to read a pixel, and the <strong>Set Pixel Color</strong> function (<code>set(x, y, color)</code>) to change a pixel. These are great for simple tasks where speed isn't critical, but for heavy image processing, the raw <code>pixels</code> array formula is mandatory.</p>
+<h4 id="diagram-the-magnifying-glass-array-translator">Diagram: The Magnifying Glass Array Translator<a class="headerlink" href="#diagram-the-magnifying-glass-array-translator" title="Permanent link">¶</a></h4>
 <details>
-<summary><strong>MicroSim: The Magnifying Glass Array Translator</strong></summary>
+<summary><strong>MicroSim: The Magnifying Glass Array Translator</strong></summary><summary><strong>MicroSim: The Magnifying Glass Array Translator</strong></summary>
 <strong>Goal:</strong> Visually demystify the relationship between the 2D screen coordinate system and the 1D flat memory architecture of the `pixels` array.
 <strong>Visualization:</strong> The screen is split. On the left is a small 10x10 grid of brightly colored squares (representing a tiny 100-pixel canvas). On the right is a long, winding snake-like ribbon representing the 1D `pixels` array in computer memory, clearly segmented into groups of 4 slots (R, G, B, A).
 <strong>Interactivity:</strong> The user hovers their mouse over any square on the 2D grid. Instantly, the corresponding 4 slots on the 1D memory ribbon light up. A dynamic text overlay displays the math in real-time: `(x + y * width) * 4`. As the mouse moves, the numbers change, proving exactly how the formula jumps through the memory slots.
 <strong>Expected Insight:</strong> Students will overcome the initial intimidation of the pixel indexing formula by seeing a tangible, real-time visual proof of how a 2D image is unraveled into a flat 1D tape.
 </details>
 
-<h4 id="deconstructing-colors-the-p5-color-object">Deconstructing Colors: The <strong>p5 Color Object</strong><a class="headerlink" href="#deconstructing-colors-the-p5-color-object" title="Permanent link">&para;</a></h4>
+<h4 id="deconstructing-colors-the-p5-color-object">Deconstructing Colors: The <strong>p5 Color Object</strong><a class="headerlink" href="#deconstructing-colors-the-p5-color-object" title="Permanent link">¶</a></h4>
 <p>When you use the high-level <code>get(x, y)</code> function, it doesn't return a simple number. It returns a <strong>p5 Color Object</strong>. This is a special type of data structure in p5.js that acts as a secure container holding all the color information for that pixel.</p>
 <p>You cannot simply print a color object to the screen or use it in normal math equations directly. To look inside the container and read the individual data values out of this object, we must use dedicated extraction functions. </p>
 <p>If you want to know the RGB breakdown of the pixel, you can perform <strong>Red Channel Extraction</strong> using <code>red(c)</code>, <strong>Green Channel Extraction</strong> using <code>green(c)</code>, <strong>Blue Channel Extraction</strong> using <code>blue(c)</code>, and <strong>Alpha Value Extraction</strong> using <code>alpha(c)</code>. </p>
@@ -1838,9 +1986,9 @@ If the formula <code>(x + y * width) * 4</code> feels incredibly overwhelming ri
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">amountOfRed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">red</span><span class="p">(</span><span class="nx">myPixelColor</span><span class="p">);</span><span class="w"> </span><span class="c1">// Extract just the red value</span>
 </span></code></pre></div>
 <p>Even more powerfully, if you want to analyze an image in terms of human perception, you can use HSB extraction. Regardless of whether the original image was drawn in RGB, you can perform <strong>Hue Component Extraction</strong> using <code>hue(c)</code>, <strong>Saturation Extraction</strong> using <code>saturation(c)</code>, and <strong>Brightness Extraction</strong> using <code>brightness(c)</code> to analyze the color's properties. This is incredibly useful for writing code that, for example, tracks a brightly colored ball moving across a webcam video feed by constantly checking the <code>hue()</code> of the pixels!</p>
-<hr />
-<h3 id="part-4-advanced-aesthetics-and-empathy">Part 4: Advanced Aesthetics and Empathy<a class="headerlink" href="#part-4-advanced-aesthetics-and-empathy" title="Permanent link">&para;</a></h3>
-<h4 id="mathematical-overlaps-color-blend-modes">Mathematical Overlaps: <strong>Color Blend Modes</strong><a class="headerlink" href="#mathematical-overlaps-color-blend-modes" title="Permanent link">&para;</a></h4>
+<hr>
+<h3 id="part-4-advanced-aesthetics-and-empathy">Part 4: Advanced Aesthetics and Empathy<a class="headerlink" href="#part-4-advanced-aesthetics-and-empathy" title="Permanent link">¶</a></h3>
+<h4 id="mathematical-overlaps-color-blend-modes">Mathematical Overlaps: <strong>Color Blend Modes</strong><a class="headerlink" href="#mathematical-overlaps-color-blend-modes" title="Permanent link">¶</a></h4>
 <p>In standard digital drawing, when you draw a blue circle and then draw a red square directly on top of it, the red square completely overwrites and hides the blue pixels underneath. This default behavior is called "Blend" mode. But what if we want the top layer to interact mathematically with the bottom layer, creating beautiful, complex optical effects? </p>
 <p>We can achieve this by invoking <strong>Color Blend Modes</strong>. By changing the blend mode using the <code>blendMode()</code> function before drawing our shapes, we alter the fundamental mathematical rules the computer uses to calculate overlapping pixel colors.</p>
 <ul>
@@ -1848,7 +1996,7 @@ If the formula <code>(x + y * width) * 4</code> feels incredibly overwhelming ri
 <li><strong>Screen Blend Mode</strong> (<code>blendMode(SCREEN)</code>): This mode is essentially the opposite of Multiply. The math is slightly more complex: it inverts both layers, multiplies them, and then inverts the result. Visually, the result is <em>always</em> a brighter, lighter color. It brilliantly simulates the overlapping of brightly glowing lights in a dark room, like intersecting stage spotlights at a rock concert. </li>
 </ul>
 <p>Experimenting with different blend modes allows creative coders to generate rich, organic textures that feel less like computer graphics and more like natural physical phenomena.</p>
-<h4 id="designing-for-everyone-color-contrast-and-accessibility">Designing for Everyone: Color Contrast and Accessibility<a class="headerlink" href="#designing-for-everyone-color-contrast-and-accessibility" title="Permanent link">&para;</a></h4>
+<h4 id="designing-for-everyone-color-contrast-and-accessibility">Designing for Everyone: Color Contrast and Accessibility<a class="headerlink" href="#designing-for-everyone-color-contrast-and-accessibility" title="Permanent link">¶</a></h4>
 <p>As creative coders, developers, and artists, we have a profound responsibility to ensure that the art, tools, and interfaces we build are accessible and usable by everyone, regardless of their physical abilities. Color is a powerful tool for communication, but it can also be a massive barrier if used recklessly.</p>
 <p>Approximately 8% of all men and 0.5% of all women worldwide experience some form of color vision deficiency (commonly referred to as color blindness). Furthermore, millions of people have low-vision conditions, or simply try to use their phones outdoors in bright, glaring sunlight. If your educational simulation relies entirely on a user being able to distinguish between a pale green dot and a pale red dot, a significant portion of your audience will not be able to use your software.</p>
 <p>We evaluate the readability of visual elements using the <strong>Color Contrast Ratio</strong>. This is a mathematical formula that compares the luminance (the perceived brightness) of a foreground color (like text) against a background color. </p>
@@ -1857,14 +2005,14 @@ If the formula <code>(x + y * width) * 4</code> feels incredibly overwhelming ri
 - A ratio of <code>21:1</code> represents the maximum possible mathematical contrast in the digital world: pure black text on a pure white background.</p>
 <p>The World Wide Web Consortium (W3C), which dictates global Web Content Accessibility Guidelines (WCAG), has strict recommendations for contrast ratios. For normal-sized text to be legally and ethically considered accessible, it must have a contrast ratio of at least <code>4.5:1</code> against its background. Large text (like big headers) needs a minimum ratio of <code>3.0:1</code>.</p>
 <p>To be an inclusive and professional designer, you should always mathematically test your visual designs using contrast-checking tools. Furthermore, when designing data visualizations or complex UI, you should establish a <strong>Color Accessibility Palette</strong>. This means deliberately choosing a specific array of colors that maintain high contrast against each other <em>even when converted entirely to grayscale</em>. A good accessibility palette guarantees that you are never relying <em>only</em> on hue to convey critical information. Always pair color differences with variations in brightness, shape, or explicit text labels.</p>
-<hr />
-<h3 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h3>
+<hr>
+<h3 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">¶</a></h3>
 <p>Color in the world of creative coding is so much more than just picking a pretty shade from a dropdown menu. It is a profound blend of artistry, human psychology, and rigorous mathematics. </p>
 <p>From painting with pure, additive light in the RGB space, to navigating the intuitive angles of the HSB color wheel compass, to diving deep into the microscopic memory architecture of the 1D pixels array, you now have complete, granular control over every photon of light emitting from the screen. By mastering these 34 concepts, you have unlocked the ability to write algorithms that generate dynamic, mathematically harmonious, and ethically accessible visual experiences. </p>
 <p>You have learned to draw the shapes, and you have learned to light them up. In the next chapter, we will take these glowing, colored shapes and breathe the final element of life into them: movement over time!</p>
 <div class="admonition mascot-celebration">
 <p class="admonition-title">Illuminated!</p>
-<p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+<p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png">
 Incredible work! You just mastered additive RGB mixing, the HSB color wheel compass, array interpolation, and the complex 1D math of direct pixel manipulation! You are officially painting with pure math and light.</p>
 </div>
 
@@ -1873,6 +2021,9 @@ Incredible work! You just mastered additive RGB mixing, the HSB color wheel comp
 
 
 
+
+  
+  
 
 
 
@@ -1889,7 +2040,7 @@ Incredible work! You just mastered additive RGB mixing, the HSB color wheel comp
         
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
   Back to top
 </button>
         
@@ -1899,20 +2050,20 @@ Incredible work! You just mastered additive RGB mixing, the HSB color wheel comp
   
     
       
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
         
           
           <a href="../02-2d-primitive-shapes/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 2. 2D Primitive Shapes &amp; Custom Geometries">
             <div class="md-footer__button md-icon">
               
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
             </div>
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Previous
               </span>
               <div class="md-ellipsis">
-                2. 2D Primitive Shapes & Custom Geometries
+                2. 2D Primitive Shapes &amp; Custom Geometries
               </div>
             </div>
           </a>
@@ -1925,12 +2076,12 @@ Incredible work! You just mastered additive RGB mixing, the HSB color wheel comp
                 Next
               </span>
               <div class="md-ellipsis">
-                4. Variables, Data Types & Scope Fundamentals
+                4. Variables, Data Types &amp; Scope Fundamentals
               </div>
             </div>
             <div class="md-footer__button md-icon">
               
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
             </div>
           </a>
         
@@ -1942,7 +2093,7 @@ Incredible work! You just mastered additive RGB mixing, the HSB color wheel comp
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+      Copyright © 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
     </div>
   
   
@@ -1963,6 +2114,14 @@ Incredible work! You just mastered additive RGB mixing, the HSB color wheel comp
     
       <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
+        <script src="../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
     
-  </body>
-</html>
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

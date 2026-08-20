@@ -1,7 +1,4 @@
-
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
+<!DOCTYPE html><html lang="en" class="no-js"><head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -26,7 +23,7 @@
     
     
       
-        <title>23. Image Processing, Filters & Video Capture - The Art of Processing</title>
+        <title>23. Image Processing, Filters &amp; Video Capture - The Art of Processing</title>
       
     
     
@@ -47,7 +44,7 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
@@ -56,14 +53,52 @@
     
       <link rel="stylesheet" href="../../css/mascot.css">
     
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
+      
+        <meta property="og:type" content="website">
+      
+        <meta property="og:title" content="23. Image Processing, Filters &amp; Video Capture - The Art of Processing">
+      
+        <meta property="og:description" content="An interactive intelligent textbook about the p5.js processing library and how to use it to teach computational thinking.">
+      
+        <meta property="og:image" content="https://dmccreary.github.io/p5-textbook/assets/images/social/chapters/23-image-processing-video/index.png">
+      
+        <meta property="og:image:type" content="image/png">
+      
+        <meta property="og:image:width" content="1200">
+      
+        <meta property="og:image:height" content="630">
+      
+        <meta property="og:url" content="https://dmccreary.github.io/p5-textbook/chapters/23-image-processing-video/">
+      
+        <meta name="twitter:card" content="summary_large_image">
+      
+        <meta name="twitter:title" content="23. Image Processing, Filters &amp; Video Capture - The Art of Processing">
+      
+        <meta name="twitter:description" content="An interactive intelligent textbook about the p5.js processing library and how to use it to teach computational thinking.">
+      
+        <meta name="twitter:image" content="https://dmccreary.github.io/p5-textbook/assets/images/social/chapters/23-image-processing-video/index.png">
+      
     
-  </head>
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
   
   
     
@@ -99,12 +134,12 @@
     <a href="../.." title="The Art of Processing" class="md-header__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -116,7 +151,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              23. Image Processing, Filters & Video Capture
+              23. Image Processing, Filters &amp; Video Capture
             
           </span>
         </div>
@@ -130,7 +165,7 @@
     
       <label class="md-header__button md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
       </label>
       <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
@@ -139,20 +174,20 @@
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
           <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
             
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
           </a>
         
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
         </button>
       </nav>
       
@@ -177,7 +212,7 @@
         <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -201,7 +236,7 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -213,7 +248,7 @@
     <a href="../.." title="The Art of Processing" class="md-nav__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     The Art of Processing
@@ -223,7 +258,7 @@
       <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -459,7 +494,7 @@
         
   
   <span class="md-ellipsis">
-    1. Introduction to Creative Coding & Canvas Foundations
+    1. Introduction to Creative Coding &amp; Canvas Foundations
   </span>
   
 
@@ -480,7 +515,7 @@
         
   
   <span class="md-ellipsis">
-    2. 2D Primitive Shapes & Custom Geometries
+    2. 2D Primitive Shapes &amp; Custom Geometries
   </span>
   
 
@@ -501,7 +536,7 @@
         
   
   <span class="md-ellipsis">
-    3. Color Theory, Color Modes & Pixel Manipulation
+    3. Color Theory, Color Modes &amp; Pixel Manipulation
   </span>
   
 
@@ -522,7 +557,7 @@
         
   
   <span class="md-ellipsis">
-    4. Variables, Data Types & Scope Fundamentals
+    4. Variables, Data Types &amp; Scope Fundamentals
   </span>
   
 
@@ -543,7 +578,7 @@
         
   
   <span class="md-ellipsis">
-    5. Control Flow, Loops & Array Data Structures
+    5. Control Flow, Loops &amp; Array Data Structures
   </span>
   
 
@@ -564,7 +599,7 @@
         
   
   <span class="md-ellipsis">
-    6. Matrix Transformations & Coordinate Systems
+    6. Matrix Transformations &amp; Coordinate Systems
   </span>
   
 
@@ -585,7 +620,7 @@
         
   
   <span class="md-ellipsis">
-    7. Linear Motion, Trigonometry & Wave Math
+    7. Linear Motion, Trigonometry &amp; Wave Math
   </span>
   
 
@@ -606,7 +641,7 @@
         
   
   <span class="md-ellipsis">
-    8. Polar Coordinates, Oscillation & Easing
+    8. Polar Coordinates, Oscillation &amp; Easing
   </span>
   
 
@@ -627,7 +662,7 @@
         
   
   <span class="md-ellipsis">
-    9. Randomness, Gaussian Distributions & Random Walk
+    9. Randomness, Gaussian Distributions &amp; Random Walk
   </span>
   
 
@@ -648,7 +683,7 @@
         
   
   <span class="md-ellipsis">
-    10. Perlin Noise Landscapes & Vector Flow Fields
+    10. Perlin Noise Landscapes &amp; Vector Flow Fields
   </span>
   
 
@@ -669,7 +704,7 @@
         
   
   <span class="md-ellipsis">
-    11. Vector Math Fundamentals & Physics Acceleration
+    11. Vector Math Fundamentals &amp; Physics Acceleration
   </span>
   
 
@@ -690,7 +725,7 @@
         
   
   <span class="md-ellipsis">
-    12. Particle Systems, Forces & Steering Behaviors
+    12. Particle Systems, Forces &amp; Steering Behaviors
   </span>
   
 
@@ -711,7 +746,7 @@
         
   
   <span class="md-ellipsis">
-    13. Mouse & Keyboard User Event Sensing
+    13. Mouse &amp; Keyboard User Event Sensing
   </span>
   
 
@@ -732,7 +767,7 @@
         
   
   <span class="md-ellipsis">
-    14. Touch Gestures, Mobile Sensors & Interaction
+    14. Touch Gestures, Mobile Sensors &amp; Interaction
   </span>
   
 
@@ -753,7 +788,7 @@
         
   
   <span class="md-ellipsis">
-    15. DOM Controls, Input Fields & UI Elements
+    15. DOM Controls, Input Fields &amp; UI Elements
   </span>
   
 
@@ -774,7 +809,7 @@
         
   
   <span class="md-ellipsis">
-    16. CSS Styling, Layouts & Web Page Integration
+    16. CSS Styling, Layouts &amp; Web Page Integration
   </span>
   
 
@@ -795,7 +830,7 @@
         
   
   <span class="md-ellipsis">
-    17. Functions, Arrow Expressions & Callbacks
+    17. Functions, Arrow Expressions &amp; Callbacks
   </span>
   
 
@@ -816,7 +851,7 @@
         
   
   <span class="md-ellipsis">
-    18. ES6 Classes, Object-Oriented Programming & Async Data
+    18. ES6 Classes, Object-Oriented Programming &amp; Async Data
   </span>
   
 
@@ -837,7 +872,7 @@
         
   
   <span class="md-ellipsis">
-    19. 3D WebGL Coordinates & Primitive Geometries
+    19. 3D WebGL Coordinates &amp; Primitive Geometries
   </span>
   
 
@@ -858,7 +893,7 @@
         
   
   <span class="md-ellipsis">
-    20. 3D Cameras, Lighting Models, Materials & Shaders
+    20. 3D Cameras, Lighting Models, Materials &amp; Shaders
   </span>
   
 
@@ -879,7 +914,7 @@
         
   
   <span class="md-ellipsis">
-    21. Audio Synthesis, Oscillators & Envelopes
+    21. Audio Synthesis, Oscillators &amp; Envelopes
   </span>
   
 
@@ -900,7 +935,7 @@
         
   
   <span class="md-ellipsis">
-    22. Microphone Input & FFT Spectral Analysis
+    22. Microphone Input &amp; FFT Spectral Analysis
   </span>
   
 
@@ -930,7 +965,7 @@
           
   
   <span class="md-ellipsis">
-    23. Image Processing, Filters & Video Capture
+    23. Image Processing, Filters &amp; Video Capture
   </span>
   
 
@@ -941,7 +976,7 @@
         
   
   <span class="md-ellipsis">
-    23. Image Processing, Filters & Video Capture
+    23. Image Processing, Filters &amp; Video Capture
   </span>
   
 
@@ -1042,6 +1077,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#diagram-interactive-filter-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Interactive Filter Studio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#microsim-specification" class="md-nav__link">
     <span class="md-ellipsis">
       MicroSim Specification
@@ -1088,6 +1132,15 @@
   
     <nav class="md-nav" aria-label="Stylistic Transformations">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-real-time-asciify-camera" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Real-Time ASCIIfy Camera
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#microsim-specification_1" class="md-nav__link">
@@ -1210,7 +1263,7 @@
         
   
   <span class="md-ellipsis">
-    24. Generative Typography & Vector Font Outlines
+    24. Generative Typography &amp; Vector Font Outlines
   </span>
   
 
@@ -1231,7 +1284,7 @@
         
   
   <span class="md-ellipsis">
-    25. Development Environment, Tools & Pedagogy
+    25. Development Environment, Tools &amp; Pedagogy
   </span>
   
 
@@ -1259,6 +1312,14 @@
       
         
           
+        
+      
+        
+      
+        
+      
+        
+      
         
       
         
@@ -1320,6 +1381,14 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1348,6 +1417,46 @@
   
 
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1400,7 +1509,7 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1498,6 +1607,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#diagram-interactive-filter-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Interactive Filter Studio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#microsim-specification" class="md-nav__link">
     <span class="md-ellipsis">
       MicroSim Specification
@@ -1544,6 +1662,15 @@
   
     <nav class="md-nav" aria-label="Stylistic Transformations">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-real-time-asciify-camera" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Real-Time ASCIIfy Camera
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#microsim-specification_1" class="md-nav__link">
@@ -1663,16 +1790,16 @@
   
     <a href="https://github.com/dmccreary/p5-textbook/blob/main/docs/chapters/23-image-processing-video/index.md" title="Edit this page" class="md-content__button md-icon">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
     </a>
   
   
 
 
-<h1 id="image-processing-filters-video-capture">Image Processing, Filters &amp; Video Capture<a class="headerlink" href="#image-processing-filters-video-capture" title="Permanent link">&para;</a></h1>
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<h1 id="image-processing-filters-video-capture">Image Processing, Filters &amp; Video Capture<a class="headerlink" href="#image-processing-filters-video-capture" title="Permanent link">¶</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">¶</a></h2>
 <p>Loads and manipulates image assets, applies pixel filters, captures live webcam feeds, and computes motion difference. Students will gain practical hands-on experience by building interactive sketches and visual experiments that demonstrate these concepts.</p>
-<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">¶</a></h2>
 <p>This chapter covers the following 32 concepts from the learning graph:</p>
 <ol>
 <li>Load Image Function</li>
@@ -1708,27 +1835,27 @@
 <li>Offscreen Texture Render</li>
 <li>Mask Image Alpha Shape</li>
 </ol>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">¶</a></h2>
 <p>This chapter builds on concepts from:</p>
 <ul>
 <li><a href="../22-mic-input-fft/">Chapter 22: Microphone Input &amp; FFT Spectral Analysis</a></li>
 </ul>
-<hr />
+<hr>
 <div class="admonition mascot-welcome">
 <p class="admonition-title">Welcome to the Digital Darkroom!</p>
-<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" /></p>
+<p><img alt="Palette waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png"></p>
 <p>Palette here! Welcome to the digital darkroom. If you've ever wanted to manipulate live webcam feeds or build your own custom photo filters from scratch, this is the chapter for you. Let's blend some code and start bending reality!</p>
 </div>
 <p>Before the era of digital cameras, photographers developed pictures in physical darkrooms. They used chemicals to reveal images on paper, carefully controlling light exposure, contrast, and tone. Today, the process of image processing serves the exact same purpose, but our chemicals are mathematical algorithms, and our photographic paper is the HTML5 canvas. Every digital image you see on a computer screen is essentially a grid of tiny colored squares known as pixels. By manipulating these pixels with code, we gain unparalleled control over visual aesthetics. </p>
-<h2 id="the-digital-darkroom-an-introduction-to-pixels">The Digital Darkroom: An Introduction to Pixels<a class="headerlink" href="#the-digital-darkroom-an-introduction-to-pixels" title="Permanent link">&para;</a></h2>
+<h2 id="the-digital-darkroom-an-introduction-to-pixels">The Digital Darkroom: An Introduction to Pixels<a class="headerlink" href="#the-digital-darkroom-an-introduction-to-pixels" title="Permanent link">¶</a></h2>
 <p>When you learn how to process images dynamically, you open up new avenues for creative coding. Interactive art installations, augmented reality filters, and real-time video synthesizers all rely on the foundational techniques we will explore. We will start by simply displaying static images, move on to adjusting their colors and applying artistic filters, and finally integrate live video streams from a webcam.</p>
-<h3 id="loading-and-displaying-assets">Loading and Displaying Assets<a class="headerlink" href="#loading-and-displaying-assets" title="Permanent link">&para;</a></h3>
+<h3 id="loading-and-displaying-assets">Loading and Displaying Assets<a class="headerlink" href="#loading-and-displaying-assets" title="Permanent link">¶</a></h3>
 <p>To bring a photograph into our creative coding environment, we rely on the <strong>Load Image Function</strong>. This function reads an image file from a directory and prepares it for use. However, loading files over a network can be slow. Therefore, we must handle this asynchronously, typically within the <code>preload()</code> block, to guarantee that the asset is fully available before <code>setup()</code> runs.</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">myPhoto</span><span class="p">;</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kd">function</span><span class="w"> </span><span class="nx">preload</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="c1">// The Load Image Function guarantees the asset is ready before setup</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nx">myPhoto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">loadImage</span><span class="p">(</span><span class="s1">&#39;assets/landscape.jpg&#39;</span><span class="p">);</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nx">myPhoto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">loadImage</span><span class="p">(</span><span class="s1">'assets/landscape.jpg'</span><span class="p">);</span>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>Once the asset is safely stored in memory, we can render it to the screen using the <strong>Image Drawing Function</strong>. This requires specifying the image object alongside its destination coordinates on the canvas. </p>
@@ -1747,10 +1874,10 @@
 </span></code></pre></div>
 <div class="admonition mascot-thinking">
 <p class="admonition-title">Thinking about Performance</p>
-<p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+<p><img alt="Palette thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png">
 Think about it like this: <code>resize()</code> doesn't just zoom out, it fundamentally shreds and rebuilds the image pixel-by-pixel. If you put that inside the <code>draw</code> loop, your browser is rebuilding the universe 60 times a second! Always resize your artwork once in <code>setup()</code>.</p>
 </div>
-<h3 id="tinting-and-cropping">Tinting and Cropping<a class="headerlink" href="#tinting-and-cropping" title="Permanent link">&para;</a></h3>
+<h3 id="tinting-and-cropping">Tinting and Cropping<a class="headerlink" href="#tinting-and-cropping" title="Permanent link">¶</a></h3>
 <p>In a physical darkroom, artists might use colored gels over their enlarger lenses to cast a specific hue onto the photographic paper. In code, we apply a similar technique using the <strong>Image Tint Function</strong>. This command applies a color overlay to all subsequently drawn images, effectively tinting the transparent areas and blending with the opaque pixels.</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">draw</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="c1">// Apply a red overlay using the Image Tint Function</span>
@@ -1771,7 +1898,7 @@ Think about it like this: <code>resize()</code> doesn't just zoom out, it fundam
 </span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="nx">croppedPortrait</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">myPhoto</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mf">50</span><span class="p">,</span><span class="w"> </span><span class="mf">50</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">);</span>
 </span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="p">}</span>
 </span></code></pre></div>
-<h2 id="the-p5image-object-and-pixel-arrays">The p5.Image Object and Pixel Arrays<a class="headerlink" href="#the-p5image-object-and-pixel-arrays" title="Permanent link">&para;</a></h2>
+<h2 id="the-p5image-object-and-pixel-arrays">The p5.Image Object and Pixel Arrays<a class="headerlink" href="#the-p5image-object-and-pixel-arrays" title="Permanent link">¶</a></h2>
 <p>When we load a graphic file, the resulting object is an instance of the <strong>p5 Image Class Object</strong>. This object contains not just the visual data, but also useful properties like <code>width</code> and <code>height</code>, and methods like <code>loadPixels()</code>. </p>
 <p>Sometimes, we need to generate visual data from absolute scratch without relying on an external file. The <strong>Create Image Blank</strong> approach utilizes the <code>createImage()</code> command to instantiate an empty, transparent p5.Image object in memory, which we can then populate pixel by pixel.</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">blankCanvas</span><span class="p">;</span>
@@ -1806,7 +1933,7 @@ Think about it like this: <code>resize()</code> doesn't just zoom out, it fundam
 </span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>This mathematical relationship between a 2D coordinate <code>(x, y)</code> and a 1D array index <code>(x + y * width) * 4</code> is one of the most critical formulas in computer graphics.</p>
-<h2 id="built-in-photographic-filters">Built-in Photographic Filters<a class="headerlink" href="#built-in-photographic-filters" title="Permanent link">&para;</a></h2>
+<h2 id="built-in-photographic-filters">Built-in Photographic Filters<a class="headerlink" href="#built-in-photographic-filters" title="Permanent link">¶</a></h2>
 <p>While manual pixel manipulation offers infinite possibilities, processing entire arrays in JavaScript can occasionally be slow. Fortunately, several built-in routines handle common darkroom effects efficiently.</p>
 <p>The <strong>Image Filter Grayscale</strong> operation removes all color information, reducing the photograph to shades of gray. This is calculated by averaging the red, green, and blue channels of every pixel.</p>
 <p>The <strong>Image Filter Invert</strong> operation subtracts the current color values from 255, creating a photographic negative. Bright areas become dark, and dark areas become bright.</p>
@@ -1829,12 +1956,14 @@ Think about it like this: <code>resize()</code> doesn't just zoom out, it fundam
 <p>Morphological operations adjust the structure of shapes within the frame. The <strong>Image Filter Erode</strong> shrinks bright areas and expands dark areas, which can be useful for reducing noise. Conversely, the <strong>Image Filter Dilate</strong> expands bright areas and shrinks dark areas, effectively thickening lines and closing small gaps in shapes.</p>
 <div class="admonition mascot-tip">
 <p class="admonition-title">Filter Stacking</p>
-<p><img alt="Palette sharing a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+<p><img alt="Palette sharing a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png">
 Here's a secret recipe for cool effects: stack your filters! If you run <code>filter(BLUR)</code> right before <code>filter(THRESHOLD)</code>, you'll melt away all the noisy jagged edges and get perfectly smooth, organic blobs.</p>
 </div>
+<h4 id="diagram-interactive-filter-studio">Diagram: Interactive Filter Studio<a class="headerlink" href="#diagram-interactive-filter-studio" title="Permanent link">¶</a></h4>
 <details>
 <summary>MicroSim: Interactive Filter Studio</summary>
-<h3 id="microsim-specification">MicroSim Specification<a class="headerlink" href="#microsim-specification" title="Permanent link">&para;</a></h3>
+<p></p><summary>MicroSim: Interactive Filter Studio</summary><p></p>
+<h3 id="microsim-specification">MicroSim Specification<a class="headerlink" href="#microsim-specification" title="Permanent link">¶</a></h3>
 <p><strong>Title:</strong> Interactive Filter Studio
 <strong>Type:</strong> p5.js Sketch
 <strong>Purpose:</strong> Allow students to apply and stack various built-in filters on a sample photograph.</p>
@@ -1847,7 +1976,7 @@ Here's a secret recipe for cool effects: stack your filters! If you run <code>fi
 - When a filter is selected and applied, the canvas updates immediately.
 - Students can stack filters by applying them sequentially without resetting.</p>
 </details>
-<h2 id="live-video-integration">Live Video Integration<a class="headerlink" href="#live-video-integration" title="Permanent link">&para;</a></h2>
+<h2 id="live-video-integration">Live Video Integration<a class="headerlink" href="#live-video-integration" title="Permanent link">¶</a></h2>
 <p>Static images are excellent for understanding algorithms, but real-time video breathes life into interactive installations. With modern browsers, accessing a user's camera requires just a single command. </p>
 <p>The <strong>Create Capture Webcam</strong> function requests permission from the user to activate their camera. Once granted, it streams the video feed into an HTML element.</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">cam</span><span class="p">;</span>
@@ -1877,13 +2006,13 @@ Here's a secret recipe for cool effects: stack your filters! If you run <code>fi
 </span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">  </span><span class="nx">pop</span><span class="p">();</span>
 </span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="p">}</span>
 </span></code></pre></div>
-<h3 id="advanced-video-analysis">Advanced Video Analysis<a class="headerlink" href="#advanced-video-analysis" title="Permanent link">&para;</a></h3>
+<h3 id="advanced-video-analysis">Advanced Video Analysis<a class="headerlink" href="#advanced-video-analysis" title="Permanent link">¶</a></h3>
 <p>Once we have a live video feed, we can analyze the pixel data over time. A fundamental technique in computer vision is calculating the <strong>Webcam Motion Difference</strong>. This involves storing the pixel array from the previous frame and comparing it against the current frame. By calculating the absolute difference between the color values, we can isolate regions where movement has occurred, effectively ignoring the static background.</p>
 <p>Another mesmerizing temporal technique is the <strong>Slit Scan Video Effect</strong>. Instead of drawing the entire video frame at once, a slit-scan algorithm extracts a single vertical column (or slit) of pixels from the center of the live video and draws it onto the canvas, advancing the horizontal drawing position slightly with each frame. Over time, this builds up a distorted, time-stretched portrait where the X-axis represents time rather than physical space.</p>
-<h2 id="stylistic-transformations">Stylistic Transformations<a class="headerlink" href="#stylistic-transformations" title="Permanent link">&para;</a></h2>
+<h2 id="stylistic-transformations">Stylistic Transformations<a class="headerlink" href="#stylistic-transformations" title="Permanent link">¶</a></h2>
 <p>By combining pixel analysis with creative rendering algorithms, we can invent entirely new visual styles. </p>
 <p>The <strong>ASCIIfy Image Converter</strong> effect translates the brightness of an image into text characters. The algorithm analyzes small blocks of pixels, calculates their average brightness, and selects a character from a predefined string based on that value (e.g., using <code>@</code> for dark areas and <code>.</code> for bright areas).</p>
-<div class="language-javascript highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">asciiChars</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;@%#*+=-:. &#39;</span><span class="p">;</span>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">asciiChars</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'@%#*+=-:. '</span><span class="p">;</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="kd">function</span><span class="w"> </span><span class="nx">getAsciiChar</span><span class="p">(</span><span class="nx">brightnessValue</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">  </span><span class="c1">// Map brightness (0-255) to character array index</span>
@@ -1895,12 +2024,14 @@ Here's a secret recipe for cool effects: stack your filters! If you run <code>fi
 <p>A simpler spatial effect is the <strong>Pixelate Image Mosaic</strong>. Rather than rendering the original high-resolution pixels, this technique samples the color at regular intervals (e.g., every 20 pixels) and draws a large rectangle filled with that sampled color, obscuring fine details and emphasizing the underlying digital grid structure.</p>
 <div class="admonition mascot-warning">
 <p class="admonition-title">Performance Pitfalls</p>
-<p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+<p><img alt="Palette warning" class="mascot-admonition-img" src="../../img/mascot/warning.png">
 Watch out for the freeze! If you try to loop through every single pixel of an HD webcam feed every frame, your browser will crash from the sheer mathematical load. To avoid this, change your <code>for</code> loops to skip by a step size (<code>i += 10</code>) instead of checking every pixel.</p>
 </div>
+<h4 id="diagram-real-time-asciify-camera">Diagram: Real-Time ASCIIfy Camera<a class="headerlink" href="#diagram-real-time-asciify-camera" title="Permanent link">¶</a></h4>
 <details>
 <summary>MicroSim: Real-Time ASCIIfy Camera</summary>
-<h3 id="microsim-specification_1">MicroSim Specification<a class="headerlink" href="#microsim-specification_1" title="Permanent link">&para;</a></h3>
+<p></p><summary>MicroSim: Real-Time ASCIIfy Camera</summary><p></p>
+<h3 id="microsim-specification_1">MicroSim Specification<a class="headerlink" href="#microsim-specification_1" title="Permanent link">¶</a></h3>
 <p><strong>Title:</strong> Real-Time ASCIIfy Camera
 <strong>Type:</strong> p5.js Sketch
 <strong>Purpose:</strong> Demonstrate the ASCIIfy Image Converter in real-time using webcam input.</p>
@@ -1914,7 +2045,7 @@ Watch out for the freeze! If you try to loop through every single pixel of an HD
 - The font color is either uniform (e.g., classic terminal green) or inherits the sampled pixel color.
 - Adjusting the resolution slider smoothly transitions between abstract blocky shapes and recognizable facial features.</p>
 </details>
-<h2 id="convolution-and-edge-detection">Convolution and Edge Detection<a class="headerlink" href="#convolution-and-edge-detection" title="Permanent link">&para;</a></h2>
+<h2 id="convolution-and-edge-detection">Convolution and Edge Detection<a class="headerlink" href="#convolution-and-edge-detection" title="Permanent link">¶</a></h2>
 <p>Beyond simple point operations (modifying a pixel based solely on its own value), we can employ neighborhood operations. The <strong>Convolution Matrix Filter</strong> is a mathematical tool that calculates a new value for a pixel based on the values of its immediate neighbors, weighted by a 3x3 grid of numbers called a kernel.</p>
 <p>Depending on the specific numbers placed in the 3x3 kernel, convolution can achieve dramatic results. For instance, the <strong>Sobel Edge Detection Filter</strong> utilizes specialized kernels designed to calculate the spatial gradient of the image. By emphasizing areas where the brightness changes rapidly, the Sobel operator effectively draws outlines around shapes, revealing the structural contours of the photograph while ignoring flat, uniform regions.</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1">// A standard edge detection convolution kernel</span>
@@ -1927,20 +2058,20 @@ Watch out for the freeze! If you try to loop through every single pixel of an HD
 </span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="c1">// Applying this kernel to every pixel involves multiplying the neighbor pixels</span>
 </span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="c1">// by these matrix values and summing the results.</span>
 </span></code></pre></div>
-<h2 id="exporting-and-saving-files">Exporting and Saving Files<a class="headerlink" href="#exporting-and-saving-files" title="Permanent link">&para;</a></h2>
+<h2 id="exporting-and-saving-files">Exporting and Saving Files<a class="headerlink" href="#exporting-and-saving-files" title="Permanent link">¶</a></h2>
 <p>After investing significant computational effort into generating a beautiful piece of algorithmic art, you will likely want to preserve the result. The <strong>Save Canvas Image File</strong> command (<code>saveCanvas()</code>) downloads the current state of the canvas directly to the user's local hard drive as a PNG or JPG file.</p>
 <p>If your sketch involves motion or evolving visual patterns, a single static frame might not suffice. The <strong>Save Frames Animation GIF</strong> capability allows you to capture a sequence of frames over a specified duration and automatically compile them into an animated GIF file, perfect for sharing your generative creations on social media platforms.</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">keyPressed</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">key</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;s&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">key</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">'s'</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="c1">// The Save Canvas Image File command triggers a download</span>
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="nx">saveCanvas</span><span class="p">(</span><span class="s1">&#39;myMasterpiece&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;png&#39;</span><span class="p">);</span>
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">key</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;g&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="nx">saveCanvas</span><span class="p">(</span><span class="s1">'myMasterpiece'</span><span class="p">,</span><span class="w"> </span><span class="s1">'png'</span><span class="p">);</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">key</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">'g'</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">    </span><span class="c1">// The Save Frames Animation GIF command captures 3 seconds at 15fps</span>
-</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">    </span><span class="nx">saveFrames</span><span class="p">(</span><span class="s1">&#39;animation&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;png&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">15</span><span class="p">);</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">    </span><span class="nx">saveFrames</span><span class="p">(</span><span class="s1">'animation'</span><span class="p">,</span><span class="w"> </span><span class="s1">'png'</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">15</span><span class="p">);</span>
 </span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">  </span><span class="p">}</span>
 </span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="p">}</span>
 </span></code></pre></div>
-<h2 id="advanced-offscreen-rendering">Advanced Offscreen Rendering<a class="headerlink" href="#advanced-offscreen-rendering" title="Permanent link">&para;</a></h2>
+<h2 id="advanced-offscreen-rendering">Advanced Offscreen Rendering<a class="headerlink" href="#advanced-offscreen-rendering" title="Permanent link">¶</a></h2>
 <p>As your sketches grow more complex, drawing directly to the primary visible canvas can become limiting. You may want to construct a complex scene in the background and only display it when it is finished, or apply a global effect to a group of shapes simultaneously.</p>
 <p>The <strong>Graphics Offscreen Buffer</strong> provides a solution. It acts as an invisible, secondary canvas in memory. We initialize this buffer using the <strong>Create Graphics Function</strong> (<code>createGraphics()</code>), which returns a <code>p5.Graphics</code> object. We can then draw shapes, lines, and text into this buffer just as we would on the main canvas.</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">offscreenLayer</span><span class="p">;</span>
@@ -1967,12 +2098,12 @@ Watch out for the freeze! If you try to loop through every single pixel of an HD
 <p>Finally, we can combine images using masking. The <strong>Mask Image Alpha Shape</strong> technique involves using the transparency (alpha channel) of one image or graphics buffer to determine the visibility of another. If the mask pixel is opaque, the underlying image pixel is visible; if the mask pixel is transparent, the underlying pixel is hidden. This is invaluable for framing photographs within complex custom vector shapes.</p>
 <div class="admonition mascot-celebration">
 <p class="admonition-title">Master of the Digital Darkroom!</p>
-<p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+<p><img alt="Palette celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png">
 Incredible work! You just mastered manipulating the 1D pixel array, processing live <code>createCapture</code> video feeds, and applying convolution matrices to build your own custom filters!</p>
 </div>
-<h2 id="deep-dive-the-mathematics-of-the-darkroom">Deep Dive: The Mathematics of the Darkroom<a class="headerlink" href="#deep-dive-the-mathematics-of-the-darkroom" title="Permanent link">&para;</a></h2>
+<h2 id="deep-dive-the-mathematics-of-the-darkroom">Deep Dive: The Mathematics of the Darkroom<a class="headerlink" href="#deep-dive-the-mathematics-of-the-darkroom" title="Permanent link">¶</a></h2>
 <p>Let's explore the inner workings of our digital darkroom equipment. Understanding the underlying mathematics empowers you to build custom tools rather than relying solely on built-in functions. </p>
-<h3 id="the-geometry-of-pixels">The Geometry of Pixels<a class="headerlink" href="#the-geometry-of-pixels" title="Permanent link">&para;</a></h3>
+<h3 id="the-geometry-of-pixels">The Geometry of Pixels<a class="headerlink" href="#the-geometry-of-pixels" title="Permanent link">¶</a></h3>
 <p>When we manipulate the <code>pixels</code> array, we are dealing with a massive list of numbers. A seemingly small image measuring 800 by 600 pixels contains exactly 480,000 distinct square elements. Because each element requires four independent color channels (Red, Green, Blue, Alpha), the one-dimensional array loaded by the GPU contains 1,920,000 individual integers. Iterating through this data requires careful optimization to maintain a smooth 60 frames per second.</p>
 <p>Consider the challenge of converting a full-color photograph into a sepia-toned vintage print. A simple grayscale conversion merely averages the channels, but a true sepia filter applies specific mathematical coefficients to simulate the chemical toning process used in early photography. </p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">applySepiaFilter</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -1997,7 +2128,7 @@ Incredible work! You just mastered manipulating the 1D pixel array, processing l
 </span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>Notice how we iterate using <code>i += 4</code>. This is a crucial optimization. By skipping directly from one pixel's red channel to the next pixel's red channel, we avoid redundant calculations and streamline the loop execution.</p>
-<h3 id="mastering-convolution-matrices">Mastering Convolution Matrices<a class="headerlink" href="#mastering-convolution-matrices" title="Permanent link">&para;</a></h3>
+<h3 id="mastering-convolution-matrices">Mastering Convolution Matrices<a class="headerlink" href="#mastering-convolution-matrices" title="Permanent link">¶</a></h3>
 <p>The convolution matrix filter is perhaps the most powerful tool in the computational artist's arsenal. To understand convolution, imagine holding a small, semi-transparent piece of glass with a 3x3 grid engraved upon it. You slide this glass over your photograph, one pixel at a time. At each position, you look through the glass, multiply the colors of the underlying photograph by the numbers engraved on the grid, and sum the results to determine the final color of the center pixel.</p>
 <p>Different numerical patterns on the grid produce radically different visual outcomes. A blur filter utilizes a grid filled with small, positive fractions that sum to 1.0, effectively averaging the local neighborhood. A sharpen filter utilizes a large positive number in the center surrounded by negative numbers, amplifying the contrast between adjacent edges.</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1">// A standard sharpening convolution kernel</span>
@@ -2007,9 +2138,9 @@ Incredible work! You just mastered manipulating the 1D pixel array, processing l
 </span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">  </span><span class="p">[</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">,</span><span class="w">  </span><span class="mf">0</span><span class="p">]</span>
 </span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="p">];</span>
 </span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>
-</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="o">!!!</span><span class="w"> </span><span class="nx">mascot</span><span class="o">-</span><span class="nx">encourage</span><span class="w"> </span><span class="s2">&quot;Matrix Math Can Be Tricky&quot;</span>
-</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">    </span><span class="o">!</span><span class="p">[</span><span class="nx">Palette</span><span class="w"> </span><span class="nx">encouraging</span><span class="p">](..</span><span class="o">/</span><span class="p">..</span><span class="o">/</span><span class="nx">img</span><span class="o">/</span><span class="nx">mascot</span><span class="o">/</span><span class="nx">encouraging</span><span class="p">.</span><span class="nx">png</span><span class="p">){</span><span class="w"> </span><span class="kd">class</span><span class="o">=</span><span class="s2">&quot;mascot-admonition-img&quot;</span><span class="w"> </span><span class="p">}</span>
-</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">    </span><span class="nx">If</span><span class="w"> </span><span class="nx">wrapping</span><span class="w"> </span><span class="nx">your</span><span class="w"> </span><span class="nx">head</span><span class="w"> </span><span class="nx">around</span><span class="w"> </span><span class="mf">3</span><span class="nx">x3</span><span class="w"> </span><span class="nx">convolution</span><span class="w"> </span><span class="nx">kernels</span><span class="w"> </span><span class="nx">feels</span><span class="w"> </span><span class="nx">like</span><span class="w"> </span><span class="nx">solving</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">Rubik</span><span class="s1">&#39;s cube blindfolded, don&#39;</span><span class="nx">t</span><span class="w"> </span><span class="nx">worry</span><span class="o">!</span><span class="w"> </span><span class="nx">You</span><span class="w"> </span><span class="nx">don</span><span class="err">&#39;</span><span class="nx">t</span><span class="w"> </span><span class="nx">have</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">invent</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">math</span><span class="w"> </span><span class="nx">yourself</span><span class="p">.</span><span class="w"> </span><span class="nx">Start</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">copying</span><span class="w"> </span><span class="nx">standard</span><span class="w"> </span><span class="nx">blur</span><span class="w"> </span><span class="nx">or</span><span class="w"> </span><span class="nx">sharpen</span><span class="w"> </span><span class="nx">kernels</span><span class="p">,</span><span class="w"> </span><span class="nx">and</span><span class="w"> </span><span class="nx">slowly</span><span class="w"> </span><span class="nx">tweak</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">see</span><span class="w"> </span><span class="nx">how</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">image</span><span class="w"> </span><span class="nx">reacts</span><span class="p">.</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="o">!!!</span><span class="w"> </span><span class="nx">mascot</span><span class="o">-</span><span class="nx">encourage</span><span class="w"> </span><span class="s2">"Matrix Math Can Be Tricky"</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">    </span><span class="o">!</span><span class="p">[</span><span class="nx">Palette</span><span class="w"> </span><span class="nx">encouraging</span><span class="p">](..</span><span class="o">/</span><span class="p">..</span><span class="o">/</span><span class="nx">img</span><span class="o">/</span><span class="nx">mascot</span><span class="o">/</span><span class="nx">encouraging</span><span class="p">.</span><span class="nx">png</span><span class="p">){</span><span class="w"> </span><span class="kd">class</span><span class="o">=</span><span class="s2">"mascot-admonition-img"</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">    </span><span class="nx">If</span><span class="w"> </span><span class="nx">wrapping</span><span class="w"> </span><span class="nx">your</span><span class="w"> </span><span class="nx">head</span><span class="w"> </span><span class="nx">around</span><span class="w"> </span><span class="mf">3</span><span class="nx">x3</span><span class="w"> </span><span class="nx">convolution</span><span class="w"> </span><span class="nx">kernels</span><span class="w"> </span><span class="nx">feels</span><span class="w"> </span><span class="nx">like</span><span class="w"> </span><span class="nx">solving</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">Rubik</span><span class="s1">'s cube blindfolded, don'</span><span class="nx">t</span><span class="w"> </span><span class="nx">worry</span><span class="o">!</span><span class="w"> </span><span class="nx">You</span><span class="w"> </span><span class="nx">don</span><span class="err">'</span><span class="nx">t</span><span class="w"> </span><span class="nx">have</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">invent</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">math</span><span class="w"> </span><span class="nx">yourself</span><span class="p">.</span><span class="w"> </span><span class="nx">Start</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">copying</span><span class="w"> </span><span class="nx">standard</span><span class="w"> </span><span class="nx">blur</span><span class="w"> </span><span class="nx">or</span><span class="w"> </span><span class="nx">sharpen</span><span class="w"> </span><span class="nx">kernels</span><span class="p">,</span><span class="w"> </span><span class="nx">and</span><span class="w"> </span><span class="nx">slowly</span><span class="w"> </span><span class="nx">tweak</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">see</span><span class="w"> </span><span class="nx">how</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">image</span><span class="w"> </span><span class="nx">reacts</span><span class="p">.</span>
 </span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>
 </span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="c1">// A heavy blur convolution kernel (Gaussian approximation)</span>
 </span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="kd">const</span><span class="w"> </span><span class="nx">gaussianBlurKernel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
@@ -2019,7 +2150,7 @@ Incredible work! You just mastered manipulating the 1D pixel array, processing l
 </span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="p">];</span>
 </span></code></pre></div>
 <p>Implementing convolution manually requires nested loops: two outer loops to traverse the entire image canvas, and two inner loops to traverse the 3x3 matrix grid at each location. Furthermore, you must carefully handle boundary conditions—what happens when the kernel extends beyond the edge of the image? Most algorithms simply ignore the outermost border pixels or clamp the coordinates to prevent array index out-of-bounds errors.</p>
-<h3 id="advanced-alpha-masking-techniques">Advanced Alpha Masking Techniques<a class="headerlink" href="#advanced-alpha-masking-techniques" title="Permanent link">&para;</a></h3>
+<h3 id="advanced-alpha-masking-techniques">Advanced Alpha Masking Techniques<a class="headerlink" href="#advanced-alpha-masking-techniques" title="Permanent link">¶</a></h3>
 <p>Transparency is a fundamental concept in graphic design. The alpha channel, the fourth integer in our pixel data, dictates how opaque or transparent a specific color appears. A value of 255 represents complete opacity, while a value of 0 represents complete invisibility.</p>
 <p>The <code>mask()</code> function leverages this alpha channel to composite multiple graphic layers. Imagine cutting a complex silhouette out of a sheet of black cardboard and laying it over a vibrant painting. The painting is only visible through the cutout silhouette. In digital processing, the mask image defines the shape of that cutout.</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">sourceImage</span><span class="p">;</span>
@@ -2027,7 +2158,7 @@ Incredible work! You just mastered manipulating the 1D pixel array, processing l
 </span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
 </span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="kd">function</span><span class="w"> </span><span class="nx">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">  </span><span class="nx">createCanvas</span><span class="p">(</span><span class="mf">800</span><span class="p">,</span><span class="w"> </span><span class="mf">600</span><span class="p">);</span>
-</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">  </span><span class="nx">sourceImage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">loadImage</span><span class="p">(</span><span class="s1">&#39;assets/texture.jpg&#39;</span><span class="p">);</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">  </span><span class="nx">sourceImage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">loadImage</span><span class="p">(</span><span class="s1">'assets/texture.jpg'</span><span class="p">);</span>
 </span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>
 </span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">  </span><span class="c1">// Create a graphics buffer to serve as our dynamic mask</span>
 </span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="w">  </span><span class="nx">maskImage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createGraphics</span><span class="p">(</span><span class="mf">800</span><span class="p">,</span><span class="w"> </span><span class="mf">600</span><span class="p">);</span>
@@ -2054,7 +2185,7 @@ Incredible work! You just mastered manipulating the 1D pixel array, processing l
 </span><span id="__span-16-30"><a id="__codelineno-16-30" name="__codelineno-16-30" href="#__codelineno-16-30"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>This technique becomes incredibly potent when combined with live webcam feeds. By calculating the motion difference between consecutive video frames and converting that difference into a high-contrast grayscale buffer, you can create dynamic masks where the video feed only appears in regions where physical movement is detected.</p>
-<h3 id="the-physics-of-video-capture">The Physics of Video Capture<a class="headerlink" href="#the-physics-of-video-capture" title="Permanent link">&para;</a></h3>
+<h3 id="the-physics-of-video-capture">The Physics of Video Capture<a class="headerlink" href="#the-physics-of-video-capture" title="Permanent link">¶</a></h3>
 <p>Handling a continuous stream of video introduces unique synchronization challenges. Unlike static assets loaded during the <code>preload()</code> phase, webcam data arrives asynchronously at unpredictable intervals, typically 30 or 60 frames per second. The browser must constantly marshal this data from the hardware camera sensor, decode it, and push it to the HTML5 video element.</p>
 <p>When you call <code>image(cam, 0, 0)</code>, the p5.js library requests the most recently decoded frame from the browser. If the user's computer is struggling under heavy computational load, frames may be dropped or delayed. </p>
 <p>Furthermore, accessing the camera triggers stringent security protocols. Modern web browsers strictly require HTTPS (secure HTTP) connections to grant webcam permissions, except when running on <code>localhost</code> during development. If you export your sketch and host it on a standard, unencrypted HTTP server, the <code>createCapture()</code> command will silently fail, and the camera feed will remain permanently disabled.</p>
@@ -2068,7 +2199,7 @@ Incredible work! You just mastered manipulating the 1D pixel array, processing l
 </span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">    </span><span class="c1">// This callback function triggers only after permission is granted</span>
 </span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">    </span><span class="c1">// and the first frame of video data has successfully loaded</span>
 </span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">    </span><span class="nx">isVideoReady</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
-</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hardware camera initialized and streaming.&quot;</span><span class="p">);</span>
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Hardware camera initialized and streaming."</span><span class="p">);</span>
 </span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="w">  </span><span class="p">});</span>
 </span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="w">  </span><span class="nx">videoFeed</span><span class="p">.</span><span class="nx">hide</span><span class="p">();</span>
 </span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="p">}</span>
@@ -2082,11 +2213,11 @@ Incredible work! You just mastered manipulating the 1D pixel array, processing l
 </span><span id="__span-17-21"><a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a><span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-17-22"><a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a><span class="w">    </span><span class="nx">fill</span><span class="p">(</span><span class="mf">255</span><span class="p">);</span>
 </span><span id="__span-17-23"><a id="__codelineno-17-23" name="__codelineno-17-23" href="#__codelineno-17-23"></a><span class="w">    </span><span class="nx">textAlign</span><span class="p">(</span><span class="nx">CENTER</span><span class="p">,</span><span class="w"> </span><span class="nx">CENTER</span><span class="p">);</span>
-</span><span id="__span-17-24"><a id="__codelineno-17-24" name="__codelineno-17-24" href="#__codelineno-17-24"></a><span class="w">    </span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Awaiting camera permissions...&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">width</span><span class="o">/</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">height</span><span class="o">/</span><span class="mf">2</span><span class="p">);</span>
+</span><span id="__span-17-24"><a id="__codelineno-17-24" name="__codelineno-17-24" href="#__codelineno-17-24"></a><span class="w">    </span><span class="nx">text</span><span class="p">(</span><span class="s2">"Awaiting camera permissions..."</span><span class="p">,</span><span class="w"> </span><span class="nx">width</span><span class="o">/</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">height</span><span class="o">/</span><span class="mf">2</span><span class="p">);</span>
 </span><span id="__span-17-25"><a id="__codelineno-17-25" name="__codelineno-17-25" href="#__codelineno-17-25"></a><span class="w">  </span><span class="p">}</span>
 </span><span id="__span-17-26"><a id="__codelineno-17-26" name="__codelineno-17-26" href="#__codelineno-17-26"></a><span class="p">}</span>
 </span></code></pre></div>
-<h3 id="expanding-the-visual-vocabulary">Expanding the Visual Vocabulary<a class="headerlink" href="#expanding-the-visual-vocabulary" title="Permanent link">&para;</a></h3>
+<h3 id="expanding-the-visual-vocabulary">Expanding the Visual Vocabulary<a class="headerlink" href="#expanding-the-visual-vocabulary" title="Permanent link">¶</a></h3>
 <p>As you experiment with these algorithms, remember that coding is an iterative, creative process. The digital darkroom is entirely non-destructive; you can experiment wildly without fear of ruining expensive photographic paper or mixing dangerous chemical developer fluids.</p>
 <p>Combine the ASCIIfy technique with Sobel Edge Detection to render structural outlines using specialized typography. Blend Slit Scan temporal distortion with Halftone shading to create surreal, newspaper-style portraits of moving subjects. Save your best experiments as animated GIFs to document your journey through computational artistry.</p>
 <p>The transition from manipulating static shapes to processing complex pixel arrays marks a significant milestone in your programming education. You are no longer merely instructing the computer to draw geometry; you are actively dismantling, analyzing, and reconstructing the visual world around you through the lens of mathematics. </p>
@@ -2116,7 +2247,7 @@ Incredible work! You just mastered manipulating the 1D pixel array, processing l
         
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
   Back to top
 </button>
         
@@ -2126,20 +2257,20 @@ Incredible work! You just mastered manipulating the 1D pixel array, processing l
   
     
       
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
         
           
           <a href="../22-mic-input-fft/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 22. Microphone Input &amp; FFT Spectral Analysis">
             <div class="md-footer__button md-icon">
               
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
             </div>
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Previous
               </span>
               <div class="md-ellipsis">
-                22. Microphone Input & FFT Spectral Analysis
+                22. Microphone Input &amp; FFT Spectral Analysis
               </div>
             </div>
           </a>
@@ -2152,12 +2283,12 @@ Incredible work! You just mastered manipulating the 1D pixel array, processing l
                 Next
               </span>
               <div class="md-ellipsis">
-                24. Generative Typography & Vector Font Outlines
+                24. Generative Typography &amp; Vector Font Outlines
               </div>
             </div>
             <div class="md-footer__button md-icon">
               
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
             </div>
           </a>
         
@@ -2169,7 +2300,7 @@ Incredible work! You just mastered manipulating the 1D pixel array, processing l
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+      Copyright © 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
     </div>
   
   
@@ -2190,6 +2321,14 @@ Incredible work! You just mastered manipulating the 1D pixel array, processing l
     
       <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
+        <script src="../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
     
-  </body>
-</html>
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
