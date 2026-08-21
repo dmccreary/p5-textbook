@@ -7,7 +7,7 @@ body {
 
 #header {
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 #controls {
@@ -39,8 +39,8 @@ button:hover { opacity: 0.8; }
 }
 
 #details {
-    margin-top: 15px;
-    padding: 15px;
+    margin-top: 5px;
+    padding: 5px;
     background: #fff;
     border-left: 5px solid #ccc;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
