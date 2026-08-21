@@ -12,6 +12,8 @@ let waveTypeSelect, freqSlider;
 let phase = 0;
 let isRunning = false;
 let startBtn;
+let playSoundCheckbox;
+let osc;
 
 function setup() {
   updateCanvasSize();
@@ -26,13 +28,22 @@ function setup() {
 
   freqSlider = createSlider(1, 6, 2, 0.5);
 
+  playSoundCheckbox = createCheckbox(' Play Sound', false);
+  
+  if (typeof p5.Oscillator !== 'undefined') {
+    osc = new p5.Oscillator('sine');
+    osc.amp(0);
+    osc.start();
+  }
+
   startBtn = createButton('Start Waveform');
   startBtn.mousePressed(() => {
     isRunning = !isRunning;
     startBtn.html(isRunning ? 'Pause' : 'Start Waveform');
   });
+  
   positionControls();
-  describe('Oscilloscope visualizing Sine, Square, Triangle, and Sawtooth audio waveforms.', LABEL);
+  describe('Oscilloscope visualizing Sine, Square, Triangle, and Sawtooth audio waveforms.', FALLBACK);
 }
 
 function positionControls() {
@@ -41,19 +52,46 @@ function positionControls() {
   let w = canvasWidth / 2 - 30;
   if (w < 80) w = 80;
 
-  waveTypeSelect.position(col1L, drawHeight + 15);
-  waveTypeSelect.size(w);
+  if (typeof waveTypeSelect !== 'undefined' && waveTypeSelect) {
+    waveTypeSelect.position(col1L, drawHeight + 15);
+    waveTypeSelect.size(w);
+  }
 
-  freqSlider.position(col2L, drawHeight + 45);
-  freqSlider.size(w);
+  if (typeof startBtn !== 'undefined' && startBtn) {
+    startBtn.position(canvasWidth / 4, drawHeight + 45);
+    startBtn.size(canvasWidth / 4);
+  }
+
+  if (typeof playSoundCheckbox !== 'undefined' && playSoundCheckbox) {
+    playSoundCheckbox.position(col1L, drawHeight + 45);
+  }
+
+  if (typeof freqSlider !== 'undefined' && freqSlider) {
+    freqSlider.position(col2L, drawHeight + 45);
+    freqSlider.size(w);
+  }
 }
 
 function draw() {
   updateCanvasSize();
   if (isRunning) phase += 0.04;
 
+
   let waveType = waveTypeSelect.value();
-  let freq = freqSlider.value();
+  let freqVal = freqSlider.value();
+
+  if (typeof osc !== 'undefined' && osc) {
+    let typeForOsc = waveType.split(' ')[0].toLowerCase();
+    osc.setType(typeForOsc);
+    
+    // Play sound at fixed frequency if checked
+    if (playSoundCheckbox.checked()) {
+      osc.freq(440);
+      osc.amp(0.5, 0.1);
+    } else {
+      osc.amp(0, 0.1);
+    }
+  }
 
   // Dark Oscilloscope Canvas
   fill(12, 20, 24);
@@ -83,9 +121,9 @@ function draw() {
   noFill();
 
   beginShape();
-  let amp = 80;
+  let amplitude = 80;
   for (let x = 30; x <= canvasWidth - 30; x += 2) {
-    let t = map(x, 30, canvasWidth - 30, 0, TWO_PI * freq) + phase;
+    let t = map(x, 30, canvasWidth - 30, 0, TWO_PI * freqVal) + phase;
     let yVal = 0;
 
     if (waveType.startsWith('Sine')) {
@@ -98,7 +136,7 @@ function draw() {
       yVal = (2 * (t / TWO_PI - Math.floor(0.5 + t / TWO_PI)));
     }
 
-    vertex(x, midY - yVal * amp);
+    vertex(x, midY - yVal * amplitude);
   }
   endShape();
 
@@ -107,7 +145,7 @@ function draw() {
   noStroke();
   textSize(13);
   textAlign(CENTER, TOP);
-  text(`${waveType} | Cycles: ${freq} | Timbre: ${getTimbreDescription(waveType)}`, canvasWidth / 2, drawHeight - 25);
+  text(`${waveType} | Cycles: ${freqVal} | Timbre: ${getTimbreDescription(waveType)}`, canvasWidth / 2, drawHeight - 25);
 
   // Controls Region
   fill('white');
@@ -118,7 +156,7 @@ function draw() {
   noStroke();
   textSize(13);
   textAlign(LEFT, CENTER);
-  text(`Frequency: ${freq} Hz`, canvasWidth / 2 + 15, drawHeight + 25);
+  text(`Frequency: ${freqVal} Hz`, canvasWidth / 2 + 15, drawHeight + 25);
 }
 
 function getTimbreDescription(type) {
@@ -139,11 +177,6 @@ function windowResized() {
   updateCanvasSize();
   resizeCanvas(canvasWidth, canvasHeight);
   if (typeof positionControls === 'function') {
-    startBtn = createButton('Start Waveform');
-  startBtn.mousePressed(() => {
-    isRunning = !isRunning;
-    startBtn.html(isRunning ? 'Pause' : 'Start Waveform');
-  });
-  positionControls();
+    positionControls();
   }
 }
