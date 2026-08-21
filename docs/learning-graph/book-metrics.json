@@ -1,0 +1,27 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dmccreary/claude-skills/main/src/book-metrics/book-metrics.schema.json",
+  "metricsVersion": "1.0",
+  "metricsGeneratedBy": "Book Metrics Python Program v0.08",
+  "metricsGeneratedOn": "August 20, 2026 at 08:22 PM",
+  "metricsGeneratedOnISO": "2026-08-20T20:22:04",
+  "metrics": {
+    "concepts": 600,
+    "chapters": 25,
+    "microsims": 20,
+    "stories": 0,
+    "glossaryTerms": 600,
+    "faqs": 89,
+    "quizQuestions": 250,
+    "chapterQuizzes": 25,
+    "chapterReferences": 25,
+    "references": 250,
+    "diagrams": 51,
+    "equations": 122,
+    "words": 194480,
+    "links": 616,
+    "appendices": 0,
+    "mascotImages": 7,
+    "developmentStage": "Not specified",
+    "equivalentPages": 800
+  }
+}

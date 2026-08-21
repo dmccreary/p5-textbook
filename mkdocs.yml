@@ -151,6 +151,8 @@ nav:
       - FAQ Coverage Gaps: learning-graph/faq-coverage-gaps.md
       - Mascot Test: learning-graph/mascot-test.md
       - Quiz Generation Report: learning-graph/quiz-generation-report.md
+      - Book Metrics: learning-graph/book-metrics.md
+      - Chapter Metrics: learning-graph/chapter-metrics.md
 
   - MicroSims:
     - List of MicroSims: sims/index.md
