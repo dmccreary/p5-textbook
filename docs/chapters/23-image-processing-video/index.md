@@ -302,17 +302,27 @@ A simpler spatial effect is the **Pixelate Image Mosaic**. Rather than rendering
     ![Palette warning](../../img/mascot/warning.png){ class="mascot-admonition-img" }
     Watch out for the freeze! If you try to loop through every single pixel of an HD webcam feed every frame, your browser will crash from the sheer mathematical load. To avoid this, change your `for` loops to skip by a step size (`i += 10`) instead of checking every pixel.
 
-#### Diagram: Real-Time ASCIIfy Camera
+#### Diagram: MicroSims
 
+Here are two demonstrations of the ASCIIfy algorithm. The first uses a mathematically generated synthetic plasma pattern to show how perfect contrast maps to characters, and the second uses your real-time webcam input. 
 
-<iframe src="../../sims/real-time-asciify-camera/main.html" width="100%" height="487px" scrolling="no"></iframe>
-[Run Real-Time ASCIIfy Camera Fullscreen](../../sims/real-time-asciify-camera/main.html)
+**Note the limitations of the contrast in the webcam version**: Real-world lighting often doesn't span the full mathematical spectrum from pure black to pure white. This can result in a "flatter" or "washed out" ASCII conversion unless your lighting conditions are perfectly controlled or manual contrast adjustments are applied before processing.
+
+**Synthetic ASCIIfy Demo**
+
+<iframe src="../../sims/real-time-asciify/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run Synthetic ASCIIfy Fullscreen](../../sims/real-time-asciify/main.html)
+
+**Webcam ASCIIfy Demo**
+
+<iframe src="../../sims/real-time-asciify-webcam/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run Webcam ASCIIfy Fullscreen](../../sims/real-time-asciify-webcam/main.html)
 
 <details markdown="1">
-<summary>MicroSim: Real-Time ASCIIfy Camera</summary><summary>MicroSim: Real-Time ASCIIfy Camera</summary>
+<summary>MicroSim Specification: Real-Time ASCIIfy</summary>
 ### MicroSim Specification
 
-**Title:** Real-Time ASCIIfy Camera
+**Title:** Real-Time ASCIIfy Webcam
 **Type:** p5.js Sketch
 **Purpose:** Demonstrate the ASCIIfy Image Converter in real-time using webcam input.
 

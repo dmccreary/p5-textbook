@@ -10,6 +10,8 @@ let canvasHeight = drawHeight + controlHeight;
 
 let ambientSlider, dirSlider, pointSlider, materialSelect;
 let rotAngle = 0;
+let isRunning = false;
+let startBtn;
 
 function setup() {
   updateCanvasSize();
@@ -25,6 +27,11 @@ function setup() {
   materialSelect.option('Normal Material');
   materialSelect.option('Ambient Material');
 
+  startBtn = createButton('Rotate Stage');
+  startBtn.mousePressed(() => {
+    isRunning = !isRunning;
+    startBtn.html(isRunning ? 'Pause' : 'Rotate Stage');
+  });
   positionControls();
   describe('3D stage lighting setup with interactive ambient, directional, and point light controls.', LABEL);
 }
@@ -50,7 +57,7 @@ function positionControls() {
 
 function draw() {
   updateCanvasSize();
-  rotAngle += 0.01;
+  if (isRunning) rotAngle += 0.01;
 
   background(20, 25, 35);
 
@@ -129,6 +136,11 @@ function windowResized() {
   updateCanvasSize();
   resizeCanvas(canvasWidth, canvasHeight);
   if (typeof positionControls === 'function') {
-    positionControls();
+    startBtn = createButton('Rotate Stage');
+  startBtn.mousePressed(() => {
+    isRunning = !isRunning;
+    startBtn.html(isRunning ? 'Pause' : 'Rotate Stage');
+  });
+  positionControls();
   }
 }

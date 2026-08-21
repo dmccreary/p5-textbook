@@ -1,6 +1,6 @@
 /* Real-Time ASCIIfy Camera MicroSim
    This MicroSim is part of the "Art of Processing" interactive intelligent textbook: https://dmccreary.github.io/p5-textbook
-   For a complete lesson plan see:  https://dmccreary.github.io/p5-textbook/sims/real-time-asciify-camera/
+   For a complete lesson plan see:  https://dmccreary.github.io/p5-textbook/sims/real-time-asciify/
 */
 // CANVAS_HEIGHT: 485
 let canvasWidth = 400;
@@ -11,6 +11,8 @@ let canvasHeight = drawHeight + controlHeight;
 let resolutionSlider, rampSelect;
 let asciiRamp = " .:-=+*#%@";
 let timeVal = 0;
+let isRunning = false;
+let startBtn;
 
 function setup() {
   updateCanvasSize();
@@ -23,6 +25,11 @@ function setup() {
   rampSelect.option('Dense (Extended Density Ramp)');
   rampSelect.option('Binary (01)');
 
+  startBtn = createButton('Start Animation');
+  startBtn.mousePressed(() => {
+    isRunning = !isRunning;
+    startBtn.html(isRunning ? 'Pause' : 'Start Animation');
+  });
   positionControls();
   describe('ASCII art converter mapping image pixel luminance to text characters.', FALLBACK);
 }
@@ -38,11 +45,13 @@ function positionControls() {
 
   resolutionSlider.position(col2L, drawHeight + 45);
   resolutionSlider.size(w);
+  startBtn.position(col1L, drawHeight + 45);
+  startBtn.size(w);
 }
 
 function draw() {
   updateCanvasSize();
-  timeVal += 0.03;
+  if (isRunning) timeVal += 0.03;
 
   // Dark terminal canvas
   fill(12, 16, 24);
@@ -109,6 +118,11 @@ function windowResized() {
   updateCanvasSize();
   resizeCanvas(canvasWidth, canvasHeight);
   if (typeof positionControls === 'function') {
-    positionControls();
+    startBtn = createButton('Start Animation');
+  startBtn.mousePressed(() => {
+    isRunning = !isRunning;
+    startBtn.html(isRunning ? 'Pause' : 'Start Animation');
+  });
+  positionControls();
   }
 }

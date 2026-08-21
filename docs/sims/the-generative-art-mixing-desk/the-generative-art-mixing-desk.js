@@ -10,6 +10,8 @@ let canvasHeight = drawHeight + controlHeight;
 
 let symSlider, densitySlider, turbSlider, weightSlider;
 let rotOffset = 0;
+let isRunning = false;
+let startBtn;
 
 function setup() {
   updateCanvasSize();
@@ -21,6 +23,11 @@ function setup() {
   turbSlider = createSlider(0.01, 0.1, 0.03, 0.01);
   weightSlider = createSlider(1, 5, 2, 1);
 
+  startBtn = createButton('Start Drawing');
+  startBtn.mousePressed(() => {
+    isRunning = !isRunning;
+    startBtn.html(isRunning ? 'Pause' : 'Start Drawing');
+  });
   positionControls();
   describe('Generative art mixing console with parametric symmetry and noise turbulence.', FALLBACK);
 }
@@ -46,7 +53,7 @@ function positionControls() {
 
 function draw() {
   updateCanvasSize();
-  rotOffset += 0.005;
+  if (isRunning) rotOffset += 0.005;
 
   let sym = symSlider.value();
   let count = densitySlider.value();
@@ -113,6 +120,11 @@ function windowResized() {
   updateCanvasSize();
   resizeCanvas(canvasWidth, canvasHeight);
   if (typeof positionControls === 'function') {
-    positionControls();
+    startBtn = createButton('Start Drawing');
+  startBtn.mousePressed(() => {
+    isRunning = !isRunning;
+    startBtn.html(isRunning ? 'Pause' : 'Start Drawing');
+  });
+  positionControls();
   }
 }

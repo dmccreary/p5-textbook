@@ -116,3 +116,12 @@ When creating or modifying p5.js MicroSims, all agents **MUST** adhere to these 
       assert len(errors) == 0, f'Errors found: {errors}'
       browser.close()
   ```
+
+### 7. Default Paused State for Simulations (CRITICAL)
+- **Performance Rationale**: When a reader opens a textbook chapter with multiple (e.g. 5–10) embedded MicroSim iframes, having every simulation actively running continuous physics calculations, particle engines, audio synthesis, and animation loops simultaneously will severely bottleneck browser performance, spike CPU/GPU usage, drain mobile battery, and cause page scrolling lag.
+- **MicroSims must NEVER run active continuous simulations, particle emissions, audio, or physics loops automatically on load.**
+- All simulation MicroSims must initialize in a paused state (`let isRunning = false;`) with a visible Start/Pause button (e.g. `startBtn = createButton('Start Simulation');`).
+- When paused:
+  - Render the full visual setup, grid, axes, guidelines, parameters, and current/initial state.
+  - Only advance time (`timeVal += ...`), update physics (`vel += acc; pos += vel;`), emit particles, or loop steps when `isRunning === true`.
+  - Provide a toggle callback on `startBtn.mousePressed()` updating its label between `'Start ...'` and `'Pause'`.

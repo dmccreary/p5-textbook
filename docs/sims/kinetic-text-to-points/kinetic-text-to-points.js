@@ -22,6 +22,11 @@ function setup() {
   scatterForceSlider = createSlider(20, 100, 50, 5);
 
   rebuildParticles();
+  startBtn = createButton('Start Animation');
+  startBtn.mousePressed(() => {
+    isRunning = !isRunning;
+    startBtn.html(isRunning ? 'Pause' : 'Start Animation');
+  });
   positionControls();
   describe('Kinetic typography particles responding to mouse hover with spring return physics.', FALLBACK);
 }

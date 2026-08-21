@@ -10,6 +10,8 @@ let canvasHeight = drawHeight + controlHeight;
 
 let massSlider, frictionSlider;
 let cartPos, cartVel, cartAcc;
+let isRunning = false;
+let startBtn;
 let isDraggingForce = false;
 let forceStart, forceCurrent;
 

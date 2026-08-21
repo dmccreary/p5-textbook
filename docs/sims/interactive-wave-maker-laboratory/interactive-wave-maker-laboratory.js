@@ -10,6 +10,8 @@ let canvasHeight = drawHeight + controlHeight;
 
 let freq1Slider, amp1Slider, freq2Slider, amp2Slider;
 let timeVal = 0;
+let isRunning = false;
+let startBtn;
 
 function setup() {
   updateCanvasSize();
@@ -22,6 +24,11 @@ function setup() {
   freq2Slider = createSlider(1, 8, 3, 0.5);
   amp2Slider = createSlider(10, 60, 30, 5);
 
+  startBtn = createButton('Start Wave');
+  startBtn.mousePressed(() => {
+    isRunning = !isRunning;
+    startBtn.html(isRunning ? 'Pause' : 'Start Wave');
+  });
   positionControls();
   describe('Wave superposition simulator synthesizing two independent harmonic sine waves.', FALLBACK);
 }
@@ -47,7 +54,7 @@ function positionControls() {
 
 function draw() {
   updateCanvasSize();
-  timeVal += 0.03;
+  if (isRunning) timeVal += 0.03;
 
   // Drawing Region
   fill('aliceblue');
@@ -154,6 +161,11 @@ function windowResized() {
   updateCanvasSize();
   resizeCanvas(canvasWidth, canvasHeight);
   if (typeof positionControls === 'function') {
-    positionControls();
+    startBtn = createButton('Start Wave');
+  startBtn.mousePressed(() => {
+    isRunning = !isRunning;
+    startBtn.html(isRunning ? 'Pause' : 'Start Wave');
+  });
+  positionControls();
   }
 }

@@ -185,7 +185,8 @@ nav:
       - Pixel Processing Pipeline: sims/pixel-processing-pipeline/index.md
       - Polar Radar Sweeper: sims/polar-radar-sweeper/index.md
       - Random Walk Simulation: sims/random-walk-simulation/index.md
-      - Real-Time ASCIIfy Camera: sims/real-time-asciify-camera/index.md
+      - Real-Time ASCIIfy: sims/real-time-asciify/index.md
+      - Real-Time ASCIIfy Webcam: sims/real-time-asciify-webcam/index.md
       - Render Cycle and Frame Rate Monitor: sims/frame-rate-monitor/index.md
       - Responsive Dashboard Builder: sims/responsive-dashboard-builder/index.md
       - Robot Arm Kinematics: sims/robot-arm-kinematics/index.md

@@ -9,8 +9,11 @@ let controlHeight = 85;
 let canvasHeight = drawHeight + controlHeight;
 
 let rowsSlider, colsSlider, autoStepCheckbox;
+let nextBtn, resetBtn;
 let currentI = 0, currentJ = 0;
 let stepTimer = 0;
+let isRunning = false;
+let startBtn;
 
 function setup() {
   updateCanvasSize();
@@ -19,10 +22,35 @@ function setup() {
 
   rowsSlider = createSlider(2, 8, 4, 1);
   colsSlider = createSlider(2, 8, 4, 1);
-  autoStepCheckbox = createCheckbox('Auto Step Loop', true);
+  
+  resetBtn = createButton('Reset');
+  resetBtn.mousePressed(resetGrid);
+
+  nextBtn = createButton('Next');
+  nextBtn.mousePressed(stepForward);
+
+  autoStepCheckbox = createCheckbox('Auto Step Loop', false);
 
   positionControls();
   describe('Nested for-loop grid visualizer tracking row index i and column index j.', FALLBACK);
+}
+
+function stepForward() {
+  let numRows = rowsSlider.value();
+  let numCols = colsSlider.value();
+  currentJ++;
+  if (currentJ >= numCols) {
+    currentJ = 0;
+    currentI++;
+    if (currentI >= numRows) {
+      currentI = 0;
+    }
+  }
+}
+
+function resetGrid() {
+  currentI = 0;
+  currentJ = 0;
 }
 
 function positionControls() {
@@ -31,13 +59,21 @@ function positionControls() {
   let w = canvasWidth / 2 - 100;
   if (w < 50) w = 50;
 
-  rowsSlider.position(col1L, drawHeight + 10);
-  rowsSlider.size(w);
+  if (typeof rowsSlider !== 'undefined' && rowsSlider) {
+    rowsSlider.position(col1L, drawHeight + 10);
+    rowsSlider.size(w);
+  }
 
-  colsSlider.position(col2L, drawHeight + 10);
-  colsSlider.size(w);
+  if (typeof colsSlider !== 'undefined' && colsSlider) {
+    colsSlider.position(col2L, drawHeight + 10);
+    colsSlider.size(w);
+  }
 
-  autoStepCheckbox.position(col1L, drawHeight + 45);
+  if (typeof resetBtn !== 'undefined' && resetBtn) {
+    resetBtn.position(15, drawHeight + 45);
+    nextBtn.position(75, drawHeight + 45);
+    autoStepCheckbox.position(135, drawHeight + 45);
+  }
 }
 
 function draw() {
@@ -50,14 +86,7 @@ function draw() {
   if (autoStepCheckbox.checked()) {
     stepTimer++;
     if (stepTimer % 20 === 0) {
-      currentJ++;
-      if (currentJ >= numCols) {
-        currentJ = 0;
-        currentI++;
-        if (currentI >= numRows) {
-          currentI = 0;
-        }
-      }
+      stepForward();
     }
   }
 

@@ -2,8 +2,8 @@
 title: "Real-Time ASCIIfy Camera"
 description: "Convert video frames or synthetic generative graphics into real-time typography ASCII character density matrix art."
 quality_score: 90
-image: /sims/real-time-asciify-camera/real-time-asciify-camera.png
-og:image: /sims/real-time-asciify-camera/real-time-asciify-camera.png
+image: /sims/real-time-asciify-webcam/real-time-asciify-webcam.png
+og:image: /sims/real-time-asciify-webcam/real-time-asciify-webcam.png
 ---
 
 # Real-Time ASCIIfy Camera
@@ -15,7 +15,7 @@ og:image: /sims/real-time-asciify-camera/real-time-asciify-camera.png
 Copy this iframe to your website:
 
 ```html
-<iframe src="https://dmccreary.github.io/p5-textbook/sims/real-time-asciify-camera/main.html" width="100%" height="487px"></iframe>
+<iframe src="https://dmccreary.github.io/p5-textbook/sims/real-time-asciify-webcam/main.html" width="100%" height="487px"></iframe>
 ```
 
 ## Description

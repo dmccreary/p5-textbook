@@ -10,6 +10,8 @@ let canvasHeight = drawHeight + controlHeight;
 
 let startRaceButton, loopCheckbox;
 let raceProgress = 0;
+let isRunning = false;
+let startBtn;
 let isRacing = true;
 
 function setup() {
@@ -54,7 +56,7 @@ function draw() {
   updateCanvasSize();
 
   if (isRacing) {
-    raceProgress += 0.008;
+    if (isRunning) raceProgress += 0.008;
     if (raceProgress > 1.0) {
       if (loopCheckbox.checked()) raceProgress = 0;
       else raceProgress = 1.0;

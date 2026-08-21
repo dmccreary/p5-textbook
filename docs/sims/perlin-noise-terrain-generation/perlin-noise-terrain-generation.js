@@ -10,6 +10,8 @@ let canvasHeight = drawHeight + controlHeight;
 
 let scaleSlider, heightSlider;
 let flying = 0;
+let isRunning = false;
+let startBtn;
 
 function setup() {
   updateCanvasSize();
@@ -19,6 +21,11 @@ function setup() {
   scaleSlider = createSlider(0.05, 0.3, 0.12, 0.01);
   heightSlider = createSlider(20, 120, 60, 5);
 
+  startBtn = createButton('Start Flyover');
+  startBtn.mousePressed(() => {
+    isRunning = !isRunning;
+    startBtn.html(isRunning ? 'Pause' : 'Start Flyover');
+  });
   positionControls();
   describe('3D Perlin noise organic terrain landscape mesh with flying forward animation.', FALLBACK);
 }
@@ -38,7 +45,7 @@ function positionControls() {
 
 function draw() {
   updateCanvasSize();
-  flying -= 0.03;
+  if (isRunning) flying -= 0.03;
 
   let scl = scaleSlider.value();
   let maxH = heightSlider.value();
@@ -121,6 +128,11 @@ function windowResized() {
   updateCanvasSize();
   resizeCanvas(canvasWidth, canvasHeight);
   if (typeof positionControls === 'function') {
-    positionControls();
+    startBtn = createButton('Start Flyover');
+  startBtn.mousePressed(() => {
+    isRunning = !isRunning;
+    startBtn.html(isRunning ? 'Pause' : 'Start Flyover');
+  });
+  positionControls();
   }
 }

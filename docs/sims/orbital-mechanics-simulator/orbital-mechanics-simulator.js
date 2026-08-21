@@ -10,6 +10,8 @@ let canvasHeight = drawHeight + controlHeight;
 
 let massSlider, speedSlider, resetButton;
 let planetPos, planetVel;
+let isRunning = false;
+let startBtn;
 let orbitTrail = [];
 
 function setup() {

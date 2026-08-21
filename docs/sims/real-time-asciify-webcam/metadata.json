@@ -13,7 +13,7 @@
   "format": "text/html",
   "language": "en",
   "rights": "CC BY 4.0",
-  "sim_id": "real-time-asciify-camera",
+  "sim_id": "real-time-asciify-webcam",
   "canvasHeight": 485,
   "bloom_level": "Apply",
   "learning_objective": "Students will understand pixel brightness extraction and mapping continuous grayscale values to discrete ASCII glyph density ramps.",

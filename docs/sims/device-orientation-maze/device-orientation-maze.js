@@ -10,6 +10,8 @@ let canvasHeight = drawHeight + controlHeight;
 
 let tiltXSlider, tiltYSlider;
 let ballPos, ballVel;
+let isRunning = false;
+let startBtn;
 let mazeWalls = [];
 
 function setup() {
@@ -35,6 +37,11 @@ function setup() {
     { x1: 260, y1: 120, x2: 370, y2: 120 }
   ];
 
+  startBtn = createButton('Start Simulation');
+  startBtn.mousePressed(() => {
+    isRunning = !isRunning;
+    startBtn.html(isRunning ? 'Pause' : 'Start Simulation');
+  });
   positionControls();
   describe('Mobile accelerometer tilt simulation rolling a ball through maze walls.', FALLBACK);
 }
@@ -140,6 +147,11 @@ function windowResized() {
   updateCanvasSize();
   resizeCanvas(canvasWidth, canvasHeight);
   if (typeof positionControls === 'function') {
-    positionControls();
+    startBtn = createButton('Start Simulation');
+  startBtn.mousePressed(() => {
+    isRunning = !isRunning;
+    startBtn.html(isRunning ? 'Pause' : 'Start Simulation');
+  });
+  positionControls();
   }
 }

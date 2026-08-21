@@ -211,9 +211,9 @@ Run the following commands to capture missing screenshots:
 ~/.local/bin/bk-capture-screenshot docs/sims/random-walk-simulation
 ```
 
-### real-time-asciify-camera
+### real-time-asciify-webcam
 ```bash
-~/.local/bin/bk-capture-screenshot docs/sims/real-time-asciify-camera
+~/.local/bin/bk-capture-screenshot docs/sims/real-time-asciify-webcam
 ```
 
 ### responsive-dashboard-builder

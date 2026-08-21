@@ -10,6 +10,8 @@ let canvasHeight = drawHeight + controlHeight;
 
 let waveTypeSelect, freqSlider;
 let phase = 0;
+let isRunning = false;
+let startBtn;
 
 function setup() {
   updateCanvasSize();
@@ -24,6 +26,11 @@ function setup() {
 
   freqSlider = createSlider(1, 6, 2, 0.5);
 
+  startBtn = createButton('Start Waveform');
+  startBtn.mousePressed(() => {
+    isRunning = !isRunning;
+    startBtn.html(isRunning ? 'Pause' : 'Start Waveform');
+  });
   positionControls();
   describe('Oscilloscope visualizing Sine, Square, Triangle, and Sawtooth audio waveforms.', LABEL);
 }
@@ -43,7 +50,7 @@ function positionControls() {
 
 function draw() {
   updateCanvasSize();
-  phase += 0.04;
+  if (isRunning) phase += 0.04;
 
   let waveType = waveTypeSelect.value();
   let freq = freqSlider.value();
@@ -132,6 +139,11 @@ function windowResized() {
   updateCanvasSize();
   resizeCanvas(canvasWidth, canvasHeight);
   if (typeof positionControls === 'function') {
-    positionControls();
+    startBtn = createButton('Start Waveform');
+  startBtn.mousePressed(() => {
+    isRunning = !isRunning;
+    startBtn.html(isRunning ? 'Pause' : 'Start Waveform');
+  });
+  positionControls();
   }
 }

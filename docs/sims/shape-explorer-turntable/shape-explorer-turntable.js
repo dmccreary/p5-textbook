@@ -10,6 +10,8 @@ let canvasHeight = drawHeight + controlHeight;
 
 let shapeSelect, detailSlider;
 let rotY = 0;
+let isRunning = false;
+let startBtn;
 
 function setup() {
   updateCanvasSize();
@@ -25,6 +27,11 @@ function setup() {
 
   detailSlider = createSlider(4, 24, 16, 2);
 
+  startBtn = createButton('Rotate Model');
+  startBtn.mousePressed(() => {
+    isRunning = !isRunning;
+    startBtn.html(isRunning ? 'Pause' : 'Rotate Model');
+  });
   positionControls();
   describe('3D geometric shape turntable visualizer with orbit camera control.', FALLBACK);
 }
@@ -37,6 +44,8 @@ function positionControls() {
 
   shapeSelect.position(col1L, drawHeight + 15);
   shapeSelect.size(w);
+  startBtn.position(col1L, drawHeight + 45);
+  startBtn.size(w);
 
   detailSlider.position(col2L, drawHeight + 45);
   detailSlider.size(w);
@@ -44,7 +53,7 @@ function positionControls() {
 
 function draw() {
   updateCanvasSize();
-  rotY += 0.015;
+  if (isRunning) rotY += 0.015;
 
   background(240, 248, 255);
 
@@ -118,6 +127,11 @@ function windowResized() {
   updateCanvasSize();
   resizeCanvas(canvasWidth, canvasHeight);
   if (typeof positionControls === 'function') {
-    positionControls();
+    startBtn = createButton('Rotate Model');
+  startBtn.mousePressed(() => {
+    isRunning = !isRunning;
+    startBtn.html(isRunning ? 'Pause' : 'Rotate Model');
+  });
+  positionControls();
   }
 }

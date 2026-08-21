@@ -10,6 +10,8 @@ let canvasHeight = drawHeight + controlHeight;
 
 let noiseScaleSlider, speedSlider, showVectorsCheckbox;
 let particles = [];
+let isRunning = false;
+let startBtn;
 let numParticles = 120;
 let zOff = 0;
 

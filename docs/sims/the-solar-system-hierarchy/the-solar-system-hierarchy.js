@@ -10,6 +10,8 @@ let canvasHeight = drawHeight + controlHeight;
 
 let earthSpeedSlider, moonSpeedSlider;
 let earthAngle = 0, moonAngle = 0;
+let isRunning = false;
+let startBtn;
 
 function setup() {
   updateCanvasSize();
@@ -19,6 +21,11 @@ function setup() {
   earthSpeedSlider = createSlider(0.5, 3.0, 1.0, 0.1);
   moonSpeedSlider = createSlider(1.0, 6.0, 3.0, 0.2);
 
+  startBtn = createButton('Start Orbit');
+  startBtn.mousePressed(() => {
+    isRunning = !isRunning;
+    startBtn.html(isRunning ? 'Pause' : 'Start Orbit');
+  });
   positionControls();
   describe('Hierarchical solar system model showing nested matrix transformations.', FALLBACK);
 }
@@ -31,6 +38,8 @@ function positionControls() {
 
   earthSpeedSlider.position(col1L, drawHeight + 15);
   earthSpeedSlider.size(w);
+  startBtn.position(col1L, drawHeight + 45);
+  startBtn.size(w);
 
   moonSpeedSlider.position(col2L, drawHeight + 15);
   moonSpeedSlider.size(w);
@@ -39,8 +48,10 @@ function positionControls() {
 function draw() {
   updateCanvasSize();
 
-  earthAngle += 0.015 * earthSpeedSlider.value();
-  moonAngle += 0.04 * moonSpeedSlider.value();
+  if (isRunning) {
+    earthAngle += 0.015 * earthSpeedSlider.value();
+    moonAngle += 0.04 * moonSpeedSlider.value();
+  }
 
   // Dark Space
   fill(12, 16, 30);
@@ -123,6 +134,11 @@ function windowResized() {
   updateCanvasSize();
   resizeCanvas(canvasWidth, canvasHeight);
   if (typeof positionControls === 'function') {
-    positionControls();
+    startBtn = createButton('Start Orbit');
+  startBtn.mousePressed(() => {
+    isRunning = !isRunning;
+    startBtn.html(isRunning ? 'Pause' : 'Start Orbit');
+  });
+  positionControls();
   }
 }

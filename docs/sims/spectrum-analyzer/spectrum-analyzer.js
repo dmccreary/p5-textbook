@@ -10,6 +10,8 @@ let canvasHeight = drawHeight + controlHeight;
 
 let smoothingSlider, viewModeSelect;
 let timeVal = 0;
+let isRunning = false;
+let startBtn;
 let bandValues = [0, 0, 0, 0, 0];
 
 function setup() {
@@ -22,6 +24,11 @@ function setup() {
   viewModeSelect.option('5 Band EQ View');
   viewModeSelect.option('32 Bin Spectrum Bars');
 
+  startBtn = createButton('Start Signal');
+  startBtn.mousePressed(() => {
+    isRunning = !isRunning;
+    startBtn.html(isRunning ? 'Pause' : 'Start Signal');
+  });
   positionControls();
   describe('Audio spectrum frequency analyzer tracking Bass, LowMid, Mid, HighMid, and Treble.', LABEL);
 }
@@ -41,7 +48,7 @@ function positionControls() {
 
 function draw() {
   updateCanvasSize();
-  timeVal += 0.05;
+  if (isRunning) timeVal += 0.05;
 
   let smooth = smoothingSlider.value();
   let is5Band = viewModeSelect.value().includes('5 Band');
@@ -141,6 +148,11 @@ function windowResized() {
   updateCanvasSize();
   resizeCanvas(canvasWidth, canvasHeight);
   if (typeof positionControls === 'function') {
-    positionControls();
+    startBtn = createButton('Start Signal');
+  startBtn.mousePressed(() => {
+    isRunning = !isRunning;
+    startBtn.html(isRunning ? 'Pause' : 'Start Signal');
+  });
+  positionControls();
   }
 }

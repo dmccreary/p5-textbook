@@ -14,6 +14,8 @@ let currentEnergy = 0;
 let threshold = 120;
 let beatPulse = 0;
 let timeCount = 0;
+let isRunning = false;
+let startBtn;
 
 function setup() {
   updateCanvasSize();
@@ -24,6 +26,11 @@ function setup() {
   decaySlider = createSlider(0.85, 0.99, 0.95, 0.01);
   tempoSlider = createSlider(60, 180, 120, 1);
 
+  startBtn = createButton('Start Beats');
+  startBtn.mousePressed(() => {
+    isRunning = !isRunning;
+    startBtn.html(isRunning ? 'Pause' : 'Start Beats');
+  });
   positionControls();
   describe('Audio beat detection visualizer showing instantaneous energy vs dynamic decaying threshold.', FALLBACK);
 }
@@ -48,7 +55,7 @@ function draw() {
   updateCanvasSize();
 
   // Synthetic Audio Beat Generator
-  timeCount++;
+  if (isRunning) timeCount++;
   let bpm = tempoSlider.value();
   let beatInterval = Math.floor(3600 / bpm);
   let isBeatFrame = (timeCount % beatInterval === 0);
@@ -178,6 +185,11 @@ function windowResized() {
   updateCanvasSize();
   resizeCanvas(canvasWidth, canvasHeight);
   if (typeof positionControls === 'function') {
-    positionControls();
+    startBtn = createButton('Start Beats');
+  startBtn.mousePressed(() => {
+    isRunning = !isRunning;
+    startBtn.html(isRunning ? 'Pause' : 'Start Beats');
+  });
+  positionControls();
   }
 }

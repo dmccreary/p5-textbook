@@ -11,6 +11,8 @@ let canvasHeight = drawHeight + controlHeight;
 let walkTypeSelect, stepSizeSlider, resetWalkButton;
 let walkerX, walkerY;
 let walkHistory = [];
+let isRunning = false;
+let startBtn;
 
 function setup() {
   updateCanvasSize();
@@ -60,7 +62,8 @@ function draw() {
   let type = walkTypeSelect.value();
 
   // Perform multiple simulation steps per frame
-  for (let s = 0; s < 4; s++) {
+  if (isRunning) {
+    for (let s = 0; s < 4; s++) {
     let stepLen = stepBase;
 
     if (type.startsWith('Gaussian')) {
@@ -76,6 +79,7 @@ function draw() {
 
     walkHistory.push(createVector(walkerX, walkerY));
     if (walkHistory.length > 600) walkHistory.shift();
+    }
   }
 
   // Drawing Region

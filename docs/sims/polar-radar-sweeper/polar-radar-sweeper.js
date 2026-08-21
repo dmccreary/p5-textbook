@@ -21,6 +21,11 @@ function setup() {
   targetCountSlider = createSlider(2, 8, 4, 1);
 
   generateTargets();
+  startBtn = createButton('Start Sweep');
+  startBtn.mousePressed(() => {
+    isRunning = !isRunning;
+    startBtn.html(isRunning ? 'Pause' : 'Start Sweep');
+  });
   positionControls();
   describe('Polar coordinate radar sweeping beam detecting radar blip targets.', FALLBACK);
 }
@@ -143,6 +148,11 @@ function windowResized() {
   updateCanvasSize();
   resizeCanvas(canvasWidth, canvasHeight);
   if (typeof positionControls === 'function') {
-    positionControls();
+    startBtn = createButton('Start Sweep');
+  startBtn.mousePressed(() => {
+    isRunning = !isRunning;
+    startBtn.html(isRunning ? 'Pause' : 'Start Sweep');
+  });
+  positionControls();
   }
 }

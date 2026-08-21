@@ -271,9 +271,9 @@ Interactive Micro Simulations to help students learn the art of processing funda
 
     Compare Brownian uniform random walks, Gaussian distribution walks, and Lévy Flight jumps with live spatial distribution trails.
 
--   **[Real-Time ASCIIfy Camera](./real-time-asciify-camera/index.md)**
+-   **[Real-Time ASCIIfy Camera](./real-time-asciify-webcam/index.md)**
 
-    ![Real-Time ASCIIfy Camera](./real-time-asciify-camera/real-time-asciify-camera.png)
+    ![Real-Time ASCIIfy Camera](./real-time-asciify-webcam/real-time-asciify-webcam.png)
 
     Convert video frames or synthetic generative graphics into real-time typography ASCII character density matrix art.
 
