@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const container = document.getElementById('timeline');
     const options = {
         width: '100%',
-        height: '700px',
+        height: '630px',
         margin: {
             item: { horizontal: 50, vertical: 10 },
             axis: 40

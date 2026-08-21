@@ -8,6 +8,10 @@ body {
 #header {
     text-align: center;
     margin-bottom: 5px;
+    padding: 0;
+}
+#header h2 {
+    margin: 5px 0;
 }
 
 #controls {
