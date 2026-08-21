@@ -1,0 +1,99 @@
+body {
+    background-color: aliceblue;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 5px;
+}
+
+#header {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#controls {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+button {
+    padding: 5px 10px;
+    margin: 2px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+button:hover { opacity: 0.8; }
+
+.btn-all { background-color: #444; color: white; }
+.btn-processing { background-color: #0047AB; color: white; }
+.btn-foundation { background-color: #228B22; color: white; }
+.btn-p5_core { background-color: #ED225D; color: white; }
+.btn-p5_features { background-color: #E91E63; color: white; }
+.btn-community { background-color: #8A2BE2; color: white; }
+
+#timeline {
+    width: 100%;
+    border: 1px solid #ccc;
+    background: white;
+}
+
+#details {
+    margin-top: 15px;
+    padding: 15px;
+    background: #fff;
+    border-left: 5px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    min-height: 80px;
+}
+
+/* vis-timeline item colors */
+.vis-item.processing { background-color: #0047AB; border-color: #003380; color: white; }
+.vis-item.foundation { background-color: #228B22; border-color: #1A661A; color: white; }
+.vis-item.p5_core { background-color: #ED225D; border-color: #C0194A; color: white; }
+.vis-item.p5_features { background-color: #E91E63; border-color: #B3144A; color: white; }
+.vis-item.community { background-color: #8A2BE2; border-color: #6A1AAB; color: white; }
+.vis-item.ghost { display: none !important; }
+
+/* Tooltip and overflow fixes from the guide */
+.vis-item .vis-item-content {
+    white-space: nowrap !important;
+    padding: 4px 8px !important;
+}
+.vis-item.vis-range, .vis-item.vis-box {
+    min-width: fit-content !important;
+}
+
+.vis-tooltip {
+    background: #2c3e50 !important;
+    color: white !important;
+    padding: 10px 15px !important;
+    border-radius: 8px !important;
+    font-size: 13px !important;
+    max-width: 300px !important;
+    line-height: 1.4 !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+    box-sizing: border-box !important;
+}
+
+.vis-tooltip div {
+    max-width: 280px !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+}
+
+/* Prevent timeline edge clipping */
+#timeline {
+    overflow: hidden;
+}
+.vis-timeline, .vis-panel.vis-center, .vis-item .vis-item-overflow { 
+    overflow: visible !important; 
+}
+
+/* Change text to black when selected (yellow background) */
+.vis-item.vis-selected {
+    color: black !important;
+}

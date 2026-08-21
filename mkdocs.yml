@@ -141,79 +141,82 @@ nav:
 
   
   - MicroSims:
-      - List of MicroSims: sims/index.md
-      - 3D Scene Editor: sims/3d-scene-editor/index.md
-      - Additive Color Mixer: sims/additive-color-mixer/index.md
-      - Algorithm Visualizer: sims/algorithm-visualizer/index.md
-      - Arc and Angle Explorer: sims/arc-angle-explorer/index.md
-      - Array Methods Visualizer: sims/array-methods-visualizer/index.md
-      - Async Data Fetcher: sims/async-data-fetcher/index.md
-      - Audio Visualizer Lab: sims/audio-visualizer-lab/index.md
-      - Beat Detector System: sims/beat-detector-system/index.md
-      - Bézier Control Point Sandbox: sims/bezier-sandbox/index.md
-      - Canvas Inspector: sims/canvas-inspector/index.md
-      - Color Mixer: sims/color-mixer/index.md
-      - Coordinate System Explorer: sims/coordinate-system-explorer/index.md
-      - CORS Blockage Visualization: sims/cors-blockage-visualization/index.md
-      - Data Flow Debugger: sims/data-flow-debugger/index.md
-      - Dev Environment Simulator: sims/dev-environment-simulator/index.md
-      - Device Orientation Maze: sims/device-orientation-maze/index.md
-      - DOM Layout Explorer: sims/dom-layout-explorer/index.md
-      - Exploring Shaders: sims/exploring-shaders/index.md
-      - Flow Field Visualizer: sims/flow-field-visualizer/index.md
-      - Harmonic Oscillator: sims/harmonic-oscillator/index.md
-      - Interactive 3D Coordinate System: sims/3d-coordinate-system/index.md
-      - Interactive Filter Studio: sims/interactive-filter-studio/index.md
-      - Interactive Filter Sweep on Noise: sims/interactive-filter-sweep-on-noise/index.md
-      - Interactive Flocking Fireworks: sims/interactive-flocking-fireworks/index.md
-      - Interactive Image Gallery Filter: sims/interactive-image-gallery-filter/index.md
-      - Interactive Map Panning and Zooming: sims/interactive-map-panning-and-zooming/index.md
-      - Interactive Sandbox: sims/interactive-sandbox/index.md
-      - Interactive Wave Maker Laboratory: sims/interactive-wave-maker-laboratory/index.md
-      - Kinetic Text to Points: sims/kinetic-text-to-points/index.md
-      - Kinetic Typography Engine: sims/kinetic-typography-engine/index.md
-      - Learning Graph Viewer: sims/graph-viewer/index.md
-      - Microphone Frequency Visualization with FFT: sims/fft-mic/index.md
-      - Mouse Speed Tracker: sims/mouse-speed-tracker/index.md
-      - Multi-Touch Canvas: sims/multi-touch-canvas/index.md
-      - Nested Grid Explorer: sims/nested-grid-explorer/index.md
-      - Orbital Mechanics Simulator: sims/orbital-mechanics-simulator/index.md
-      - Particle Physics Engine: sims/particle-physics-engine/index.md
-      - Pedagogical Pattern Matcher: sims/pedagogical-pattern-matcher/index.md
-      - Perlin Noise Terrain Generation: sims/perlin-noise-terrain-generation/index.md
-      - Pivot Point Selection: sims/pivot-point-selection/index.md
-      - Pixel Processing Pipeline: sims/pixel-processing-pipeline/index.md
-      - Polar Radar Sweeper: sims/polar-radar-sweeper/index.md
-      - Random Walk Simulation: sims/random-walk-simulation/index.md
-      - Real-Time ASCIIfy: sims/real-time-asciify/index.md
-      - Real-Time ASCIIfy Webcam: sims/real-time-asciify-webcam/index.md
-      - Render Cycle and Frame Rate Monitor: sims/frame-rate-monitor/index.md
-      - Responsive Dashboard Builder: sims/responsive-dashboard-builder/index.md
-      - Robot Arm Kinematics: sims/robot-arm-kinematics/index.md
-      - Scope Misconception Visualizer: sims/scope-misconception-visualizer/index.md
-      - Scope Visualizer: sims/scope-visualizer/index.md
-      - Shape Builder: sims/shape-builder/index.md
-      - Shape Explorer Turntable: sims/shape-explorer-turntable/index.md
-      - Shopping Cart Acceleration: sims/shopping-cart-acceleration/index.md
-      - Spectrum Analyzer: sims/spectrum-analyzer/index.md
-      - Stage Lighting Setup: sims/stage-lighting-setup/index.md
-      - Stochastic L-System Tree: sims/stochastic-l-system-tree/index.md
-      - Synthesizer Board: sims/synthesizer-board/index.md
-      - Terrain Generator: sims/terrain-generator/index.md
-      - Text Formatting Basics: sims/text-formatting-basics/index.md
-      - The Callback Kitchen: sims/the-callback-kitchen/index.md
-      - The Color Compass: sims/the-color-compass/index.md
-      - The Generative Art Mixing Desk: sims/the-generative-art-mixing-desk/index.md
-      - The Great Easing Race: sims/the-great-easing-race/index.md
-      - The Interactive Array Train: sims/the-interactive-array-train/index.md
-      - The Logic Gate Switchboard: sims/the-logic-gate-switchboard/index.md
-      - The Magnifying Glass Array Translator: sims/the-magnifying-glass-array-translator/index.md
-      - The Object Factory: sims/the-object-factory/index.md
-      - The Solar System Hierarchy: sims/the-solar-system-hierarchy/index.md
-      - UI Component Playground: sims/ui-component-playground/index.md
-      - Vector Dot Product Visualizer: sims/vector-dot-product-visualizer/index.md
-      - Water Hose Particle Emitter: sims/water-hose-particle-emitter/index.md
-      - "Waveform Visualizer & Hearer": sims/waveform-visualizer-hearer/index.md
+    - List of MicroSims: sims/index.md
+    - 3D Scene Editor: sims/3d-scene-editor/index.md
+    - Additive Color Mixer: sims/additive-color-mixer/index.md
+    - Algorithm Visualizer: sims/algorithm-visualizer/index.md
+    - Arc and Angle Explorer: sims/arc-angle-explorer/index.md
+    - Array Methods Visualizer: sims/array-methods-visualizer/index.md
+    - Async Data Fetcher: sims/async-data-fetcher/index.md
+    - Audio Visualizer Lab: sims/audio-visualizer-lab/index.md
+    - Beat Detector System: sims/beat-detector-system/index.md
+    - Bézier Control Point Sandbox: sims/bezier-sandbox/index.md
+    - Canvas Inspector: sims/canvas-inspector/index.md
+    - Color Mixer: sims/color-mixer/index.md
+    - Coordinate System Explorer: sims/coordinate-system-explorer/index.md
+    - CORS Blockage Visualization: sims/cors-blockage-visualization/index.md
+    - Data Flow Debugger: sims/data-flow-debugger/index.md
+    - Dev Environment Simulator: sims/dev-environment-simulator/index.md
+    - Device Orientation Maze: sims/device-orientation-maze/index.md
+    - DOM Layout Explorer: sims/dom-layout-explorer/index.md
+    - Exploring Shaders: sims/exploring-shaders/index.md
+    - Flow Field Visualizer: sims/flow-field-visualizer/index.md
+    - Harmonic Oscillator: sims/harmonic-oscillator/index.md
+    - History of Processing and p5.js: sims/p5-timeline/index.md
+    - Interactive 3D Coordinate System: sims/3d-coordinate-system/index.md
+    - Interactive Filter Studio: sims/interactive-filter-studio/index.md
+    - Interactive Filter Sweep on Noise: sims/interactive-filter-sweep-on-noise/index.md
+    - Interactive Flocking Fireworks: sims/interactive-flocking-fireworks/index.md
+    - Interactive Image Gallery Filter: sims/interactive-image-gallery-filter/index.md
+    - Interactive Map Panning and Zooming: sims/interactive-map-panning-and-zooming/index.md
+    - Interactive Sandbox: sims/interactive-sandbox/index.md
+    - Interactive Wave Maker Laboratory: sims/interactive-wave-maker-laboratory/index.md
+    - Kinetic Text to Points: sims/kinetic-text-to-points/index.md
+    - Kinetic Typography Engine: sims/kinetic-typography-engine/index.md
+    - Learning Graph Viewer: sims/graph-viewer/index.md
+    - Microphone Frequency Visualization with FFT: sims/fft-mic/index.md
+    - Mouse Speed Tracker: sims/mouse-speed-tracker/index.md
+    - Multi-Touch Canvas: sims/multi-touch-canvas/index.md
+    - Nested Grid Explorer: sims/nested-grid-explorer/index.md
+    - Orbital Mechanics Simulator: sims/orbital-mechanics-simulator/index.md
+    - Particle Physics Engine: sims/particle-physics-engine/index.md
+    - Pedagogical Pattern Matcher: sims/pedagogical-pattern-matcher/index.md
+    - Perlin Noise Terrain Generation: sims/perlin-noise-terrain-generation/index.md
+    - Pivot Point Selection: sims/pivot-point-selection/index.md
+    - Pixel Processing Pipeline: sims/pixel-processing-pipeline/index.md
+    - Polar Radar Sweeper: sims/polar-radar-sweeper/index.md
+    - Random Walk Simulation: sims/random-walk-simulation/index.md
+    - Real-Time ASCIIfy Camera: sims/real-time-asciify/index.md
+    - Real-Time ASCIIfy Camera: sims/real-time-asciify-webcam/index.md
+    - Render Cycle and Frame Rate Monitor: sims/frame-rate-monitor/index.md
+    - Responsive Dashboard Builder: sims/responsive-dashboard-builder/index.md
+    - Robot Arm Kinematics: sims/robot-arm-kinematics/index.md
+    - Scope Misconception Visualizer: sims/scope-misconception-visualizer/index.md
+    - Scope Visualizer: sims/scope-visualizer/index.md
+    - Shape Builder: sims/shape-builder/index.md
+    - Shape Explorer Turntable: sims/shape-explorer-turntable/index.md
+    - Shopping Cart Acceleration: sims/shopping-cart-acceleration/index.md
+    - Spectrum Analyzer: sims/spectrum-analyzer/index.md
+    - Stage Lighting Setup: sims/stage-lighting-setup/index.md
+    - Stochastic L-System Tree: sims/stochastic-l-system-tree/index.md
+    - Synthesizer Board: sims/synthesizer-board/index.md
+    - Terrain Generator: sims/terrain-generator/index.md
+    - Text Formatting Basics: sims/text-formatting-basics/index.md
+    - The Callback Kitchen: sims/the-callback-kitchen/index.md
+    - The Color Compass: sims/the-color-compass/index.md
+    - The Generative Art Mixing Desk: sims/the-generative-art-mixing-desk/index.md
+    - The Great Easing Race: sims/the-great-easing-race/index.md
+    - The Interactive Array Train: sims/the-interactive-array-train/index.md
+    - The Logic Gate Switchboard: sims/the-logic-gate-switchboard/index.md
+    - The Magnifying Glass Array Translator: sims/the-magnifying-glass-array-translator/index.md
+    - The Object Factory: sims/the-object-factory/index.md
+    - The Solar System Hierarchy: sims/the-solar-system-hierarchy/index.md
+    - UI Component Playground: sims/ui-component-playground/index.md
+    - Vector Dot Product Visualizer: sims/vector-dot-product-visualizer/index.md
+    - Water Hose Particle Emitter: sims/water-hose-particle-emitter/index.md
+    - Waveform Visualizer & Hearer: sims/waveform-visualizer-hearer/index.md
+
+
 
   - Learning Graph:
       - Introduction: learning-graph/index.md
