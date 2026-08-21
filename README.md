@@ -3,6 +3,7 @@
 [![MkDocs](https://img.shields.io/badge/Made%20with-MkDocs-526CFE?logo=materialformkdocs)](https://www.mkdocs.org/)
 [![Material for MkDocs](https://img.shields.io/badge/Material%20for%20MkDocs-526CFE?logo=materialformkdocs)](https://squidfunk.github.io/mkdocs-material/)
 [![GitHub Pages](https://img.shields.io/badge/View%20on-GitHub%20Pages-blue?logo=github)](https://dmccreary.github.io/p5-textbook/)
+[![Built with Google Antigravity](https://img.shields.io/badge/Built%20with-Google%20Antigravity-4285F4?logo=google&logoColor=white)](https://antigravity.google)
 [![p5.js](https://img.shields.io/badge/p5.js-ED225D?logo=p5.js&logoColor=white)](https://p5js.org/)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
@@ -195,6 +196,7 @@ See [docs/license.md](./docs/license.md) for full licensing details and commerci
 This textbook is made possible by open-source tools and creative coding communities:
 
 - **[Processing Foundation & p5.js](https://p5js.org/)** — For empowering artists, designers, and educators worldwide.
+- **[Google Antigravity](https://antigravity.google)** — AI-assisted agentic authoring and educational development environment.
 - **[Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)** by Martin Donath — For the documentation theme.
 - **[MkDocs](https://www.mkdocs.org/)** — Fast static site generator.
 - **[vis-network](https://visjs.org/)** — Interactive graph visualization.
