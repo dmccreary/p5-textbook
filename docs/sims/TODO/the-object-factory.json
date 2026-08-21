@@ -1,0 +1,15 @@
+{
+  "sim_id": "the-object-factory",
+  "diagram_name": "The Object Factory",
+  "chapter_number": 17,
+  "chapter_title": "Functions And Callbacks",
+  "chapter_dir": "17-functions-and-callbacks",
+  "chapter_rel_dir": "chapters/17-functions-and-callbacks",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>MicroSim: The Object Factory</summary>\n\n**Goal:** Visualize Class Instance Instantiation and Class Inheritance Extends in a highly dynamic way.\n**Interactive Elements:**\n- Sliders on the left side of the screen to define real-time properties (e.g., `radius`, `hue`, `bounceSpeed`).\n- A drop-down menu to select a specific class type: \"Static Particle\" (the base class) or \"Bouncing Particle\" (the child class that inherits from Static Particle).\n- A large \"Instantiate New Particle\" button.\n- A large visual canvas area where the instantiated objects appear and immediately begin behaving according to their specific class methods.\n**Implementation Notes:** Use p5.js. The `StaticParticle` class must have `x`, `y`, `radius`, and `color` properties defined in its Class Constructor Method, and a `display()` Class Method Definition. The `BouncingParticle` class uses Class Inheritance Extends to get those properties via a Super Constructor Call, but it also adds `speedX` and `speedY`, and a custom `update()` method to aggressively bounce off the edges of the canvas."
+}

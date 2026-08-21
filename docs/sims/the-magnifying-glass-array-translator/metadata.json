@@ -1,0 +1,21 @@
+{
+  "title": "The Magnifying Glass Array Translator",
+  "description": "Translate 2D pixel coordinates (x, y) into 1D flat memory indices index = 4*(y*width + x) for pixels[] manipulation.",
+  "creator": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "The Magnifying Glass Array Translator",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "sim_id": "the-magnifying-glass-array-translator",
+  "canvasHeight": 485,
+  "bloom_level": "Apply",
+  "learning_objective": "Students will master the 2D to 1D array indexing formula index = (y * width + x) * 4 for RGBA pixel buffers.",
+  "chapter_dir": "03-color-theory-pixels"
+}

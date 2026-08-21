@@ -1,0 +1,21 @@
+{
+  "title": "Shopping Cart Acceleration",
+  "description": "Apply interactive force vectors to a shopping cart to visualize Newton's Second Law F = m*a, acceleration, and friction.",
+  "creator": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "Shopping Cart Acceleration",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "sim_id": "shopping-cart-acceleration",
+  "canvasHeight": 485,
+  "bloom_level": "Apply",
+  "learning_objective": "Students will master Newton's Second Law, net force vectors, acceleration arrows, and surface friction decay.",
+  "chapter_dir": "11-vector-math-physics"
+}

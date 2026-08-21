@@ -124,6 +124,10 @@ When you rotate, the grid spins around the `(0, 0)` point. This is why the **Tra
 
 #### Diagram: Pivot Point Selection
 
+<iframe src="../../sims/pivot-point-selection/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run Pivot Point Selection Fullscreen](../../sims/pivot-point-selection/main.html)
+
+
 <details class="microsim">
 <summary>MicroSim: Pivot Point Selection</summary><summary>MicroSim: Pivot Point Selection</summary>
 This simulation demonstrates the difference between the Center Rotation Pattern and Corner Rotation Pattern. Click to toggle where the origin point is translated before the rotation happens. Notice how the grid spins around the red dot (the origin).
@@ -194,6 +198,10 @@ Imagine drawing the sun, the Earth, and the moon.
 This creates **Nested Transformation Trees**. By pushing and popping inside of other pushes and pops, we create a chain of dependencies. The moon inherits the Earth's rotation and translation, and the Earth inherits the sun's translation. This is exactly how the **Solar System Transformation** is modeled, as well as complex mechanical movements like a **Robot Joint Transformation** (where the hand is attached to the forearm, which is attached to the upper arm).
 
 #### Diagram: The Solar System Hierarchy
+
+<iframe src="../../sims/the-solar-system-hierarchy/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run The Solar System Hierarchy Fullscreen](../../sims/the-solar-system-hierarchy/main.html)
+
 
 <details class="microsim">
 <summary>MicroSim: The Solar System Hierarchy</summary><summary>MicroSim: The Solar System Hierarchy</summary>

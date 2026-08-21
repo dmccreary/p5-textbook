@@ -1,0 +1,21 @@
+{
+  "title": "The Logic Gate Switchboard",
+  "description": "Wire up boolean logic gate switches (AND, OR, NOT, XOR, NAND) to route signals to a neon indicator sign.",
+  "creator": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "The Logic Gate Switchboard",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "sim_id": "the-logic-gate-switchboard",
+  "canvasHeight": 485,
+  "bloom_level": "Apply",
+  "learning_objective": "Students will understand conditional logic, truth tables, and boolean operators (&&, ||, !).",
+  "chapter_dir": "04-variables-and-scope"
+}

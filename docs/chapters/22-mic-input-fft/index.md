@@ -154,6 +154,10 @@ function draw() {
 
 #### Diagram: Spectrum Analyzer
 
+
+<iframe src="../../sims/spectrum-analyzer/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run Spectrum Analyzer Fullscreen](../../sims/spectrum-analyzer/main.html)
+
 <details markdown="1">
 <summary>MicroSim: Spectrum Analyzer</summary><summary>MicroSim: Spectrum Analyzer</summary>
 - Uses `p5.FFT` to display a live **Spectrum Frequency Chart**.
@@ -202,6 +206,10 @@ function detectBeat(bassEnergy) {
 ```
 
 #### Diagram: Beat Detector System
+
+
+<iframe src="../../sims/beat-detector-system/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run Beat Detector System Fullscreen](../../sims/beat-detector-system/main.html)
 
 <details markdown="1">
 <summary>MicroSim: Beat Detector System</summary><summary>MicroSim: Beat Detector System</summary>

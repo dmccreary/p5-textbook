@@ -1,12 +1,12 @@
 ---
-title: Canvas Inspector
-description: Interactive p5.js MicroSim for canvas inspector.
+title: "Canvas Inspector"
+description: "Interactive p5.js MicroSim for canvas inspector."
 image: /sims/canvas-inspector/canvas-inspector.png
 og:image: /sims/canvas-inspector/canvas-inspector.png
 twitter:image: /sims/canvas-inspector/canvas-inspector.png
 social:
    cards: false
-quality_score: 100
+quality_score: 95
 ---
 
 # Canvas Inspector

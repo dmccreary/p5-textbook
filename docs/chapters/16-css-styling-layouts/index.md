@@ -109,6 +109,10 @@ Historically, web developers used clumsy tricks like "floats" and tables to posi
 
 #### Diagram: DOM Layout Explorer
 
+
+<iframe src="../../sims/dom-layout-explorer/main.html" width="100%" height="517px" scrolling="no"></iframe>
+[Run DOM Layout Explorer Fullscreen](../../sims/dom-layout-explorer/main.html)
+
 <details markdown="1">
 <summary>MicroSim: DOM Layout Explorer</summary><summary>MicroSim: DOM Layout Explorer</summary>
 
@@ -149,6 +153,10 @@ Finally, what if you want to include content from an entirely different websiteâ
     Watch out for CORS errors! Browsers heavily restrict Cross-Origin Resource Sharing, meaning you cannot easily read variables from an external iframe. If you absolutely must send data between an iframe and your main sketch, you will need to research and implement the `window.postMessage()` API rather than relying on direct variable access.
 
 #### Diagram: Responsive Dashboard Builder
+
+
+<iframe src="../../sims/responsive-dashboard-builder/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run Responsive Dashboard Builder Fullscreen](../../sims/responsive-dashboard-builder/main.html)
 
 <details markdown="1">
 <summary>MicroSim: Responsive Dashboard Builder</summary><summary>MicroSim: Responsive Dashboard Builder</summary>

@@ -1,0 +1,15 @@
+{
+  "sim_id": "stage-lighting-setup",
+  "diagram_name": "Stage Lighting Setup",
+  "chapter_number": 20,
+  "chapter_title": "3D Cameras Shaders",
+  "chapter_dir": "20-3d-cameras-shaders",
+  "chapter_rel_dir": "chapters/20-3d-cameras-shaders",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>MicroSim: Stage Lighting Setup</summary>\n\n**Goal**: Allow students to interactively place lights on a 3D stage and observe how different materials react.\n\n**UI Elements**:\n- Sliders for Ambient, Directional, Point, and Spot Light Source intensities.\n- Dropdown to select the material (Normal, Basic, Ambient, Specular) for the central object.\n- Slider for Shininess Parameter.\n\n**Behavior**:\n- The scene contains a rotating sphere in the center.\n- As the user adjusts the light sliders, the illumination on the sphere changes dynamically.\n- When a new material is selected, the sphere's appearance updates to reflect the chosen shading model."
+}

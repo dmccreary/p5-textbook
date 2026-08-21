@@ -1,7 +1,7 @@
 ---
-title: Learning Graph Viewer
-description: View the learning graph and be able to search and filter by classification
-quality_score: 52
+title: "Learning Graph Viewer"
+description: "View the learning graph and be able to search and filter by classification"
+quality_score: 60
 image: learning-graph.png
 hide:
    toc

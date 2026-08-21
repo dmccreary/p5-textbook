@@ -1,0 +1,15 @@
+{
+  "sim_id": "perlin-noise-terrain-generation",
+  "diagram_name": "Perlin Noise Terrain Generation",
+  "chapter_number": 9,
+  "chapter_title": "Randomness And Walks",
+  "chapter_dir": "09-randomness-and-walks",
+  "chapter_rel_dir": "chapters/09-randomness-and-walks",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>MicroSim: Perlin Noise Terrain Generation</summary>\n\n**Goal:** Create an interactive 2D map generator using Perlin Noise to demonstrate scale, octaves, and falloff.\n\n**Features:**\n- A canvas displaying a top-down 2D map generated with `noise(x, y)`.\n- The noise values should be mapped to colors to represent terrain: deep water (blue), shallow water (light blue), sand (yellow), grass (green), forest (dark green), and snow (white).\n- Sliders for:\n  - **Noise Scale:** Controls the multiplier (increment) applied to the X and Y coordinates before passing them to the noise function. Ranging from very smooth \"zoomed in\" terrain to very noisy \"zoomed out\" terrain.\n  - **Octaves:** Controls the `lod` parameter of `noiseDetail()`, from 1 to 8.\n  - **Falloff:** Controls the `falloff` parameter of `noiseDetail()`, from 0.0 to 1.0.\n- A \"Generate New Seed\" button that changes the noise seed.\n\n**Interactivity:**\n- As the user drags the sliders, the terrain map dynamically recalculates and redraws in real-time."
+}

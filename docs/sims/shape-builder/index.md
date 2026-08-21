@@ -1,12 +1,12 @@
 ---
-title: Shape Builder
-description: Interactive p5.js MicroSim for shape builder.
+title: "Shape Builder"
+description: "Interactive p5.js MicroSim for shape builder."
 image: /sims/shape-builder/shape-builder.png
 og:image: /sims/shape-builder/shape-builder.png
 twitter:image: /sims/shape-builder/shape-builder.png
 social:
    cards: false
-quality_score: 100
+quality_score: 95
 ---
 
 # Shape Builder

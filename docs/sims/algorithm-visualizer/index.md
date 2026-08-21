@@ -1,12 +1,12 @@
 ---
-title: Algorithm Visualizer
-description: Interactive p5.js MicroSim demonstrating control flow, loops, and conditional branching.
+title: "Algorithm Visualizer"
+description: "Interactive p5.js MicroSim demonstrating control flow, loops, and conditional branching."
 image: /sims/algorithm-visualizer/algorithm-visualizer.png
 og:image: /sims/algorithm-visualizer/algorithm-visualizer.png
 twitter:image: /sims/algorithm-visualizer/algorithm-visualizer.png
 social:
    cards: false
-quality_score: 95
+quality_score: 90
 ---
 
 # Algorithm Visualizer

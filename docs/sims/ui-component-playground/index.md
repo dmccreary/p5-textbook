@@ -1,12 +1,12 @@
 ---
-title: UI Component Playground
-description: Interactive p5.js MicroSim for ui component playground.
+title: "UI Component Playground"
+description: "Interactive p5.js MicroSim for ui component playground."
 image: /sims/ui-component-playground/ui-component-playground.png
 og:image: /sims/ui-component-playground/ui-component-playground.png
 twitter:image: /sims/ui-component-playground/ui-component-playground.png
 social:
    cards: false
-quality_score: 95
+quality_score: 90
 ---
 
 # UI Component Playground

@@ -109,6 +109,10 @@ Think of an oscillator like a glowing, vibrating string of energy. The shape of 
 
 #### Diagram: Waveform Visualizer & Hearer
 
+
+<iframe src="../../sims/waveform-visualizer-hearer/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run Waveform Visualizer & Hearer Fullscreen](../../sims/waveform-visualizer-hearer/main.html)
+
 <details markdown="1">
 <summary>MicroSim: Waveform Visualizer & Hearer</summary><summary>MicroSim: Waveform Visualizer & Hearer</summary>
 
@@ -157,6 +161,10 @@ But pure noise is too raw. To make it musical, we must carve away the frequencie
 3. **Audio Filter Bandpass**: This filter only lets a narrow "band" or chunk of frequencies pass through, rejecting both the extreme highs and the extreme lows. It sounds like someone talking through a walkie-talkie or an old telephone.
 
 #### Diagram: Interactive Filter Sweep on Noise
+
+
+<iframe src="../../sims/interactive-filter-sweep-on-noise/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run Interactive Filter Sweep on Noise Fullscreen](../../sims/interactive-filter-sweep-on-noise/main.html)
 
 <details markdown="1">
 <summary>MicroSim: Interactive Filter Sweep on Noise</summary><summary>MicroSim: Interactive Filter Sweep on Noise</summary>

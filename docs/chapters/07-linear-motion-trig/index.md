@@ -150,6 +150,10 @@ When we construct a wave using trigonometric functions, there are three primary 
 
 #### Diagram: Interactive Wave Maker Laboratory
 
+<iframe src="../../sims/interactive-wave-maker-laboratory/main.html" width="100%" height="517px" scrolling="no"></iframe>
+[Run Interactive Wave Maker Laboratory Fullscreen](../../sims/interactive-wave-maker-laboratory/main.html)
+
+
 <details>
 <summary>MicroSim: Interactive Wave Maker Laboratory</summary><summary>MicroSim: Interactive Wave Maker Laboratory</summary>
 
@@ -332,6 +336,10 @@ function draw() {
 ```
 
 #### Diagram: Orbital Mechanics Simulator
+
+<iframe src="../../sims/orbital-mechanics-simulator/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run Orbital Mechanics Simulator Fullscreen](../../sims/orbital-mechanics-simulator/main.html)
+
 
 <details>
 <summary>MicroSim: Orbital Mechanics Simulator</summary><summary>MicroSim: Orbital Mechanics Simulator</summary>

@@ -1,0 +1,21 @@
+{
+  "title": "DOM Layout Explorer",
+  "description": "Interactive CSS Flexbox and Grid layout visualizer exploring justify-content, align-items, flex-direction, and responsive flow.",
+  "creator": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "DOM Layout Explorer",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "sim_id": "dom-layout-explorer",
+  "canvasHeight": 515,
+  "bloom_level": "Understand",
+  "learning_objective": "Students will understand how CSS Flexbox and Grid rules determine element positioning and spacing across varying container widths.",
+  "chapter_dir": "16-css-styling-layouts"
+}

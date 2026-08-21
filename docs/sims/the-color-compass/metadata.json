@@ -1,0 +1,21 @@
+{
+  "title": "The Color Compass",
+  "description": "Navigate HSB (Hue, Saturation, Brightness) color space with an interactive circular chromatic wheel and harmony markers.",
+  "creator": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "The Color Compass",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "sim_id": "the-color-compass",
+  "canvasHeight": 485,
+  "bloom_level": "Understand",
+  "learning_objective": "Students will understand polar HSB color mapping (Hue as angle 0-360\u00b0, Saturation as radius 0-100%, Brightness level).",
+  "chapter_dir": "03-color-theory-pixels"
+}

@@ -1,12 +1,12 @@
 ---
-title: Audio Visualizer Lab
-description: Interactive p5.js MicroSim for audio visualizer lab.
+title: "Audio Visualizer Lab"
+description: "Interactive p5.js MicroSim for audio visualizer lab."
 image: /sims/audio-visualizer-lab/audio-visualizer-lab.png
 og:image: /sims/audio-visualizer-lab/audio-visualizer-lab.png
 twitter:image: /sims/audio-visualizer-lab/audio-visualizer-lab.png
 social:
    cards: false
-quality_score: 95
+quality_score: 90
 ---
 
 # Audio Visualizer Lab

@@ -1,0 +1,15 @@
+{
+  "sim_id": "scope-misconception-visualizer",
+  "diagram_name": "Scope Misconception Visualizer",
+  "chapter_number": 25,
+  "chapter_title": "Dev Environment Pedagogy",
+  "chapter_dir": "25-dev-environment-pedagogy",
+  "chapter_rel_dir": "chapters/25-dev-environment-pedagogy",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "- **Title**: Variable Scope Misconception Tool\n- **Description**: A split-screen UI. On the left, code blocks for `setup()` and `draw()`. On the right, glowing boxes representing computer memory. When the user drags a variable declaration into `setup()`, it gets locked in a localized box. When dragged outside to the top of the file, it becomes available to all functions."
+}

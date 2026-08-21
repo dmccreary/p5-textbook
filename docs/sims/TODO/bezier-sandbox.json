@@ -1,0 +1,15 @@
+{
+  "sim_id": "bezier-sandbox",
+  "diagram_name": "Bézier Control Point Sandbox",
+  "chapter_number": 2,
+  "chapter_title": "2. 2D Primitive Shapes & Custom Geometries",
+  "chapter_dir": "02-2d-primitive-shapes",
+  "chapter_rel_dir": "chapters/02-2d-primitive-shapes",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": "Evaluating (Students will manipulate invisible control points to see how magnetic tension bends a mathematical curve).",
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>Bézier Control Point Sandbox</summary>\nType: MicroSim\n**sim-id:** bezier-sandbox<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\n**Learning Objective:** Evaluating (Students will manipulate invisible control points to see how magnetic tension bends a mathematical curve).\n\n**Visual Elements:**\n- A thick, smooth Bézier curve drawn across the screen.\n- Four distinct, draggable anchor circles (Anchor 1, Control 1, Control 2, Anchor 2).\n- Thin, dashed \"tangent lines\" connecting Anchor 1 to Control 1, and Anchor 2 to Control 2 (this visualizes the magnetic pull).\n\n**Interactivity:**\n- Users can drag all four points freely around the canvas.\n- As the points move, the thick curve bends elastically in real-time.\n- A readout displays the live `bezier(x1, y1, x2, y2, x3, y3, x4, y4)` code so the user can copy/paste their custom curve directly into their own sketch.\n\nImplementation: Store the 4 coordinate pairs in variables. Use `dist()` to check for mouse drag collisions on the handles. Render the curve with `bezier()` and the tangent lines with standard `line()` calls."
+}

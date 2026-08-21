@@ -1,0 +1,21 @@
+{
+  "title": "Multi-Touch Canvas",
+  "description": "Simulate multi-touch mobile gestures: multi-finger drawing, pinch-to-zoom distance tracking, and touch ID identification.",
+  "creator": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "Multi-Touch Canvas",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "sim_id": "multi-touch-canvas",
+  "canvasHeight": 485,
+  "bloom_level": "Apply",
+  "learning_objective": "Students will understand the p5.js touches[] array, touchStarted/touchMoved events, and multi-finger coordinate handling.",
+  "chapter_dir": "14-touch-mobile-sensors"
+}

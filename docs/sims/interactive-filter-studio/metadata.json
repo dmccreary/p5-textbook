@@ -1,0 +1,21 @@
+{
+  "title": "Interactive Filter Studio",
+  "description": "Explore image processing 3x3 convolution kernels: Gaussian Blur, Sharpen, Ridge Edge Detection, and Emboss filters.",
+  "creator": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "Interactive Filter Studio",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "sim_id": "interactive-filter-studio",
+  "canvasHeight": 485,
+  "bloom_level": "Apply",
+  "learning_objective": "Students will understand how convolution matrices calculate weighted neighbor pixel averages to transform visual imagery.",
+  "chapter_dir": "23-image-processing-video"
+}

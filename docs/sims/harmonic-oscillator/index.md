@@ -1,12 +1,12 @@
 ---
-title: Harmonic Oscillator
-description: Interactive p5.js MicroSim for harmonic oscillator.
+title: "Harmonic Oscillator"
+description: "Interactive p5.js MicroSim for harmonic oscillator."
 image: /sims/harmonic-oscillator/harmonic-oscillator.png
 og:image: /sims/harmonic-oscillator/harmonic-oscillator.png
 twitter:image: /sims/harmonic-oscillator/harmonic-oscillator.png
 social:
    cards: false
-quality_score: 95
+quality_score: 90
 ---
 
 # Harmonic Oscillator

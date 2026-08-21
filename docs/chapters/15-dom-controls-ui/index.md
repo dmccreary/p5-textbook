@@ -217,6 +217,10 @@ Color pickers immediately transform a static sketch into a vibrant, personalized
 
 #### Diagram: The Generative Art Mixing Desk
 
+
+<iframe src="../../sims/the-generative-art-mixing-desk/main.html" width="100%" height="517px" scrolling="no"></iframe>
+[Run The Generative Art Mixing Desk Fullscreen](../../sims/the-generative-art-mixing-desk/main.html)
+
 <details markdown="1">
 <summary>MicroSim Specification: The Generative Art Mixing Desk</summary><summary>MicroSim Specification: The Generative Art Mixing Desk</summary>
 
@@ -376,6 +380,10 @@ function setup() {
 Using classes keeps your code clean and allows you to update the look of your entire dashboard from one centralized CSS file.
 
 #### Diagram: Interactive Image Gallery Filter
+
+
+<iframe src="../../sims/interactive-image-gallery-filter/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run Interactive Image Gallery Filter Fullscreen](../../sims/interactive-image-gallery-filter/main.html)
 
 <details markdown="1">
 <summary>MicroSim Specification: Interactive Image Gallery Filter</summary><summary>MicroSim Specification: Interactive Image Gallery Filter</summary>

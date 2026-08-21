@@ -1,0 +1,15 @@
+{
+  "sim_id": "frame-rate-monitor",
+  "diagram_name": "Render Cycle and Frame Rate Monitor",
+  "chapter_number": 1,
+  "chapter_title": "1. Introduction to Creative Coding & Canvas Foundations",
+  "chapter_dir": "01-intro-creative-coding",
+  "chapter_rel_dir": "chapters/01-intro-creative-coding",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": "Analyzing (Students will observe the relationship between the target frame rate, the actual delta time, and the resulting visual smoothness).",
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>Render Cycle and Frame Rate Monitor</summary>\nType: MicroSim\n**sim-id:** frame-rate-monitor<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\n**Learning Objective:** Analyzing (Students will observe the relationship between the target frame rate, the actual delta time, and the resulting visual smoothness).\n\n**Visual Elements:**\n- Two identical moving objects (like cars) racing across the screen.\n- Car A moves using frame-dependent logic (`x += 5`).\n- Car B moves using time-dependent logic (`x += speed * deltaTime`).\n- A real-time line chart tracking `frameRate` and `deltaTime`.\n- A slider to forcefully restrict the Target Frame Rate.\n\n**Interactivity:**\n- Users slide the target frame rate down from 60 FPS to 10 FPS.\n- As the frame rate drops, Car A visibly slows down and loses the race.\n- Car B begins to stutter visually, but maintains its true velocity across the screen, tying the race despite the low frame rate.\n- The chart updates dynamically to show the inverse relationship: when the frame rate plummets, `deltaTime` spikes.\n\nImplementation: p5.js canvas utilizing DOM sliders. The chart can be drawn using `beginShape()` and `endShape()` tracking a history array of frame rates."
+}

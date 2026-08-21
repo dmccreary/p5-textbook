@@ -1,12 +1,12 @@
 ---
-title: Particle Physics Engine
-description: Interactive p5.js MicroSim for particle physics engine.
+title: "Particle Physics Engine"
+description: "Interactive p5.js MicroSim for particle physics engine."
 image: /sims/particle-physics-engine/particle-physics-engine.png
 og:image: /sims/particle-physics-engine/particle-physics-engine.png
 twitter:image: /sims/particle-physics-engine/particle-physics-engine.png
 social:
    cards: false
-quality_score: 95
+quality_score: 90
 ---
 
 # Particle Physics Engine

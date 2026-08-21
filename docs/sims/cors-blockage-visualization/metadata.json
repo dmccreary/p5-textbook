@@ -1,0 +1,21 @@
+{
+  "title": "CORS Blockage Visualization",
+  "description": "Demonstrate Cross-Origin Resource Sharing (CORS) security mechanisms, origin headers, and preflight OPTIONS checks.",
+  "creator": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "CORS Blockage Visualization",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "sim_id": "cors-blockage-visualization",
+  "canvasHeight": 485,
+  "bloom_level": "Understand",
+  "learning_objective": "Students will understand why web browsers block cross-origin requests by default and how Access-Control-Allow-Origin headers work.",
+  "chapter_dir": "25-dev-environment-pedagogy"
+}

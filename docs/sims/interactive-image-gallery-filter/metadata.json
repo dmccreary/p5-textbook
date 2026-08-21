@@ -1,0 +1,21 @@
+{
+  "title": "Interactive Image Gallery Filter",
+  "description": "Filter, search, and sort a responsive grid of generative artwork cards by category tags and color palettes.",
+  "creator": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "Interactive Image Gallery Filter",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "sim_id": "interactive-image-gallery-filter",
+  "canvasHeight": 485,
+  "bloom_level": "Apply",
+  "learning_objective": "Students will learn array filtering and DOM search query matching for generative art catalogs.",
+  "chapter_dir": "15-dom-controls-ui"
+}

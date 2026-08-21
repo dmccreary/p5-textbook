@@ -116,6 +116,10 @@ If we wanted to make the orbit squashed into an oval, we would need to create an
 
 #### Diagram: Polar Radar Sweeper
 
+<iframe src="../../sims/polar-radar-sweeper/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run Polar Radar Sweeper Fullscreen](../../sims/polar-radar-sweeper/main.html)
+
+
 <details>
 <summary>MicroSim: Polar Radar Sweeper</summary><summary>MicroSim: Polar Radar Sweeper</summary>
 
@@ -277,6 +281,10 @@ These easing functions are driven by different mathematical curves—from simple
     Notice how easing isn't just for physical physics? Think about how blending a harsh color change with an Ease-In-Out transition alters the mental perception of the interface. You are injecting simulated physical weight into abstract concepts!
 
 #### Diagram: The Great Easing Race
+
+<iframe src="../../sims/the-great-easing-race/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run The Great Easing Race Fullscreen](../../sims/the-great-easing-race/main.html)
+
 
 <details>
 <summary>MicroSim: The Great Easing Race</summary><summary>MicroSim: The Great Easing Race</summary>

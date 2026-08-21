@@ -93,6 +93,10 @@ Finally, when the finger is lifted off the glass, a **Touch Ended Event** occurs
 
 #### Diagram: Multi-Touch Canvas
 
+
+<iframe src="../../sims/multi-touch-canvas/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run Multi-Touch Canvas Fullscreen](../../sims/multi-touch-canvas/main.html)
+
 <details markdown="1">
 <summary>MicroSim: Multi-Touch Canvas</summary><summary>MicroSim: Multi-Touch Canvas</summary>
 **Goal:** Create a simple drawing canvas that supports drawing with up to 5 fingers simultaneously.
@@ -234,6 +238,10 @@ If you are building a 3D first-person game, you might want the mouse movements t
     Watch out for security blocks! Browsers will prevent your code from trapping the user's mouse unless they initiate the action. To avoid a broken interface, always tie your `requestPointerLock()` call to a `mouseClicked()` event rather than firing it automatically in `setup()`.
 
 #### Diagram: Device Orientation Maze
+
+
+<iframe src="../../sims/device-orientation-maze/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run Device Orientation Maze Fullscreen](../../sims/device-orientation-maze/main.html)
 
 <details markdown="1">
 <summary>MicroSim: Device Orientation Maze</summary><summary>MicroSim: Device Orientation Maze</summary>

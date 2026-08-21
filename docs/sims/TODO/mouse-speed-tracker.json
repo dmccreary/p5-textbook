@@ -1,0 +1,15 @@
+{
+  "sim_id": "mouse-speed-tracker",
+  "diagram_name": "Mouse Speed Tracker",
+  "chapter_number": 13,
+  "chapter_title": "Mouse Keyboard Events",
+  "chapter_dir": "13-mouse-keyboard-events",
+  "chapter_rel_dir": "chapters/13-mouse-keyboard-events",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>MicroSim: Mouse Speed Tracker</summary>\n**Objective**: Visualize the speed of the mouse by drawing a line from the previous position to the current position. The thickness of the line should be proportional to the speed.\n**Elements**:\n- A canvas that does not clear its background every frame.\n- A `line()` drawn from `(pmouseX, pmouseY)` to `(mouseX, mouseY)`.\n- A `strokeWeight()` calculation based on the distance between the current and previous points.\n**Interaction**: The user moves the mouse around the canvas to draw. Faster movements create thicker (or thinner, depending on your mapping) lines."
+}

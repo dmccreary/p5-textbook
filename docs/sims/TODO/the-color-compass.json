@@ -1,0 +1,15 @@
+{
+  "sim_id": "the-color-compass",
+  "diagram_name": "The Color Compass",
+  "chapter_number": 3,
+  "chapter_title": "Color Theory Pixels",
+  "chapter_dir": "03-color-theory-pixels",
+  "chapter_rel_dir": "chapters/03-color-theory-pixels",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary><strong>MicroSim: The Color Compass</strong></summary>\n<strong>Goal:</strong> Visualize the HSB Color Space as an interactive navigational wheel, clearly separating hue from saturation and brightness.\n<strong>Visualization:</strong> A large, circular color wheel on the left side of the screen, displaying a smooth gradient of all 360 hues around its circumference, fading to gray/white in the exact center. On the right, a tall vertical slider labeled \"Brightness\".\n<strong>Interactivity:</strong> Students can click and drag a small reticle (crosshair) anywhere inside the circular wheel to simultaneously change the Hue (angle) and Saturation (distance from center). The selected color is displayed in a large preview box. They can independently drag the vertical brightness slider to see how lighting affects the chosen hue and saturation coordinate.\n<strong>Expected Insight:</strong> Students will intuitively grasp that Hue is purely a geometric angle on a circle. This spatial understanding makes it very easy to transition into using mathematical formulas for color harmonies, like adding 180 degrees to find an exact opposite."
+}

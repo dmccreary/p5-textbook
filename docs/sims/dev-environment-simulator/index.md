@@ -1,12 +1,12 @@
 ---
-title: Dev Environment Simulator
-description: Interactive p5.js MicroSim for dev environment simulator.
+title: "Dev Environment Simulator"
+description: "Interactive p5.js MicroSim for dev environment simulator."
 image: /sims/dev-environment-simulator/dev-environment-simulator.png
 og:image: /sims/dev-environment-simulator/dev-environment-simulator.png
 twitter:image: /sims/dev-environment-simulator/dev-environment-simulator.png
 social:
    cards: false
-quality_score: 95
+quality_score: 90
 ---
 
 # Dev Environment Simulator

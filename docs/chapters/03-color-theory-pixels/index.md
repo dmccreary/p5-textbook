@@ -151,6 +151,10 @@ stroke("#FFcc00");
 
 #### Diagram: Additive Color Mixer
 
+<iframe src="../../sims/additive-color-mixer/main.html" width="100%" height="517px" scrolling="no"></iframe>
+[Run Additive Color Mixer Fullscreen](../../sims/additive-color-mixer/main.html)
+
+
 <details>
 <summary><strong>MicroSim: Additive Color Mixer</strong></summary><summary><strong>MicroSim: Additive Color Mixer</strong></summary>
 <strong>Goal:</strong> Allow students to visually experiment with mixing Red, Green, and Blue light to see how Additive Color Mixing creates secondary colors and pure white.
@@ -191,6 +195,10 @@ Let's use a mental metaphor: think of the Color Wheel as a navigational compass.
 In the HSB color space, making a color "more yellow" is gloriously easy. You don't have to balance red and green lights. You just turn your hue "compass" to 60 degrees. Making it "darker" just means lowering the brightness number.
 
 #### Diagram: The Color Compass
+
+<iframe src="../../sims/the-color-compass/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run The Color Compass Fullscreen](../../sims/the-color-compass/main.html)
+
 
 <details>
 <summary><strong>MicroSim: The Color Compass</strong></summary><summary><strong>MicroSim: The Color Compass</strong></summary>
@@ -289,6 +297,10 @@ updatePixels();
 While this complex array-indexing formula is incredibly fast—allowing you to manipulate hundreds of thousands of pixels in milliseconds—p5.js also provides a much easier, albeit significantly slower, alternative. You can use the **Get Pixel Color** function (`get(x, y)`) to read a pixel, and the **Set Pixel Color** function (`set(x, y, color)`) to change a pixel. These are great for simple tasks where speed isn't critical, but for heavy image processing, the raw `pixels` array formula is mandatory.
 
 #### Diagram: The Magnifying Glass Array Translator
+
+<iframe src="../../sims/the-magnifying-glass-array-translator/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run The Magnifying Glass Array Translator Fullscreen](../../sims/the-magnifying-glass-array-translator/main.html)
+
 
 <details>
 <summary><strong>MicroSim: The Magnifying Glass Array Translator</strong></summary><summary><strong>MicroSim: The Magnifying Glass Array Translator</strong></summary>

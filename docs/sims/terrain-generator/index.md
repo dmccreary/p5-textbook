@@ -1,12 +1,12 @@
 ---
-title: Terrain Generator
-description: Interactive p5.js MicroSim for terrain generator.
+title: "Terrain Generator"
+description: "Interactive p5.js MicroSim for terrain generator."
 image: /sims/terrain-generator/terrain-generator.png
 og:image: /sims/terrain-generator/terrain-generator.png
 twitter:image: /sims/terrain-generator/terrain-generator.png
 social:
    cards: false
-quality_score: 95
+quality_score: 90
 ---
 
 # Terrain Generator

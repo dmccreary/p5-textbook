@@ -146,6 +146,10 @@ This process is known as **2D Grid Iteration**. It is the fundamental technique 
 
 #### Diagram: Nested Grid Explorer
 
+<iframe src="../../sims/nested-grid-explorer/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run Nested Grid Explorer Fullscreen](../../sims/nested-grid-explorer/main.html)
+
+
 <details>
 <summary><b>MicroSim: Nested Grid Explorer</b></summary><summary><b>MicroSim: Nested Grid Explorer</b></summary>
 <b>Type:</b> p5.js Interactive Concept Explorer
@@ -341,6 +345,10 @@ function draw() {
 By organizing your code with **State Machine Logic**, you can easily transition from one scene of your interactive application to the next.
 
 #### Diagram: The Interactive Array Train
+
+<iframe src="../../sims/the-interactive-array-train/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run The Interactive Array Train Fullscreen](../../sims/the-interactive-array-train/main.html)
+
 
 <details>
 <summary><b>MicroSim: The Interactive Array Train</b></summary><summary><b>MicroSim: The Interactive Array Train</b></summary>

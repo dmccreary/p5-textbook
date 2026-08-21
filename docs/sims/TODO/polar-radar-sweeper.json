@@ -1,0 +1,15 @@
+{
+  "sim_id": "polar-radar-sweeper",
+  "diagram_name": "Polar Radar Sweeper",
+  "chapter_number": 8,
+  "chapter_title": "Polar Coordinates Easing",
+  "chapter_dir": "08-polar-coordinates-easing",
+  "chapter_rel_dir": "chapters/08-polar-coordinates-easing",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>MicroSim: Polar Radar Sweeper</summary>\n\n**Type:** p5.js  \n**Title:** Polar Coordinate Radar System  \n**Description:** An interactive radar scanner that draws a sweeping, glowing green line originating from the center using polar coordinates. A small blip appears when the radar beam passes a specific hidden angle, simulating a detected object.  \n**Features:**  \n- A UI Slider to dynamically control the angular sweep speed.\n- A live visual text display showing the current angle `theta` (in both radians and degrees) and the current radius `r`.\n- A translucent Cartesian grid overlay showing how the underlying X and Y coordinates correspond to the tip of the radar sweep."
+}

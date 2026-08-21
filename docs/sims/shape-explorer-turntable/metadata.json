@@ -1,0 +1,21 @@
+{
+  "title": "Shape Explorer Turntable",
+  "description": "Orbit around 3D WebGL primitive geometries on a rotating turntable: Box, Sphere, Cylinder, Cone, Torus, and Plane.",
+  "creator": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "Shape Explorer Turntable",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "sim_id": "shape-explorer-turntable",
+  "canvasHeight": 485,
+  "bloom_level": "Understand",
+  "learning_objective": "Students will explore 3D primitives, tessellation detail levels, and mouse orbitControl navigation in WebGL.",
+  "chapter_dir": "19-3d-webgl-primitives"
+}

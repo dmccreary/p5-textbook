@@ -122,6 +122,10 @@ As the director, you also have to manage the staging. When you draw multiple obj
 
 #### Diagram: Stage Lighting Setup
 
+
+<iframe src="../../sims/stage-lighting-setup/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run Stage Lighting Setup Fullscreen](../../sims/stage-lighting-setup/main.html)
+
 <details markdown="1">
 <summary>MicroSim: Stage Lighting Setup</summary><summary>MicroSim: Stage Lighting Setup</summary>
 
@@ -140,6 +144,10 @@ As the director, you also have to manage the staging. When you draw multiple obj
 </details>
 
 #### Diagram: Exploring Shaders
+
+
+<iframe src="../../sims/exploring-shaders/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run Exploring Shaders Fullscreen](../../sims/exploring-shaders/main.html)
 
 <details markdown="1">
 <summary>MicroSim: Exploring Shaders</summary><summary>MicroSim: Exploring Shaders</summary>

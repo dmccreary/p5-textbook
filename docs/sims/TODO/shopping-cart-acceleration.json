@@ -1,0 +1,15 @@
+{
+  "sim_id": "shopping-cart-acceleration",
+  "diagram_name": "Shopping Cart Acceleration",
+  "chapter_number": 11,
+  "chapter_title": "Vector Math Physics",
+  "chapter_dir": "11-vector-math-physics",
+  "chapter_rel_dir": "chapters/11-vector-math-physics",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>MicroSim: Shopping Cart Acceleration</summary>\nThis MicroSim should display a shopping cart from a top-down view. \nUsers can click and drag to apply a force vector to the cart.\nThe cart's velocity should be visualized with an arrow, updating dynamically as acceleration is added."
+}

@@ -1,0 +1,15 @@
+{
+  "sim_id": "beat-detector-system",
+  "diagram_name": "Beat Detector System",
+  "chapter_number": 22,
+  "chapter_title": "Mic Input Fft",
+  "chapter_dir": "22-mic-input-fft",
+  "chapter_rel_dir": "chapters/22-mic-input-fft",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>MicroSim: Beat Detector System</summary>\n- A live audio-reactive scene with a central pulsing circle.\n- The circle demonstrates **Audio Reactive Pulse Scale** and **Audio Reactive Color Shift**.\n- On beat, it creates a **Particle Burst on Beat**.\n- UI controls to manually adjust the **Beat Detection Threshold** and observe the **Beat Detection Energy Peak**."
+}

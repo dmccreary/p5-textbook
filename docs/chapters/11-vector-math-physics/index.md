@@ -216,6 +216,10 @@ To find out how far away another shopper is, you can use the Vector Distance Dis
 
 #### Diagram: Shopping Cart Acceleration
 
+
+<iframe src="../../sims/shopping-cart-acceleration/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run Shopping Cart Acceleration Fullscreen](../../sims/shopping-cart-acceleration/main.html)
+
 <details markdown="1">
 <summary>MicroSim: Shopping Cart Acceleration</summary><summary>MicroSim: Shopping Cart Acceleration</summary>
 This MicroSim should display a shopping cart from a top-down view. 
@@ -224,6 +228,10 @@ The cart's velocity should be visualized with an arrow, updating dynamically as 
 </details>
 
 #### Diagram: Vector Dot Product Visualizer
+
+
+<iframe src="../../sims/vector-dot-product-visualizer/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run Vector Dot Product Visualizer Fullscreen](../../sims/vector-dot-product-visualizer/main.html)
 
 <details markdown="1">
 <summary>MicroSim: Vector Dot Product Visualizer</summary><summary>MicroSim: Vector Dot Product Visualizer</summary>

@@ -64,6 +64,10 @@ Let's explore this with an interactive tool.
 
 #### Diagram: Interactive 3D Coordinate System
 
+
+<iframe src="../../sims/3d-coordinate-system/main.html" width="100%" height="517px" scrolling="no"></iframe>
+[Run Interactive 3D Coordinate System Fullscreen](../../sims/3d-coordinate-system/main.html)
+
 <details markdown="1">
 <summary>Interactive 3D Coordinate System</summary><summary>Interactive 3D Coordinate System</summary>
 Type: MicroSim
@@ -108,6 +112,10 @@ Now we have a whole collection of clay shapes. But a sculptor doesn't just stare
 By default, p5.js sets up a basic camera that looks straight down the Z-axis. But we can take control! The easiest way to look around is by using the **Orbit Control Camera**. By adding `orbitControl();` to your `draw()` loop, you instantly give the user the ability to click and drag the mouse to rotate the entire 3D scene, use the scroll wheel to zoom in and out, and pan around. It's like putting your sculpture on a turntable.
 
 #### Diagram: Shape Explorer Turntable
+
+
+<iframe src="../../sims/shape-explorer-turntable/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run Shape Explorer Turntable Fullscreen](../../sims/shape-explorer-turntable/main.html)
 
 <details markdown="1">
 <summary>Shape Explorer Turntable</summary><summary>Shape Explorer Turntable</summary>

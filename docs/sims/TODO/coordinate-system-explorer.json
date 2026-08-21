@@ -1,0 +1,15 @@
+{
+  "sim_id": "coordinate-system-explorer",
+  "diagram_name": "Coordinate System Explorer",
+  "chapter_number": 1,
+  "chapter_title": "1. Introduction to Creative Coding & Canvas Foundations",
+  "chapter_dir": "01-intro-creative-coding",
+  "chapter_rel_dir": "chapters/01-intro-creative-coding",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": "Understanding (Students will interactively explore how (x, y) coordinates map to the top-left origin canvas).",
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>Coordinate System Explorer</summary>\nType: MicroSim\n**sim-id:** coordinate-system-explorer<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\n**Learning Objective:** Understanding (Students will interactively explore how (x, y) coordinates map to the top-left origin canvas).\n\n**Visual Elements:**\n- A large grid representing the p5.js canvas.\n- The origin `(0, 0)` clearly marked in the top-left corner.\n- The x-axis running right (labeled with increasing numbers).\n- The y-axis running down (labeled with increasing numbers).\n- A draggable point (a distinct circle) on the grid.\n\n**Interactivity:**\n- When the user drags the point, its current `(x, y)` coordinates update in real-time in a large readout panel.\n- Hovering over quadrants highlights the area and explains the pixel distances from the origin in plain text.\n- The grid features horizontal and vertical sliders to resize the canvas dynamically, demonstrating how `width` and `height` boundary limits shift.\n\nImplementation: p5.js canvas with `mouseDragged` events to update the coordinate display and `text()` calls to render the math."
+}

@@ -1,0 +1,21 @@
+{
+  "title": "Pivot Point Selection",
+  "description": "Explore matrix transformation order (translate then rotate vs rotate then translate) and custom rotation pivot points.",
+  "creator": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "Pivot Point Selection",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "sim_id": "pivot-point-selection",
+  "canvasHeight": 485,
+  "bloom_level": "Understand",
+  "learning_objective": "Students will understand how translation before rotation establishes the pivot point around which geometric objects spin.",
+  "chapter_dir": "06-matrix-transformations"
+}

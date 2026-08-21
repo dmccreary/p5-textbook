@@ -84,6 +84,10 @@ Finally, what happens when particles hit something? The **Elastic Collision Boun
 
 #### Diagram: Water Hose Particle Emitter
 
+
+<iframe src="../../sims/water-hose-particle-emitter/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run Water Hose Particle Emitter Fullscreen](../../sims/water-hose-particle-emitter/main.html)
+
 <details markdown="1">
 <summary>MicroSim: Water Hose Particle Emitter</summary><summary>MicroSim: Water Hose Particle Emitter</summary>
 Build a p5.js sketch with a draggable emitter that represents a water hose. Particles should have lifespan, gravity, and random initial velocities. Add a "wall" object in the center of the screen that the particles bounce off of using elastic collisions. Include sliders to adjust the gravity strength, the water pressure (initial velocity magnitude), and the bounciness of the wall!
@@ -144,6 +148,10 @@ Have you ever watched a flock of birds flying in the sky, or a school of fish sw
 Another fantastic behavior to add is the **Spring Force Hooke Law**. A spring force pulls an object toward an anchor point, but the further away the object gets, the stronger the pull becomes. This is described by Hooke's Law (\(F = -k \times x\)). We can use springs to connect particles together. If you connect a bunch of particles in a grid using spring forces, you can simulate a piece of cloth flapping in the wind, or a jelly-like blob bouncing around the screen!
 
 #### Diagram: Interactive Flocking Fireworks
+
+
+<iframe src="../../sims/interactive-flocking-fireworks/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run Interactive Flocking Fireworks Fullscreen](../../sims/interactive-flocking-fireworks/main.html)
 
 <details markdown="1">
 <summary>MicroSim: Interactive Flocking Fireworks</summary><summary>MicroSim: Interactive Flocking Fireworks</summary>

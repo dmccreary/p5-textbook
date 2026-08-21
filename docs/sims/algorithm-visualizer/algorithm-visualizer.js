@@ -250,6 +250,9 @@ while (i < ${maxLen}) {
 function windowResized() {
   updateCanvasSize();
   resizeCanvas(canvasWidth, canvasHeight);
+  if (typeof positionControls === 'function') {
+    positionControls();
+  }
 }
 
 function updateCanvasSize() {

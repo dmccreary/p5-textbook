@@ -1,0 +1,21 @@
+{
+  "title": "The Generative Art Mixing Desk",
+  "description": "Mixing console controlling generative visual parameters: symmetry, density, noise turbulence, color palette, and line weight.",
+  "creator": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "The Generative Art Mixing Desk",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "sim_id": "the-generative-art-mixing-desk",
+  "canvasHeight": 515,
+  "bloom_level": "Apply",
+  "learning_objective": "Students will understand parameter mapping, generative design variation, and complex multi-parameter algorithmic control.",
+  "chapter_dir": "15-dom-controls-ui"
+}

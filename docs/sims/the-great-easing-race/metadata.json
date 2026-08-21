@@ -1,0 +1,21 @@
+{
+  "title": "The Great Easing Race",
+  "description": "Race 4 easing functions side-by-side: Linear, EaseInQuad, EaseOutBounce, and EaseInOutCubic across synchronized tracks.",
+  "creator": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "The Great Easing Race",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "sim_id": "the-great-easing-race",
+  "canvasHeight": 485,
+  "bloom_level": "Understand",
+  "learning_objective": "Students will understand mathematical interpolation curves (lerp, power curves, bounce) and non-linear animation timing.",
+  "chapter_dir": "08-polar-coordinates-easing"
+}

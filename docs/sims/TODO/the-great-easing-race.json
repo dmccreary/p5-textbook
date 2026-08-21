@@ -1,0 +1,15 @@
+{
+  "sim_id": "the-great-easing-race",
+  "diagram_name": "The Great Easing Race",
+  "chapter_number": 8,
+  "chapter_title": "Polar Coordinates Easing",
+  "chapter_dir": "08-polar-coordinates-easing",
+  "chapter_rel_dir": "chapters/08-polar-coordinates-easing",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>MicroSim: The Great Easing Race</summary>\n\n**Type:** p5.js  \n**Title:** Easing Function Comparison Tool  \n**Description:** A side-by-side interactive visualizer where four circles race horizontally across the screen from left to right. Each circle's movement is governed by a completely different mathematical easing style: Linear (constant speed), Ease-In, Ease-Out, and Ease-In-Out.  \n**Features:**  \n- A large \"Start Race / Reset Race\" toggle button to trigger the exact same duration of animation simultaneously for all circles.\n- A live visual graph dynamically plotting the mathematical curve of Position over Time for each runner as they progress.\n- Dropdown menus allowing the user to swap out the specific underlying mathematical formula (Quadratic, Cubic, Exponential, Sine) to see how dramatically it changes the \"flavor\" of the easing curve."
+}

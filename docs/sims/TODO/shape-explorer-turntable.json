@@ -1,0 +1,15 @@
+{
+  "sim_id": "shape-explorer-turntable",
+  "diagram_name": "Shape Explorer Turntable",
+  "chapter_number": 19,
+  "chapter_title": "3D Webgl Primitives",
+  "chapter_dir": "19-3d-webgl-primitives",
+  "chapter_rel_dir": "chapters/19-3d-webgl-primitives",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": "Students will use orbit control to view various 3D primitives from all angles.",
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>Shape Explorer Turntable</summary>\nType: MicroSim\n**sim-id:** shape-explorer-turntable\n**Library:** p5.js\n**Status:** Specified\n\n**Learning Objective:**\nStudents will use orbit control to view various 3D primitives from all angles.\n\n**Visual Elements:**\n- A dropdown menu to select between Box, Sphere, Cylinder, Cone, Torus, Plane, and Ellipsoid.\n- The selected shape rendered in the center of the screen with a colorful material.\n\n**Interactivity:**\n- `orbitControl()` is active, allowing the user to drag to rotate, and scroll to zoom."
+}

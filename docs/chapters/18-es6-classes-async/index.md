@@ -113,6 +113,10 @@ const sum = values.reduce((acc, val) => acc + val, 0);
 
 #### Diagram: Array Methods Visualizer
 
+
+<iframe src="../../sims/array-methods-visualizer/main.html" width="100%" height="517px" scrolling="no"></iframe>
+[Run Array Methods Visualizer Fullscreen](../../sims/array-methods-visualizer/main.html)
+
 <details markdown="1">
 <summary>MicroSim: Array Methods Visualizer</summary><summary>MicroSim: Array Methods Visualizer</summary>
 An interactive MicroSim that allows students to input an array of numbers and apply `map`, `filter`, or `reduce` visually.
@@ -197,6 +201,10 @@ const uniqueColors = new Set(['red', 'green', 'red', 'blue']);
 ```
 
 #### Diagram: Async Data Fetcher
+
+
+<iframe src="../../sims/async-data-fetcher/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run Async Data Fetcher Fullscreen](../../sims/async-data-fetcher/main.html)
 
 <details markdown="1">
 <summary>MicroSim: Async Data Fetcher</summary><summary>MicroSim: Async Data Fetcher</summary>

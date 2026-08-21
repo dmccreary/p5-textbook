@@ -1,0 +1,15 @@
+{
+  "sim_id": "nested-grid-explorer",
+  "diagram_name": "Nested Grid Explorer",
+  "chapter_number": 5,
+  "chapter_title": "Control Flow And Loops",
+  "chapter_dir": "05-control-flow-and-loops",
+  "chapter_rel_dir": "chapters/05-control-flow-and-loops",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary><b>MicroSim: Nested Grid Explorer</b></summary>\n<b>Type:</b> p5.js Interactive Concept Explorer\n\n<b>Description:</b> A visual simulation demonstrating how **Nested For Loops** execute over a **2D Grid Iteration**. The canvas shows a 5x5 grid of cells. \n<b>Interactivity:</b>\n- A \"Step Forward\" button allows the user to manually advance the loop execution.\n- As the loop steps, the code snippet on the side highlights which line is currently executing (the outer `y` loop or the inner `x` loop).\n- The corresponding cell in the 5x5 grid lights up, showing exactly how the inner loop completes a full row before the outer loop moves down to the next row.\n- A slider controls the speed of an \"Auto-Play\" mode."
+}

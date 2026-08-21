@@ -1,0 +1,15 @@
+{
+  "sim_id": "the-solar-system-hierarchy",
+  "diagram_name": "The Solar System Hierarchy",
+  "chapter_number": 6,
+  "chapter_title": "Matrix Transformations",
+  "chapter_dir": "06-matrix-transformations",
+  "chapter_rel_dir": "chapters/06-matrix-transformations",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>MicroSim: The Solar System Hierarchy</summary>\nWatch how the nested transformations create complex orbital paths. The moon revolves around the Earth, while the Earth revolves around the sun. This is achieved entirely through pushing, popping, translating, and rotating in a hierarchical structure.\n```html\n<div class=\"microsim-container\" style=\"height: 400px; border: 1px solid #ccc; background: #f9f9f9;\">\n  <!-- Simulation code placeholder -->\n  <p style=\"text-align:center; padding-top: 180px;\">[Hierarchical Solar System Simulator Loading...]</p>\n</div>\n```"
+}

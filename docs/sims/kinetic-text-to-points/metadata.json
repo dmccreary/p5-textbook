@@ -1,0 +1,21 @@
+{
+  "title": "Kinetic Text to Points",
+  "description": "Interactive generative typography converting letter glyph points into spring-physics particles that scatter on hover and reform.",
+  "creator": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "Kinetic Text to Points",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "sim_id": "kinetic-text-to-points",
+  "canvasHeight": 485,
+  "bloom_level": "Apply",
+  "learning_objective": "Students will learn font glyph vectorization and spring force simulation to create dynamic responsive typography.",
+  "chapter_dir": "24-generative-typography"
+}

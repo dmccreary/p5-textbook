@@ -1,0 +1,21 @@
+{
+  "title": "Beat Detector System",
+  "description": "Simulate real-time audio FFT beat detection with dynamic thresholding, energy accumulation, and visual beat triggers.",
+  "creator": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "Beat Detector System",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "sim_id": "beat-detector-system",
+  "canvasHeight": 485,
+  "bloom_level": "Apply",
+  "learning_objective": "Students will learn algorithmic beat detection by tracking instantaneous frequency band energy against dynamic decaying thresholds.",
+  "chapter_dir": "22-mic-input-fft"
+}

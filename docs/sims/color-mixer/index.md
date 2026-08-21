@@ -1,12 +1,12 @@
 ---
-title: Color Mixer
-description: Interactive p5.js MicroSim for color mixer.
+title: "Color Mixer"
+description: "Interactive p5.js MicroSim for color mixer."
 image: /sims/color-mixer/color-mixer.png
 og:image: /sims/color-mixer/color-mixer.png
 twitter:image: /sims/color-mixer/color-mixer.png
 social:
    cards: false
-quality_score: 100
+quality_score: 95
 ---
 
 # Color Mixer

@@ -1,0 +1,21 @@
+{
+  "title": "Exploring Shaders",
+  "description": "Interactive GLSL pixel fragment shader laboratory simulating wave ripples, color gradients, and time-based uniform variables.",
+  "creator": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "Exploring Shaders",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "sim_id": "exploring-shaders",
+  "canvasHeight": 485,
+  "bloom_level": "Understand",
+  "learning_objective": "Students will understand how fragment shaders execute in parallel per-pixel on the GPU using UV coordinates and uniform inputs.",
+  "chapter_dir": "20-3d-cameras-shaders"
+}

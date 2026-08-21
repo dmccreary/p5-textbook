@@ -1,0 +1,21 @@
+{
+  "title": "The Callback Kitchen",
+  "description": "Interactive kitchen simulation explaining asynchronous callback functions, event listeners, and non-blocking execution.",
+  "creator": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "The Callback Kitchen",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "sim_id": "the-callback-kitchen",
+  "canvasHeight": 485,
+  "bloom_level": "Understand",
+  "learning_objective": "Students will understand how JavaScript callback functions execute asynchronously once long-running tasks complete.",
+  "chapter_dir": "17-functions-and-callbacks"
+}

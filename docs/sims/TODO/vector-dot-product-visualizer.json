@@ -1,0 +1,15 @@
+{
+  "sim_id": "vector-dot-product-visualizer",
+  "diagram_name": "Vector Dot Product Visualizer",
+  "chapter_number": 11,
+  "chapter_title": "Vector Math Physics",
+  "chapter_dir": "11-vector-math-physics",
+  "chapter_rel_dir": "chapters/11-vector-math-physics",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>MicroSim: Vector Dot Product Visualizer</summary>\nA visualizer showing two vectors, A and B. As the user rotates A, a bar graph shows the dot product. It peaks when they align and hits zero when perpendicular."
+}

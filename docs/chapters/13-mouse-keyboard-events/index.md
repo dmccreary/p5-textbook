@@ -86,6 +86,10 @@ By calculating the difference between `mouseX` and `pmouseX` (or `mouseY` and `p
 
 #### Diagram: Mouse Speed Tracker
 
+
+<iframe src="../../sims/mouse-speed-tracker/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run Mouse Speed Tracker Fullscreen](../../sims/mouse-speed-tracker/main.html)
+
 <details markdown="1">
 <summary>MicroSim: Mouse Speed Tracker</summary><summary>MicroSim: Mouse Speed Tracker</summary>
 **Objective**: Visualize the speed of the mouse by drawing a line from the previous position to the current position. The thickness of the line should be proportional to the speed.
@@ -128,6 +132,10 @@ Sometimes, the action isn't just a simple click; it's a combination of movement 
 - **Mouse Wheel Event**: The `mouseWheel()` function is called when the scroll wheel is rotated. The event object passed to this function tells you the direction and amount of the scroll. It's perfect for zooming in and out or scrolling through menus!
 
 #### Diagram: Interactive Map Panning and Zooming
+
+
+<iframe src="../../sims/interactive-map-panning-and-zooming/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run Interactive Map Panning and Zooming Fullscreen](../../sims/interactive-map-panning-and-zooming/main.html)
 
 <details markdown="1">
 <summary>MicroSim: Interactive Map Panning and Zooming</summary><summary>MicroSim: Interactive Map Panning and Zooming</summary>

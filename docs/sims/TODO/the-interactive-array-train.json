@@ -1,0 +1,15 @@
+{
+  "sim_id": "the-interactive-array-train",
+  "diagram_name": "The Interactive Array Train",
+  "chapter_number": 5,
+  "chapter_title": "Control Flow And Loops",
+  "chapter_dir": "05-control-flow-and-loops",
+  "chapter_rel_dir": "chapters/05-control-flow-and-loops",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary><b>MicroSim: The Interactive Array Train</b></summary>\n<b>Type:</b> p5.js Interactive Concept Explorer\n\n<b>Description:</b> A drag-and-drop interactive visualization of an **Array Data Structure** represented as train cars on a track.\n<b>Interactivity:</b>\n- UI buttons allow the user to execute the **Array Push Method** (spawns a new train car dropping onto the end of the track) and the **Array Pop Method** (the last train car detaches and rolls off screen).\n- A numerical input field combined with a \"Splice\" button demonstrates **Array Splice Removal** by showing a specific train car dissolving into dust while the cars behind it slide forward to close the gap.\n- The **Array Length Property** is prominently displayed on a billboard above the tracks that updates in real-time as cars are added or removed.\n- Each train car clearly displays its **Array Element Indexing** number on its side, reinforcing that the first car is always index 0."
+}

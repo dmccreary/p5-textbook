@@ -171,6 +171,10 @@ This local isolation is fantastic because it means you can reuse variable names 
 
 #### Diagram: Scope Visualizer
 
+<iframe src="../../sims/scope-visualizer/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run Scope Visualizer Fullscreen](../../sims/scope-visualizer/main.html)
+
+
 <details class="microsim">
 <summary>MicroSim: Scope Visualizer</summary><summary>MicroSim: Scope Visualizer</summary>
 <b>Type:</b> Interactive p5.js Sketch
@@ -394,6 +398,10 @@ Here is how a `switch` works:
 5. The `default` case at the bottom acts exactly like an `else` statement. It catches anything that didn't match the specific cases above.
 
 #### Diagram: The Logic Gate Switchboard
+
+<iframe src="../../sims/the-logic-gate-switchboard/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run The Logic Gate Switchboard Fullscreen](../../sims/the-logic-gate-switchboard/main.html)
+
 
 <details class="microsim">
 <summary>MicroSim: The Logic Gate Switchboard</summary><summary>MicroSim: The Logic Gate Switchboard</summary>

@@ -1,12 +1,12 @@
 ---
-title: Pedagogical Pattern Matcher
-description: Interactive p5.js MicroSim for pedagogical pattern matcher.
+title: "Pedagogical Pattern Matcher"
+description: "Interactive p5.js MicroSim for pedagogical pattern matcher."
 image: /sims/pedagogical-pattern-matcher/pedagogical-pattern-matcher.png
 og:image: /sims/pedagogical-pattern-matcher/pedagogical-pattern-matcher.png
 twitter:image: /sims/pedagogical-pattern-matcher/pedagogical-pattern-matcher.png
 social:
    cards: false
-quality_score: 95
+quality_score: 90
 ---
 
 # Pedagogical Pattern Matcher

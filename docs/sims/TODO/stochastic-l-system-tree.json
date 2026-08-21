@@ -1,0 +1,15 @@
+{
+  "sim_id": "stochastic-l-system-tree",
+  "diagram_name": "Stochastic L-System Tree",
+  "chapter_number": 10,
+  "chapter_title": "Perlin Noise Fields",
+  "chapter_dir": "10-perlin-noise-fields",
+  "chapter_rel_dir": "chapters/10-perlin-noise-fields",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>MicroSim: Stochastic L-System Tree</summary>\n\n**Goal:** Understand how small amounts of controlled randomness applied to recursive branching logic create highly lifelike, organic structures.\n**Type:** p5.js Interactive Generation\n\n**Features:**\n1. **Base Recursion:** A function that draws a line, translates the drawing context to the end of the line, rotates by a specific angle, scales down, and calls itself twice to draw the left and right branches.\n2. **Angle Variance Slider:** Controls the maximum random deviation applied to the split angle. At 0, the tree is a rigid, perfectly symmetrical fractal. As the value increases, branches twist and bend irregularly.\n3. **Length Variance Slider:** Controls the randomness applied to branch lengths, making some sides of the tree reach further than others, simulating an uneven search for sunlight.\n4. **Generate Seed Button:** Resets the random seed, instantly growing a brand new, unique tree using the current stochastic parameters.\n\n**Interaction:** By playing with the variance sliders, the user actively witnesses the transition from cold mathematical geometry into warm, **Stochastic Tree Growth**."
+}

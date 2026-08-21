@@ -1,0 +1,15 @@
+{
+  "sim_id": "responsive-dashboard-builder",
+  "diagram_name": "Responsive Dashboard Builder",
+  "chapter_number": 16,
+  "chapter_title": "Css Styling Layouts",
+  "chapter_dir": "16-css-styling-layouts",
+  "chapter_rel_dir": "chapters/16-css-styling-layouts",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>MicroSim: Responsive Dashboard Builder</summary>\n\n**Goal:** Allow students to build a mini-dashboard using DOM elements.\n**Features:**\n- A central canvas area surrounded by a CSS Grid.\n- A \"File Input Button\" that allows the student to upload a local image, which is instantly drawn to the canvas using a \"DOM Drag File Event\".\n- Buttons to `hide()` or `show()` a side panel containing an \"Embedded iFrame Canvas\"."
+}

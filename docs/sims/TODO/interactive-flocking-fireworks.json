@@ -1,0 +1,15 @@
+{
+  "sim_id": "interactive-flocking-fireworks",
+  "diagram_name": "Interactive Flocking Fireworks",
+  "chapter_number": 12,
+  "chapter_title": "Particle Systems",
+  "chapter_dir": "12-particle-systems",
+  "chapter_rel_dir": "chapters/12-particle-systems",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>MicroSim: Interactive Flocking Fireworks</summary>\nCreate a particle system where clicking the mouse triggers a firework explosion. The particles shoot out with a blast force. However, once their initial velocity slows down due to drag, they should activate flocking behaviors (separation, alignment, cohesion). The sparks will burst outward and then smoothly coalesce into a flock of glowing boids that fly around the canvas!"
+}

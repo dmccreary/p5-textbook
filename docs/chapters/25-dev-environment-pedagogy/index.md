@@ -109,6 +109,10 @@ When things go wrong, the **Browser Developer Console** is your best friend for 
 
 #### Diagram: CORS Blockage Visualization
 
+
+<iframe src="../../sims/cors-blockage-visualization/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run CORS Blockage Visualization Fullscreen](../../sims/cors-blockage-visualization/main.html)
+
 <details markdown="1">
 <summary>MicroSim: CORS Blockage Visualization</summary><summary>MicroSim: CORS Blockage Visualization</summary>
 - **Title**: Browser Security vs Local Audio
@@ -264,11 +268,15 @@ Be prepared for standard pitfalls:
 - **Common Misconception Scope**: Declaring variables locally instead of globally.
 - **Common Misconception Audio**: Autoplaying sound before a user gesture.
 
-#### Diagram: Scope Visualizer
+#### Diagram: Scope Misconception Visualizer
+
+
+<iframe src="../../sims/scope-misconception-visualizer/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run Scope Misconception Visualizer Fullscreen](../../sims/scope-misconception-visualizer/main.html)
 
 <details markdown="1">
-<summary>MicroSim: Scope Visualizer</summary><summary>MicroSim: Scope Visualizer</summary>
-- **Title**: Variable Scope Interactive Tool
+<summary>MicroSim: Scope Misconception Visualizer</summary>
+- **Title**: Variable Scope Misconception Tool
 - **Description**: A split-screen UI. On the left, code blocks for `setup()` and `draw()`. On the right, glowing boxes representing computer memory. When the user drags a variable declaration into `setup()`, it gets locked in a localized box. When dragged outside to the top of the file, it becomes available to all functions.
 </details>
 

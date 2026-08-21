@@ -1,0 +1,15 @@
+{
+  "sim_id": "the-logic-gate-switchboard",
+  "diagram_name": "The Logic Gate Switchboard",
+  "chapter_number": 4,
+  "chapter_title": "Variables And Scope",
+  "chapter_dir": "04-variables-and-scope",
+  "chapter_rel_dir": "chapters/04-variables-and-scope",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>MicroSim: The Logic Gate Switchboard</summary>\n<b>Type:</b> Interactive p5.js Puzzle\n<b>Goal:</b> Wire up a switchboard using AND, OR, and NOT logic gates to route power to a neon sign.\n<b>Features:</b>\n- A drag-and-drop interface with logic gate blocks (&&, ||, !).\n- Draggable wires that connect different inputs (like toggle buttons or light sensors) to output targets.\n- Students must use Logical AND and Logical OR nodes to route the signals correctly based on the puzzle requirements (e.g., \"The sign should only glow if Button 1 is ON AND Button 2 is OFF\").\n- Real-time evaluation: When the boolean conditions are met, the virtual neon sign glows!"
+}

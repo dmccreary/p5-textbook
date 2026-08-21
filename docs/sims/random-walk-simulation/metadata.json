@@ -1,0 +1,21 @@
+{
+  "title": "Random Walk Simulation",
+  "description": "Compare Brownian uniform random walks, Gaussian distribution walks, and L\u00e9vy Flight jumps with live spatial distribution trails.",
+  "creator": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "Random Walk Simulation",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "sim_id": "random-walk-simulation",
+  "canvasHeight": 485,
+  "bloom_level": "Analyze",
+  "learning_objective": "Students will analyze different probability distributions and their impact on generative movement and spatial coverage.",
+  "chapter_dir": "09-randomness-and-walks"
+}

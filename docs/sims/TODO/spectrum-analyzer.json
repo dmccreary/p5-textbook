@@ -1,0 +1,15 @@
+{
+  "sim_id": "spectrum-analyzer",
+  "diagram_name": "Spectrum Analyzer",
+  "chapter_number": 22,
+  "chapter_title": "Mic Input Fft",
+  "chapter_dir": "22-mic-input-fft",
+  "chapter_rel_dir": "chapters/22-mic-input-fft",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>MicroSim: Spectrum Analyzer</summary>\n- Uses `p5.FFT` to display a live **Spectrum Frequency Chart**.\n- Shows 5 large bars representing Bass, LowMid, Mid, HighMid, and Treble.\n- Includes a toggle to switch to a detailed view of the full **FFT Frequency Bins Array**.\n- Sliders to adjust the **Smooth Amplitude Level**."
+}

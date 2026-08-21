@@ -50,7 +50,7 @@ function setup() {
   maxFreqSlider.position(sliderLeftMargin, drawHeight + 7);
   maxFreqSlider.size(containerWidth - 150);
   
-  describe('FFT Microphone Visualizer showing real-time frequency analysis of microphone input with start/stop control.', LABEL);
+  describe('FFT Microphone Visualizer showing real-time frequency analysis of microphone input with start/stop control.', FALLBACK);
 }
 
 function draw() {

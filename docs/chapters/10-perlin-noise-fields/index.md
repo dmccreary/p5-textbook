@@ -170,6 +170,10 @@ This results in **Organic Curve Generation**. The particles group together, flow
 
 #### Diagram: Flow Field Visualizer
 
+<iframe src="../../sims/flow-field-visualizer/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run Flow Field Visualizer Fullscreen](../../sims/flow-field-visualizer/main.html)
+
+
 <details>
 <summary>MicroSim: Flow Field Visualizer</summary><summary>MicroSim: Flow Field Visualizer</summary>
 
@@ -264,6 +268,10 @@ To make it live, we implement **Stochastic Tree Growth**. We take our rigid recu
 By allowing randomness to influence the *parameters* of a structured system, the resulting forms are endlessly unique. They look wind-blown, sun-seeking, and organic.
 
 #### Diagram: Stochastic L-System Tree
+
+<iframe src="../../sims/stochastic-l-system-tree/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run Stochastic L-System Tree Fullscreen](../../sims/stochastic-l-system-tree/main.html)
+
 
 <details>
 <summary>MicroSim: Stochastic L-System Tree</summary><summary>MicroSim: Stochastic L-System Tree</summary>

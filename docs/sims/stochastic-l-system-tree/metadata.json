@@ -1,0 +1,21 @@
+{
+  "title": "Stochastic L-System Tree",
+  "description": "Generate recursive branching botanical trees with stochastic random angles, depth recursion, and wind oscillation.",
+  "creator": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "Stochastic L-System Tree",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "sim_id": "stochastic-l-system-tree",
+  "canvasHeight": 485,
+  "bloom_level": "Apply",
+  "learning_objective": "Students will understand recursive tree generation, transformation matrix push/pop stacks, and stochastic variation.",
+  "chapter_dir": "10-perlin-noise-fields"
+}

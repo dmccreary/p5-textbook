@@ -1,0 +1,15 @@
+{
+  "sim_id": "the-callback-kitchen",
+  "diagram_name": "The Callback Kitchen",
+  "chapter_number": 17,
+  "chapter_title": "Functions And Callbacks",
+  "chapter_dir": "17-functions-and-callbacks",
+  "chapter_rel_dir": "chapters/17-functions-and-callbacks",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>MicroSim: The Callback Kitchen</summary>\n\n**Goal:** Demonstrate callback functions visually and interactively.\n**Interactive Elements:**\n- A large, styled \"Chop Onions\" button.\n- A \"Boil Water\" button.\n- Animated progress bars for each task that take 2-3 seconds to fill up.\n- When the progress bar hits 100%, a callback function automatically fires that updates a prominent text log on the screen (e.g., \"Onions perfectly chopped! Adding to pan immediately...\").\n**Implementation Notes:** Use p5.js frame counts or standard JavaScript `setTimeout`/`setInterval` to simulate the delay before the callback function is executed. Ensure the UI clearly shows the \"waiting\" state versus the \"callback executed\" state."
+}

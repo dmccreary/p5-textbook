@@ -127,6 +127,10 @@ In p5.js, the origin `(0, 0)` is located at the **top-left corner** of the canva
 
 #### Diagram: Coordinate System Explorer
 
+
+<iframe src="../../sims/coordinate-system-explorer/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run Coordinate System Explorer Fullscreen](../../sims/coordinate-system-explorer/main.html)
+
 <details markdown="1">
 <summary>Coordinate System Explorer</summary><summary>Coordinate System Explorer</summary>
 Type: MicroSim
@@ -222,6 +226,10 @@ Imagine you write code that moves a racecar forward by 5 pixels every frame. On 
 To solve this, professional developers use **Delta Time Tracking**. The system variable `deltaTime` records the precise number of milliseconds that have elapsed since the *previous* frame was rendered. By multiplying your car's speed by `deltaTime`, the movement becomes time-dependent, rather than frame-dependent. If the frame rate drops, `deltaTime` goes up, and the car takes a larger mathematical "step" to compensate, ensuring it crosses the screen in the exact same amount of physical time regardless of device horsepower.
 
 #### Diagram: Render Cycle and Frame Rate Monitor
+
+
+<iframe src="../../sims/frame-rate-monitor/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run Render Cycle and Frame Rate Monitor Fullscreen](../../sims/frame-rate-monitor/main.html)
 
 <details markdown="1">
 <summary>Render Cycle and Frame Rate Monitor</summary><summary>Render Cycle and Frame Rate Monitor</summary>

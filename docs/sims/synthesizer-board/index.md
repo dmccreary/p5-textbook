@@ -1,19 +1,19 @@
 ---
-title: Synthesizer Board
-description: Interactive p5.js MicroSim for synthesizer board.
+title: "Synthesizer Board"
+description: "Interactive p5.js MicroSim for synthesizer board."
 image: /sims/synthesizer-board/synthesizer-board.png
 og:image: /sims/synthesizer-board/synthesizer-board.png
 twitter:image: /sims/synthesizer-board/synthesizer-board.png
 social:
    cards: false
-quality_score: 95
+quality_score: 90
 ---
 
 # Synthesizer Board
 
 <div align="center"><i>Learn sound generation, oscillators, and ADSR envelopes interactively.</i></div>
 
-<iframe src="main.html" height="542px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="502px" width="100%" scrolling="no"></iframe>
 
 [Run the Synthesizer Board MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
 <br/>

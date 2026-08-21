@@ -183,6 +183,10 @@ Every frame, the walker picks one of four directions and moves a single pixel. O
 
 #### Diagram: Random Walk Simulation
 
+<iframe src="../../sims/random-walk-simulation/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run Random Walk Simulation Fullscreen](../../sims/random-walk-simulation/main.html)
+
+
 <details>
 <summary>MicroSim: Random Walk Simulation</summary><summary>MicroSim: Random Walk Simulation</summary>
 
@@ -309,6 +313,10 @@ We can control how many layers are used with **Noise Detail Octaves**. By defaul
 When layering these octaves, the smaller detail layers don't have as much influence as the big main layers. The rate at which the smaller layers lose influence is called the **Noise Falloff Ratio**. By default, each smaller octave has half the amplitude (50% falloff) of the one before it. You can adjust this by passing a second argument to `noiseDetail(octaves, falloff)`. A higher falloff means the tiny details are stronger, making the result look sharper and rougher.
 
 #### Diagram: Perlin Noise Terrain Generation
+
+<iframe src="../../sims/perlin-noise-terrain-generation/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run Perlin Noise Terrain Generation Fullscreen](../../sims/perlin-noise-terrain-generation/main.html)
+
 
 <details>
 <summary>MicroSim: Perlin Noise Terrain Generation</summary><summary>MicroSim: Perlin Noise Terrain Generation</summary>

@@ -1,0 +1,21 @@
+{
+  "title": "Interactive Flocking Fireworks",
+  "description": "Combine Reynolds Boids flocking rules (Separation, Alignment, Cohesion) with interactive click-triggered firework particle bursts.",
+  "creator": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "Interactive Flocking Fireworks",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "sim_id": "interactive-flocking-fireworks",
+  "canvasHeight": 485,
+  "bloom_level": "Apply",
+  "learning_objective": "Students will explore emergent swarm behavior combined with physical particle explosion dynamics and gravity decay.",
+  "chapter_dir": "12-particle-systems"
+}

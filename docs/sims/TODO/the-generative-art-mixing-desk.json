@@ -1,0 +1,15 @@
+{
+  "sim_id": "the-generative-art-mixing-desk",
+  "diagram_name": "The Generative Art Mixing Desk",
+  "chapter_number": 15,
+  "chapter_title": "Dom Controls Ui",
+  "chapter_dir": "15-dom-controls-ui",
+  "chapter_rel_dir": "chapters/15-dom-controls-ui",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>MicroSim Specification: The Generative Art Mixing Desk</summary>\n\n**Title**: The Generative Art Mixing Desk\n**Goal**: Allow students to interact with multiple DOM controls simultaneously to see how they govern a complex visual system.\n\n**Interface Layout**:\n- A large canvas (600x400) on the right.\n- A \"Mixing Desk\" panel on the left built using HTML elements.\n- The panel contains:\n  - A slider for `Shape Complexity` (number of vertices).\n  - A color picker for `Primary Color`.\n  - A dropdown select for `Motion Style` (Rotate, Pulse, Wobble).\n  - A checkbox for `Wireframe Mode`.\n  - A button to `Regenerate Seed`.\n\n**Behavior**:\n- The canvas draws a complex geometric mandala.\n- Changing the slider immediately increases or decreases the geometry's vertices.\n- The color picker changes the base stroke or fill color.\n- The dropdown changes the mathematical function driving the animation loop.\n- The checkbox toggles between `fill()` and `noFill()` with `stroke()`.\n- The button resets the `randomSeed()` to generate a completely new structural pattern.\n\n**Learning Outcome**: Students see how multiple discrete and continuous controls can harmoniously feed into a single `draw()` loop to create a rich, explorable possibility space."
+}

@@ -1,12 +1,12 @@
 ---
-title: 3D Scene Editor
-description: Interactive p5.js MicroSim for 3d scene editor.
+title: "3D Scene Editor"
+description: "Interactive p5.js MicroSim for 3d scene editor."
 image: /sims/3d-scene-editor/3d-scene-editor.png
 og:image: /sims/3d-scene-editor/3d-scene-editor.png
 twitter:image: /sims/3d-scene-editor/3d-scene-editor.png
 social:
    cards: false
-quality_score: 95
+quality_score: 90
 ---
 
 # 3D Scene Editor

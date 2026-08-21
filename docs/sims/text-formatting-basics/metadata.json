@@ -1,0 +1,21 @@
+{
+  "title": "Text Formatting Basics",
+  "description": "Interactive typography styling: explore textSize, textLeading line spacing, textAlign horizontal/vertical anchors, and text bounds.",
+  "creator": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "Text Formatting Basics",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "sim_id": "text-formatting-basics",
+  "canvasHeight": 485,
+  "bloom_level": "Understand",
+  "learning_objective": "Students will master p5.js text styling functions, bounding box layout wrapping, and font metric properties.",
+  "chapter_dir": "24-generative-typography"
+}

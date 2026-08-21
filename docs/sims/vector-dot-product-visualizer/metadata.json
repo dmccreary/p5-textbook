@@ -1,0 +1,21 @@
+{
+  "title": "Vector Dot Product Visualizer",
+  "description": "Rotate vector A relative to vector B to compute the dot product A \u00b7 B = |A||B|cos(\u03b8) with scalar projection and geometric angle readouts.",
+  "creator": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "Vector Dot Product Visualizer",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "sim_id": "vector-dot-product-visualizer",
+  "canvasHeight": 485,
+  "bloom_level": "Understand",
+  "learning_objective": "Students will master vector projection, dot product magnitude, and orthogonal perpendicularity conditions.",
+  "chapter_dir": "11-vector-math-physics"
+}

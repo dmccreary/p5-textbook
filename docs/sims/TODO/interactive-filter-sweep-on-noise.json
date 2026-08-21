@@ -1,0 +1,15 @@
+{
+  "sim_id": "interactive-filter-sweep-on-noise",
+  "diagram_name": "Interactive Filter Sweep on Noise",
+  "chapter_number": 21,
+  "chapter_title": "Audio Synthesis Sound",
+  "chapter_dir": "21-audio-synthesis-sound",
+  "chapter_rel_dir": "chapters/21-audio-synthesis-sound",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>MicroSim: Interactive Filter Sweep on Noise</summary>\n\n**Goal:** Demonstrate how a Lowpass filter shapes the frequency content of White Noise.\n\n**Features:**\n- A continuous stream of White Noise plays in the background.\n- An interactive X/Y grid on the canvas.\n- Mouse X controls the filter's cutoff frequency (from 10Hz to 10,000Hz). Moving right lets more high frequencies through.\n- Mouse Y controls the filter's resonance (how much the frequencies at the cutoff point are boosted).\n- A graphical representation of the frequency spectrum updates in real-time, showing the higher frequencies being chopped off as the mouse moves left."
+}

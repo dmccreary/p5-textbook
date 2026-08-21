@@ -1,0 +1,21 @@
+{
+  "title": "Interactive Filter Sweep on Noise",
+  "description": "Interactive audio filter frequency sweeper: Low-Pass, High-Pass, and Band-Pass frequency response on noise signals.",
+  "creator": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "Interactive Filter Sweep on Noise",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "sim_id": "interactive-filter-sweep-on-noise",
+  "canvasHeight": 485,
+  "bloom_level": "Apply",
+  "learning_objective": "Students will understand frequency filtering concepts (cutoff frequency, resonance Q peak, and roll-off slope).",
+  "chapter_dir": "21-audio-synthesis-sound"
+}

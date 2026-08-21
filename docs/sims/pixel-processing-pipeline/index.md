@@ -1,12 +1,12 @@
 ---
-title: Pixel Processing Pipeline
-description: Interactive p5.js MicroSim for pixel processing pipeline.
+title: "Pixel Processing Pipeline"
+description: "Interactive p5.js MicroSim for pixel processing pipeline."
 image: /sims/pixel-processing-pipeline/pixel-processing-pipeline.png
 og:image: /sims/pixel-processing-pipeline/pixel-processing-pipeline.png
 twitter:image: /sims/pixel-processing-pipeline/pixel-processing-pipeline.png
 social:
    cards: false
-quality_score: 95
+quality_score: 90
 ---
 
 # Pixel Processing Pipeline

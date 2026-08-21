@@ -1,0 +1,21 @@
+{
+  "title": "Waveform Visualizer & Hearer",
+  "description": "Oscilloscope visualizing the 4 fundamental audio synthesizer waveforms: Sine, Square, Triangle, and Sawtooth with frequency controls.",
+  "creator": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "Waveform Visualizer & Hearer",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "sim_id": "waveform-visualizer-hearer",
+  "canvasHeight": 485,
+  "bloom_level": "Understand",
+  "learning_objective": "Students will understand periodic oscillator waveforms, wave geometry, and their corresponding acoustic harmonic timbre.",
+  "chapter_dir": "21-audio-synthesis-sound"
+}

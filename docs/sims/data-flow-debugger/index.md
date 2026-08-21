@@ -1,12 +1,12 @@
 ---
-title: Data Flow Debugger
-description: Interactive p5.js MicroSim for data flow debugger.
+title: "Data Flow Debugger"
+description: "Interactive p5.js MicroSim for data flow debugger."
 image: /sims/data-flow-debugger/data-flow-debugger.png
 og:image: /sims/data-flow-debugger/data-flow-debugger.png
 twitter:image: /sims/data-flow-debugger/data-flow-debugger.png
 social:
    cards: false
-quality_score: 95
+quality_score: 90
 ---
 
 # Data Flow Debugger

@@ -1,12 +1,12 @@
 ---
-title: Robot Arm Kinematics
-description: Interactive p5.js MicroSim for robot arm kinematics.
+title: "Robot Arm Kinematics"
+description: "Interactive p5.js MicroSim for robot arm kinematics."
 image: /sims/robot-arm-kinematics/robot-arm-kinematics.png
 og:image: /sims/robot-arm-kinematics/robot-arm-kinematics.png
 twitter:image: /sims/robot-arm-kinematics/robot-arm-kinematics.png
 social:
    cards: false
-quality_score: 95
+quality_score: 90
 ---
 
 # Robot Arm Kinematics

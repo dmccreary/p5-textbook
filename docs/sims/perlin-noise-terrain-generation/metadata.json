@@ -1,0 +1,21 @@
+{
+  "title": "Perlin Noise Terrain Generation",
+  "description": "Generate continuous organic heightmap terrain grids in 3D WebGL perspective using multi-octave 2D Perlin noise.",
+  "creator": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "Perlin Noise Terrain Generation",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "sim_id": "perlin-noise-terrain-generation",
+  "canvasHeight": 485,
+  "bloom_level": "Apply",
+  "learning_objective": "Students will understand 2D noise coordinate sampling, smoothness vs white noise randomness, and isometric flying terrain meshes.",
+  "chapter_dir": "09-randomness-and-walks"
+}

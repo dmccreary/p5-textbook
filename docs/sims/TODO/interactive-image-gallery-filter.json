@@ -1,0 +1,15 @@
+{
+  "sim_id": "interactive-image-gallery-filter",
+  "diagram_name": "Interactive Image Gallery Filter",
+  "chapter_number": 15,
+  "chapter_title": "Dom Controls Ui",
+  "chapter_dir": "15-dom-controls-ui",
+  "chapter_rel_dir": "chapters/15-dom-controls-ui",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>MicroSim Specification: Interactive Image Gallery Filter</summary>\n\n**Title**: Interactive Image Gallery Filter\n**Goal**: Demonstrate how HTML structures (divs, spans), positioning, and CSS styling work together to create a cohesive web application layout outside the canvas.\n\n**Interface Layout**:\n- An image element (`createImg`) displayed prominently in the center.\n- Below it, a `<div>` container styled with CSS to look like a sleek, dark-mode control bar.\n- Inside the control bar:\n  - Several spans acting as labels.\n  - Three sliders controlling CSS filter properties applied to the image: Blur, Sepia, and Invert.\n  - A text input allowing the user to type an image URL to load a custom image into the `createImg` element.\n\n**Behavior**:\n- As the user moves the sliders, the `DOM Element Style CSS` of the image updates in real-time (e.g., `img.style('filter', 'blur(5px)')`).\n- Typing a URL and pressing a \"Load\" button updates the `src` attribute of the image.\n\n**Learning Outcome**: Students learn that p5.js can be used not just for drawing on a canvas, but for manipulating standard HTML elements and creating functional web apps."
+}

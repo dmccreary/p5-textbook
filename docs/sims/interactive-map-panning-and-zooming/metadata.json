@@ -1,0 +1,21 @@
+{
+  "title": "Interactive Map Panning and Zooming",
+  "description": "Explore matrix transformations for 2D viewport navigation: drag to pan and slider to zoom with coordinate transformation.",
+  "creator": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "Interactive Map Panning and Zooming",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "sim_id": "interactive-map-panning-and-zooming",
+  "canvasHeight": 485,
+  "bloom_level": "Apply",
+  "learning_objective": "Students will understand translate() and scale() matrix transformations for smooth world-to-screen coordinate mapping.",
+  "chapter_dir": "13-mouse-keyboard-events"
+}

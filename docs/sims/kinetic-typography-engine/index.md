@@ -1,12 +1,12 @@
 ---
-title: Kinetic Typography Engine
-description: Interactive p5.js MicroSim for kinetic typography engine.
+title: "Kinetic Typography Engine"
+description: "Interactive p5.js MicroSim for kinetic typography engine."
 image: /sims/kinetic-typography-engine/kinetic-typography-engine.png
 og:image: /sims/kinetic-typography-engine/kinetic-typography-engine.png
 twitter:image: /sims/kinetic-typography-engine/kinetic-typography-engine.png
 social:
    cards: false
-quality_score: 95
+quality_score: 90
 ---
 
 # Kinetic Typography Engine

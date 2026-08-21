@@ -210,6 +210,10 @@ Morphological operations adjust the structure of shapes within the frame. The **
 
 #### Diagram: Interactive Filter Studio
 
+
+<iframe src="../../sims/interactive-filter-studio/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run Interactive Filter Studio Fullscreen](../../sims/interactive-filter-studio/main.html)
+
 <details markdown="1">
 <summary>MicroSim: Interactive Filter Studio</summary><summary>MicroSim: Interactive Filter Studio</summary>
 ### MicroSim Specification
@@ -299,6 +303,10 @@ A simpler spatial effect is the **Pixelate Image Mosaic**. Rather than rendering
     Watch out for the freeze! If you try to loop through every single pixel of an HD webcam feed every frame, your browser will crash from the sheer mathematical load. To avoid this, change your `for` loops to skip by a step size (`i += 10`) instead of checking every pixel.
 
 #### Diagram: Real-Time ASCIIfy Camera
+
+
+<iframe src="../../sims/real-time-asciify-camera/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run Real-Time ASCIIfy Camera Fullscreen](../../sims/real-time-asciify-camera/main.html)
 
 <details markdown="1">
 <summary>MicroSim: Real-Time ASCIIfy Camera</summary><summary>MicroSim: Real-Time ASCIIfy Camera</summary>

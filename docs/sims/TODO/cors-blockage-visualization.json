@@ -1,0 +1,15 @@
+{
+  "sim_id": "cors-blockage-visualization",
+  "diagram_name": "CORS Blockage Visualization",
+  "chapter_number": 25,
+  "chapter_title": "Dev Environment Pedagogy",
+  "chapter_dir": "25-dev-environment-pedagogy",
+  "chapter_rel_dir": "chapters/25-dev-environment-pedagogy",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>MicroSim: CORS Blockage Visualization</summary>\n- **Title**: Browser Security vs Local Audio\n- **Description**: An interactive diagram showing an HTTP request for an `.mp3` file. When the user tries to load it via `file:///`, a large red shield blocks the request, illustrating the CORS security constraints. When the user toggles on the Python server, the shield turns green and the audio file successfully loads into the p5.js sketch."
+}

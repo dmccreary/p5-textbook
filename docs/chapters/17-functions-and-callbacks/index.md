@@ -175,6 +175,10 @@ chopOnions(() => {
 
 #### Diagram: The Callback Kitchen
 
+
+<iframe src="../../sims/the-callback-kitchen/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run The Callback Kitchen Fullscreen](../../sims/the-callback-kitchen/main.html)
+
 <details markdown="1">
 <summary>MicroSim: The Callback Kitchen</summary><summary>MicroSim: The Callback Kitchen</summary>
 
@@ -355,6 +359,10 @@ console.log(RecipeBlueprint.compareYield(basicPancakes, giantCake));
     If object-oriented programming and inheritance feel incredibly abstract right now, that is completely normal! Just like mastering the complex coordinate system earlier in the book took a bit of practice, mastering structural blueprints takes time. Take a deep breath and keep experimenting—you've got this!
 
 #### Diagram: The Object Factory
+
+
+<iframe src="../../sims/the-object-factory/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run The Object Factory Fullscreen](../../sims/the-object-factory/main.html)
 
 <details markdown="1">
 <summary>MicroSim: The Object Factory</summary><summary>MicroSim: The Object Factory</summary>

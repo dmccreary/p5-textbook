@@ -142,6 +142,10 @@ An arc is a partial ellipse. It requires you to define a starting angle and an e
 
 #### Diagram: Arc and Angle Explorer
 
+
+<iframe src="../../sims/arc-angle-explorer/main.html" width="100%" height="517px" scrolling="no"></iframe>
+[Run Arc and Angle Explorer Fullscreen](../../sims/arc-angle-explorer/main.html)
+
 <details markdown="1">
 <summary>Arc and Angle Explorer</summary><summary>Arc and Angle Explorer</summary>
 Type: MicroSim
@@ -257,6 +261,10 @@ If you need a continuous, flowing ribbon of multiple curves attached end-to-end,
 If managing complex control points feels too mathematical, p5.js offers a simpler alternative: the **Curve Shape Function** (`curve()`) and the **Curve Vertex Function** (`curveVertex()`). Unlike Bézier curves, a Catmull-Rom curve (which p5.js uses here) actually passes directly *through* all the points you define, making it much more intuitive to draw a smooth path. You can even adjust how sharply the line bends around the points using the **Curve Tightness Setting** (`curveTightness()`).
 
 #### Diagram: Bézier Control Point Sandbox
+
+
+<iframe src="../../sims/bezier-sandbox/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run Bézier Control Point Sandbox Fullscreen](../../sims/bezier-sandbox/main.html)
 
 <details markdown="1">
 <summary>Bézier Control Point Sandbox</summary><summary>Bézier Control Point Sandbox</summary>

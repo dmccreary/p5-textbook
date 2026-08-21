@@ -1,0 +1,15 @@
+{
+  "sim_id": "orbital-mechanics-simulator",
+  "diagram_name": "Orbital Mechanics Simulator",
+  "chapter_number": 7,
+  "chapter_title": "Linear Motion Trig",
+  "chapter_dir": "07-linear-motion-trig",
+  "chapter_rel_dir": "chapters/07-linear-motion-trig",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>MicroSim: Orbital Mechanics Simulator</summary>\n\n**Goal:** Create an advanced, integrated simulation demonstrating polar coordinates, rotational tracking, and mapping all working simultaneously in a dynamic system.\n\n**Implementation Details:**\n- Use the p5.js generator.\n- Draw a prominent central \"sun\" in the middle of the canvas.\n- Animate a \"planet\" orbiting the sun using **Circle Polar Coordinates** and the fundamental **Polar to Cartesian Formula** (`x = r * cos(theta)`, `y = r * sin(theta)`).\n- Create a distinct \"satellite\" object that explicitly tracks and follows the mouse cursor's position on the canvas.\n- Draw a line connecting the planet and the satellite. Use the **Arc Tangent Atan2 Function** to calculate the precise **Angle Between Coordinates** so that a drawn directional \"sensor dish\" on the planet continuously rotates and points directly at the moving satellite, demonstrating perfect **Rotational Tracking Motion**.\n- Finally, use the **Map Range Function** to dynamically alter the visual state based on distance. Calculate the distance between the planet and the satellite, and map that distance to the fill color of the planet (e.g., mapping a distance range of 0-400 to a color range of red to blue), creating a visual heat-map effect."
+}

@@ -112,6 +112,10 @@ function setup() {
 
 #### Diagram: Text Formatting Basics
 
+
+<iframe src="../../sims/text-formatting-basics/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run Text Formatting Basics Fullscreen](../../sims/text-formatting-basics/main.html)
+
 <details markdown="1">
 <summary>MicroSim: Text Formatting Basics</summary><summary>MicroSim: Text Formatting Basics</summary>
 - **Objective:** Create a dashboard where students can adjust text settings interactively.
@@ -208,6 +212,10 @@ function draw() {
 Once we have these points, we can apply a **Particle Typography Effect**. By animating each coordinate independently, we create **Wobbly Text Particle Point** behaviors. Combine this with physics, and you achieve stunning **Kinetic Typography Motion**. Text can explode, reform, or blow away in the wind.
 
 #### Diagram: Kinetic Text to Points
+
+
+<iframe src="../../sims/kinetic-text-to-points/main.html" width="100%" height="487px" scrolling="no"></iframe>
+[Run Kinetic Text to Points Fullscreen](../../sims/kinetic-text-to-points/main.html)
 
 <details markdown="1">
 <summary>MicroSim: Kinetic Text to Points</summary><summary>MicroSim: Kinetic Text to Points</summary>

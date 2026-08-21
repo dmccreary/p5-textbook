@@ -1,0 +1,21 @@
+{
+  "title": "Interactive Wave Maker Laboratory",
+  "description": "Explore wave superposition and harmonic interference by synthesizing two traveling sine waves with adjustable amplitude, frequency, and phase.",
+  "creator": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "Interactive Wave Maker Laboratory",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "sim_id": "interactive-wave-maker-laboratory",
+  "canvasHeight": 515,
+  "bloom_level": "Understand",
+  "learning_objective": "Students will understand wave mechanics, constructive/destructive interference, and harmonic synthesis.",
+  "chapter_dir": "07-linear-motion-trig"
+}

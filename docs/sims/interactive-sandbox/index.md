@@ -1,12 +1,12 @@
 ---
-title: Interactive Sandbox
-description: Interactive p5.js MicroSim for interactive sandbox.
+title: "Interactive Sandbox"
+description: "Interactive p5.js MicroSim for interactive sandbox."
 image: /sims/interactive-sandbox/interactive-sandbox.png
 og:image: /sims/interactive-sandbox/interactive-sandbox.png
 twitter:image: /sims/interactive-sandbox/interactive-sandbox.png
 social:
    cards: false
-quality_score: 95
+quality_score: 90
 ---
 
 # Interactive Sandbox

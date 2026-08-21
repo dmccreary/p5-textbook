@@ -1,0 +1,21 @@
+{
+  "title": "Polar Radar Sweeper",
+  "description": "Interactive radar sweep converting polar coordinates (radius r, angle \u03b8) to Cartesian coordinates (x = r*cos \u03b8, y = r*sin \u03b8).",
+  "creator": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "Polar Radar Sweeper",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "sim_id": "polar-radar-sweeper",
+  "canvasHeight": 485,
+  "bloom_level": "Understand",
+  "learning_objective": "Students will master polar-to-Cartesian trigonometry conversion and circular radar beam detection.",
+  "chapter_dir": "08-polar-coordinates-easing"
+}
