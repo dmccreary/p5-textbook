@@ -24,7 +24,7 @@ function setup() {
   sendRequestButton.mousePressed(sendRequest);
 
   positionControls();
-  describe('Visualizer demonstrating Cross-Origin Resource Sharing security checks and browser blockage.', LABEL);
+  describe('Visualizer demonstrating Cross-Origin Resource Sharing security checks and browser blockage.', FALLBACK);
 }
 
 function positionControls() {
@@ -161,13 +161,15 @@ function draw() {
 
 function updateCanvasSize() {
   const container = document.querySelector('main');
-  if (container) {
+  if (container && container.offsetWidth > 0) {
     canvasWidth = container.offsetWidth;
-    positionControls();
   }
 }
 
 function windowResized() {
   updateCanvasSize();
   resizeCanvas(canvasWidth, canvasHeight);
+  if (typeof positionControls === 'function') {
+    positionControls();
+  }
 }

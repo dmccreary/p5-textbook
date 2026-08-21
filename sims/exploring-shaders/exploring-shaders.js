@@ -10,6 +10,8 @@ let canvasHeight = drawHeight + controlHeight;
 
 let freqSlider, speedSlider, patternSelect;
 let timeVal = 0;
+let isRunning = false;
+let startBtn;
 
 function setup() {
   updateCanvasSize();
@@ -24,8 +26,13 @@ function setup() {
   patternSelect.option('Plasma Field');
   patternSelect.option('Color Vortex');
 
+  startBtn = createButton('Start Shader Animation');
+  startBtn.mousePressed(() => {
+    isRunning = !isRunning;
+    startBtn.html(isRunning ? 'Pause' : 'Start Shader Animation');
+  });
   positionControls();
-  describe('Simulated fragment shader exploring GPU mathematical wave and color fields.', LABEL);
+  describe('Simulated fragment shader exploring GPU mathematical wave and color fields.', FALLBACK);
 }
 
 function positionControls() {
@@ -47,7 +54,7 @@ function positionControls() {
 function draw() {
   updateCanvasSize();
 
-  timeVal += 0.02 * speedSlider.value();
+  if (isRunning) timeVal += 0.02 * speedSlider.value();
   let freq = freqSlider.value();
   let pat = patternSelect.value();
 
@@ -117,13 +124,20 @@ function draw() {
 
 function updateCanvasSize() {
   const container = document.querySelector('main');
-  if (container) {
+  if (container && container.offsetWidth > 0) {
     canvasWidth = container.offsetWidth;
-    positionControls();
   }
 }
 
 function windowResized() {
   updateCanvasSize();
   resizeCanvas(canvasWidth, canvasHeight);
+  if (typeof positionControls === 'function') {
+    startBtn = createButton('Start Shader Animation');
+  startBtn.mousePressed(() => {
+    isRunning = !isRunning;
+    startBtn.html(isRunning ? 'Pause' : 'Start Shader Animation');
+  });
+  positionControls();
+  }
 }

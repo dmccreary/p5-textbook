@@ -3,105 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- microsim-scaffold-stub -->
-    <title>Perlin Noise Terrain Generation</title>
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Perlin Noise Terrain Generation using p5.js</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-            color: #212529;
-        }
-        #container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a3a6c;
-        }
-        .placeholder {
-            border: 2px dashed #adb5bd;
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #6c757d;
-            margin: 20px 0;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .placeholder .badge {
-            display: inline-block;
-            background: #ffc107;
-            color: #212529;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .placeholder h2 {
-            font-size: 18px;
-            color: #495057;
-            margin-bottom: 8px;
-        }
-        .placeholder p {
-            font-size: 14px;
-            max-width: 480px;
-        }
-        .meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            padding-top: 12px;
-        }
-        .meta strong { color: #495057; }
+        body { margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif; }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"></script>
+    <script src="perlin-noise-terrain-generation.js"></script>
 </head>
 <body>
-    <div id="container">
-        <h1>Perlin Noise Terrain Generation</h1>
-        <div class="placeholder">
-            <span class="badge">SCAFFOLD</span>
-            <h2>MicroSim Not Yet Implemented</h2>
-            <p>This MicroSim has been scaffolded from its specification but the
-            interactive content has not been built yet. See the chapter source
-            and the <code>index.md</code> in this directory for the full spec.</p>
-        </div>
-        <div class="meta">
-            <p><strong>Sim ID:</strong> perlin-noise-terrain-generation</p>
-            <p><strong>Library:</strong> TBD</p>
-            <p><strong>Bloom Level:</strong> TBD</p>
-            <p><strong>Learning Objective:</strong> TBD</p>
-        </div>
-    </div>
-
-    <!--
-    SPECIFICATION (from chapter index.md):
-
-    <summary>MicroSim: Perlin Noise Terrain Generation</summary>
-    
-    **Goal:** Create an interactive 2D map generator using Perlin Noise to demonstrate scale, octaves, and falloff.
-    
-    **Features:**
-    - A canvas displaying a top-down 2D map generated with `noise(x, y)`.
-    - The noise values should be mapped to colors to represent terrain: deep water (blue), shallow water (light blue), sand (yellow), grass (green), forest (dark green), and snow (white).
-    - Sliders for:
-      - **Noise Scale:** Controls the multiplier (increment) applied to the X and Y coordinates before passing them to the noise function. Ranging from very smooth "zoomed in" terrain to very noisy "zoomed out" terrain.
-      - **Octaves:** Controls the `lod` parameter of `noiseDetail()`, from 1 to 8.
-      - **Falloff:** Controls the `falloff` parameter of `noiseDetail()`, from 0.0 to 1.0.
-    - A "Generate New Seed" button that changes the noise seed.
-    
-    **Interactivity:**
-    - As the user drags the sliders, the terrain map dynamically recalculates and redraws in real-time.
-    -->
+    <main></main>
+    <br/>
+    <a href=".">Back to Lesson Plan</a>
 </body>
 </html>

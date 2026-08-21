@@ -1,23 +1,21 @@
 {
   "title": "Nested Grid Explorer",
-  "description": "Nested Grid Explorer",
-  "creator": "The Art of Processing",
-  "author": "Dan McCreary",
+  "description": "Step through 2D nested for loops visually to understand row (i) and column (j) iteration order and cell coordinate calculation.",
+  "creator": "Dan McCreary",
   "date": "2026-08-20",
   "subject": [
-    "The Art of Processing"
+    "Nested Grid Explorer",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
   ],
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en",
-  "rights": "CC BY-NC-SA 4.0",
-  "identifier": "nested-grid-explorer",
-  "library": "TBD",
-  "bloomLevel": "TBD",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 5,
-  "chapter_title": "Control Flow And Loops",
-  "chapter_dir": "05-control-flow-and-loops",
-  "chapter_rel_dir": "chapters/05-control-flow-and-loops"
+  "rights": "CC BY 4.0",
+  "sim_id": "nested-grid-explorer",
+  "canvasHeight": 485,
+  "bloom_level": "Understand",
+  "learning_objective": "Students will master nested loop execution mechanics, loop variable scoping, and 2D spatial indexing.",
+  "chapter_dir": "05-control-flow-and-loops"
 }

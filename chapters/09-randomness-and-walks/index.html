@@ -1761,69 +1761,212 @@
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
-    
-    
-    
-      
         
+          
         
       
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+        
+          
+        
       
         
-  
-  
-    <a href="../../learning-graph/" class="md-nav__link">
+          
+        
       
-  
-  <span class="md-ellipsis">
-    Learning Graph
-  </span>
-  
-
+        
+          
+        
       
-        <span class="md-nav__icon md-icon"></span>
+        
+          
+        
       
-    </a>
-  
-
+        
+          
+        
       
-    </li>
-  
-
-    
+        
+          
+        
       
+        
+          
+        
       
-  
-  
-  
-  
-    
-    
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
       
         
           
@@ -1937,6 +2080,152 @@
   
 
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../appendices/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Appendices
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teachers-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Teachers Guide
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2344,6 +2633,8 @@ You probably won't hit the exact dead-center bullseye every time. But most of yo
 </span></code></pre></div>
 <p>Every frame, the walker picks one of four directions and moves a single pixel. Over time, it leaves a trail. </p>
 <h4 id="diagram-random-walk-simulation">Diagram: Random Walk Simulation<a class="headerlink" href="#diagram-random-walk-simulation" title="Permanent link">¶</a></h4>
+<iframe src="../../sims/random-walk-simulation/main.html" width="100%" height="487px" scrolling="no"></iframe>
+<p><a href="../../sims/random-walk-simulation/main.html">Run Random Walk Simulation Fullscreen</a></p>
 <details>
 <summary>MicroSim: Random Walk Simulation</summary><summary>MicroSim: Random Walk Simulation</summary>
 
@@ -2437,6 +2728,8 @@ If you run this code, the circle won't jitter crazily like a fly hitting a windo
 <p>We can control how many layers are used with <strong>Noise Detail Octaves</strong>. By default, p5.js uses 4 octaves. If we change it using <code>noiseDetail(lod)</code>, where <code>lod</code> (level of detail) is the number of octaves, we can change the texture. <code>noiseDetail(1)</code> will look incredibly smooth and blurred. <code>noiseDetail(8)</code> will look very textured, highly detailed, and granite-like.</p>
 <p>When layering these octaves, the smaller detail layers don't have as much influence as the big main layers. The rate at which the smaller layers lose influence is called the <strong>Noise Falloff Ratio</strong>. By default, each smaller octave has half the amplitude (50% falloff) of the one before it. You can adjust this by passing a second argument to <code>noiseDetail(octaves, falloff)</code>. A higher falloff means the tiny details are stronger, making the result look sharper and rougher.</p>
 <h4 id="diagram-perlin-noise-terrain-generation">Diagram: Perlin Noise Terrain Generation<a class="headerlink" href="#diagram-perlin-noise-terrain-generation" title="Permanent link">¶</a></h4>
+<iframe src="../../sims/perlin-noise-terrain-generation/main.html" width="100%" height="487px" scrolling="no"></iframe>
+<p><a href="../../sims/perlin-noise-terrain-generation/main.html">Run Perlin Noise Terrain Generation Fullscreen</a></p>
 <details>
 <summary>MicroSim: Perlin Noise Terrain Generation</summary><summary>MicroSim: Perlin Noise Terrain Generation</summary>
 

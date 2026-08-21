@@ -24,7 +24,7 @@ function setup() {
   targetFpsSelect.option('15 FPS (66.6ms budget)');
 
   positionControls();
-  describe('Frame rate monitor tracking frame time and simulated computational workload.', LABEL);
+  describe('Frame rate monitor tracking frame time and simulated computational workload.', FALLBACK);
 }
 
 function positionControls() {
@@ -156,13 +156,15 @@ function draw() {
 
 function updateCanvasSize() {
   const container = document.querySelector('main');
-  if (container) {
+  if (container && container.offsetWidth > 0) {
     canvasWidth = container.offsetWidth;
-    positionControls();
   }
 }
 
 function windowResized() {
   updateCanvasSize();
   resizeCanvas(canvasWidth, canvasHeight);
+  if (typeof positionControls === 'function') {
+    positionControls();
+  }
 }

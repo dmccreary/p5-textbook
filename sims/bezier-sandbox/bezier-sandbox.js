@@ -26,7 +26,7 @@ function setup() {
   showStepsSlider = createSlider(10, 60, 30, 5);
 
   positionControls();
-  describe('Draggable cubic Bezier curve editor with 4 interactive control vertices.', LABEL);
+  describe('Draggable cubic Bezier curve editor with 4 interactive control vertices.', FALLBACK);
 }
 
 function positionControls() {
@@ -141,13 +141,15 @@ function mouseReleased() {
 
 function updateCanvasSize() {
   const container = document.querySelector('main');
-  if (container) {
+  if (container && container.offsetWidth > 0) {
     canvasWidth = container.offsetWidth;
-    positionControls();
   }
 }
 
 function windowResized() {
   updateCanvasSize();
   resizeCanvas(canvasWidth, canvasHeight);
+  if (typeof positionControls === 'function') {
+    positionControls();
+  }
 }

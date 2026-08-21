@@ -238,4 +238,7 @@ function updateCanvasSize() {
 function windowResized() {
   updateCanvasSize();
   resizeCanvas(canvasWidth, canvasHeight);
+  if (typeof positionControls === 'function') {
+    positionControls();
+  }
 }

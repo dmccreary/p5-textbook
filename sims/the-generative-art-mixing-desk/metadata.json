@@ -1,23 +1,21 @@
 {
   "title": "The Generative Art Mixing Desk",
-  "description": "The Generative Art Mixing Desk",
-  "creator": "The Art of Processing",
-  "author": "Dan McCreary",
+  "description": "Mixing console controlling generative visual parameters: symmetry, density, noise turbulence, color palette, and line weight.",
+  "creator": "Dan McCreary",
   "date": "2026-08-20",
   "subject": [
-    "The Art of Processing"
+    "The Generative Art Mixing Desk",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
   ],
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en",
-  "rights": "CC BY-NC-SA 4.0",
-  "identifier": "the-generative-art-mixing-desk",
-  "library": "TBD",
-  "bloomLevel": "TBD",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 15,
-  "chapter_title": "Dom Controls Ui",
-  "chapter_dir": "15-dom-controls-ui",
-  "chapter_rel_dir": "chapters/15-dom-controls-ui"
+  "rights": "CC BY 4.0",
+  "sim_id": "the-generative-art-mixing-desk",
+  "canvasHeight": 515,
+  "bloom_level": "Apply",
+  "learning_objective": "Students will understand parameter mapping, generative design variation, and complex multi-parameter algorithmic control.",
+  "chapter_dir": "15-dom-controls-ui"
 }

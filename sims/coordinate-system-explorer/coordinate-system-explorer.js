@@ -19,7 +19,7 @@ function setup() {
   showCartesianCheckbox = createCheckbox('Show Cartesian (0,0 at Center)', false);
 
   positionControls();
-  describe('Interactive 2D coordinate grid comparing Screen vs Cartesian coordinate conventions.', LABEL);
+  describe('Interactive 2D coordinate grid comparing Screen vs Cartesian coordinate conventions.', FALLBACK);
 }
 
 function positionControls() {
@@ -138,13 +138,15 @@ function draw() {
 
 function updateCanvasSize() {
   const container = document.querySelector('main');
-  if (container) {
+  if (container && container.offsetWidth > 0) {
     canvasWidth = container.offsetWidth;
-    positionControls();
   }
 }
 
 function windowResized() {
   updateCanvasSize();
   resizeCanvas(canvasWidth, canvasHeight);
+  if (typeof positionControls === 'function') {
+    positionControls();
+  }
 }

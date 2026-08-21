@@ -26,7 +26,7 @@ function setup() {
   intensitySlider = createSlider(0.5, 2.0, 1.0, 0.1);
 
   positionControls();
-  describe('Convolution filter studio demonstrating 3x3 image processing kernels.', LABEL);
+  describe('Convolution filter studio demonstrating 3x3 image processing kernels.', FALLBACK);
 }
 
 function positionControls() {
@@ -175,13 +175,15 @@ function draw() {
 
 function updateCanvasSize() {
   const container = document.querySelector('main');
-  if (container) {
+  if (container && container.offsetWidth > 0) {
     canvasWidth = container.offsetWidth;
-    positionControls();
   }
 }
 
 function windowResized() {
   updateCanvasSize();
   resizeCanvas(canvasWidth, canvasHeight);
+  if (typeof positionControls === 'function') {
+    positionControls();
+  }
 }

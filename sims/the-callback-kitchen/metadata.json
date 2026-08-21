@@ -1,23 +1,21 @@
 {
   "title": "The Callback Kitchen",
-  "description": "The Callback Kitchen",
-  "creator": "The Art of Processing",
-  "author": "Dan McCreary",
+  "description": "Interactive kitchen simulation explaining asynchronous callback functions, event listeners, and non-blocking execution.",
+  "creator": "Dan McCreary",
   "date": "2026-08-20",
   "subject": [
-    "The Art of Processing"
+    "The Callback Kitchen",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
   ],
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en",
-  "rights": "CC BY-NC-SA 4.0",
-  "identifier": "the-callback-kitchen",
-  "library": "TBD",
-  "bloomLevel": "TBD",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 17,
-  "chapter_title": "Functions And Callbacks",
-  "chapter_dir": "17-functions-and-callbacks",
-  "chapter_rel_dir": "chapters/17-functions-and-callbacks"
+  "rights": "CC BY 4.0",
+  "sim_id": "the-callback-kitchen",
+  "canvasHeight": 485,
+  "bloom_level": "Understand",
+  "learning_objective": "Students will understand how JavaScript callback functions execute asynchronously once long-running tasks complete.",
+  "chapter_dir": "17-functions-and-callbacks"
 }

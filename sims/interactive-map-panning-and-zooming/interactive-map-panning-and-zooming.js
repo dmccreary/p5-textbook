@@ -23,7 +23,7 @@ function setup() {
   resetViewButton.mousePressed(resetView);
 
   positionControls();
-  describe('Interactive 2D map with click-drag panning and slider zoom transformations.', LABEL);
+  describe('Interactive 2D map with click-drag panning and slider zoom transformations.', FALLBACK);
 }
 
 function resetView() {
@@ -132,13 +132,15 @@ function mouseReleased() {
 
 function updateCanvasSize() {
   const container = document.querySelector('main');
-  if (container) {
+  if (container && container.offsetWidth > 0) {
     canvasWidth = container.offsetWidth;
-    positionControls();
   }
 }
 
 function windowResized() {
   updateCanvasSize();
   resizeCanvas(canvasWidth, canvasHeight);
+  if (typeof positionControls === 'function') {
+    positionControls();
+  }
 }

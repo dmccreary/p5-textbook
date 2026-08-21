@@ -11,6 +11,8 @@ let sliderLeftMargin = 120;
 let ampSlider, freqSlider, phaseSlider, viewSelect, modeSelect;
 let ampLabelDiv, freqLabelDiv, phaseLabelDiv;
 let baseTime = 0;
+let isRunning = false;
+let startBtn;
 const dashPattern = [5, 5];
 const solidPattern = [];
 
@@ -140,7 +142,7 @@ function draw() {
   let amp = ampSlider.value();
   let freq = freqSlider.value();
   
-  baseTime += freq * 0.035;
+  if (isRunning) baseTime += freq * 0.035;
   
   let phaseNormalized = phaseSlider.value();
   let phase = 0;
@@ -233,6 +235,14 @@ function draw() {
 function windowResized() {
   updateCanvasSize();
   resizeCanvas(canvasWidth, canvasHeight);
+  if (typeof positionControls === 'function') {
+    startBtn = createButton('Start Oscillation');
+  startBtn.mousePressed(() => {
+    isRunning = !isRunning;
+    startBtn.html(isRunning ? 'Pause' : 'Start Oscillation');
+  });
+  positionControls();
+  }
 }
 
 function updateCanvasSize() {

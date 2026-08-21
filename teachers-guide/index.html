@@ -1,0 +1,3199 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An interactive intelligent textbook about the p5.js processing library and how to use it to teach computational thinking.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/p5-textbook/teachers-guide/">
+      
+      
+        <link rel="prev" href="../learning-graph/prompts/concept-microsim-prob/">
+      
+      
+        <link rel="next" href="../glossary/">
+      
+      
+      <link rel="icon" href="../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Teachers Guide - The Art of Processing</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+      <link rel="stylesheet" href="../css/mascot.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta property="og:type" content="website">
+      
+        <meta property="og:title" content="Teachers Guide - The Art of Processing">
+      
+        <meta property="og:description" content="An interactive intelligent textbook about the p5.js processing library and how to use it to teach computational thinking.">
+      
+        <meta property="og:image" content="https://dmccreary.github.io/p5-textbook/assets/images/social/teachers-guide/index.png">
+      
+        <meta property="og:image:type" content="image/png">
+      
+        <meta property="og:image:width" content="1200">
+      
+        <meta property="og:image:height" content="630">
+      
+        <meta property="og:url" content="https://dmccreary.github.io/p5-textbook/teachers-guide/">
+      
+        <meta name="twitter:card" content="summary_large_image">
+      
+        <meta name="twitter:title" content="Teachers Guide - The Art of Processing">
+      
+        <meta name="twitter:description" content="An interactive intelligent textbook about the p5.js processing library and how to use it to teach computational thinking.">
+      
+        <meta name="twitter:image" content="https://dmccreary.github.io/p5-textbook/assets/images/social/teachers-guide/index.png">
+      
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#creative-coding-teachers-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="The Art of Processing" class="md-header__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
+      
+  <img src="../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            The Art of Processing
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Teachers Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="The Art of Processing" class="md-nav__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
+      
+  <img src="../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    The Art of Processing
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../appendices/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Appendices
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Teachers Guide
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Teachers Guide
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#about-this-interactive-intelligent-textbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      About This Interactive Intelligent Textbook
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="About This Interactive Intelligent Textbook">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-an-intelligent-textbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is an Intelligent Textbook?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-five-levels-of-intelligent-textbooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Five Levels of Intelligent Textbooks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-makes-this-textbook-different" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Makes This Textbook Different
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-chapters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the Chapters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using the Chapters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chapter-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-each-chapter-contains" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Each Chapter Contains
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suggested-classroom-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      Suggested Classroom Use
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-microsims" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the MicroSims
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using the MicroSims">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a MicroSim?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-microsims-are-embedded" class="md-nav__link">
+    <span class="md-ellipsis">
+      How MicroSims Are Embedded
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-of-microsims" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of MicroSims
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tips-for-using-microsims-in-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tips for Using MicroSims in Class
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsim-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      MicroSim Specifications
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-glossary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the Glossary
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using the Glossary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-glossary" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the Glossary?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-access-the-glossary" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Access the Glossary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tips-for-using-the-glossary-in-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tips for Using the Glossary in Class
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the FAQ
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using the FAQ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the FAQ?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-the-faq-is-organized" class="md-nav__link">
+    <span class="md-ellipsis">
+      How the FAQ is Organized
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tips-for-using-the-faq-in-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tips for Using the FAQ in Class
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-quizzes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the Quizzes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using the Quizzes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-quizzes" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Are the Quizzes?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-quizzes-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Quizzes Work
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tips-for-using-quizzes-in-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tips for Using Quizzes in Class
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blooms-taxonomy-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Levels
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the References
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using the References">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Are the References?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-references-are-organized" class="md-nav__link">
+    <span class="md-ellipsis">
+      How References Are Organized
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-note-about-link-rot" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Note About Link Rot
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feedback" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feedback
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Feedback">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reporting-issues-and-suggestions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reporting Issues and Suggestions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-github-issue" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a GitHub Issue?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-submit-feedback" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Submit Feedback
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-of-feedback-welcome" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of Feedback Welcome
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-the-license" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding the License
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understanding the License">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-creative-commons-license" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a Creative Commons License?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#this-textbooks-license" class="md-nav__link">
+    <span class="md-ellipsis">
+      This Textbook's License
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-you-can-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      What You CAN Do
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-you-cannot-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      What You CANNOT Do
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customizing-your-own-textbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Customizing Your Own Textbook
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Customizing Your Own Textbook">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-technical-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Technical Terms
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-a-github-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Create a GitHub Account
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-fork-or-clone-the-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Fork or Clone the Repository
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-make-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Make Changes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: Make Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changing-the-title-and-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changing the Title and Description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-the-colors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changing the Colors
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-the-logo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changing the Logo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-preview-your-changes-locally" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Preview Your Changes Locally
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-publish-your-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5: Publish Your Version
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customizing-your-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Customizing Your Analytics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Customizing Your Analytics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-web-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Web Analytics?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Google Analytics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Google Analytics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-your-own-google-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting Up Your Own Google Analytics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-you-can-learn-from-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      What You Can Learn from Analytics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xapi-monitoring-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      xAPI Monitoring (Advanced)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="xAPI Monitoring (Advanced)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-an-lrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is an LRS?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-regulatory-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Important: Regulatory Considerations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-a-student-progress-dashboard-with-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building a Student Progress Dashboard with AI
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-learning-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Learning Graph
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Learning Graph">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-learning-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a Learning Graph?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-teachers-can-use-the-learning-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Teachers Can Use the Learning Graph
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#palette-the-chameleon-your-pedagogical-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Palette the Chameleon: Your Pedagogical Agent
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Palette the Chameleon: Your Pedagogical Agent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-pedagogical-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a Pedagogical Agent?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-palette-appears" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Palette Appears
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tips-for-teachers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tips for Teachers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#about-this-interactive-intelligent-textbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      About This Interactive Intelligent Textbook
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="About This Interactive Intelligent Textbook">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-an-intelligent-textbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is an Intelligent Textbook?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-five-levels-of-intelligent-textbooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Five Levels of Intelligent Textbooks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-makes-this-textbook-different" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Makes This Textbook Different
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-chapters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the Chapters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using the Chapters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chapter-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-each-chapter-contains" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Each Chapter Contains
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suggested-classroom-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      Suggested Classroom Use
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-microsims" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the MicroSims
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using the MicroSims">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a MicroSim?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-microsims-are-embedded" class="md-nav__link">
+    <span class="md-ellipsis">
+      How MicroSims Are Embedded
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-of-microsims" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of MicroSims
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tips-for-using-microsims-in-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tips for Using MicroSims in Class
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsim-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      MicroSim Specifications
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-glossary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the Glossary
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using the Glossary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-glossary" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the Glossary?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-access-the-glossary" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Access the Glossary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tips-for-using-the-glossary-in-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tips for Using the Glossary in Class
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the FAQ
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using the FAQ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the FAQ?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-the-faq-is-organized" class="md-nav__link">
+    <span class="md-ellipsis">
+      How the FAQ is Organized
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tips-for-using-the-faq-in-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tips for Using the FAQ in Class
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-quizzes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the Quizzes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using the Quizzes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-quizzes" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Are the Quizzes?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-quizzes-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Quizzes Work
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tips-for-using-quizzes-in-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tips for Using Quizzes in Class
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blooms-taxonomy-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Levels
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the References
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using the References">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Are the References?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-references-are-organized" class="md-nav__link">
+    <span class="md-ellipsis">
+      How References Are Organized
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-note-about-link-rot" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Note About Link Rot
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feedback" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feedback
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Feedback">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reporting-issues-and-suggestions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reporting Issues and Suggestions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-github-issue" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a GitHub Issue?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-submit-feedback" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Submit Feedback
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-of-feedback-welcome" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of Feedback Welcome
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-the-license" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding the License
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understanding the License">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-creative-commons-license" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a Creative Commons License?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#this-textbooks-license" class="md-nav__link">
+    <span class="md-ellipsis">
+      This Textbook's License
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-you-can-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      What You CAN Do
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-you-cannot-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      What You CANNOT Do
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customizing-your-own-textbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Customizing Your Own Textbook
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Customizing Your Own Textbook">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-technical-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Technical Terms
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-a-github-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Create a GitHub Account
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-fork-or-clone-the-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Fork or Clone the Repository
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-make-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Make Changes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: Make Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changing-the-title-and-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changing the Title and Description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-the-colors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changing the Colors
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-the-logo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changing the Logo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-preview-your-changes-locally" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Preview Your Changes Locally
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-publish-your-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5: Publish Your Version
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customizing-your-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Customizing Your Analytics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Customizing Your Analytics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-web-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Web Analytics?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Google Analytics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Google Analytics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-your-own-google-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting Up Your Own Google Analytics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-you-can-learn-from-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      What You Can Learn from Analytics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xapi-monitoring-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      xAPI Monitoring (Advanced)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="xAPI Monitoring (Advanced)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-an-lrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is an LRS?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-regulatory-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Important: Regulatory Considerations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-a-student-progress-dashboard-with-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building a Student Progress Dashboard with AI
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-learning-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Learning Graph
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Learning Graph">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-learning-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a Learning Graph?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-teachers-can-use-the-learning-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Teachers Can Use the Learning Graph
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#palette-the-chameleon-your-pedagogical-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Palette the Chameleon: Your Pedagogical Agent
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Palette the Chameleon: Your Pedagogical Agent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-pedagogical-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a Pedagogical Agent?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-palette-appears" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Palette Appears
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tips-for-teachers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tips for Teachers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/p5-textbook/blob/main/docs/teachers-guide/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+    </a>
+  
+  
+
+
+<h1 id="creative-coding-teachers-guide">Creative Coding Teachers Guide<a class="headerlink" href="#creative-coding-teachers-guide" title="Permanent link">¶</a></h1>
+<p>Welcome to the teacher's guide for <em>The Art of Processing: Creative Coding, Computational Thinking, and Interactive Media with p5.js</em>. This guide explains every feature of the textbook, how to use it in your classroom, and how to customize it for your students. No prior technical knowledge is assumed — every technical term is defined before it is used.</p>
+<h2 id="about-this-interactive-intelligent-textbook">About This Interactive Intelligent Textbook<a class="headerlink" href="#about-this-interactive-intelligent-textbook" title="Permanent link">¶</a></h2>
+<h3 id="what-is-an-intelligent-textbook">What is an Intelligent Textbook?<a class="headerlink" href="#what-is-an-intelligent-textbook" title="Permanent link">¶</a></h3>
+<p>An <strong>intelligent textbook</strong> is a digital textbook that goes beyond static text and images. It includes interactive simulations, self-grading quizzes, a searchable glossary, and a structured map of how concepts relate to each other. The goal is to give students a richer, more engaging learning experience than a traditional printed textbook.</p>
+<h3 id="the-five-levels-of-intelligent-textbooks">The Five Levels of Intelligent Textbooks<a class="headerlink" href="#the-five-levels-of-intelligent-textbooks" title="Permanent link">¶</a></h3>
+<p>Not all digital textbooks are created equal. We categorize intelligent textbooks into five levels based on how interactive and adaptive they are:</p>
+<iframe src="https://dmccreary.github.io/intelligent-textbooks/sims/book-levels/main.html" height="500px" scrolling="no" style="overflow: hidden;"></iframe>
+
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Name</th>
+<th>Description</th>
+<th>Example Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Level 1</strong></td>
+<td>Static Digital</td>
+<td>A PDF or basic web version of a print textbook</td>
+<td>Text and images only, no interactivity</td>
+</tr>
+<tr>
+<td><strong>Level 2</strong></td>
+<td>Interactive</td>
+<td>Adds interactive elements like simulations, quizzes, and searchable glossaries</td>
+<td>MicroSims, self-check quizzes, concept search</td>
+</tr>
+<tr>
+<td><strong>Level 3</strong></td>
+<td>Adaptive</td>
+<td>Adjusts content based on student performance</td>
+<td>Personalized learning paths, difficulty adjustment</td>
+</tr>
+<tr>
+<td><strong>Level 4</strong></td>
+<td>AI-Assisted</td>
+<td>Includes an AI tutor that can answer student questions</td>
+<td>Chatbot integration, automated feedback</td>
+</tr>
+<tr>
+<td><strong>Level 5</strong></td>
+<td>Fully Adaptive AI</td>
+<td>Continuously learns from student interactions and optimizes the experience</td>
+<td>Real-time content generation, predictive analytics</td>
+</tr>
+</tbody>
+</table>
+<p><strong>This textbook is a Level 2 Intelligent Textbook.</strong> </p>
+<h3 id="what-makes-this-textbook-different">What Makes This Textbook Different<a class="headerlink" href="#what-makes-this-textbook-different" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Interactive MicroSims</strong> let students manipulate models directly in their browser — no software installation required</li>
+<li><strong>Critical thinking emphasis</strong> — every chapter helps students decomposing complex design goals into modular algorithms, recognizing mathematical patterns, and systematically debugging code</li>
+<li><strong>"creative visual artistic expression and rigorous computer science principles" framing</strong> — a positive, empowering tone that makes Creative Coding feel relevant to students' daily lives</li>
+<li><strong>Learning graph</strong> — a visual map showing how all 600 concepts connect and build on each other</li>
+<li><strong>Palette the Chameleon</strong> — a friendly mascot character (called a "pedagogical agent") who guides students through each chapter with tips, encouragement, and key insights</li>
+<li><strong>Completely free and open source</strong> — licensed under Creative Commons for non-commercial use</li>
+</ul>
+<h2 id="using-the-chapters">Using the Chapters<a class="headerlink" href="#using-the-chapters" title="Permanent link">¶</a></h2>
+<h3 id="chapter-structure">Chapter Structure<a class="headerlink" href="#chapter-structure" title="Permanent link">¶</a></h3>
+<p>The textbook contains <strong>25 chapters</strong> organized in a deliberate sequence. Each chapter builds on concepts from previous chapters, so students should work through them in order:</p>
+<table>
+<thead>
+<tr>
+<th>Chapters</th>
+<th>Topic Area</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1–3</td>
+<td>Creative Coding Foundations (Canvas, 2D shapes, color theory)</td>
+</tr>
+<tr>
+<td>4–5</td>
+<td>JavaScript Fundamentals (Variables, control flow, loops, arrays)</td>
+</tr>
+<tr>
+<td>6–8</td>
+<td>Mathematics for Animation (Transformations, trigonometry, polar coordinates)</td>
+</tr>
+<tr>
+<td>9–10</td>
+<td>Randomness and Noise (Gaussian distributions, Perlin noise)</td>
+</tr>
+<tr>
+<td>11–12</td>
+<td>Physics and Particle Systems (Vector math, acceleration, steering behaviors)</td>
+</tr>
+<tr>
+<td>13–16</td>
+<td>User Interaction and UI (Mouse/keyboard events, mobile sensors, DOM controls, CSS)</td>
+</tr>
+<tr>
+<td>17–18</td>
+<td>Advanced JavaScript (Functions, ES6 classes, OOP, async data)</td>
+</tr>
+<tr>
+<td>19–20</td>
+<td>3D Graphics (WebGL, cameras, lighting, materials, shaders)</td>
+</tr>
+<tr>
+<td>21–22</td>
+<td>Audio and Sound (Synthesis, oscillators, microphone input, FFT analysis)</td>
+</tr>
+<tr>
+<td>23–24</td>
+<td>Advanced Visual Processing (Image processing, video capture, generative typography)</td>
+</tr>
+<tr>
+<td>25</td>
+<td>Professional Practice (Development environment, tools, pedagogy)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="what-each-chapter-contains">What Each Chapter Contains<a class="headerlink" href="#what-each-chapter-contains" title="Permanent link">¶</a></h3>
+<p>Every chapter follows a consistent structure:</p>
+<ol>
+<li><strong>YAML front matter</strong> — Metadata at the top of each chapter file (title, description, reading level, version). Students don't see this; it's used by search engines and the website builder.</li>
+<li><strong>Summary</strong> — A brief overview of what the chapter covers and what students will learn.</li>
+<li><strong>Concepts covered</strong> — A numbered list of the specific concepts addressed in the chapter, drawn from the learning graph.</li>
+<li><strong>Prerequisites</strong> — Links to prior chapters that should be completed first.</li>
+<li><strong>Welcome from Palette</strong> — A mascot admonition that introduces the chapter topic in Palette the Chameleon's friendly voice.</li>
+<li><strong>Main content</strong> — The core instructional material, written at a Beginner to Intermediate reading level. Includes tables, real-world examples, and embedded MicroSims.</li>
+<li><strong>Mascot admonitions</strong> — Throughout the chapter, Palette appears 5–6 times to highlight key insights (thinking), offer practical tips (tip), provide encouragement on harder concepts (encourage), and warn about common mistakes (warning).</li>
+<li>
+<p><strong>Key takeaways</strong> — A numbered summary of the most important concepts, preceded by a celebration from Palette.</p>
+</li>
+<li>
+<p><strong>Critical thinking challenge</strong> — Expandable sections that train students to spot misinformation.</p>
+</li>
+<li><strong>Practice questions</strong> — Open-ended questions for discussion or written responses.</li>
+</ol>
+<h3 id="suggested-classroom-use">Suggested Classroom Use<a class="headerlink" href="#suggested-classroom-use" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Before class</strong>: Assign the chapter as reading homework. The MicroSims keep students engaged during independent reading.</li>
+<li><strong>During class</strong>: Use the MicroSims on a projector for whole-class demonstrations. Ask students to predict what will happen when you change a slider, then test their predictions.</li>
+<li><strong>After class</strong>: Assign the practice questions and critical thinking challenges. Use the quiz (separate page) for a quick formative assessment.</li>
+<li><strong>Pacing</strong>: Each chapter is designed for approximately 2–3 class periods (90–135 minutes of instruction). Some chapters with more MicroSims may take longer.</li>
+</ul>
+<h2 id="using-the-microsims">Using the MicroSims<a class="headerlink" href="#using-the-microsims" title="Permanent link">¶</a></h2>
+<h3 id="what-is-a-microsim">What is a MicroSim?<a class="headerlink" href="#what-is-a-microsim" title="Permanent link">¶</a></h3>
+<p>A <strong>MicroSim</strong> (short for "micro-simulation") is a small, interactive simulation that runs directly in a web browser. Students don't need to install any software — MicroSims work on any device with a modern web browser (Chrome, Firefox, Safari, Edge).</p>
+<p>Each MicroSim lets students manipulate one or more variables (using sliders, buttons, or drag-and-drop) and immediately see how the model responds. This "learn by doing" approach helps students build intuition for abstract concepts.</p>
+<h3 id="how-microsims-are-embedded">How MicroSims Are Embedded<a class="headerlink" href="#how-microsims-are-embedded" title="Permanent link">¶</a></h3>
+<p>MicroSims appear within chapter text as rectangular interactive areas. They are embedded using <strong>iframes</strong> — a web technology that displays one web page inside another. You don't need to understand how iframes work; just know that the MicroSims load automatically when students view the chapter page.</p>
+<h3 id="types-of-microsims">Types of MicroSims<a class="headerlink" href="#types-of-microsims" title="Permanent link">¶</a></h3>
+<p>The textbook includes over 71 MicroSims built with different visualization technologies:</p>
+<table>
+<thead>
+<tr>
+<th>Technology</th>
+<th>What It's Good For</th>
+<th>Example MicroSims</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>p5.js</strong></td>
+<td>Interactive animations with sliders and buttons</td>
+<td>(list 2-3 examples from project)</td>
+</tr>
+<tr>
+<td><strong>Chart.js</strong></td>
+<td>Bar charts, line charts, pie charts</td>
+<td>(list 2-3 examples from project)</td>
+</tr>
+<tr>
+<td><strong>Plotly</strong></td>
+<td>Advanced interactive charts with hover details</td>
+<td>(list 1-2 examples from project)</td>
+</tr>
+<tr>
+<td><strong>vis-network</strong></td>
+<td>Network diagrams showing connections</td>
+<td>Learning Graph Viewer</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tips-for-using-microsims-in-class">Tips for Using MicroSims in Class<a class="headerlink" href="#tips-for-using-microsims-in-class" title="Permanent link">¶</a></h3>
+<ol>
+<li><strong>Project them on a screen</strong> — MicroSims are designed to be visible on a projector. Have students call out predictions before you move a slider.</li>
+<li><strong>Let students explore independently</strong> — After a demonstration, give students 5–10 minutes to experiment on their own devices.</li>
+<li><strong>Use the "Reset" button</strong> — Every MicroSim has a reset button. Encourage students to reset and try different scenarios.</li>
+<li><strong>Connect to the text</strong> — Each MicroSim is placed near the concept it illustrates. After exploring the sim, have students re-read the surrounding text.</li>
+<li><strong>Offline access</strong> — MicroSims require an internet connection unless you have built the site locally (see "Customizing Your Own Textbook" below).</li>
+</ol>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Palette's Tip: Embed MicroSims Anywhere!</p>
+<p><img alt="Palette shares a tip" class="mascot-admonition-img" src="../img/mascot/tip.png">
+You can add any MicroSim to <strong>any web page</strong> — a Google Site, a
+WordPress blog, an LMS like Canvas or Schoology, or even a plain
+HTML file. Just paste a single line of HTML:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://dmccreary.github.io/p5-textbook/sims/YOUR-MICROSIM-NAME/main.html"</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span> <span class="na">height</span><span class="o">=</span><span class="s">"450px"</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>Replace <code>YOUR-MICROSIM-NAME</code> with the name of any MicroSim from
+the <a href="../sims/">MicroSims list</a>. That's it — one line of
+code and your students have an interactive simulation on any page
+you control.</p>
+</div>
+<h3 id="microsim-specifications">MicroSim Specifications<a class="headerlink" href="#microsim-specifications" title="Permanent link">¶</a></h3>
+<p>Within each chapter, you'll find a collapsible <strong>details</strong> section below each MicroSim labeled with its name. Click to expand and see the full specification including:</p>
+<ul>
+<li><strong>Bloom's Taxonomy level</strong> — What cognitive level the MicroSim targets (Remember, Understand, Apply, Analyze, Evaluate, Create)</li>
+<li><strong>Learning objective</strong> — What students should be able to do after using the MicroSim</li>
+<li><strong>Interactive controls</strong> — What sliders, buttons, and inputs are available</li>
+<li><strong>Default parameters</strong> — The starting values when the MicroSim loads</li>
+</ul>
+<p>These specifications are useful for lesson planning and for understanding the pedagogical intent behind each simulation.</p>
+<h2 id="using-the-glossary">Using the Glossary<a class="headerlink" href="#using-the-glossary" title="Permanent link">¶</a></h2>
+<h3 id="what-is-the-glossary">What is the Glossary?<a class="headerlink" href="#what-is-the-glossary" title="Permanent link">¶</a></h3>
+<p>The <strong>glossary</strong> is an alphabetical list of all key terms used in the textbook, each with a precise, concise definition. It serves as a quick-reference dictionary for students encountering unfamiliar vocabulary.</p>
+<h3 id="how-to-access-the-glossary">How to Access the Glossary<a class="headerlink" href="#how-to-access-the-glossary" title="Permanent link">¶</a></h3>
+<ul>
+<li>Click <strong>"Glossary"</strong> in the left navigation sidebar from any page</li>
+<li>Use the browser's built-in search (Ctrl+F on Windows/Linux, Cmd+F on Mac) to find a specific term on the glossary page</li>
+<li>Use the site-wide <strong>search bar</strong> at the top of any page to search for a term across the entire textbook</li>
+</ul>
+<h3 id="tips-for-using-the-glossary-in-class">Tips for Using the Glossary in Class<a class="headerlink" href="#tips-for-using-the-glossary-in-class" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Vocabulary preview</strong> — Before starting a new chapter, have students look up the key terms in the glossary to build familiarity.</li>
+<li><strong>Definition matching</strong> — Create a warm-up activity where students match glossary definitions to terms from the current chapter.</li>
+<li><strong>Student-generated definitions</strong> — After reading a chapter, have students write their own definitions, then compare with the glossary.</li>
+<li><strong>Glossary quizzes</strong> — Use glossary terms for quick formative assessments (flash cards, quiz games, etc.).</li>
+</ul>
+<h2 id="using-the-faq">Using the FAQ<a class="headerlink" href="#using-the-faq" title="Permanent link">¶</a></h2>
+<h3 id="what-is-the-faq">What is the FAQ?<a class="headerlink" href="#what-is-the-faq" title="Permanent link">¶</a></h3>
+<p>The <strong>FAQ</strong> (Frequently Asked Questions) is a curated list of common questions students ask about Creative Coding, organized by topic. Each question includes a clear, concise answer written at the same reading level as the chapters.</p>
+<h3 id="how-the-faq-is-organized">How the FAQ is Organized<a class="headerlink" href="#how-the-faq-is-organized" title="Permanent link">¶</a></h3>
+<p>The FAQ covers questions across all 25 chapters. Questions are grouped by topic area to make browsing easy.</p>
+<h3 id="tips-for-using-the-faq-in-class">Tips for Using the FAQ in Class<a class="headerlink" href="#tips-for-using-the-faq-in-class" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Discussion starters</strong> — Pick 2–3 FAQ questions at the start of class and have students discuss before revealing the answer.</li>
+<li><strong>Homework support</strong> — Point students to the FAQ when they have questions outside of class hours.</li>
+<li><strong>Extension reading</strong> — The FAQ often covers angles not addressed in the main chapter text, making it good supplementary material.</li>
+<li><strong>Test review</strong> — Students can use the FAQ as a study guide before assessments.</li>
+</ul>
+<h2 id="using-the-quizzes">Using the Quizzes<a class="headerlink" href="#using-the-quizzes" title="Permanent link">¶</a></h2>
+<h3 id="what-are-the-quizzes">What Are the Quizzes?<a class="headerlink" href="#what-are-the-quizzes" title="Permanent link">¶</a></h3>
+<p>Each chapter has an accompanying <strong>quiz page</strong> with multiple-choice questions designed for self-assessment. Quizzes test understanding of the concepts covered in that chapter and are aligned to specific items from the learning graph.</p>
+<h3 id="how-quizzes-work">How Quizzes Work<a class="headerlink" href="#how-quizzes-work" title="Permanent link">¶</a></h3>
+<ul>
+<li>Quizzes are accessed by clicking the <strong>"Quiz"</strong> link under each chapter in the left navigation</li>
+<li>Each quiz contains multiple-choice questions at varying Bloom's Taxonomy levels</li>
+<li>Questions are presented as expandable sections — students can click to reveal the answer and explanation after attempting the question</li>
+<li>Quizzes are <strong>not graded automatically</strong> — they are designed as formative self-check tools, not summative assessments</li>
+</ul>
+<h3 id="tips-for-using-quizzes-in-class">Tips for Using Quizzes in Class<a class="headerlink" href="#tips-for-using-quizzes-in-class" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Exit tickets</strong> — Have students complete the quiz at the end of a class period as a quick check for understanding.</li>
+<li><strong>Pre-reading check</strong> — Assign the quiz before the chapter to see what students already know (diagnostic assessment).</li>
+<li><strong>Post-reading review</strong> — Use the quiz after reading to identify concepts that need re-teaching.</li>
+<li><strong>Collaborative quiz</strong> — Have students work in pairs to discuss each question before revealing the answer.</li>
+<li><strong>Custom assessments</strong> — Use the quiz questions as a bank to create your own tests. The questions are openly licensed (see "Understanding the License" below).</li>
+</ul>
+<h3 id="blooms-taxonomy-levels">Bloom's Taxonomy Levels<a class="headerlink" href="#blooms-taxonomy-levels" title="Permanent link">¶</a></h3>
+<p>Each quiz question is tagged with a <strong>Bloom's Taxonomy</strong> level. Bloom's Taxonomy is a framework that classifies thinking skills from simple to complex:</p>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Name</th>
+<th>What It Means</th>
+<th>Example Verb</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>L1</td>
+<td>Remember</td>
+<td>Recall facts and definitions</td>
+<td>Define, list, name</td>
+</tr>
+<tr>
+<td>L2</td>
+<td>Understand</td>
+<td>Explain concepts in your own words</td>
+<td>Explain, describe, compare</td>
+</tr>
+<tr>
+<td>L3</td>
+<td>Apply</td>
+<td>Use concepts to solve problems</td>
+<td>Calculate, demonstrate, solve</td>
+</tr>
+<tr>
+<td>L4</td>
+<td>Analyze</td>
+<td>Break down and examine relationships</td>
+<td>Differentiate, organize, compare</td>
+</tr>
+<tr>
+<td>L5</td>
+<td>Evaluate</td>
+<td>Make judgments based on criteria</td>
+<td>Assess, argue, justify</td>
+</tr>
+<tr>
+<td>L6</td>
+<td>Create</td>
+<td>Produce original work or solutions</td>
+<td>Design, construct, propose</td>
+</tr>
+</tbody>
+</table>
+<p>A well-balanced assessment includes questions across multiple levels. The quizzes in this textbook primarily target levels L1–L4, with critical thinking challenges in the chapters targeting L5–L6.</p>
+<h2 id="using-the-references">Using the References<a class="headerlink" href="#using-the-references" title="Permanent link">¶</a></h2>
+<h3 id="what-are-the-references">What Are the References?<a class="headerlink" href="#what-are-the-references" title="Permanent link">¶</a></h3>
+<p>Each chapter has an accompanying <strong>references page</strong> with a curated list of approximately 10 high-quality sources that students can use for further reading. References prioritize Wikipedia articles for accessibility and reliability, supplemented by authoritative books and research papers.</p>
+<h3 id="how-references-are-organized">How References Are Organized<a class="headerlink" href="#how-references-are-organized" title="Permanent link">¶</a></h3>
+<p>Each reference includes:</p>
+<ul>
+<li><strong>Title</strong> — The name of the source</li>
+<li><strong>URL</strong> — A clickable link to the source</li>
+<li><strong>Relevance</strong> — A brief description of why this source is useful and how it connects to the chapter content</li>
+</ul>
+<h3 id="a-note-about-link-rot">A Note About Link Rot<a class="headerlink" href="#a-note-about-link-rot" title="Permanent link">¶</a></h3>
+<p><strong>Link rot</strong> is when a web link (URL) stops working because the page has been moved, renamed, or deleted. This is a common problem with any resource that links to external websites. While we prioritize Wikipedia (which has very stable URLs), some links may become outdated over time.</p>
+<p>If you or your students encounter a broken link:</p>
+<ol>
+<li>Try searching for the article title on the source website</li>
+<li>Use the <a href="https://web.archive.org/">Wayback Machine</a> to find archived versions of the page</li>
+<li>Report the broken link using GitHub Issues (see "Feedback" below)</li>
+</ol>
+<h2 id="feedback">Feedback<a class="headerlink" href="#feedback" title="Permanent link">¶</a></h2>
+<h3 id="reporting-issues-and-suggestions">Reporting Issues and Suggestions<a class="headerlink" href="#reporting-issues-and-suggestions" title="Permanent link">¶</a></h3>
+<p>This textbook is an open-source project hosted on <strong>GitHub</strong>, a website where software and content projects are developed collaboratively. You don't need to understand programming to report a problem or suggest an improvement.</p>
+<h3 id="what-is-a-github-issue">What is a GitHub Issue?<a class="headerlink" href="#what-is-a-github-issue" title="Permanent link">¶</a></h3>
+<p>A <strong>GitHub Issue</strong> is like a support ticket — it's a way to report a bug, suggest an improvement, or ask a question. Each issue gets a unique number and can be discussed by the project team and community.</p>
+<h3 id="how-to-submit-feedback">How to Submit Feedback<a class="headerlink" href="#how-to-submit-feedback" title="Permanent link">¶</a></h3>
+<ol>
+<li>Go to the textbook's GitHub repository: <a href="https://github.com/dmccreary/p5-textbook">dmccreary/p5-textbook</a></li>
+<li>Click the <strong>"Issues"</strong> tab at the top of the page</li>
+<li>Click the green <strong>"New issue"</strong> button</li>
+<li>Give your issue a clear title (e.g., "Broken link in Chapter 5 references" or "Suggestion: Add MicroSim for topic X")</li>
+<li>In the description, provide as much detail as possible:<ul>
+<li>Which page or chapter has the problem</li>
+<li>What you expected to see vs. what you actually see</li>
+<li>Your browser and device (if relevant)</li>
+</ul>
+</li>
+<li>Click <strong>"Submit new issue"</strong></li>
+</ol>
+<p>You will need a free GitHub account to submit issues. If you prefer not to create an account, you can email feedback to the author using the contact page.</p>
+<h3 id="types-of-feedback-welcome">Types of Feedback Welcome<a class="headerlink" href="#types-of-feedback-welcome" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Typos and errors</strong> — factual mistakes, spelling errors, broken formatting</li>
+<li><strong>Broken links</strong> — URLs that no longer work</li>
+<li><strong>MicroSim bugs</strong> — simulations that don't load or behave unexpectedly</li>
+<li><strong>Content suggestions</strong> — topics that should be covered, examples that could be improved</li>
+<li><strong>Accessibility issues</strong> — content that is difficult to read or navigate for students with disabilities</li>
+</ul>
+<h2 id="understanding-the-license">Understanding the License<a class="headerlink" href="#understanding-the-license" title="Permanent link">¶</a></h2>
+<h3 id="what-is-a-creative-commons-license">What is a Creative Commons License?<a class="headerlink" href="#what-is-a-creative-commons-license" title="Permanent link">¶</a></h3>
+<p>A <strong>license</strong> is a legal document that explains what others are allowed to do with a piece of work. A <strong>Creative Commons (CC) license</strong> is a standardized, easy-to-understand license used for educational and creative content. It tells you exactly what permissions you have without needing a lawyer.</p>
+<h3 id="this-textbooks-license">This Textbook's License<a class="headerlink" href="#this-textbooks-license" title="Permanent link">¶</a></h3>
+<p>This textbook uses the <strong>CC BY-NC-SA 4.0</strong> license. Here's what each part means:</p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Full Name</th>
+<th>What It Means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CC</strong></td>
+<td>Creative Commons</td>
+<td>A standard open license</td>
+</tr>
+<tr>
+<td><strong>BY</strong></td>
+<td>Attribution</td>
+<td>You must give credit to the original author</td>
+</tr>
+<tr>
+<td><strong>NC</strong></td>
+<td>Non-Commercial</td>
+<td>You cannot use the material to make money</td>
+</tr>
+<tr>
+<td><strong>SA</strong></td>
+<td>Share-Alike</td>
+<td>If you modify the material, you must share it under the same license</td>
+</tr>
+<tr>
+<td><strong>4.0</strong></td>
+<td>Version 4.0</td>
+<td>The version of the license (the current standard)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="what-you-can-do">What You CAN Do<a class="headerlink" href="#what-you-can-do" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Copy</strong> the entire textbook or individual chapters for your students</li>
+<li><strong>Share</strong> the textbook link with other teachers, students, or parents</li>
+<li><strong>Print</strong> chapters for classroom use</li>
+<li><strong>Modify</strong> the content — add your own examples, remove sections, change the order</li>
+<li><strong>Translate</strong> the content into other languages</li>
+<li><strong>Create derivative works</strong> — build your own version of the textbook based on this one</li>
+</ul>
+<h3 id="what-you-cannot-do">What You CANNOT Do<a class="headerlink" href="#what-you-cannot-do" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Sell</strong> the textbook or charge students for access</li>
+<li><strong>Remove attribution</strong> — you must credit the original author (Dan McCreary)</li>
+<li><strong>Use a different license</strong> — if you modify and share, it must remain CC BY-NC-SA 4.0</li>
+<li><strong>Claim it as your own work</strong> — the attribution requirement means you must acknowledge the original source</li>
+</ul>
+<p>For the full legal text, see the <a href="../license/">Creative Commons License</a> page.</p>
+<h2 id="customizing-your-own-textbook">Customizing Your Own Textbook<a class="headerlink" href="#customizing-your-own-textbook" title="Permanent link">¶</a></h2>
+<p>One of the most powerful features of this textbook is that you can create your own customized version. This section explains how, step by step.</p>
+<h3 id="key-technical-terms">Key Technical Terms<a class="headerlink" href="#key-technical-terms" title="Permanent link">¶</a></h3>
+<p>Before we begin, here are some terms you'll need to understand:</p>
+<ul>
+<li><strong>Repository (repo)</strong> — A folder on GitHub that contains all the files for a project. Think of it as the project's home directory.</li>
+<li><strong>Git</strong> — A version control tool that tracks changes to files. It lets you see what changed, when, and by whom.</li>
+<li><strong>Clone</strong> — Making a complete copy of a repository on your own computer.</li>
+<li><strong>Fork</strong> — Making a complete copy of a repository on your own GitHub account (stays on GitHub, not your computer).</li>
+<li><strong>MkDocs</strong> — The software that converts the textbook's markdown files into a website. You don't need to learn MkDocs deeply — just enough to make basic changes.</li>
+<li><strong>Markdown</strong> — A simple text formatting language. If you can write an email, you can write Markdown. <code>**bold**</code> makes <strong>bold</strong>, <code># Heading</code> makes a heading, and <code>-</code> makes a bullet point.</li>
+<li><strong>mkdocs.yml</strong> — The main configuration file for the textbook website. It controls the site title, navigation structure, colors, and which features are enabled.</li>
+</ul>
+<h3 id="step-1-create-a-github-account">Step 1: Create a GitHub Account<a class="headerlink" href="#step-1-create-a-github-account" title="Permanent link">¶</a></h3>
+<p>If you don't already have one, go to <a href="https://github.com">github.com</a> and create a free account.</p>
+<h3 id="step-2-fork-or-clone-the-repository">Step 2: Fork or Clone the Repository<a class="headerlink" href="#step-2-fork-or-clone-the-repository" title="Permanent link">¶</a></h3>
+<p><strong>Option A: Fork (easier, stays on GitHub)</strong></p>
+<ol>
+<li>Go to <a href="https://github.com/dmccreary/p5-textbook">dmccreary/p5-textbook</a></li>
+<li>Click the <strong>"Fork"</strong> button in the upper-right corner</li>
+<li>This creates a copy in your own GitHub account that you can edit</li>
+</ol>
+<p><strong>Option B: Clone (more control, works on your computer)</strong></p>
+<ol>
+<li>Install Git on your computer (<a href="https://git-scm.com/">git-scm.com</a>)</li>
+<li>Open a terminal (Command Prompt on Windows, Terminal on Mac)</li>
+<li>Run this command:</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/dmccreary/p5-textbook.git
+</span></code></pre></div>
+<p>This downloads the entire textbook to your computer.</p>
+<h3 id="step-3-make-changes">Step 3: Make Changes<a class="headerlink" href="#step-3-make-changes" title="Permanent link">¶</a></h3>
+<p>All content files are in the <code>docs/</code> folder. They are written in <strong>Markdown</strong> (<code>.md</code> files) — plain text files with simple formatting. You can edit them with any text editor.</p>
+<h4 id="changing-the-title-and-description">Changing the Title and Description<a class="headerlink" href="#changing-the-title-and-description" title="Permanent link">¶</a></h4>
+<p>Open <code>mkdocs.yml</code> and edit these lines:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="s">"Your</span><span class="nv"> </span><span class="s">Custom</span><span class="nv"> </span><span class="s">Textbook</span><span class="nv"> </span><span class="s">Title"</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">site_description</span><span class="p">:</span><span class="w"> </span><span class="s">"Your</span><span class="nv"> </span><span class="s">description</span><span class="nv"> </span><span class="s">here"</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">site_author</span><span class="p">:</span><span class="w"> </span><span class="s">"Your</span><span class="nv"> </span><span class="s">Name"</span>
+</span></code></pre></div>
+<h4 id="changing-the-colors">Changing the Colors<a class="headerlink" href="#changing-the-colors" title="Permanent link">¶</a></h4>
+<p>In <code>mkdocs.yml</code>, find the <code>palette</code> section:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">theme</span><span class="p">:</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">palette</span><span class="p">:</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">scheme</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">      </span><span class="nt">primary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">indigo</span><span class="w">    </span><span class="c1"># Change to: blue, red, purple, teal, etc.</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">      </span><span class="nt">accent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">orange</span><span class="w">      </span><span class="c1"># Change the accent color</span>
+</span></code></pre></div>
+<p>MkDocs Material supports these primary colors: red, pink, purple, deep purple, indigo, blue, light blue, cyan, teal, green, light green, lime, yellow, amber, orange, deep orange, brown, grey, blue grey.</p>
+<h4 id="changing-the-logo">Changing the Logo<a class="headerlink" href="#changing-the-logo" title="Permanent link">¶</a></h4>
+<p>Replace the file <code>docs/img/logo.png</code> with your own logo image (PNG format, approximately 128x128 pixels).</p>
+<h3 id="step-4-preview-your-changes-locally">Step 4: Preview Your Changes Locally<a class="headerlink" href="#step-4-preview-your-changes-locally" title="Permanent link">¶</a></h3>
+<ol>
+<li>Install Python (version 3.8 or newer) from <a href="https://python.org">python.org</a></li>
+<li>Install MkDocs and the Material theme:</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>pip<span class="w"> </span>install<span class="w"> </span>mkdocs<span class="w"> </span>mkdocs-material
+</span></code></pre></div>
+<ol>
+<li>Navigate to the project folder and start the preview server:</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">cd</span><span class="w"> </span>p5-textbook
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>mkdocs<span class="w"> </span>serve
+</span></code></pre></div>
+<ol>
+<li>Open your browser to <code>http://127.0.0.1:8000/p5-textbook/</code> to see your customized version</li>
+</ol>
+<p>The preview server watches for file changes. When you edit and save a Markdown file, the page automatically refreshes in your browser.</p>
+<h3 id="step-5-publish-your-version">Step 5: Publish Your Version<a class="headerlink" href="#step-5-publish-your-version" title="Permanent link">¶</a></h3>
+<p>To publish your customized textbook as a free website using GitHub Pages:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>mkdocs<span class="w"> </span>gh-deploy
+</span></code></pre></div>
+<p>This command builds the website and publishes it to <code>https://YOUR-USERNAME.github.io/p5-textbook/</code>. The process takes about 1–2 minutes.</p>
+<h2 id="customizing-your-analytics">Customizing Your Analytics<a class="headerlink" href="#customizing-your-analytics" title="Permanent link">¶</a></h2>
+<h3 id="what-is-web-analytics">What is Web Analytics?<a class="headerlink" href="#what-is-web-analytics" title="Permanent link">¶</a></h3>
+<p><strong>Web analytics</strong> is the process of measuring how visitors use a website — which pages they visit, how long they stay, and where they come from. For an educational textbook, analytics can help you understand which chapters students read most, which MicroSims they interact with, and where they might be struggling.</p>
+<h3 id="google-analytics">Google Analytics<a class="headerlink" href="#google-analytics" title="Permanent link">¶</a></h3>
+<p>This textbook includes <strong>Google Analytics</strong> — a free service from Google that tracks website visits. The author's analytics property is already configured, but if you create your own fork, you'll want to set up your own.</p>
+<h4 id="setting-up-your-own-google-analytics">Setting Up Your Own Google Analytics<a class="headerlink" href="#setting-up-your-own-google-analytics" title="Permanent link">¶</a></h4>
+<ol>
+<li>Go to <a href="https://analytics.google.com/">analytics.google.com</a> and sign in with a Google account</li>
+<li>Create a new <strong>property</strong> (Google's term for a tracked website)</li>
+<li>Google will give you a <strong>Measurement ID</strong> — a code that looks like <code>G-XXXXXXXXXX</code></li>
+<li>In your <code>mkdocs.yml</code>, update this section:</li>
+</ol>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">extra</span><span class="p">:</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nt">analytics</span><span class="p">:</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">google</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="nt">property</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">G-YOUR-MEASUREMENT-ID</span>
+</span></code></pre></div>
+<ol>
+<li>Rebuild and deploy your site. Analytics data will start appearing within 24–48 hours.</li>
+</ol>
+<h4 id="what-you-can-learn-from-analytics">What You Can Learn from Analytics<a class="headerlink" href="#what-you-can-learn-from-analytics" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>Which chapters are most/least visited</strong> — helps you identify where students might be skipping content</li>
+<li><strong>Average time on page</strong> — longer times may indicate engagement or confusion</li>
+<li><strong>Device breakdown</strong> — what percentage of students use phones vs. computers</li>
+<li><strong>Geographic distribution</strong> — where your students are accessing from</li>
+<li><strong>Search terms</strong> — what students search for on your site</li>
+</ul>
+<h3 id="xapi-monitoring-advanced">xAPI Monitoring (Advanced)<a class="headerlink" href="#xapi-monitoring-advanced" title="Permanent link">¶</a></h3>
+<p><strong>xAPI</strong> (Experience API, also called "Tin Can API") is an advanced standard for tracking detailed learning activities — not just page views, but specific interactions like "student moved a slider to position X" or "student answered quiz question 3 correctly."</p>
+<h4 id="what-is-an-lrs">What is an LRS?<a class="headerlink" href="#what-is-an-lrs" title="Permanent link">¶</a></h4>
+<p>An <strong>LRS</strong> (Learning Record Store) is a database that stores xAPI learning records. Think of it as a specialized analytics system designed specifically for education. If you use an LRS, you can track granular student learning data.</p>
+<h4 id="important-regulatory-considerations">Important: Regulatory Considerations<a class="headerlink" href="#important-regulatory-considerations" title="Permanent link">¶</a></h4>
+<p>Before collecting student-specific learning data, be aware of these regulations:</p>
+<ul>
+<li><strong>FERPA</strong> (Family Educational Rights and Privacy Act) — U.S. federal law that protects student education records. If you collect data that can identify individual students, you must comply with FERPA.</li>
+<li><strong>COPPA</strong> (Children's Online Privacy Protection Act) — U.S. federal law that applies to children under 13. If any of your students are under 13, additional restrictions apply.</li>
+<li><strong>State laws</strong> — Many U.S. states have additional student privacy laws.</li>
+<li><strong>GDPR</strong> (General Data Protection Regulation) — European Union law that applies if any of your students are in the EU.</li>
+</ul>
+<p><strong>Recommendation</strong>: The Google Analytics setup described above is anonymous by default — it tracks aggregate page views, not individual students. This is the safest approach. If you want individual student tracking via xAPI, consult your school district's data privacy officer before proceeding.</p>
+<h3 id="building-a-student-progress-dashboard-with-ai">Building a Student Progress Dashboard with AI<a class="headerlink" href="#building-a-student-progress-dashboard-with-ai" title="Permanent link">¶</a></h3>
+<p>As AI tools become more accessible, it is becoming possible to build custom dashboards that visualize student progress through the textbook. For example:</p>
+<ul>
+<li>Which chapters each student has completed</li>
+<li>Quiz scores over time</li>
+<li>MicroSim engagement levels</li>
+<li>Concepts that need re-teaching based on quiz performance</li>
+</ul>
+<p>Building such a dashboard requires programming knowledge (Python, JavaScript) and careful attention to student data privacy. This is an advanced topic beyond the scope of this guide, but the open-source nature of this textbook means all the data structures are available for developers to build upon.</p>
+<h2 id="the-learning-graph">The Learning Graph<a class="headerlink" href="#the-learning-graph" title="Permanent link">¶</a></h2>
+<h3 id="what-is-a-learning-graph">What is a Learning Graph?<a class="headerlink" href="#what-is-a-learning-graph" title="Permanent link">¶</a></h3>
+<p>A <strong>learning graph</strong> is a visual map showing how concepts in the textbook depend on each other. It is structured as a <strong>DAG</strong> (Directed Acyclic Graph) — a diagram where arrows show which concepts must be understood before others.</p>
+<p>For example, understanding advanced concepts requires mastering their prerequisites first. The learning graph makes these dependency chains visible.</p>
+<h3 id="how-teachers-can-use-the-learning-graph">How Teachers Can Use the Learning Graph<a class="headerlink" href="#how-teachers-can-use-the-learning-graph" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Prerequisite checking</strong> — Before teaching a concept, verify that students have covered its prerequisites</li>
+<li><strong>Remediation</strong> — If a student struggles with a concept, trace back to its prerequisites to find the gap</li>
+<li><strong>Curriculum mapping</strong> — Compare the learning graph to your existing syllabus to identify coverage gaps</li>
+<li><strong>Enrichment</strong> — Advanced students can explore concepts ahead of the current chapter by following the graph forward</li>
+</ul>
+<p>The interactive Learning Graph Viewer is available in the "Learning Graph" section of the left navigation.</p>
+<h2 id="palette-the-chameleon-your-pedagogical-agent">Palette the Chameleon: Your Pedagogical Agent<a class="headerlink" href="#palette-the-chameleon-your-pedagogical-agent" title="Permanent link">¶</a></h2>
+<h3 id="what-is-a-pedagogical-agent">What is a Pedagogical Agent?<a class="headerlink" href="#what-is-a-pedagogical-agent" title="Permanent link">¶</a></h3>
+<p>A <strong>pedagogical agent</strong> is a character that appears throughout a textbook to guide students. Research shows that pedagogical agents improve student engagement and perception of learning — a phenomenon called the <strong>persona effect</strong>.</p>
+<h3 id="how-palette-appears">How Palette Appears<a class="headerlink" href="#how-palette-appears" title="Permanent link">¶</a></h3>
+<p>Palette the Chameleon appears as colored callout boxes (called <strong>admonitions</strong>) throughout each chapter. There are seven types:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Color</th>
+<th>Purpose</th>
+<th>Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Welcome</td>
+<td>Green</td>
+<td>Introduces the chapter</td>
+<td>Every chapter opening</td>
+</tr>
+<tr>
+<td>Thinking</td>
+<td>Orange</td>
+<td>Highlights key insights</td>
+<td>1–2 per chapter</td>
+</tr>
+<tr>
+<td>Tip</td>
+<td>Green</td>
+<td>Shares practical advice</td>
+<td>As needed</td>
+</tr>
+<tr>
+<td>Warning</td>
+<td>Red</td>
+<td>Alerts to common mistakes</td>
+<td>As needed</td>
+</tr>
+<tr>
+<td>Encourage</td>
+<td>Blue</td>
+<td>Supports on harder concepts</td>
+<td>Where students may struggle</td>
+</tr>
+<tr>
+<td>Celebration</td>
+<td>Purple</td>
+<td>Celebrates progress</td>
+<td>Every chapter ending</td>
+</tr>
+<tr>
+<td>Neutral</td>
+<td>Gray</td>
+<td>General notes</td>
+<td>As needed</td>
+</tr>
+</tbody>
+</table>
+<p>Palette appears no more than 5–6 times per chapter to avoid overuse. Mascot admonitions are never placed back-to-back.</p>
+<h3 id="tips-for-teachers">Tips for Teachers<a class="headerlink" href="#tips-for-teachers" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Read Palette's tips aloud</strong> — They're written in a conversational tone that works well when spoken</li>
+<li><strong>Use as discussion prompts</strong> — Palette's "thinking" admonitions highlight the most important insights in each chapter</li>
+<li><strong>Encourage struggling students</strong> — Point students to Palette's "encourage" admonitions when they're frustrated with a concept</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../learning-graph/prompts/concept-microsim-prob/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Concept to MicroSim Probability Score">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Concept to MicroSim Probability Score
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../glossary/" class="md-footer__link md-footer__link--next" aria-label="Next: Glossary">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Glossary
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

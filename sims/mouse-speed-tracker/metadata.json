@@ -1,23 +1,21 @@
 {
   "title": "Mouse Speed Tracker",
-  "description": "Mouse Speed Tracker",
-  "creator": "The Art of Processing",
-  "author": "Dan McCreary",
+  "description": "Calculate real-time cursor velocity, acceleration, and motion vector angle using mouseX, pmouseX, and Pythagorean distance.",
+  "creator": "Dan McCreary",
   "date": "2026-08-20",
   "subject": [
-    "The Art of Processing"
+    "Mouse Speed Tracker",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
   ],
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en",
-  "rights": "CC BY-NC-SA 4.0",
-  "identifier": "mouse-speed-tracker",
-  "library": "TBD",
-  "bloomLevel": "TBD",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 13,
-  "chapter_title": "Mouse Keyboard Events",
-  "chapter_dir": "13-mouse-keyboard-events",
-  "chapter_rel_dir": "chapters/13-mouse-keyboard-events"
+  "rights": "CC BY 4.0",
+  "sim_id": "mouse-speed-tracker",
+  "canvasHeight": 485,
+  "bloom_level": "Apply",
+  "learning_objective": "Students will understand how instantaneous frame-by-frame mouse coordinates map to physical velocity vectors and speedometer readings.",
+  "chapter_dir": "13-mouse-keyboard-events"
 }

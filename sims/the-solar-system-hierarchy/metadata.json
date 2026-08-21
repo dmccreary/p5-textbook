@@ -1,23 +1,21 @@
 {
   "title": "The Solar System Hierarchy",
-  "description": "The Solar System Hierarchy",
-  "creator": "The Art of Processing",
-  "author": "Dan McCreary",
+  "description": "Explore hierarchical matrix transformations with nested push(), translate(), rotate(), and pop() stacks (Sun -> Earth -> Moon).",
+  "creator": "Dan McCreary",
   "date": "2026-08-20",
   "subject": [
-    "The Art of Processing"
+    "The Solar System Hierarchy",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
   ],
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en",
-  "rights": "CC BY-NC-SA 4.0",
-  "identifier": "the-solar-system-hierarchy",
-  "library": "TBD",
-  "bloomLevel": "TBD",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 6,
-  "chapter_title": "Matrix Transformations",
-  "chapter_dir": "06-matrix-transformations",
-  "chapter_rel_dir": "chapters/06-matrix-transformations"
+  "rights": "CC BY 4.0",
+  "sim_id": "the-solar-system-hierarchy",
+  "canvasHeight": 485,
+  "bloom_level": "Understand",
+  "learning_objective": "Students will master hierarchical transformation matrices and local coordinate system nesting in p5.js.",
+  "chapter_dir": "06-matrix-transformations"
 }

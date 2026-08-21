@@ -1,23 +1,21 @@
 {
   "title": "Random Walk Simulation",
-  "description": "Random Walk Simulation",
-  "creator": "The Art of Processing",
-  "author": "Dan McCreary",
+  "description": "Compare Brownian uniform random walks, Gaussian distribution walks, and L\u00e9vy Flight jumps with live spatial distribution trails.",
+  "creator": "Dan McCreary",
   "date": "2026-08-20",
   "subject": [
-    "The Art of Processing"
+    "Random Walk Simulation",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
   ],
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en",
-  "rights": "CC BY-NC-SA 4.0",
-  "identifier": "random-walk-simulation",
-  "library": "TBD",
-  "bloomLevel": "TBD",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 9,
-  "chapter_title": "Randomness And Walks",
-  "chapter_dir": "09-randomness-and-walks",
-  "chapter_rel_dir": "chapters/09-randomness-and-walks"
+  "rights": "CC BY 4.0",
+  "sim_id": "random-walk-simulation",
+  "canvasHeight": 485,
+  "bloom_level": "Analyze",
+  "learning_objective": "Students will analyze different probability distributions and their impact on generative movement and spatial coverage.",
+  "chapter_dir": "09-randomness-and-walks"
 }

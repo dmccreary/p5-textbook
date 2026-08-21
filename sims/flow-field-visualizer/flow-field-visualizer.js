@@ -10,6 +10,8 @@ let canvasHeight = drawHeight + controlHeight;
 
 let noiseScaleSlider, speedSlider, showVectorsCheckbox;
 let particles = [];
+let isRunning = false;
+let startBtn;
 let numParticles = 120;
 let zOff = 0;
 
@@ -27,7 +29,7 @@ function setup() {
   }
 
   positionControls();
-  describe('Perlin noise flow field simulator with autonomous particle tracers.', LABEL);
+  describe('Perlin noise flow field simulator with autonomous particle tracers.', FALLBACK);
 }
 
 class Particle {
@@ -142,13 +144,15 @@ function draw() {
 
 function updateCanvasSize() {
   const container = document.querySelector('main');
-  if (container) {
+  if (container && container.offsetWidth > 0) {
     canvasWidth = container.offsetWidth;
-    positionControls();
   }
 }
 
 function windowResized() {
   updateCanvasSize();
   resizeCanvas(canvasWidth, canvasHeight);
+  if (typeof positionControls === 'function') {
+    positionControls();
+  }
 }

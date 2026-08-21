@@ -11,6 +11,8 @@ let canvasHeight = drawHeight + controlHeight;
 let xSlider, ySlider, zSlider;
 let autoRotateCheckbox;
 let rotAngle = 0;
+let isRunning = false;
+let startBtn;
 
 function setup() {
   updateCanvasSize();
@@ -22,6 +24,11 @@ function setup() {
   zSlider = createSlider(-150, 150, 50, 1);
   autoRotateCheckbox = createCheckbox('Auto Orbit', true);
 
+  startBtn = createButton('Rotate Turntable');
+  startBtn.mousePressed(() => {
+    isRunning = !isRunning;
+    startBtn.html(isRunning ? 'Pause' : 'Rotate Turntable');
+  });
   positionControls();
   describe('Interactive 3D coordinate system showing red X, green Y, and blue Z axes with a glowing sphere.', LABEL);
 }
@@ -56,7 +63,7 @@ function draw() {
   push();
   // Camera & rotation
   if (autoRotateCheckbox.checked()) {
-    rotAngle += 0.01;
+    if (isRunning) rotAngle += 0.01;
   }
   orbitControl();
   rotateX(-PI / 6);
@@ -180,13 +187,20 @@ function draw() {
 
 function updateCanvasSize() {
   const container = document.querySelector('main');
-  if (container) {
+  if (container && container.offsetWidth > 0) {
     canvasWidth = container.offsetWidth;
-    positionControls();
   }
 }
 
 function windowResized() {
   updateCanvasSize();
   resizeCanvas(canvasWidth, canvasHeight);
+  if (typeof positionControls === 'function') {
+    startBtn = createButton('Rotate Turntable');
+  startBtn.mousePressed(() => {
+    isRunning = !isRunning;
+    startBtn.html(isRunning ? 'Pause' : 'Rotate Turntable');
+  });
+  positionControls();
+  }
 }

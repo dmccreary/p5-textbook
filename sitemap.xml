@@ -29,6 +29,14 @@
          <lastmod>2026-08-21</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/p5-textbook/appendices/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/appendices/p5-timeline/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/p5-textbook/chapters/</loc>
          <lastmod>2026-08-21</lastmod>
     </url>
@@ -557,6 +565,10 @@
          <lastmod>2026-08-21</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/p5-timeline/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/p5-textbook/sims/particle-physics-engine/</loc>
          <lastmod>2026-08-21</lastmod>
     </url>
@@ -585,7 +597,11 @@
          <lastmod>2026-08-21</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/p5-textbook/sims/real-time-asciify-camera/</loc>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/real-time-asciify/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/real-time-asciify-webcam/</loc>
          <lastmod>2026-08-21</lastmod>
     </url>
     <url>
@@ -690,6 +706,10 @@
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/sims/waveform-visualizer-hearer/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/teachers-guide/</loc>
          <lastmod>2026-08-21</lastmod>
     </url>
 </urlset>

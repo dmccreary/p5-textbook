@@ -1,23 +1,21 @@
 {
   "title": "The Color Compass",
-  "description": "The Color Compass",
-  "creator": "The Art of Processing",
-  "author": "Dan McCreary",
+  "description": "Navigate HSB (Hue, Saturation, Brightness) color space with an interactive circular chromatic wheel and harmony markers.",
+  "creator": "Dan McCreary",
   "date": "2026-08-20",
   "subject": [
-    "The Art of Processing"
+    "The Color Compass",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
   ],
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en",
-  "rights": "CC BY-NC-SA 4.0",
-  "identifier": "the-color-compass",
-  "library": "TBD",
-  "bloomLevel": "TBD",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 3,
-  "chapter_title": "Color Theory Pixels",
-  "chapter_dir": "03-color-theory-pixels",
-  "chapter_rel_dir": "chapters/03-color-theory-pixels"
+  "rights": "CC BY 4.0",
+  "sim_id": "the-color-compass",
+  "canvasHeight": 485,
+  "bloom_level": "Understand",
+  "learning_objective": "Students will understand polar HSB color mapping (Hue as angle 0-360\u00b0, Saturation as radius 0-100%, Brightness level).",
+  "chapter_dir": "03-color-theory-pixels"
 }

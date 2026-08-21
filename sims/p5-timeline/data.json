@@ -1,0 +1,186 @@
+{
+  "groups": [
+    { "id": "processing", "content": "Processing (Java)" },
+    { "id": "foundation", "content": "Foundation & Education" },
+    { "id": "p5_core", "content": "p5.js Releases" },
+    { "id": "p5_features", "content": "p5.js Features" },
+    { "id": "community", "content": "Community" }
+  ],
+  "items": [
+    {
+      "id": 1,
+      "group": "processing",
+      "start": "2001-08-01",
+      "content": "Processing Created At MIT",
+      "description": "Casey Reas and Ben Fry initiated the Processing project at the MIT Media Lab. It was designed as a software sketchbook to teach programming fundamentals within a visual context. This laid the foundation for accessible creative coding."
+    },
+    {
+      "id": 2,
+      "group": "community",
+      "start": "2007-09-01",
+      "content": "Processing.js Initiated",
+      "description": "John Resig created Processing.js as an early attempt to bring Processing to the web. By transpiling Java to JavaScript, it allowed sketches to run in a browser without plugins. This signaled the growing need for web-native creative coding tools."
+    },
+    {
+      "id": 3,
+      "group": "processing",
+      "start": "2008-11-24",
+      "content": "Processing 1.0 Released",
+      "description": "Processing reached its 1.0 milestone after years of development. This official release brought a stable, feature-rich environment to the creative coding community. It established Processing as a viable production tool for artists and designers."
+    },
+    {
+      "id": 4,
+      "group": "foundation",
+      "start": "2012-05-01",
+      "content": "Processing Foundation Formed",
+      "description": "The Processing Foundation was established as a non-profit organization to support the software's growth. It formalized community governance, fundraising, and long-term project stewardship. The foundation became essential in managing fellowship programs and educational outreach."
+    },
+    {
+      "id": 5,
+      "group": "processing",
+      "start": "2013-06-01",
+      "content": "Processing 2.0 Released",
+      "description": "Processing 2.0 was released with major performance enhancements and a modernized architecture. It introduced a new OpenGL-based renderer for faster 2D and 3D graphics. This version also improved the IDE and video library functionalities."
+    },
+    {
+      "id": 6,
+      "group": "p5_core",
+      "start": "2013-08-01",
+      "content": "p5.js Development Begins",
+      "description": "Lauren Lee McCarthy started developing p5.js to reimagine Processing natively for the web. Rather than transpiling Java, p5.js was built from the ground up using modern JavaScript. This pivot embraced the open web ecosystem and lowered the barrier to entry."
+    },
+    {
+      "id": 7,
+      "group": "foundation",
+      "start": "2014-08-01",
+      "content": "p5.js Formally Launched",
+      "description": "The p5.js project was officially launched with backing from the Processing Foundation and NYU's Interactive Telecommunications Program (ITP). This collaboration provided critical resources and institutional support. It marked the formal beginning of the p5.js community."
+    },
+    {
+      "id": 8,
+      "group": "foundation",
+      "start": "2015-08-01",
+      "content": "Web Editor Development Begins",
+      "description": "Development began on the p5.js Web Editor to eliminate the need for local software installation. It provided an accessible, browser-based environment for writing and sharing code. This tool quickly became vital for classroom environments and beginners."
+    },
+    {
+      "id": 9,
+      "group": "processing",
+      "start": "2015-09-30",
+      "content": "Processing 3.0 Released",
+      "description": "Processing 3.0 brought significant improvements to the code editor and integrated development environment. It introduced a new debugger tool and automated code completion to aid beginners. These features made the learning curve much smoother for novice programmers."
+    },
+    {
+      "id": 10,
+      "group": "foundation",
+      "start": "2018-01-01",
+      "content": "Widespread University Adoption",
+      "description": "p5.js saw massive adoption across higher education for introductory computer science and media arts courses. Its browser-native design and intuitive API made it a favorite among educators. This period cemented p5.js as a standard tool for teaching code to non-majors."
+    },
+    {
+      "id": 11,
+      "group": "community",
+      "start": "2019-01-01",
+      "content": "Socially Responsible Computing",
+      "description": "The community began a concerted effort to integrate ethics and social justice into creative coding. Discussions around bias, inclusivity, and socially responsible computing became central to the pedagogy. This shift expanded the project's focus beyond just writing code."
+    },
+    {
+      "id": 12,
+      "group": "p5_core",
+      "start": "2020-02-01",
+      "content": "p5.js 1.0 Released",
+      "description": "The 1.0 version marked a stable, production-ready milestone for the p5.js library. It finalized core APIs and solidified the project's commitment to extensive, high-quality documentation. This release signaled maturity and long-term reliability for developers."
+    },
+    {
+      "id": 13,
+      "group": "p5_features",
+      "start": "2020-02-02",
+      "content": "Alt-Text & Accessibility Rules",
+      "description": "Significant updates were made to enforce accessibility within p5.js sketches. Mandatory alt-text and screen reader compatibility were integrated into the core library. This aligned with the community's mission to make creative coding inclusive for visually impaired users."
+    },
+    {
+      "id": 14,
+      "group": "p5_features",
+      "start": "2020-02-03",
+      "content": "Animated GIF Support Added",
+      "description": "The library introduced native support for exporting sketches directly as animated GIFs. This highly requested feature allowed creators to easily share their work on social media. It drastically improved the workflow for generative artists and hobbyists."
+    },
+    {
+      "id": 15,
+      "group": "foundation",
+      "start": "2020-06-01",
+      "content": "Rotating Leadership Introduced",
+      "description": "The project transitioned to a fellowship-based, rotating leadership model to ensure long-term sustainability. This structure was designed to prevent burnout in a volunteer-led open-source project. It also ensured that diverse voices continually guided the community."
+    },
+    {
+      "id": 16,
+      "group": "p5_core",
+      "start": "2020-12-01",
+      "content": "p5.js 1.1.0 Released",
+      "description": "The 1.1.0 release focused on incremental improvements and bug fixes following the major 1.0 milestone. It included enhancements to typography rendering and math functions. This update demonstrated a commitment to regular, stable maintenance."
+    },
+    {
+      "id": 17,
+      "group": "p5_core",
+      "start": "2021-07-01",
+      "content": "p5.js 1.4.0 Released",
+      "description": "Version 1.4.0 introduced new capabilities for manipulating audio and video within sketches. The update expanded the creative potential for multimedia web applications. It also refined the performance of DOM element interactions."
+    },
+    {
+      "id": 18,
+      "group": "processing",
+      "start": "2022-08-09",
+      "content": "Processing 4.0 Released",
+      "description": "Processing 4.0 was released to seamlessly support modern Java versions and 64-bit architectures. It resolved long-standing compatibility issues with new operating systems. This release ensured the desktop Java environment remained relevant alongside the web-based p5.js."
+    },
+    {
+      "id": 19,
+      "group": "p5_core",
+      "start": "2022-10-01",
+      "content": "p5.js 1.5.0 Released",
+      "description": "This update brought enhancements to 3D rendering and WebGL capabilities. It allowed creators to build more complex and performant three-dimensional scenes. The release marked a significant step forward for in-browser 3D creative coding."
+    },
+    {
+      "id": 20,
+      "group": "p5_core",
+      "start": "2023-03-01",
+      "content": "p5.js 1.6.0 Released",
+      "description": "The 1.6.0 release introduced better color management and updated shape drawing algorithms. It streamlined the process of handling different color spaces. This provided artists with more precise control over their visual outputs."
+    },
+    {
+      "id": 21,
+      "group": "p5_core",
+      "start": "2023-10-01",
+      "content": "p5.js 1.9.0 Released",
+      "description": "Version 1.9.0 served as a final major update for the 1.x series, preparing the groundwork for future architectures. It included extensive bug fixes and performance tuning. The release stabilized the environment before the community shifted focus to 2.0."
+    },
+    {
+      "id": 22,
+      "group": "p5_core",
+      "start": "2025-01-01",
+      "content": "p5.js 2.0 Enters Beta",
+      "description": "The highly anticipated p5.js 2.0 entered its beta phase for community testing. It aimed to modernize the codebase by deeply integrating contemporary JavaScript standards. This beta phase invited extensive user feedback to ensure a smooth transition."
+    },
+    {
+      "id": 23,
+      "group": "p5_core",
+      "start": "2025-04-01",
+      "content": "p5.js 2.0 Available",
+      "description": "p5.js 2.0 became officially available for import in web projects. It featured a leaner footprint and improved integration with modern frontend frameworks. This release marked a new era for the library's underlying architecture."
+    },
+    {
+      "id": 24,
+      "group": "p5_features",
+      "start": "2025-06-01",
+      "content": "WebGPU Support Integrated",
+      "description": "Experimental WebGPU support was introduced to leverage next-generation browser graphics capabilities. This allowed for vastly improved performance in complex simulations and 3D rendering. It positioned p5.js at the forefront of web graphics technology."
+    },
+    {
+      "id": 25,
+      "group": "community",
+      "start": "2026-08-01",
+      "content": "p5.js 2.0 Becomes Default",
+      "description": "The p5.js Web Editor was updated to use version 2.0 as the default library for all new sketches. This solidified the transition away from the 1.x series. It ensured that all new users immediately benefited from the modernized framework."
+    }
+  ]
+}

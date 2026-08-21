@@ -1,23 +1,21 @@
 {
   "title": "Stage Lighting Setup",
-  "description": "Stage Lighting Setup",
-  "creator": "The Art of Processing",
-  "author": "Dan McCreary",
+  "description": "3D WebGL stage lighting simulator: adjust Ambient, Directional, and Point light intensities on metallic, normal, and specular materials.",
+  "creator": "Dan McCreary",
   "date": "2026-08-20",
   "subject": [
-    "The Art of Processing"
+    "Stage Lighting Setup",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
   ],
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en",
-  "rights": "CC BY-NC-SA 4.0",
-  "identifier": "stage-lighting-setup",
-  "library": "TBD",
-  "bloomLevel": "TBD",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 20,
-  "chapter_title": "3D Cameras Shaders",
-  "chapter_dir": "20-3d-cameras-shaders",
-  "chapter_rel_dir": "chapters/20-3d-cameras-shaders"
+  "rights": "CC BY 4.0",
+  "sim_id": "stage-lighting-setup",
+  "canvasHeight": 485,
+  "bloom_level": "Understand",
+  "learning_objective": "Students will understand 3D shader illumination models (ambientLight, directionalLight, pointLight) and material reflectance.",
+  "chapter_dir": "20-3d-cameras-shaders"
 }

@@ -1,23 +1,21 @@
 {
   "title": "Spectrum Analyzer",
-  "description": "Spectrum Analyzer",
-  "creator": "The Art of Processing",
-  "author": "Dan McCreary",
+  "description": "Audio Fast Fourier Transform (FFT) spectrum visualizer displaying 5 frequency bands: Bass, LowMid, Mid, HighMid, and Treble.",
+  "creator": "Dan McCreary",
   "date": "2026-08-20",
   "subject": [
-    "The Art of Processing"
+    "Spectrum Analyzer",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
   ],
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en",
-  "rights": "CC BY-NC-SA 4.0",
-  "identifier": "spectrum-analyzer",
-  "library": "TBD",
-  "bloomLevel": "TBD",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 22,
-  "chapter_title": "Mic Input Fft",
-  "chapter_dir": "22-mic-input-fft",
-  "chapter_rel_dir": "chapters/22-mic-input-fft"
+  "rights": "CC BY 4.0",
+  "sim_id": "spectrum-analyzer",
+  "canvasHeight": 485,
+  "bloom_level": "Analyze",
+  "learning_objective": "Students will learn frequency domain analysis, FFT bin aggregation, and real-time audio equalization meters.",
+  "chapter_dir": "22-mic-input-fft"
 }

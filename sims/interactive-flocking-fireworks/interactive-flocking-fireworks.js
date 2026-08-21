@@ -11,6 +11,8 @@ let canvasHeight = drawHeight + controlHeight;
 let alignSlider, cohesionSlider, sepSlider;
 let boids = [];
 let fireworkParticles = [];
+let isRunning = false;
+let startBtn;
 
 function setup() {
   updateCanvasSize();
@@ -25,8 +27,13 @@ function setup() {
     boids.push(new Boid(random(canvasWidth), random(drawHeight)));
   }
 
+  startBtn = createButton('Launch Fireworks');
+  startBtn.mousePressed(() => {
+    isRunning = !isRunning;
+    startBtn.html(isRunning ? 'Pause' : 'Launch Fireworks');
+  });
   positionControls();
-  describe('Flocking boids with interactive fireworks on mouse click.', LABEL);
+  describe('Flocking boids with interactive fireworks on mouse click.', FALLBACK);
 }
 
 class Boid {
@@ -179,13 +186,20 @@ function draw() {
 
 function updateCanvasSize() {
   const container = document.querySelector('main');
-  if (container) {
+  if (container && container.offsetWidth > 0) {
     canvasWidth = container.offsetWidth;
-    positionControls();
   }
 }
 
 function windowResized() {
   updateCanvasSize();
   resizeCanvas(canvasWidth, canvasHeight);
+  if (typeof positionControls === 'function') {
+    startBtn = createButton('Launch Fireworks');
+  startBtn.mousePressed(() => {
+    isRunning = !isRunning;
+    startBtn.html(isRunning ? 'Pause' : 'Launch Fireworks');
+  });
+  positionControls();
+  }
 }

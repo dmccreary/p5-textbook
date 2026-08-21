@@ -1,23 +1,21 @@
 {
   "title": "Water Hose Particle Emitter",
-  "description": "Water Hose Particle Emitter",
-  "creator": "The Art of Processing",
-  "author": "Dan McCreary",
+  "description": "Draggable continuous water nozzle particle emitter simulating lifespan, gravity, and elastic barrier collisions.",
+  "creator": "Dan McCreary",
   "date": "2026-08-20",
   "subject": [
-    "The Art of Processing"
+    "Water Hose Particle Emitter",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
   ],
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en",
-  "rights": "CC BY-NC-SA 4.0",
-  "identifier": "water-hose-particle-emitter",
-  "library": "TBD",
-  "bloomLevel": "TBD",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 12,
-  "chapter_title": "Particle Systems",
-  "chapter_dir": "12-particle-systems",
-  "chapter_rel_dir": "chapters/12-particle-systems"
+  "rights": "CC BY 4.0",
+  "sim_id": "water-hose-particle-emitter",
+  "canvasHeight": 485,
+  "bloom_level": "Apply",
+  "learning_objective": "Students will learn particle system architecture, acceleration due to gravity, and collision response vectors.",
+  "chapter_dir": "12-particle-systems"
 }
