@@ -219,7 +219,10 @@ nav:
 
   - Appendices:
       - List of Appendices: appendices/index.md
-      - P5 Timeline: appendices/p5-timeline.md
+      - P5 Timeline: appendices/p5-timeline/index.md
+      - p5 and MicroSims: appendices/p5-and-microsims.md
+      - LMS Integration: appendices/lms-integration/index.md
+      - Open Source Health Metrics: appendices/open-source-health-metrics/index.md
 
   - Learning Graph:
       - Introduction: learning-graph/index.md
@@ -240,7 +243,7 @@ nav:
       - learning-graph/prompts/index.md
       - learning-graph/prompts/concept-microsim-prob.md
 
-  - Teachers Guide: teachers-guide/index.md
+  - Teacher's Guide: teachers-guide/index.md
   - Glossary: glossary.md
   - FAQ: faq.md
   - License: license.md
@@ -359,7 +362,7 @@ extra:
   textbook_name: 'The Art of Processing'
   textbook_version: '0.1'
 
-  # Google Analytics — uncomment once a property ID exists:
-  # analytics:
-  #   provider: google
-  #   property: G-XXXXXXXXXX
+  # Google Analytics — uncomment once a property ID exists: G-V302FW7X16
+  analytics:
+    provider: google
+    property: G-V302FW7X16

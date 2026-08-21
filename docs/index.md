@@ -30,11 +30,15 @@ This comprehensive, expansive intelligent textbook bridges the gap between creat
 
 Use the navigation menu to explore:
 
-- **Chapters** - Main educational content
-- **Learning Graph** - Interactive concept visualization
-- **MicroSims** - Interactive simulations for hands-on learning
-- **Glossary** - Key terms and definitions
-- **FAQ** - Frequently asked questions
+- **[Chapters](chapters/01-intro-creative-coding/index.md)** - Main educational content
+- **[Learning Graph](learning-graph/index.md)** - Interactive concept visualization
+- **[MicroSims](sims/index.md)** - Interactive simulations for hands-on learning
+- **[Glossary](glossary.md)** - Key terms and definitions
+- **[FAQ](faq.md)** - Frequently asked questions
+- **[Teacher's Guide](teachers-guide/index.md)** - Strategies and plans for educators
+- **[About](about.md)** - Information about the book and authors
+- **[Appendices](appendices/index.md)** - Supplementary material and resources
+- **Search** - Use the search bar (or press `s` / `/`) to quickly find specific topics across the entire book
 
 ## Getting Started
 

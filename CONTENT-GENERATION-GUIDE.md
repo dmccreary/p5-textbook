@@ -133,3 +133,7 @@ Large Language Models often attempt to artificially inflate text to meet word co
 2. **Expand via "Show, Don't Tell"**: If a chapter feels too short, expand it by adding concrete code examples, introducing another interactive MicroSim, or detailing the technical mechanics. NEVER expand a chapter by repeating previous paragraphs, summarizing what was just said, or using generic filler text.
 3. **Ban Formulaic Templates**: Do not use repetitive boilerplate sentence structures to introduce a list of concepts (e.g., "Let's talk about [Concept]. The concept of [Concept] is fundamental..."). Concepts must be organically woven into natural, flowing narrative paragraphs.
 4. **Code Over Prose**: When explaining abstract logic or geometry, default to providing a commented `p5.js` code snippet rather than a long wall of descriptive text. Code provides better educational value than padded prose.
+
+## Markdown Formatting Rules
+
+1. **List Spacing**: EVERY Markdown list (both unnumbered and numbered) MUST have a blank line before the list begins.

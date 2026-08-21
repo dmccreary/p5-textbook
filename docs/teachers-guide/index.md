@@ -1,4 +1,4 @@
-# Creative Coding Teachers Guide
+# Creative Coding Teacher's Guide
 
 Welcome to the teacher's guide for *The Art of Processing: Creative Coding, Computational Thinking, and Interactive Media with p5.js*. This guide explains every feature of the textbook, how to use it in your classroom, and how to customize it for your students. No prior technical knowledge is assumed — every technical term is defined before it is used.
 
@@ -23,7 +23,7 @@ Not all digital textbooks are created equal. We categorize intelligent textbooks
 | **Level 4** | AI-Assisted | Includes an AI tutor that can answer student questions | Chatbot integration, automated feedback |
 | **Level 5** | Fully Adaptive AI | Continuously learns from student interactions and optimizes the experience | Real-time content generation, predictive analytics |
 
-**This textbook is a Level 2 Intelligent Textbook.** 
+**This textbook is a Level 2.9 Intelligent Textbook.** 
 
 ### What Makes This Textbook Different
 

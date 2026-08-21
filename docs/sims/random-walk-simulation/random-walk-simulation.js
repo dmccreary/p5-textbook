@@ -28,9 +28,15 @@ function setup() {
   resetWalkButton = createButton('Reset Walker');
   resetWalkButton.mousePressed(resetWalker);
 
+  startBtn = createButton('Start Walk');
+  startBtn.mousePressed(() => {
+    isRunning = !isRunning;
+    startBtn.html(isRunning ? 'Pause' : 'Start Walk');
+  });
+
   resetWalker();
   positionControls();
-  describe('Random walk simulator comparing uniform, Gaussian, and Levy flight trajectories.', LABEL);
+  describe('Random walk simulator comparing uniform, Gaussian, and Levy flight trajectories.', FALLBACK);
 }
 
 function resetWalker() {
@@ -40,6 +46,7 @@ function resetWalker() {
 }
 
 function positionControls() {
+  if (typeof walkTypeSelect === 'undefined' || !walkTypeSelect) return;
   let col1L = 15;
   let col2L = canvasWidth / 2 + 15;
   let w = canvasWidth / 2 - 30;
@@ -51,8 +58,11 @@ function positionControls() {
   stepSizeSlider.position(col2L, drawHeight + 45);
   stepSizeSlider.size(w);
 
-  resetWalkButton.position(col1L, drawHeight + 45);
-  resetWalkButton.size(w);
+  let halfW = (w - 10) / 2;
+  startBtn.position(col1L, drawHeight + 45);
+  startBtn.size(halfW);
+  resetWalkButton.position(col1L + halfW + 10, drawHeight + 45);
+  resetWalkButton.size(halfW);
 }
 
 function draw() {

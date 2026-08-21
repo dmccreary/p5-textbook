@@ -29,7 +29,11 @@ Oscilloscope visualizing the 4 fundamental audio synthesizer waveforms: Sine, Sq
 
 ## How to Use
 
-Interact with the visual elements and adjust the control sliders and buttons located beneath the simulation canvas to explore how parameter changes affect the output in real time.
+Interact with the visual elements and adjust the controls located beneath the simulation canvas:
+- **Waveform Type:** Switch between Sine, Square, Triangle, and Sawtooth to see how the mathematical shape affects the oscilloscope trace.
+- **Start/Pause Waveform:** Animate the oscilloscope phase to watch the waveform travel.
+- **Frequency Slider:** Adjust the number of wave cycles visible on the screen.
+- **Play Sound:** Check this box to hear an audible 440 Hz tone matching the currently selected waveform timbre (make sure your device volume is on!).
 
 ## Lesson Plan
 
@@ -38,9 +42,11 @@ Interact with the visual elements and adjust the control sliders and buttons loc
 - Familiarity with variables and interactive event handling.
 
 ### Interactive Exploration
-1. Observe the default initial state of the simulation.
-2. Adjust the sliders systematically to observe the range of behaviors.
-3. Compare the visual feedback against the theoretical concepts presented in the chapter.
+1. Observe the default initial state of the oscilloscope.
+2. Select different waveforms from the dropdown menu and note how the geometric shape changes on the screen.
+3. Check the "Play Sound" box to hear the acoustic timbre of the selected waveform.
+4. Adjust the Frequency slider and use the "Start Waveform" button to animate the visual phase of the waves.
+5. Compare the visual geometry (e.g., pure sine curve vs jagged sawtooth) to the audio feedback (pure tone vs bright, brassy timbre).
 
 ### Assessment Questions
 - How does changing each individual parameter influence the resulting visual output?

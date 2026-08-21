@@ -1,6 +1,6 @@
 # Learning Graph for The Art of Processing
 
-[Open Learning Graph Viewer Fullscreen](../sims/graph-viewer/main.html){ .md-button .md-button--primary }
+[Open Learning Graph Viewer Fullscreen (Recommended)](../sims/graph-viewer/main.html){ .md-button .md-button--primary }
 
 <iframe src="../sims/graph-viewer/main.html" width="100%" height="600px" frameborder="0"></iframe>
 

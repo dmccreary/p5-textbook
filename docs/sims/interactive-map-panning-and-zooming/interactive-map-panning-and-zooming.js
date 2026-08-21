@@ -38,10 +38,10 @@ function positionControls() {
   let w = canvasWidth / 2 - 30;
   if (w < 80) w = 80;
 
-  zoomSlider.position(col1L, drawHeight + 15);
+  zoomSlider.position(col1L, drawHeight + 25);
   zoomSlider.size(w);
 
-  resetViewButton.position(col2L, drawHeight + 15);
+  resetViewButton.position(col2L, drawHeight + 25);
   resetViewButton.size(w);
 }
 
@@ -104,11 +104,15 @@ function draw() {
   stroke('silver');
   rect(0, drawHeight, canvasWidth, controlHeight);
 
-  fill(80);
+  fill(0);
   noStroke();
   textSize(12);
+  textAlign(LEFT, TOP);
+  text('Zoom:', 15, drawHeight + 10);
+
+  fill(80);
   textAlign(CENTER, TOP);
-  text('Click and drag inside map canvas to pan. Adjust zoom slider to scale.', canvasWidth / 2, drawHeight + 52);
+  text('Click and drag inside map canvas to pan. Adjust zoom slider to scale.', canvasWidth / 2, drawHeight + 58);
 }
 
 function mousePressed() {

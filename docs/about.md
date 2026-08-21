@@ -11,11 +11,21 @@ description: "About The Art of Processing — its purpose, audience, design, and
     ![Palette waving welcome](./img/mascot/welcome.png){ class="mascot-admonition-img" }
     Welcome, fellow artists and creators! I'm Palette, your guide on this creative coding journey. Whether you're blending your very first color palette or choreographing complex particle swarms, I'll be here with tips, insights, and encouragement every step of the way. Grab your digital stylus—it's time to color outside the loops!
 
----
+### Why and How This Book Was Created
+
+Dan McCreary has been writing blogs and articles on the use of Generative AI in education since GPT-3 was released in 2020. See [Grading GPT-3 For STEM Lesson Plan Content Generation](https://medium.com/data-science/grading-gpt-3-for-stem-lesson-plan-content-generation-c8d9d1f59806), published in January 2021 on Medium.
+
+In November 2023, Dan conducted a formal interview with Val Lockhart on using ChatGPT to generate p5.js programs: [Micro-Simulations for Education](https://dmccreary.medium.com/micro-simulations-for-education-6989eae8d85d).
+
+Dan started writing outlines for this book in 2023, but his focus temporarily shifted toward automating the instructional design process. He began using MicroSims to predict concept mastery through event stream analytics and actionable knowledge graph representations.
+
+Although the outlines have evolved, the core concept of using p5.js as an educational tool to teach computational thinking remains the same. What has changed is the quality of the tools available to generate MicroSims from learning objectives. Dan used both Claude and ChatGPT to create over 130 textbooks, refining the process of authoring an intelligent textbook. This is fundamentally achieved by creating detailed agent skills used to generate all textbook artifacts, including the [Learning Graph](./learning-graph/index.md).
+
+This book represents a milestone. It is the first textbook to use Google's Antigravity Desktop tool to aid in the book creation process. Previously, Google LLMs did not reliably follow the complex rules in AI skill files. However, by continually writing better content generation guides, Dan has finally managed to get Google LLMs to adhere to these rigorous standards. This book is the first product of this research.
 
 ## Why This Intelligent Textbook
 
-Computer science education is at a critical inflection point. For decades, introductory programming has been taught through abstract console outputs, rigid syntax memorization, and text-only exercises that fail to engage visual and creative thinkers. Creative coding with **p5.js** turns this paradigm on its head by transforming abstract algorithms into immediate visual, acoustic, and interactive media. Yet, educators and learners frequently lack structured, concept-mapped curriculum materials that systematically bridge the gap between creative visual expression and rigorous computational thinking.
+Computer science education is at a critical inflection point. For decades, introductory programming has been taught through abstract console outputs, rigid syntax memorization, and text-only exercises that fail to engage visual and creative thinkers. Creative coding with **p5.js** turns this paradigm on its head by transforming abstract algorithms into immediate visual, auditory, and interactive media. Yet, educators and learners frequently lack structured, concept-mapped curriculum materials that systematically bridge the gap between creative visual expression and rigorous computational thinking.
 
 **In the United States:**
 
@@ -48,8 +58,6 @@ This textbook is designed for both self-paced learners and classroom instruction
 
 To explore how concepts connect across the curriculum or to trace prerequisite chains, visit the [Learning Graph](learning-graph/index.md).
 
----
-
 ## About the Author
 
 ![](./img/dan-headshot-small.png){ width="150px" align="right" }
@@ -70,7 +78,7 @@ He is the co-author of *Making Sense of NoSQL* (Manning Publications), the found
 - Co-author of *Making Sense of NoSQL* (Manning Publications)
 - Active STEM education volunteer and mentor since 2014
 
----
+
 
 ## Acknowledgements & Research Foundation
 

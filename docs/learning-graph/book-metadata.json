@@ -2,7 +2,7 @@
   "metrics": {
     "concepts": 600,
     "chapters": 25,
-    "microsims": 20,
+    "microsims": 73,
     "stories": 0,
     "glossaryTerms": 600,
     "faqs": 89,
@@ -12,13 +12,13 @@
     "references": 250,
     "diagrams": 51,
     "equations": 122,
-    "words": 194480,
-    "links": 616,
-    "appendices": 0,
+    "words": 220495,
+    "links": 1014,
+    "appendices": 5,
     "mascotImages": 7,
     "developmentStage": "Not specified",
-    "equivalentPages": 800
+    "equivalentPages": 931
   },
   "metricsGeneratedBy": "Book Metrics Python Program v0.08",
-  "metricsGeneratedOn": "August 20, 2026 at 08:22 PM"
+  "metricsGeneratedOn": "August 21, 2026 at 07:51 AM"
 }
