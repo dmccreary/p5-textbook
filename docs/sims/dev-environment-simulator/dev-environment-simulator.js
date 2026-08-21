@@ -7,6 +7,7 @@
  */
 
 // Layout Constants
+let TITLE_H = 40;
 let EDITOR_W = 420;
 let OUTPUT_H = 320;
 let DEV_TOOLS_H = 280;
@@ -32,40 +33,13 @@ const codeLines = [
   "  img = loadImage('assets/player.png');",
   "}",
   "",
-  "function updateLayout() {
-  CANVAS_W = windowWidth;
-  EDITOR_W = min(420, CANVAS_W * 0.5);
-  
-  envBtn = { x: EDITOR_W - 250, y: 15, w: 140, h: 26 };
-  runBtn = { x: EDITOR_W - 100, y: 15, w: 80, h: 26 };
-  clearBtn = { x: CANVAS_W - 70, y: OUTPUT_H + 8, w: 50, h: 24 };
-  tabConsole = { x: EDITOR_W, y: OUTPUT_H, w: 100, h: 40 };
-  tabNetwork = { x: EDITOR_W + 100, y: OUTPUT_H, w: 100, h: 40 };
-}
-
-function windowResized() {
-  resizeCanvas(windowWidth, CANVAS_H);
-  updateLayout();
-}
-
-function setup() {",
+  "function setup() {",
   "  createCanvas(400, 300);",
   "  console.log('Setup complete.');",
   "}",
   "",
   "function draw() {",
-  "  background(40);
-
-
-  push();
-  fill(50);
-  noStroke();
-  textAlign(CENTER, TOP);
-  textSize(22);
-  textStyle(BOLD);
-  text("Dev Environment Simulator", width / 2, 10);
-  pop();
-",
+  "  background(40);",
   "  if (img) {",
   "    image(img, 150, 100, 100, 100);",
   "  }",
@@ -83,11 +57,11 @@ function updateLayout() {
   CANVAS_W = windowWidth;
   EDITOR_W = min(420, CANVAS_W * 0.5);
   
-  envBtn = { x: EDITOR_W - 250, y: 15, w: 140, h: 26 };
-  runBtn = { x: EDITOR_W - 100, y: 15, w: 80, h: 26 };
-  clearBtn = { x: CANVAS_W - 70, y: OUTPUT_H + 8, w: 50, h: 24 };
-  tabConsole = { x: EDITOR_W, y: OUTPUT_H, w: 100, h: 40 };
-  tabNetwork = { x: EDITOR_W + 100, y: OUTPUT_H, w: 100, h: 40 };
+  envBtn = { x: EDITOR_W - 250, y: 15 + TITLE_H, w: 140, h: 26 };
+  runBtn = { x: EDITOR_W - 100, y: 15 + TITLE_H, w: 80, h: 26 };
+  clearBtn = { x: CANVAS_W - 70, y: OUTPUT_H + 8 + TITLE_H, w: 50, h: 24 };
+  tabConsole = { x: EDITOR_W, y: OUTPUT_H + TITLE_H, w: 100, h: 40 };
+  tabNetwork = { x: EDITOR_W + 100, y: OUTPUT_H + TITLE_H, w: 100, h: 40 };
 }
 
 function windowResized() {
@@ -96,7 +70,8 @@ function windowResized() {
 }
 
 function setup() {
-  createCanvas(windowWidth, CANVAS_H);
+  let canvas = createCanvas(windowWidth, CANVAS_H);
+  canvas.parent(document.querySelector('main'));
   updateLayout();
   textFont('monospace');
   
@@ -135,10 +110,27 @@ function draw() {
     }
   }
   
+  // Title Background
+  fill("aliceblue");
+  rect(0, 0, width, TITLE_H);
+  
+  // Title
+  push();
+  fill(0);
+  noStroke();
+  textAlign(CENTER, CENTER);
+  textSize(22);
+  textStyle(BOLD);
+  text("Dev Environment Simulator", width / 2, TITLE_H / 2);
+  pop();
+  
   // Draw Panels
+  push();
+  translate(0, TITLE_H);
   drawEditor();
   drawOutput();
   drawDevTools();
+  pop();
 }
 
 function drawEditor() {
@@ -164,21 +156,21 @@ function drawEditor() {
   // Env Toggle Button
   let hoverEnv = inBounds(mouseX, mouseY, envBtn);
   fill(hoverEnv ? 70 : 60);
-  rect(envBtn.x, envBtn.y, envBtn.w, envBtn.h, 4);
+  rect(envBtn.x, envBtn.y - TITLE_H, envBtn.w, envBtn.h, 4);
   fill(255);
   textSize(12);
   textAlign(CENTER, CENTER);
   let envLabel = envMode === "local" ? "Env: Local File" : "Env: Local Server";
   if (envMode === "server") fill(100, 255, 100);
-  text(envLabel, envBtn.x + envBtn.w / 2, envBtn.y + envBtn.h / 2);
+  text(envLabel, envBtn.x + envBtn.w / 2, envBtn.y - TITLE_H + envBtn.h / 2);
   
   // Run Button
   let hoverRun = inBounds(mouseX, mouseY, runBtn);
   fill(hoverRun ? 0 : 30, hoverRun ? 150 : 120, hoverRun ? 0 : 30); // Greenish
-  rect(runBtn.x, runBtn.y, runBtn.w, runBtn.h, 4);
+  rect(runBtn.x, runBtn.y - TITLE_H, runBtn.w, runBtn.h, 4);
   fill(255);
   textSize(12);
-  text("▶ Run", runBtn.x + runBtn.w / 2, runBtn.y + runBtn.h / 2);
+  text("▶ Run", runBtn.x + runBtn.w / 2, runBtn.y - TITLE_H + runBtn.h / 2);
   
   // Code Text
   textSize(14);
@@ -346,10 +338,10 @@ function drawDevTools() {
   // Clear Button
   let hoverClear = inBounds(mouseX, mouseY, clearBtn);
   fill(hoverClear ? 210 : 220);
-  rect(clearBtn.x - EDITOR_W, clearBtn.y - OUTPUT_H, clearBtn.w, clearBtn.h, 3);
+  rect(clearBtn.x - EDITOR_W, clearBtn.y - OUTPUT_H - TITLE_H, clearBtn.w, clearBtn.h, 3);
   fill(80);
   textSize(11);
-  text("⃠ Clear", clearBtn.x - EDITOR_W + clearBtn.w / 2, clearBtn.y - OUTPUT_H + clearBtn.h / 2);
+  text("⃠ Clear", clearBtn.x - EDITOR_W + clearBtn.w / 2, clearBtn.y - OUTPUT_H - TITLE_H + clearBtn.h / 2);
   
   // Tab Content
   translate(0, 40);

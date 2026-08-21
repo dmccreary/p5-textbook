@@ -4,7 +4,7 @@
  * Educational Purpose: To train educators on identifying student misconceptions 
  * and selecting scaffolding strategies.
  */
-// CANVAS_HEIGHT: 450
+// CANVAS_HEIGHT: 600
 
 let scenarios = [
   {
@@ -59,7 +59,7 @@ const scaffoldings = [
 ];
 
 function setup() {
-  let canvas = createCanvas(windowWidth, 450);
+  let canvas = createCanvas(windowWidth, 600);
   canvas.parent(document.querySelector('main') || document.body);
   
   misconceptionSelect = createSelect();
@@ -100,71 +100,77 @@ function setup() {
 }
 
 function draw() {
-  background(245);
+  background('aliceblue');
   
   // Draw Header
   fill(50);
   noStroke();
   textFont("sans-serif");
+  textAlign(CENTER, BASELINE);
+  
   textSize(24);
   textStyle(BOLD);
-  text("Pedagogical Pattern Matcher", 20, 35);
+  text("Pedagogical Pattern Matcher", width / 2, 35);
   
   textSize(14);
   textStyle(NORMAL);
-  text("Review the student's code and reported behavior, then classify the misconception and suggest a scaffolding strategy.", 20, 60);
+  text("Review the student's code and reported behavior, then classify the misconception and suggest a scaffolding strategy.", width / 2, 60);
   
-  // Left Panel: Scenario
+  textAlign(LEFT, BASELINE);
+  
+  // Left Panel: Scenario Code
+  let leftW = min(500, width * 0.5 - 20);
+  let rightX = width * 0.5 + 10;
+  let rightW = width * 0.5 - 30;
+  
   fill(255);
   stroke(200);
-  rect(20, 80, min(400, width * 0.5 - 20), 350, 8);
+  rect(20, 80, leftW, 300, 8);
   
   let s = scenarios[currentScenario];
   
-  fill(50);
-  noStroke();
-  textSize(18);
-  textStyle(BOLD);
-  text(`Student: ${s.studentName}`, 35, 110);
-  
-  textSize(14);
-  textStyle(NORMAL);
-  text("Code:", 35, 140);
-  
   fill(240);
   stroke(200);
-  rect(35, 150, min(370, width * 0.5 - 50), 185, 4);
+  rect(35, 100, leftW - 30, 260, 4);
   
   fill(30, 80, 30);
   noStroke();
   textSize(13);
   textLeading(16);
   textFont("monospace");
-  text(s.code, 45, 165);
+  text(s.code, 45, 115);
+  
+  // Right Panel: Observed Behavior
+  fill(255);
+  stroke(200);
+  rect(rightX, 80, rightW, 300, 8);
   
   textFont("sans-serif");
   fill(50);
-  textSize(14);
-  textStyle(BOLD);
-  text("Observed Behavior:", 35, 365);
-  
-  textStyle(NORMAL);
-  textSize(13);
-  textLeading(18);
-  text(s.behavior, 35, 375, 370, 60);
-  
-  // Right Panel: Evaluation
-  fill(50);
   textSize(18);
   textStyle(BOLD);
-  let pX = min(450, width * 0.55);
-  text("Teacher Evaluation", pX, 110);
+  text("Observed Behavior:", rightX + 15, 110);
+  
+  textStyle(NORMAL);
+  textSize(14);
+  textLeading(20);
+  text(s.behavior, rightX + 15, 140, rightW - 30, 100);
+  
+  // Bottom Region: Evaluation
+  fill(255);
+  stroke(200);
+  rect(10, 390, width - 20, 200, 8);
+  
+  fill(50);
+  noStroke();
+  textSize(18);
+  textStyle(BOLD);
+  text("Teacher Evaluation", 20, 415);
   
   textSize(14);
   textStyle(NORMAL);
-  text("1. Classify the misconception:", pX, 165);
-  
-  text("2. Select best scaffolding strategy:", pX, 235);
+  text("1. Classify the misconception:", 20, 445);
+  text("2. Select best scaffolding strategy:", 280, 445);
   
   // Feedback area
   if (state === "FEEDBACK") {
@@ -176,36 +182,31 @@ function draw() {
       fill(40, 150, 40);
       textStyle(BOLD);
       textSize(16);
-      text("Correct!", pX, 375);
+      text("Correct!", 20, 520);
     } else {
       fill(200, 40, 40);
       textStyle(BOLD);
       textSize(16);
-      text("Not quite. Review the explanation.", pX, 375);
+      text("Not quite. Review the explanation.", 20, 520);
     }
     
     fill(50);
     textStyle(NORMAL);
-    textSize(13);
+    textSize(14);
     textLeading(18);
-    text(s.explanation, pX, 395, 330, 60);
+    text(s.explanation, 20, 540, width - 40, 60);
   }
 }
 
 function updateLayout() {
-  let CANVAS_W = windowWidth;
-  let CANVAS_H = 450;
-  
-  let pX = min(450, CANVAS_W * 0.55);
-  
-  misconceptionSelect.position(pX, 180);
-  scaffoldingSelect.position(pX, 250);
-  submitBtn.position(pX, 310);
-  nextBtn.position(pX + 170, 310);
+  misconceptionSelect.position(20, 460);
+  scaffoldingSelect.position(280, 460);
+  submitBtn.position(500, 460);
+  nextBtn.position(500, 460);
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth, 450);
+  resizeCanvas(windowWidth, 600);
   updateLayout();
 }
 

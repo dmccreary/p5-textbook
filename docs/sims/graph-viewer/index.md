@@ -1,8 +1,17 @@
 ---
+title: Learning Graph Viewer
+description: View the learning graph and be able to search and filter by classification
 quality_score: 52
+image: learning-graph.png
+hide:
+   toc
 ---
 
 # Learning Graph Viewer
+
+[Open Learning Graph Viewer (Recommended)](./main.html){ .md-button .md-button--primary }
+
+<iframe src="./main.html" width="100%" height="600px" frameborder="0"></iframe>
 
 This interactive viewer allows you to explore the learning graph for this course.
 
@@ -34,6 +43,3 @@ This interactive viewer allows you to explore the learning graph for this course
 
 ## Launch the Viewer
 
-[Open Learning Graph Viewer](./main.html){ .md-button .md-button--primary }
-
-<iframe src="./main.html" width="100%" height="600px" frameborder="0"></iframe>

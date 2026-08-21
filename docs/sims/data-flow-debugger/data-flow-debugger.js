@@ -14,18 +14,34 @@ let generateBtn;
 let rawData = [];
 let hoverInfo = null;
 
+let canvasWidth = 800;
+let canvasHeight = 400;
+
+function updateCanvasSize() {
+  const container = document.querySelector('main');
+  if (container) {
+    canvasWidth = container.offsetWidth;
+  } else {
+    canvasWidth = windowWidth;
+  }
+}
+
+
 function setup() {
-  createCanvas(windowWidth, 400);
+  updateCanvasSize();
+  const canvas = createCanvas(canvasWidth, canvasHeight);
+  canvas.parent(document.querySelector('main'));
   
   // Create a container for the controls
   let controlsDiv = createDiv().style('display', 'flex')
                                .style('gap', '20px')
                                .style('flex-wrap', 'wrap')
                                .style('padding', '15px')
-                               .style('background', '#f8f9fa')
+                               .style('background', 'white')
                                .style('border-top', '2px solid #e9ecef')
                                .style('font-family', 'sans-serif')
                                .style('font-size', '14px');
+  controlsDiv.parent(document.querySelector('main'));
   
   let col1 = createDiv().parent(controlsDiv);
   col1.html('<strong>Array Length:</strong><br>');
@@ -76,7 +92,8 @@ function generateData() {
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth, 400);
+  updateCanvasSize();
+  resizeCanvas(canvasWidth, canvasHeight);
 }
 
 function getColor(c) {
@@ -88,7 +105,7 @@ function getColor(c) {
 }
 
 function draw() {
-  background(255);
+  background('aliceblue');
 
 
   push();

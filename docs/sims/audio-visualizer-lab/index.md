@@ -12,7 +12,7 @@ quality_score: 95
 # Audio Visualizer Lab
 <div align="center"><i>Visualize sound frequencies and amplitudes using the Fast Fourier Transform (FFT)</i></div>
 
-<iframe src="main.html" height="452px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="482px" width="100%" scrolling="no"></iframe>
 
 [Run the Audio Visualizer Lab MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
 <br/>
@@ -38,7 +38,7 @@ You can add this MicroSim to any web page by adding this to your HTML:
 
 ```html
 <iframe src="https://dmccreary.github.io/p5-textbook/sims/audio-visualizer-lab/main.html"
-        height="452px"
+        height="482px"
         width="100%"
         scrolling="no"></iframe>
 ```

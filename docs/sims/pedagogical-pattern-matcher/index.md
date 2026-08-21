@@ -13,7 +13,7 @@ quality_score: 95
 
 <div align="center"><i>Train educators on identifying student misconceptions and selecting scaffolding strategies</i></div>
 
-<iframe src="main.html" height="452px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="602px" width="100%" scrolling="no"></iframe>
 
 [Run the Pedagogical Pattern Matcher MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
 <br/>
@@ -39,7 +39,7 @@ You can add this MicroSim to any web page by adding this to your HTML:
 
 ```html
 <iframe src="https://dmccreary.github.io/p5-textbook/sims/pedagogical-pattern-matcher/main.html"
-        height="452px"
+        height="602px"
         width="100%"
         scrolling="no"></iframe>
 ```

@@ -1,15 +1,17 @@
 // P5 Audio Visualizer Lab MicroSim
 // For a complete lession plan see:  https://dmccreary.github.io/p5-textbook/sims/audio-visualizer-lab/
 // This MicroSim is part of the "Art of Processing" interactive intelligent textbook: https://dmccreary.github.io/p5-textbook
-// CANVAS_HEIGHT: 450
+// CANVAS_HEIGHT: 480
 
 let drawHeight = 300;
-let controlHeight = 150;
-let canvasHeight = 450;
+let controlHeight = 180;
+let canvasHeight = 480;
 let canvasWidth = window.innerWidth || 600;
 
 let mic, fft, osc;
 let isAudioStarted = false;
+let isPaused = true;
+let startPauseBtn;
 
 let sourceSel, visSel, rangeSel;
 let smoothSlider, threshSlider;
@@ -43,54 +45,73 @@ function setup() {
   threshSlider = createSlider(0, 255, 128, 1);
   threshSlider.style('width', '130px');
   
+  startPauseBtn = createButton('Start');
+  startPauseBtn.mousePressed(togglePlay);
+  
   updateUIPositions();
   
   fft = new p5.FFT();
 }
 
 function mousePressed() {
-  if (!isAudioStarted && mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < canvasHeight) {
-    userStartAudio();
-    isAudioStarted = true;
+  if (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < canvasHeight) {
+    if (!isAudioStarted) {
+      togglePlay();
+    }
+  }
+}
+
+function togglePlay() {
+  if (isPaused) {
+    if (!isAudioStarted) {
+      userStartAudio();
+      isAudioStarted = true;
+    }
+    isPaused = false;
+    startPauseBtn.html('Pause');
     setupSource();
+  } else {
+    isPaused = true;
+    startPauseBtn.html('Start');
+    if (mic) mic.stop();
+    if (osc) osc.stop();
   }
 }
 
 function setupSource() {
-  if (!isAudioStarted) {
-    userStartAudio();
-    isAudioStarted = true;
-  }
+  if (!isAudioStarted) return;
   
   if (sourceSel.value() === 'Microphone') {
     if (osc) osc.amp(0, 0.1);
     if (!mic) {
       mic = new p5.AudioIn();
-      mic.start();
-    } else {
-      mic.start();
     }
+    if (!isPaused) mic.start();
     fft.setInput(mic);
   } else {
     if (mic) mic.stop();
     if (!osc) {
       osc = new p5.Oscillator('sawtooth');
-      osc.start();
     }
+    if (!isPaused) osc.start();
     fft.setInput(osc);
   }
 }
 
 function updateSynth() {
   if (osc && sourceSel.value() === 'Synth Oscillator') {
-    synthT += 0.02;
-    // Sweep frequency back and forth
-    let freq = map(sin(synthT * 0.5), -1, 1, 50, 1200);
-    osc.freq(freq, 0.1);
-    
-    // Modulate amplitude for visual interest
-    let amp = map(sin(synthT * 1.3), -1, 1, 0, 1.0);
-    osc.amp(amp, 0.1);
+    if (!isPaused) {
+      synthT += 0.02;
+      // Sweep frequency back and forth
+      let freq = map(sin(synthT * 0.5), -1, 1, 50, 1200);
+      osc.freq(freq, 0.1);
+      
+      // Modulate amplitude for visual interest
+      let amp = map(sin(synthT * 1.3), -1, 1, 0, 1.0);
+      osc.amp(amp, 0.1);
+    } else {
+      osc.amp(0, 0.1);
+    }
   }
 }
 
@@ -99,7 +120,7 @@ function draw() {
 
 
   push();
-  fill(50);
+  fill(255);
   noStroke();
   textAlign(CENTER, TOP);
   textSize(22);
@@ -109,7 +130,7 @@ function draw() {
 
   
   // Control Panel Background
-  fill(240);
+  fill(255);
   noStroke();
   rect(0, drawHeight, width, controlHeight);
   
@@ -119,7 +140,7 @@ function draw() {
   textAlign(RIGHT, CENTER);
   
   let label1_x = min(130, width * 0.25 - 10);
-  let label2_x = min(400, width * 0.65 - 10);
+  let label2_x = min(430, width * 0.65 + 20);
   text('Audio Source:', label1_x, drawHeight + 25);
   text('Visualization:', label1_x, drawHeight + 60);
   text('Highlight Range:', label1_x, drawHeight + 95);
@@ -129,15 +150,19 @@ function draw() {
   
   // Slider values
   textAlign(LEFT, CENTER);
-  text(smoothSlider.value().toFixed(2), min(550, width * 0.65 + 140), drawHeight + 25);
-  text(threshSlider.value(), min(550, width * 0.65 + 140), drawHeight + 60);
+  text(smoothSlider.value().toFixed(2), min(580, width * 0.65 + 170), drawHeight + 25);
+  text(threshSlider.value(), min(580, width * 0.65 + 170), drawHeight + 60);
   
   // Start overlay
-  if (!isAudioStarted) {
+  if (!isAudioStarted || isPaused) {
     fill(255);
     textAlign(CENTER, CENTER);
     textSize(24);
-    text('Click Here to Start Audio', width / 2, drawHeight / 2);
+    if (!isAudioStarted) {
+      text('Click Here or Press Start to Begin Audio Processing', width / 2, drawHeight / 2);
+    } else {
+      text('Press Start to Resume Audio Processing', width / 2, drawHeight / 2);
+    }
     return; // Don't draw the visualizer yet
   }
   
@@ -260,7 +285,7 @@ function windowResized() {
 
 function updateUIPositions() {
   let col1_x = min(140, width * 0.25);
-  let col2_x = min(410, width * 0.65);
+  let col2_x = min(440, width * 0.65 + 30);
   
   sourceSel.position(col1_x, drawHeight + 15);
   visSel.position(col1_x, drawHeight + 50);
@@ -268,4 +293,6 @@ function updateUIPositions() {
   
   smoothSlider.position(col2_x, drawHeight + 15);
   threshSlider.position(col2_x, drawHeight + 50);
+  
+  startPauseBtn.position(40, drawHeight + 130);
 }

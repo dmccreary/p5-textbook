@@ -96,9 +96,9 @@ function createSampleImage() {
 
 function setupUI() {
   uiDiv = createDiv('');
-  uiDiv.position(20, 20);
-  uiDiv.style('width', '250px');
-  uiDiv.style('background', '#ffffff');
+  uiDiv.position(20, 70);
+  uiDiv.style('width', '200px');
+  uiDiv.style('background', 'aliceblue');
   uiDiv.style('padding', '15px');
   uiDiv.style('border', '1px solid #ddd');
   uiDiv.style('border-radius', '8px');
@@ -326,17 +326,18 @@ function applyConvolution(img, kMatrix) {
 }
 
 function draw() {
-  background(245);
+  background('aliceblue');
 
 
-  push();
-  fill(50);
+  // Draw Title
+
+  fill('black');
   noStroke();
   textAlign(CENTER, TOP);
   textSize(22);
   textStyle(BOLD);
   text("Pixel Processing Pipeline", width / 2, 10);
-  pop();
+
 
   
   let sourceImg;
@@ -378,38 +379,32 @@ function draw() {
     let img1X = startX;
     let img2X = startX + thumbW + 20;
     
-    text("Original Input", img1X + thumbW/2, 40);
-    image(sourceImg, img1X, 50, thumbW, thumbH);
+    noStroke();
+    text("Original Input", img1X + thumbW/2, 60);
+    image(sourceImg, img1X, 80, thumbW, thumbH);
     
-    text("Filtered Output", img2X + thumbW/2, 40);
-    image(processedImg, img2X, 50, thumbW, thumbH);
+    text("Filtered Output", img2X + thumbW/2, 60);
+    image(processedImg, img2X, 80, thumbW, thumbH);
     
     // Main preview (Blended)
     let mainW = availableW;
     let mainH = mainW * 0.75;
-    let mainY = 50 + thumbH + 50;
+    let mainY = 90 + thumbH + 50;
     
-    text("Blended Result", startX + mainW/2, mainY - 10);
+    text("Blended Result", startX + mainW/2, mainY - 30);
     
     push();
-    translate(startX, mainY);
-    // Draw base (Original)
-    image(sourceImg, 0, 0, mainW, mainH);
-    
-    // Draw overlay (Processed) with blend mode
-    blendMode(bMode);
-    image(processedImg, 0, 0, mainW, mainH);
+      translate(startX, mainY);
+      // Draw base (Original)
+      image(sourceImg, 0, 0, mainW, mainH);
+      
+      // Draw overlay (Processed) with blend mode
+      blendMode(bMode);
+      image(processedImg, 0, 0, mainW, mainH);
     pop();
     
     // Reset blend mode for future text/UI rendering
     blendMode(BLEND);
     
-    // Draw borders around images
-    noFill();
-    stroke(200);
-    strokeWeight(1);
-    rect(img1X, 50, thumbW, thumbH);
-    rect(img2X, 50, thumbW, thumbH);
-    rect(startX, mainY, mainW, mainH);
   }
 }

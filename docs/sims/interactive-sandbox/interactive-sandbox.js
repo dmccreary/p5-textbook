@@ -3,9 +3,11 @@
    For a complete lesson plan see:  https://dmccreary.github.io/p5-textbook/sims/interactive-sandbox/
 */
 // CANVAS_HEIGHT: 552
+let canvasWidth = 800;
+let canvasHeight = 552;
 
 let eventLog = [];
-let maxLogSize = 11;
+let maxLogSize = 8;
 let drawingLayer;
 
 let clearBtn;
@@ -14,12 +16,23 @@ let touchSimToggle;
 let interactArea = {x: 10, y: 10, w: 520, h: 532};
 let panelArea = {x: 540, y: 10, w: 250, h: 532};
 
+function updateCanvasSize() {
+  const container = document.querySelector('main');
+  if (container) {
+    canvasWidth = container.offsetWidth;
+  } else {
+    canvasWidth = windowWidth;
+  }
+}
+
 function setup() {
-  createCanvas(windowWidth, 552);
+  updateCanvasSize();
+  const canvas = createCanvas(canvasWidth, canvasHeight);
+  canvas.parent(document.querySelector('main'));
   updateLayout();
   
   drawingLayer = createGraphics(interactArea.w, interactArea.h);
-  drawingLayer.background(250);
+  drawingLayer.clear();
   
   clearBtn = createButton('Clear Events & Canvas');
   clearBtn.style('padding', '10px');
@@ -39,33 +52,35 @@ function setup() {
 
 function updateLayout() {
   let margin = 10;
+  let topMargin = 65;
   let gap = 10;
   let pWidth = 250;
   
   panelArea.x = width - margin - pWidth;
-  panelArea.y = margin;
+  panelArea.y = topMargin;
   panelArea.w = pWidth;
-  panelArea.h = 532;
+  panelArea.h = height - topMargin - margin;
   
   interactArea.x = margin;
-  interactArea.y = margin;
+  interactArea.y = topMargin;
   interactArea.w = panelArea.x - gap - margin;
-  interactArea.h = 532;
+  interactArea.h = height - topMargin - margin;
   
   if (interactArea.w < 100) interactArea.w = 100; 
 }
 
 function positionDOM() {
-  clearBtn.position(panelArea.x + 10, panelArea.y + 480);
-  touchSimToggle.position(panelArea.x + 10, panelArea.y + 440);
+  clearBtn.position(panelArea.x + 10, panelArea.y + 420);
+  touchSimToggle.position(panelArea.x + 10, panelArea.y + 390);
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth, 552);
+  updateCanvasSize();
+  resizeCanvas(canvasWidth, canvasHeight);
   updateLayout();
   
   let newLayer = createGraphics(interactArea.w, interactArea.h);
-  newLayer.background(250);
+  newLayer.clear();
   newLayer.image(drawingLayer, 0, 0);
   drawingLayer = newLayer;
   
@@ -74,7 +89,7 @@ function windowResized() {
 
 function clearAll() {
   eventLog = [];
-  drawingLayer.background(250);
+  drawingLayer.clear();
 }
 
 function logEvent(msg) {
@@ -85,7 +100,7 @@ function logEvent(msg) {
 }
 
 function draw() {
-  background(230);
+  background('aliceblue');
 
 
   push();
@@ -95,6 +110,10 @@ function draw() {
   textSize(22);
   textStyle(BOLD);
   text("Interactive Sandbox", width / 2, 10);
+  
+  textSize(14);
+  textStyle(ITALIC);
+  text("Click and drag mouse in the left panel to see events", width / 2, 38);
   pop();
 
   
