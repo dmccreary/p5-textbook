@@ -133,6 +133,12 @@ Interactive Micro Simulations to help students learn the art of processing funda
 
     Interactive p5.js MicroSim for harmonic oscillator.
 
+-   **[History of Processing and p5.js](./p5-timeline/index.md)**
+
+    ![History of Processing and p5.js](./p5-timeline/p5-timeline.png)
+
+    Interactive vis-timeline MicroSim for history of processing and p5.js.
+
 -   **[Interactive 3D Coordinate System](./3d-coordinate-system/index.md)**
 
     ![Interactive 3D Coordinate System](./3d-coordinate-system/3d-coordinate-system.png)
@@ -270,6 +276,12 @@ Interactive Micro Simulations to help students learn the art of processing funda
     ![Random Walk Simulation](./random-walk-simulation/random-walk-simulation.png)
 
     Compare Brownian uniform random walks, Gaussian distribution walks, and Lévy Flight jumps with live spatial distribution trails.
+
+-   **[Real-Time ASCIIfy Camera](./real-time-asciify/index.md)**
+
+    ![Real-Time ASCIIfy Camera](./real-time-asciify/real-time-asciify.png)
+
+    Convert video frames or synthetic generative graphics into real-time typography ASCII character density matrix art.
 
 -   **[Real-Time ASCIIfy Camera](./real-time-asciify-webcam/index.md)**
 
