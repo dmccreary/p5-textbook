@@ -347,3 +347,5 @@ In the next chapter, we will start using these organic movements and shapes to b
     ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
 
     Incredible work! You just mastered uniform randomness, Gaussian distributions, and organic Perlin noise. You can now inject lifelike, natural chaos into your digital simulations!
+
+[See Annotated References](./references.md)

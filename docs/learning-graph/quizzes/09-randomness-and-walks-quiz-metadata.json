@@ -1,0 +1,185 @@
+{
+  "chapter": "Randomness, Gaussian Distributions & Random Walk",
+  "chapter_num": 9,
+  "chapter_id": "09-randomness-and-walks",
+  "chapter_file": "docs/chapters/09-randomness-and-walks/index.md",
+  "quiz_file": "docs/chapters/09-randomness-and-walks/quiz.md",
+  "generated_date": "2026-08-20",
+  "total_questions": 10,
+  "answer_distribution": {
+    "A": 2,
+    "B": 3,
+    "C": 3,
+    "D": 2
+  },
+  "bloom_distribution": {
+    "Remember": 3,
+    "Understand": 3,
+    "Apply": 3,
+    "Analyze": 1,
+    "Evaluate": 0,
+    "Create": 0
+  },
+  "questions": [
+    {
+      "id": "ch09-q001",
+      "number": 1,
+      "question_text": "What type of probability distribution is produced by the default `random(min, max)` function in p5.js?",
+      "options": {
+        "A": "Uniform distribution (all values equally likely)",
+        "B": "Gaussian / Normal distribution (bell curve)",
+        "C": "Exponential distribution",
+        "D": "Poisson distribution"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Remember",
+      "concept_tested": "Uniform Random Function",
+      "explanation": "The correct answer is **A**. `random()` produces a uniform pseudo-random distribution where every floating-point number within the specified range has an equal probability of being chosen. Option A describes `randomGaussian()`.",
+      "explanation_word_count": 30
+    },
+    {
+      "id": "ch09-q002",
+      "number": 2,
+      "question_text": "Which function produces random numbers clustered around a mean in a characteristic bell curve distribution?",
+      "options": {
+        "A": "randomGaussian()",
+        "B": "randomSeed()",
+        "C": "noise()",
+        "D": "randomUniform()"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Remember",
+      "concept_tested": "Random Gaussian Normal",
+      "explanation": "The correct answer is **A**. `randomGaussian(mean, sd)` generates numbers following a normal (Gaussian) distribution, where values cluster tightly near the mean and taper off symmetrically according to standard deviation `sd`. Options A, C, and D are other functions.",
+      "explanation_word_count": 38
+    },
+    {
+      "id": "ch09-q003",
+      "number": 3,
+      "question_text": "How does calling `randomSeed(val)` with a fixed integer seed affect subsequent `random()` calls?",
+      "options": {
+        "A": "It increases the randomness entropy of the system",
+        "B": "It makes the sequence of generated random numbers 100% deterministic and reproducible",
+        "C": "It causes random() to always return the seed value itself",
+        "D": "It disables random() and throws an error"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Understand",
+      "concept_tested": "Random Seed Determinism",
+      "explanation": "The correct answer is **B**. Setting a specific random seed initializes the pseudo-random number generator to a known starting state, ensuring that the exact same sequence of pseudo-random numbers is generated every time the sketch runs. Options A, C, and D are incorrect.",
+      "explanation_word_count": 43
+    },
+    {
+      "id": "ch09-q004",
+      "number": 4,
+      "question_text": "In a classic 2D Random Walk simulation, how does an autonomous agent choose its next step?",
+      "options": {
+        "A": "By following a predetermined bezier spline path",
+        "B": "By taking a random step in one of several directions (e.g. up, down, left, right) on each frame",
+        "C": "By seeking the mouse coordinate with gravity",
+        "D": "By moving strictly in a straight line until hitting a canvas edge"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Understand",
+      "concept_tested": "Random Walk Concept",
+      "explanation": "The correct answer is **B**. In a random walk (Brownian motion model), an agent updates its position on each frame by selecting a random displacement in x and y. Options B, C, and D describe deterministic or steered motion.",
+      "explanation_word_count": 39
+    },
+    {
+      "id": "ch09-q005",
+      "number": 5,
+      "question_text": "To generate a random floating-point number between 10 and 50, which syntax is correct?",
+      "options": {
+        "A": "random(50) + 10;",
+        "B": "random(10, 50);",
+        "C": "randomRange(10, 50);",
+        "D": "uniform(10, 50);"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Apply",
+      "concept_tested": "Random Range Function",
+      "explanation": "The correct answer is **B**. In p5.js, `random(low, high)` generates a pseudo-random float between `low` (inclusive) and `high` (exclusive). Option B generates between 10 and 60. Options C and D are not p5.js functions.",
+      "explanation_word_count": 34
+    },
+    {
+      "id": "ch09-q006",
+      "number": 6,
+      "question_text": "If you want a biased random walk where an agent has a 50% chance of stepping right and a 50% split among up, down, and left, which programming technique is used?",
+      "options": {
+        "A": "Setting randomSeed(0.5)",
+        "B": "Calling randomGaussian() with negative standard deviation",
+        "C": "Monte Carlo or cumulative probability branching using random(1)",
+        "D": "Using perlin noise octave damping"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Apply",
+      "concept_tested": "Biased Random Probability",
+      "explanation": "The correct answer is **C**. Generating a uniform float `let r = random(1);` and testing thresholds (`if (r < 0.5) stepRight(); else if (r < 0.67) stepLeft(); ...`) implements customized discrete probability distributions. Options B, C, and D are inapplicable.",
+      "explanation_word_count": 40
+    },
+    {
+      "id": "ch09-q007",
+      "number": 7,
+      "question_text": "What does the second parameter in `randomGaussian(mean, sd)` represent?",
+      "options": {
+        "A": "The number of samples to average",
+        "B": "The maximum ceiling cap",
+        "C": "Standard deviation (the spread/width of the bell curve)",
+        "D": "The seed value"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Remember",
+      "concept_tested": "Standard Deviation Spread",
+      "explanation": "The correct answer is **C**. The second argument `sd` specifies the standard deviation, which determines how widely dispersed values are around the `mean`. Approximately 68% of generated values fall within +/- 1 standard deviation of the mean. Options B, C, and D are incorrect.",
+      "explanation_word_count": 44
+    },
+    {
+      "id": "ch09-q008",
+      "number": 8,
+      "question_text": "Why are standard pseudo-random number generators referred to as 'pseudo-random'?",
+      "options": {
+        "A": "Because they generate true quantum random numbers from ambient thermal noise",
+        "B": "Because they can only generate integer values",
+        "C": "Because they use deterministic mathematical algorithms to produce sequences that only appear random",
+        "D": "Because they require internet access to fetch randomness from a remote server"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Understand",
+      "concept_tested": "Pseudo-Random Algorithms",
+      "explanation": "The correct answer is **C**. Digital computers cannot produce true randomness without hardware entropy sources; PRNGs use deterministic mathematical recurrence formulas that pass statistical tests of randomness. Options A, C, and D are false.",
+      "explanation_word_count": 34
+    },
+    {
+      "id": "ch09-q009",
+      "number": 9,
+      "question_text": "You are simulating a starry night sky. Why is placing stars using `randomGaussian()` around the center aesthetically different from `random()`?",
+      "options": {
+        "A": "randomGaussian runs on GPU shaders",
+        "B": "randomGaussian draws stars as circles while random draws squares",
+        "C": "randomGaussian prevents any stars from overlapping",
+        "D": "randomGaussian creates a dense galactic core cluster that thins out toward the edges, whereas random produces uniform dispersion"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Analyze",
+      "concept_tested": "Gaussian vs Uniform Aesthetics",
+      "explanation": "The correct answer is **D**. Gaussian distribution concentrates points densely near the mean with gradual tapering into sparse outskirts, mimicking natural phenomena like galaxies or tree canopies. Uniform randomness scatters points with equal density everywhere. Options B, C, and D are false.",
+      "explanation_word_count": 42
+    },
+    {
+      "id": "ch09-q010",
+      "number": 10,
+      "question_text": "To pick a random element from an array `const colors = ['red', 'blue', 'green', 'yellow'];`, which p5.js shortcut is valid?",
+      "options": {
+        "A": "colors[random()]",
+        "B": "colors.random()",
+        "C": "choose(colors)",
+        "D": "random(colors)"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Apply",
+      "concept_tested": "Array Random Selection",
+      "explanation": "The correct answer is **D**. In p5.js, passing an array directly to `random(array)` automatically selects and returns a random element from that array with uniform probability. Options B, C, and D are invalid syntax.",
+      "explanation_word_count": 34
+    }
+  ]
+}

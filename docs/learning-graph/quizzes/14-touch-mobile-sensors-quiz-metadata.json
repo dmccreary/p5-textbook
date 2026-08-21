@@ -1,0 +1,185 @@
+{
+  "chapter": "Touch Gestures, Mobile Sensors & Interaction",
+  "chapter_num": 14,
+  "chapter_id": "14-touch-mobile-sensors",
+  "chapter_file": "docs/chapters/14-touch-mobile-sensors/index.md",
+  "quiz_file": "docs/chapters/14-touch-mobile-sensors/quiz.md",
+  "generated_date": "2026-08-20",
+  "total_questions": 10,
+  "answer_distribution": {
+    "A": 2,
+    "B": 3,
+    "C": 3,
+    "D": 2
+  },
+  "bloom_distribution": {
+    "Remember": 4,
+    "Understand": 3,
+    "Apply": 2,
+    "Analyze": 1,
+    "Evaluate": 0,
+    "Create": 0
+  },
+  "questions": [
+    {
+      "id": "ch14-q001",
+      "number": 1,
+      "question_text": "Which array stores the coordinates and identifiers of all active touch contact points on a touchscreen device?",
+      "options": {
+        "A": "touches[]",
+        "B": "touchPoints[]",
+        "C": "fingers[]",
+        "D": "contactList[]"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Remember",
+      "concept_tested": "Touches Array",
+      "explanation": "The correct answer is **A**. The built-in `touches[]` array contains an object for each finger currently touching the screen, with `x`, `y`, and `id` properties. Options B, C, and D are not p5.js system arrays.",
+      "explanation_word_count": 35
+    },
+    {
+      "id": "ch14-q002",
+      "number": 2,
+      "question_text": "Which system variables report the device's physical rotational tilt around the X, Y, and Z axes?",
+      "options": {
+        "A": "rotationX, rotationY, rotationZ",
+        "B": "tiltX, tiltY, tiltZ",
+        "C": "gyroX, gyroY, gyroZ",
+        "D": "angleX, angleY, angleZ"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Remember",
+      "concept_tested": "Device Orientation Tilt",
+      "explanation": "The correct answer is **A**. `rotationX` (pitch), `rotationY` (roll), and `rotationZ` (yaw) provide real-time angular orientation from the device's built-in gyroscope. Options B, C, and D are not p5.js system variables.",
+      "explanation_word_count": 31
+    },
+    {
+      "id": "ch14-q003",
+      "number": 3,
+      "question_text": "What mobile sensor measures linear acceleration forces in meters per second squared along the three spatial axes?",
+      "options": {
+        "A": "Magnetometer compass",
+        "B": "Accelerometer (accelerationX, accelerationY, accelerationZ)",
+        "C": "Barometer pressure sensor",
+        "D": "Ambient light photometer"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Understand",
+      "concept_tested": "Device Accelerometer Motion",
+      "explanation": "The correct answer is **B**. Accelerometer sensors measure dynamic changes in velocity and gravitational acceleration along X, Y, and Z axes. Options B, C, and D measure magnetic fields, air pressure, and light.",
+      "explanation_word_count": 33
+    },
+    {
+      "id": "ch14-q004",
+      "number": 4,
+      "question_text": "How do you calculate the distance between two fingers in a two-touch pinch gesture?",
+      "options": {
+        "A": "touches[0].dist(touches[1])",
+        "B": "dist(touches[0].x, touches[0].y, touches[1].x, touches[1].y)",
+        "C": "touches.getPinchDistance()",
+        "D": "abs(touches[0].x - touches[1].x)"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Apply",
+      "concept_tested": "Pinch Gesture Math",
+      "explanation": "The correct answer is **B**. Calling `dist()` with the coordinates of the first two touch objects in the `touches[]` array calculates the Euclidean distance between the two fingertips, enabling pinch-to-zoom scaling. Options B, C, and D are invalid syntax.",
+      "explanation_word_count": 39
+    },
+    {
+      "id": "ch14-q005",
+      "number": 5,
+      "question_text": "Why must web applications request explicit user permission before reading accelerometer or gyroscope sensors on modern iOS Safari devices?",
+      "options": {
+        "A": "Because mobile browsers cannot process floating-point math without permission",
+        "B": "To protect user privacy and prevent unauthorized fingerprinting or covert motion tracking",
+        "C": "Because mobile sensors consume 100% of CPU power when enabled",
+        "D": "To allow the browser to download external sensor drivers"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Understand",
+      "concept_tested": "Sensor Permission Model",
+      "explanation": "The correct answer is **B**. Modern mobile browsers enforce security policies requiring explicit user interaction (such as tapping a button that triggers `DeviceOrientationEvent.requestPermission()`) before exposing motion data. Options B, C, and D are false.",
+      "explanation_word_count": 34
+    },
+    {
+      "id": "ch14-q006",
+      "number": 6,
+      "question_text": "Which event function is called when a touch point is dragged across the glass surface?",
+      "options": {
+        "A": "touchEnded()",
+        "B": "touchStarted()",
+        "C": "touchMoved()",
+        "D": "touchDragged()"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Remember",
+      "concept_tested": "Touch Moved Event",
+      "explanation": "The correct answer is **C**. `touchMoved()` executes continuously as touch points move across the screen. `touchStarted()` runs on initial contact, and `touchEnded()` runs on finger lift. `touchDragged()` is not a standard p5.js function.",
+      "explanation_word_count": 33
+    },
+    {
+      "id": "ch14-q007",
+      "number": 7,
+      "question_text": "If a mobile sketch does not implement touch event handlers, how does p5.js handle single-finger touch interactions by default?",
+      "options": {
+        "A": "It ignores all screen touches completely",
+        "B": "It crashes the sketch with an UnhandledTouchError",
+        "C": "It automatically emulates mouse events, mapping touch coordinates to mouseX and mouseY",
+        "D": "It opens the device settings menu"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Understand",
+      "concept_tested": "Touch Mouse Emulation",
+      "explanation": "The correct answer is **C**. For backwards compatibility, p5.js automatically maps single-touch events to standard mouse variables (`mouseX`, `mouseY`, `mouseIsPressed`, `mousePressed()`), allowing simple sketches to work seamlessly on mobile. Options B, C, and D are incorrect.",
+      "explanation_word_count": 36
+    },
+    {
+      "id": "ch14-q008",
+      "number": 8,
+      "question_text": "What is the purpose of `pAccelerationX`, `pAccelerationY`, and `pAccelerationZ`?",
+      "options": {
+        "A": "They store predicted acceleration for physics prediction",
+        "B": "They store the peak maximum acceleration ever recorded",
+        "C": "They store the acceleration values from the previous frame to calculate sudden spikes (shakes)",
+        "D": "They record GPS positioning coordinates"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Remember",
+      "concept_tested": "Previous Acceleration Shake",
+      "explanation": "The correct answer is **C**. Comparing current `acceleration` to `pAcceleration` (previous frame) enables detection of rapid threshold changes such as shaking or flicking the device. Options B, C, and D are incorrect.",
+      "explanation_word_count": 32
+    },
+    {
+      "id": "ch14-q009",
+      "number": 9,
+      "question_text": "To make a ball roll naturally around the screen when tilting a phone in landscape or portrait, how should tilt angles be mapped to physics forces?",
+      "options": {
+        "A": "Multiply velocity by the device battery percentage",
+        "B": "Set the ball's position directly to rotationX and rotationY coordinates",
+        "C": "Rotate the entire canvas with rotate(rotationZ)",
+        "D": "Map rotationX and rotationY to horizontal and vertical force vectors applied to the ball's acceleration"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Apply",
+      "concept_tested": "Tilt Physics Mapping",
+      "explanation": "The correct answer is **D**. Treating device tilt angles (`rotationY` and `rotationX`) as gravitational force components ($F_x, F_y$) and accumulating them into the physics acceleration vector creates natural rolling physics. Options B, C, and D do not produce realistic motion.",
+      "explanation_word_count": 40
+    },
+    {
+      "id": "ch14-q010",
+      "number": 10,
+      "question_text": "Why is returning `false` from `touchMoved()` especially crucial on mobile web browsers?",
+      "options": {
+        "A": "It locks screen brightness at 100%",
+        "B": "It speeds up screen refresh rates to 120Hz",
+        "C": "It automatically saves a screenshot to the photo library",
+        "D": "It prevents the mobile browser from performing default page rubber-banding, scrolling, or pull-to-refresh gestures"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Analyze",
+      "concept_tested": "Touch Move Page Lock",
+      "explanation": "The correct answer is **D**. Returning `false` cancels default touch actions like browser viewport scrolling or pull-to-refresh, keeping the interactive canvas stable under the user's fingers. Options B, C, and D are false.",
+      "explanation_word_count": 33
+    }
+  ]
+}

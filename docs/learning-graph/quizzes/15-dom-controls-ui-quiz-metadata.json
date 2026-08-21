@@ -1,0 +1,185 @@
+{
+  "chapter": "DOM Controls, Input Fields & UI Elements",
+  "chapter_num": 15,
+  "chapter_id": "15-dom-controls-ui",
+  "chapter_file": "docs/chapters/15-dom-controls-ui/index.md",
+  "quiz_file": "docs/chapters/15-dom-controls-ui/quiz.md",
+  "generated_date": "2026-08-20",
+  "total_questions": 10,
+  "answer_distribution": {
+    "A": 2,
+    "B": 3,
+    "C": 3,
+    "D": 2
+  },
+  "bloom_distribution": {
+    "Remember": 4,
+    "Understand": 2,
+    "Apply": 3,
+    "Analyze": 1,
+    "Evaluate": 0,
+    "Create": 0
+  },
+  "questions": [
+    {
+      "id": "ch15-q001",
+      "number": 1,
+      "question_text": "Which p5.js function creates an HTML range slider user interface control?",
+      "options": {
+        "A": "createSlider(min, max, [value], [step])",
+        "B": "newSlider(min, max)",
+        "C": "makeRange(min, max)",
+        "D": "sliderControl(min, max)"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Remember",
+      "concept_tested": "Create Slider Function",
+      "explanation": "The correct answer is **A**. `createSlider(min, max, [value], [step])` instantiates an HTML `<input type='range'>` element on the page. Options B, C, and D are not p5.js DOM creation methods.",
+      "explanation_word_count": 29
+    },
+    {
+      "id": "ch15-q002",
+      "number": 2,
+      "question_text": "How do you read the current numeric position of a slider element created with `let slider = createSlider(0, 255, 128);`?",
+      "options": {
+        "A": "slider.value()",
+        "B": "slider.get()",
+        "C": "slider.position",
+        "D": "slider.val"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Apply",
+      "concept_tested": "Slider Value Method",
+      "explanation": "The correct answer is **A**. Calling `slider.value()` returns the current value of the slider control. Options B, C, and D are incorrect property or method names.",
+      "explanation_word_count": 26
+    },
+    {
+      "id": "ch15-q003",
+      "number": 3,
+      "question_text": "Which function instantiates an interactive clickable button element on the webpage?",
+      "options": {
+        "A": "newButton(label)",
+        "B": "createButton(label)",
+        "C": "makeButton(label)",
+        "D": "buttonElement(label)"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Remember",
+      "concept_tested": "Create Button Function",
+      "explanation": "The correct answer is **B**. `createButton(label)` creates an HTML `<button>` element with the specified text label. Options B, C, and D are not p5.js DOM methods.",
+      "explanation_word_count": 26
+    },
+    {
+      "id": "ch15-q004",
+      "number": 4,
+      "question_text": "How do you bind a callback function `resetSketch` to execute whenever a button `btn` is clicked?",
+      "options": {
+        "A": "btn.onClick = resetSketch();",
+        "B": "btn.mousePressed(resetSketch);",
+        "C": "btn.attach(resetSketch);",
+        "D": "btn.addEventListener('draw', resetSketch);"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Apply",
+      "concept_tested": "DOM Button Callback",
+      "explanation": "The correct answer is **B**. Calling `btn.mousePressed(callbackFunction)` attaches an event handler that runs whenever that specific DOM button is clicked. Notice the callback is passed by reference without parentheses `()`. Options B, C, and D are incorrect syntax.",
+      "explanation_word_count": 38
+    },
+    {
+      "id": "ch15-q005",
+      "number": 5,
+      "question_text": "What HTML dropdown menu element is created by calling `createSelect()` in p5.js?",
+      "options": {
+        "A": "`<dropdown>` menu",
+        "B": "`<select>` with `<option>` child elements",
+        "C": "`<input type='menu'>`",
+        "D": "`<datalist>` list"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Understand",
+      "concept_tested": "Create Select Dropdown",
+      "explanation": "The correct answer is **B**. `createSelect()` creates an HTML `<select>` dropdown menu. Options are added using `sel.option('Choice Name')`. Options B, C, and D do not represent the created HTML element.",
+      "explanation_word_count": 30
+    },
+    {
+      "id": "ch15-q006",
+      "number": 6,
+      "question_text": "What function positions a p5.js DOM element at absolute pixel coordinates (x, y) on the web page?",
+      "options": {
+        "A": "element.coords(x, y)",
+        "B": "element.locate(x, y)",
+        "C": "element.position(x, y)",
+        "D": "element.move(x, y)"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Remember",
+      "concept_tested": "DOM Element Position",
+      "explanation": "The correct answer is **C**. `element.position(x, y)` sets the CSS absolute positioning coordinates (`left: x px; top: y px`) of the DOM element on the web page. Options B, C, and D are incorrect.",
+      "explanation_word_count": 34
+    },
+    {
+      "id": "ch15-q007",
+      "number": 7,
+      "question_text": "Which event method executes continuously in real time as the user types characters into an input text box (`createInput()`)?",
+      "options": {
+        "A": "input.typed(callback)",
+        "B": "input.changed(callback)",
+        "C": "input.input(callback)",
+        "D": "input.onKey(callback)"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Understand",
+      "concept_tested": "DOM Input Realtime Event",
+      "explanation": "The correct answer is **C**. `input.input(callback)` fires immediately upon every keystroke, whereas `input.changed(callback)` fires only after the user presses Enter or leaves focus. Options C and D are not p5.js DOM methods.",
+      "explanation_word_count": 32
+    },
+    {
+      "id": "ch15-q008",
+      "number": 8,
+      "question_text": "To remove an dynamically created DOM element from the webpage and free its resources, which method is called?",
+      "options": {
+        "A": "element.destroy()",
+        "B": "element.delete()",
+        "C": "element.remove()",
+        "D": "element.hide()"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Remember",
+      "concept_tested": "DOM Element Removal",
+      "explanation": "The correct answer is **C**. `element.remove()` deletes the DOM element from the HTML document tree and unbinds its event listeners. `element.hide()` merely sets CSS display to none. Options B and C are invalid.",
+      "explanation_word_count": 33
+    },
+    {
+      "id": "ch15-q009",
+      "number": 9,
+      "question_text": "Why is building UI controls using native HTML/DOM elements (`createSlider`, `createButton`) often superior to drawing custom buttons manually with `rect()` and `dist()` on the canvas?",
+      "options": {
+        "A": "HTML sliders eliminate the need for JavaScript functions",
+        "B": "HTML elements run directly inside the GPU rendering core",
+        "C": "Canvas rect buttons cannot detect mouse clicks",
+        "D": "Native HTML elements provide built-in keyboard accessibility, screen-reader support, mobile touch compatibility, and standardized styling"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Analyze",
+      "concept_tested": "DOM vs Canvas UI Accessibility",
+      "explanation": "The correct answer is **D**. Native HTML elements adhere to web standards, offering out-of-the-box keyboard navigation (Tab/Enter), screen reader accessibility (ARIA), focus states, and native mobile controls that custom canvas drawings lack unless manually coded. Options B, C, and D are false.",
+      "explanation_word_count": 42
+    },
+    {
+      "id": "ch15-q010",
+      "number": 10,
+      "question_text": "Which p5.js function creates a multi-line text entry box rather than a single-line input field?",
+      "options": {
+        "A": "createMultiInput()",
+        "B": "createInput()",
+        "C": "createTextBox()",
+        "D": "createElement('textarea')"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Apply",
+      "concept_tested": "Create Text Area Element",
+      "explanation": "The correct answer is **D**. `createElement('textarea')` creates a multi-line HTML `<textarea>` element, whereas `createInput()` creates a single-line `<input type='text'>`. Options C and D are not p5.js methods.",
+      "explanation_word_count": 27
+    }
+  ]
+}

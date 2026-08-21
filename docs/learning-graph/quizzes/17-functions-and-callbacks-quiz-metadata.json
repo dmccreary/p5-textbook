@@ -1,0 +1,185 @@
+{
+  "chapter": "Functions, Arrow Expressions & Callbacks",
+  "chapter_num": 17,
+  "chapter_id": "17-functions-and-callbacks",
+  "chapter_file": "docs/chapters/17-functions-and-callbacks/index.md",
+  "quiz_file": "docs/chapters/17-functions-and-callbacks/quiz.md",
+  "generated_date": "2026-08-20",
+  "total_questions": 10,
+  "answer_distribution": {
+    "A": 2,
+    "B": 3,
+    "C": 3,
+    "D": 2
+  },
+  "bloom_distribution": {
+    "Remember": 2,
+    "Understand": 5,
+    "Apply": 2,
+    "Analyze": 1,
+    "Evaluate": 0,
+    "Create": 0
+  },
+  "questions": [
+    {
+      "id": "ch17-q001",
+      "number": 1,
+      "question_text": "What is the primary architectural purpose of decomposing code into custom functions?",
+      "options": {
+        "A": "Modular reusability, abstraction of complex tasks, and reduced code duplication",
+        "B": "To increase the size of the compiled JavaScript file",
+        "C": "To force code to run synchronously on a single CPU core",
+        "D": "To prevent global variables from being declared"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Understand",
+      "concept_tested": "Modular Function Abstraction",
+      "explanation": "The correct answer is **A**. Functions allow programmers to encapsulate logic into named, reusable modules with parameterized inputs and return values, enhancing clarity, testability, and maintainability. Options B, C, and D are false.",
+      "explanation_word_count": 33
+    },
+    {
+      "id": "ch17-q002",
+      "number": 2,
+      "question_text": "What keyword is used to terminate a function and send a computed value back to the caller?",
+      "options": {
+        "A": "return",
+        "B": "yield",
+        "C": "export",
+        "D": "send"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Remember",
+      "concept_tested": "Function Return Statement",
+      "explanation": "The correct answer is **A**. The `return` statement ends function execution and specifies a value to be returned to the function caller. Options B, C, and D do not perform standard function value return in JavaScript.",
+      "explanation_word_count": 36
+    },
+    {
+      "id": "ch17-q003",
+      "number": 3,
+      "question_text": "How is an ES6 arrow function syntactically written to square a number `x`?",
+      "options": {
+        "A": "const sq = function(x) { x * x };",
+        "B": "const sq = (x) => x * x;",
+        "C": "const sq = x -> x * x;",
+        "D": "const sq = (x) => return x * x;"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Apply",
+      "concept_tested": "Arrow Function Expression",
+      "explanation": "The correct answer is **B**. Concise ES6 arrow functions with a single expression implicitly return the evaluated expression without requiring braces or the `return` keyword: `(x) => x * x`. Option C uses invalid arrow syntax. Option D has syntax error with `return` without braces.",
+      "explanation_word_count": 45
+    },
+    {
+      "id": "ch17-q004",
+      "number": 4,
+      "question_text": "What is a callback function in JavaScript?",
+      "options": {
+        "A": "A recursive function that calls itself until stack overflow",
+        "B": "A function passed as an argument to another function, intended to be executed at a later time or upon an event",
+        "C": "A function that can only be called from an HTML button",
+        "D": "A function that has no parameters"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Understand",
+      "concept_tested": "Callback Function Concept",
+      "explanation": "The correct answer is **B**. A callback is a function provided to another function (or event listener) to be invoked when a specific task completes or an event occurs. Options B, C, and D misdefine callbacks.",
+      "explanation_word_count": 36
+    },
+    {
+      "id": "ch17-q005",
+      "number": 5,
+      "question_text": "Why is passing a function reference `button.mousePressed(resetSketch)` correct, while `button.mousePressed(resetSketch())` is a common beginner bug?",
+      "options": {
+        "A": "resetSketch() only works with arrow functions",
+        "B": "resetSketch passes the function as a callback, while resetSketch() invokes the function immediately during setup",
+        "C": "p5.js requires parentheses for all callback bindings",
+        "D": "resetSketch without parentheses deletes the function"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Analyze",
+      "concept_tested": "Callback Reference vs Execution",
+      "explanation": "The correct answer is **B**. Passing the identifier `resetSketch` passes a reference to the function so it can be called later when clicked. Adding `()` executes the function immediately during setup and passes its return value (`undefined`) instead of the function. Options B, C, and D are false.",
+      "explanation_word_count": 48
+    },
+    {
+      "id": "ch17-q006",
+      "number": 6,
+      "question_text": "What lexical property distinguishes ES6 arrow functions from traditional `function` declarations regarding the `this` keyword?",
+      "options": {
+        "A": "Arrow functions cannot access outer variables",
+        "B": "Arrow functions create a brand-new global `this` binding",
+        "C": "Arrow functions do not bind their own `this`; they inherit `this` lexically from the surrounding scope",
+        "D": "Arrow functions require the `new` keyword to be called"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Understand",
+      "concept_tested": "Lexical This Binding",
+      "explanation": "The correct answer is **C**. Arrow functions capture the `this` value of the enclosing execution context, preventing common context-loss bugs inside class methods and callbacks. Options B, C, and D are incorrect.",
+      "explanation_word_count": 32
+    },
+    {
+      "id": "ch17-q007",
+      "number": 7,
+      "question_text": "What will a function return by default in JavaScript if it reaches the end of its body without executing a `return` statement?",
+      "options": {
+        "A": "0",
+        "B": "null",
+        "C": "undefined",
+        "D": "false"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Remember",
+      "concept_tested": "Implicit Return Undefined",
+      "explanation": "The correct answer is **C**. In JavaScript, functions that do not explicitly return a value evaluate to `undefined`. Options B, C, and D are not the default implicit return value.",
+      "explanation_word_count": 30
+    },
+    {
+      "id": "ch17-q008",
+      "number": 8,
+      "question_text": "How do default parameter values work in modern JavaScript functions (e.g. `function drawTree(x, y, branches = 5)`)?",
+      "options": {
+        "A": "It throws a TypeError if a different number is passed",
+        "B": "The parameter is permanently locked to 5 and cannot be changed",
+        "C": "If the caller omits `branches` or passes `undefined`, the parameter defaults to 5",
+        "D": "It multiplies incoming values by 5"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Understand",
+      "concept_tested": "Default Parameter Values",
+      "explanation": "The correct answer is **C**. Default parameters allow formal parameters to be initialized with default values if no value or `undefined` is passed during invocation. Options B, C, and D are false.",
+      "explanation_word_count": 32
+    },
+    {
+      "id": "ch17-q009",
+      "number": 9,
+      "question_text": "What is a pure function in computer science?",
+      "options": {
+        "A": "A function that cannot return strings",
+        "B": "A function that only contains mathematical operators without any variables",
+        "C": "A function that is written in assembly language",
+        "D": "A function whose return value depends solely on its input arguments, producing no observable side effects"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Understand",
+      "concept_tested": "Pure Function Definition",
+      "explanation": "The correct answer is **D**. Pure functions are deterministic: given the same arguments, they always return the same result and do not mutate external state (no side effects), making them easy to test and debug. Options B, C, and D are incorrect.",
+      "explanation_word_count": 42
+    },
+    {
+      "id": "ch17-q010",
+      "number": 10,
+      "question_text": "A developer writes a helper function `isMouseInside(x, y, w, h)` to detect button hover. What return type should this function produce?",
+      "options": {
+        "A": "DOM Element",
+        "B": "String ('yes' or 'no')",
+        "C": "Number (1 or 0)",
+        "D": "Boolean (true or false)"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Apply",
+      "concept_tested": "Boolean Predicate Functions",
+      "explanation": "The correct answer is **D**. Functions that check conditions or predicates should return boolean values (`true` or `false`), allowing direct use in conditional statements like `if (isMouseInside(...))`. Options B, C, and D are less idiomatic.",
+      "explanation_word_count": 35
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "chapter": "2D Primitive Shapes & Custom Geometries",
+  "chapter_num": 2,
+  "chapter_id": "02-2d-primitive-shapes",
+  "chapter_file": "docs/chapters/02-2d-primitive-shapes/index.md",
+  "quiz_file": "docs/chapters/02-2d-primitive-shapes/quiz.md",
+  "generated_date": "2026-08-20",
+  "total_questions": 10,
+  "answer_distribution": {
+    "A": 2,
+    "B": 3,
+    "C": 3,
+    "D": 2
+  },
+  "bloom_distribution": {
+    "Remember": 4,
+    "Understand": 3,
+    "Apply": 2,
+    "Analyze": 1,
+    "Evaluate": 0,
+    "Create": 0
+  },
+  "questions": [
+    {
+      "id": "ch02-q001",
+      "number": 1,
+      "question_text": "Which function is used in p5.js to begin recording custom vertex positions for a polygonal shape?",
+      "options": {
+        "A": "beginShape()",
+        "B": "createShape()",
+        "C": "startPath()",
+        "D": "initPolygon()"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Remember",
+      "concept_tested": "Begin Shape Function",
+      "explanation": "The correct answer is **A**. `beginShape()` begins recording vertices for a complex shape. You then call `vertex(x, y)` multiple times, and complete the shape using `endShape()`. Options B, C, and D are not standard p5.js custom shape drawing commands.",
+      "explanation_word_count": 39
+    },
+    {
+      "id": "ch02-q002",
+      "number": 2,
+      "question_text": "By default, what do the first two arguments of `rect(x, y, w, h)` specify?",
+      "options": {
+        "A": "The top-left corner coordinates of the rectangle",
+        "B": "The center point coordinates of the rectangle",
+        "C": "The bottom-right corner coordinates of the rectangle",
+        "D": "The baseline anchor coordinates of the bounding box"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Remember",
+      "concept_tested": "Rectangle Primitive",
+      "explanation": "The correct answer is **A**. Under default `rectMode(CORNER)`, the first two parameters `(x, y)` represent the coordinates of the top-left corner of the rectangle. Option A describes the behavior when `rectMode(CENTER)` is enabled. Options C and D are incorrect.",
+      "explanation_word_count": 39
+    },
+    {
+      "id": "ch02-q003",
+      "number": 3,
+      "question_text": "How does `rectMode(CENTER)` alter the way p5.js interprets the parameters `rect(100, 100, 50, 50)`?",
+      "options": {
+        "A": "It places the top-left corner at (100, 100) and extends 50 pixels toward the center",
+        "B": "It places the center of the rectangle at (100, 100) with a width and height of 50",
+        "C": "It constrains the rectangle to the exact center of the browser viewport",
+        "D": "It rounds all four corners with a radius of 100 pixels"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Understand",
+      "concept_tested": "Rect Mode Setting",
+      "explanation": "The correct answer is **B**. Calling `rectMode(CENTER)` changes the interpretation of `(x, y)` from the upper-left corner to the center point of the rectangle, maintaining `w` and `h` as the full width and height. Options A, C, and D misrepresent the mode's behavior.",
+      "explanation_word_count": 43
+    },
+    {
+      "id": "ch02-q004",
+      "number": 4,
+      "question_text": "What argument must be passed to `endShape()` to automatically connect the final vertex back to the first vertex?",
+      "options": {
+        "A": "endShape(CONNECT);",
+        "B": "endShape(CLOSE);",
+        "C": "endShape(LOOP);",
+        "D": "endShape(FILL);"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Remember",
+      "concept_tested": "End Shape Close",
+      "explanation": "The correct answer is **B**. Passing the constant `CLOSE` to `endShape(CLOSE)` draws an outline segment connecting the final vertex back to the starting vertex, forming a closed polygon. Options A, B, and D are invalid constants for `endShape()`.",
+      "explanation_word_count": 38
+    },
+    {
+      "id": "ch02-q005",
+      "number": 5,
+      "question_text": "You need to draw a regular triangle with vertices at (100, 50), (150, 150), and (50, 150). Which function call is correct?",
+      "options": {
+        "A": "triangle(50, 150, 100, 50);",
+        "B": "triangle(100, 50, 150, 150, 50, 150);",
+        "C": "rect(100, 50, 150, 150);",
+        "D": "polygon(3, 100, 50, 150, 150, 50, 150);"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Apply",
+      "concept_tested": "Triangle Primitive",
+      "explanation": "The correct answer is **B**. The `triangle(x1, y1, x2, y2, x3, y3)` function expects exactly six numeric arguments representing three pairs of coordinates. Option B provides only 4 arguments. Option C draws a rectangle. Option D is not a built-in p5.js function.",
+      "explanation_word_count": 42
+    },
+    {
+      "id": "ch02-q006",
+      "number": 6,
+      "question_text": "How does an ellipse behave differently from a circle in p5.js?",
+      "options": {
+        "A": "An ellipse requires 3D WebGL rendering mode",
+        "B": "An ellipse cannot be outlined with stroke(), whereas circle() supports strokes",
+        "C": "An ellipse accepts independent width and height radii/diameters, whereas circle() takes a single diameter",
+        "D": "An ellipse can only be drawn with quadratic curve anchors"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Understand",
+      "concept_tested": "Ellipse Primitive",
+      "explanation": "The correct answer is **C**. `ellipse(x, y, w, [h])` allows separate width and height parameters to render stretched ovals, whereas `circle(x, y, d)` is a dedicated shortcut taking a single diameter `d`. Options B, C, and D are incorrect.",
+      "explanation_word_count": 39
+    },
+    {
+      "id": "ch02-q007",
+      "number": 7,
+      "question_text": "Which function creates a smooth cubic curve requiring two endpoint coordinates and two control points?",
+      "options": {
+        "A": "curve()",
+        "B": "arc()",
+        "C": "bezier()",
+        "D": "spline()"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Remember",
+      "concept_tested": "Bezier Curve Primitive",
+      "explanation": "The correct answer is **C**. `bezier(x1, y1, x2, y2, x3, y3, x4, y4)` draws a cubic B\u00e9zier curve evaluated between start point `(x1, y1)` and end point `(x4, y4)`, shaped by control points `(x2, y2)` and `(x3, y3)`. Option A uses Catmull-Rom splines. Option C draws an elliptical arc. Option D is not a built-in p5.js function.",
+      "explanation_word_count": 57
+    },
+    {
+      "id": "ch02-q008",
+      "number": 8,
+      "question_text": "To draw a 90-degree pie slice from an ellipse starting at angle 0 to PI/2, which function and mode are used?",
+      "options": {
+        "A": "ellipse(x, y, w, h, 0, HALF_PI);",
+        "B": "arc(x, y, w, h, 0, PI, CHORD);",
+        "C": "arc(x, y, w, h, 0, HALF_PI, PIE);",
+        "D": "curve(x, y, w, h, 0, 90);"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Apply",
+      "concept_tested": "Arc Primitive",
+      "explanation": "The correct answer is **C**. The `arc(x, y, w, h, start, stop, [mode])` function takes angles in radians (0 to `HALF_PI` for 90 degrees). The `PIE` mode connects the arc endpoints back to the center point to form a closed wedge. Option B spans 180 degrees with a chord line. Options C and D use incorrect functions and units.",
+      "explanation_word_count": 59
+    },
+    {
+      "id": "ch02-q009",
+      "number": 9,
+      "question_text": "What is the key geometric difference between `bezierVertex()` and `quadraticVertex()` inside `beginShape()`?",
+      "options": {
+        "A": "bezierVertex uses 3 control points, while quadraticVertex uses 2 control points",
+        "B": "bezierVertex cannot be filled with solid color",
+        "C": "quadraticVertex can only be used in 3D WebGL mode",
+        "D": "bezierVertex uses 2 control points and 1 anchor, while quadraticVertex uses 1 control point and 1 anchor"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Understand",
+      "concept_tested": "Custom Vertex Curves",
+      "explanation": "The correct answer is **D**. Cubic B\u00e9zier curves (`bezierVertex(cx1, cy1, cx2, cy2, x, y)`) use two control points, whereas quadratic B\u00e9zier curves (`quadraticVertex(cx, cy, x, y)`) use a single control point. Options A, C, and D are factually inaccurate.",
+      "explanation_word_count": 39
+    },
+    {
+      "id": "ch02-q010",
+      "number": 10,
+      "question_text": "A developer wants to create an interactive star polygon where the number of points dynamically updates with a slider. Why is `beginShape()` with trigonometric loop placement superior to hardcoded `triangle()` primitives?",
+      "options": {
+        "A": "Hardcoding triangles consumes significantly more browser RAM per pixel",
+        "B": "beginShape() executes on the GPU shader pipeline while triangle() runs on CPU",
+        "C": "triangle() automatically enables stroke anti-aliasing while beginShape() disables it",
+        "D": "beginShape() with polar coordinate math allows programmatic calculation of N vertices dynamically"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Analyze",
+      "concept_tested": "Algorithmic Shape Generation",
+      "explanation": "The correct answer is **D**. Using `beginShape()` inside a loop calculating points along inner and outer radii with `cos()` and `sin()` enables dynamic generation of any N-pointed star. Hardcoded `triangle()` calls cannot scale dynamically. Options A, C, and D are technically incorrect.",
+      "explanation_word_count": 42
+    }
+  ]
+}

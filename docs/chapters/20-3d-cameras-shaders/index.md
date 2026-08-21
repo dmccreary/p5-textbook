@@ -247,3 +247,5 @@ One of the most effective ways to optimize a 3D scene is to reduce the polygon c
 Another important optimization strategy is to use lights sparingly. Calculating the interactions between multiple light sources and complex materials can quickly overwhelm the GPU. Try to achieve the desired lighting effect with as few lights as possible. For example, you might be able to replace several point lights with a single directional light or use a texture map to simulate complex lighting details.
 
 Finally, be mindful of the shaders you use. While shaders are fast, a poorly written shader can still cause performance issues. Avoid using complex mathematical functions or long loops in your fragment shaders, as these will be executed for every single pixel on the screen. By profiling your sketches and identifying performance bottlenecks, you can ensure that your digital stage always runs at a smooth 60 frames per second.
+
+[See Annotated References](./references.md)

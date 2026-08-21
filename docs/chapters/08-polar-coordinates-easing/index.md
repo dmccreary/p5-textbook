@@ -316,3 +316,5 @@ To implement this reliably, developers often build a **Step Motion Accumulator**
     ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
 
     Incredible work! You just mastered polar-to-Cartesian conversion, interpolation, and delta time for frame independent motion. You are now a master of dynamic, fluid choreography!
+
+[See Annotated References](./references.md)

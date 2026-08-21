@@ -335,3 +335,5 @@ In the next chapter, we will take these structural concepts and begin rendering 
 !!! mascot-celebration "Canvas Mastered!"
     ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     Incredible work, creators! You just mastered the top-left coordinate system and successfully wired up the `preload()`, `setup()`, and `draw()` lifecycle loops. Your digital studio is officially open for business!
+
+[See Annotated References](./references.md)

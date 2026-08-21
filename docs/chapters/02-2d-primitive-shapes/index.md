@@ -301,3 +301,5 @@ Crucially, we explored the styling state machine, learning how to dip our brush 
 !!! mascot-celebration "Shapes Mastered!"
     ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     Incredible work! You just mastered 2D primitives, custom polygons, Bézier curves, and the styling state machine! You have all the mathematical building blocks needed to sketch any geometry. Next, we will dive deep into the science of color!
+
+[See Annotated References](./references.md)

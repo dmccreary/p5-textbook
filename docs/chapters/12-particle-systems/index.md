@@ -278,3 +278,5 @@ So what are you waiting for? Open up your editor, initialize an array of particl
 !!! mascot-celebration "Chapter Complete!"
     ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     Incredible work, artists! You just mastered force accumulation, lifespan decay, and memory management for complex particle systems. You're ready to build entire digital ecosystems!
+
+[See Annotated References](./references.md)

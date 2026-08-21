@@ -1,0 +1,185 @@
+{
+  "chapter": "Vector Math Fundamentals & Physics Acceleration",
+  "chapter_num": 11,
+  "chapter_id": "11-vector-math-physics",
+  "chapter_file": "docs/chapters/11-vector-math-physics/index.md",
+  "quiz_file": "docs/chapters/11-vector-math-physics/quiz.md",
+  "generated_date": "2026-08-20",
+  "total_questions": 10,
+  "answer_distribution": {
+    "A": 2,
+    "B": 3,
+    "C": 3,
+    "D": 2
+  },
+  "bloom_distribution": {
+    "Remember": 3,
+    "Understand": 3,
+    "Apply": 3,
+    "Analyze": 1,
+    "Evaluate": 0,
+    "Create": 0
+  },
+  "questions": [
+    {
+      "id": "ch11-q001",
+      "number": 1,
+      "question_text": "What two fundamental physical quantities are encapsulated in a Euclidean vector?",
+      "options": {
+        "A": "Magnitude (length) and Direction",
+        "B": "Color and Transparency",
+        "C": "Mass and Temperature",
+        "D": "Frequency and Wavelength"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Remember",
+      "concept_tested": "Vector Definition",
+      "explanation": "The correct answer is **A**. A vector in 2D or 3D space represents an entity having both a magnitude (length or speed) and a directional orientation. Options A, C, and D are scalar or non-geometric properties.",
+      "explanation_word_count": 36
+    },
+    {
+      "id": "ch11-q002",
+      "number": 2,
+      "question_text": "Which p5.js function instantiates a new 2D or 3D vector object?",
+      "options": {
+        "A": "createVector(x, y, [z])",
+        "B": "newVector(x, y)",
+        "C": "makeVector(x, y)",
+        "D": "vector(x, y)"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Remember",
+      "concept_tested": "Create Vector Function",
+      "explanation": "The correct answer is **A**. `createVector(x, y, [z])` creates a new instance of the `p5.Vector` class. Options B, C, and D are not standard p5.js factory functions.",
+      "explanation_word_count": 27
+    },
+    {
+      "id": "ch11-q003",
+      "number": 3,
+      "question_text": "According to Newton's Second Law of Motion ($F = m \\cdot a$), how is acceleration calculated from applied force and mass?",
+      "options": {
+        "A": "acceleration = force * mass",
+        "B": "acceleration = force / mass",
+        "C": "acceleration = mass / force",
+        "D": "acceleration = force + mass"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Understand",
+      "concept_tested": "Newton Second Law Integration",
+      "explanation": "The correct answer is **B**. Rearranging $F = m \\cdot a$ yields $a = F / m$. Acceleration is directly proportional to net force and inversely proportional to mass. Options A, C, and D are algebraic errors.",
+      "explanation_word_count": 37
+    },
+    {
+      "id": "ch11-q004",
+      "number": 4,
+      "question_text": "What is the magnitude of a unit vector obtained by calling `v.normalize()`?",
+      "options": {
+        "A": "0",
+        "B": "1",
+        "C": "TWO_PI",
+        "D": "Equal to the canvas diagonal"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Remember",
+      "concept_tested": "Vector Normalization Unit",
+      "explanation": "The correct answer is **B**. Normalizing a vector scales its components so that its length (magnitude) becomes exactly 1 unit while preserving its original direction. Options A, C, and D are incorrect.",
+      "explanation_word_count": 32
+    },
+    {
+      "id": "ch11-q005",
+      "number": 5,
+      "question_text": "Given two vectors `pos` and `vel`, how do you update position by adding velocity in place using `p5.Vector` methods?",
+      "options": {
+        "A": "pos = add(pos, vel);",
+        "B": "pos.add(vel);",
+        "C": "pos += vel;",
+        "D": "pos.append(vel);"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Apply",
+      "concept_tested": "Vector Addition Add",
+      "explanation": "The correct answer is **B**. `p5.Vector.prototype.add()` adds the components of the passed vector to the calling vector in place. Option C (`pos += vel`) fails in JavaScript because `+` does not support vector operator overloading.",
+      "explanation_word_count": 35
+    },
+    {
+      "id": "ch11-q006",
+      "number": 6,
+      "question_text": "What does the dot product `v1.dot(v2)` return if two vectors are perpendicular (orthogonal) to each other?",
+      "options": {
+        "A": "1",
+        "B": "-1",
+        "C": "0",
+        "D": "Infinity"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Understand",
+      "concept_tested": "Vector Dot Product Orthogonal",
+      "explanation": "The correct answer is **C**. The dot product is defined as $|v1| \\cdot |v2| \\cdot \\cos(\\theta)$. When two vectors are perpendicular, $\\theta = 90^\\circ$ and $\\cos(90^\\circ) = 0$, yielding a dot product of 0. Options A, C, and D are incorrect.",
+      "explanation_word_count": 41
+    },
+    {
+      "id": "ch11-q007",
+      "number": 7,
+      "question_text": "To limit a particle's maximum speed to `10`, which `p5.Vector` method should be called on its velocity vector?",
+      "options": {
+        "A": "vel.max(10);",
+        "B": "vel.constrain(10);",
+        "C": "vel.limit(10);",
+        "D": "vel.cap(10);"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Apply",
+      "concept_tested": "Vector Limit Speed",
+      "explanation": "The correct answer is **C**. `vel.limit(max)` caps the magnitude of the vector at `max` without altering its direction if it exceeds `max`. Options B, C, and D are not `p5.Vector` methods.",
+      "explanation_word_count": 31
+    },
+    {
+      "id": "ch11-q008",
+      "number": 8,
+      "question_text": "Why must acceleration be reset to zero (`acc.mult(0)`) at the end of each frame's physics update in Euler integration?",
+      "options": {
+        "A": "To reset the particle back to origin (0, 0)",
+        "B": "To stop the particle from moving",
+        "C": "To clear accumulated forces so forces do not persist and multiply indefinitely across subsequent frames",
+        "D": "To save memory in the garbage collector"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Analyze",
+      "concept_tested": "Accumulate Forces Newton",
+      "explanation": "The correct answer is **C**. Forces act instantaneously or continuously per frame. If acceleration is not cleared to zero (`acc.set(0, 0)`), forces from previous frames accumulate indefinitely, causing runaway exponential acceleration. Options B, C, and D are false.",
+      "explanation_word_count": 38
+    },
+    {
+      "id": "ch11-q009",
+      "number": 9,
+      "question_text": "How do you calculate a vector pointing from particle `A` to target `B`?",
+      "options": {
+        "A": "let dir = p5.Vector.dist(targetB, posA);",
+        "B": "let dir = p5.Vector.add(targetB, posA);",
+        "C": "let dir = p5.Vector.mult(targetB, posA);",
+        "D": "let dir = p5.Vector.sub(targetB, posA);"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Apply",
+      "concept_tested": "Vector Subtraction Direction",
+      "explanation": "The correct answer is **D**. Subtracting the starting position vector from the target position vector (`target - current`) yields the vector pointing from `posA` to `targetB`. Option B sums them. Option D returns a scalar distance, not a vector.",
+      "explanation_word_count": 39
+    },
+    {
+      "id": "ch11-q010",
+      "number": 10,
+      "question_text": "What is the visual difference between updating motion with velocity alone versus velocity plus acceleration?",
+      "options": {
+        "A": "Acceleration locks frameRate to 30 FPS",
+        "B": "Acceleration only works in 3D WebGL",
+        "C": "Velocity alone moves randomly",
+        "D": "Velocity alone produces constant speed linear motion, while acceleration produces curved trajectories, gravity arcs, and steering behaviors"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Understand",
+      "concept_tested": "Velocity vs Acceleration Motion",
+      "explanation": "The correct answer is **D**. Position updated only by constant velocity yields fixed-speed straight lines. Acceleration continuously alters velocity's speed and direction, enabling gravity curves, drag deceleration, and realistic physics. Options B, C, and D are false.",
+      "explanation_word_count": 37
+    }
+  ]
+}

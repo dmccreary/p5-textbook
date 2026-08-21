@@ -1,0 +1,185 @@
+{
+  "chapter": "Mouse & Keyboard User Event Sensing",
+  "chapter_num": 13,
+  "chapter_id": "13-mouse-keyboard-events",
+  "chapter_file": "docs/chapters/13-mouse-keyboard-events/index.md",
+  "quiz_file": "docs/chapters/13-mouse-keyboard-events/quiz.md",
+  "generated_date": "2026-08-20",
+  "total_questions": 10,
+  "answer_distribution": {
+    "A": 2,
+    "B": 3,
+    "C": 3,
+    "D": 2
+  },
+  "bloom_distribution": {
+    "Remember": 5,
+    "Understand": 1,
+    "Apply": 3,
+    "Analyze": 1,
+    "Evaluate": 0,
+    "Create": 0
+  },
+  "questions": [
+    {
+      "id": "ch13-q001",
+      "number": 1,
+      "question_text": "What do the system variables `pmouseX` and `pmouseY` store in p5.js?",
+      "options": {
+        "A": "The mouse position coordinates from the immediately preceding frame",
+        "B": "The future predicted mouse coordinates for the next frame",
+        "C": "The physical pixel density of the mouse hardware",
+        "D": "The coordinates where the mouse was first clicked"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Remember",
+      "concept_tested": "Previous Mouse Coordinates",
+      "explanation": "The correct answer is **A**. `pmouseX` and `pmouseY` record the mouse position from the previous frame. Comparing them to current `mouseX` and `mouseY` enables velocity calculation and continuous line drawing with `line(pmouseX, pmouseY, mouseX, mouseY)`. Options A, C, and D are incorrect.",
+      "explanation_word_count": 42
+    },
+    {
+      "id": "ch13-q002",
+      "number": 2,
+      "question_text": "Which built-in boolean variable evaluates to `true` whenever the user is actively pressing any mouse button?",
+      "options": {
+        "A": "mouseIsPressed",
+        "B": "mouseClicked",
+        "C": "mouseState",
+        "D": "isMouseDown"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Remember",
+      "concept_tested": "Mouse Is Pressed Flag",
+      "explanation": "The correct answer is **A**. `mouseIsPressed` is a built-in boolean variable that is `true` while a mouse button is held down and `false` otherwise. Options B, C, and D are not the built-in p5.js boolean state variable.",
+      "explanation_word_count": 37
+    },
+    {
+      "id": "ch13-q003",
+      "number": 3,
+      "question_text": "What is the fundamental behavioral difference between the `mouseIsPressed` polling variable and the `mousePressed()` event function?",
+      "options": {
+        "A": "mouseIsPressed only works on mobile devices",
+        "B": "mouseIsPressed is checked continuously inside draw(), while mousePressed() is an asynchronous event handler triggered only once per click",
+        "C": "mousePressed() cannot read mouse coordinates",
+        "D": "mouseIsPressed freezes the sketch when clicked"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Understand",
+      "concept_tested": "Polling vs Event Handler",
+      "explanation": "The correct answer is **B**. Polling `mouseIsPressed` inside `draw()` checks continuous button hold state on every frame, whereas `mousePressed()` is an event listener that executes exactly once per discrete click event. Options B, C, and D are incorrect.",
+      "explanation_word_count": 38
+    },
+    {
+      "id": "ch13-q004",
+      "number": 4,
+      "question_text": "To draw a continuous brush stroke that follows the mouse cursor without gaps when moving quickly, which line of code is used in `draw()`?",
+      "options": {
+        "A": "point(mouseX, mouseY);",
+        "B": "line(pmouseX, pmouseY, mouseX, mouseY);",
+        "C": "rect(mouseX, mouseY, 10, 10);",
+        "D": "ellipse(pmouseX, pmouseY, 5, 5);"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Apply",
+      "concept_tested": "Continuous Brush Drawing",
+      "explanation": "The correct answer is **B**. Because fast mouse motion moves multiple pixels per frame, drawing disconnected points leaves gaps. Connecting `(pmouseX, pmouseY)` to `(mouseX, mouseY)` with a `line()` creates an unbroken continuous stroke. Options B, C, and D leave gaps.",
+      "explanation_word_count": 40
+    },
+    {
+      "id": "ch13-q005",
+      "number": 5,
+      "question_text": "Which event function is triggered whenever a key on the keyboard is pressed down?",
+      "options": {
+        "A": "keyTyped()",
+        "B": "keyPressed()",
+        "C": "keyReleased()",
+        "D": "keyHold()"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Remember",
+      "concept_tested": "Key Pressed Event",
+      "explanation": "The correct answer is **B**. `keyPressed()` is called once every time a key is pressed down. `keyReleased()` runs when released. `keyTyped()` ignores special modifier keys. `keyHold()` is not a p5.js function.",
+      "explanation_word_count": 31
+    },
+    {
+      "id": "ch13-q006",
+      "number": 6,
+      "question_text": "What system variable contains the ASCII character string of the most recently typed key?",
+      "options": {
+        "A": "keyChar",
+        "B": "keyCode",
+        "C": "key",
+        "D": "keyString"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Remember",
+      "concept_tested": "Key System Variable",
+      "explanation": "The correct answer is **C**. The system variable `key` contains the single-character string (e.g. `'a'`, `'B'`, `'1'`) of the most recent key press. `keyCode` stores numeric codes for special keys like `LEFT_ARROW` or `ENTER`.",
+      "explanation_word_count": 34
+    },
+    {
+      "id": "ch13-q007",
+      "number": 7,
+      "question_text": "How do you detect if the user pressed the Up Arrow key inside `keyPressed()`?",
+      "options": {
+        "A": "if (key === UP_ARROW)",
+        "B": "if (key === 'UP')",
+        "C": "if (keyCode === UP_ARROW)",
+        "D": "if (keyCode === 'up')"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Apply",
+      "concept_tested": "Key Code Special Keys",
+      "explanation": "The correct answer is **C**. Non-character special keys (such as arrow keys, SHIFT, CONTROL, ENTER) are identified by checking `keyCode` against p5.js constants like `UP_ARROW`. Option B and C are incorrect syntax.",
+      "explanation_word_count": 32
+    },
+    {
+      "id": "ch13-q008",
+      "number": 8,
+      "question_text": "Which function is called when the mouse wheel is scrolled, allowing zoom or scrolling interactions?",
+      "options": {
+        "A": "wheelDelta()",
+        "B": "mouseScrolled()",
+        "C": "mouseWheel(event)",
+        "D": "scrollEvent()"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Remember",
+      "concept_tested": "Mouse Wheel Event",
+      "explanation": "The correct answer is **C**. `mouseWheel(event)` is triggered by scroll wheel movements. The `event.delta` property indicates scroll direction and magnitude. Options B, C, and D are not p5.js event functions.",
+      "explanation_word_count": 30
+    },
+    {
+      "id": "ch13-q009",
+      "number": 9,
+      "question_text": "Why is circular hit detection `dist(mouseX, mouseY, circleX, circleY) < radius` computationally cleaner than rectangular bounding box checks for round buttons?",
+      "options": {
+        "A": "Circular detection prevents double-clicking",
+        "B": "dist() executes on GPU hardware",
+        "C": "Bounding box math requires matrix inversion",
+        "D": "It measures Euclidean distance from the center point regardless of approach angle, whereas bounding boxes falsely trigger on corners"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Analyze",
+      "concept_tested": "Circular Button Hit Detection",
+      "explanation": "The correct answer is **D**. A circle's boundary is defined by constant radial distance from its center. Checking distance accurately identifies clicks inside the circle and ignores the empty corners of its rectangular bounding box. Options B, C, and D are false.",
+      "explanation_word_count": 42
+    },
+    {
+      "id": "ch13-q010",
+      "number": 10,
+      "question_text": "To prevent the browser from executing its default action (such as scrolling the page when pressing space or arrow keys), what should an event function return?",
+      "options": {
+        "A": "return -1;",
+        "B": "return true;",
+        "C": "return null;",
+        "D": "return false;"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Apply",
+      "concept_tested": "Prevent Default Browser Action",
+      "explanation": "The correct answer is **D**. Returning `false` from a p5.js event callback function (like `keyPressed()` or `touchMoved()`) cancels the default browser event behavior, preventing unwanted page scrolling. Options B, C, and D do not suppress default browser actions.",
+      "explanation_word_count": 38
+    }
+  ]
+}

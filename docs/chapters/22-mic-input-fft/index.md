@@ -338,3 +338,5 @@ If we apply a Fast Fourier Transform and find a high concentration of energy in 
 !!! mascot-celebration "Awesome Work!"
     ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     Incredible work! You just mastered capturing real-time `p5.AudioIn` data, extracting frequency bins with the Fast Fourier Transform, and building dynamic beat detection algorithms!
+
+[See Annotated References](./references.md)

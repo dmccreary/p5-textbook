@@ -271,3 +271,5 @@ If all four of these conditions are true simultaneously, the cursor is hovering 
 While this chapter focuses on the mouse and keyboard, the principles you are learning apply directly to modern touch interfaces. A tap on a smartphone screen is conceptually identical to a **Mouse Clicked Event**. A swipe is a translation of the **Mouse Dragged Event**. Pinch-to-zoom is an evolution of the **Mouse Wheel Event**.
 
 By building a strong foundation in handling discrete events and continuous states, you are preparing yourself to develop software for any platform, from traditional desktop computers to the latest mobile devices and tablets. The controller might change shape, but the logic of interaction remains remarkably consistent.
+
+[See Annotated References](./references.md)

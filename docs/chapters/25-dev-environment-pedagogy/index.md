@@ -305,3 +305,5 @@ Moreover, the use of a package manager like npm or Yarn simplifies the process o
 As students progress in their journey, they will inevitably encounter the need for debugging. While `console.log()` is a useful starting point, mastering the browser's developer tools is essential for diagnosing complex issues. The Elements panel allows developers to inspect and manipulate the DOM in real-time, which is invaluable for troubleshooting layout and styling problems. The Network panel provides insights into resource loading, helping to identify bottlenecks and optimize performance. And the Sources panel, with its powerful JavaScript debugger, enables developers to step through code execution, inspect variable states, and pinpoint the exact source of errors.
 
 By embracing these professional tools and methodologies, students transition from merely writing code to engineering robust, scalable software solutions. The workbench is not just a collection of software; it is a mindset, a commitment to quality, collaboration, and continuous improvement.
+
+[See Annotated References](./references.md)

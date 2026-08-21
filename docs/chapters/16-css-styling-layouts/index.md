@@ -167,3 +167,5 @@ By mastering the integration of HTML DOM elements, CSS styling, and responsive e
 !!! mascot-celebration "Chapter Complete!"
     ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     Fantastic work! You just mastered integrating p5.js with HTML5 structures, controlling DOM Element visibility, and engineering responsive CSS Flexbox and Grid Layouts. You are officially building fully-fledged web applications!
+
+[See Annotated References](./references.md)

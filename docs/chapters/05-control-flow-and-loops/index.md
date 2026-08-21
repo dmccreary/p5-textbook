@@ -367,3 +367,5 @@ You now have the tools to manage massive amounts of data and create complex visu
 !!! mascot-celebration "Automation Mastered!"
     ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     Incredible work! You just mastered while loops, for loops, 2D nested grid iteration, and dynamic array data structures! You now have the power to command armies of shapes and manage complex data with just a few lines of code.
+
+[See Annotated References](./references.md)

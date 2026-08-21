@@ -201,3 +201,5 @@ We have successfully wired our studio patchbay! We loaded records, synthesized r
 !!! mascot-celebration "Symphony Complete!"
     ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     What a masterpiece, artists! You've successfully mastered the p5.sound library, synthesized custom oscillators, shaped time with ADSR envelopes, and routed audio effects! Let your sketches sing!
+
+[See Annotated References](./references.md)

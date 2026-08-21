@@ -233,3 +233,5 @@ A visualizer showing two vectors, A and B. As the user rotates A, a bar graph sh
 !!! mascot-celebration "Chapter Complete!"
     ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     Incredible work! You just mastered vector addition, magnitude calculations, and the force accumulation chain that powers real-world physics engines!
+
+[See Annotated References](./references.md)

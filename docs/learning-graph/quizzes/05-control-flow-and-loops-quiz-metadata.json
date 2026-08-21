@@ -1,0 +1,185 @@
+{
+  "chapter": "Control Flow, Loops & Array Data Structures",
+  "chapter_num": 5,
+  "chapter_id": "05-control-flow-and-loops",
+  "chapter_file": "docs/chapters/05-control-flow-and-loops/index.md",
+  "quiz_file": "docs/chapters/05-control-flow-and-loops/quiz.md",
+  "generated_date": "2026-08-20",
+  "total_questions": 10,
+  "answer_distribution": {
+    "A": 2,
+    "B": 3,
+    "C": 3,
+    "D": 2
+  },
+  "bloom_distribution": {
+    "Remember": 4,
+    "Understand": 2,
+    "Apply": 3,
+    "Analyze": 1,
+    "Evaluate": 0,
+    "Create": 0
+  },
+  "questions": [
+    {
+      "id": "ch05-q001",
+      "number": 1,
+      "question_text": "What are the three components separated by semicolons in a standard `for` loop header `for (A; B; C)`?",
+      "options": {
+        "A": "Initialization, Condition, Update (Increment/Decrement)",
+        "B": "Condition, Action, Breakpoint",
+        "C": "Declaration, Parameter, Return value",
+        "D": "Start point, Midpoint, End point"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Remember",
+      "concept_tested": "For Loop Construct",
+      "explanation": "The correct answer is **A**. A standard `for` loop header consists of initialization (e.g., `let i = 0`), condition check (`i < 10`), and post-iteration update (`i++`). Options A, C, and D are not the components of a standard `for` loop header.",
+      "explanation_word_count": 42
+    },
+    {
+      "id": "ch05-q002",
+      "number": 2,
+      "question_text": "What dangerous condition occurs if a `while` loop's condition never evaluates to `false`?",
+      "options": {
+        "A": "An infinite loop that freezes the browser tab or main thread",
+        "B": "Automatic hardware restart",
+        "C": "The loop terminates instantly after one iteration",
+        "D": "The canvas switches to 3D WebGL mode"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Understand",
+      "concept_tested": "Infinite Loop Prevention",
+      "explanation": "The correct answer is **A**. If the loop condition never becomes false, the loop executes indefinitely without yielding control back to the browser, blocking the event loop and causing the browser tab to hang. Options B, C, and D are incorrect.",
+      "explanation_word_count": 41
+    },
+    {
+      "id": "ch05-q003",
+      "number": 3,
+      "question_text": "Which loop structure is specifically designed to iterate through row-and-column visual grids on a 2D canvas?",
+      "options": {
+        "A": "Single while loop with a setTimeout",
+        "B": "Nested for loops (an outer loop for y and an inner loop for x)",
+        "C": "Recursive draw() invocation",
+        "D": "switch statement with 256 cases"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Understand",
+      "concept_tested": "Nested Loops and 2D Grids",
+      "explanation": "The correct answer is **B**. Nested `for` loops iterate over columns (`x`) across every row (`y`), calculating `(x, y)` coordinate positions to populate a 2D grid of shapes. Options B, C, and D are unsuitable and inefficient for grid rendering.",
+      "explanation_word_count": 40
+    },
+    {
+      "id": "ch05-q004",
+      "number": 4,
+      "question_text": "How do you access the first element of an array named `particles` in JavaScript?",
+      "options": {
+        "A": "particles[1]",
+        "B": "particles[0]",
+        "C": "particles.first()",
+        "D": "particles(0)"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Remember",
+      "concept_tested": "Array Indexing",
+      "explanation": "The correct answer is **B**. JavaScript arrays are zero-indexed, meaning the first element is at index `0` (`particles[0]`). `particles[1]` accesses the second element. Options C and D are invalid syntax in standard JavaScript.",
+      "explanation_word_count": 33
+    },
+    {
+      "id": "ch05-q005",
+      "number": 5,
+      "question_text": "Which array method adds a new element to the end of an existing array?",
+      "options": {
+        "A": "pop()",
+        "B": "push()",
+        "C": "shift()",
+        "D": "unshift()"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Remember",
+      "concept_tested": "Array Push Method",
+      "explanation": "The correct answer is **B**. `push()` appends one or more elements to the end of an array. `pop()` removes from the end, `shift()` removes from the beginning, and `unshift()` adds to the beginning.",
+      "explanation_word_count": 33
+    },
+    {
+      "id": "ch05-q006",
+      "number": 6,
+      "question_text": "Consider the loop: `for (let x = 0; x < 100; x += 25)`. How many total iterations will this loop execute?",
+      "options": {
+        "A": "3",
+        "B": "5",
+        "C": "4",
+        "D": "25"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Apply",
+      "concept_tested": "Loop Step Iteration",
+      "explanation": "The correct answer is **C**. The loop executes for `x = 0`, `x = 25`, `x = 50`, and `x = 75`. When `x` reaches 100, the condition `x < 100` evaluates to `false`, terminating the loop after exactly 4 iterations.",
+      "explanation_word_count": 41
+    },
+    {
+      "id": "ch05-q007",
+      "number": 7,
+      "question_text": "When iterating through an array to remove items using `splice()`, why is it recommended to loop backwards from `length - 1` down to `0`?",
+      "options": {
+        "A": "Looping backwards executes at 2x hardware speed",
+        "B": "JavaScript prohibits forward iteration when calling splice()",
+        "C": "Removing an item shifts subsequent index positions left, causing a forward loop to skip the next adjacent element",
+        "D": "Backwards loops automatically sort the remaining array elements"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Analyze",
+      "concept_tested": "Array Splice in Loops",
+      "explanation": "The correct answer is **C**. When an item is removed with `splice(i, 1)`, all subsequent items shift to an index one lower. In a forward loop, `i++` advances past the newly shifted item, skipping it. Looping backwards ensures shifted elements have indices already evaluated. Options A, C, and D are false.",
+      "explanation_word_count": 51
+    },
+    {
+      "id": "ch05-q008",
+      "number": 8,
+      "question_text": "What keyword is used inside a `switch` statement block to prevent execution from 'falling through' into subsequent cases?",
+      "options": {
+        "A": "stop",
+        "B": "exit",
+        "C": "break",
+        "D": "return"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Remember",
+      "concept_tested": "Switch Statement Break",
+      "explanation": "The correct answer is **C**. The `break` keyword terminates the `switch` statement execution, preventing fall-through into matching subsequent `case` blocks. Options A, B, and D are not standard case terminators.",
+      "explanation_word_count": 30
+    },
+    {
+      "id": "ch05-q009",
+      "number": 9,
+      "question_text": "A sketch stores 50 particle x-positions in an array `xCoords`. Which loop header correctly visits every valid element in the array?",
+      "options": {
+        "A": "for (let i = 0; i <= xCoords.length; i++)",
+        "B": "for (let i = 1; i <= xCoords.length; i++)",
+        "C": "for (let i = 0; i < 50; i += xCoords)",
+        "D": "for (let i = 0; i < xCoords.length; i++)"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Apply",
+      "concept_tested": "Array Length Iteration",
+      "explanation": "The correct answer is **D**. Array indices run from `0` to `array.length - 1`. The condition `i < xCoords.length` safely visits every valid index. Option A produces an `undefined` value on the final iteration because `xCoords[length]` is out of bounds.",
+      "explanation_word_count": 40
+    },
+    {
+      "id": "ch05-q010",
+      "number": 10,
+      "question_text": "You want to render a 10x10 tile pattern where each tile is 40 pixels wide. Inside nested loops `for(let y=0; y<10; y++)` and `for(let x=0; x<10; x++)`, what are the pixel coordinates for tile `(x, y)`?",
+      "options": {
+        "A": "`(x + 40, y + 40)`",
+        "B": "`(x * 10, y * 10)`",
+        "C": "`(x / 40, y / 40)`",
+        "D": "`(x * 40, y * 40)`"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Apply",
+      "concept_tested": "Grid Coordinate Scaling",
+      "explanation": "The correct answer is **D**. Multiplying the column and row indices by the tile width (`x * 40`, `y * 40`) maps discrete grid units (0, 1, 2...) to pixel positions (0, 40, 80...). Option A only adds an offset. Option C divides. Option D scales by grid dimensions rather than tile size.",
+      "explanation_word_count": 53
+    }
+  ]
+}

@@ -548,3 +548,5 @@ Furthermore, the integration of physics engines into creative coding environment
 As we look to the future, the intersection of typography and artificial intelligence holds immense potential. Machine learning models can analyze vast datasets of letterforms, generating novel typefaces that blend historical styles with futuristic aesthetics. Additionally, natural language processing algorithms can analyze the semantic meaning of text, automatically adjusting its visual representation to enhance communication and emotional impact.
 
 In conclusion, the journey of typography in creative coding is a testament to the continuous interplay between technology and artistic expression. By embracing the digital brush, we unlock unprecedented possibilities for typographic innovation. As you continue to explore the capabilities of p5.js, remember that text is not merely a vehicle for information; it is a versatile and expressive medium waiting to be shaped by your imagination. The canvas is your playground, and the alphabet is your palette.
+
+[See Annotated References](./references.md)

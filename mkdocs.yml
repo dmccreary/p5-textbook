@@ -38,31 +38,106 @@ nav:
 
   - Chapters:
       - List of Chapters: chapters/index.md
-      - 1. Introduction to Creative Coding & Canvas Foundations: chapters/01-intro-creative-coding/index.md
-      - 2. 2D Primitive Shapes & Custom Geometries: chapters/02-2d-primitive-shapes/index.md
-      - 3. Color Theory, Color Modes & Pixel Manipulation: chapters/03-color-theory-pixels/index.md
-      - 4. Variables, Data Types & Scope Fundamentals: chapters/04-variables-and-scope/index.md
-      - 5. Control Flow, Loops & Array Data Structures: chapters/05-control-flow-and-loops/index.md
-      - 6. Matrix Transformations & Coordinate Systems: chapters/06-matrix-transformations/index.md
-      - 7. Linear Motion, Trigonometry & Wave Math: chapters/07-linear-motion-trig/index.md
-      - 8. Polar Coordinates, Oscillation & Easing: chapters/08-polar-coordinates-easing/index.md
-      - 9. Randomness, Gaussian Distributions & Random Walk: chapters/09-randomness-and-walks/index.md
-      - 10. Perlin Noise Landscapes & Vector Flow Fields: chapters/10-perlin-noise-fields/index.md
-      - 11. Vector Math Fundamentals & Physics Acceleration: chapters/11-vector-math-physics/index.md
-      - 12. Particle Systems, Forces & Steering Behaviors: chapters/12-particle-systems/index.md
-      - 13. Mouse & Keyboard User Event Sensing: chapters/13-mouse-keyboard-events/index.md
-      - 14. Touch Gestures, Mobile Sensors & Interaction: chapters/14-touch-mobile-sensors/index.md
-      - 15. DOM Controls, Input Fields & UI Elements: chapters/15-dom-controls-ui/index.md
-      - 16. CSS Styling, Layouts & Web Page Integration: chapters/16-css-styling-layouts/index.md
-      - 17. Functions, Arrow Expressions & Callbacks: chapters/17-functions-and-callbacks/index.md
-      - 18. ES6 Classes, Object-Oriented Programming & Async Data: chapters/18-es6-classes-async/index.md
-      - 19. 3D WebGL Coordinates & Primitive Geometries: chapters/19-3d-webgl-primitives/index.md
-      - 20. 3D Cameras, Lighting Models, Materials & Shaders: chapters/20-3d-cameras-shaders/index.md
-      - 21. Audio Synthesis, Oscillators & Envelopes: chapters/21-audio-synthesis-sound/index.md
-      - 22. Microphone Input & FFT Spectral Analysis: chapters/22-mic-input-fft/index.md
-      - 23. Image Processing, Filters & Video Capture: chapters/23-image-processing-video/index.md
-      - 24. Generative Typography & Vector Font Outlines: chapters/24-generative-typography/index.md
-      - 25. Development Environment, Tools & Pedagogy: chapters/25-dev-environment-pedagogy/index.md
+      - 1. Introduction to Creative Coding & Canvas Foundations:
+          - Content: chapters/01-intro-creative-coding/index.md
+          - Quiz: chapters/01-intro-creative-coding/quiz.md
+          - Annotated References: chapters/01-intro-creative-coding/references.md
+      - 2. 2D Primitive Shapes & Custom Geometries:
+          - Content: chapters/02-2d-primitive-shapes/index.md
+          - Quiz: chapters/02-2d-primitive-shapes/quiz.md
+          - Annotated References: chapters/02-2d-primitive-shapes/references.md
+      - 3. Color Theory, Color Modes & Pixel Manipulation:
+          - Content: chapters/03-color-theory-pixels/index.md
+          - Quiz: chapters/03-color-theory-pixels/quiz.md
+          - Annotated References: chapters/03-color-theory-pixels/references.md
+      - 4. Variables, Data Types & Scope Fundamentals:
+          - Content: chapters/04-variables-and-scope/index.md
+          - Quiz: chapters/04-variables-and-scope/quiz.md
+          - Annotated References: chapters/04-variables-and-scope/references.md
+      - 5. Control Flow, Loops & Array Data Structures:
+          - Content: chapters/05-control-flow-and-loops/index.md
+          - Quiz: chapters/05-control-flow-and-loops/quiz.md
+          - Annotated References: chapters/05-control-flow-and-loops/references.md
+      - 6. Matrix Transformations & Coordinate Systems:
+          - Content: chapters/06-matrix-transformations/index.md
+          - Quiz: chapters/06-matrix-transformations/quiz.md
+          - Annotated References: chapters/06-matrix-transformations/references.md
+      - 7. Linear Motion, Trigonometry & Wave Math:
+          - Content: chapters/07-linear-motion-trig/index.md
+          - Quiz: chapters/07-linear-motion-trig/quiz.md
+          - Annotated References: chapters/07-linear-motion-trig/references.md
+      - 8. Polar Coordinates, Oscillation & Easing:
+          - Content: chapters/08-polar-coordinates-easing/index.md
+          - Quiz: chapters/08-polar-coordinates-easing/quiz.md
+          - Annotated References: chapters/08-polar-coordinates-easing/references.md
+      - 9. Randomness, Gaussian Distributions & Random Walk:
+          - Content: chapters/09-randomness-and-walks/index.md
+          - Quiz: chapters/09-randomness-and-walks/quiz.md
+          - Annotated References: chapters/09-randomness-and-walks/references.md
+      - 10. Perlin Noise Landscapes & Vector Flow Fields:
+          - Content: chapters/10-perlin-noise-fields/index.md
+          - Quiz: chapters/10-perlin-noise-fields/quiz.md
+          - Annotated References: chapters/10-perlin-noise-fields/references.md
+      - 11. Vector Math Fundamentals & Physics Acceleration:
+          - Content: chapters/11-vector-math-physics/index.md
+          - Quiz: chapters/11-vector-math-physics/quiz.md
+          - Annotated References: chapters/11-vector-math-physics/references.md
+      - 12. Particle Systems, Forces & Steering Behaviors:
+          - Content: chapters/12-particle-systems/index.md
+          - Quiz: chapters/12-particle-systems/quiz.md
+          - Annotated References: chapters/12-particle-systems/references.md
+      - 13. Mouse & Keyboard User Event Sensing:
+          - Content: chapters/13-mouse-keyboard-events/index.md
+          - Quiz: chapters/13-mouse-keyboard-events/quiz.md
+          - Annotated References: chapters/13-mouse-keyboard-events/references.md
+      - 14. Touch Gestures, Mobile Sensors & Interaction:
+          - Content: chapters/14-touch-mobile-sensors/index.md
+          - Quiz: chapters/14-touch-mobile-sensors/quiz.md
+          - Annotated References: chapters/14-touch-mobile-sensors/references.md
+      - 15. DOM Controls, Input Fields & UI Elements:
+          - Content: chapters/15-dom-controls-ui/index.md
+          - Quiz: chapters/15-dom-controls-ui/quiz.md
+          - Annotated References: chapters/15-dom-controls-ui/references.md
+      - 16. CSS Styling, Layouts & Web Page Integration:
+          - Content: chapters/16-css-styling-layouts/index.md
+          - Quiz: chapters/16-css-styling-layouts/quiz.md
+          - Annotated References: chapters/16-css-styling-layouts/references.md
+      - 17. Functions, Arrow Expressions & Callbacks:
+          - Content: chapters/17-functions-and-callbacks/index.md
+          - Quiz: chapters/17-functions-and-callbacks/quiz.md
+          - Annotated References: chapters/17-functions-and-callbacks/references.md
+      - 18. ES6 Classes, Object-Oriented Programming & Async Data:
+          - Content: chapters/18-es6-classes-async/index.md
+          - Quiz: chapters/18-es6-classes-async/quiz.md
+          - Annotated References: chapters/18-es6-classes-async/references.md
+      - 19. 3D WebGL Coordinates & Primitive Geometries:
+          - Content: chapters/19-3d-webgl-primitives/index.md
+          - Quiz: chapters/19-3d-webgl-primitives/quiz.md
+          - Annotated References: chapters/19-3d-webgl-primitives/references.md
+      - 20. 3D Cameras, Lighting Models, Materials & Shaders:
+          - Content: chapters/20-3d-cameras-shaders/index.md
+          - Quiz: chapters/20-3d-cameras-shaders/quiz.md
+          - Annotated References: chapters/20-3d-cameras-shaders/references.md
+      - 21. Audio Synthesis, Oscillators & Envelopes:
+          - Content: chapters/21-audio-synthesis-sound/index.md
+          - Quiz: chapters/21-audio-synthesis-sound/quiz.md
+          - Annotated References: chapters/21-audio-synthesis-sound/references.md
+      - 22. Microphone Input & FFT Spectral Analysis:
+          - Content: chapters/22-mic-input-fft/index.md
+          - Quiz: chapters/22-mic-input-fft/quiz.md
+          - Annotated References: chapters/22-mic-input-fft/references.md
+      - 23. Image Processing, Filters & Video Capture:
+          - Content: chapters/23-image-processing-video/index.md
+          - Quiz: chapters/23-image-processing-video/quiz.md
+          - Annotated References: chapters/23-image-processing-video/references.md
+      - 24. Generative Typography & Vector Font Outlines:
+          - Content: chapters/24-generative-typography/index.md
+          - Quiz: chapters/24-generative-typography/quiz.md
+          - Annotated References: chapters/24-generative-typography/references.md
+      - 25. Development Environment, Tools & Pedagogy:
+          - Content: chapters/25-dev-environment-pedagogy/index.md
+          - Quiz: chapters/25-dev-environment-pedagogy/quiz.md
+          - Annotated References: chapters/25-dev-environment-pedagogy/references.md
 
   - Learning Graph:
       - Introduction: learning-graph/index.md
@@ -75,6 +150,7 @@ nav:
       - FAQ Quality Report: learning-graph/faq-quality-report.md
       - FAQ Coverage Gaps: learning-graph/faq-coverage-gaps.md
       - Mascot Test: learning-graph/mascot-test.md
+      - Quiz Generation Report: learning-graph/quiz-generation-report.md
 
   - MicroSims:
     - List of MicroSims: sims/index.md

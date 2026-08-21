@@ -421,3 +421,5 @@ In the next chapter, we will look at loops: how to repeat actions hundreds of ti
 !!! mascot-celebration "Memory Unlocked!"
     ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     Incredible work! You just mastered variable declarations, global and local scope, and the complex logic of conditional switchboards! You've given your code both memory and the power to make decisions.
+
+[See Annotated References](./references.md)

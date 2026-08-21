@@ -1,0 +1,185 @@
+{
+  "chapter": "Image Processing, Filters & Video Capture",
+  "chapter_num": 23,
+  "chapter_id": "23-image-processing-video",
+  "chapter_file": "docs/chapters/23-image-processing-video/index.md",
+  "quiz_file": "docs/chapters/23-image-processing-video/quiz.md",
+  "generated_date": "2026-08-20",
+  "total_questions": 10,
+  "answer_distribution": {
+    "A": 2,
+    "B": 3,
+    "C": 3,
+    "D": 2
+  },
+  "bloom_distribution": {
+    "Remember": 5,
+    "Understand": 3,
+    "Apply": 1,
+    "Analyze": 1,
+    "Evaluate": 0,
+    "Create": 0
+  },
+  "questions": [
+    {
+      "id": "ch23-q001",
+      "number": 1,
+      "question_text": "Which p5.js function captures a live video stream from the user's connected webcam?",
+      "options": {
+        "A": "createCapture(VIDEO)",
+        "B": "newWebcam()",
+        "C": "loadVideo('webcam')",
+        "D": "getVideoStream()"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Remember",
+      "concept_tested": "Create Capture Webcam",
+      "explanation": "The correct answer is **A**. `createCapture(VIDEO)` requests webcam access and creates an HTML5 `<video>` element that can be drawn to the canvas using `image(capture, x, y)`. Options B, C, and D are not p5.js capture functions.",
+      "explanation_word_count": 36
+    },
+    {
+      "id": "ch23-q002",
+      "number": 2,
+      "question_text": "Which built-in p5.js image filter converts an image into pure black and white pixels based on a luminance threshold?",
+      "options": {
+        "A": "filter(THRESHOLD, [level])",
+        "B": "filter(GRAY)",
+        "C": "filter(INVERT)",
+        "D": "filter(POSTERIZE)"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Remember",
+      "concept_tested": "Filter Threshold Function",
+      "explanation": "The correct answer is **A**. `filter(THRESHOLD, [level])` evaluates every pixel's brightness against a threshold level (0.0 to 1.0), converting pixels to pure white or pure black. `filter(GRAY)` creates grayscale. `filter(INVERT)` inverts colors. `filter(POSTERIZE)` quantizes palettes.",
+      "explanation_word_count": 35
+    },
+    {
+      "id": "ch23-q003",
+      "number": 3,
+      "question_text": "What mathematical operation is performed by a 3x3 Convolution Matrix Filter in image processing?",
+      "options": {
+        "A": "Pixels are sorted alphabetically by RGB hex code",
+        "B": "Each output pixel is calculated as the weighted sum of its neighboring pixels multiplied by kernel matrix coefficients",
+        "C": "The image is scaled down by 33%",
+        "D": "All pixel values are divided by canvas width"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Understand",
+      "concept_tested": "Convolution Kernel Filter",
+      "explanation": "The correct answer is **B**. Convolution slides a small matrix of weights (the kernel) over every pixel, multiplying overlapping neighbor pixels by kernel weights and summing the result to achieve effects like sharpening, blurring, and edge detection. Options B, C, and D are false.",
+      "explanation_word_count": 44
+    },
+    {
+      "id": "ch23-q004",
+      "number": 4,
+      "question_text": "Which 3x3 convolution kernel is widely used for edge detection (Sobel / Laplacian)?",
+      "options": {
+        "A": "A kernel containing all zeros",
+        "B": "A kernel with high center weight surrounded by negative neighbor weights (e.g. [-1,-1,-1, -1,8,-1, -1,-1,-1])",
+        "C": "A kernel containing all ones [1,1,1, 1,1,1, 1,1,1]",
+        "D": "A kernel with identity matrix diagonal ones"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Understand",
+      "concept_tested": "Edge Detection Kernel",
+      "explanation": "The correct answer is **B**. Edge detection filters use kernels whose weights sum to zero with negative surrounds and positive center (or directional gradients), highlighting areas of rapid brightness transition (edges) while canceling uniform regions. Options B, C, and D do not detect edges.",
+      "explanation_word_count": 44
+    },
+    {
+      "id": "ch23-q005",
+      "number": 5,
+      "question_text": "How do you sample the RGBA color of a pixel at coordinate (x, y) from a `p5.Image` object `img`?",
+      "options": {
+        "A": "img.sample(x, y)",
+        "B": "img.get(x, y)",
+        "C": "img.pixelAt(x, y)",
+        "D": "img.read(x, y)"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Remember",
+      "concept_tested": "Image Get Pixel Method",
+      "explanation": "The correct answer is **B**. `img.get(x, y)` retrieves the color of a specific pixel from an image object as a `[r, g, b, a]` array or `p5.Color`. Options B, C, and D are not p5.Image methods.",
+      "explanation_word_count": 36
+    },
+    {
+      "id": "ch23-q006",
+      "number": 6,
+      "question_text": "What is the visual technique of replacing fine image pixels with larger graphic shapes (circles, letters, ascii characters) called?",
+      "options": {
+        "A": "Raster De-interlacing",
+        "B": "Raytracing",
+        "C": "Creative Coding Pixelation / ASCII Art Mosaic",
+        "D": "Vectorization"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Understand",
+      "concept_tested": "Pixelation Mosaic Concept",
+      "explanation": "The correct answer is **C**. Sampling pixel colors at stepped grid intervals (e.g. every 10 pixels) and drawing sized geometry or characters at those positions creates artistic mosaic, halftoning, and ASCII art effects. Options B, C, and D describe other graphics processes.",
+      "explanation_word_count": 42
+    },
+    {
+      "id": "ch23-q007",
+      "number": 7,
+      "question_text": "To build an interactive green-screen (chroma key) filter, how does the pixel processing loop operate?",
+      "options": {
+        "A": "It inverts the canvas coordinate system",
+        "B": "It replaces all red pixels with blue pixels",
+        "C": "It checks if a pixel's RGB color is within a target color distance of green, setting its alpha channel to 0 if matched",
+        "D": "It deletes the webcam capture stream"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Apply",
+      "concept_tested": "Chroma Key Algorithm",
+      "explanation": "The correct answer is **C**. Chroma keying evaluates the Euclidean color distance between each pixel's color `(r, g, b)` and the background green key color. If the distance falls below a tolerance threshold, the pixel's alpha channel `pixels[i+3]` is set to 0 (transparent). Options B, C, and D are false.",
+      "explanation_word_count": 50
+    },
+    {
+      "id": "ch23-q008",
+      "number": 8,
+      "question_text": "Why is drawing a video capture to an off-screen `p5.Graphics` buffer or scaling down capture dimensions (e.g. 160x120) critical when processing pixels in JavaScript?",
+      "options": {
+        "A": "Webcams cannot record video in color unless scaled down",
+        "B": "p5.js cannot display videos larger than 200 pixels",
+        "C": "Processing raw 1080p frames requires evaluating over 8 million array elements per frame, which drops JavaScript frame rates below 60 FPS",
+        "D": "Offscreen buffers automatically convert video to vector paths"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Analyze",
+      "concept_tested": "Video Processing Optimization",
+      "explanation": "The correct answer is **C**. A 1920x1080 video frame contains ~2.07 million pixels (over 8.2 million array values). Iterating through 8 million array reads and writes in JavaScript on every frame exceeds CPU budgets; downscaling to 160x120 reduces workload by >98%. Options B, C, and D are false.",
+      "explanation_word_count": 48
+    },
+    {
+      "id": "ch23-q009",
+      "number": 9,
+      "question_text": "Which built-in filter blurs an image using a Gaussian convolution filter?",
+      "options": {
+        "A": "filter(DIFFUSE)",
+        "B": "filter(SMOOTH)",
+        "C": "filter(SOFTEN)",
+        "D": "filter(BLUR, [radius])"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Remember",
+      "concept_tested": "Filter Blur Gaussian",
+      "explanation": "The correct answer is **D**. `filter(BLUR, [radius])` applies Gaussian blur to the canvas with the specified pixel radius. Options B, C, and D are not p5.js filter constants.",
+      "explanation_word_count": 28
+    },
+    {
+      "id": "ch23-q010",
+      "number": 10,
+      "question_text": "What function draws a `p5.Image` or video capture object onto the canvas at coordinate (x, y)?",
+      "options": {
+        "A": "blit(img, x, y)",
+        "B": "drawImage(img, x, y)",
+        "C": "renderImage(img, x, y)",
+        "D": "image(img, x, y, [width], [height])"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Remember",
+      "concept_tested": "Image Drawing Function",
+      "explanation": "The correct answer is **D**. `image(img, x, y, [w], [h])` renders an image, offscreen graphics buffer, or video stream onto the canvas at the specified coordinates. Options B, C, and D are not p5.js drawing commands.",
+      "explanation_word_count": 36
+    }
+  ]
+}

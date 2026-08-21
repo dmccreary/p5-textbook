@@ -359,3 +359,5 @@ When you learn to seamlessly link these mathematical properties together using t
     ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
 
     Incredible work! You just mastered linear displacement, harmonic sine waves, and rotational tracking using atan2. You have everything you need to choreograph organic movement!
+
+[See Annotated References](./references.md)

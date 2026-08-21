@@ -357,3 +357,5 @@ You have learned to draw the shapes, and you have learned to light them up. In t
 !!! mascot-celebration "Illuminated!"
     ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     Incredible work! You just mastered additive RGB mixing, the HSB color wheel compass, array interpolation, and the complex 1D math of direct pixel manipulation! You are officially painting with pure math and light.
+
+[See Annotated References](./references.md)

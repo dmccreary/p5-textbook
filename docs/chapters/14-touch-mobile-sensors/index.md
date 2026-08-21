@@ -330,3 +330,5 @@ As we continue our journey, remember that interaction is a dialogue between the 
 !!! mascot-celebration "You Did It!"
     ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     Incredible work, artists! You just mastered the Touch Touches Array, multi-touch pinch gestures, and mapping Device Motion Acceleration to digital interactions. Your interactive palette is richer than ever!
+
+[See Annotated References](./references.md)

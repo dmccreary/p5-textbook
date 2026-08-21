@@ -1,0 +1,185 @@
+{
+  "chapter": "CSS Styling, Layouts & Web Page Integration",
+  "chapter_num": 16,
+  "chapter_id": "16-css-styling-layouts",
+  "chapter_file": "docs/chapters/16-css-styling-layouts/index.md",
+  "quiz_file": "docs/chapters/16-css-styling-layouts/quiz.md",
+  "generated_date": "2026-08-20",
+  "total_questions": 10,
+  "answer_distribution": {
+    "A": 2,
+    "B": 3,
+    "C": 3,
+    "D": 2
+  },
+  "bloom_distribution": {
+    "Remember": 3,
+    "Understand": 2,
+    "Apply": 4,
+    "Analyze": 1,
+    "Evaluate": 0,
+    "Create": 0
+  },
+  "questions": [
+    {
+      "id": "ch16-q001",
+      "number": 1,
+      "question_text": "Which p5.js method attaches a canvas or DOM element as a child of an existing HTML container `<div>`?",
+      "options": {
+        "A": "element.parent('container-id')",
+        "B": "element.attach('container-id')",
+        "C": "element.insert('container-id')",
+        "D": "element.embed('container-id')"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Remember",
+      "concept_tested": "Parent Container Attachment",
+      "explanation": "The correct answer is **A**. `element.parent(container)` attaches the DOM element or canvas inside a specific HTML container element, enabling responsive grid and flexbox layouts. Options B, C, and D are not p5.js methods.",
+      "explanation_word_count": 33
+    },
+    {
+      "id": "ch16-q002",
+      "number": 2,
+      "question_text": "How do you assign a CSS class name to a p5.js DOM element for external stylesheet styling?",
+      "options": {
+        "A": "element.addClass('my-class')",
+        "B": "element.setClass('my-class')",
+        "C": "element.className = 'my-class'",
+        "D": "element.styleClass('my-class')"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Remember",
+      "concept_tested": "Add Class Method",
+      "explanation": "The correct answer is **A**. `element.addClass('className')` adds a CSS class to the element's classList without overwriting existing classes. Options B, C, and D are incorrect.",
+      "explanation_word_count": 25
+    },
+    {
+      "id": "ch16-q003",
+      "number": 3,
+      "question_text": "Which p5.js method allows you to apply inline CSS rules directly to an element from JavaScript?",
+      "options": {
+        "A": "element.css('property', 'value')",
+        "B": "element.style('property', 'value')",
+        "C": "element.setStyle('property', 'value')",
+        "D": "element.attr('property', 'value')"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Remember",
+      "concept_tested": "DOM Element Style Method",
+      "explanation": "The correct answer is **B**. `element.style('color', '#ff0055')` modifies the inline CSS style attribute of the element. Options B, C, and D are not the standard p5.js styling methods.",
+      "explanation_word_count": 28
+    },
+    {
+      "id": "ch16-q004",
+      "number": 4,
+      "question_text": "What CSS layout module provides one-dimensional space distribution and alignment along rows or columns?",
+      "options": {
+        "A": "CSS Float (float: left)",
+        "B": "CSS Flexbox (display: flex)",
+        "C": "CSS Table (display: table)",
+        "D": "CSS Positioning (position: absolute)"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Understand",
+      "concept_tested": "CSS Flexbox Layout",
+      "explanation": "The correct answer is **B**. Flexbox is specifically designed for 1D layout structure, handling alignment, direction, order, and responsive space distribution along a main axis. Options B, C, and D are legacy or non-flex layout models.",
+      "explanation_word_count": 36
+    },
+    {
+      "id": "ch16-q005",
+      "number": 5,
+      "question_text": "What CSS layout system is best suited for complex two-dimensional grid layouts with explicit rows and columns?",
+      "options": {
+        "A": "CSS Inline-Block",
+        "B": "CSS Grid (display: grid)",
+        "C": "CSS Flexbox",
+        "D": "CSS Clearfix"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Understand",
+      "concept_tested": "CSS Grid Layout",
+      "explanation": "The correct answer is **B**. CSS Grid is a 2D layout system capable of arranging elements across both horizontal rows and vertical columns simultaneously. Flexbox is 1D. Options B and D are older techniques.",
+      "explanation_word_count": 34
+    },
+    {
+      "id": "ch16-q006",
+      "number": 6,
+      "question_text": "To make a p5.js canvas resize dynamically whenever the browser window dimensions change, which lifecycle function should be implemented?",
+      "options": {
+        "A": "onResize()",
+        "B": "canvasResized()",
+        "C": "windowResized()",
+        "D": "browserChanged()"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Apply",
+      "concept_tested": "Window Resized Lifecycle",
+      "explanation": "The correct answer is **C**. `windowResized()` is a built-in p5.js lifecycle handler called whenever the browser viewport changes size. Inside, calling `resizeCanvas(windowWidth, windowHeight)` keeps the canvas responsive. Options B, C, and D are not p5.js functions.",
+      "explanation_word_count": 36
+    },
+    {
+      "id": "ch16-q007",
+      "number": 7,
+      "question_text": "How do you make a canvas fill the entire browser viewport width and height upon initialization?",
+      "options": {
+        "A": "createCanvas(screen.width, screen.height);",
+        "B": "createCanvas(100%, 100%);",
+        "C": "createCanvas(windowWidth, windowHeight);",
+        "D": "createCanvas(MAX_WIDTH, MAX_HEIGHT);"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Apply",
+      "concept_tested": "Fullscreen Canvas Setup",
+      "explanation": "The correct answer is **C**. `windowWidth` and `windowHeight` contain the current dimensions of the browser window viewport in pixels. Passing them to `createCanvas()` initializes a full-screen canvas. Option B has invalid syntax in JavaScript.",
+      "explanation_word_count": 34
+    },
+    {
+      "id": "ch16-q008",
+      "number": 8,
+      "question_text": "What CSS property removes the default margin and scrollbars from the HTML `<body>` when embedding a fullscreen canvas?",
+      "options": {
+        "A": "scroll: none; border: 0;",
+        "B": "padding: 100px; display: block;",
+        "C": "margin: 0; overflow: hidden;",
+        "D": "canvas: fullscreen;"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Apply",
+      "concept_tested": "CSS Fullscreen Reset",
+      "explanation": "The correct answer is **C**. Browsers add an 8px default margin to `<body>`. Setting `margin: 0; overflow: hidden;` in CSS removes page margins and scrollbars, preventing scroll jitter on fullscreen sketches. Options B, C, and D are incorrect.",
+      "explanation_word_count": 38
+    },
+    {
+      "id": "ch16-q009",
+      "number": 9,
+      "question_text": "Why is separating visual styling into external CSS classes superior to hardcoding inline `.style()` calls in JavaScript?",
+      "options": {
+        "A": "External CSS files automatically compress image assets",
+        "B": "External CSS executes on the GPU while inline styles execute on the CPU",
+        "C": "Inline styles disable canvas anti-aliasing",
+        "D": "It maintains separation of concerns, enables centralized design themes, supports media queries, and improves maintainability"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Analyze",
+      "concept_tested": "CSS Separation of Concerns",
+      "explanation": "The correct answer is **D**. External stylesheets keep design rules modular, reusable, and responsive via CSS media queries, keeping JavaScript code focused strictly on simulation logic and data flow. Options B, C, and D are false.",
+      "explanation_word_count": 36
+    },
+    {
+      "id": "ch16-q010",
+      "number": 10,
+      "question_text": "What CSS property ensures that mouse clicks pass right through an overlay HTML element to reach the interactive canvas beneath it?",
+      "options": {
+        "A": "touch-action: pass;",
+        "B": "user-select: none;",
+        "C": "cursor: transparent;",
+        "D": "pointer-events: none;"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Apply",
+      "concept_tested": "CSS Pointer Events None",
+      "explanation": "The correct answer is **D**. `pointer-events: none;` disables hit-testing on the CSS element, allowing mouse and touch events to fall through to underlying elements such as the p5.js canvas. Options B, C, and D do not pass pointer events through.",
+      "explanation_word_count": 40
+    }
+  ]
+}

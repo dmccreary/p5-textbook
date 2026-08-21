@@ -397,3 +397,5 @@ By mastering these concepts, you are no longer just writing disorganized lists o
 !!! mascot-celebration "Chef's Kiss! Masterpiece Completed!"
     ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     Incredible work! You just mastered ES6 Class Declarations, arrow function expressions, and managing asynchronous logic with callbacks. Your code is now incredibly organized, highly modular, and ready for massive software projects!
+
+[See Annotated References](./references.md)

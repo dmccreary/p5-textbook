@@ -544,3 +544,5 @@ Combine the ASCIIfy technique with Sobel Edge Detection to render structural out
 The transition from manipulating static shapes to processing complex pixel arrays marks a significant milestone in your programming education. You are no longer merely instructing the computer to draw geometry; you are actively dismantling, analyzing, and reconstructing the visual world around you through the lens of mathematics. 
 
 This deep control over graphical memory structures lays the essential groundwork for more advanced topics in computer science, including machine learning, computer vision, and high-performance GPU shader programming. By mastering the humble pixel array today, you are preparing yourself for the cutting-edge interactive technologies of tomorrow. Keep exploring, keep questioning the algorithms, and never hesitate to invent your own rules for visual expression. The digital canvas is your laboratory, and the pixels are yours to command.
+
+[See Annotated References](./references.md)

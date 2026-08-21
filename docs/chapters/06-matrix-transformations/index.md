@@ -343,3 +343,5 @@ You've got this! Matrices are powerful, but with a little practice, you'll be be
     ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
 
     Incredible work! You just mastered translating, rotating, scaling, and the matrix stack. You can now build complex, hierarchical digital worlds!
+
+[See Annotated References](./references.md)

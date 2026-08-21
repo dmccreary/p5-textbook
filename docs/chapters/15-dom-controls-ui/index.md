@@ -448,3 +448,5 @@ In this chapter, we expanded our toolkit far beyond the canvas. We built a compr
 Furthermore, we took command of the layout by manipulating DOM element position, size, and styling them with CSS and classes. Finally, we learned how to continuously read from and write to our interface components using get and set value methods. 
 
 By integrating DOM controls, you invite your users to actively participate in your art. In the next phases of your learning journey, you will combine these UI concepts with complex data structures and external APIs, allowing your dashboards to control far more than just visual shapes—they will become the steering wheels for navigating the entire web!
+
+[See Annotated References](./references.md)

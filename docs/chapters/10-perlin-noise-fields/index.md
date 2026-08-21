@@ -291,3 +291,5 @@ In the next chapters, we will take these organic shapes and generated worlds and
 !!! mascot-celebration "Chapter Complete!"
     ![Palette celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     Incredible work! You just mastered generating Perlin noise landscapes, directing vector flow fields, and shaping probability with Monte Carlo selection! Your generative worlds are about to look stunning.
+
+[See Annotated References](./references.md)
