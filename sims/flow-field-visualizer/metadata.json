@@ -1,0 +1,21 @@
+{
+  "title": "Flow Field Visualizer",
+  "description": "Generate 2D Perlin noise vector flow fields with interactive particle tracers, noise scale adjustments, and trajectory trails.",
+  "creator": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "Flow Field Visualizer",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "sim_id": "flow-field-visualizer",
+  "canvasHeight": 485,
+  "bloom_level": "Apply",
+  "learning_objective": "Students will understand how continuous Perlin noise maps to vector angles, driving autonomous particle motion along organic streamlines.",
+  "chapter_dir": "10-perlin-noise-fields"
+}

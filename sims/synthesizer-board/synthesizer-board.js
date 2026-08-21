@@ -65,7 +65,7 @@ function setup() {
 function positionControls() {
   let col1X = 30;
   let col2X = 200;
-  let startY = 330;
+  let startY = 370;
   
   waveSelect.position(col1X, startY);
   
@@ -118,6 +118,17 @@ function releaseSynth() {
 
 function draw() {
   background(30);
+
+
+  push();
+  fill(255);
+  noStroke();
+  textAlign(CENTER, TOP);
+  textSize(22);
+  textStyle(BOLD);
+  text("Synthesizer Board", width / 2, 10);
+  pop();
+
   
   drawWaveform();
   drawEnvelope();
@@ -126,7 +137,7 @@ function draw() {
 
 function drawWaveform() {
   push();
-  translate(0, 0);
+  translate(0, 40);
   
   // Background box
   fill(40);
@@ -160,7 +171,7 @@ function drawWaveform() {
 
 function drawEnvelope() {
   push();
-  translate(0, 160);
+  translate(0, 200);
   
   // Background box
   fill(40);
@@ -243,7 +254,7 @@ function drawLabels() {
   
   let col1X = 30;
   let col2X = 200;
-  let startY = 330;
+  let startY = 370;
   
   let a = attackSlider.value().toFixed(2);
   let d = decaySlider.value().toFixed(2);

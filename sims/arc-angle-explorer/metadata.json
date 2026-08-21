@@ -1,0 +1,21 @@
+{
+  "title": "Arc and Angle Explorer",
+  "description": "Visualize p5.js arc drawing modes (OPEN, CHORD, PIE) with interactive start and stop angles in degrees and radians.",
+  "creator": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "Arc and Angle Explorer",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "sim_id": "arc-angle-explorer",
+  "canvasHeight": 515,
+  "bloom_level": "Apply",
+  "learning_objective": "Students will master the arc() function syntax, angle direction in p5.js, and how mode parameters alter geometry.",
+  "chapter_dir": "02-2d-primitive-shapes"
+}

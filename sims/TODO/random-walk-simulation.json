@@ -1,0 +1,15 @@
+{
+  "sim_id": "random-walk-simulation",
+  "diagram_name": "Random Walk Simulation",
+  "chapter_number": 9,
+  "chapter_title": "Randomness And Walks",
+  "chapter_dir": "09-randomness-and-walks",
+  "chapter_rel_dir": "chapters/09-randomness-and-walks",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>MicroSim: Random Walk Simulation</summary>\n\n**Goal:** Create a visual comparison of different types of Random Walks.\n\n**Features:**\n- A canvas showing the paths of three different colored \"Walkers\".\n- Walker 1 (Red): Standard Uniform Random Walk (moves 1 pixel up/down/left/right randomly).\n- Walker 2 (Blue): Gaussian Random Walk (uses `randomGaussian()` for step size, tending to stay closer but occasionally taking larger steps).\n- Walker 3 (Green): A Walker that has a slight bias to move toward the mouse cursor.\n- A \"Reset\" button to clear the canvas and put all walkers back in the center.\n- A slider to control the simulation speed (how many steps they take per frame).\n\n**Interactivity:**\n- Moving the mouse should influence the Green walker to slowly drift toward the cursor's location, demonstrating a \"biased\" random walk."
+}

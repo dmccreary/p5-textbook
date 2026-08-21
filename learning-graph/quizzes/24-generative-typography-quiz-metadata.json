@@ -1,0 +1,185 @@
+{
+  "chapter": "Generative Typography & Vector Font Outlines",
+  "chapter_num": 24,
+  "chapter_id": "24-generative-typography",
+  "chapter_file": "docs/chapters/24-generative-typography/index.md",
+  "quiz_file": "docs/chapters/24-generative-typography/quiz.md",
+  "generated_date": "2026-08-20",
+  "total_questions": 10,
+  "answer_distribution": {
+    "A": 2,
+    "B": 3,
+    "C": 3,
+    "D": 2
+  },
+  "bloom_distribution": {
+    "Remember": 5,
+    "Understand": 2,
+    "Apply": 2,
+    "Analyze": 1,
+    "Evaluate": 0,
+    "Create": 0
+  },
+  "questions": [
+    {
+      "id": "ch24-q001",
+      "number": 1,
+      "question_text": "Which function renders text characters directly onto the p5.js canvas?",
+      "options": {
+        "A": "text(str, x, y, [x2], [y2])",
+        "B": "drawText(str, x, y)",
+        "C": "printText(str, x, y)",
+        "D": "write(str, x, y)"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Remember",
+      "concept_tested": "Text Drawing Function",
+      "explanation": "The correct answer is **A**. `text(str, x, y)` draws text strings onto the canvas at the specified anchor coordinates. Options B, C, and D are not p5.js drawing functions.",
+      "explanation_word_count": 29
+    },
+    {
+      "id": "ch24-q002",
+      "number": 2,
+      "question_text": "Which method of a `p5.Font` object extracts an array of coordinate points along the vector outline of a text string?",
+      "options": {
+        "A": "font.textToPoints(txt, x, y, fontSize, [options])",
+        "B": "font.getOutlinePoints(txt)",
+        "C": "font.vectorize(txt)",
+        "D": "font.samplePoints(txt)"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Remember",
+      "concept_tested": "Font Text To Points",
+      "explanation": "The correct answer is **A**. `font.textToPoints(txt, x, y, fontSize, options)` returns an array of `{x, y, alpha}` point objects outlining the letterforms, enabling particle typography, swarming text, and generative deformers. Options B, C, and D are not p5.Font methods.",
+      "explanation_word_count": 39
+    },
+    {
+      "id": "ch24-q003",
+      "number": 3,
+      "question_text": "What parameter in `textToPoints()` options controls the spacing density between sampled points along the glyph path?",
+      "options": {
+        "A": "density",
+        "B": "sampleFactor",
+        "C": "stepSize",
+        "D": "pointResolution"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Remember",
+      "concept_tested": "Sample Factor Density",
+      "explanation": "The correct answer is **B**. `sampleFactor` (default 0.1) defines the density of points sampled along the path. Increasing `sampleFactor` to 0.5 produces tightly spaced points; decreasing it produces sparse points. Options B, C, and D are incorrect.",
+      "explanation_word_count": 37
+    },
+    {
+      "id": "ch24-q004",
+      "number": 4,
+      "question_text": "Which p5.js function sets the horizontal and vertical alignment anchors for rendered text (e.g. `textAlign(CENTER, CENTER)`)?",
+      "options": {
+        "A": "textAnchor(align)",
+        "B": "textAlign(horizAlign, [vertAlign])",
+        "C": "textJustify(align)",
+        "D": "textOrigin(align)"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Remember",
+      "concept_tested": "Text Align Alignment",
+      "explanation": "The correct answer is **B**. `textAlign(horizAlign, [vertAlign])` sets text baseline alignment relative to the `(x, y)` coordinate (constants include `LEFT`, `CENTER`, `RIGHT`, `TOP`, `BASELINE`, `BOTTOM`). Options B, C, and D are not p5.js functions.",
+      "explanation_word_count": 34
+    },
+    {
+      "id": "ch24-q005",
+      "number": 5,
+      "question_text": "How do you calculate the exact bounding box rectangle `{x, y, w, h}` enclosing a text string before drawing it?",
+      "options": {
+        "A": "text.getBounds(str)",
+        "B": "font.textBounds(str, x, y, fontSize)",
+        "C": "boundingBox(str)",
+        "D": "textSize(str)"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Apply",
+      "concept_tested": "Font Text Bounds",
+      "explanation": "The correct answer is **B**. `font.textBounds(str, x, y, fontSize)` returns an object `{x, y, w, h}` describing the exact bounding box rectangle of the rendered text string. Options B, C, and D are incorrect.",
+      "explanation_word_count": 34
+    },
+    {
+      "id": "ch24-q006",
+      "number": 6,
+      "question_text": "Why must custom TrueType (.ttf) or OpenType (.otf) font files be loaded inside `preload()` using `loadFont()`?",
+      "options": {
+        "A": "Because web browsers do not support vector fonts",
+        "B": "Because p5.js cannot render text without custom TTF fonts",
+        "C": "Font files are binary network assets that must be fully parsed before drawing operations execute to prevent font rendering glitches",
+        "D": "To compile typography into WebGL fragment shaders"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Understand",
+      "concept_tested": "Load Font Preload Lifecycle",
+      "explanation": "The correct answer is **C**. Loading font files asynchronously in `preload()` ensures that font metrics, glyph curves, and kerning tables are fully buffered and ready before `setup()` and `draw()` run. Options B, C, and D are false.",
+      "explanation_word_count": 37
+    },
+    {
+      "id": "ch24-q007",
+      "number": 7,
+      "question_text": "What generative animation technique is enabled by extracting vector points with `textToPoints()`?",
+      "options": {
+        "A": "The text is converted into audio frequency files",
+        "B": "The text is automatically translated into foreign languages",
+        "C": "Particles can home in toward text points, swarm, explode on mouse hover, and reassemble dynamically",
+        "D": "The font is converted into raster bitmap images"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Understand",
+      "concept_tested": "Generative Particle Typography",
+      "explanation": "The correct answer is **C**. Converting typography into discrete vector point coordinates enables physics particles to treat font points as steering targets, enabling kinetic effects like exploding text, magnetic displacement, and morphing letterforms. Options B, C, and D describe unrelated processes.",
+      "explanation_word_count": 41
+    },
+    {
+      "id": "ch24-q008",
+      "number": 8,
+      "question_text": "What does the `textLeading()` function configure in p5.js typography?",
+      "options": {
+        "A": "The slant angle of italic text",
+        "B": "The horizontal kerning space between adjacent characters",
+        "C": "The vertical line spacing distance between lines of multi-line text",
+        "D": "The font weight boldness"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Remember",
+      "concept_tested": "Text Leading Line Spacing",
+      "explanation": "The correct answer is **C**. `textLeading(dist)` sets the vertical distance in pixels between consecutive lines of multi-line text strings. Option B describes letter spacing/kerning. Options C and D describe italic slant and font weight.",
+      "explanation_word_count": 34
+    },
+    {
+      "id": "ch24-q009",
+      "number": 9,
+      "question_text": "How do you morph one word (e.g. 'ART') into another word (e.g. 'CODE') using `textToPoints()`?",
+      "options": {
+        "A": "Call text() twice with different alpha transparency",
+        "B": "Rotate the canvas 180 degrees",
+        "C": "Apply a threshold image filter",
+        "D": "Sample equal numbers of points for both words, then interpolate each particle's position using lerp()"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Apply",
+      "concept_tested": "Typography Morphing Lerp",
+      "explanation": "The correct answer is **D**. Extracting point arrays for both words (normalizing them to equal lengths) allows autonomous particles to smoothly interpolate their `(x, y)` positions from target A to target B using `lerp()`. Options B, C, and D do not produce point-based morphing.",
+      "explanation_word_count": 44
+    },
+    {
+      "id": "ch24-q010",
+      "number": 10,
+      "question_text": "Why does kinetic typography in creative coding provide unique communicative value compared to static text in graphic design?",
+      "options": {
+        "A": "Motion typography uses less internet bandwidth than plain text",
+        "B": "Kinetic typography eliminates the need for visual font design",
+        "C": "Kinetic text can only be viewed in virtual reality headsets",
+        "D": "Dynamic motion, physical response, and algorithmic behavior infuse typography with emotion, interactivity, and temporal narrative"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Analyze",
+      "concept_tested": "Kinetic Typography Expressiveness",
+      "explanation": "The correct answer is **D**. Integrating physics simulations, user interactivity, and audio reactivity transforms text from static information into expressive, narrative visual art. Options B, C, and D are false.",
+      "explanation_word_count": 30
+    }
+  ]
+}

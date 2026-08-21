@@ -1,0 +1,23 @@
+{
+  "title": "Shopping Cart Acceleration",
+  "description": "Shopping Cart Acceleration",
+  "creator": "The Art of Processing",
+  "author": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "The Art of Processing"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "shopping-cart-acceleration",
+  "library": "TBD",
+  "bloomLevel": "TBD",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 11,
+  "chapter_title": "Vector Math Physics",
+  "chapter_dir": "11-vector-math-physics",
+  "chapter_rel_dir": "chapters/11-vector-math-physics"
+}

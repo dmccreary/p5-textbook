@@ -1,0 +1,185 @@
+{
+  "chapter": "Color Theory, Color Modes & Pixel Manipulation",
+  "chapter_num": 3,
+  "chapter_id": "03-color-theory-pixels",
+  "chapter_file": "docs/chapters/03-color-theory-pixels/index.md",
+  "quiz_file": "docs/chapters/03-color-theory-pixels/quiz.md",
+  "generated_date": "2026-08-20",
+  "total_questions": 10,
+  "answer_distribution": {
+    "A": 2,
+    "B": 3,
+    "C": 3,
+    "D": 2
+  },
+  "bloom_distribution": {
+    "Remember": 4,
+    "Understand": 3,
+    "Apply": 2,
+    "Analyze": 1,
+    "Evaluate": 0,
+    "Create": 0
+  },
+  "questions": [
+    {
+      "id": "ch03-q001",
+      "number": 1,
+      "question_text": "What is the fourth parameter in `color(r, g, b, a)` or `fill(r, g, b, a)`?",
+      "options": {
+        "A": "Alpha transparency",
+        "B": "Ambient lighting intensity",
+        "C": "Aspect ratio multiplier",
+        "D": "Angle of color rotation"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Remember",
+      "concept_tested": "RGBA Alpha Channel",
+      "explanation": "The correct answer is **A**. The fourth parameter `a` represents the alpha channel (opacity/transparency), where 0 is fully transparent and 255 (by default) is completely opaque. Options A, C, and D do not represent the fourth parameter in p5.js color functions.",
+      "explanation_word_count": 41
+    },
+    {
+      "id": "ch03-q002",
+      "number": 2,
+      "question_text": "What three color properties are configured when using `colorMode(HSB)`?",
+      "options": {
+        "A": "Hue, Saturation, Brightness",
+        "B": "High, Saturation, Brightness",
+        "C": "Hue, Shade, Blackness",
+        "D": "Heat, Spectrum, Bloom"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Remember",
+      "concept_tested": "HSB Color Space",
+      "explanation": "The correct answer is **A**. HSB stands for Hue (the color type on a 360-degree color wheel), Saturation (the purity or intensity of the color), and Brightness (the lightness/luminance from black to full color). Options A, C, and D are incorrect terms.",
+      "explanation_word_count": 42
+    },
+    {
+      "id": "ch03-q003",
+      "number": 3,
+      "question_text": "How many values in the `pixels[]` array represent a single pixel on a standard density canvas?",
+      "options": {
+        "A": "1 (grayscale index)",
+        "B": "4 (Red, Green, Blue, Alpha)",
+        "C": "3 (Red, Green, Blue)",
+        "D": "8 (32-bit floating point components)"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Understand",
+      "concept_tested": "Pixel Array Structure",
+      "explanation": "The correct answer is **B**. In p5.js, the 1D `pixels[]` array stores four consecutive values (RGBA) between 0 and 255 for every single pixel. Option A is only true in single-channel buffers. Option B omits alpha. Option D is incorrect.",
+      "explanation_word_count": 40
+    },
+    {
+      "id": "ch03-q004",
+      "number": 4,
+      "question_text": "What function must be invoked before reading from or writing to the `pixels[]` array to synchronize the canvas buffer?",
+      "options": {
+        "A": "updatePixels()",
+        "B": "loadPixels()",
+        "C": "getPixels()",
+        "D": "bindPixels()"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Remember",
+      "concept_tested": "Load Pixels Function",
+      "explanation": "The correct answer is **B**. `loadPixels()` loads the current display pixel data into the `pixels[]` array so you can inspect or modify it. `updatePixels()` is called afterward to commit changes. Options C and D are not p5.js functions.",
+      "explanation_word_count": 38
+    },
+    {
+      "id": "ch03-q005",
+      "number": 5,
+      "question_text": "Given a canvas of width `w`, what is the mathematical formula to find the starting index `i` of pixel `(x, y)` in the `pixels[]` array?",
+      "options": {
+        "A": "i = (y + x * w) * 4;",
+        "B": "i = (x + y * w) * 4;",
+        "C": "i = (x * w + y) * 2;",
+        "D": "i = (x + y) * w * 4;"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Apply",
+      "concept_tested": "Pixel Index Formula",
+      "explanation": "The correct answer is **B**. Pixels are stored in row-major order. The pixel offset is `(x + y * w)`. Because each pixel takes 4 consecutive array slots (R, G, B, A), the starting index is `(x + y * w) * 4`. Options B, C, and D use incorrect indexing math.",
+      "explanation_word_count": 52
+    },
+    {
+      "id": "ch03-q006",
+      "number": 6,
+      "question_text": "What is the primary advantage of HSB color space over RGB when creating generative rainbow palettes or cycling colors?",
+      "options": {
+        "A": "HSB requires half as much memory as RGB",
+        "B": "HSB renders natively on monitors without color space conversion",
+        "C": "Hue can be continuously incremented from 0 to 360 in a loop while keeping saturation and brightness constant",
+        "D": "HSB automatically removes all shadows from rendered 3D objects"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Understand",
+      "concept_tested": "Color Palette Generation",
+      "explanation": "The correct answer is **C**. In HSB mode, cycling through the entire color spectrum requires incrementing a single numeric variable (Hue) while holding Saturation and Brightness stable. In RGB, multiple channels must change non-linearly. Options A, C, and D are false.",
+      "explanation_word_count": 41
+    },
+    {
+      "id": "ch03-q007",
+      "number": 7,
+      "question_text": "Which function disables drawing the fill interior of subsequent 2D shapes, leaving only the outline?",
+      "options": {
+        "A": "noStroke()",
+        "B": "clear()",
+        "C": "noFill()",
+        "D": "transparent()"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Remember",
+      "concept_tested": "Fill and Stroke State",
+      "explanation": "The correct answer is **C**. `noFill()` disables filling geometry with color so only outlines are drawn. `noStroke()` disables outlines. `clear()` clears the canvas pixels. `transparent()` is not a p5.js function.",
+      "explanation_word_count": 30
+    },
+    {
+      "id": "ch03-q008",
+      "number": 8,
+      "question_text": "A sketch needs to blend between two colors `c1` and `c2` by an interpolation factor `amt = 0.5`. Which function should be used?",
+      "options": {
+        "A": "blendColor(c1, c2, 0.5);",
+        "B": "mixColor(c1, c2, 0.5);",
+        "C": "lerpColor(c1, c2, 0.5);",
+        "D": "fadeColor(c1, c2, 0.5);"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Apply",
+      "concept_tested": "Linear Color Interpolation",
+      "explanation": "The correct answer is **C**. `lerpColor(c1, c2, amt)` calculates a color between two colors at a specific increment between 0.0 and 1.0. Options A, B, and D are incorrect function names in p5.js.",
+      "explanation_word_count": 33
+    },
+    {
+      "id": "ch03-q009",
+      "number": 9,
+      "question_text": "Why does modifying individual pixels via `pixels[]` inside nested loops execute significantly faster than calling `set(x, y, color)` repeatedly?",
+      "options": {
+        "A": "pixels[] compiles JavaScript code directly into WebAssembly",
+        "B": "pixels[] runs directly on asynchronous web worker threads",
+        "C": "set() always forces an immediate hardware screen refresh for every pixel call",
+        "D": "Direct array index assignment avoids function call overhead and deferred synchronization"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Analyze",
+      "concept_tested": "Pixel Performance Optimization",
+      "explanation": "The correct answer is **D**. Directly indexing a flat typed array in memory avoids the overhead of thousands of function calls and internal validations per frame. `set()` incurs method call overhead. Options B, C, and D are inaccurate descriptions of p5.js architecture.",
+      "explanation_word_count": 42
+    },
+    {
+      "id": "ch03-q010",
+      "number": 10,
+      "question_text": "An image brightness filter needs to calculate the grayscale value for a pixel with `[r, g, b]`. Which formula accurately models human perceptual luminance?",
+      "options": {
+        "A": "gray = (r + g + b) / 3;",
+        "B": "gray = sqrt(r * g * b);",
+        "C": "gray = max(r, g, b);",
+        "D": "gray = r * 0.299 + g * 0.587 + b * 0.114;"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Understand",
+      "concept_tested": "Perceptual Luminance",
+      "explanation": "The correct answer is **D**. The human eye is most sensitive to green and least sensitive to blue. Standard perceptual luminance weighting (such as ITU-R BT.601) uses `0.299 * R + 0.587 * G + 0.114 * B`. Option A is simple unweighted average. Options C and D are not standard luminance models.",
+      "explanation_word_count": 53
+    }
+  ]
+}

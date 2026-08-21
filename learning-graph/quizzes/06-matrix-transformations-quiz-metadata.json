@@ -1,0 +1,185 @@
+{
+  "chapter": "Matrix Transformations & Coordinate Systems",
+  "chapter_num": 6,
+  "chapter_id": "06-matrix-transformations",
+  "chapter_file": "docs/chapters/06-matrix-transformations/index.md",
+  "quiz_file": "docs/chapters/06-matrix-transformations/quiz.md",
+  "generated_date": "2026-08-20",
+  "total_questions": 10,
+  "answer_distribution": {
+    "A": 2,
+    "B": 3,
+    "C": 3,
+    "D": 2
+  },
+  "bloom_distribution": {
+    "Remember": 3,
+    "Understand": 4,
+    "Apply": 2,
+    "Analyze": 1,
+    "Evaluate": 0,
+    "Create": 0
+  },
+  "questions": [
+    {
+      "id": "ch06-q001",
+      "number": 1,
+      "question_text": "What p5.js function shifts the origin (0, 0) of the coordinate system to a new (x, y) location on the canvas?",
+      "options": {
+        "A": "translate()",
+        "B": "move()",
+        "C": "origin()",
+        "D": "offset()"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Remember",
+      "concept_tested": "Translate Function",
+      "explanation": "The correct answer is **A**. `translate(x, y)` moves the coordinate grid origin by `x` units horizontally and `y` units vertically. Subsequent drawing commands are evaluated relative to this new origin. Options A, C, and D are not p5.js transformation functions.",
+      "explanation_word_count": 40
+    },
+    {
+      "id": "ch06-q002",
+      "number": 2,
+      "question_text": "By default, in what angle units does the `rotate()` function expect its parameter in p5.js?",
+      "options": {
+        "A": "Radians (0 to TWO_PI)",
+        "B": "Degrees (0 to 360)",
+        "C": "Gradians (0 to 400)",
+        "D": "Percentage (0 to 100)"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Remember",
+      "concept_tested": "Rotate Angle Units",
+      "explanation": "The correct answer is **A**. By default, `rotate()` expects angles in radians, where a full circle is `TWO_PI` (~6.283 radians). To use degrees (0-360), you must call `angleMode(DEGREES)`. Options A, C, and D are incorrect default units.",
+      "explanation_word_count": 37
+    },
+    {
+      "id": "ch06-q003",
+      "number": 3,
+      "question_text": "What pair of functions is used to save and restore coordinate transformation states, isolating changes to a specific shape?",
+      "options": {
+        "A": "saveState() and loadState()",
+        "B": "push() and pop()",
+        "C": "beginMatrix() and endMatrix()",
+        "D": "isolate() and reset()"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Remember",
+      "concept_tested": "Push and Pop State Isolation",
+      "explanation": "The correct answer is **B**. `push()` saves the current drawing style and transformation matrix onto an internal stack, and `pop()` restores the previous state. Options A, B, and D are incorrect function names.",
+      "explanation_word_count": 33
+    },
+    {
+      "id": "ch06-q004",
+      "number": 4,
+      "question_text": "Why is rotating a shape around its own center achieved by calling `translate(x, y)` followed by `rotate(angle)` and `rect(-w/2, -h/2, w, h)`?",
+      "options": {
+        "A": "rect() cannot draw shapes unless coordinates are negative",
+        "B": "rotate() always rotates the entire coordinate grid around the current origin (0, 0)",
+        "C": "translate() disables canvas clipping planes",
+        "D": "rotate() only functions when preceded by a scale transformation"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Understand",
+      "concept_tested": "Rotation Around Pivot",
+      "explanation": "The correct answer is **B**. Rotation in computer graphics occurs around the active origin (0, 0). Translating the origin to the center of the shape, rotating the grid, and drawing centered at (0, 0) spins the object in place. Options B, C, and D are false.",
+      "explanation_word_count": 46
+    },
+    {
+      "id": "ch06-q005",
+      "number": 5,
+      "question_text": "What is the visual outcome if you execute `scale(-1, 1);`?",
+      "options": {
+        "A": "The canvas shrinks to 0 width",
+        "B": "Subsequent drawings are flipped horizontally across the vertical y-axis",
+        "C": "The canvas rotates 180 degrees clockwise",
+        "D": "All color values are inverted to their negatives"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Understand",
+      "concept_tested": "Scale Transformation Reflection",
+      "explanation": "The correct answer is **B**. Passing a negative scaling factor along the x-axis (`-1`) reflects the coordinate system horizontally across the y-axis, creating a mirror image. Option A is incorrect. Option C describes 180-degree rotation (`scale(-1, -1)`). Option D confuses coordinate scale with pixel color inversion.",
+      "explanation_word_count": 46
+    },
+    {
+      "id": "ch06-q006",
+      "number": 6,
+      "question_text": "What happens if transformations are called inside `draw()` without using `push()` and `pop()` or `resetMatrix()`?",
+      "options": {
+        "A": "The canvas automatically centers all shapes on screen",
+        "B": "The browser throws a MatrixOverflow exception",
+        "C": "Transformations accumulate cumulatively every frame, causing shapes to drift, spin, or scale infinitely",
+        "D": "The frame rate locks to 1 FPS"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Understand",
+      "concept_tested": "Cumulative Matrix Transformation",
+      "explanation": "The correct answer is **C**. Because transformations are applied to the global coordinate matrix, omitting `push()`/`pop()` or canvas resets causes each frame's transformations to compound upon the previous frame's coordinates, resulting in runaway drift. Options B, C, and D are incorrect.",
+      "explanation_word_count": 41
+    },
+    {
+      "id": "ch06-q007",
+      "number": 7,
+      "question_text": "You want to draw a clock hand rotated by 45 degrees. If you are using default `RADIANS` mode, which rotation command is correct?",
+      "options": {
+        "A": "rotate(45);",
+        "B": "rotate(HALF_PI);",
+        "C": "rotate(QUARTER_PI);",
+        "D": "rotate(PI);"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Apply",
+      "concept_tested": "Radian Constants",
+      "explanation": "The correct answer is **C**. In radians, 180 degrees is `PI`, 90 degrees is `HALF_PI`, and 45 degrees is `QUARTER_PI` (`PI / 4`). Calling `rotate(45)` in radians mode rotates by 45 radians (~2578 degrees). Options C and D represent 90 and 180 degrees.",
+      "explanation_word_count": 43
+    },
+    {
+      "id": "ch06-q008",
+      "number": 8,
+      "question_text": "What data structure is fundamentally manipulated behind the scenes when calling `translate()`, `rotate()`, and `scale()`?",
+      "options": {
+        "A": "A hash map of shape bounding boxes",
+        "B": "A doubly linked list of pixel buffers",
+        "C": "A 3x3 affine transformation matrix",
+        "D": "A binary search tree of vertex coordinates"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Understand",
+      "concept_tested": "Transformation Matrix Representation",
+      "explanation": "The correct answer is **C**. 2D graphics systems represent coordinate transformations using 3x3 affine transformation matrices. Combining transformations multiplies these matrices together. Options B, C, and D are unrelated data structures.",
+      "explanation_word_count": 31
+    },
+    {
+      "id": "ch06-q009",
+      "number": 9,
+      "question_text": "Why does changing the order of transformations from `translate(); rotate();` to `rotate(); translate();` produce radically different visual positions?",
+      "options": {
+        "A": "p5.js executes rotate() asynchronously on a background thread",
+        "B": "translate() disables all subsequent rotate() calls",
+        "C": "rotate() automatically resets the matrix to identity before translating",
+        "D": "Matrix multiplication is non-commutative (A * B != B * A), so rotating first rotates the translation axes"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Analyze",
+      "concept_tested": "Non-Commutative Transformation Order",
+      "explanation": "The correct answer is **D**. Matrix multiplication is non-commutative. If you translate then rotate, you move the origin and spin in place. If you rotate first, you rotate the coordinate axes, causing subsequent translation to move along the newly angled axes in an orbital arc. Options B, C, and D are false.",
+      "explanation_word_count": 52
+    },
+    {
+      "id": "ch06-q010",
+      "number": 10,
+      "question_text": "A robotic arm consists of a shoulder joint, an elbow joint, and a hand. How should transformations be structured in code to model this hierarchy?",
+      "options": {
+        "A": "Reset the matrix after the shoulder and manually offset the hand coordinates",
+        "B": "Calculate all joint positions independently using global absolute (x, y) coordinates with complex trigonometry",
+        "C": "Use push() and pop() before every single line of drawing to erase previous joint angles",
+        "D": "Translate and rotate the shoulder, then nested inside, translate and rotate the elbow relative to the shoulder"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Apply",
+      "concept_tested": "Hierarchical Matrix Trees",
+      "explanation": "The correct answer is **D**. Hierarchical modeling nests transformations: translating and rotating the parent (shoulder) sets the reference frame for the child (elbow), which in turn sets the frame for the hand. This naturally propagates parent motion down the kinematic chain. Options B, C, and D are clumsy and error-prone.",
+      "explanation_word_count": 50
+    }
+  ]
+}

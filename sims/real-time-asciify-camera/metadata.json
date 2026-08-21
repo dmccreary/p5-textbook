@@ -1,0 +1,23 @@
+{
+  "title": "Real-Time ASCIIfy Camera",
+  "description": "Real-Time ASCIIfy Camera",
+  "creator": "The Art of Processing",
+  "author": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "The Art of Processing"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "real-time-asciify-camera",
+  "library": "TBD",
+  "bloomLevel": "TBD",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 23,
+  "chapter_title": "Image Processing Video",
+  "chapter_dir": "23-image-processing-video",
+  "chapter_rel_dir": "chapters/23-image-processing-video"
+}

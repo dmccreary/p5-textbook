@@ -1,0 +1,15 @@
+{
+  "sim_id": "water-hose-particle-emitter",
+  "diagram_name": "Water Hose Particle Emitter",
+  "chapter_number": 12,
+  "chapter_title": "Particle Systems",
+  "chapter_dir": "12-particle-systems",
+  "chapter_rel_dir": "chapters/12-particle-systems",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>MicroSim: Water Hose Particle Emitter</summary>\nBuild a p5.js sketch with a draggable emitter that represents a water hose. Particles should have lifespan, gravity, and random initial velocities. Add a \"wall\" object in the center of the screen that the particles bounce off of using elastic collisions. Include sliders to adjust the gravity strength, the water pressure (initial velocity magnitude), and the bounciness of the wall!"
+}

@@ -1,0 +1,185 @@
+{
+  "chapter": "Linear Motion, Trigonometry & Wave Math",
+  "chapter_num": 7,
+  "chapter_id": "07-linear-motion-trig",
+  "chapter_file": "docs/chapters/07-linear-motion-trig/index.md",
+  "quiz_file": "docs/chapters/07-linear-motion-trig/quiz.md",
+  "generated_date": "2026-08-20",
+  "total_questions": 10,
+  "answer_distribution": {
+    "A": 2,
+    "B": 3,
+    "C": 3,
+    "D": 2
+  },
+  "bloom_distribution": {
+    "Remember": 3,
+    "Understand": 4,
+    "Apply": 2,
+    "Analyze": 1,
+    "Evaluate": 0,
+    "Create": 0
+  },
+  "questions": [
+    {
+      "id": "ch07-q001",
+      "number": 1,
+      "question_text": "What mathematical relationship defines position update under constant velocity?",
+      "options": {
+        "A": "pos = pos + velocity;",
+        "B": "pos = velocity * acceleration;",
+        "C": "pos = pos / deltaTime;",
+        "D": "pos = sqrt(velocity);"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Remember",
+      "concept_tested": "Linear Motion Logic",
+      "explanation": "The correct answer is **A**. Under constant velocity, new position equals current position plus velocity on each discrete time step. Options B, C, and D do not represent kinematic position integration.",
+      "explanation_word_count": 31
+    },
+    {
+      "id": "ch07-q002",
+      "number": 2,
+      "question_text": "Which trigonometric function calculates the ratio of the opposite side to the hypotenuse in a right triangle?",
+      "options": {
+        "A": "sin()",
+        "B": "cos()",
+        "C": "tan()",
+        "D": "atan2()"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Remember",
+      "concept_tested": "Sine Function Math",
+      "explanation": "The correct answer is **A**. Sine is the ratio of opposite side over hypotenuse. Cosine is adjacent over hypotenuse, and tangent is opposite over adjacent.",
+      "explanation_word_count": 25
+    },
+    {
+      "id": "ch07-q003",
+      "number": 3,
+      "question_text": "What is the output range of the standard mathematical `sin(angle)` and `cos(angle)` functions?",
+      "options": {
+        "A": "From 0 to 1",
+        "B": "From -1 to 1",
+        "C": "From 0 to TWO_PI",
+        "D": "From -Infinity to +Infinity"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Understand",
+      "concept_tested": "Trigonometric Range",
+      "explanation": "The correct answer is **B**. The sine and cosine wave functions oscillate continuously between a minimum of -1.0 and a maximum of +1.0. Options A, C, and D represent incorrect ranges.",
+      "explanation_word_count": 31
+    },
+    {
+      "id": "ch07-q004",
+      "number": 4,
+      "question_text": "To create smooth back-and-forth horizontal oscillation centered at `x = 200` with an amplitude of `50` pixels, which formula is correct?",
+      "options": {
+        "A": "x = 200 * sin(angle) + 50;",
+        "B": "x = 200 + sin(angle) * 50;",
+        "C": "x = sin(200) + angle * 50;",
+        "D": "x = (200 + angle) * sin(50);"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Apply",
+      "concept_tested": "Oscillation Wave Math",
+      "explanation": "The correct answer is **B**. Multiplying `sin(angle)` by the amplitude `50` produces an oscillation between -50 and +50. Adding the center offset `200` shifts the oscillation range to [150, 250]. Options B, C, and D yield incorrect movement.",
+      "explanation_word_count": 38
+    },
+    {
+      "id": "ch07-q005",
+      "number": 5,
+      "question_text": "Which p5.js function computes the angle (in radians) from the origin (0, 0) to any coordinate (x, y)?",
+      "options": {
+        "A": "atan(y / x)",
+        "B": "atan2(y, x)",
+        "C": "acos(x)",
+        "D": "asin(y)"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Remember",
+      "concept_tested": "Atan2 Function",
+      "explanation": "The correct answer is **B**. `atan2(y, x)` calculates the angle in radians to `(x, y)` across all four quadrants without division-by-zero errors. `atan()` only handles two quadrants. Options C and D find angles from single ratios.",
+      "explanation_word_count": 36
+    },
+    {
+      "id": "ch07-q006",
+      "number": 6,
+      "question_text": "How do you convert polar coordinates `(r, theta)` to 2D Cartesian coordinates `(x, y)`?",
+      "options": {
+        "A": "x = theta * cos(r); y = theta * sin(r);",
+        "B": "x = r + cos(theta); y = r + sin(theta);",
+        "C": "x = r * cos(theta); y = r * sin(theta);",
+        "D": "x = r / cos(theta); y = r / sin(theta);"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Understand",
+      "concept_tested": "Polar to Cartesian Conversion",
+      "explanation": "The correct answer is **C**. Cartesian `x` is `radius * cos(angle)` and `y` is `radius * sin(angle)`. This formula is fundamental for drawing circles, spirals, and rotational orbits. Options B, C, and D are mathematically incorrect.",
+      "explanation_word_count": 36
+    },
+    {
+      "id": "ch07-q007",
+      "number": 7,
+      "question_text": "What visual effect is produced when two harmonic sine waves with different frequencies modulate a shape's x and y positions?",
+      "options": {
+        "A": "A static straight line",
+        "B": "Random walk brownian motion",
+        "C": "Lissajous curve figures",
+        "D": "A square bounding box"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Understand",
+      "concept_tested": "Lissajous Curves",
+      "explanation": "The correct answer is **C**. When x and y positions are driven by perpendicular sinusoidal signals of differing frequencies, the resulting parametric trajectory traces elegant, looping Lissajous figures. Options B, C, and D are incorrect.",
+      "explanation_word_count": 35
+    },
+    {
+      "id": "ch07-q008",
+      "number": 8,
+      "question_text": "You want an angle variable to increment by 0.05 on every frame. Where should `angle += 0.05;` be placed?",
+      "options": {
+        "A": "Inside the preload() function",
+        "B": "Inside the setup() function",
+        "C": "Inside the draw() function",
+        "D": "In the HTML index script header"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Apply",
+      "concept_tested": "Continuous Animation State",
+      "explanation": "The correct answer is **C**. To produce continuous animation across time, the angle must be incremented during each frame execution inside the `draw()` loop. Options A and B execute only once before rendering begins.",
+      "explanation_word_count": 34
+    },
+    {
+      "id": "ch07-q009",
+      "number": 9,
+      "question_text": "Why is `atan2(y, x)` preferred over `atan(y / x)` when programming an eye or turret that tracks the mouse position?",
+      "options": {
+        "A": "atan2() returns angles in degrees instead of radians",
+        "B": "atan2() runs 10x faster on CPU hardware",
+        "C": "atan() cannot process floating-point numbers",
+        "D": "atan2() automatically handles full 360-degree four-quadrant geometry and avoids division by zero when x is 0"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Analyze",
+      "concept_tested": "Atan2 Quadrant Analysis",
+      "explanation": "The correct answer is **D**. `atan(y / x)` fails when `x = 0` (division by zero) and cannot distinguish between opposite quadrants (e.g. (+y, +x) vs (-y, -x)). `atan2(y, x)` takes both signs into account to return the correct angle across all four quadrants. Options B, C, and D are false.",
+      "explanation_word_count": 51
+    },
+    {
+      "id": "ch07-q010",
+      "number": 10,
+      "question_text": "If a wave's frequency is doubled while maintaining constant speed and amplitude, what happens to the wave on screen?",
+      "options": {
+        "A": "The waves become twice as tall vertically",
+        "B": "The wave inverts upside down",
+        "C": "The wave stops moving completely",
+        "D": "The peaks appear twice as close together horizontally (wavelength is halved)"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Understand",
+      "concept_tested": "Wave Frequency and Wavelength",
+      "explanation": "The correct answer is **D**. Frequency represents cycles per unit time or distance. Doubling frequency halves the spatial wavelength, packing twice as many wave crests into the same horizontal space. Amplitude controls height. Options A, C, and D are incorrect.",
+      "explanation_word_count": 40
+    }
+  ]
+}

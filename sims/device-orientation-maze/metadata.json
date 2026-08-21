@@ -1,0 +1,21 @@
+{
+  "title": "Device Orientation Maze",
+  "description": "Simulate smartphone tilt sensors (Alpha, Beta, Gamma rotation angles) to navigate a rolling ball through a physical maze.",
+  "creator": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "Device Orientation Maze",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "sim_id": "device-orientation-maze",
+  "canvasHeight": 485,
+  "bloom_level": "Apply",
+  "learning_objective": "Students will understand mobile sensor event handling (deviceOrientation) and mapping tilt degrees into physical acceleration vectors.",
+  "chapter_dir": "14-touch-mobile-sensors"
+}

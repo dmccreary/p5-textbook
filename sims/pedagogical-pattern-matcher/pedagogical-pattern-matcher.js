@@ -4,7 +4,7 @@
  * Educational Purpose: To train educators on identifying student misconceptions 
  * and selecting scaffolding strategies.
  */
-// CANVAS_HEIGHT: 450
+// CANVAS_HEIGHT: 600
 
 let scenarios = [
   {
@@ -59,23 +59,23 @@ const scaffoldings = [
 ];
 
 function setup() {
-  let canvas = createCanvas(800, 450);
+  let canvas = createCanvas(windowWidth, 600);
   canvas.parent(document.querySelector('main') || document.body);
   
   misconceptionSelect = createSelect();
-  misconceptionSelect.position(450, 180);
+  
   misconceptionSelect.style('font-size', '16px');
   misconceptionSelect.style('padding', '5px');
   misconceptions.forEach(m => misconceptionSelect.option(m));
   
   scaffoldingSelect = createSelect();
-  scaffoldingSelect.position(450, 250);
+  
   scaffoldingSelect.style('font-size', '16px');
   scaffoldingSelect.style('padding', '5px');
   scaffoldings.forEach(s => scaffoldingSelect.option(s));
   
   submitBtn = createButton('Submit Evaluation');
-  submitBtn.position(450, 310);
+  
   submitBtn.style('font-size', '16px');
   submitBtn.style('padding', '8px 16px');
   submitBtn.style('background-color', '#4CAF50');
@@ -86,7 +86,7 @@ function setup() {
   submitBtn.mousePressed(checkAnswer);
   
   nextBtn = createButton('Next Scenario');
-  nextBtn.position(620, 310);
+  
   nextBtn.style('font-size', '16px');
   nextBtn.style('padding', '8px 16px');
   nextBtn.style('background-color', '#2196F3');
@@ -96,73 +96,81 @@ function setup() {
   nextBtn.style('cursor', 'pointer');
   nextBtn.mousePressed(nextScenario);
   nextBtn.hide();
+  updateLayout();
 }
 
 function draw() {
-  background(245);
+  background('aliceblue');
   
   // Draw Header
   fill(50);
   noStroke();
   textFont("sans-serif");
+  textAlign(CENTER, BASELINE);
+  
   textSize(24);
   textStyle(BOLD);
-  text("Pedagogical Pattern Matcher", 20, 35);
+  text("Pedagogical Pattern Matcher", width / 2, 35);
   
   textSize(14);
   textStyle(NORMAL);
-  text("Review the student's code and reported behavior, then classify the misconception and suggest a scaffolding strategy.", 20, 60);
+  text("Review the student's code and reported behavior, then classify the misconception and suggest a scaffolding strategy.", width / 2, 60);
   
-  // Left Panel: Scenario
+  textAlign(LEFT, BASELINE);
+  
+  // Left Panel: Scenario Code
+  let leftW = min(500, width * 0.5 - 20);
+  let rightX = width * 0.5 + 10;
+  let rightW = width * 0.5 - 30;
+  
   fill(255);
   stroke(200);
-  rect(20, 80, 400, 350, 8);
+  rect(20, 80, leftW, 300, 8);
   
   let s = scenarios[currentScenario];
   
-  fill(50);
-  noStroke();
-  textSize(18);
-  textStyle(BOLD);
-  text(`Student: ${s.studentName}`, 35, 110);
-  
-  textSize(14);
-  textStyle(NORMAL);
-  text("Code:", 35, 140);
-  
   fill(240);
   stroke(200);
-  rect(35, 150, 370, 185, 4);
+  rect(35, 100, leftW - 30, 260, 4);
   
   fill(30, 80, 30);
   noStroke();
   textSize(13);
   textLeading(16);
   textFont("monospace");
-  text(s.code, 45, 165);
+  text(s.code, 45, 115);
+  
+  // Right Panel: Observed Behavior
+  fill(255);
+  stroke(200);
+  rect(rightX, 80, rightW, 300, 8);
   
   textFont("sans-serif");
   fill(50);
-  textSize(14);
-  textStyle(BOLD);
-  text("Observed Behavior:", 35, 365);
-  
-  textStyle(NORMAL);
-  textSize(13);
-  textLeading(18);
-  text(s.behavior, 35, 375, 370, 60);
-  
-  // Right Panel: Evaluation
-  fill(50);
   textSize(18);
   textStyle(BOLD);
-  text("Teacher Evaluation", 450, 110);
+  text("Observed Behavior:", rightX + 15, 110);
+  
+  textStyle(NORMAL);
+  textSize(14);
+  textLeading(20);
+  text(s.behavior, rightX + 15, 140, rightW - 30, 100);
+  
+  // Bottom Region: Evaluation
+  fill(255);
+  stroke(200);
+  rect(10, 390, width - 20, 200, 8);
+  
+  fill(50);
+  noStroke();
+  textSize(18);
+  textStyle(BOLD);
+  text("Teacher Evaluation", 20, 415);
   
   textSize(14);
   textStyle(NORMAL);
-  text("1. Classify the misconception:", 450, 165);
-  
-  text("2. Select best scaffolding strategy:", 450, 235);
+  text("1. Classify the misconception:", 20, 445);
+  text("2. Select best scaffolding strategy:", 280, 445);
   
   // Feedback area
   if (state === "FEEDBACK") {
@@ -174,20 +182,32 @@ function draw() {
       fill(40, 150, 40);
       textStyle(BOLD);
       textSize(16);
-      text("Correct!", 450, 375);
+      text("Correct!", 20, 520);
     } else {
       fill(200, 40, 40);
       textStyle(BOLD);
       textSize(16);
-      text("Not quite. Review the explanation.", 450, 375);
+      text("Not quite. Review the explanation.", 20, 520);
     }
     
     fill(50);
     textStyle(NORMAL);
-    textSize(13);
+    textSize(14);
     textLeading(18);
-    text(s.explanation, 450, 395, 330, 60);
+    text(s.explanation, 20, 540, width - 40, 60);
   }
+}
+
+function updateLayout() {
+  misconceptionSelect.position(20, 460);
+  scaffoldingSelect.position(280, 460);
+  submitBtn.position(500, 460);
+  nextBtn.position(500, 460);
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, 600);
+  updateLayout();
 }
 
 function checkAnswer() {
@@ -220,5 +240,6 @@ function nextScenario() {
   scaffoldingSelect.selected("Select Strategy...");
   submitBtn.show();
   nextBtn.hide();
+  updateLayout();
   nextBtn.html('Next Scenario');
 }

@@ -1,0 +1,15 @@
+{
+  "sim_id": "interactive-map-panning-and-zooming",
+  "diagram_name": "Interactive Map Panning and Zooming",
+  "chapter_number": 13,
+  "chapter_title": "Mouse Keyboard Events",
+  "chapter_dir": "13-mouse-keyboard-events",
+  "chapter_rel_dir": "chapters/13-mouse-keyboard-events",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>MicroSim: Interactive Map Panning and Zooming</summary>\n**Objective**: Create a large grid or image that the user can navigate using drag and scroll.\n**Elements**:\n- A large grid drawn on the screen.\n- Use the **Mouse Dragged Event** to update an offset variable, moving the grid around.\n- Use the **Mouse Wheel Event** to update a scale variable, zooming the grid in and out.\n**Interaction**: The user clicks and drags to pan the map, and uses the scroll wheel to zoom."
+}

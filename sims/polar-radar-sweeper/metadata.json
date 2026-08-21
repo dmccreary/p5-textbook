@@ -1,0 +1,23 @@
+{
+  "title": "Polar Radar Sweeper",
+  "description": "Polar Radar Sweeper",
+  "creator": "The Art of Processing",
+  "author": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "The Art of Processing"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "polar-radar-sweeper",
+  "library": "TBD",
+  "bloomLevel": "TBD",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 8,
+  "chapter_title": "Polar Coordinates Easing",
+  "chapter_dir": "08-polar-coordinates-easing",
+  "chapter_rel_dir": "chapters/08-polar-coordinates-easing"
+}

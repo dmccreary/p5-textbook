@@ -1,0 +1,15 @@
+{
+  "sim_id": "waveform-visualizer-hearer",
+  "diagram_name": "Waveform Visualizer & Hearer",
+  "chapter_number": 21,
+  "chapter_title": "Audio Synthesis Sound",
+  "chapter_dir": "21-audio-synthesis-sound",
+  "chapter_rel_dir": "chapters/21-audio-synthesis-sound",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>MicroSim: Waveform Visualizer & Hearer</summary>\n\n**Goal:** Allow students to see and hear the four basic oscillator waveforms to understand the relationship between wave shape and timbre.\n\n**Features:**\n- A central canvas displaying an oscilloscope that draws the current waveform in real-time.\n- Four distinct buttons: \"Sine\", \"Square\", \"Triangle\", \"Sawtooth\".\n- A master \"Start Audio / Play\" toggle button to initiate the audio context.\n- When a wave button is clicked, the oscillator updates its type, and the visualizer smoothly transitions to drawing the new mathematical shape.\n- A slider controlling the frequency (pitch) to demonstrate how faster waves sound higher."
+}

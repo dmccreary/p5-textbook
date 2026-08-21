@@ -11,8 +11,13 @@ let resetBtn;
 let seed = 12345;
 let lastState = '';
 
+function windowResized() {
+  resizeCanvas(windowWidth, 400);
+  lastState = ''; // trigger render
+}
+
 function setup() {
-  let canvas = createCanvas(600, 400);
+  let canvas = createCanvas(windowWidth, 400);
   canvas.parent(document.querySelector('main'));
   
   // Create UI container
@@ -26,7 +31,7 @@ function setup() {
   ui.style('border-radius', '4px');
   ui.style('font-family', 'sans-serif');
   ui.style('font-size', '14px');
-  ui.style('width', '578px'); // 600 - border - padding
+  ui.style('width', 'calc(100% - 22px)'); // 600 - border - padding
   ui.parent(document.querySelector('main'));
 
   // Algorithm
@@ -121,7 +126,18 @@ function draw() {
 }
 
 function renderTerrain() {
-  background(135, 206, 235); // Sky blue background
+  background(135, 206, 235);
+
+
+  push();
+  fill(50);
+  noStroke();
+  textAlign(CENTER, TOP);
+  textSize(22);
+  textStyle(BOLD);
+  text("Terrain Generator", width / 2, 10);
+  pop();
+ // Sky blue background
   
   let isNoise = algRadio.value() === 'Noise';
   let is2D = dimRadio.value() === '2D';

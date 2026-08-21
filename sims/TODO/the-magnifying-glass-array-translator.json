@@ -1,0 +1,15 @@
+{
+  "sim_id": "the-magnifying-glass-array-translator",
+  "diagram_name": "The Magnifying Glass Array Translator",
+  "chapter_number": 3,
+  "chapter_title": "Color Theory Pixels",
+  "chapter_dir": "03-color-theory-pixels",
+  "chapter_rel_dir": "chapters/03-color-theory-pixels",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary><strong>MicroSim: The Magnifying Glass Array Translator</strong></summary>\n<strong>Goal:</strong> Visually demystify the relationship between the 2D screen coordinate system and the 1D flat memory architecture of the `pixels` array.\n<strong>Visualization:</strong> The screen is split. On the left is a small 10x10 grid of brightly colored squares (representing a tiny 100-pixel canvas). On the right is a long, winding snake-like ribbon representing the 1D `pixels` array in computer memory, clearly segmented into groups of 4 slots (R, G, B, A).\n<strong>Interactivity:</strong> The user hovers their mouse over any square on the 2D grid. Instantly, the corresponding 4 slots on the 1D memory ribbon light up. A dynamic text overlay displays the math in real-time: `(x + y * width) * 4`. As the mouse moves, the numbers change, proving exactly how the formula jumps through the memory slots.\n<strong>Expected Insight:</strong> Students will overcome the initial intimidation of the pixel indexing formula by seeing a tangible, real-time visual proof of how a 2D image is unraveled into a flat 1D tape."
+}

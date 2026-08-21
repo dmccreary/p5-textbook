@@ -1,0 +1,23 @@
+{
+  "title": "The Object Factory",
+  "description": "The Object Factory",
+  "creator": "The Art of Processing",
+  "author": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "The Art of Processing"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "the-object-factory",
+  "library": "TBD",
+  "bloomLevel": "TBD",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 17,
+  "chapter_title": "Functions And Callbacks",
+  "chapter_dir": "17-functions-and-callbacks",
+  "chapter_rel_dir": "chapters/17-functions-and-callbacks"
+}

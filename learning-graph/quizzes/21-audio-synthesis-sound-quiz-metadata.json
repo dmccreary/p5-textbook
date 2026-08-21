@@ -1,0 +1,185 @@
+{
+  "chapter": "Audio Synthesis, Oscillators & Envelopes",
+  "chapter_num": 21,
+  "chapter_id": "21-audio-synthesis-sound",
+  "chapter_file": "docs/chapters/21-audio-synthesis-sound/index.md",
+  "quiz_file": "docs/chapters/21-audio-synthesis-sound/quiz.md",
+  "generated_date": "2026-08-20",
+  "total_questions": 10,
+  "answer_distribution": {
+    "A": 2,
+    "B": 3,
+    "C": 3,
+    "D": 2
+  },
+  "bloom_distribution": {
+    "Remember": 4,
+    "Understand": 3,
+    "Apply": 2,
+    "Analyze": 1,
+    "Evaluate": 0,
+    "Create": 0
+  },
+  "questions": [
+    {
+      "id": "ch21-q001",
+      "number": 1,
+      "question_text": "Why must `userStartAudio()` be invoked in response to a user gesture (like a button click) in modern web browsers before audio plays?",
+      "options": {
+        "A": "Modern browsers enforce Autoplay Policies to prevent websites from playing unwanted sound without user interaction",
+        "B": "Because web audio requires downloading a 50MB audio codec on demand",
+        "C": "Because audio cards can only process sound when mouse buttons are held down",
+        "D": "To allow the browser to check the user's audio copyright license"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Understand",
+      "concept_tested": "User Start Audio Policy",
+      "explanation": "The correct answer is **A**. Web browsers block audio contexts from starting automatically until the user performs an explicit gesture (click or tap), avoiding jarring unsolicited sound. `userStartAudio()` initializes the audio hardware. Options B, C, and D are false.",
+      "explanation_word_count": 39
+    },
+    {
+      "id": "ch21-q002",
+      "number": 2,
+      "question_text": "What type of basic electronic waveform produces a pure, smooth tone with no harmonic overtones?",
+      "options": {
+        "A": "Sine wave ('sine')",
+        "B": "Square wave ('square')",
+        "C": "Sawtooth wave ('sawtooth')",
+        "D": "Triangle wave ('triangle')"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Remember",
+      "concept_tested": "Sine Wave Oscillator Tone",
+      "explanation": "The correct answer is **A**. A sine wave is a fundamental pure tone containing no additional harmonic frequencies. Square, sawtooth, and triangle waves contain rich odd and even harmonics. Options B, C, and D are harmonically rich waves.",
+      "explanation_word_count": 38
+    },
+    {
+      "id": "ch21-q003",
+      "number": 3,
+      "question_text": "Which waveform contains all integer harmonic frequencies (both odd and even) and produces a bright, buzzy, brassy timbre?",
+      "options": {
+        "A": "Sine wave ('sine')",
+        "B": "Sawtooth wave ('sawtooth')",
+        "C": "Triangle wave ('triangle')",
+        "D": "Square wave ('square')"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Understand",
+      "concept_tested": "Sawtooth Harmonic Content",
+      "explanation": "The correct answer is **B**. Sawtooth waves contain all integer harmonics ($1/n$), creating a bright, harsh, buzzy timbre common in synthesizer leads and brass sounds. Square waves only contain odd harmonics. Sine has none. Triangle has weak odd harmonics.",
+      "explanation_word_count": 39
+    },
+    {
+      "id": "ch21-q004",
+      "number": 4,
+      "question_text": "What four stages comprise a standard ADSR amplitude envelope in sound synthesis?",
+      "options": {
+        "A": "Amplitude, Decibel, Sound, Resonance",
+        "B": "Attack, Decay, Sustain, Release",
+        "C": "Audio, Digital, Signal, Rate",
+        "D": "Ascend, Drop, Stabilize, Return"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Remember",
+      "concept_tested": "ADSR Envelope Stages",
+      "explanation": "The correct answer is **B**. ADSR stands for Attack (time to reach peak level), Decay (time to drop to sustain level), Sustain (held volume level), and Release (time to fade to silence after key release). Options B, C, and D are incorrect terms.",
+      "explanation_word_count": 43
+    },
+    {
+      "id": "ch21-q005",
+      "number": 5,
+      "question_text": "Which p5.sound class generates periodic audio waveforms at a specified frequency?",
+      "options": {
+        "A": "p5.SoundFile",
+        "B": "p5.Oscillator",
+        "C": "p5.AudioIn",
+        "D": "p5.FFT"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Remember",
+      "concept_tested": "p5 Oscillator Class",
+      "explanation": "The correct answer is **B**. `p5.Oscillator([freq], [type])` generates synthesized audio tones at adjustable frequencies and waveforms. `p5.SoundFile` plays recorded audio files. `p5.AudioIn` captures microphone input. `p5.FFT` analyzes spectra.",
+      "explanation_word_count": 28
+    },
+    {
+      "id": "ch21-q006",
+      "number": 6,
+      "question_text": "How do you configure an oscillator's pitch to 440 Hz (Concert A) and start audio generation?",
+      "options": {
+        "A": "let osc = createAudio(440); osc.loop();",
+        "B": "let osc = new p5.Sound('A4'); osc.play();",
+        "C": "let osc = new p5.Oscillator('sine'); osc.freq(440); osc.start();",
+        "D": "let osc = new p5.Envelope(440); osc.trigger();"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Apply",
+      "concept_tested": "Oscillator Frequency Start",
+      "explanation": "The correct answer is **C**. Instantiating `new p5.Oscillator('sine')`, calling `.freq(440)`, and invoking `.start()` generates a continuous 440 Hz tone. Options B, C, and D are incorrect syntax.",
+      "explanation_word_count": 27
+    },
+    {
+      "id": "ch21-q007",
+      "number": 7,
+      "question_text": "What does the `p5.Envelope` class control when connected to an oscillator's amplitude?",
+      "options": {
+        "A": "It converts audio into 3D WebGL meshes",
+        "B": "It changes the audio pan from left to right",
+        "C": "It shapes the volume dynamics over time (fade-in, sustain, fade-out) when triggered",
+        "D": "It records audio to an MP3 file on disk"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Understand",
+      "concept_tested": "p5 Envelope Amplitude Control",
+      "explanation": "The correct answer is **C**. A `p5.Envelope` dynamically modulates parameters (typically amplitude or filter cutoff frequency) over time when triggered, creating percussive hits, plucks, or swelling pads. Options B, C, and D are incorrect.",
+      "explanation_word_count": 34
+    },
+    {
+      "id": "ch21-q008",
+      "number": 8,
+      "question_text": "What audio effect simulates acoustic reflections in a physical room or cathedral?",
+      "options": {
+        "A": "p5.Distortion",
+        "B": "p5.Delay",
+        "C": "p5.Reverb",
+        "D": "p5.Compressor"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Remember",
+      "concept_tested": "p5 Reverb Effect",
+      "explanation": "The correct answer is **C**. `p5.Reverb` simulates acoustic space reflections (echo density and decay time) of rooms, halls, or cathedrals. `p5.Delay` creates discrete echo repeats. Options C and D distort and compress dynamics.",
+      "explanation_word_count": 33
+    },
+    {
+      "id": "ch21-q009",
+      "number": 9,
+      "question_text": "To map mouse X-position across the musical frequency spectrum from 200 Hz to 800 Hz, which code is used inside `draw()`?",
+      "options": {
+        "A": "let freq = lerp(200, 800, mouseX); osc.freq(freq);",
+        "B": "let freq = mouseX * 800 + 200; osc.pitch(freq);",
+        "C": "let freq = constrain(mouseX, 200, 800); osc.set(freq);",
+        "D": "let freq = map(mouseX, 0, width, 200, 800); osc.freq(freq);"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Apply",
+      "concept_tested": "Interactive Pitch Mapping",
+      "explanation": "The correct answer is **D**. `map(mouseX, 0, width, 200, 800)` smoothly converts horizontal mouse coordinates to frequency values, and `osc.freq(freq)` updates the synthesizer pitch in real time. Options B, C, and D are incorrect math or method calls.",
+      "explanation_word_count": 38
+    },
+    {
+      "id": "ch21-q010",
+      "number": 10,
+      "question_text": "Why does Frequency Modulation (FM Synthesis)\u2014where one oscillator modulates the frequency of another audio oscillator\u2014produce complex metallic, bell-like, or harsh timbres?",
+      "options": {
+        "A": "FM synthesis converts digital audio into analog FM radio waves",
+        "B": "FM synthesis disables anti-aliasing filters on the sound card",
+        "C": "FM synthesis doubles the CPU clock frequency",
+        "D": "Modulating frequency at audio rates creates complex sideband frequencies that enrich the harmonic spectrum"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Analyze",
+      "concept_tested": "FM Synthesis Sidebands",
+      "explanation": "The correct answer is **D**. When carrier frequency is modulated at audio rates by a modulator oscillator, mathematical Bessel functions produce sideband frequencies on both sides of the carrier, generating rich, metallic, and bell-like timbres. Options B, C, and D are false.",
+      "explanation_word_count": 42
+    }
+  ]
+}

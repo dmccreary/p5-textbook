@@ -11,8 +11,10 @@ let canvasHeight = drawHeight + controlHeight;
 
 let gravitySlider;
 let massSlider;
-let dragSlider;
+let elasticitySlider;
 let resetButton;
+let startPauseButton;
+let isRunning = false;
 
 let joystick;
 let particles = [];
@@ -29,11 +31,22 @@ function setup() {
 
   gravitySlider = createSlider(-0.1, 0.5, 0.1, 0.01);
   massSlider = createSlider(1, 30, 10, 1);
-  dragSlider = createSlider(0, 0.05, 0.005, 0.001);
+  elasticitySlider = createSlider(0.1, 1.0, 0.7, 0.05);
   
   resetButton = createButton('Reset Emitter');
   resetButton.mousePressed(() => {
     particles = [];
+  });
+  
+  startPauseButton = createButton('Start');
+  startPauseButton.mousePressed(() => {
+    if (isRunning) {
+      isRunning = false;
+      startPauseButton.html('Start');
+    } else {
+      isRunning = true;
+      startPauseButton.html('Pause');
+    }
   });
   
   joystick = new Joystick(0, 0, 50);
@@ -58,10 +71,12 @@ function updateCanvasSize() {
       massSlider.position(sliderX, drawHeight + 75);
       massSlider.size(canvasWidth/2 - 40);
       
-      dragSlider.position(sliderX, drawHeight + 115);
-      dragSlider.size(canvasWidth/2 - 40);
+      elasticitySlider.position(sliderX, drawHeight + 115);
+      elasticitySlider.size(canvasWidth/2 - 40);
       
       resetButton.position(sliderX, drawHeight + 155);
+      
+      startPauseButton.position(20, drawHeight + 35);
       
       joystick.pos.x = canvasWidth / 4;
       joystick.pos.y = drawHeight + 95;
@@ -70,16 +85,14 @@ function updateCanvasSize() {
 }
 
 function draw() {
-  background(250);
-  
-  // Draw physics area
-  fill('#F0F8FF');
-  stroke(200);
+
+  // Draw top physics area
+  fill('aliceblue');
+  stroke('silver');
   rect(0, 0, canvasWidth, drawHeight);
   
   // Draw control area
-  fill(255);
-  stroke(200);
+  fill('white');
   rect(0, drawHeight, canvasWidth, controlHeight);
   
   // Draw Title
@@ -92,13 +105,13 @@ function draw() {
   textSize(14);
   textStyle(ITALIC);
   fill(80);
-  text('Observe F=ma and vector addition', canvasWidth / 2, 40);
+  text('Change the parameters below to see how they impact the particle motion', canvasWidth / 2, 40);
   textStyle(NORMAL);
   
   emitterPos = createVector(canvasWidth / 2, 80);
   
   // Emit particle
-  if (mouseOverCanvas && frameCount % 3 === 0) {
+  if (isRunning && frameCount % 3 === 0) {
     let initialVel = createVector(random(-1.5, 1.5), random(-3, -1));
     particles.push(new Particle(emitterPos.x, emitterPos.y, massSlider.value(), initialVel));
   }
@@ -106,30 +119,21 @@ function draw() {
   // Forces
   let gravity = createVector(0, gravitySlider.value());
   let wind = joystick.getVector();
-  let dragC = dragSlider.value();
   
   // Update and draw particles
   for (let i = particles.length - 1; i >= 0; i--) {
     let p = particles[i];
     
-    // F = m * g (so a = g)
-    let weight = p5.Vector.mult(gravity, p.mass);
-    p.applyForce(weight);
-    
-    // Wind force (constant force, accelerates lighter objects more)
-    p.applyForce(wind);
-    
-    // Drag force (proportional to velocity squared)
-    let speedSq = p.vel.magSq();
-    if (speedSq > 0) {
-      let dragForce = p.vel.copy();
-      dragForce.normalize();
-      dragForce.mult(-1);
-      dragForce.mult(dragC * speedSq);
-      p.applyForce(dragForce);
+    if (isRunning) {
+      // F = m * g (so a = g)
+      let weight = p5.Vector.mult(gravity, p.mass);
+      p.applyForce(weight);
+      
+      // Wind force (constant force, accelerates lighter objects more)
+      p.applyForce(wind);
+      
+      p.update();
     }
-    
-    p.update();
     p.display();
     
     if (p.isDead()) {
@@ -138,11 +142,11 @@ function draw() {
   }
   
   // Draw emitter
-  fill(50);
+  fill('black');
   noStroke();
-  circle(emitterPos.x, emitterPos.y, 16);
-  fill(255);
-  textSize(10);
+  ellipse(emitterPos.x, emitterPos.y, 50, 20);
+  fill('white');
+  textSize(14);
   textAlign(CENTER, CENTER);
   text("EMIT", emitterPos.x, emitterPos.y);
   
@@ -158,7 +162,7 @@ function draw() {
   let sliderX = canvasWidth / 2;
   text("Gravity", sliderX - 10, drawHeight + 45);
   text("Mass (New)", sliderX - 10, drawHeight + 85);
-  text("Friction (Drag)", sliderX - 10, drawHeight + 125);
+  text("Elasticity", sliderX - 10, drawHeight + 125);
   
   // Stats
   textAlign(LEFT, TOP);
@@ -199,17 +203,19 @@ class Particle {
     this.lifespan -= 0.8;
     
     // Bounds checking
+    let bounce = elasticitySlider ? elasticitySlider.value() : 0.7;
+    
     if (this.pos.y > drawHeight - this.r) {
       this.pos.y = drawHeight - this.r;
-      this.vel.y *= -0.7; // restitution bounce
+      this.vel.y *= -bounce; // restitution bounce
       this.vel.x *= 0.9;  // friction on ground
     }
     if (this.pos.x > canvasWidth - this.r) {
       this.pos.x = canvasWidth - this.r;
-      this.vel.x *= -0.8;
+      this.vel.x *= -bounce;
     } else if (this.pos.x < this.r) {
       this.pos.x = this.r;
-      this.vel.x *= -0.8;
+      this.vel.x *= -bounce;
     }
   }
   

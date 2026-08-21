@@ -3,9 +3,11 @@
    For a complete lesson plan see:  https://dmccreary.github.io/p5-textbook/sims/interactive-sandbox/
 */
 // CANVAS_HEIGHT: 552
+let canvasWidth = 800;
+let canvasHeight = 552;
 
 let eventLog = [];
-let maxLogSize = 11;
+let maxLogSize = 8;
 let drawingLayer;
 
 let clearBtn;
@@ -14,14 +16,25 @@ let touchSimToggle;
 let interactArea = {x: 10, y: 10, w: 520, h: 532};
 let panelArea = {x: 540, y: 10, w: 250, h: 532};
 
+function updateCanvasSize() {
+  const container = document.querySelector('main');
+  if (container) {
+    canvasWidth = container.offsetWidth;
+  } else {
+    canvasWidth = windowWidth;
+  }
+}
+
 function setup() {
-  createCanvas(800, 552);
+  updateCanvasSize();
+  const canvas = createCanvas(canvasWidth, canvasHeight);
+  canvas.parent(document.querySelector('main'));
+  updateLayout();
   
   drawingLayer = createGraphics(interactArea.w, interactArea.h);
-  drawingLayer.background(250);
+  drawingLayer.clear();
   
   clearBtn = createButton('Clear Events & Canvas');
-  clearBtn.position(panelArea.x + 10, panelArea.y + 480);
   clearBtn.style('padding', '10px');
   clearBtn.style('width', '230px');
   clearBtn.style('cursor', 'pointer');
@@ -29,16 +42,54 @@ function setup() {
   clearBtn.mousePressed(clearAll);
   
   touchSimToggle = createCheckbox(' Simulate Touch Input', false);
-  touchSimToggle.position(panelArea.x + 10, panelArea.y + 440);
   touchSimToggle.style('font-family', 'sans-serif');
   touchSimToggle.style('font-size', '14px');
+  
+  positionDOM();
   
   textFont('monospace');
 }
 
+function updateLayout() {
+  let margin = 10;
+  let topMargin = 65;
+  let gap = 10;
+  let pWidth = 250;
+  
+  panelArea.x = width - margin - pWidth;
+  panelArea.y = topMargin;
+  panelArea.w = pWidth;
+  panelArea.h = height - topMargin - margin;
+  
+  interactArea.x = margin;
+  interactArea.y = topMargin;
+  interactArea.w = panelArea.x - gap - margin;
+  interactArea.h = height - topMargin - margin;
+  
+  if (interactArea.w < 100) interactArea.w = 100; 
+}
+
+function positionDOM() {
+  clearBtn.position(panelArea.x + 10, panelArea.y + 420);
+  touchSimToggle.position(panelArea.x + 10, panelArea.y + 390);
+}
+
+function windowResized() {
+  updateCanvasSize();
+  resizeCanvas(canvasWidth, canvasHeight);
+  updateLayout();
+  
+  let newLayer = createGraphics(interactArea.w, interactArea.h);
+  newLayer.clear();
+  newLayer.image(drawingLayer, 0, 0);
+  drawingLayer = newLayer;
+  
+  positionDOM();
+}
+
 function clearAll() {
   eventLog = [];
-  drawingLayer.background(250);
+  drawingLayer.clear();
 }
 
 function logEvent(msg) {
@@ -49,7 +100,22 @@ function logEvent(msg) {
 }
 
 function draw() {
-  background(230);
+  background('aliceblue');
+
+
+  push();
+  fill(50);
+  noStroke();
+  textAlign(CENTER, TOP);
+  textSize(22);
+  textStyle(BOLD);
+  text("Interactive Sandbox", width / 2, 10);
+  
+  textSize(14);
+  textStyle(ITALIC);
+  text("Click and drag mouse in the left panel to see events", width / 2, 38);
+  pop();
+
   
   // 1. Draw Interactive Area
   fill(255);

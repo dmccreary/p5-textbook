@@ -1,0 +1,21 @@
+{
+  "title": "Render Cycle and Frame Rate Monitor",
+  "description": "Measure real-time frame rates (FPS), frame render time in milliseconds, and the p5.js draw() loop execution lifecycle.",
+  "creator": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "Render Cycle and Frame Rate Monitor",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "sim_id": "frame-rate-monitor",
+  "canvasHeight": 485,
+  "bloom_level": "Analyze",
+  "learning_objective": "Students will understand the 60 FPS animation budget (~16.6ms per frame) and how simulated workload impacts rendering performance.",
+  "chapter_dir": "01-intro-creative-coding"
+}

@@ -1,0 +1,185 @@
+{
+  "chapter": "3D WebGL Coordinates & Primitive Geometries",
+  "chapter_num": 19,
+  "chapter_id": "19-3d-webgl-primitives",
+  "chapter_file": "docs/chapters/19-3d-webgl-primitives/index.md",
+  "quiz_file": "docs/chapters/19-3d-webgl-primitives/quiz.md",
+  "generated_date": "2026-08-20",
+  "total_questions": 10,
+  "answer_distribution": {
+    "A": 2,
+    "B": 3,
+    "C": 3,
+    "D": 2
+  },
+  "bloom_distribution": {
+    "Remember": 6,
+    "Understand": 2,
+    "Apply": 1,
+    "Analyze": 1,
+    "Evaluate": 0,
+    "Create": 0
+  },
+  "questions": [
+    {
+      "id": "ch19-q001",
+      "number": 1,
+      "question_text": "What argument must be passed as the third parameter to `createCanvas()` to enable hardware-accelerated 3D graphics?",
+      "options": {
+        "A": "WEBGL",
+        "B": "3D",
+        "C": "OPENGL",
+        "D": "GPU"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Remember",
+      "concept_tested": "WEBGL Renderer Mode",
+      "explanation": "The correct answer is **A**. Passing `WEBGL` as the third parameter to `createCanvas(w, h, WEBGL)` switches p5.js from the default 2D HTML5 canvas renderer to a hardware-accelerated 3D WebGL context. Options B, C, and D are invalid renderer constants.",
+      "explanation_word_count": 39
+    },
+    {
+      "id": "ch19-q002",
+      "number": 2,
+      "question_text": "Where is the origin coordinate (0, 0, 0) located by default on a p5.js 3D WebGL canvas?",
+      "options": {
+        "A": "At the center of the canvas",
+        "B": "At the top-left corner of the canvas",
+        "C": "At the bottom-left corner of the canvas",
+        "D": "At the camera's eye position"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Remember",
+      "concept_tested": "3D Coordinate Origin",
+      "explanation": "The correct answer is **A**. Unlike default 2D mode (where (0, 0) is top-left), in WebGL 3D mode the origin (0, 0, 0) is centered in the canvas. Positive X points right, positive Y points down, and positive Z points out of the screen toward the viewer. Options B, C, and D are incorrect.",
+      "explanation_word_count": 54
+    },
+    {
+      "id": "ch19-q003",
+      "number": 3,
+      "question_text": "In the p5.js 3D coordinate system, which direction does the positive Z-axis point?",
+      "options": {
+        "A": "Into the screen away from the viewer",
+        "B": "Out of the screen toward the viewer",
+        "C": "Directly upward toward the ceiling",
+        "D": "Directly downward toward the floor"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Understand",
+      "concept_tested": "Z Axis Depth Direction",
+      "explanation": "The correct answer is **B**. In p5.js WebGL mode (right-handed convention), positive Z points out of the display screen toward the viewer, and negative Z extends into the distance away from the viewer. Options B, C, and D are incorrect.",
+      "explanation_word_count": 40
+    },
+    {
+      "id": "ch19-q004",
+      "number": 4,
+      "question_text": "Which 3D primitive function draws a box with specified width, height, and depth?",
+      "options": {
+        "A": "cube(size)",
+        "B": "box(width, [height], [depth])",
+        "C": "rect3D(w, h, d)",
+        "D": "meshBox(w, h, d)"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Remember",
+      "concept_tested": "Box 3D Primitive",
+      "explanation": "The correct answer is **B**. `box(width, [height], [depth])` draws a 3D rectangular cuboid centered at the active origin. Options B, C, and D are not p5.js 3D primitive functions.",
+      "explanation_word_count": 29
+    },
+    {
+      "id": "ch19-q005",
+      "number": 5,
+      "question_text": "Which 3D primitive function draws a spherical mesh defined by a radius and optional level-of-detail vertex resolution?",
+      "options": {
+        "A": "circle3D(radius)",
+        "B": "sphere(radius, [detailX], [detailY])",
+        "C": "ball(radius)",
+        "D": "globe(radius)"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Remember",
+      "concept_tested": "Sphere 3D Primitive",
+      "explanation": "The correct answer is **B**. `sphere(radius, [detailX], [detailY])` creates a 3D UV sphere mesh. Options B, C, and D are not built-in p5.js functions.",
+      "explanation_word_count": 24
+    },
+    {
+      "id": "ch19-q006",
+      "number": 6,
+      "question_text": "What rotation function spins an object around the depth axis pointing toward/away from the viewer in 3D WebGL mode?",
+      "options": {
+        "A": "rotateY(angle)",
+        "B": "rotateX(angle)",
+        "C": "rotateZ(angle)",
+        "D": "rotateDepth(angle)"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Remember",
+      "concept_tested": "Rotate Z Axis",
+      "explanation": "The correct answer is **C**. `rotateZ(angle)` rotates geometry around the Z-axis (equivalent to 2D canvas rotation). `rotateX()` pitches around the horizontal axis, and `rotateY()` yaws around the vertical axis.",
+      "explanation_word_count": 29
+    },
+    {
+      "id": "ch19-q007",
+      "number": 7,
+      "question_text": "What 3D primitive draws a torus (doughnut shape) defined by outer radius and tube radius?",
+      "options": {
+        "A": "ring3D(radius, tubeRadius)",
+        "B": "donut(radius, thickness)",
+        "C": "torus([radius], [tubeRadius], [detailX], [detailY])",
+        "D": "cylinder(radius, height)"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Remember",
+      "concept_tested": "Torus 3D Primitive",
+      "explanation": "The correct answer is **C**. `torus(radius, tubeRadius)` generates a 3D torus mesh. Options B, C, and D are incorrect.",
+      "explanation_word_count": 19
+    },
+    {
+      "id": "ch19-q008",
+      "number": 8,
+      "question_text": "What visual rendering artifact occurs if 3D depth testing (Z-buffering) is disabled or geometry surfaces overlap at identical Z depths?",
+      "options": {
+        "A": "The frame rate drops to 0",
+        "B": "The canvas goes completely black",
+        "C": "Z-fighting (flickering texture stitching where triangles compete for depth priority)",
+        "D": "Objects become transparent"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Understand",
+      "concept_tested": "Z Fighting Depth Artifact",
+      "explanation": "The correct answer is **C**. Z-fighting occurs when two coplanar surfaces share nearly identical depth values, causing the GPU rasterizer to alternate between fragments due to floating-point precision limits. Options B, C, and D describe other issues.",
+      "explanation_word_count": 37
+    },
+    {
+      "id": "ch19-q009",
+      "number": 9,
+      "question_text": "To draw a 3D terrain grid mesh from 2D heightmap data, which `beginShape()` mode is typically used with vertex strips?",
+      "options": {
+        "A": "beginShape(QUADS)",
+        "B": "beginShape(POINTS)",
+        "C": "beginShape(LINES)",
+        "D": "beginShape(TRIANGLE_STRIP)"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Apply",
+      "concept_tested": "Triangle Strip Terrain Mesh",
+      "explanation": "The correct answer is **D**. `beginShape(TRIANGLE_STRIP)` connects alternating vertices into efficient continuous strips of triangles, making it the standard algorithm for rendering 3D heightmap terrains. Options B, C, and D are less efficient or non-continuous.",
+      "explanation_word_count": 35
+    },
+    {
+      "id": "ch19-q010",
+      "number": 10,
+      "question_text": "Why does increasing the `detailX` and `detailY` parameters on complex 3D primitives (like `sphere()` or `torus()`) impact rendering performance?",
+      "options": {
+        "A": "It switches JavaScript execution to single-threaded mode",
+        "B": "It forces the GPU to download high-resolution bitmap textures",
+        "C": "It disables WebGL hardware acceleration",
+        "D": "It increases the total polygon vertex and triangle count that the GPU vertex shader must process per frame"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Analyze",
+      "concept_tested": "3D Level of Detail Polygon Count",
+      "explanation": "The correct answer is **D**. Higher detail parameters subdivide the geometry into vastly more vertices and triangular faces, increasing GPU vertex shader workloads and geometry buffer bandwidth. Options B, C, and D are false.",
+      "explanation_word_count": 34
+    }
+  ]
+}

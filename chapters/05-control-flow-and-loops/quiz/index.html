@@ -1,0 +1,2555 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An interactive intelligent textbook about the p5.js processing library and how to use it to teach computational thinking.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/p5-textbook/chapters/05-control-flow-and-loops/quiz/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../references/">
+      
+      
+      <link rel="icon" href="../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Quiz - The Art of Processing</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../../css/mascot.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta property="og:type" content="website">
+      
+        <meta property="og:title" content="Quiz - The Art of Processing">
+      
+        <meta property="og:description" content="An interactive intelligent textbook about the p5.js processing library and how to use it to teach computational thinking.">
+      
+        <meta property="og:image" content="https://dmccreary.github.io/p5-textbook/assets/images/social/chapters/05-control-flow-and-loops/quiz.png">
+      
+        <meta property="og:image:type" content="image/png">
+      
+        <meta property="og:image:width" content="1200">
+      
+        <meta property="og:image:height" content="630">
+      
+        <meta property="og:url" content="https://dmccreary.github.io/p5-textbook/chapters/05-control-flow-and-loops/quiz/">
+      
+        <meta name="twitter:card" content="summary_large_image">
+      
+        <meta name="twitter:title" content="Quiz - The Art of Processing">
+      
+        <meta name="twitter:description" content="An interactive intelligent textbook about the p5.js processing library and how to use it to teach computational thinking.">
+      
+        <meta name="twitter:image" content="https://dmccreary.github.io/p5-textbook/assets/images/social/chapters/05-control-flow-and-loops/quiz.png">
+      
+    
+    
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#quiz-control-flow-loops-array-data-structures" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="The Art of Processing" class="md-header__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
+      
+  <img src="../../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            The Art of Processing
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Quiz
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="The Art of Processing" class="md-nav__button md-logo" aria-label="The Art of Processing" data-md-component="logo">
+      
+  <img src="../../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    The Art of Processing
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/p5-textbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../01-intro-creative-coding/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    1. Introduction to Creative Coding &amp; Canvas Foundations
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../02-2d-primitive-shapes/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    2. 2D Primitive Shapes &amp; Custom Geometries
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../03-color-theory-pixels/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    3. Color Theory, Color Modes &amp; Pixel Manipulation
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../04-variables-and-scope/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    4. Variables, Data Types &amp; Scope Fundamentals
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    5. Control Flow, Loops &amp; Array Data Structures
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            5. Control Flow, Loops &amp; Array Data Structures
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Quiz
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Quiz
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-are-the-three-components-separated-by-semicolons-in-a-standard-for-loop-header-for-a-b-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. What are the three components separated by semicolons in a standard for loop header for (A; B; C)?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-what-dangerous-condition-occurs-if-a-while-loops-condition-never-evaluates-to-false" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. What dangerous condition occurs if a while loop's condition never evaluates to false?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-which-loop-structure-is-specifically-designed-to-iterate-through-row-and-column-visual-grids-on-a-2d-canvas" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Which loop structure is specifically designed to iterate through row-and-column visual grids on a 2D canvas?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-how-do-you-access-the-first-element-of-an-array-named-particles-in-javascript" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. How do you access the first element of an array named particles in JavaScript?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-which-array-method-adds-a-new-element-to-the-end-of-an-existing-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Which array method adds a new element to the end of an existing array?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-consider-the-loop-for-let-x-0-x-100-x-25-how-many-total-iterations-will-this-loop-execute" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Consider the loop: for (let x = 0; x &lt; 100; x += 25). How many total iterations will this loop execute?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-when-iterating-through-an-array-to-remove-items-using-splice-why-is-it-recommended-to-loop-backwards-from-length-1-down-to-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. When iterating through an array to remove items using splice(), why is it recommended to loop backwards from length - 1 down to 0?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-what-keyword-is-used-inside-a-switch-statement-block-to-prevent-execution-from-falling-through-into-subsequent-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. What keyword is used inside a switch statement block to prevent execution from 'falling through' into subsequent cases?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-a-sketch-stores-50-particle-x-positions-in-an-array-xcoords-which-loop-header-correctly-visits-every-valid-element-in-the-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. A sketch stores 50 particle x-positions in an array xCoords. Which loop header correctly visits every valid element in the array?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-you-want-to-render-a-10x10-tile-pattern-where-each-tile-is-40-pixels-wide-inside-nested-loops-forlet-y0-y10-y-and-forlet-x0-x10-x-what-are-the-pixel-coordinates-for-tile-x-y" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. You want to render a 10x10 tile pattern where each tile is 40 pixels wide. Inside nested loops for(let y=0; y&lt;10; y++) and for(let x=0; x&lt;10; x++), what are the pixel coordinates for tile (x, y)?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Annotated References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../06-matrix-transformations/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    6. Matrix Transformations &amp; Coordinate Systems
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../07-linear-motion-trig/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    7. Linear Motion, Trigonometry &amp; Wave Math
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../08-polar-coordinates-easing/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    8. Polar Coordinates, Oscillation &amp; Easing
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../09-randomness-and-walks/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    9. Randomness, Gaussian Distributions &amp; Random Walk
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../10-perlin-noise-fields/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    10. Perlin Noise Landscapes &amp; Vector Flow Fields
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../11-vector-math-physics/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    11. Vector Math Fundamentals &amp; Physics Acceleration
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../12-particle-systems/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    12. Particle Systems, Forces &amp; Steering Behaviors
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../13-mouse-keyboard-events/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    13. Mouse &amp; Keyboard User Event Sensing
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../14-touch-mobile-sensors/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    14. Touch Gestures, Mobile Sensors &amp; Interaction
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../15-dom-controls-ui/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    15. DOM Controls, Input Fields &amp; UI Elements
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../16-css-styling-layouts/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    16. CSS Styling, Layouts &amp; Web Page Integration
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../17-functions-and-callbacks/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    17. Functions, Arrow Expressions &amp; Callbacks
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../18-es6-classes-async/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    18. ES6 Classes, Object-Oriented Programming &amp; Async Data
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../19-3d-webgl-primitives/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    19. 3D WebGL Coordinates &amp; Primitive Geometries
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../20-3d-cameras-shaders/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    20. 3D Cameras, Lighting Models, Materials &amp; Shaders
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../21-audio-synthesis-sound/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    21. Audio Synthesis, Oscillators &amp; Envelopes
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../22-mic-input-fft/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    22. Microphone Input &amp; FFT Spectral Analysis
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../23-image-processing-video/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    23. Image Processing, Filters &amp; Video Capture
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../24-generative-typography/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    24. Generative Typography &amp; Vector Font Outlines
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../25-dev-environment-pedagogy/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    25. Development Environment, Tools &amp; Pedagogy
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-are-the-three-components-separated-by-semicolons-in-a-standard-for-loop-header-for-a-b-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. What are the three components separated by semicolons in a standard for loop header for (A; B; C)?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-what-dangerous-condition-occurs-if-a-while-loops-condition-never-evaluates-to-false" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. What dangerous condition occurs if a while loop's condition never evaluates to false?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-which-loop-structure-is-specifically-designed-to-iterate-through-row-and-column-visual-grids-on-a-2d-canvas" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Which loop structure is specifically designed to iterate through row-and-column visual grids on a 2D canvas?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-how-do-you-access-the-first-element-of-an-array-named-particles-in-javascript" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. How do you access the first element of an array named particles in JavaScript?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-which-array-method-adds-a-new-element-to-the-end-of-an-existing-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Which array method adds a new element to the end of an existing array?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-consider-the-loop-for-let-x-0-x-100-x-25-how-many-total-iterations-will-this-loop-execute" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Consider the loop: for (let x = 0; x &lt; 100; x += 25). How many total iterations will this loop execute?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-when-iterating-through-an-array-to-remove-items-using-splice-why-is-it-recommended-to-loop-backwards-from-length-1-down-to-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. When iterating through an array to remove items using splice(), why is it recommended to loop backwards from length - 1 down to 0?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-what-keyword-is-used-inside-a-switch-statement-block-to-prevent-execution-from-falling-through-into-subsequent-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. What keyword is used inside a switch statement block to prevent execution from 'falling through' into subsequent cases?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-a-sketch-stores-50-particle-x-positions-in-an-array-xcoords-which-loop-header-correctly-visits-every-valid-element-in-the-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. A sketch stores 50 particle x-positions in an array xCoords. Which loop header correctly visits every valid element in the array?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-you-want-to-render-a-10x10-tile-pattern-where-each-tile-is-40-pixels-wide-inside-nested-loops-forlet-y0-y10-y-and-forlet-x0-x10-x-what-are-the-pixel-coordinates-for-tile-x-y" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. You want to render a 10x10 tile pattern where each tile is 40 pixels wide. Inside nested loops for(let y=0; y&lt;10; y++) and for(let x=0; x&lt;10; x++), what are the pixel coordinates for tile (x, y)?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/p5-textbook/blob/main/docs/chapters/05-control-flow-and-loops/quiz.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+    </a>
+  
+  
+
+
+<h1 id="quiz-control-flow-loops-array-data-structures">Quiz: Control Flow, Loops &amp; Array Data Structures<a class="headerlink" href="#quiz-control-flow-loops-array-data-structures" title="Permanent link">¶</a></h1>
+<p>Test your understanding of Loops, nested loops, 2D grids, arrays, and flow control with these review questions.</p>
+<hr>
+<h4 id="1-what-are-the-three-components-separated-by-semicolons-in-a-standard-for-loop-header-for-a-b-c">1. What are the three components separated by semicolons in a standard <code>for</code> loop header <code>for (A; B; C)</code>?<a class="headerlink" href="#1-what-are-the-three-components-separated-by-semicolons-in-a-standard-for-loop-header-for-a-b-c" title="Permanent link">¶</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>Initialization, Condition, Update (Increment/Decrement)</li>
+<li>Condition, Action, Breakpoint</li>
+<li>Declaration, Parameter, Return value</li>
+<li>Start point, Midpoint, End point</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>A</strong>. A standard <code>for</code> loop header consists of initialization (e.g., <code>let i = 0</code>), condition check (<code>i &lt; 10</code>), and post-iteration update (<code>i++</code>). Options A, C, and D are not the components of a standard <code>for</code> loop header.</p>
+<p><strong>Concept Tested:</strong> For Loop Construct</p>
+</details>
+<hr>
+<h4 id="2-what-dangerous-condition-occurs-if-a-while-loops-condition-never-evaluates-to-false">2. What dangerous condition occurs if a <code>while</code> loop's condition never evaluates to <code>false</code>?<a class="headerlink" href="#2-what-dangerous-condition-occurs-if-a-while-loops-condition-never-evaluates-to-false" title="Permanent link">¶</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>An infinite loop that freezes the browser tab or main thread</li>
+<li>Automatic hardware restart</li>
+<li>The loop terminates instantly after one iteration</li>
+<li>The canvas switches to 3D WebGL mode</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>A</strong>. If the loop condition never becomes false, the loop executes indefinitely without yielding control back to the browser, blocking the event loop and causing the browser tab to hang. Options B, C, and D are incorrect.</p>
+<p><strong>Concept Tested:</strong> Infinite Loop Prevention</p>
+</details>
+<hr>
+<h4 id="3-which-loop-structure-is-specifically-designed-to-iterate-through-row-and-column-visual-grids-on-a-2d-canvas">3. Which loop structure is specifically designed to iterate through row-and-column visual grids on a 2D canvas?<a class="headerlink" href="#3-which-loop-structure-is-specifically-designed-to-iterate-through-row-and-column-visual-grids-on-a-2d-canvas" title="Permanent link">¶</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>Single while loop with a setTimeout</li>
+<li>Nested for loops (an outer loop for y and an inner loop for x)</li>
+<li>Recursive draw() invocation</li>
+<li>switch statement with 256 cases</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>B</strong>. Nested <code>for</code> loops iterate over columns (<code>x</code>) across every row (<code>y</code>), calculating <code>(x, y)</code> coordinate positions to populate a 2D grid of shapes. Options B, C, and D are unsuitable and inefficient for grid rendering.</p>
+<p><strong>Concept Tested:</strong> Nested Loops and 2D Grids</p>
+</details>
+<hr>
+<h4 id="4-how-do-you-access-the-first-element-of-an-array-named-particles-in-javascript">4. How do you access the first element of an array named <code>particles</code> in JavaScript?<a class="headerlink" href="#4-how-do-you-access-the-first-element-of-an-array-named-particles-in-javascript" title="Permanent link">¶</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>particles[1]</li>
+<li>particles[0]</li>
+<li>particles.first()</li>
+<li>particles(0)</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>B</strong>. JavaScript arrays are zero-indexed, meaning the first element is at index <code>0</code> (<code>particles[0]</code>). <code>particles[1]</code> accesses the second element. Options C and D are invalid syntax in standard JavaScript.</p>
+<p><strong>Concept Tested:</strong> Array Indexing</p>
+</details>
+<hr>
+<h4 id="5-which-array-method-adds-a-new-element-to-the-end-of-an-existing-array">5. Which array method adds a new element to the end of an existing array?<a class="headerlink" href="#5-which-array-method-adds-a-new-element-to-the-end-of-an-existing-array" title="Permanent link">¶</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>pop()</li>
+<li>push()</li>
+<li>shift()</li>
+<li>unshift()</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>B</strong>. <code>push()</code> appends one or more elements to the end of an array. <code>pop()</code> removes from the end, <code>shift()</code> removes from the beginning, and <code>unshift()</code> adds to the beginning.</p>
+<p><strong>Concept Tested:</strong> Array Push Method</p>
+</details>
+<hr>
+<h4 id="6-consider-the-loop-for-let-x-0-x-100-x-25-how-many-total-iterations-will-this-loop-execute">6. Consider the loop: <code>for (let x = 0; x &lt; 100; x += 25)</code>. How many total iterations will this loop execute?<a class="headerlink" href="#6-consider-the-loop-for-let-x-0-x-100-x-25-how-many-total-iterations-will-this-loop-execute" title="Permanent link">¶</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>3</li>
+<li>5</li>
+<li>4</li>
+<li>25</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>C</strong>. The loop executes for <code>x = 0</code>, <code>x = 25</code>, <code>x = 50</code>, and <code>x = 75</code>. When <code>x</code> reaches 100, the condition <code>x &lt; 100</code> evaluates to <code>false</code>, terminating the loop after exactly 4 iterations.</p>
+<p><strong>Concept Tested:</strong> Loop Step Iteration</p>
+</details>
+<hr>
+<h4 id="7-when-iterating-through-an-array-to-remove-items-using-splice-why-is-it-recommended-to-loop-backwards-from-length-1-down-to-0">7. When iterating through an array to remove items using <code>splice()</code>, why is it recommended to loop backwards from <code>length - 1</code> down to <code>0</code>?<a class="headerlink" href="#7-when-iterating-through-an-array-to-remove-items-using-splice-why-is-it-recommended-to-loop-backwards-from-length-1-down-to-0" title="Permanent link">¶</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>Looping backwards executes at 2x hardware speed</li>
+<li>JavaScript prohibits forward iteration when calling splice()</li>
+<li>Removing an item shifts subsequent index positions left, causing a forward loop to skip the next adjacent element</li>
+<li>Backwards loops automatically sort the remaining array elements</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>C</strong>. When an item is removed with <code>splice(i, 1)</code>, all subsequent items shift to an index one lower. In a forward loop, <code>i++</code> advances past the newly shifted item, skipping it. Looping backwards ensures shifted elements have indices already evaluated. Options A, C, and D are false.</p>
+<p><strong>Concept Tested:</strong> Array Splice in Loops</p>
+</details>
+<hr>
+<h4 id="8-what-keyword-is-used-inside-a-switch-statement-block-to-prevent-execution-from-falling-through-into-subsequent-cases">8. What keyword is used inside a <code>switch</code> statement block to prevent execution from 'falling through' into subsequent cases?<a class="headerlink" href="#8-what-keyword-is-used-inside-a-switch-statement-block-to-prevent-execution-from-falling-through-into-subsequent-cases" title="Permanent link">¶</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>stop</li>
+<li>exit</li>
+<li>break</li>
+<li>return</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>C</strong>. The <code>break</code> keyword terminates the <code>switch</code> statement execution, preventing fall-through into matching subsequent <code>case</code> blocks. Options A, B, and D are not standard case terminators.</p>
+<p><strong>Concept Tested:</strong> Switch Statement Break</p>
+</details>
+<hr>
+<h4 id="9-a-sketch-stores-50-particle-x-positions-in-an-array-xcoords-which-loop-header-correctly-visits-every-valid-element-in-the-array">9. A sketch stores 50 particle x-positions in an array <code>xCoords</code>. Which loop header correctly visits every valid element in the array?<a class="headerlink" href="#9-a-sketch-stores-50-particle-x-positions-in-an-array-xcoords-which-loop-header-correctly-visits-every-valid-element-in-the-array" title="Permanent link">¶</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>for (let i = 0; i &lt;= xCoords.length; i++)</li>
+<li>for (let i = 1; i &lt;= xCoords.length; i++)</li>
+<li>for (let i = 0; i &lt; 50; i += xCoords)</li>
+<li>for (let i = 0; i &lt; xCoords.length; i++)</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>D</strong>. Array indices run from <code>0</code> to <code>array.length - 1</code>. The condition <code>i &lt; xCoords.length</code> safely visits every valid index. Option A produces an <code>undefined</code> value on the final iteration because <code>xCoords[length]</code> is out of bounds.</p>
+<p><strong>Concept Tested:</strong> Array Length Iteration</p>
+</details>
+<hr>
+<h4 id="10-you-want-to-render-a-10x10-tile-pattern-where-each-tile-is-40-pixels-wide-inside-nested-loops-forlet-y0-y10-y-and-forlet-x0-x10-x-what-are-the-pixel-coordinates-for-tile-x-y">10. You want to render a 10x10 tile pattern where each tile is 40 pixels wide. Inside nested loops <code>for(let y=0; y&lt;10; y++)</code> and <code>for(let x=0; x&lt;10; x++)</code>, what are the pixel coordinates for tile <code>(x, y)</code>?<a class="headerlink" href="#10-you-want-to-render-a-10x10-tile-pattern-where-each-tile-is-40-pixels-wide-inside-nested-loops-forlet-y0-y10-y-and-forlet-x0-x10-x-what-are-the-pixel-coordinates-for-tile-x-y" title="Permanent link">¶</a></h4>
+<div class="upper-alpha">
+<ol>
+<li><code>(x + 40, y + 40)</code></li>
+<li><code>(x * 10, y * 10)</code></li>
+<li><code>(x / 40, y / 40)</code></li>
+<li><code>(x * 40, y * 40)</code></li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>D</strong>. Multiplying the column and row indices by the tile width (<code>x * 40</code>, <code>y * 40</code>) maps discrete grid units (0, 1, 2...) to pixel positions (0, 40, 80...). Option A only adds an offset. Option C divides. Option D scales by grid dimensions rather than tile size.</p>
+<p><strong>Concept Tested:</strong> Grid Coordinate Scaling</p>
+</details>
+<hr>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Content">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Content
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../references/" class="md-footer__link md-footer__link--next" aria-label="Next: Annotated References">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Annotated References
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

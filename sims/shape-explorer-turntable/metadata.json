@@ -1,0 +1,23 @@
+{
+  "title": "Shape Explorer Turntable",
+  "description": "Students will use orbit control to view various 3D primitives from all angles.",
+  "creator": "The Art of Processing",
+  "author": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "The Art of Processing"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "shape-explorer-turntable",
+  "library": "p5.js",
+  "bloomLevel": "TBD",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 19,
+  "chapter_title": "3D Webgl Primitives",
+  "chapter_dir": "19-3d-webgl-primitives",
+  "chapter_rel_dir": "chapters/19-3d-webgl-primitives"
+}

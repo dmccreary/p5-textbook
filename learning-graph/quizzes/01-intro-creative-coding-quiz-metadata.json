@@ -1,0 +1,185 @@
+{
+  "chapter": "Introduction to Creative Coding & Canvas Foundations",
+  "chapter_num": 1,
+  "chapter_id": "01-intro-creative-coding",
+  "chapter_file": "docs/chapters/01-intro-creative-coding/index.md",
+  "quiz_file": "docs/chapters/01-intro-creative-coding/quiz.md",
+  "generated_date": "2026-08-20",
+  "total_questions": 10,
+  "answer_distribution": {
+    "A": 2,
+    "B": 3,
+    "C": 3,
+    "D": 2
+  },
+  "bloom_distribution": {
+    "Remember": 3,
+    "Understand": 4,
+    "Apply": 2,
+    "Analyze": 1,
+    "Evaluate": 0,
+    "Create": 0
+  },
+  "questions": [
+    {
+      "id": "ch01-q001",
+      "number": 1,
+      "question_text": "Where is the origin coordinate (0, 0) located by default on a standard p5.js canvas?",
+      "options": {
+        "A": "At the top-left corner of the canvas",
+        "B": "At the exact center of the canvas",
+        "C": "At the bottom-left corner of the canvas",
+        "D": "At the top-right corner of the canvas"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Remember",
+      "concept_tested": "Coordinate System",
+      "explanation": "The correct answer is **A**. In p5.js and standard 2D computer screen coordinate systems, the origin (0, 0) is situated at the top-left corner. The x-axis increases horizontally to the right, and the y-axis increases vertically downward. Option B is typical of 3D WebGL mode or Cartesian math, not default 2D. Option C is the traditional Cartesian origin. Option D is incorrect.",
+      "explanation_word_count": 62
+    },
+    {
+      "id": "ch01-q002",
+      "number": 2,
+      "question_text": "What is the primary architectural purpose of the `setup()` function in a p5.js sketch lifecycle?",
+      "options": {
+        "A": "To initialize the canvas and configure one-time global environment settings",
+        "B": "To continuously execute drawing instructions at 60 frames per second",
+        "C": "To load external asynchronous media assets before execution begins",
+        "D": "To handle asynchronous mouse and keyboard user interaction events"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Understand",
+      "concept_tested": "Setup Function",
+      "explanation": "The correct answer is **A**. The `setup()` function runs exactly once when the program starts and is used to define initial environment properties like `createCanvas()` and background defaults. Option A describes the `draw()` loop. Option C refers to the `preload()` function. Option D refers to event callback handlers such as `mousePressed()` or `keyPressed()`.",
+      "explanation_word_count": 53
+    },
+    {
+      "id": "ch01-q003",
+      "number": 3,
+      "question_text": "Which p5.js function runs continuously in a loop to render successive frames for animation?",
+      "options": {
+        "A": "preload()",
+        "B": "draw()",
+        "C": "setup()",
+        "D": "render()"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Remember",
+      "concept_tested": "Draw Function",
+      "explanation": "The correct answer is **B**. The `draw()` function is called repeatedly in a continuous execution loop right after `setup()` finishes, generating animations frame by frame. Option A (`preload()`) executes before `setup()` to load assets. Option B (`setup()`) runs only once. Option D (`render()`) is not a standard built-in p5.js lifecycle function.",
+      "explanation_word_count": 51
+    },
+    {
+      "id": "ch01-q004",
+      "number": 4,
+      "question_text": "If you need to ensure an external image file is completely loaded into memory before `setup()` executes, which lifecycle function should you use?",
+      "options": {
+        "A": "setup()",
+        "B": "preload()",
+        "C": "draw()",
+        "D": "init()"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Understand",
+      "concept_tested": "Preload Function",
+      "explanation": "The correct answer is **B**. `preload()` is executed right before `setup()` to handle asynchronous asset loading (such as images, fonts, and sound). It halts sketch execution until all assets are fully buffered. Options A, B, and C do not guarantee that asynchronous asset loading will finish before the canvas initializes.",
+      "explanation_word_count": 50
+    },
+    {
+      "id": "ch01-q005",
+      "number": 5,
+      "question_text": "A student wants to draw a diagonal line spanning from the top-left corner to the bottom-right corner of any canvas. Which code snippet accomplishes this dynamically?",
+      "options": {
+        "A": "line(width, 0, 0, height);",
+        "B": "line(0, 0, width, height);",
+        "C": "line(0, height, width, 0);",
+        "D": "line(width/2, height/2, width, height);"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Apply",
+      "concept_tested": "Canvas Width and Height",
+      "explanation": "The correct answer is **B**. The top-left corner is at coordinate (0, 0) and the bottom-right corner is at (width, height). Calling `line(0, 0, width, height)` connects these two points across the canvas diagonal. Option B draws a line from top-right to bottom-left. Option C draws from bottom-left to top-right. Option D draws from center to bottom-right.",
+      "explanation_word_count": 57
+    },
+    {
+      "id": "ch01-q006",
+      "number": 6,
+      "question_text": "What happens to the visual canvas display if you omit the `background()` call inside the `draw()` loop when animating a moving shape?",
+      "options": {
+        "A": "The canvas throws a fatal runtime reference error and stops rendering",
+        "B": "The canvas becomes completely transparent and reveals the underlying webpage",
+        "C": "The moving shape leaves a persistent trail of all previous frames",
+        "D": "The frame rate drops to zero and the browser freezes"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Understand",
+      "concept_tested": "Frame Rate Animation",
+      "explanation": "The correct answer is **C**. If `background()` is not called at the start of each `draw()` cycle, previous frames are not cleared. As a result, subsequent shape drawings accumulate on top of one another, leaving visual trails. Option A is incorrect because omitting `background()` is syntactically valid. Options C and D are incorrect.",
+      "explanation_word_count": 53
+    },
+    {
+      "id": "ch01-q007",
+      "number": 7,
+      "question_text": "What built-in p5.js system variable tracks the total number of frames rendered since the sketch started?",
+      "options": {
+        "A": "frameRate",
+        "B": "millis",
+        "C": "frameCount",
+        "D": "deltaTime"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Remember",
+      "concept_tested": "Frame Count",
+      "explanation": "The correct answer is **C**. `frameCount` contains the integer count of frames that have been displayed since the program started. Option A (`frameRate`) is a function or variable indicating the current FPS. Option C (`millis()`) tracks elapsed milliseconds. Option D (`deltaTime`) tracks the difference in milliseconds between the previous frame and the current frame.",
+      "explanation_word_count": 54
+    },
+    {
+      "id": "ch01-q008",
+      "number": 8,
+      "question_text": "Why is creative coding uniquely beneficial for learning computational thinking compared to traditional text-only programming?",
+      "options": {
+        "A": "It replaces all mathematical logic with intuitive visual art filters",
+        "B": "It eliminates the need for syntax and algorithmic decomposition",
+        "C": "It provides immediate visual and sensory feedback that reinforces mental models of code execution",
+        "D": "It allows programs to run without memory or CPU hardware constraints"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Understand",
+      "concept_tested": "Creative Coding Philosophy",
+      "explanation": "The correct answer is **C**. Creative coding bridges the abstract nature of code and concrete human perception by providing immediate visual, interactive, and acoustic feedback. This enables learners to test hypotheses and build strong mental models. Options A and C are false because creative coding relies heavily on math and algorithms. Option D is nonsensical.",
+      "explanation_word_count": 55
+    },
+    {
+      "id": "ch01-q009",
+      "number": 9,
+      "question_text": "You execute `createCanvas(800, 600);` in `setup()`. At what coordinates is a point drawn if you call `point(width / 2, height / 2);`?",
+      "options": {
+        "A": "(0, 0)",
+        "B": "(800, 600)",
+        "C": "(200, 150)",
+        "D": "(400, 300)"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Apply",
+      "concept_tested": "Coordinate Geometry",
+      "explanation": "The correct answer is **D**. With `width = 800` and `height = 600`, `width / 2` evaluates to 400 and `height / 2` evaluates to 300. Thus `point(400, 300)` positions the point at the exact horizontal and vertical center of the canvas. Options A, B, and D reflect arithmetic miscalculations.",
+      "explanation_word_count": 50
+    },
+    {
+      "id": "ch01-q010",
+      "number": 10,
+      "question_text": "An animation appears choppy and stutters inconsistently. What is the first analytical step you should take to diagnose the performance issue?",
+      "options": {
+        "A": "Rewrite the sketch in raw WebGL shaders without investigating JavaScript execution",
+        "B": "Replace all arithmetic operators with bitwise shifts",
+        "C": "Increase `createCanvas()` dimensions to force the GPU to allocate more video RAM",
+        "D": "Inspect the console output and monitor the real-time frame rate using `frameRate()` to isolate frame drops"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Analyze",
+      "concept_tested": "Frame Rate Diagnostics",
+      "explanation": "The correct answer is **D**. Systematic debugging starts with observing performance metrics using `frameRate()` and reviewing console logs to see if expensive calculations or unnecessary allocations are occurring inside the `draw()` loop. Options A, C, and D are counterproductive and do not systematically isolate the root cause.",
+      "explanation_word_count": 47
+    }
+  ]
+}

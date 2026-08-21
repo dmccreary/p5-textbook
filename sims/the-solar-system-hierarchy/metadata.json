@@ -1,0 +1,23 @@
+{
+  "title": "The Solar System Hierarchy",
+  "description": "The Solar System Hierarchy",
+  "creator": "The Art of Processing",
+  "author": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "The Art of Processing"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "the-solar-system-hierarchy",
+  "library": "TBD",
+  "bloomLevel": "TBD",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 6,
+  "chapter_title": "Matrix Transformations",
+  "chapter_dir": "06-matrix-transformations",
+  "chapter_rel_dir": "chapters/06-matrix-transformations"
+}

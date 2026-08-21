@@ -1,0 +1,185 @@
+{
+  "chapter": "Perlin Noise Landscapes & Vector Flow Fields",
+  "chapter_num": 10,
+  "chapter_id": "10-perlin-noise-fields",
+  "chapter_file": "docs/chapters/10-perlin-noise-fields/index.md",
+  "quiz_file": "docs/chapters/10-perlin-noise-fields/quiz.md",
+  "generated_date": "2026-08-20",
+  "total_questions": 10,
+  "answer_distribution": {
+    "A": 2,
+    "B": 3,
+    "C": 3,
+    "D": 2
+  },
+  "bloom_distribution": {
+    "Remember": 3,
+    "Understand": 4,
+    "Apply": 2,
+    "Analyze": 1,
+    "Evaluate": 0,
+    "Create": 0
+  },
+  "questions": [
+    {
+      "id": "ch10-q001",
+      "number": 1,
+      "question_text": "Who invented Perlin Noise, and for what film visual effects work did he receive an Academy Award?",
+      "options": {
+        "A": "Ken Perlin, for visual effects in Tron (1982)",
+        "B": "John Carmack, for Doom",
+        "C": "Alan Turing, for Enigma morphing",
+        "D": "Benoit Mandelbrot, for fractal compression"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Remember",
+      "concept_tested": "Perlin Noise History",
+      "explanation": "The correct answer is **A**. Ken Perlin developed Perlin Noise in 1983 while working on computer graphics for the movie Tron to overcome the unnatural, machine-like appearance of pure pseudo-random noise. Options B, C, and D are other pioneers.",
+      "explanation_word_count": 39
+    },
+    {
+      "id": "ch10-q002",
+      "number": 2,
+      "question_text": "What is the fundamental difference between `random()` and `noise()` in p5.js?",
+      "options": {
+        "A": "noise() produces smooth, continuous, naturally coherent transitions between adjacent coordinate inputs, whereas random() produces uncorrelated static",
+        "B": "noise() returns values from -100 to +100, while random() returns 0 to 1",
+        "C": "noise() is non-deterministic and cannot be seeded",
+        "D": "random() only works on integers while noise() works on strings"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Understand",
+      "concept_tested": "Smooth Noise Coherence",
+      "explanation": "The correct answer is **A**. Perlin noise is gradient/lattice noise that produces smooth, organic transitions where inputs close to each other produce outputs close to each other. `random()` produces completely independent, jagged outputs. Options A, C, and D are incorrect.",
+      "explanation_word_count": 40
+    },
+    {
+      "id": "ch10-q003",
+      "number": 3,
+      "question_text": "What is the fixed output range of the p5.js `noise()` function?",
+      "options": {
+        "A": "From -1.0 to 1.0",
+        "B": "From 0.0 to 1.0",
+        "C": "From 0 to 255",
+        "D": "From -Infinity to +Infinity"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Remember",
+      "concept_tested": "Noise Output Range",
+      "explanation": "The correct answer is **B**. Unlike standard math sine waves or simplex implementations that range between -1 and 1, p5.js `noise()` is normalized to always return a float strictly between `0.0` and `1.0`. Options A, C, and D are incorrect ranges.",
+      "explanation_word_count": 41
+    },
+    {
+      "id": "ch10-q004",
+      "number": 4,
+      "question_text": "What determines the 'roughness' or scale of details when sampling 2D Perlin noise across a grid?",
+      "options": {
+        "A": "The canvas width and height",
+        "B": "The step increment size (frequency) added to x and y coordinates between samples",
+        "C": "The current frameRate",
+        "D": "The colorMode setting"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Understand",
+      "concept_tested": "Noise Scale and Frequency",
+      "explanation": "The correct answer is **B**. Sampling noise with small coordinate increments (e.g. `x * 0.01`) produces smooth, gentle rolling hills, whereas larger increments (e.g. `x * 0.5`) sample distant points in the noise space, resulting in jagged roughness. Options B, C, and D do not dictate noise sampling frequency.",
+      "explanation_word_count": 49
+    },
+    {
+      "id": "ch10-q005",
+      "number": 5,
+      "question_text": "How do you animate a 2D Perlin noise terrain over time?",
+      "options": {
+        "A": "Call randomSeed() inside draw()",
+        "B": "Pass frameCount * speed as a third dimension input to noise(xoff, yoff, zoff)",
+        "C": "Translate the canvas origin in WebGL mode",
+        "D": "Invert the pixels[] array every frame"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Apply",
+      "concept_tested": "3D Noise Time Slicing",
+      "explanation": "The correct answer is **B**. By passing a slowly incrementing time offset (such as `frameCount * 0.01`) as the 3rd parameter to `noise(xoff, yoff, timeOff)`, you sample consecutive 2D slices through 3D noise space, creating smooth continuous animation. Options B, C, and D are incorrect.",
+      "explanation_word_count": 45
+    },
+    {
+      "id": "ch10-q006",
+      "number": 6,
+      "question_text": "What function configures the number of octaves and falloff factor for Perlin noise calculations?",
+      "options": {
+        "A": "noiseOctaves(octaves, falloff)",
+        "B": "noiseScale(octaves, falloff)",
+        "C": "noiseDetail(octaves, falloff)",
+        "D": "noiseConfig(octaves, falloff)"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Remember",
+      "concept_tested": "Noise Detail Function",
+      "explanation": "The correct answer is **C**. `noiseDetail(octaves, falloff)` adjusts the character and level of detail produced by `noise()`. By default, p5.js uses 4 octaves with a falloff of 0.5. Options B, C, and D are not p5.js functions.",
+      "explanation_word_count": 37
+    },
+    {
+      "id": "ch10-q007",
+      "number": 7,
+      "question_text": "In a Vector Flow Field, what does each 2D grid cell store?",
+      "options": {
+        "A": "A font glyph outline",
+        "B": "An RGBA color value for texture mapping",
+        "C": "A vector or angle pointing in the direction of the local noise gradient to guide particle movement",
+        "D": "A sound oscillator frequency"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Understand",
+      "concept_tested": "Noise Flow Field Concept",
+      "explanation": "The correct answer is **C**. A flow field samples 2D noise across a grid and maps the resulting values (0.0 to 1.0) to angles (0 to `TWO_PI`), storing direction vectors that steer particles traversing the canvas. Options B, C, and D describe other concepts.",
+      "explanation_word_count": 44
+    },
+    {
+      "id": "ch10-q008",
+      "number": 8,
+      "question_text": "A developer writes `let n = noise(x);` inside a loop where `x` increments by `100` each step. Why does the resulting curve look like jagged random noise rather than smooth hills?",
+      "options": {
+        "A": "noise() requires at least 3 arguments",
+        "B": "noise() only accepts float inputs below 1.0",
+        "C": "The sample coordinate increment is far too large, skipping the continuous gradient regions of the noise space",
+        "D": "noise() stops working when loop counters exceed 10"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Analyze",
+      "concept_tested": "Noise Sampling Frequency Bug",
+      "explanation": "The correct answer is **C**. Perlin noise variations occur smoothly across small fractional intervals (typically 0.005 to 0.05). Stepping by 100 samples distant, uncorrelated points in the lattice, destroying coherence and making it look like random white noise. Options B, C, and D are false.",
+      "explanation_word_count": 45
+    },
+    {
+      "id": "ch10-q009",
+      "number": 9,
+      "question_text": "To map a noise value `n = noise(xoff)` to a canvas y-coordinate between 100 and 500, which expression is correct?",
+      "options": {
+        "A": "y = lerp(100, 500, n * 10);",
+        "B": "y = n * 500 + 100;",
+        "C": "y = constrain(n, 100, 500);",
+        "D": "y = map(n, 0, 1, 100, 500);"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Apply",
+      "concept_tested": "Mapping Noise Values",
+      "explanation": "The correct answer is **D**. Since `n` ranges from 0 to 1, `map(n, 0, 1, 100, 500)` cleanly scales it to the desired canvas height range [100, 500]. Option B produces [100, 600]. Option C produces 1.0 because `n <= 1.0`. Option D overshoots.",
+      "explanation_word_count": 44
+    },
+    {
+      "id": "ch10-q010",
+      "number": 10,
+      "question_text": "Why is Perlin noise extensively used for procedural texture generation such as clouds, marble, and wood grain?",
+      "options": {
+        "A": "It executes directly on audio synthesizer cards",
+        "B": "It is stored as pre-rendered bitmap images inside p5.js",
+        "C": "It uses lossless JPEG compression algorithms",
+        "D": "It exhibits natural multi-scale self-similarity without abrupt discontinuities"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Understand",
+      "concept_tested": "Procedural Texturing",
+      "explanation": "The correct answer is **D**. Perlin noise mimics natural patterns because physical structures (clouds, mountains, coastlines) exhibit smooth gradient continuity and multi-frequency octave characteristics. Options B, C, and D are false.",
+      "explanation_word_count": 31
+    }
+  ]
+}

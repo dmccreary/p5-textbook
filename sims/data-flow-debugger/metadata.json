@@ -1,45 +1,96 @@
 {
-  "title": "Data Flow Debugger",
-  "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for data flow debugger",
-  "date": "2026-08-20",
-  "educational": {
-    "gradeLevel": [
-      "9",
-      "10",
-      "11",
-      "12"
-    ],
-    "subjectArea": "Mathematics",
-    "topic": "Data Flow Debugger",
-    "learningObjectives": [
-      "TODO: Add learning objectives"
-    ],
-    "bloomsTaxonomy": "Apply",
-    "duration": "10-15 minutes",
-    "prerequisites": [],
-    "standards": []
-  },
-  "technical": {
-    "framework": "p5.js",
-    "version": "1.0",
-    "canvasDimensions": {
-      "width": "responsive",
-      "height": 450
+  "microsim": {
+    "dublinCore": {
+      "title": "Data Flow Debugger",
+      "creator": ["Dan McCreary"],
+      "subject": ["Computer Science", "Programming"],
+      "description": "Interactive p5.js MicroSim for data flow debugger.",
+      "publisher": "The Art of Processing",
+      "contributor": [],
+      "date": "2026-08-20",
+      "type": "Educational MicroSim",
+      "format": "text/html",
+      "identifier": "sim-data-flow-debugger",
+      "language": "en",
+      "rights": "CC BY-NC-SA 4.0"
     },
-    "responsive": true,
-    "dependencies": [],
-    "accessibility": {
-      "hasAltText": false,
-      "keyboardNavigable": false
+    "search": {
+      "tags": ["p5.js", "data-flow-debugger"],
+      "searchKeywords": ["interactive", "simulation"],
+      "visualizationType": ["simulation"],
+      "interactionLevel": "moderate",
+      "complexity": 3,
+      "relatedConcepts": ["Data Flow Debugger", "visualization"],
+      "applicationDomains": ["education"]
+    },
+    "educational": {
+      "gradeLevel": ["10"],
+      "subjectArea": ["Computer Science"],
+      "topic": ["Creative Coding", "Algorithms"],
+      "learningObjectives": [
+        "Understand the core concepts",
+        "Apply principles in a visual environment"
+      ],
+      "bloomsTaxonomy": ["Understand", "Apply"],
+      "prerequisites": [],
+      "duration": {
+        "typical": 5,
+        "range": {"min": 2, "max": 10}
+      },
+      "difficulty": "Beginner"
+    },
+    "technical": {
+      "framework": "p5.js",
+      "version": "1.0.0",
+      "canvasDimensions": {
+        "width": 700,
+        "height": 450,
+        "responsive": true
+      },
+      "dependencies": [],
+      "browserCompatibility": ["Chrome 90+", "Firefox 88+", "Safari 14+", "Edge 90+"],
+      "performance": {
+        "memoryUsage": "low",
+        "loadTime": 500
+      },
+      "deviceRequirements": {
+        "minScreenWidth": 320,
+        "touchSupport": false,
+        "keyboardRequired": false,
+        "mouseRequired": true,
+        "networkRequired": false
+      },
+      "accessibility": {
+        "screenReader": false,
+        "keyboardNavigation": true,
+        "colorContrast": true,
+        "altText": false
+      }
+    },
+    "userInterface": {
+      "layoutType": "responsive-width",
+      "layoutPattern": "full-width-canvas",
+      "colorScheme": {
+        "drawingArea": "aliceblue",
+        "controlArea": "#e9ecef",
+        "accent": "#4a90d9",
+        "text": "#333"
+      },
+      "controls": [
+        {
+          "id": "main-control",
+          "type": "slider",
+          "label": "Adjust Parameter",
+          "description": "Changes the visualization state"
+        }
+      ],
+      "visualElements": [
+        {
+          "type": "shape",
+          "description": "Main interactive drawing element",
+          "interactive": true
+        }
+      ]
     }
-  },
-  "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
-  },
-  "chapter": ""
+  }
 }

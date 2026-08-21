@@ -1,0 +1,15 @@
+{
+  "sim_id": "kinetic-text-to-points",
+  "diagram_name": "Kinetic Text to Points",
+  "chapter_number": 24,
+  "chapter_title": "Generative Typography",
+  "chapter_dir": "24-generative-typography",
+  "chapter_rel_dir": "chapters/24-generative-typography",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>MicroSim: Kinetic Text to Points</summary>\n- **Objective:** Demonstrate the power of `textToPoints()`.\n- **Controls:** Slider for `sampleFactor`, a \"Scatter\" button.\n- **Visual:** The word \"EXPLODE\" rendered as points. When \"Scatter\" is clicked, points drift away using Perlin noise, then slowly return to their original text formation using steering behaviors."
+}

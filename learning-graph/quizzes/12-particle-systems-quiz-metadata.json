@@ -1,0 +1,185 @@
+{
+  "chapter": "Particle Systems, Forces & Steering Behaviors",
+  "chapter_num": 12,
+  "chapter_id": "12-particle-systems",
+  "chapter_file": "docs/chapters/12-particle-systems/index.md",
+  "quiz_file": "docs/chapters/12-particle-systems/quiz.md",
+  "generated_date": "2026-08-20",
+  "total_questions": 10,
+  "answer_distribution": {
+    "A": 2,
+    "B": 3,
+    "C": 3,
+    "D": 2
+  },
+  "bloom_distribution": {
+    "Remember": 3,
+    "Understand": 5,
+    "Apply": 1,
+    "Analyze": 1,
+    "Evaluate": 0,
+    "Create": 0
+  },
+  "questions": [
+    {
+      "id": "ch12-q001",
+      "number": 1,
+      "question_text": "What are the three essential lifecycle phases of an individual particle in a particle system?",
+      "options": {
+        "A": "Creation (emission), Update (motion & aging), and Deletion (death/culling)",
+        "B": "Compilation, Linking, and Execution",
+        "C": "Translation, Rotation, and Scaling",
+        "D": "Preload, Setup, and Draw"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Remember",
+      "concept_tested": "Particle Lifecycle Phases",
+      "explanation": "The correct answer is **A**. Particles are spawned by an emitter, updated on each frame (position, velocity, age, alpha fade), and removed from the array when their lifespan reaches zero. Options B, C, and D describe other computational concepts.",
+      "explanation_word_count": 39
+    },
+    {
+      "id": "ch12-q002",
+      "number": 2,
+      "question_text": "How is particle fading typically rendered visually as a particle approaches the end of its lifespan?",
+      "options": {
+        "A": "By decreasing the alpha channel value of fill() or stroke() proportionally to remaining lifespan",
+        "B": "By scaling the canvas width to zero",
+        "C": "By inverting the RGB color channels",
+        "D": "By calling noLoop() on death"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Understand",
+      "concept_tested": "Particle Alpha Lifespan Fade",
+      "explanation": "The correct answer is **A**. Mapping the particle's remaining lifespan counter to the alpha channel (e.g. 0 to 255) makes the particle dissolve smoothly into the background as it expires. Options B, C, and D are incorrect.",
+      "explanation_word_count": 37
+    },
+    {
+      "id": "ch12-q003",
+      "number": 3,
+      "question_text": "Which environmental force acts opposite to the direction of motion and is proportional to the square of speed?",
+      "options": {
+        "A": "Gravitational Attraction",
+        "B": "Fluid Drag / Friction",
+        "C": "Centrifugal Force",
+        "D": "Electrostatic Repulsion"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Understand",
+      "concept_tested": "Drag Force Formula",
+      "explanation": "The correct answer is **B**. Fluid resistance (drag) acts in the exact opposite direction of velocity ($-\\hat{v}$) with a magnitude proportional to the square of speed ($c \\cdot v^2$). Options B, C, and D act in different directions and formulas.",
+      "explanation_word_count": 40
+    },
+    {
+      "id": "ch12-q004",
+      "number": 4,
+      "question_text": "What formula expresses Craig Reynolds' classic steering force calculation?",
+      "options": {
+        "A": "steering = acceleration * mass",
+        "B": "steering = desired_velocity - current_velocity",
+        "C": "steering = velocity + gravity",
+        "D": "steering = target_position / speed"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Remember",
+      "concept_tested": "Reynolds Steering Force",
+      "explanation": "The correct answer is **B**. Reynolds defined steering force as the difference between the desired velocity (pointing directly toward the target at maximum speed) and the vehicle's current velocity. Options B, C, and D do not represent steering force.",
+      "explanation_word_count": 39
+    },
+    {
+      "id": "ch12-q005",
+      "number": 5,
+      "question_text": "To model a fireworks explosion emitter, how should initial particle velocities be initialized?",
+      "options": {
+        "A": "With all velocities set to (0, 0)",
+        "B": "With random vectors pointing in all directions using p5.Vector.random2D() multiplied by a burst speed",
+        "C": "With strictly vertical upward vectors (0, -10)",
+        "D": "With velocities equal to mouseX and mouseY"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Apply",
+      "concept_tested": "Emitter Velocity Burst",
+      "explanation": "The correct answer is **B**. Calling `p5.Vector.random2D().mult(random(2, 8))` generates velocity vectors radiating outwards in all directions with randomized speeds, simulating a radial explosive burst. Options B, C, and D do not create spherical/radial dispersion.",
+      "explanation_word_count": 34
+    },
+    {
+      "id": "ch12-q006",
+      "number": 6,
+      "question_text": "When multiple forces (gravity, wind, drag) act on a particle simultaneously, how does the physics engine combine them?",
+      "options": {
+        "A": "By averaging the angles of each force",
+        "B": "By only applying the strongest force and discarding the rest",
+        "C": "By adding all force vectors together to calculate the net accumulated force vector",
+        "D": "By executing forces sequentially across multiple separate frames"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Understand",
+      "concept_tested": "Accumulate Forces Vector Sum",
+      "explanation": "The correct answer is **C**. According to the principle of superposition in Newtonian mechanics, the net force on a body is the vector sum of all individual forces acting upon it. Options B, C, and D violate Newtonian physics.",
+      "explanation_word_count": 39
+    },
+    {
+      "id": "ch12-q007",
+      "number": 7,
+      "question_text": "What is the purpose of the Reynolds 'Seek' steering behavior?",
+      "options": {
+        "A": "To orbit in an infinite spiral",
+        "B": "To bounce randomly off canvas walls",
+        "C": "To steer an autonomous character toward a target position and arrive smoothly",
+        "D": "To avoid all other particles completely"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Understand",
+      "concept_tested": "Seek Steering Behavior",
+      "explanation": "The correct answer is **C**. The Seek behavior calculates a desired velocity pointing from the vehicle to a target, creating smooth turning trajectories toward moving or stationary goals. Options B, C, and D describe other behaviors.",
+      "explanation_word_count": 36
+    },
+    {
+      "id": "ch12-q008",
+      "number": 8,
+      "question_text": "How does Craig Reynolds' 'Arrive' behavior improve upon basic 'Seek' when reaching a target?",
+      "options": {
+        "A": "It increases speed to maximum upon arrival",
+        "B": "It teleports the character to the target instantly",
+        "C": "It decelerates the character smoothly within a slowing radius to stop precisely on target without overshooting",
+        "D": "It reverses the character's direction 180 degrees"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Understand",
+      "concept_tested": "Arrive Steering Behavior",
+      "explanation": "The correct answer is **C**. While 'Seek' always charges at maximum speed (causing overshooting and endless orbiting), 'Arrive' scales down desired speed when inside an arrival threshold radius, bringing the agent to a graceful halt. Options B, C, and D are false.",
+      "explanation_word_count": 42
+    },
+    {
+      "id": "ch12-q009",
+      "number": 9,
+      "question_text": "Why is an object-oriented class architecture (e.g. `class Particle` and `class ParticleSystem`) ideal for managing particle simulations?",
+      "options": {
+        "A": "It reduces the code to a single global variable",
+        "B": "It forces all particles to execute on the GPU",
+        "C": "It eliminates all array loops in JavaScript",
+        "D": "It encapsulates state (pos, vel, life) and behaviors (update, display, isDead) in modular, reusable instances"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Analyze",
+      "concept_tested": "OOP Particle Architecture",
+      "explanation": "The correct answer is **D**. Object-Oriented Programming cleanly packages particle data and methods, allowing a manager class (`ParticleSystem`) to instantiate, iterate, and cull hundreds of independent entities cleanly. Options B, C, and D are false.",
+      "explanation_word_count": 35
+    },
+    {
+      "id": "ch12-q010",
+      "number": 10,
+      "question_text": "In the flocking simulation algorithm (Boids), what are the three foundational steering rules?",
+      "options": {
+        "A": "Translation, Rotation, and Scaling",
+        "B": "Speed, Acceleration, and Gravity",
+        "C": "Emission, Collision, and Dissolution",
+        "D": "Separation, Alignment, and Cohesion"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Remember",
+      "concept_tested": "Flocking Boids Rules",
+      "explanation": "The correct answer is **D**. Craig Reynolds' 1987 Boids flocking model produces emergent swarm behavior using three simple rules: Separation (avoid crowding neighbors), Alignment (steer towards average heading), and Cohesion (steer towards center of mass). Options B, C, and D are unrelated triplets.",
+      "explanation_word_count": 43
+    }
+  ]
+}

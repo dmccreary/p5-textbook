@@ -1,0 +1,23 @@
+{
+  "title": "Stochastic L-System Tree",
+  "description": "Stochastic L-System Tree",
+  "creator": "The Art of Processing",
+  "author": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "The Art of Processing"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "stochastic-l-system-tree",
+  "library": "TBD",
+  "bloomLevel": "TBD",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 10,
+  "chapter_title": "Perlin Noise Fields",
+  "chapter_dir": "10-perlin-noise-fields",
+  "chapter_rel_dir": "chapters/10-perlin-noise-fields"
+}

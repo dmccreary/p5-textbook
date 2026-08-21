@@ -1,0 +1,15 @@
+{
+  "sim_id": "dom-layout-explorer",
+  "diagram_name": "DOM Layout Explorer",
+  "chapter_number": 16,
+  "chapter_title": "Css Styling Layouts",
+  "chapter_dir": "16-css-styling-layouts",
+  "chapter_rel_dir": "chapters/16-css-styling-layouts",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>MicroSim: DOM Layout Explorer</summary>\n\n**Goal:** Create an interactive space where students can toggle between Flexbox and Grid behaviors.\n**Features:**\n- A dropdown menu to select between `display: flex` and `display: grid`.\n- A set of 5 colored `<div>` blocks representing UI elements.\n- Sliders to adjust `justify-content` (for flexbox) or `grid-template-columns` (for grid).\n- As the user resizes the browser window, the blocks visually reflow in real-time, demonstrating how the layout engine handles empty space."
+}

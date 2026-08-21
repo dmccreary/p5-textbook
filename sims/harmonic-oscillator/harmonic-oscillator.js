@@ -16,7 +16,7 @@ const solidPattern = [];
 
 function setup() {
   updateCanvasSize();
-  pixelDensity(1);
+  pixelDensity(1.5);
   const canvas = createCanvas(canvasWidth, canvasHeight);
   canvas.parent(document.querySelector('main'));
 
@@ -121,6 +121,17 @@ function draw() {
 
   // Background areas
   background(250);
+
+
+  push();
+  fill(50);
+  noStroke();
+  textAlign(CENTER, TOP);
+  textSize(22);
+  textStyle(BOLD);
+  text("Harmonic Oscillator", width / 2, 10);
+  pop();
+
   
   fill(255);
   stroke(192);

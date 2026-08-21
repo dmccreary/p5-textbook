@@ -1,0 +1,185 @@
+{
+  "chapter": "Development Environment, Tools & Pedagogy",
+  "chapter_num": 25,
+  "chapter_id": "25-dev-environment-pedagogy",
+  "chapter_file": "docs/chapters/25-dev-environment-pedagogy/index.md",
+  "quiz_file": "docs/chapters/25-dev-environment-pedagogy/quiz.md",
+  "generated_date": "2026-08-20",
+  "total_questions": 10,
+  "answer_distribution": {
+    "A": 2,
+    "B": 3,
+    "C": 3,
+    "D": 2
+  },
+  "bloom_distribution": {
+    "Remember": 4,
+    "Understand": 3,
+    "Apply": 0,
+    "Analyze": 1,
+    "Evaluate": 2,
+    "Create": 0
+  },
+  "questions": [
+    {
+      "id": "ch25-q001",
+      "number": 1,
+      "question_text": "What is the primary advantage of the browser-based p5.js Web Editor for introductory students?",
+      "options": {
+        "A": "Zero setup barrier: students can write, execute, save, and share sketches instantly in the browser without installing local software",
+        "B": "It compiles JavaScript directly to native C++ binaries",
+        "C": "It provides unlimited GPU cloud rendering power",
+        "D": "It eliminates all syntax errors automatically"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Understand",
+      "concept_tested": "p5 Web Editor Accessibility",
+      "explanation": "The correct answer is **A**. The p5.js Web Editor runs entirely in the web browser, eliminating installation hurdles, terminal configuration, and path issues, making it accessible for classrooms, workshops, and beginners. Options B, C, and D are false.",
+      "explanation_word_count": 38
+    },
+    {
+      "id": "ch25-q002",
+      "number": 2,
+      "question_text": "Why is running a local HTTP development server (such as VS Code Live Server or `python3 -m http.server`) necessary when loading external images, sounds, or fonts in local sketches?",
+      "options": {
+        "A": "Web browsers block cross-origin local file reading (`file:///`) due to CORS security policies",
+        "B": "Local files run 100x slower without an HTTP server",
+        "C": "JavaScript cannot execute on desktop computers without a web server",
+        "D": "Web browsers require a server to compile HTML5 canvas"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Understand",
+      "concept_tested": "Local Web Server CORS",
+      "explanation": "The correct answer is **A**. Browsers enforce the Same-Origin Policy and Cross-Origin Resource Sharing (CORS) rules that prevent web pages on `file:///` URLs from reading local disk files via `fetch()`, `loadImage()`, or `loadSound()`. Running a local server provides `http://localhost`, satisfying CORS. Options B, C, and D are false.",
+      "explanation_word_count": 48
+    },
+    {
+      "id": "ch25-q003",
+      "number": 3,
+      "question_text": "What developer tool in web browsers allows programmers to inspect errors, log variable values with `console.log()`, and set breakpoints?",
+      "options": {
+        "A": "HTML Validator",
+        "B": "Browser Developer Tools (Web Console / Debugger)",
+        "C": "CSS Preprocessor",
+        "D": "WebGL Texture Compiler"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Remember",
+      "concept_tested": "Browser Dev Tools Console",
+      "explanation": "The correct answer is **B**. Browser Developer Tools provide the Web Console (for logs, warnings, and uncaught exceptions) and interactive Debugger (for pausing execution on breakpoints and inspecting scope variables). Options B, C, and D are other tools.",
+      "explanation_word_count": 38
+    },
+    {
+      "id": "ch25-q004",
+      "number": 4,
+      "question_text": "What pedagogical debugging technique involves explaining code line by line to an inanimate object to identify logic errors?",
+      "options": {
+        "A": "Pair Programming",
+        "B": "Rubber Duck Debugging",
+        "C": "Binary Search Tracing",
+        "D": "Test-Driven Development"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Remember",
+      "concept_tested": "Rubber Duck Debugging",
+      "explanation": "The correct answer is **B**. Rubber Duck Debugging is the practice of explaining code line-by-line in plain human language to an inanimate object (or peer), which forces metacognitive reflection and reveals hidden assumptions or logical flaws. Options B, C, and D are other practices.",
+      "explanation_word_count": 44
+    },
+    {
+      "id": "ch25-q005",
+      "number": 5,
+      "question_text": "In creative coding education, what is the 'Low Floor, High Ceiling, Wide Walls' pedagogical design principle?",
+      "options": {
+        "A": "Sketches must have low memory usage, high screen resolution, and wide aspect ratios",
+        "B": "Easy for beginners to start (low floor), extensible for complex advanced work (high ceiling), and supportive of diverse creative pathways (wide walls)",
+        "C": "Classroom rooms must have low floors and high ceilings for projector visibility",
+        "D": "Algorithms must have low time complexity and wide array structures"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Understand",
+      "concept_tested": "Low Floor High Ceiling Pedagogy",
+      "explanation": "The correct answer is **B**. Articulated by Seymour Papert and Mitch Resnick, this principle emphasizes that educational tools should be easy to start with minimal barriers, capable of sophisticated advanced creation, and flexible across varied artistic interests. Options B, C, and D misinterpret the metaphor.",
+      "explanation_word_count": 45
+    },
+    {
+      "id": "ch25-q006",
+      "number": 6,
+      "question_text": "What is the primary role of Git and GitHub in professional creative coding development?",
+      "options": {
+        "A": "Automatically fixing syntax errors in JavaScript",
+        "B": "Real-time GPU shader compiling",
+        "C": "Version control, history tracking, open-source collaboration, and website deployment via GitHub Pages",
+        "D": "Running audio synthesizer plugins in the browser"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Remember",
+      "concept_tested": "Git Version Control Role",
+      "explanation": "The correct answer is **C**. Git manages project version history, branches, and code collaboration, while GitHub hosts repositories and automates deployment (e.g. GitHub Pages). Options B, C, and D are unrelated software functions.",
+      "explanation_word_count": 33
+    },
+    {
+      "id": "ch25-q007",
+      "number": 7,
+      "question_text": "When teaching creative coding, why are live-coding demonstrations and deliberate error modeling effective instructional strategies?",
+      "options": {
+        "A": "They ensure all students write identical code",
+        "B": "They prove the instructor never makes mistakes",
+        "C": "They demystify the coding process, normalize debugging as an authentic practice, and demonstrate real-time problem-solving",
+        "D": "They reduce lesson duration to 5 minutes"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Analyze",
+      "concept_tested": "Live Coding Pedagogical Modeling",
+      "explanation": "The correct answer is **C**. Watching an instructor write code live, encounter genuine errors, interpret console error messages, and systematically resolve bugs models authentic expert practice and reduces learner anxiety. Options B, C, and D are incorrect.",
+      "explanation_word_count": 37
+    },
+    {
+      "id": "ch25-q008",
+      "number": 8,
+      "question_text": "Which accessibility standard ensures that interactive canvas sketches and learning materials are usable by individuals with visual or motor impairments?",
+      "options": {
+        "A": "ECMAScript 2026 Spec",
+        "B": "OpenGL Specification 4.6",
+        "C": "Web Content Accessibility Guidelines (WCAG) and ARIA attributes",
+        "D": "W3C CSS Grid Standard"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Remember",
+      "concept_tested": "Web Accessibility WCAG",
+      "explanation": "The correct answer is **C**. WCAG provides guidelines (contrast ratios, keyboard operability, screen reader descriptions via ARIA) to make web content accessible to users with disabilities. Options B, C, and D are non-accessibility technical standards.",
+      "explanation_word_count": 35
+    },
+    {
+      "id": "ch25-q009",
+      "number": 9,
+      "question_text": "How does formative assessment (such as self-paced quizzes and interactive MicroSims) support student learning in an intelligent textbook?",
+      "options": {
+        "A": "It limits student access to subsequent chapters until 100% score is achieved",
+        "B": "It assigns permanent letter grades that cannot be changed",
+        "C": "It replaces all classroom instruction with automated bots",
+        "D": "It provides low-stakes retrieval practice, immediate feedback, and diagnostic self-monitoring of concept mastery"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Evaluate",
+      "concept_tested": "Formative Assessment Retrieval Practice",
+      "explanation": "The correct answer is **D**. Formative quizzes and interactive simulations leverage cognitive science principles (retrieval practice, testing effect, immediate feedback) to consolidate memory and identify knowledge gaps without punitive grading pressure. Options B, C, and D are harmful or incorrect educational practices.",
+      "explanation_word_count": 42
+    },
+    {
+      "id": "ch25-q010",
+      "number": 10,
+      "question_text": "What is the educational purpose of scaffolding differentiated challenge tracks (mild, medium, spicy) in programming assignments?",
+      "options": {
+        "A": "To prevent students from collaborating on projects",
+        "B": "To segregate students into separate locked grading categories",
+        "C": "To reduce the instructor's grading workload",
+        "D": "To accommodate learners with diverse prior experience, providing structured support for beginners while offering open-ended extensions for advanced students"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Evaluate",
+      "concept_tested": "Scaffolding Differentiated Tracks",
+      "explanation": "The correct answer is **D**. Differentiated scaffolding provides accessible starter scaffolds for novice learners to build confidence, alongside creative extension prompts that challenge advanced students within the same classroom. Options B, C, and D are counterproductive.",
+      "explanation_word_count": 36
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "title": "Async Data Fetcher",
+  "description": "Visualize JavaScript asynchronous fetch(), Promise lifecycle states (Pending, Fulfilled, Rejected), and network packet transit.",
+  "creator": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "Async Data Fetcher",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "sim_id": "async-data-fetcher",
+  "canvasHeight": 485,
+  "bloom_level": "Understand",
+  "learning_objective": "Students will understand asynchronous execution, event loop non-blocking behavior, and promise status resolution.",
+  "chapter_dir": "18-es6-classes-async"
+}

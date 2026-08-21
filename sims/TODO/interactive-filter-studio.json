@@ -1,0 +1,15 @@
+{
+  "sim_id": "interactive-filter-studio",
+  "diagram_name": "Interactive Filter Studio",
+  "chapter_number": 23,
+  "chapter_title": "Image Processing Video",
+  "chapter_dir": "23-image-processing-video",
+  "chapter_rel_dir": "chapters/23-image-processing-video",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>MicroSim: Interactive Filter Studio</summary>\n### MicroSim Specification\n\n**Title:** Interactive Filter Studio\n**Type:** p5.js Sketch\n**Purpose:** Allow students to apply and stack various built-in filters on a sample photograph.\n\n**UI Elements:**\n- A dropdown menu to select the filter type (Grayscale, Invert, Threshold, Blur, Posterize, Erode, Dilate).\n- A slider for the filter parameter (e.g., blur radius or threshold level), dynamically enabled/disabled based on the selected filter.\n- A \"Reset\" button to clear all applied filters.\n\n**Behavior:**\n- The canvas displays a vibrant sample image (e.g., a colorful parrot or a landscape).\n- When a filter is selected and applied, the canvas updates immediately.\n- Students can stack filters by applying them sequentially without resetting."
+}

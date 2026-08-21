@@ -1,0 +1,15 @@
+{
+  "sim_id": "text-formatting-basics",
+  "diagram_name": "Text Formatting Basics",
+  "chapter_number": 24,
+  "chapter_title": "Generative Typography",
+  "chapter_dir": "24-generative-typography",
+  "chapter_rel_dir": "chapters/24-generative-typography",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>MicroSim: Text Formatting Basics</summary>\n- **Objective:** Create a dashboard where students can adjust text settings interactively.\n- **Controls:** Sliders for `textSize` (10 to 100), `textLeading` (10 to 100), and a dropdown for `textAlign` (LEFT, CENTER, RIGHT).\n- **Visual:** A paragraph of text reacting in real-time to the adjustments, demonstrating bounding boxes and word wrapping."
+}

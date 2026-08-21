@@ -1,0 +1,15 @@
+{
+  "sim_id": "array-methods-visualizer",
+  "diagram_name": "Array Methods Visualizer",
+  "chapter_number": 18,
+  "chapter_title": "Es6 Classes Async",
+  "chapter_dir": "18-es6-classes-async",
+  "chapter_rel_dir": "chapters/18-es6-classes-async",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>MicroSim: Array Methods Visualizer</summary>\nAn interactive MicroSim that allows students to input an array of numbers and apply `map`, `filter`, or `reduce` visually.\n1. The original array is displayed as a row of boxes.\n2. Clicking 'Map (*2)' creates a second row of boxes below, with animations showing each box multiplying.\n3. Clicking 'Filter (>10)' drops down only the boxes that pass the condition.\n4. Clicking 'Reduce (+)' animates all boxes collapsing into a single final box showing the sum."
+}

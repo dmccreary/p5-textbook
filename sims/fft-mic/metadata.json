@@ -1,77 +1,96 @@
 {
-  "title": "Microphone Frequency Visualization with FFT",
-  "description": "Real-time frequency spectrum visualization of microphone input with color-coded frequency bars and peak frequency detection.",
-  "creator": "Dan McCreary",
-  "date": "2024-01-01",
-  "subject": [
-    "Signal Processing",
-    "FFT",
-    "Audio Analysis",
-    "Data Visualization"
-  ],
-  "type": "Interactive Simulation",
-  "format": "text/html",
-  "language": "en",
-  "rights": "CC BY-NC-SA 4.0",
-  "identifier": "https://dmccreary.github.io/p5-textbook/sims/fft-mic/",
-  "publisher": "Dan McCreary",
-  "educationalLevel": "Undergraduate",
-  "learningResourceType": "simulation",
-  "audience": "Students, Educators",
-  "version": "1.0.0",
-  "bloomLevel": [
-    "Understand",
-    "Apply"
-  ],
-  "concepts": [
-    "FFT",
-    "Microphone input",
-    "Frequency visualization",
-    "Harmonic content"
-  ],
-  "prerequisites": [
-    "Basic understanding of frequency",
-    "Sound and audio concepts"
-  ],
-  "library": "p5.js",
-  "visualizationType": [
-    "graph",
-    "interactive-demo",
-    "map"
-  ],
-  "learningObjectives": [
-    "Identify the peak frequency of a sung or whistled tone from the peak-detection readout and the tallest color-coded bar",
-    "Distinguish low-frequency content, drawn as blue bars, from high-frequency content, drawn as red bars, across the spectrum",
-    "Compare the harmonic content of a voice, a musical instrument, and broadband noise by the number and spacing of their spectral peaks",
-    "Predict how lowering the maximum frequency slider rescales the horizontal axis and spreads the remaining bars across the display",
-    "Explain why pressing Stop freezes the last computed spectrum on screen rather than clearing the display"
-  ],
-  "bloomsTaxonomy": [
-    "Understand",
-    "Apply",
-    "Analyze"
-  ],
-  "pedagogical": {
-    "pattern": "demonstration",
-    "bloomAlignment": [
-      "understand",
-      "apply",
-      "analyze"
-    ],
-    "bloomVerbs": [
-      "describe",
-      "calculate",
-      "illustrate",
-      "implement",
-      "use"
-    ],
-    "pacing": "self-paced",
-    "supportsPrediction": false,
-    "dataVisibility": "high",
-    "feedbackType": [
-      "immediate",
-      "explanatory"
-    ],
-    "interactionStyle": "construct"
+  "microsim": {
+    "dublinCore": {
+      "title": "Microphone Frequency Visualization with FFT",
+      "creator": ["Dan McCreary"],
+      "subject": ["Computer Science", "Programming"],
+      "description": "A MicroSim that shows the frequency spectrum of sound coming in from a microphone using the p5.js fft library.",
+      "publisher": "The Art of Processing",
+      "contributor": [],
+      "date": "2026-08-20",
+      "type": "Educational MicroSim",
+      "format": "text/html",
+      "identifier": "sim-fft-mic",
+      "language": "en",
+      "rights": "CC BY-NC-SA 4.0"
+    },
+    "search": {
+      "tags": ["p5.js", "fft-mic"],
+      "searchKeywords": ["interactive", "simulation"],
+      "visualizationType": ["simulation"],
+      "interactionLevel": "moderate",
+      "complexity": 3,
+      "relatedConcepts": ["Microphone Frequency Visualization with FFT", "visualization"],
+      "applicationDomains": ["education"]
+    },
+    "educational": {
+      "gradeLevel": ["10"],
+      "subjectArea": ["Computer Science"],
+      "topic": ["Creative Coding", "Algorithms"],
+      "learningObjectives": [
+        "Understand the core concepts",
+        "Apply principles in a visual environment"
+      ],
+      "bloomsTaxonomy": ["Understand", "Apply"],
+      "prerequisites": [],
+      "duration": {
+        "typical": 5,
+        "range": {"min": 2, "max": 10}
+      },
+      "difficulty": "Beginner"
+    },
+    "technical": {
+      "framework": "p5.js",
+      "version": "1.0.0",
+      "canvasDimensions": {
+        "width": 700,
+        "height": 450,
+        "responsive": true
+      },
+      "dependencies": [],
+      "browserCompatibility": ["Chrome 90+", "Firefox 88+", "Safari 14+", "Edge 90+"],
+      "performance": {
+        "memoryUsage": "low",
+        "loadTime": 500
+      },
+      "deviceRequirements": {
+        "minScreenWidth": 320,
+        "touchSupport": false,
+        "keyboardRequired": false,
+        "mouseRequired": true,
+        "networkRequired": false
+      },
+      "accessibility": {
+        "screenReader": false,
+        "keyboardNavigation": true,
+        "colorContrast": true,
+        "altText": false
+      }
+    },
+    "userInterface": {
+      "layoutType": "responsive-width",
+      "layoutPattern": "full-width-canvas",
+      "colorScheme": {
+        "drawingArea": "aliceblue",
+        "controlArea": "#e9ecef",
+        "accent": "#4a90d9",
+        "text": "#333"
+      },
+      "controls": [
+        {
+          "id": "main-control",
+          "type": "slider",
+          "label": "Adjust Parameter",
+          "description": "Changes the visualization state"
+        }
+      ],
+      "visualElements": [
+        {
+          "type": "shape",
+          "description": "Main interactive drawing element",
+          "interactive": true
+        }
+      ]
+    }
   }
 }

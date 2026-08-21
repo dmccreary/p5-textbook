@@ -1,0 +1,15 @@
+{
+  "sim_id": "arc-angle-explorer",
+  "diagram_name": "Arc and Angle Explorer",
+  "chapter_number": 2,
+  "chapter_title": "2. 2D Primitive Shapes & Custom Geometries",
+  "chapter_dir": "02-2d-primitive-shapes",
+  "chapter_rel_dir": "chapters/02-2d-primitive-shapes",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": "Applying (Students will interactively visualize the relationship between radians, degrees, and the drawn arc slice).",
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>Arc and Angle Explorer</summary>\nType: MicroSim\n**sim-id:** arc-angle-explorer<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\n**Learning Objective:** Applying (Students will interactively visualize the relationship between radians, degrees, and the drawn arc slice).\n\n**Visual Elements:**\n- A large circle with major angles labeled in both Degrees (0, 90, 180, 270) and Radians (0, PI/2, PI, 3*PI/2).\n- A shaded arc slice originating from the center.\n- Two draggable sliders: \"Start Angle\" and \"Stop Angle\".\n\n**Interactivity:**\n- As the user drags the sliders, the shaded pie slice grows or shrinks in real-time.\n- A toggle allows the user to switch the arc mode between `PIE` (connected to the center), `CHORD` (a straight line connecting the arc endpoints), and `OPEN` (just the curved stroke).\n- A readout box shows the exact code generated: `arc(200, 200, 100, 100, 0, PI);`\n\nImplementation: Use `arc()` with the `mode` parameter driven by a dropdown menu. Map slider values to angles."
+}

@@ -1,0 +1,15 @@
+{
+  "sim_id": "3d-coordinate-system",
+  "diagram_name": "Interactive 3D Coordinate System",
+  "chapter_number": 19,
+  "chapter_title": "3D Webgl Primitives",
+  "chapter_dir": "19-3d-webgl-primitives",
+  "chapter_rel_dir": "chapters/19-3d-webgl-primitives",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": "Students will interactively explore the X, Y, and Z axes in WebGL to understand how the origin is centered and how the Z-axis controls depth.",
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>Interactive 3D Coordinate System</summary>\nType: MicroSim\n**sim-id:** 3d-coordinate-system\n**Library:** p5.js\n**Status:** Specified\n\n**Learning Objective:**\nStudents will interactively explore the X, Y, and Z axes in WebGL to understand how the origin is centered and how the Z-axis controls depth.\n\n**Visual Elements:**\n- A 3D space with red (X), green (Y), and blue (Z) lines representing the axes.\n- A glowing sphere representing a point in space.\n\n**Interactivity:**\n- Three sliders controlling the X, Y, and Z coordinates of the sphere.\n- A live readout of the current coordinates `(X, Y, Z)`."
+}

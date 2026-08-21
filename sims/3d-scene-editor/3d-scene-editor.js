@@ -10,10 +10,29 @@ let shapeSelect, materialSelect, lightSelect;
 let lightXSlider, lightYSlider, lightZSlider;
 let uiContainer;
 let drawHeight = 400;
+let canvasWidth = 800;
+
+function updateCanvasSize() {
+  const container = document.querySelector('main');
+  if (container) {
+    canvasWidth = container.offsetWidth;
+  } else {
+    canvasWidth = windowWidth;
+  }
+}
 
 function setup() {
-  let canvas = createCanvas(windowWidth, drawHeight, WEBGL);
-  pixelDensity(1);
+  let titleHTML = '<h3 style="margin:0; padding:10px 0 0 0; text-align:center; font-family:sans-serif; color:#FFF;">3D Scene Editor</h3>' +
+                  '<div style="text-align:center; font-family:sans-serif; color:#EEE; font-size:0.85em; padding-bottom:10px;"><em>Left-click & drag to orbit. Scroll to zoom.</em></div>';
+  let titleDiv = createDiv(titleHTML);
+  titleDiv.position(0, 0);
+  titleDiv.style('width', '100%');
+  titleDiv.style('pointer-events', 'none');
+
+  updateCanvasSize();
+  let canvas = createCanvas(canvasWidth, drawHeight, WEBGL);
+  canvas.parent(document.querySelector('main'));
+  pixelDensity(1.5);
 
   
   // Prevent context menu on right click for better orbit control
@@ -21,6 +40,7 @@ function setup() {
 
   // UI Container
   uiContainer = createDiv();
+  uiContainer.parent(document.querySelector('main'));
   uiContainer.style('background', '#f5f5f5');
   uiContainer.style('padding', '15px');
   uiContainer.style('font-family', 'sans-serif');
@@ -60,6 +80,7 @@ function setup() {
   materialSelect.option('Normal (normalMaterial)');
   materialSelect.option('Ambient (ambientMaterial)');
   materialSelect.option('Specular (specularMaterial)');
+  materialSelect.selected('Normal (normalMaterial)');
   materialSelect.parent(matDiv);
   matDiv.parent(leftCol);
 
@@ -111,11 +132,6 @@ function setup() {
   lightZSlider.parent(lzDiv);
   lzDiv.parent(slidersRow);
   
-  let instructions = createDiv('<em>Left-click & drag to orbit. Scroll to zoom.</em>');
-  instructions.style('font-size', '0.85em');
-  instructions.style('color', '#666');
-  instructions.style('margin-top', 'auto');
-  instructions.parent(rightCol);
 }
 
 function draw() {
@@ -179,6 +195,11 @@ function draw() {
   }
 
   // Draw the selected 3D Primitive
+  push();
+  // Tilt the shape so it doesn't look like a flat 2D square when it first loads
+  rotateX(-0.4);
+  rotateY(0.6);
+  
   let shape = shapeSelect.value();
   if (shape === 'Box') {
     box(120);
@@ -187,8 +208,10 @@ function draw() {
   } else if (shape === 'Torus') {
     torus(70, 30, 64, 64);
   }
+  pop();
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth, drawHeight);
+  updateCanvasSize();
+  resizeCanvas(canvasWidth, drawHeight);
 }

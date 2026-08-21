@@ -1,0 +1,185 @@
+{
+  "chapter": "Microphone Input & FFT Spectral Analysis",
+  "chapter_num": 22,
+  "chapter_id": "22-mic-input-fft",
+  "chapter_file": "docs/chapters/22-mic-input-fft/index.md",
+  "quiz_file": "docs/chapters/22-mic-input-fft/quiz.md",
+  "generated_date": "2026-08-20",
+  "total_questions": 10,
+  "answer_distribution": {
+    "A": 2,
+    "B": 3,
+    "C": 3,
+    "D": 2
+  },
+  "bloom_distribution": {
+    "Remember": 3,
+    "Understand": 4,
+    "Apply": 2,
+    "Analyze": 1,
+    "Evaluate": 0,
+    "Create": 0
+  },
+  "questions": [
+    {
+      "id": "ch22-q001",
+      "number": 1,
+      "question_text": "Which p5.sound class captures live audio input from the user's computer or mobile microphone?",
+      "options": {
+        "A": "p5.AudioIn",
+        "B": "p5.Microphone",
+        "C": "p5.SoundCapture",
+        "D": "p5.LiveInput"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Remember",
+      "concept_tested": "p5 AudioIn Class",
+      "explanation": "The correct answer is **A**. `p5.AudioIn` accesses the user's live audio input device (microphone or line-in). Options B, C, and D are not p5.sound classes.",
+      "explanation_word_count": 25
+    },
+    {
+      "id": "ch22-q002",
+      "number": 2,
+      "question_text": "What mathematical algorithm transforms time-domain audio waveform signals into discrete frequency-domain spectrum bins?",
+      "options": {
+        "A": "Fast Fourier Transform (FFT)",
+        "B": "Euler Integration",
+        "C": "Perlin Gradient Lattice",
+        "D": "Bresenham Line Algorithm"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Remember",
+      "concept_tested": "Fast Fourier Transform Concept",
+      "explanation": "The correct answer is **A**. The Fast Fourier Transform (FFT) algorithm efficiently decomposes complex time-domain acoustic waveforms into their constituent frequency components (spectrum amplitudes). Options B, C, and D solve completely different mathematical problems.",
+      "explanation_word_count": 34
+    },
+    {
+      "id": "ch22-q003",
+      "number": 3,
+      "question_text": "What does `fft.analyze()` return in p5.js?",
+      "options": {
+        "A": "A single scalar volume float",
+        "B": "An array of amplitude values (0-255) across frequency spectrum bins from bass to treble",
+        "C": "The duration of the audio track in seconds",
+        "D": "An array of 3D vertex coordinates"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Understand",
+      "concept_tested": "FFT Analyze Spectrum Array",
+      "explanation": "The correct answer is **B**. `fft.analyze()` returns an array of energy values (0 to 255) representing the amplitude of each frequency bin from lowest bass to highest treble. Option B describes `amplitude.getLevel()`.",
+      "explanation_word_count": 32
+    },
+    {
+      "id": "ch22-q004",
+      "number": 4,
+      "question_text": "Which p5.sound helper method extracts the instantaneous energy level of a predefined frequency range such as `'bass'`, `'mid'`, or `'treble'`?",
+      "options": {
+        "A": "fft.getBand('bass')",
+        "B": "fft.getEnergy('bass')",
+        "C": "fft.sample('bass')",
+        "D": "fft.filter('bass')"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Remember",
+      "concept_tested": "FFT Get Energy Function",
+      "explanation": "The correct answer is **B**. `fft.getEnergy(presetOrFrequency)` returns the amplitude energy (0 to 255) of a specific frequency range (e.g. `'bass'`, `'lowMid'`, `'mid'`, `'highMid'`, `'treble'`). Options B, C, and D are not p5.sound methods.",
+      "explanation_word_count": 33
+    },
+    {
+      "id": "ch22-q005",
+      "number": 5,
+      "question_text": "What is the difference between measuring volume with `p5.Amplitude` versus frequency with `p5.FFT`?",
+      "options": {
+        "A": "Amplitude only works with microphones while FFT only works with sound files",
+        "B": "Amplitude measures total overall signal volume (loudness), while FFT breaks sound down into individual pitch/frequency bands",
+        "C": "FFT only works in 3D WebGL mode",
+        "D": "Amplitude returns frequencies while FFT returns decibels"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Understand",
+      "concept_tested": "Amplitude vs FFT Comparison",
+      "explanation": "The correct answer is **B**. `p5.Amplitude` tracks single-value overall sound level (loudness from 0.0 to 1.0). `p5.FFT` provides spectral analysis, isolating low bass kicks from high cymbal sizzles. Options B, C, and D are incorrect.",
+      "explanation_word_count": 35
+    },
+    {
+      "id": "ch22-q006",
+      "number": 6,
+      "question_text": "What does `fft.waveform()` return, and how is it visually displayed on canvas?",
+      "options": {
+        "A": "A 3D mesh of sound waves",
+        "B": "A histogram of audio file sizes",
+        "C": "An array of time-domain amplitude values (-1.0 to +1.0) used to draw an oscilloscope waveform line",
+        "D": "An array of RGB color values"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Understand",
+      "concept_tested": "FFT Waveform Oscilloscope",
+      "explanation": "The correct answer is **C**. `fft.waveform()` returns time-domain instantaneous amplitude values between -1.0 and 1.0, which can be plotted across the x-axis to render a real-time audio oscilloscope. Options B, C, and D are incorrect.",
+      "explanation_word_count": 35
+    },
+    {
+      "id": "ch22-q007",
+      "number": 7,
+      "question_text": "How do you program an audio-reactive visual where a central circle pulses and expands in response to a live drum kick?",
+      "options": {
+        "A": "Call random(100) inside draw()",
+        "B": "Set circle size to frameCount",
+        "C": "Sample bass energy with fft.getEnergy('bass') and map the value to circle diameter",
+        "D": "Rotate the canvas by millis()"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Apply",
+      "concept_tested": "Audio Reactive Beat Pulse",
+      "explanation": "The correct answer is **C**. Sampling `fft.getEnergy('bass')` detects low-frequency transients (kick drums). Mapping this energy value (0-255) to circle radius causes the shape to pulse dynamically with the musical rhythm. Options B, C, and D ignore audio input.",
+      "explanation_word_count": 38
+    },
+    {
+      "id": "ch22-q008",
+      "number": 8,
+      "question_text": "What does the smoothing parameter (between 0.0 and 1.0) passed to `new p5.FFT(smoothing, bins)` control?",
+      "options": {
+        "A": "The pitch shift transposition amount",
+        "B": "The volume level of audio playback",
+        "C": "The temporal responsiveness and dampening between consecutive analysis frames to reduce jitter",
+        "D": "The canvas frameRate limit"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Understand",
+      "concept_tested": "FFT Smoothing Parameter",
+      "explanation": "The correct answer is **C**. Smoothing dampens rapid fluctuations between FFT frames. A value of 0.8 creates smooth, fluid visualizer transitions, while 0.0 provides raw instantaneous response. Options B, C, and D are false.",
+      "explanation_word_count": 34
+    },
+    {
+      "id": "ch22-q009",
+      "number": 9,
+      "question_text": "Why is threshold beat detection (detecting when instantaneous energy exceeds a rolling average by a multiplier) superior to static threshold checks for live audio?",
+      "options": {
+        "A": "Rolling averages prevent browser memory leaks",
+        "B": "Dynamic thresholding runs on GPU compute shaders",
+        "C": "Static thresholds only work with synthesized sine waves",
+        "D": "Dynamic thresholding automatically adapts to songs of varying mastering loudness and dynamic range without manual recalibration"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Analyze",
+      "concept_tested": "Dynamic Beat Detection Algorithm",
+      "explanation": "The correct answer is **D**. Music loudness varies widely across genres and recording levels. Comparing current energy against a moving window average ($E > C \\cdot \\bar{E}$) reliably detects rhythmic peaks regardless of overall master volume. Options B, C, and D are false.",
+      "explanation_word_count": 43
+    },
+    {
+      "id": "ch22-q010",
+      "number": 10,
+      "question_text": "To draw a classic frequency bar visualizer across the canvas width, how should spectrum array values be mapped?",
+      "options": {
+        "A": "Apply spectrum values as canvas rotation angles",
+        "B": "Draw a single rectangle with width = spectrum.length",
+        "C": "Sort the array alphabetically and print to console",
+        "D": "Iterate through spectrum array, calculating x from index / length and bar height from spectrum[i]"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Apply",
+      "concept_tested": "Frequency Bar Visualizer Layout",
+      "explanation": "The correct answer is **D**. Looping through the array `spectrum = fft.analyze()` and mapping each bin index to horizontal coordinate `x = i * (width / spectrum.length)` with height `h = map(spectrum[i], 0, 255, 0, height)` draws an audio spectrum bar chart. Options B, C, and D do not produce frequency bar charts.",
+      "explanation_word_count": 53
+    }
+  ]
+}

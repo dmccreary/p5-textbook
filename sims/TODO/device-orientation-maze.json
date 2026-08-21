@@ -1,0 +1,15 @@
+{
+  "sim_id": "device-orientation-maze",
+  "diagram_name": "Device Orientation Maze",
+  "chapter_number": 14,
+  "chapter_title": "Touch Mobile Sensors",
+  "chapter_dir": "14-touch-mobile-sensors",
+  "chapter_rel_dir": "chapters/14-touch-mobile-sensors",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>MicroSim: Device Orientation Maze</summary>\n**Goal:** Create a simple marble maze where the user tilts their mobile device to roll a ball.\n**Features:**\n- A ball object with velocity and position.\n- Uses `rotationX` and `rotationY` (the Device Orientation Tilt) to apply forces to the ball's velocity.\n- Wall objects that use Hit Test Point Circle to bounce the ball back.\n- If viewed on a desktop, fall back to mouse coordinates to apply gravity."
+}

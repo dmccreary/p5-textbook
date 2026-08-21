@@ -1,0 +1,15 @@
+{
+  "sim_id": "interactive-wave-maker-laboratory",
+  "diagram_name": "Interactive Wave Maker Laboratory",
+  "chapter_number": 7,
+  "chapter_title": "Linear Motion Trig",
+  "chapter_dir": "07-linear-motion-trig",
+  "chapter_rel_dir": "chapters/07-linear-motion-trig",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>MicroSim: Interactive Wave Maker Laboratory</summary>\n\n**Goal:** Create a rich interactive simulation where the user can manipulate sliders to adjust the amplitude, frequency, and phase offset of a sine wave, visualizing how these parameters alter the shape of the wave in real-time.\n\n**Implementation Details:**\n- Use the p5.js generator to scaffold the sketch.\n- Draw a continuous, flowing sine wave across the canvas using the `beginShape()`, `vertex()`, and `endShape()` vertex engine.\n- Create a `for` loop that iterates through the x-coordinates across the width of the canvas. Inside the loop, calculate the corresponding y-coordinate using the master wave formula: `y = baselineY + sin(x * frequency + phase) * amplitude`.\n- Provide HTML range sliders (using p5's `createSlider()` DOM element) for the user to intuitively control the **Wave Amplitude Parameter**, **Wave Frequency Parameter**, and **Wave Phase Offset**.\n- Overlay text on the canvas to display the precise numerical values of the current slider settings, reinforcing the connection between the math and the visual output."
+}

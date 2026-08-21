@@ -1,0 +1,15 @@
+{
+  "sim_id": "additive-color-mixer",
+  "diagram_name": "Additive Color Mixer",
+  "chapter_number": 3,
+  "chapter_title": "Color Theory Pixels",
+  "chapter_dir": "03-color-theory-pixels",
+  "chapter_rel_dir": "chapters/03-color-theory-pixels",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary><strong>MicroSim: Additive Color Mixer</strong></summary>\n<strong>Goal:</strong> Allow students to visually experiment with mixing Red, Green, and Blue light to see how Additive Color Mixing creates secondary colors and pure white.\n<strong>Visualization:</strong> A stark black canvas background. In the center, three large overlapping circles—representing three colored spotlights (red, green, blue).\n<strong>Interactivity:</strong> Below the canvas are three horizontal slider UI elements, each labeled and mapped from 0 to 255, controlling the intensity of the Red, Green, and Blue channels independently. As a student moves the sliders, the respective circles dynamically update their brightness. The overlapping regions in the center automatically compute the additive mixed color (e.g., full red + full green circles overlapping creates a bright yellow intersection).\n<strong>Expected Insight:</strong> Students will see firsthand that mixing full red and green light creates yellow, a classic example of additive mixing, which usually surprises beginners who expect a muddy brown due to their intuition originating from physical paint."
+}

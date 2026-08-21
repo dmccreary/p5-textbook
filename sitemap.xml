@@ -2,274 +2,694 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/about/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/contact/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/course-description/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/faq/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/glossary/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/license/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/chapters/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/chapters/01-intro-creative-coding/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/01-intro-creative-coding/quiz/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/01-intro-creative-coding/references/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/chapters/02-2d-primitive-shapes/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/02-2d-primitive-shapes/quiz/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/02-2d-primitive-shapes/references/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/chapters/03-color-theory-pixels/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/03-color-theory-pixels/quiz/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/03-color-theory-pixels/references/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/chapters/04-variables-and-scope/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/04-variables-and-scope/quiz/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/04-variables-and-scope/references/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/chapters/05-control-flow-and-loops/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/05-control-flow-and-loops/quiz/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/05-control-flow-and-loops/references/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/chapters/06-matrix-transformations/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/06-matrix-transformations/quiz/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/06-matrix-transformations/references/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/chapters/07-linear-motion-trig/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/07-linear-motion-trig/quiz/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/07-linear-motion-trig/references/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/chapters/08-polar-coordinates-easing/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/08-polar-coordinates-easing/quiz/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/08-polar-coordinates-easing/references/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/chapters/09-randomness-and-walks/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/09-randomness-and-walks/quiz/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/09-randomness-and-walks/references/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/chapters/10-perlin-noise-fields/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/10-perlin-noise-fields/quiz/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/10-perlin-noise-fields/references/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/chapters/11-vector-math-physics/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/11-vector-math-physics/quiz/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/11-vector-math-physics/references/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/chapters/12-particle-systems/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/12-particle-systems/quiz/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/12-particle-systems/references/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/chapters/13-mouse-keyboard-events/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/13-mouse-keyboard-events/quiz/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/13-mouse-keyboard-events/references/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/chapters/14-touch-mobile-sensors/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/14-touch-mobile-sensors/quiz/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/14-touch-mobile-sensors/references/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/chapters/15-dom-controls-ui/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/15-dom-controls-ui/quiz/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/15-dom-controls-ui/references/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/chapters/16-css-styling-layouts/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/16-css-styling-layouts/quiz/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/16-css-styling-layouts/references/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/chapters/17-functions-and-callbacks/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/17-functions-and-callbacks/quiz/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/17-functions-and-callbacks/references/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/chapters/18-es6-classes-async/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/18-es6-classes-async/quiz/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/18-es6-classes-async/references/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/chapters/19-3d-webgl-primitives/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/19-3d-webgl-primitives/quiz/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/19-3d-webgl-primitives/references/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/chapters/20-3d-cameras-shaders/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/20-3d-cameras-shaders/quiz/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/20-3d-cameras-shaders/references/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/chapters/21-audio-synthesis-sound/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/21-audio-synthesis-sound/quiz/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/21-audio-synthesis-sound/references/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/chapters/22-mic-input-fft/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/22-mic-input-fft/quiz/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/22-mic-input-fft/references/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/chapters/23-image-processing-video/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/23-image-processing-video/quiz/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/23-image-processing-video/references/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/chapters/24-generative-typography/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/24-generative-typography/quiz/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/24-generative-typography/references/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/chapters/25-dev-environment-pedagogy/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/25-dev-environment-pedagogy/quiz/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/chapters/25-dev-environment-pedagogy/references/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/img/cover-image-prompt/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/learning-graph/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/learning-graph/book-metrics/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/learning-graph/chapter-metrics/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/learning-graph/concept-list/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/learning-graph/concept-taxonomy/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/learning-graph/concept-to-microsim-plan/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/learning-graph/course-description-assessment/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/learning-graph/faq-coverage-gaps/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/learning-graph/faq-quality-report/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/learning-graph/glossary-quality-report/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/learning-graph/mascot-test/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/learning-graph/microsim-specifications/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/learning-graph/quality-metrics/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/learning-graph/quiz-generation-report/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/learning-graph/taxonomy-distribution/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/learning-graph/prompts/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/learning-graph/prompts/concept-microsim-prob/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/sims/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/3d-coordinate-system/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/sims/3d-scene-editor/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/additive-color-mixer/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/sims/algorithm-visualizer/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/arc-angle-explorer/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/array-methods-visualizer/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/async-data-fetcher/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/sims/audio-visualizer-lab/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/beat-detector-system/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/bezier-sandbox/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/sims/canvas-inspector/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/sims/color-mixer/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/coordinate-system-explorer/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/cors-blockage-visualization/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/sims/data-flow-debugger/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/sims/dev-environment-simulator/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/device-orientation-maze/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/dom-layout-explorer/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/exploring-shaders/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/sims/fft-mic/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/flow-field-visualizer/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/frame-rate-monitor/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/sims/graph-viewer/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/sims/harmonic-oscillator/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/interactive-filter-studio/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/interactive-filter-sweep-on-noise/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/interactive-flocking-fireworks/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/interactive-image-gallery-filter/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/interactive-map-panning-and-zooming/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/sims/interactive-sandbox/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/interactive-wave-maker-laboratory/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/kinetic-text-to-points/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/sims/kinetic-typography-engine/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/mouse-speed-tracker/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/multi-touch-canvas/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/nested-grid-explorer/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/orbital-mechanics-simulator/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/sims/particle-physics-engine/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/sims/pedagogical-pattern-matcher/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/perlin-noise-terrain-generation/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/pivot-point-selection/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/sims/pixel-processing-pipeline/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/polar-radar-sweeper/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/random-walk-simulation/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/real-time-asciify-camera/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/responsive-dashboard-builder/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/sims/robot-arm-kinematics/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/scope-misconception-visualizer/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/scope-visualizer/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/sims/shape-builder/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/shape-explorer-turntable/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/shopping-cart-acceleration/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/spectrum-analyzer/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/stage-lighting-setup/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/stochastic-l-system-tree/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/sims/synthesizer-board/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/sims/terrain-generator/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/text-formatting-basics/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/the-callback-kitchen/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/the-color-compass/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/the-generative-art-mixing-desk/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/the-great-easing-race/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/the-interactive-array-train/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/the-logic-gate-switchboard/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/the-magnifying-glass-array-translator/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/the-object-factory/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/the-solar-system-hierarchy/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/p5-textbook/sims/ui-component-playground/</loc>
-         <lastmod>2026-08-20</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/vector-dot-product-visualizer/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/water-hose-particle-emitter/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/p5-textbook/sims/waveform-visualizer-hearer/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
 </urlset>

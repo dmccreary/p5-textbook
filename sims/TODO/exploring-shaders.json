@@ -1,0 +1,15 @@
+{
+  "sim_id": "exploring-shaders",
+  "diagram_name": "Exploring Shaders",
+  "chapter_number": 20,
+  "chapter_title": "3D Cameras Shaders",
+  "chapter_dir": "20-3d-cameras-shaders",
+  "chapter_rel_dir": "chapters/20-3d-cameras-shaders",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>MicroSim: Exploring Shaders</summary>\n\n**Goal**: Demonstrate the power of GLSL shaders for real-time visual effects.\n\n**UI Elements**:\n- A file upload button for Load Shader p5 Files.\n- Sliders mapped to Shader Uniform Variables (e.g., time, mouse position, color tint).\n- A toggle switch to switch between a Fragment Shader Filter and a Vertex Shader Displacement.\n\n**Behavior**:\n- The canvas displays a 3D plane or sphere.\n- When the user uploads a valid shader, it's applied to the geometry.\n- Adjusting the uniform sliders alters the visual output of the shader in real-time, demonstrating how the p5.js sketch communicates with the GPU."
+}

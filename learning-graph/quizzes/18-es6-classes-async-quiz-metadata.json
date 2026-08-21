@@ -1,0 +1,185 @@
+{
+  "chapter": "ES6 Classes, Object-Oriented Programming & Async Data",
+  "chapter_num": 18,
+  "chapter_id": "18-es6-classes-async",
+  "chapter_file": "docs/chapters/18-es6-classes-async/index.md",
+  "quiz_file": "docs/chapters/18-es6-classes-async/quiz.md",
+  "generated_date": "2026-08-20",
+  "total_questions": 10,
+  "answer_distribution": {
+    "A": 2,
+    "B": 3,
+    "C": 3,
+    "D": 2
+  },
+  "bloom_distribution": {
+    "Remember": 6,
+    "Understand": 2,
+    "Apply": 1,
+    "Analyze": 1,
+    "Evaluate": 0,
+    "Create": 0
+  },
+  "questions": [
+    {
+      "id": "ch18-q001",
+      "number": 1,
+      "question_text": "Which special method is automatically executed when a new object instance is created with `new MyClass()`?",
+      "options": {
+        "A": "constructor()",
+        "B": "init()",
+        "C": "create()",
+        "D": "setup()"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Remember",
+      "concept_tested": "Class Constructor Method",
+      "explanation": "The correct answer is **A**. The `constructor()` method is a special method for creating and initializing an object instance created with a `class`. Options B, C, and D are not the standard ES6 constructor keyword.",
+      "explanation_word_count": 35
+    },
+    {
+      "id": "ch18-q002",
+      "number": 2,
+      "question_text": "What keyword is used inside a class method to refer to the current object instance and its properties?",
+      "options": {
+        "A": "this",
+        "B": "self",
+        "C": "me",
+        "D": "instance"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Remember",
+      "concept_tested": "This Instance Keyword",
+      "explanation": "The correct answer is **A**. In JavaScript classes, `this` refers to the specific instance of the class being created or operated upon. Options B, C, and D are used in other programming languages (like Python) but not JavaScript.",
+      "explanation_word_count": 38
+    },
+    {
+      "id": "ch18-q003",
+      "number": 3,
+      "question_text": "How does a child subclass inherit methods and properties from a parent superclass in ES6?",
+      "options": {
+        "A": "class Car inherits Vehicle",
+        "B": "class Car extends Vehicle",
+        "C": "class Car implements Vehicle",
+        "D": "class Car derivedFrom Vehicle"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Remember",
+      "concept_tested": "Class Inheritance Extends",
+      "explanation": "The correct answer is **B**. The `extends` keyword is used in class declarations to create a class that is a child of another class. Options B, C, and D are invalid keywords in JavaScript class syntax.",
+      "explanation_word_count": 36
+    },
+    {
+      "id": "ch18-q004",
+      "number": 4,
+      "question_text": "What function must be called inside a derived subclass constructor before accessing `this`?",
+      "options": {
+        "A": "parent()",
+        "B": "super()",
+        "C": "base()",
+        "D": "inherit()"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Remember",
+      "concept_tested": "Super Constructor Call",
+      "explanation": "The correct answer is **B**. In derived classes, `super()` must be called before using `this` to invoke the parent superclass constructor and initialize inherited properties. Options B, C, and D are incorrect.",
+      "explanation_word_count": 32
+    },
+    {
+      "id": "ch18-q005",
+      "number": 5,
+      "question_text": "What does the `async` keyword placed before a function declaration signify?",
+      "options": {
+        "A": "The function executes in a separate Web Worker thread on the GPU",
+        "B": "The function operates asynchronously and automatically returns a Promise",
+        "C": "The function runs in an infinite background loop",
+        "D": "The function blocks the main UI thread until finished"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Understand",
+      "concept_tested": "Async Function Promise",
+      "explanation": "The correct answer is **B**. An `async` function always returns a Promise. Inside an `async` function, the `await` keyword can pause execution until a Promise settles without blocking the browser. Options B, C, and D are incorrect.",
+      "explanation_word_count": 37
+    },
+    {
+      "id": "ch18-q006",
+      "number": 6,
+      "question_text": "How do you asynchronously load and parse JSON data from an external web API using modern `async/await`?",
+      "options": {
+        "A": "const data = fetch(url).parse();",
+        "B": "const data = loadJSONSync(url);",
+        "C": "const res = await fetch(url); const data = await res.json();",
+        "D": "const res = http.get(url); const data = res.body;"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Apply",
+      "concept_tested": "Async Await Fetch JSON",
+      "explanation": "The correct answer is **C**. Modern JavaScript fetches network resources using `await fetch(url)` followed by `await res.json()` to parse the response payload into a JavaScript object. Options B, C, and D are invalid or outdated syntax.",
+      "explanation_word_count": 36
+    },
+    {
+      "id": "ch18-q007",
+      "number": 7,
+      "question_text": "Which ES6 feature unpacks properties from an object into distinct variables (e.g. `const { x, y } = particle;`)?",
+      "options": {
+        "A": "Variable Hoisting",
+        "B": "Array Slicing",
+        "C": "Object Destructuring",
+        "D": "Spread Syntax"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Remember",
+      "concept_tested": "Object Destructuring Syntax",
+      "explanation": "The correct answer is **C**. Object destructuring is a JavaScript expression that makes it possible to unpack properties from objects into distinct variables concisely. Options B, C, and D refer to other language features.",
+      "explanation_word_count": 34
+    },
+    {
+      "id": "ch18-q008",
+      "number": 8,
+      "question_text": "What does the Array method `.map()` return?",
+      "options": {
+        "A": "The filtered subset of items matching a predicate",
+        "B": "A single accumulated scalar value",
+        "C": "A new array containing the results of calling a provided function on every element in the calling array",
+        "D": "An integer index of the first match"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Understand",
+      "concept_tested": "Array Map Higher Order",
+      "explanation": "The correct answer is **C**. `.map()` transforms an array by applying a callback to each item, returning a brand-new array of equal length with the transformed values. Option B describes `.reduce()`. Option C describes `.filter()`. Option D describes `.findIndex()`.",
+      "explanation_word_count": 39
+    },
+    {
+      "id": "ch18-q009",
+      "number": 9,
+      "question_text": "Why is using `try...catch` blocks essential when fetching asynchronous external data across the internet?",
+      "options": {
+        "A": "To prevent the browser from caching requests",
+        "B": "To speed up network download bandwidth",
+        "C": "To bypass cross-origin CORS security policies",
+        "D": "To gracefully handle network dropouts, HTTP errors (404/500), or invalid JSON parsing without crashing the application"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Analyze",
+      "concept_tested": "Try Catch Async Error Handling",
+      "explanation": "The correct answer is **D**. Network requests can fail due to offline status, server outages, or corrupt payloads. Wrapping asynchronous calls in `try...catch` blocks catches runtime exceptions and allows fallback behavior. Options B, C, and D are false.",
+      "explanation_word_count": 38
+    },
+    {
+      "id": "ch18-q010",
+      "number": 10,
+      "question_text": "Which Array method removes elements that fail a test condition and returns a new array with only the elements that pass?",
+      "options": {
+        "A": ".reduce()",
+        "B": ".map()",
+        "C": ".forEach()",
+        "D": ".filter()"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Remember",
+      "concept_tested": "Array Filter Method",
+      "explanation": "The correct answer is **D**. `.filter()` evaluates a predicate function on every element, returning a new array containing only elements for which the callback returned `true`. Options B, C, and D perform different array operations.",
+      "explanation_word_count": 35
+    }
+  ]
+}

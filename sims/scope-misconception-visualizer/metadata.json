@@ -1,0 +1,23 @@
+{
+  "title": "Scope Misconception Visualizer",
+  "description": "Scope Misconception Visualizer",
+  "creator": "The Art of Processing",
+  "author": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "The Art of Processing"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "scope-misconception-visualizer",
+  "library": "TBD",
+  "bloomLevel": "TBD",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 25,
+  "chapter_title": "Dev Environment Pedagogy",
+  "chapter_dir": "25-dev-environment-pedagogy",
+  "chapter_rel_dir": "chapters/25-dev-environment-pedagogy"
+}

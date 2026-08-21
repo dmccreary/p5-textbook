@@ -1,0 +1,185 @@
+{
+  "chapter": "3D Cameras, Lighting Models, Materials & Shaders",
+  "chapter_num": 20,
+  "chapter_id": "20-3d-cameras-shaders",
+  "chapter_file": "docs/chapters/20-3d-cameras-shaders/index.md",
+  "quiz_file": "docs/chapters/20-3d-cameras-shaders/quiz.md",
+  "generated_date": "2026-08-20",
+  "total_questions": 10,
+  "answer_distribution": {
+    "A": 2,
+    "B": 3,
+    "C": 3,
+    "D": 2
+  },
+  "bloom_distribution": {
+    "Remember": 4,
+    "Understand": 3,
+    "Apply": 2,
+    "Analyze": 1,
+    "Evaluate": 0,
+    "Create": 0
+  },
+  "questions": [
+    {
+      "id": "ch20-q001",
+      "number": 1,
+      "question_text": "Which built-in p5.js function enables interactive 3D camera panning, orbiting, and zooming using mouse drag and scroll wheel?",
+      "options": {
+        "A": "orbitControl()",
+        "B": "cameraControl()",
+        "C": "mouse3D()",
+        "D": "enableOrbit()"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Remember",
+      "concept_tested": "Orbit Control Camera",
+      "explanation": "The correct answer is **A**. `orbitControl()` placed inside `draw()` enables automatic 3D camera navigation: left-click drag orbits, right-click drag pans, and scrolling zooms. Options B, C, and D are not p5.js functions.",
+      "explanation_word_count": 32
+    },
+    {
+      "id": "ch20-q002",
+      "number": 2,
+      "question_text": "What type of light source illuminates all objects uniformly from all directions without casting specific directional shadows?",
+      "options": {
+        "A": "ambientLight(v1, v2, v3)",
+        "B": "directionalLight(v1, v2, v3, x, y, z)",
+        "C": "pointLight(v1, v2, v3, x, y, z)",
+        "D": "spotLight(...)"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Remember",
+      "concept_tested": "Ambient Light Source",
+      "explanation": "The correct answer is **A**. `ambientLight()` casts omnidirectional ambient illumination that lights all surfaces equally, preventing completely black unlit shadows. Options B, C, and D are directional/positioned lights.",
+      "explanation_word_count": 28
+    },
+    {
+      "id": "ch20-q003",
+      "number": 3,
+      "question_text": "What type of light source emits light rays in parallel from an infinitely distant source (like the Sun)?",
+      "options": {
+        "A": "pointLight(color, positionVector)",
+        "B": "directionalLight(color, directionVector)",
+        "C": "ambientLight(color)",
+        "D": "spotLight(color, position, direction)"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Remember",
+      "concept_tested": "Directional Light Source",
+      "explanation": "The correct answer is **B**. `directionalLight()` simulates light rays traveling in parallel from a given direction vector, like sunlight. `pointLight()` emits outward radially from a specific 3D location. Options C and D differ.",
+      "explanation_word_count": 33
+    },
+    {
+      "id": "ch20-q004",
+      "number": 4,
+      "question_text": "Which material shader displays surface normal vectors mapped directly to RGB colors without requiring external lights?",
+      "options": {
+        "A": "basicMaterial()",
+        "B": "normalMaterial()",
+        "C": "specularMaterial()",
+        "D": "ambientMaterial()"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Remember",
+      "concept_tested": "Normal Material Shading",
+      "explanation": "The correct answer is **B**. `normalMaterial()` colors each face based on its normal vector (X=Red, Y=Green, Z=Blue), useful for debugging 3D geometry. Options B, C, and D require lights or show flat colors.",
+      "explanation_word_count": 33
+    },
+    {
+      "id": "ch20-q005",
+      "number": 5,
+      "question_text": "What material type reflects shiny specular highlights from point, directional, or spot lights?",
+      "options": {
+        "A": "basicMaterial(color)",
+        "B": "specularMaterial(color)",
+        "C": "normalMaterial()",
+        "D": "emissiveMaterial(color)"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Understand",
+      "concept_tested": "Specular Material Highlights",
+      "explanation": "The correct answer is **B**. `specularMaterial()` models shiny surfaces (like polished metal or plastic) with sharp specular reflection highlights calculated from light angles. `basicMaterial()` is unlit. `normalMaterial()` is unlit normal colors.",
+      "explanation_word_count": 31
+    },
+    {
+      "id": "ch20-q006",
+      "number": 6,
+      "question_text": "What is the primary function of a Vertex Shader in the WebGL graphics pipeline?",
+      "options": {
+        "A": "To compress 3D model files into ZIP archives",
+        "B": "To calculate the final RGBA color of individual screen pixels (fragments)",
+        "C": "To calculate the 3D screen space positions and transformations of geometry vertices",
+        "D": "To simulate audio frequencies on the sound card"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Understand",
+      "concept_tested": "Vertex Shader Role",
+      "explanation": "The correct answer is **C**. The Vertex Shader executes once per vertex to transform 3D model coordinates through model, view, and projection matrices into clip space. Option B describes the Fragment Shader. Options C and D are unrelated.",
+      "explanation_word_count": 38
+    },
+    {
+      "id": "ch20-q007",
+      "number": 7,
+      "question_text": "What is the primary function of a Fragment (Pixel) Shader in the WebGL graphics pipeline?",
+      "options": {
+        "A": "To move the mouse cursor across the canvas",
+        "B": "To calculate the physical mass of 3D objects",
+        "C": "To compute the final color, lighting, texture mapping, and transparency for every rasterized pixel fragment",
+        "D": "To load 3D OBJ files from disk"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Understand",
+      "concept_tested": "Fragment Shader Role",
+      "explanation": "The correct answer is **C**. The Fragment (or Pixel) Shader runs on the GPU for every single pixel covered by a polygon, computing lighting formulas, procedural patterns, and texture colors. Options B, C, and D are false.",
+      "explanation_word_count": 37
+    },
+    {
+      "id": "ch20-q008",
+      "number": 8,
+      "question_text": "Which p5.js function loads external GLSL vertex and fragment shader files in `preload()`?",
+      "options": {
+        "A": "compileShader(vertFile, fragFile)",
+        "B": "createShader(vertCode, fragCode)",
+        "C": "loadShader('vertPath.vert', 'fragPath.frag')",
+        "D": "importShader(shaderName)"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Apply",
+      "concept_tested": "Load Shader Function",
+      "explanation": "The correct answer is **C**. `loadShader(vertFilename, fragFilename)` loads external GLSL shader source files during `preload()`. `createShader()` compiles raw string code. Options C and D are not p5.js functions.",
+      "explanation_word_count": 28
+    },
+    {
+      "id": "ch20-q009",
+      "number": 9,
+      "question_text": "How do you pass a variable (such as `time` or `resolution`) from JavaScript into a custom GLSL shader program?",
+      "options": {
+        "A": "myShader.setGlobal('time', millis());",
+        "B": "myShader.passVariable('time', millis());",
+        "C": "myShader.bindAttribute('time', millis());",
+        "D": "myShader.setUniform('u_time', millis() / 1000.0);"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Apply",
+      "concept_tested": "Shader Uniform Passing",
+      "explanation": "The correct answer is **D**. Shader uniforms are read-only constants passed from CPU JavaScript to GPU shaders using `shader.setUniform('uniformName', value)`. Options B, C, and D are invalid method names.",
+      "explanation_word_count": 29
+    },
+    {
+      "id": "ch20-q010",
+      "number": 10,
+      "question_text": "Why are GPU shaders capable of rendering complex mathematical patterns (like fractals or raymarching) thousands of times faster than CPU JavaScript loops?",
+      "options": {
+        "A": "GPUs do not use floating-point math",
+        "B": "GPUs have more RAM than CPUs",
+        "C": "Shaders run without electricity",
+        "D": "The GPU features thousands of parallel arithmetic cores designed to evaluate shader math on every pixel simultaneously"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Analyze",
+      "concept_tested": "GPU Massive Parallelism",
+      "explanation": "The correct answer is **D**. GPUs achieve extreme rendering speed through massive SIMD (Single Instruction, Multiple Data) parallelism, running fragment shader calculations across millions of pixels concurrently. Options B, C, and D are incorrect.",
+      "explanation_word_count": 34
+    }
+  ]
+}

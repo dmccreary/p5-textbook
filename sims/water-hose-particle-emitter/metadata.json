@@ -1,0 +1,23 @@
+{
+  "title": "Water Hose Particle Emitter",
+  "description": "Water Hose Particle Emitter",
+  "creator": "The Art of Processing",
+  "author": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "The Art of Processing"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "water-hose-particle-emitter",
+  "library": "TBD",
+  "bloomLevel": "TBD",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 12,
+  "chapter_title": "Particle Systems",
+  "chapter_dir": "12-particle-systems",
+  "chapter_rel_dir": "chapters/12-particle-systems"
+}

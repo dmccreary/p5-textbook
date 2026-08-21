@@ -1,0 +1,15 @@
+{
+  "sim_id": "multi-touch-canvas",
+  "diagram_name": "Multi-Touch Canvas",
+  "chapter_number": 14,
+  "chapter_title": "Touch Mobile Sensors",
+  "chapter_dir": "14-touch-mobile-sensors",
+  "chapter_rel_dir": "chapters/14-touch-mobile-sensors",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>MicroSim: Multi-Touch Canvas</summary>\n**Goal:** Create a simple drawing canvas that supports drawing with up to 5 fingers simultaneously.\n**Features:**\n- A blank canvas that clears on a double-tap.\n- A `for` loop that iterates through the `touches` array.\n- Drawing a different colored circle for each active touch point based on its index in the array.\n- Uses `touchMoved()` to prevent default scrolling behavior by returning `false`."
+}

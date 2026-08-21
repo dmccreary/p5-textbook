@@ -1,0 +1,15 @@
+{
+  "sim_id": "async-data-fetcher",
+  "diagram_name": "Async Data Fetcher",
+  "chapter_number": 18,
+  "chapter_title": "Es6 Classes Async",
+  "chapter_dir": "18-es6-classes-async",
+  "chapter_rel_dir": "chapters/18-es6-classes-async",
+  "library": null,
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-08-20",
+  "specification": "<summary>MicroSim: Async Data Fetcher</summary>\nAn interactive MicroSim where students can click a button to initiate a `fetch()` request.\n1. A visual timeline shows the request leaving the client and traveling to a server.\n2. The user must wait (simulating network latency).\n3. The server responds with JSON data.\n4. The simulation visually demonstrates `JSON.parse` turning the string response into a colorful visual object on the screen.\n5. If the user clicks \"Force Error\", the simulation demonstrates `try/catch` catching the network failure."
+}

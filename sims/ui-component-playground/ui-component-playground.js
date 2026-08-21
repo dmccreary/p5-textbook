@@ -14,6 +14,46 @@ let canvas;
 let wrapper;
 let controls = [];
 
+function updateLayout() {
+  let canvasW = windowWidth - 2; // wrapper border
+  if (canvasW < 400) canvasW = 400;
+  
+  wrapper.style('width', canvasW + 'px');
+  resizeCanvas(canvasW, 580);
+  
+
+  // Update max bounds of sliders
+  if (xSlider) {
+    xSlider.elt.max = canvasW - 20;
+  }
+
+  // Arrange controls at the bottom, perhaps in 2 rows
+  let row1Y = 460;
+  let row2Y = 520;
+  let col1X = 20;
+  let col2X = 220;
+  let col3X = 420;
+  
+  typeSelect.position(col1X, row1Y);
+  xSlider.position(col2X, row1Y);
+  ySlider.position(col3X, row1Y);
+  
+  styleInput.position(col1X, row2Y);
+  parentToggle.position(col3X, row2Y);
+  
+  // Update controls labels array with their new positions for draw()
+  controls[0].el.x = col1X; controls[0].el.y = row1Y;
+  controls[1].el.x = col2X; controls[1].el.y = row1Y;
+  controls[2].el.x = col3X; controls[2].el.y = row1Y;
+  controls[3].el.x = col1X; controls[3].el.y = row2Y;
+  controls[4].el.x = col3X; controls[4].el.y = row2Y;
+}
+
+
+function windowResized() {
+  updateLayout();
+}
+
 function setup() {
   let mainEl = select('main');
   if (!mainEl) {
@@ -23,25 +63,20 @@ function setup() {
 
   // Create a wrapper with margin to demonstrate positioning context
   wrapper = createDiv();
-  wrapper.style('margin', '40px 0 0 40px'); 
+  wrapper.style('margin', '0'); 
   wrapper.style('position', 'relative');
-  wrapper.style('width', '720px');
-  wrapper.style('height', '420px');
-  wrapper.style('background-color', '#f8f9fa');
+  wrapper.style('width', '100%');
+  wrapper.style('height', '580px');
+  wrapper.style('background-color', '#ffffff');
   wrapper.style('border', '1px solid #dee2e6');
   wrapper.style('box-shadow', '0 4px 6px rgba(0,0,0,0.1)');
   wrapper.parent(mainEl);
 
-  canvas = createCanvas(720, 420);
+  canvas = createCanvas(windowWidth - 2, 580);
   canvas.parent(wrapper);
-  
-  let controlX = 500;
-  let startY = 60;
-  let spacing = 65;
   
   typeSelect = createSelect();
   typeSelect.parent(wrapper);
-  typeSelect.position(controlX, startY);
   typeSelect.option('Button');
   typeSelect.option('Slider');
   typeSelect.option('Text Input');
@@ -50,52 +85,43 @@ function setup() {
   typeSelect.changed(createNewTarget);
   controls.push({el: typeSelect, label: 'DOM Element Type'});
   
-  xSlider = createSlider(0, 480, 100);
+  xSlider = createSlider(0, 800, 100);
   xSlider.parent(wrapper);
-  xSlider.position(controlX, startY + spacing);
   controls.push({el: xSlider, label: 'X Position (relative to parent)'});
   
   ySlider = createSlider(0, 400, 100);
   ySlider.parent(wrapper);
-  ySlider.position(controlX, startY + spacing * 2);
   controls.push({el: ySlider, label: 'Y Position (relative to parent)'});
   
   styleInput = createInput('background: #ffcc00; padding: 10px; border-radius: 8px;');
   styleInput.parent(wrapper);
-  styleInput.position(controlX, startY + spacing * 3);
-  styleInput.size(180);
+  styleInput.size(360);
   styleInput.input(updateStyle);
   controls.push({el: styleInput, label: 'CSS Style Injector'});
   
   parentToggle = createCheckbox(' Parent to Canvas Wrapper', true);
   parentToggle.parent(wrapper);
-  parentToggle.position(controlX, startY + spacing * 4);
   parentToggle.changed(updateParent);
   controls.push({el: parentToggle, label: 'DOM Hierarchy'});
   
   createNewTarget();
+  updateLayout();
 }
 
 function draw() {
-  background(255);
+  background('#F0F8FF');
   
   // Draw layout boundary for target area vs controls
   noStroke();
-  fill(245);
-  rect(480, 0, 240, height);
+  fill(255);
+  rect(0, 420, width, height - 420);
   
   stroke(200);
   strokeWeight(2);
-  line(480, 0, 480, height);
-  
-  // Title
-  fill(0);
-  noStroke();
-  textAlign(LEFT, TOP);
-  textSize(20);
-  text("Control Panel", 500, 15);
+  line(0, 420, width, 420);
   
   // Draw labels for controls
+  noStroke();
   textSize(12);
   fill(50);
   for (let c of controls) {
@@ -109,10 +135,20 @@ function draw() {
   noStroke();
   textAlign(CENTER, CENTER);
   textSize(24);
-  text("Canvas Area\n(0, 0) is top-left of this box", 240, height/2);
+  text("Canvas Area\n(0, 0) is top-left of this box", width/2, 210);
+  
+  // Add a centered title at the top
+  fill(50);
+  textAlign(CENTER, TOP);
+  textSize(22);
+  textStyle(BOLD);
+  text("UI Component Playground", width/2, 15);
+  textStyle(NORMAL);
   
   // Update Target Element Position
   if (targetElement) {
+    // If not parented to wrapper, adjust position to appear on canvas visually? 
+    // Actually the logic just sets position to slider value.
     targetElement.position(xSlider.value(), ySlider.value());
   }
   
@@ -120,16 +156,19 @@ function draw() {
   let tx = xSlider.value();
   let ty = ySlider.value();
   
-  stroke(255, 0, 0, 150);
-  strokeWeight(2);
-  line(tx - 15, ty, tx + 15, ty);
-  line(tx, ty - 15, tx, ty + 15);
-  
-  noStroke();
-  fill(255, 0, 0);
-  textAlign(LEFT, TOP);
-  textSize(12);
-  text(`(${tx}, ${ty})`, tx + 5, ty - 5);
+  // Only draw crosshair if it's within the canvas area
+  if (ty <= 420) {
+    stroke(255, 0, 0, 150);
+    strokeWeight(2);
+    line(tx - 15, ty, tx + 15, ty);
+    line(tx, ty - 15, tx, ty + 15);
+    
+    noStroke();
+    fill(255, 0, 0);
+    textAlign(LEFT, TOP);
+    textSize(12);
+    text(`(${tx}, ${ty})`, tx + 5, ty - 5);
+  }
 }
 
 function createNewTarget() {

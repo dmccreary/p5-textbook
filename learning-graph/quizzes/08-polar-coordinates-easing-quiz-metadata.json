@@ -1,0 +1,185 @@
+{
+  "chapter": "Polar Coordinates, Oscillation & Easing",
+  "chapter_num": 8,
+  "chapter_id": "08-polar-coordinates-easing",
+  "chapter_file": "docs/chapters/08-polar-coordinates-easing/index.md",
+  "quiz_file": "docs/chapters/08-polar-coordinates-easing/quiz.md",
+  "generated_date": "2026-08-20",
+  "total_questions": 10,
+  "answer_distribution": {
+    "A": 2,
+    "B": 3,
+    "C": 3,
+    "D": 2
+  },
+  "bloom_distribution": {
+    "Remember": 3,
+    "Understand": 3,
+    "Apply": 3,
+    "Analyze": 1,
+    "Evaluate": 0,
+    "Create": 0
+  },
+  "questions": [
+    {
+      "id": "ch08-q001",
+      "number": 1,
+      "question_text": "What does the `lerp(start, stop, amt)` function compute?",
+      "options": {
+        "A": "Linear interpolation between two values based on a percentage amount (0.0 to 1.0)",
+        "B": "The trigonometric tangent of an angle",
+        "C": "The Euclidean distance between two points",
+        "D": "The maximum of two integers"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Remember",
+      "concept_tested": "Linear Interpolation Lerp",
+      "explanation": "The correct answer is **A**. `lerp(a, b, amt)` calculates a number between `a` and `b` at normalized progression `amt` (where 0.0 is `a` and 1.0 is `b`). Options A, C, and D describe other mathematical operations.",
+      "explanation_word_count": 36
+    },
+    {
+      "id": "ch08-q002",
+      "number": 2,
+      "question_text": "Which function calculates the straight-line Euclidean distance between two points `(x1, y1)` and `(x2, y2)` in p5.js?",
+      "options": {
+        "A": "dist(x1, y1, x2, y2)",
+        "B": "mag()",
+        "C": "diff(x1, y1, x2, y2)",
+        "D": "length()"
+      },
+      "correct_answer": "A",
+      "bloom_level": "Remember",
+      "concept_tested": "Distance Formula Dist",
+      "explanation": "The correct answer is **A**. `dist(x1, y1, x2, y2)` uses the Pythagorean theorem `sqrt((x2-x1)^2 + (y2-y1)^2)` to calculate Euclidean distance between two 2D coordinates. Options A, C, and D are incorrect function signatures.",
+      "explanation_word_count": 33
+    },
+    {
+      "id": "ch08-q003",
+      "number": 3,
+      "question_text": "What type of curve is generated when radius `r` increases proportionally as angle `theta` increases in polar coordinates (`r = a * theta`)?",
+      "options": {
+        "A": "Parabola",
+        "B": "Archimedean spiral",
+        "C": "Sine wave",
+        "D": "Hyperbola"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Understand",
+      "concept_tested": "Archimedean Spiral",
+      "explanation": "The correct answer is **B**. An Archimedean spiral is formed when the radius grows linearly as the angle sweeps around the origin. Options B, C, and D are non-spiral geometric forms.",
+      "explanation_word_count": 31
+    },
+    {
+      "id": "ch08-q004",
+      "number": 4,
+      "question_text": "To create smooth 'easing' where a circle lags behind and glides toward `mouseX`, which code snippet is placed in `draw()`?",
+      "options": {
+        "A": "x = mouseX;",
+        "B": "x += (mouseX - x) * 0.05;",
+        "C": "x = lerp(x, 0, 0.05);",
+        "D": "x += mouseX * 0.05;"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Apply",
+      "concept_tested": "Easing Interpolation",
+      "explanation": "The correct answer is **B**. Adding a fraction of the distance between current position and target (`x += (target - x) * easing`) creates an exponential ease-out curve where motion is fast initially and decelerates smoothly as it nears the target. Options B, C, and D do not create smooth target tracking.",
+      "explanation_word_count": 52
+    },
+    {
+      "id": "ch08-q005",
+      "number": 5,
+      "question_text": "Which p5.js function restricts a numeric value to remain between a minimum and maximum boundary?",
+      "options": {
+        "A": "clamp(val, min, max)",
+        "B": "constrain(val, min, max)",
+        "C": "limit(val, min, max)",
+        "D": "bound(val, min, max)"
+      },
+      "correct_answer": "B",
+      "bloom_level": "Remember",
+      "concept_tested": "Constrain Value Function",
+      "explanation": "The correct answer is **B**. `constrain(val, min, max)` clamps a value so that if it is lower than `min` it returns `min`, and if higher than `max` it returns `max`. Options B, C, and D are not built-in p5.js functions.",
+      "explanation_word_count": 40
+    },
+    {
+      "id": "ch08-q006",
+      "number": 6,
+      "question_text": "Why is checking squared distance `(dx*dx + dy*dy < r*r)` preferred in high-performance particle collision loops over calling `dist()`?",
+      "options": {
+        "A": "dist() only works in 3D WebGL mode",
+        "B": "Squared distance automatically sorts the particles",
+        "C": "It avoids the computationally expensive square root calculation (Math.sqrt)",
+        "D": "dist() allocates extra heap memory on every call"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Analyze",
+      "concept_tested": "Square Distance Metric",
+      "explanation": "The correct answer is **C**. Calculating `dist()` requires `sqrt()`, which is relatively expensive when repeated across thousands of particle pairs per frame. Comparing `dx*dx + dy*dy` against `(r1+r2)*(r1+r2)` gives the identical collision boolean result without calculating square roots. Options B, C, and D are incorrect.",
+      "explanation_word_count": 45
+    },
+    {
+      "id": "ch08-q007",
+      "number": 7,
+      "question_text": "What value does `norm(value, low, high)` return if `value = 150`, `low = 100`, and `high = 200`?",
+      "options": {
+        "A": "50",
+        "B": "1.5",
+        "C": "0.5",
+        "D": "0.25"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Apply",
+      "concept_tested": "Normalize Function Norm",
+      "explanation": "The correct answer is **C**. `norm(val, low, high)` maps a value in `[low, high]` to the normalized range `[0.0, 1.0]`. Since 150 is halfway between 100 and 200, `norm` returns 0.5. Options B, C, and D are incorrect calculations.",
+      "explanation_word_count": 39
+    },
+    {
+      "id": "ch08-q008",
+      "number": 8,
+      "question_text": "What does the `map(value, start1, stop1, start2, stop2)` function do?",
+      "options": {
+        "A": "It downloads a geographic map from Google Maps",
+        "B": "It iterates through an array like Array.prototype.map",
+        "C": "It re-maps a number from an incoming source range to a target destination range",
+        "D": "It renders an image texture onto a 3D plane"
+      },
+      "correct_answer": "C",
+      "bloom_level": "Understand",
+      "concept_tested": "Map Function",
+      "explanation": "The correct answer is **C**. `map()` linearly scales a value from one domain `[start1, stop1]` to a new range `[start2, stop2]`. For example, `map(mouseX, 0, width, 0, 255)` maps screen position to RGB color range. Options A, C, and D confuse this with other mapping concepts.",
+      "explanation_word_count": 46
+    },
+    {
+      "id": "ch08-q009",
+      "number": 9,
+      "question_text": "In a polar coordinate system, what happens to the rendered point if the radius `r` is set to a constant value while angle `theta` sweeps from `0` to `TWO_PI`?",
+      "options": {
+        "A": "It draws a square boundary",
+        "B": "It draws an outward straight line",
+        "C": "It draws a parabola",
+        "D": "It draws a perfect circle around the origin"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Understand",
+      "concept_tested": "Polar Circle Geometry",
+      "explanation": "The correct answer is **D**. Keeping radius constant while angle sweeps from 0 to 2*PI traces a circle of radius `r` centered at the origin. Options B, C, and D are incorrect.",
+      "explanation_word_count": 32
+    },
+    {
+      "id": "ch08-q010",
+      "number": 10,
+      "question_text": "A developer applies `x = lerp(x, targetX, 0.1);` on each frame. If `targetX = 100` and `x` starts at `0`, what is the value of `x` after the first frame?",
+      "options": {
+        "A": "100",
+        "B": "1",
+        "C": "90",
+        "D": "10"
+      },
+      "correct_answer": "D",
+      "bloom_level": "Apply",
+      "concept_tested": "Lerp Calculation Step",
+      "explanation": "The correct answer is **D**. `lerp(0, 100, 0.1)` computes `0 + (100 - 0) * 0.1 = 10`. On the second frame `x` would become `10 + (100 - 10) * 0.1 = 19`. Options B, C, and D are incorrect.",
+      "explanation_word_count": 41
+    }
+  ]
+}

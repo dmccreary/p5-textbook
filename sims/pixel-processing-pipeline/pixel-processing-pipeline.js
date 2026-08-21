@@ -34,7 +34,16 @@ let lastFilterType = '';
 let lastThreshold = -1;
 let lastMatrixStr = '';
 
+function windowResized() {
+  canvasW = windowWidth;
+  resizeCanvas(canvasW, canvasH);
+  if (uiDiv) {
+    uiDiv.style('width', canvasW - 20 + 'px');
+  }
+}
+
 function setup() {
+  canvasW = windowWidth;
   let canvas = createCanvas(canvasW, canvasH);
   canvas.parent(document.querySelector('main'));
   
@@ -87,9 +96,9 @@ function createSampleImage() {
 
 function setupUI() {
   uiDiv = createDiv('');
-  uiDiv.position(20, 20);
-  uiDiv.style('width', '250px');
-  uiDiv.style('background', '#ffffff');
+  uiDiv.position(20, 70);
+  uiDiv.style('width', '200px');
+  uiDiv.style('background', 'aliceblue');
   uiDiv.style('padding', '15px');
   uiDiv.style('border', '1px solid #ddd');
   uiDiv.style('border-radius', '8px');
@@ -317,7 +326,19 @@ function applyConvolution(img, kMatrix) {
 }
 
 function draw() {
-  background(245);
+  background('aliceblue');
+
+
+  // Draw Title
+
+  fill('black');
+  noStroke();
+  textAlign(CENTER, TOP);
+  textSize(22);
+  textStyle(BOLD);
+  text("Pixel Processing Pipeline", width / 2, 10);
+
+
   
   let sourceImg;
   if (mediaSelect.value() === 'Sample Image') {
@@ -348,40 +369,42 @@ function draw() {
     textStyle(BOLD);
     
     // Top row thumbnails (Original and Processed side by side)
-    let thumbW = 220;
-    let thumbH = 165;
+    let startX = 290;
+    let availableW = width - startX - 20;
+    if (availableW < 200) availableW = 200;
     
-    text("Original Input", 310 + thumbW/2, 40);
-    image(sourceImg, 310, 50, thumbW, thumbH);
+    let thumbW = availableW / 2 - 10;
+    let thumbH = thumbW * 0.75;
     
-    text("Filtered Output", 550 + thumbW/2, 40);
-    image(processedImg, 550, 50, thumbW, thumbH);
+    let img1X = startX;
+    let img2X = startX + thumbW + 20;
+    
+    noStroke();
+    text("Original Input", img1X + thumbW/2, 60);
+    image(sourceImg, img1X, 80, thumbW, thumbH);
+    
+    text("Filtered Output", img2X + thumbW/2, 60);
+    image(processedImg, img2X, 80, thumbW, thumbH);
     
     // Main preview (Blended)
-    let mainW = 460;
-    let mainH = 345;
+    let mainW = availableW;
+    let mainH = mainW * 0.75;
+    let mainY = 90 + thumbH + 50;
     
-    text("Blended Result", 310 + mainW/2, 250);
+    text("Blended Result", startX + mainW/2, mainY - 30);
     
     push();
-    translate(310, 260);
-    // Draw base (Original)
-    image(sourceImg, 0, 0, mainW, mainH);
-    
-    // Draw overlay (Processed) with blend mode
-    blendMode(bMode);
-    image(processedImg, 0, 0, mainW, mainH);
+      translate(startX, mainY);
+      // Draw base (Original)
+      image(sourceImg, 0, 0, mainW, mainH);
+      
+      // Draw overlay (Processed) with blend mode
+      blendMode(bMode);
+      image(processedImg, 0, 0, mainW, mainH);
     pop();
     
     // Reset blend mode for future text/UI rendering
     blendMode(BLEND);
     
-    // Draw borders around images
-    noFill();
-    stroke(200);
-    strokeWeight(1);
-    rect(310, 50, thumbW, thumbH);
-    rect(550, 50, thumbW, thumbH);
-    rect(310, 260, mainW, mainH);
   }
 }

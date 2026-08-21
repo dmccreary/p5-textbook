@@ -1,0 +1,21 @@
+{
+  "title": "Array Methods Visualizer",
+  "description": "Interactively step through functional array methods including map(), filter(), reduce(), and find() with visual memory transformations.",
+  "creator": "Dan McCreary",
+  "date": "2026-08-20",
+  "subject": [
+    "Array Methods Visualizer",
+    "p5.js",
+    "Creative Coding",
+    "Interactive Simulation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "sim_id": "array-methods-visualizer",
+  "canvasHeight": 515,
+  "bloom_level": "Apply",
+  "learning_objective": "Students will visualize how higher-order JavaScript array methods transform collections immutably or accumulate single values.",
+  "chapter_dir": "18-es6-classes-async"
+}
