@@ -1,7 +1,7 @@
 {
   "title": "History of Processing and p5.js",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
+  "subject": "The Art of Processing",
   "description": "Interactive MicroSim for history of processing and p5.js",
   "date": "2026-08-20",
   "educational": {
@@ -9,9 +9,10 @@
       "9",
       "10",
       "11",
-      "12"
+      "12",
+      "Adult"
     ],
-    "subjectArea": "Mathematics",
+    "subjectArea": "Computer Science",
     "topic": "History of Processing and p5.js",
     "learningObjectives": [
       "TODO: Add learning objectives"
